@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/tools/</loc>
+    
+    <lastmod>2020-06-06T15:47:26.785Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/MSRA%E5%AE%9E%E4%B9%A0%E6%9C%BA%E4%BC%9A-%E8%B0%83%E7%A0%94/</loc>
     
     <lastmod>2020-06-06T14:55:41.838Z</lastmod>

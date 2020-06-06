@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-06-06T14:55:41.838Z</updated>
+  <updated>2020-06-06T15:47:26.785Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>tools</title>
+    <link href="http://yoursite.com/tools/"/>
+    <id>http://yoursite.com/tools/</id>
+    <published>2020-06-06T15:44:45.000Z</published>
+    <updated>2020-06-06T15:47:26.785Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="English"><a href="#English" class="headerlink" title="English"></a>English</h1><p><a href="https://www.thesaurus.com/" target="_blank" rel="noopener">同义词词典</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;English&quot;&gt;&lt;a href=&quot;#English&quot; class=&quot;headerlink&quot; title=&quot;English&quot;&gt;&lt;/a&gt;English&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://www.thesaurus.com/&quot; target=&quot;_blan
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>MSRA实习机会调研</title>
