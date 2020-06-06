@@ -47,6 +47,9 @@
 <p>Github开源，有官方中文Handbook【点击前面<a href="https://github.com/iissnan/hexo-theme-next/blob/master/README.cn.md" target="_blank" rel="noopener">NexT</a>链接即可】。就不啰嗦了~</p>
 <p>也可以参考：<a href="https://www.cnblogs.com/fengxiongZz/p/7707568.html" target="_blank" rel="noopener">使用Hexo+Github一步步搭建属于自己的博客（进阶）</a>（相对来说比较简明）</p>
 <p>最后的效果如何呢~既然你已经看到这里了。。。2333</p>
+<h1 id="插入多媒体"><a href="#插入多媒体" class="headerlink" title="插入多媒体"></a>插入多媒体</h1><h2 id="音乐"><a href="#音乐" class="headerlink" title="音乐"></a>音乐</h2><p>参考：<a href="https://www.jianshu.com/p/26a7fc7cc185" target="_blank" rel="noopener">Hexo博客中插入音乐/视频/</a>以及 <a href="http://tc9011.com/2016/12/24/hexo添加音乐、high一下及一些坑/" target="_blank" rel="noopener">hexo添加音乐、high一下及一些坑</a>，<a href="https://blog.csdn.net/foradawn/article/details/78941992" target="_blank" rel="noopener">为Hexo添加音乐</a>。</p>
+<p>hexo-tag-aplayer：<a href="https://github.com/grzhan/hexo-tag-aplayer" target="_blank" rel="noopener">https://github.com/grzhan/hexo-tag-aplayer</a></p>
+<p>安装命令：</p>
 ]]></content>
       <tags>
         <tag>操作集</tag>
