@@ -30,7 +30,12 @@
 <p>hexo会帮我们在<code>_posts</code>下生成相关md文件：</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line">title: postName #文章页面上的显示名称，一般是中文 </span><br><span class="line"></span><br><span class="line">date: <span class="number">2013</span><span class="number">-12</span><span class="number">-02</span> <span class="number">15</span>:<span class="number">30</span>:<span class="number">16</span> #文章生成时间，一般不改，当然也可以任意修改 </span><br><span class="line"></span><br><span class="line">categories: 默认分类 #分类 </span><br><span class="line"></span><br><span class="line">tags: [tag1,tag2,tag3] #文章标签，可空，多标签请用格式，注意:后面有个空格 </span><br><span class="line"></span><br><span class="line">description: 附加一段文章摘要，字数最好在<span class="number">140</span>字以内，会出现在meta的description里面 </span><br><span class="line">--- 以下是正文</span><br></pre></td></tr></table></figure>
 
-<p>Git操作手册：</p>
+<h2 id="添加分类页面"><a href="#添加分类页面" class="headerlink" title="添加分类页面"></a>添加分类页面</h2><p>新建「分类」页面，并在菜单中显示「分类」链接。「分类」页面将展示站点的所有分类，若你的所有文章都未包含分类，此页面将是空的。 底下代码是一篇包含分类的文章的例子：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">title: 分类测试文章</span><br><span class="line">categories: Testing</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p> 请参阅 <a href="https://hexo.io/zh-cn/docs/front-matter.html#分类和标签" target="_blank" rel="noopener">Hexo 的分类与标签文档</a>，了解如何为文章添加标签或者分类。</p>
+</blockquote>
 <h2 id="如何让博客不显示全部内容"><a href="#如何让博客不显示全部内容" class="headerlink" title="如何让博客不显示全部内容"></a>如何让博客不显示全部内容</h2><p>默认情况下，生成的博文目录会显示全部的文章内容，如何设置文章摘要的长度呢？</p>
 <p>答案是在合适的位置加上<code>&lt;!--more--&gt;</code>即可。</p>
 <h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> <span class="string">"postName"</span> #新建文章</span><br><span class="line">hexo <span class="keyword">new</span> page <span class="string">"pageName"</span> #新建页面</span><br><span class="line">hexo generate #生成静态页面至<span class="keyword">public</span>目录</span><br><span class="line">hexo server #开启预览访问端口（默认端口4000，'ctrl + c'关闭server）</span><br><span class="line">hexo deploy #部署到GitHub</span><br><span class="line">hexo help  # 查看帮助</span><br><span class="line">hexo version  #查看Hexo的版本</span><br></pre></td></tr></table></figure>
