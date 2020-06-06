@@ -1279,7 +1279,12 @@
   <entry>
     <title>tools</title>
     <url>/tools/</url>
-    <content><![CDATA[<h1 id="English"><a href="#English" class="headerlink" title="English"></a>English</h1><h2 id="Dictionary"><a href="#Dictionary" class="headerlink" title="Dictionary"></a>Dictionary</h2><p><a href="https://www.thesaurus.com/" target="_blank" rel="noopener">同义词词典</a></p>
+    <content><![CDATA[<blockquote>
+<p>介绍了一些常用的工具栏</p>
+</blockquote>
+<a id="more"></a>
+
+<h1 id="English"><a href="#English" class="headerlink" title="English"></a>English</h1><h2 id="Dictionary"><a href="#Dictionary" class="headerlink" title="Dictionary"></a>Dictionary</h2><p><a href="https://www.thesaurus.com/" target="_blank" rel="noopener">同义词词典</a></p>
 <p><a href="https://www.collinsdictionary.com/" target="_blank" rel="noopener">Collins Online Dictionary</a></p>
 <p><a href="https://www.ldoceonline.com/" target="_blank" rel="noopener">Longman Dictionary</a></p>
 <p><a href="https://translate.google.cn/" target="_blank" rel="noopener">Google Translate</a></p>
