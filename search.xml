@@ -6,7 +6,7 @@
     <content><![CDATA[<hr>
 <h1 id="创建新菜单项"><a href="#创建新菜单项" class="headerlink" title="创建新菜单项"></a>创建新菜单项</h1><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> page XXX <span class="comment">//XX为创建的页面</span></span><br></pre></td></tr></table></figure>
 
-
+<a id="more"></a>
 
 <h1 id="写博客"><a href="#写博客" class="headerlink" title="写博客"></a>写博客</h1><p>在git batch上输入<code>hexo new &#39;my-first-blog&#39;</code></p>
 <p>hexo会帮我们在<code>_posts</code>下生成相关md文件：</p>
