@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, Louieworth" />
+  <meta name="keywords" content="Mathematics," />
 
 
 
@@ -83,15 +83,37 @@
 
 
 
-<meta name="description" content="Stay foolish, stay healthy">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Louieworth&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+<meta name="description" content="最大似然估计现在已经拿到了很多个样本（你的数据集中所有因变量），这些样本值已经实现，最大似然估计就是去找到那个（组）参数估计值，**使得前面已经实现的样本值发生概率最大。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Maximum-likelihood-function">
+<meta property="og:url" content="http://yoursite.com/Maxmum-likelihood-function/index.html">
 <meta property="og:site_name" content="Louieworth&#39;s blog">
-<meta property="og:description" content="Stay foolish, stay healthy">
+<meta property="og:description" content="最大似然估计现在已经拿到了很多个样本（你的数据集中所有因变量），这些样本值已经实现，最大似然估计就是去找到那个（组）参数估计值，**使得前面已经实现的样本值发生概率最大。">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1EXHf9ov2f9VDYGHY2Pw9uWtmLFwia7dfN6ibO4ibLdaNxHT2E0YjBxzcQ/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1RsEoF4ZicktHlZZhBadCbnGgRkl376gSRuqgZ9nt7gTnfEcvWOQ34gQ/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1jLGEcRtK2wZM1QS4bqHrRQoSkIzFNurIWd8WHmjpScrPQObEcK20Gw/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1RsEoF4ZicktHlZZhBadCbnGgRkl376gSRuqgZ9nt7gTnfEcvWOQ34gQ/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1RsEoF4ZicktHlZZhBadCbnGgRkl376gSRuqgZ9nt7gTnfEcvWOQ34gQ/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1RsEoF4ZicktHlZZhBadCbnGgRkl376gSRuqgZ9nt7gTnfEcvWOQ34gQ/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1nSia4nhaMQRPenKiaLL0HoZReehrhABLLt9CjZeCkxSYmhojPtGsIZFw/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib18WvRfiaHxItgsO9fwtuTiay36yfremHydHsnDUwricLhY3iaoHiccm7ZAIg/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1wIlibsqL0FFpEqhz3U9tFMV0AAmeMdxV1EKMocs4fEmz10PHv81SQpA/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1ySG85zug5aKGgXzdQzPlWdW6IUxxF0wIHGK6Z9oNqhzVmWZIMdCQBQ/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1Wp3BjzFHlFvkDYZeFaUXKepR8yqS9oV5nrL5clLUicg4upVsxPxxKtQ/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1ZgcQMhYTLWnoKf6qbibF2YX2icNw0ibzVElia5enarJNzK9WA1ibZVu8wTA/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1tk0KwypjdEmughYpXIR71PmTbqIcwrTzibwOBqk4B9jZaOB1icaMN2Yw/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib12kddTotIyyyDl99icesMRvlOU02Zsv6jARaj3W3mxW5vcofiaM8sr5yA/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1yonvEaatEbQDCFI8IOvHZLKd8jwyvqKa9rAH6j8R8hzoCmkJaNowiag/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1yonvEaatEbQDCFI8IOvHZLKd8jwyvqKa9rAH6j8R8hzoCmkJaNowiag/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1uk52vRpmzCALsR41Xpxt0TBWUlfKQISibslnSTAiaiaCnvKZjKpBwaQPw/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1KniaicAb9lUM46aPYnfxWMnZJKwl9NNIfho2TKiaXHRq1XibBgD2IAyFyQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="article:published_time" content="2020-06-07T08:59:52.000Z">
+<meta property="article:modified_time" content="2020-06-07T09:01:12.049Z">
 <meta property="article:author" content="Louieworth">
+<meta property="article:tag" content="Mathematics">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1EXHf9ov2f9VDYGHY2Pw9uWtmLFwia7dfN6ibO4ibLdaNxHT2E0YjBxzcQ/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
 
 
 
@@ -121,13 +143,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2018/"/>
+  <link rel="canonical" href="http://yoursite.com/Maxmum-likelihood-function/"/>
 
 
 
 
 
-  <title>Archive | Louieworth's blog</title>
+  <title>Maximum-likelihood-function | Louieworth's blog</title>
   
 
 
@@ -146,7 +168,7 @@
     
   
 
-  <div class="container sidebar-position-right page-archive">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -294,74 +316,220 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        Um..! 21 posts in total. Keep on posting.
-      </span>
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h2 class="archive-year" id="archive-year-2018">2018</h2>
-          </div>
-        
-        
-
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Maxmum-likelihood-function/">
 
-      <h3 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Louieworth">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Louieworth's blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/Hexo-%E5%8D%9A%E6%96%87%E7%BC%96%E8%BE%91%E6%89%8B%E5%86%8C/" itemprop="url">
-              
-                <span itemprop="name">Hexo-博文编辑手册</span>
-              
-            </a>
         
-      </h3>
+          <h2 class="post-title" itemprop="name headline">Maximum-likelihood-function</h2>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-05T17:44:10+08:00"
-              content="2018-07-05" >
-          07-05
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-07T16:59:52+08:00">
+                2020-06-07
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Mathematics/" itemprop="url" rel="index">
+                    <span itemprop="name">Mathematics</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/Maxmum-likelihood-function/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/Maxmum-likelihood-function/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
+      
+        <h1 id="最大似然估计"><a href="#最大似然估计" class="headerlink" title="最大似然估计"></a>最大似然估计</h1><p>现在已经拿到了很多个样本（你的数据集中所有因变量），这些样本值已经实现，最大似然估计就是去找到那个（组）参数估计值，**使得前面已经实现的样本值发生概率最大。<a id="more"></a></p>
+<p>因为你手头上的样本已经实现了，<strong>其发生概率最大才符合逻辑。</strong></p>
+<p>这时是求样本所有观测的联合概率最大化，是个连乘积，只要取对数，就变成了<strong>线性加总</strong>。</p>
+<p><strong>此时通过对参数求导数，并令一阶导数为零，就可以通过解方程（组），得到最大似然估计值。</strong></p>
+<h1 id="最小二乘法"><a href="#最小二乘法" class="headerlink" title="最小二乘法"></a>最小二乘法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">最小二乘：找到一个（组）估计值，使得实际值与估计值的距离最小。</span><br><span class="line"></span><br><span class="line">本来用两者差的绝对值汇总并使之最小是最理想的，但绝对值在数学上求最小值比较麻烦，因而替代做法是，找一个（组）估计值，使得实际值与估计值之差的平方加总之后的值最小，称为最小二乘。</span><br><span class="line"></span><br><span class="line">“二乘”的英文为least square，其实英文的字面意思是“平方最小”。</span><br><span class="line"></span><br><span class="line">这时，将这个差的平方的和式对参数求导数，并取一阶导数为零，就是OLSE。</span><br><span class="line"></span><br><span class="line">我所认为的还有一个原因是估计值和实际值之间的误差服从高斯分布，因为高斯分布有二次。</span><br></pre></td></tr></table></figure>
+
+<p>这就是自己的一点理解，欢迎大家交流~</p>
+<h1 id="为什么线性回归的损失函数是平方？"><a href="#为什么线性回归的损失函数是平方？" class="headerlink" title="为什么线性回归的损失函数是平方？"></a>为什么线性回归的损失函数是平方？</h1><p>线性回归假设特征和结果满足线性关系。 其实线性关系的表达能力非常强大，<strong>每个特征**</strong>对结果的影响强弱可以有前面的参数体现，**一般化线性模型，我们是有多个变量的线性模型。我们用向量形式来表达线性模型，如下：</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1EXHf9ov2f9VDYGHY2Pw9uWtmLFwia7dfN6ibO4ibLdaNxHT2E0YjBxzcQ/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>那么我们可以求出不同的<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1RsEoF4ZicktHlZZhBadCbnGgRkl376gSRuqgZ9nt7gTnfEcvWOQ34gQ/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">，来得到不同的模型。</p>
+<p><strong>这样的话，问题来了，我们如何知道每一个模型的好坏，也就是说，我们需要一个机制来判断我们的**</strong>是好是坏！**</p>
+<p>这就引出了我们的损失函数，如下：</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1jLGEcRtK2wZM1QS4bqHrRQoSkIzFNurIWd8WHmjpScrPQObEcK20Gw/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>我们通过最小化损失函数得到的<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1RsEoF4ZicktHlZZhBadCbnGgRkl376gSRuqgZ9nt7gTnfEcvWOQ34gQ/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)，就是我们觉得最优的<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1RsEoF4ZicktHlZZhBadCbnGgRkl376gSRuqgZ9nt7gTnfEcvWOQ34gQ/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)，也就是我们认为此时的模型（知道了参数<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1RsEoF4ZicktHlZZhBadCbnGgRkl376gSRuqgZ9nt7gTnfEcvWOQ34gQ/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">也就确定了我们的模型）最优（<strong>这里也很好理解，这个公式尽可能使得我们预测出来的值与真实的值无限逼近！！</strong>）</p>
+<p>那么损失函数为什么是平方形式呢？如果只是表达模型预测出来的值与真实值无限逼近，<strong>三次方，四次方，哪怕绝对值形式也是可以的</strong>，如下这些：</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1nSia4nhaMQRPenKiaLL0HoZReehrhABLLt9CjZeCkxSYmhojPtGsIZFw/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>为什么是平方形式呢？不要急，这也是下面要解释的内容。</p>
+<h2 id="损失函数采用平方的数学解释？"><a href="#损失函数采用平方的数学解释？" class="headerlink" title="损失函数采用平方的数学解释？"></a>损失函数采用平方的数学解释？</h2><p>假设根据特征的预测结果与实际结果有误差<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib18WvRfiaHxItgsO9fwtuTiay36yfremHydHsnDUwricLhY3iaoHiccm7ZAIg/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)，那么预测结果<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1wIlibsqL0FFpEqhz3U9tFMV0AAmeMdxV1EKMocs4fEmz10PHv81SQpA/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)真实结果<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1ySG85zug5aKGgXzdQzPlWdW6IUxxF0wIHGK6Z9oNqhzVmWZIMdCQBQ/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">满足下式：</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1Wp3BjzFHlFvkDYZeFaUXKepR8yqS9oV5nrL5clLUicg4upVsxPxxKtQ/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p><strong>一般在实际应用中，我们的训练数据都是海量的，根据中心极限定理，我们可以假定误差满足平均值u为0的正态分布。</strong></p>
+<p><strong>那么x，y的条件概率满足如下：</strong></p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1ZgcQMhYTLWnoKf6qbibF2YX2icNw0ibzVElia5enarJNzK9WA1ibZVu8wTA/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>上式相当于估计了一条样本的结果概率，根据极大似然估计<strong>（后面会写一篇文章详细介绍）我们希望在给定的训练数据中，给定的训练数据出现的概率（可能性）最大，也就是概率积最大！累积形式如下：</strong></p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1tk0KwypjdEmughYpXIR71PmTbqIcwrTzibwOBqk4B9jZaOB1icaMN2Yw/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p><strong>取对数如下：</strong></p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib12kddTotIyyyDl99icesMRvlOU02Zsv6jARaj3W3mxW5vcofiaM8sr5yA/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>这时我们想 <img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1yonvEaatEbQDCFI8IOvHZLKd8jwyvqKa9rAH6j8R8hzoCmkJaNowiag/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">函数值最大，这些训练数据的误差方差我们假设是一个定值<strong>（数据趋于无穷大的时候，均值与方差都是可以看成定值），</strong>也就是对求似然估计没有影响。</p>
+<p><strong>那么我们此时想要使得<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1yonvEaatEbQDCFI8IOvHZLKd8jwyvqKa9rAH6j8R8hzoCmkJaNowiag/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)最大，只需要将<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1uk52vRpmzCALsR41Xpxt0TBWUlfKQISibslnSTAiaiaCnvKZjKpBwaQPw/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">最小化即可!（因为除了该项其它各项都是定值！）如下面公式是定值：</strong></p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1KniaicAb9lUM46aPYnfxWMnZJKwl9NNIfho2TKiaXHRq1XibBgD2IAyFyQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p><strong>这也就是我们损失函数采取平方形式的数学解释！欢迎大家指错交流~</strong></p>
+<hr>
+<p>一句话总结：</p>
+<p>首先根据中心极限定理，误差满足正态分布。</p>
+<p>再根据最大似然函数定理，求的最大的误差，也就是最小的平方</p>
+<hr>
+<p><strong>参考：</strong>JerryLead机器学习笔记</p>
+<p>线性回归损失函数为什么要用平方形式 - saltriver的专栏 - 博客频道 - CSDN.NET（博主采取用求偏导，假定方差越小越好，这也是一种思路）</p>
+
+      
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Mathematics/" rel="tag"># Mathematics</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Gradient-descent/" rel="next" title="Gradient-descent">
+                <i class="fa fa-chevron-left"></i> Gradient-descent
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -369,6 +537,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -391,8 +566,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -473,6 +657,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#最大似然估计"><span class="nav-number">1.</span> <span class="nav-text">最大似然估计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#最小二乘法"><span class="nav-number">2.</span> <span class="nav-text">最小二乘法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么线性回归的损失函数是平方？"><span class="nav-number">3.</span> <span class="nav-text">为什么线性回归的损失函数是平方？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#损失函数采用平方的数学解释？"><span class="nav-number">3.1.</span> <span class="nav-text">损失函数采用平方的数学解释？</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -645,6 +845,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -1041,26 +1245,6 @@
   
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 

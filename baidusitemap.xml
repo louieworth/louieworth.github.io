@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://yoursite.com/Maxmum-likelihood-function/</loc>
+    <lastmod>2020-06-07</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/Gradient-descent/</loc>
+    <lastmod>2020-06-07</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/mathmatics-interview-tbsi/</loc>
+    <lastmod>2020-06-07</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/Lagrange-duality/</loc>
+    <lastmod>2020-06-07</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/catboost/</loc>
+    <lastmod>2020-06-07</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/%E8%80%83%E7%A0%94tbsi%E5%BF%85%E7%9C%8B/</loc>
+    <lastmod>2020-06-07</lastmod>
+  </url>  <url>
     <loc>http://yoursite.com/2021%E8%80%83%E7%A0%94%E8%8B%B1%E8%AF%AD%E4%B8%80%E5%A4%A7%E4%BD%9C%E6%96%87%E6%94%BB%E7%95%A5/</loc>
     <lastmod>2020-06-07</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/how-to-read-papers/</loc>
-    <lastmod>2020-06-07</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/mathmatics-interview-tbsi/</loc>
     <lastmod>2020-06-07</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/algorithms-interview-tbsi/</loc>
