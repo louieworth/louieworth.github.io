@@ -1872,8 +1872,10 @@
 ]]></content>
       <categories>
         <category>tbsi_interview</category>
-        <category>Machine Learning</category>
       </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+      </tags>
   </entry>
   <entry>
     <title>daily-question-interview-tbsi</title>
@@ -3140,9 +3142,11 @@
 <p>意义：通过PCA或LDA方法，将较高纬度样本空间映射到较低维度的样本空间，从而达到降纬的目的，减少模型的训练时间，提高模型的计算性能。</p>
 ]]></content>
       <categories>
-        <category>Machine Learning</category>
         <category>tbsi_interview</category>
       </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+      </tags>
   </entry>
   <entry>
     <title>mathmatics_interview_tbsi</title>
@@ -3418,6 +3422,9 @@
       <categories>
         <category>tbsi_interview</category>
       </categories>
+      <tags>
+        <tag>mathematics</tag>
+      </tags>
   </entry>
   <entry>
     <title>paper-LightGBM</title>
@@ -3703,6 +3710,35 @@
       </categories>
       <tags>
         <tag>SVM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Spoken-English</title>
+    <url>/Spoken-English/</url>
+    <content><![CDATA[<h1 id="history"><a href="#history" class="headerlink" title="history"></a>history</h1><p>history matters because it can provide us with solutions of the problems of the present.</p>
+<p>In our society, we are obsessed by what we are up to now.</p>
+<p>But the most important things that we need to nourish, sustain, and inspire us are a lot older.</p>
+<h1 id="parental-education"><a href="#parental-education" class="headerlink" title="parental education"></a>parental education</h1><p>The most overlooked aspects of education today is parental involvement. </p>
+<p>When parents involve themselves into their family, their children are likely to go on with higher education, have more positive attitudes, and behave better. </p>
+<p>Spending time with children can be as easily as asking them how was your day at school, but ask everyday.</p>
+<h1 id="social-median"><a href="#social-median" class="headerlink" title="social median"></a>social median</h1><p>My friend always asks me to like all of her posts. I like it when people commend on my pictures. When you click on a hashtag, you will see other tweets that have the same keyword or topic. </p>
+<h1 id="tourism-Italy"><a href="#tourism-Italy" class="headerlink" title="tourism Italy"></a>tourism Italy</h1><p>I have seen many movies set on Italy and a lot of travel programs about the place. </p>
+<p>My uncle has told me that Italy is fantastic and exceptional beautiful country.</p>
+<p>You have a wide variety landscape from mountains to lakes to miles of coastlines. </p>
+<h1 id="4-6-healthy-junk-food"><a href="#4-6-healthy-junk-food" class="headerlink" title="4.6 healthy junk food"></a>4.6 healthy junk food</h1><p>One of the reasons why people are becoming overweight these days is that they are eating more junk food, ready meals, and convenient food rather than cooking healthy meals at home.</p>
+<p>This is because many people tend to lead a busy life and after a long day work it’s just easier to buy ready meals at supermarket or get a takeaway at restaurant.</p>
+<p>For instance, in UK, sales of these types of food haven risen sharply since 1990, one reason is that busy people see cooking at home as time-consuming. </p>
+<h1 id="4-13-work"><a href="#4-13-work" class="headerlink" title="4.13 work"></a>4.13 work</h1><p>There’s no chance of a promotion in the office where I work. It’s really a dead-end job.</p>
+<p>That new boss of mine is really <strong>cracking the whip</strong> in the office. We don’t get a minuate to chat and relax.</p>
+<p>I’m <strong>fed up</strong> with my job. I’ve decided to <strong>call it quits</strong> and look for something new.</p>
+<p>cracking the whip: 严苛</p>
+<p>fed up: 受够了  call it quits: 放弃</p>
+]]></content>
+      <categories>
+        <category>Notes</category>
+      </categories>
+      <tags>
+        <tag>spoken_English</tag>
       </tags>
   </entry>
 </search>
