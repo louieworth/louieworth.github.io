@@ -856,7 +856,7 @@
   <entry>
     <title>Hexo-博文编辑手册</title>
     <url>/Hexo-%E5%8D%9A%E6%96%87%E7%BC%96%E8%BE%91%E6%89%8B%E5%86%8C/</url>
-    <content><![CDATA[<blockquote>
+    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><blockquote>
 <p>转载自 <a href="[https://vel.life/Hexo-%E5%8D%9A%E6%96%87%E7%BC%96%E8%BE%91%E6%89%8B%E5%86%8C/#Reference](https://vel.life/Hexo-博文编辑手册/#Reference)">Hexo-博文编辑手册</a></p>
 </blockquote>
 <h1 id="Hexo常见命令"><a href="#Hexo常见命令" class="headerlink" title="Hexo常见命令"></a>Hexo常见命令</h1><p>更多知识见hexo的<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">官方文档</a>。</p>
@@ -4375,5 +4375,20 @@
       <tags>
         <tag>Mathematics</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>我的考研路</title>
+    <url>/%E6%88%91%E7%9A%84%E8%80%83%E7%A0%94%E8%B7%AF/</url>
+    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="198" height="52" src="//music.163.com/outchain/player?type=2&id=4241455&auto=0&height=32"></iframe>
+
+<p>拟录取已经将近过去了20天，一直尝试着提笔为我从2017年9月初得知保研失败到2020年5月接近三年的时间做一个总结。一是始终不知道应该如何起笔；二是觉得我们人应该珍惜当下，不提过往，后悔是一种耗费精神的情绪，它是比损失更大的损失，比错误更大的错误。</p>
+<blockquote>
+<p>对于现状，要么接受，要么改变。</p>
+</blockquote>
+<h1 id="2017年秋"><a href="#2017年秋" class="headerlink" title="2017年秋"></a>2017年秋</h1><p>2017年确实对于我来讲是一个非常不平凡的一年，当时我联系了西交某位著名轨道博导，我以为可以顺风顺水地去就读研究生，在全国一流的轨道学府进行学习和研究。但是天意弄人，不管是学院的普通保研，还是校内的优秀学术专长，我都仅仅差一名就上了。当时学院审核我是特殊学术专长第一名到校内进行竞争的时候，我喜出望外地告诉我的导师：学院我上了。我以为作为土木大院我在校上的竞争应该</p>
+]]></content>
+      <categories>
+        <category>Experience</category>
+      </categories>
   </entry>
 </search>

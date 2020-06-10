@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/%E6%88%91%E7%9A%84%E8%80%83%E7%A0%94%E8%B7%AF/</loc>
+    
+    <lastmod>2020-06-07T16:15:41.583Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Hexo-%E5%8D%9A%E6%96%87%E7%BC%96%E8%BE%91%E6%89%8B%E5%86%8C/</loc>
+    
+    <lastmod>2020-06-07T15:31:20.944Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/Maxmum-likelihood-function/</loc>
     
     <lastmod>2020-06-07T09:01:12.049Z</lastmod>
@@ -138,13 +152,6 @@
     <loc>http://yoursite.com/MSRA%E5%AE%9E%E4%B9%A0%E6%9C%BA%E4%BC%9A-%E8%B0%83%E7%A0%94/</loc>
     
     <lastmod>2020-06-06T14:55:41.838Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Hexo-%E5%8D%9A%E6%96%87%E7%BC%96%E8%BE%91%E6%89%8B%E5%86%8C/</loc>
-    
-    <lastmod>2020-06-06T13:10:39.721Z</lastmod>
     
   </url>
   
