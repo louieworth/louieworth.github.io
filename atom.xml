@@ -39,30 +39,6 @@
   </entry>
   
   <entry>
-    <title>我的考研路</title>
-    <link href="http://yoursite.com/%E6%88%91%E7%9A%84%E8%80%83%E7%A0%94%E8%B7%AF/"/>
-    <id>http://yoursite.com/%E6%88%91%E7%9A%84%E8%80%83%E7%A0%94%E8%B7%AF/</id>
-    <published>2020-06-07T14:38:39.662Z</published>
-    <updated>2020-06-20T15:07:20.315Z</updated>
-    
-    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><blockquote></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;blockquote&gt;
-&lt;/blockquote&gt;
-
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>Maximum-likelihood-function</title>
     <link href="http://yoursite.com/Maxmum-likelihood-function/"/>
     <id>http://yoursite.com/Maxmum-likelihood-function/</id>
@@ -478,6 +454,27 @@
       <category term="paper" scheme="http://yoursite.com/tags/paper/"/>
     
       <category term="LightGBM" scheme="http://yoursite.com/tags/LightGBM/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>tools</title>
+    <link href="http://yoursite.com/tools/"/>
+    <id>http://yoursite.com/tools/</id>
+    <published>2020-06-06T15:44:45.000Z</published>
+    <updated>2020-06-06T16:26:53.204Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>介绍了一些常用的工具栏</p></blockquote><a id="more"></a><h1 id="English"><a href="#English" class="headerlink" title="English"></a>English</h1><h2 id="Dictionary"><a href="#Dictionary" class="headerlink" title="Dictionary"></a>Dictionary</h2><p><a href="https://www.thesaurus.com/" target="_blank" rel="noopener">同义词词典</a></p><p><a href="https://www.collinsdictionary.com/" target="_blank" rel="noopener">Collins Online Dictionary</a></p><p><a href="https://www.ldoceonline.com/" target="_blank" rel="noopener">Longman Dictionary</a></p><p><a href="https://translate.google.cn/" target="_blank" rel="noopener">Google Translate</a></p><h2 id="Reading"><a href="#Reading" class="headerlink" title="Reading"></a>Reading</h2><p><a href="https://www.tianfateng.cn/tag/magazine" target="_blank" rel="noopener">Magazine Download</a></p><h2 id="Writting"><a href="#Writting" class="headerlink" title="Writting"></a>Writting</h2><p><a href="http://www.termonline.cn/index.htm" target="_blank" rel="noopener">termonline</a></p><p><a href="https://aimwriting.mtutor.engkoo.com/" target="_blank" rel="noopener">微软爱写作</a></p><h1 id="软件语法"><a href="#软件语法" class="headerlink" title="软件语法"></a>软件语法</h1><p><a href="https://latex.vimsky.com/" target="_blank" rel="noopener">Latex在线公式编辑转换</a></p><h1 id="Documents"><a href="#Documents" class="headerlink" title="Documents"></a>Documents</h1><p><a href="https://cowtransfer.com/" target="_blank" rel="noopener">奶牛快传</a></p><p><a href="https://www.uupoop.com/" target="_blank" rel="noopener">在线PS</a></p><p><a href="https://www.ilovepdf.com/zh-cn" target="_blank" rel="noopener">PDF转换</a></p><p><a href="https://www.chuangkit.com/designtools/designindex" target="_blank" rel="noopener">PPT图片设计</a></p><p><a href="https://flourish.studio/" target="_blank" rel="noopener">Flourish</a></p><ul><li>一个强大的数据可视化展示网站，你只需要按照他们的规则就可以生成动态的数据模型。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;介绍了一些常用的工具栏&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
     
   </entry>
   
