@@ -4716,7 +4716,9 @@
   <entry>
     <title>group_metting2</title>
     <url>/group-metting2/</url>
-    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="COVID-19-RELATED"><a href="#COVID-19-RELATED" class="headerlink" title="COVID-19 RELATED"></a>COVID-19 RELATED</h1><blockquote>
+    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="COVID-19-RELATED"><a href="#COVID-19-RELATED" class="headerlink" title="COVID-19 RELATED"></a>COVID-19 RELATED</h1><a id="more"></a>
+
+<blockquote>
 <p>Prensentation: Yi Zhang</p>
 </blockquote>
 <p><img src="/group-metting2/Screenshot_1.png" alt></p>
