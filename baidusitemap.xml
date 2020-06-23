@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://yoursite.com/my-plan-in-TBSI/</loc>
-    <lastmod>2020-06-12</lastmod>
+    <loc>http://yoursite.com/beamer%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2020-06-23</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/Hexo-%E5%8D%9A%E6%96%87%E7%BC%96%E8%BE%91%E6%89%8B%E5%86%8C/</loc>
-    <lastmod>2020-06-07</lastmod>
+    <lastmod>2020-06-23</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/my-plan-in-TBSI/</loc>
+    <lastmod>2020-06-12</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/Maxmum-likelihood-function/</loc>
     <lastmod>2020-06-07</lastmod>

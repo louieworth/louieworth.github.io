@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/my-plan-in-TBSI/</loc>
+    <loc>http://yoursite.com/beamer%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</loc>
     
-    <lastmod>2020-06-12T01:15:48.767Z</lastmod>
+    <lastmod>2020-06-23T01:17:30.773Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://yoursite.com/Hexo-%E5%8D%9A%E6%96%87%E7%BC%96%E8%BE%91%E6%89%8B%E5%86%8C/</loc>
     
-    <lastmod>2020-06-07T15:31:20.944Z</lastmod>
+    <lastmod>2020-06-23T01:16:58.979Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/my-plan-in-TBSI/</loc>
+    
+    <lastmod>2020-06-12T01:15:48.767Z</lastmod>
     
   </url>
   
