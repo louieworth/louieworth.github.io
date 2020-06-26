@@ -4396,7 +4396,13 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">\AtBeginSection[]</span><br><span class="line">&#123;</span><br><span class="line">  \begin&#123;frame&#125;</span><br><span class="line">    \frametitle&#123;Table of Contents&#125;</span><br><span class="line">    \tableofcontents[currentsection]</span><br><span class="line">  \end&#123;frame&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/2/2a/BeamerExample3.png" alt></p>
-<h1 id="Font-Size-amp-Font-color"><a href="#Font-Size-amp-Font-color" class="headerlink" title="Font Size&amp;Font color"></a>Font Size&amp;Font color</h1><p><strong>Font sizes</strong></p>
+<h1 id="Font-Size-amp-Font-color"><a href="#Font-Size-amp-Font-color" class="headerlink" title="Font Size&amp;Font color"></a>Font Size&amp;Font color</h1><p>In this article three basic text formatting tools will be explained: italics, bold and underline. Let’s begin with an example:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Some of the \textbf&#123;greatest&#125; </span><br><span class="line">discoveries in \underline&#123;science&#125; </span><br><span class="line">were made by \textbf&#123;\textit&#123;accident&#125;&#125;.</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/a/a9/Biu1.png" alt="Example of italics, bold and underline"></p>
+<p>As you can see, there are three basic commands and they can be nested to get combined effects.</p>
+<p>Note: <em>The commands <strong>\it</strong> and <strong>\bf</strong> also work to italicize and boldface text, but it’s not recommended to use them since they don’t preserve previous styles. With these you can’t, for instance, italicize and make a text bold at the same time.</em></p>
+<p><strong>Font sizes</strong></p>
 <table>
 <thead>
 <tr>
