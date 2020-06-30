@@ -4904,4 +4904,44 @@
         <tag>Group Meeting</tag>
       </tags>
   </entry>
+  <entry>
+    <title>group-meeting3</title>
+    <url>/group-meeting3/</url>
+    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><blockquote>
+<p>Presenter： 徐星宇</p>
+</blockquote>
+<p><img src="/group-meeting3/Screenshot_1.png" alt></p>
+<blockquote>
+<p>Victor Chan: 图片的显示问题。</p>
+</blockquote>
+<h1 id="Literature-review-Social-Internet-of-Things"><a href="#Literature-review-Social-Internet-of-Things" class="headerlink" title="Literature review: Social Internet of Things"></a>Literature review: Social Internet of Things</h1><blockquote>
+<p>Presentor: Pingdong Wang</p>
+</blockquote>
+<p><img src="/group-meeting3/Screenshot_2.png" alt></p>
+<p><img src="/group-meeting3/Screenshot_3.png" alt></p>
+<h1 id="NN-Optimization-using-simulated-annealing-algorithm"><a href="#NN-Optimization-using-simulated-annealing-algorithm" class="headerlink" title="NN Optimization using simulated annealing algorithm"></a>NN Optimization using simulated annealing algorithm</h1><blockquote>
+<p>Presenter: Jack Kuo</p>
+</blockquote>
+<p><img src="/group-meeting3/Screenshot_4.png" alt></p>
+<h2 id="Goal"><a href="#Goal" class="headerlink" title="Goal"></a>Goal</h2><p><img src="/group-meeting3/Screenshot_5.png" alt></p>
+<p><strong>Edges Disconnetion</strong></p>
+<p><img src="/group-meeting3/Screenshot_6.png" alt></p>
+<p><img src="/group-meeting3/Screenshot_7.png" alt></p>
+<p><img src="/group-meeting3/Screenshot_8.png" alt></p>
+<p>Just reoder the dataset and train it for one time….==why==</p>
+<blockquote>
+<p>Jiang: Time series/ Data Leakage  </p>
+<p>Jiang: Trade-off of mask and accuracy</p>
+</blockquote>
+<p><img src="/group-meeting3/group-meeting3%5CScreenshot_9.png" alt></p>
+<p><img src="/group-meeting3/Screenshot_10.png" alt></p>
+<p><img src="/group-meeting3/Screenshot_11.png" alt></p>
+]]></content>
+      <categories>
+        <category>Group Meetings</category>
+      </categories>
+      <tags>
+        <tag>Group Meeting</tag>
+      </tags>
+  </entry>
 </search>
