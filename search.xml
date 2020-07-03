@@ -4944,4 +4944,22 @@
         <tag>Group Meeting</tag>
       </tags>
   </entry>
+  <entry>
+    <title>吴恩达NN-1</title>
+    <url>/%E5%90%B4%E6%81%A9%E8%BE%BENN/</url>
+    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="WEEK2"><a href="#WEEK2" class="headerlink" title="WEEK2"></a>WEEK2</h1><h2 id="Logistic-Regression"><a href="#Logistic-Regression" class="headerlink" title="Logistic Regression"></a>Logistic Regression</h2><p>损失函数为：</p>
+<p>$$L(y,\hat{y})=-ylog(\hat{y})-(1-y)log(1-\hat{y})$$</p>
+<blockquote>
+<p>为什么我们使用cross entropy ?</p>
+</blockquote>
+<p>A: 1. 解决梯度消失的问题   2. 解决非凸优化问题</p>
+]]></content>
+      <categories>
+        <category>Deep Learning</category>
+      </categories>
+      <tags>
+        <tag>Deep Learning</tag>
+        <tag>Neural Network</tag>
+      </tags>
+  </entry>
 </search>
