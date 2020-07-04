@@ -962,6 +962,23 @@
 <p>进入（本地）项目文件夹下的.deploy/.git文件中（显示隐藏文件夹或rm .git/index.lock）删除index.lock文件即可。</p>
 </blockquote>
 <p>参考：<a href="https://blog.csdn.net/qq_32193151/article/details/70792594" target="_blank" rel="noopener">Git操作失败并提示Another git process seems to be running in this……</a></p>
+<h1 id="pdf文件上传"><a href="#pdf文件上传" class="headerlink" title="pdf文件上传"></a>pdf文件上传</h1><p>需求：<br>希望能在GitHub搭建的博客中上传本地PDF文件，同时提供下载功能。</p>
+<p>实现：<br>网上有大神已经写好一个插件，具体实现如下：</p>
+<p>在博客bash中执行下列命令安装</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ npm install --save hexo-pdf</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>使用<br>外部文章网页链接</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% pdf http:&#x2F;&#x2F;7xov2f.com1.z0.glb.clouddn.com&#x2F;bash_freshman.pdf %&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>本地，即我们需要上传的【需求】</p>
+<p>在博客source_posts\，文件夹下创建一个文章如test.md,同时需要再创建一个==同名的test文件夹==，放我们要上传的PDF文章</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 论文研究</span><br><span class="line">date: 2018-05-30 20:07:12</span><br><span class="line">tags: 笔记</span><br><span class="line">categories: 论文笔记</span><br><span class="line">---</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">center</span>&gt;</span></span><span class="strong">**端对端记忆网络**</span><span class="xml"><span class="tag">&lt;/<span class="name">center</span>&gt;</span></span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">&#123;% pdf  test.pdf %&#125; </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+
+
 <h1 id="评论区设置"><a href="#评论区设置" class="headerlink" title="评论区设置"></a>评论区设置</h1><p>使用<a href="https://valine.js.org/quickstart.html" target="_blank" rel="noopener">Valine</a>。极简主义，赞。</p>
 <p>更实在的教程：<a href="https://blog.csdn.net/blue_zy/article/details/79071414" target="_blank" rel="noopener">为你的Hexo加上评论系统-Valine</a>。</p>
 <p>新增：一个 <a href="https://github.com/ZvonimirSun/Valine-Admin" target="_blank" rel="noopener">Valine 的拓展应用</a>，用来增强 Valine 的邮件通知。</p>
@@ -5021,5 +5038,24 @@
         <tag>CVPR2020</tag>
         <tag>self-Driving</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>test</title>
+    <url>/test/</url>
+    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>如何导入pdf文件</p>
+<center>**策划书**</center>
+
+<br>
+
+
+
+	<div class="row">
+    <embed src="策划书.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+
+
+<br>]]></content>
   </entry>
 </search>

@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/Hexo-%E5%8D%9A%E6%96%87%E7%BC%96%E8%BE%91%E6%89%8B%E5%86%8C/</loc>
+    
+    <lastmod>2020-07-04T08:19:43.266Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/test/</loc>
+    
+    <lastmod>2020-07-04T08:14:26.366Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/Waymo-CVPR2020/</loc>
     
     <lastmod>2020-07-04T03:55:28.916Z</lastmod>
@@ -33,13 +47,6 @@
     <loc>http://yoursite.com/group-metting2/</loc>
     
     <lastmod>2020-06-23T04:25:09.488Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/Hexo-%E5%8D%9A%E6%96%87%E7%BC%96%E8%BE%91%E6%89%8B%E5%86%8C/</loc>
-    
-    <lastmod>2020-06-23T01:16:58.979Z</lastmod>
     
   </url>
   

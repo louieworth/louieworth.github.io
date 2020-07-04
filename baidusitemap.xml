@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://yoursite.com/Hexo-%E5%8D%9A%E6%96%87%E7%BC%96%E8%BE%91%E6%89%8B%E5%86%8C/</loc>
+    <lastmod>2020-07-04</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/test/</loc>
+    <lastmod>2020-07-04</lastmod>
+  </url>  <url>
     <loc>http://yoursite.com/Waymo-CVPR2020/</loc>
     <lastmod>2020-07-04</lastmod>
   </url>  <url>
@@ -14,9 +20,6 @@
     <lastmod>2020-06-24</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/group-metting2/</loc>
-    <lastmod>2020-06-23</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/Hexo-%E5%8D%9A%E6%96%87%E7%BC%96%E8%BE%91%E6%89%8B%E5%86%8C/</loc>
     <lastmod>2020-06-23</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/my-plan-in-TBSI/</loc>
