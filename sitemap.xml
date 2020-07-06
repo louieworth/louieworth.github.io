@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/how-to-read-papers/</loc>
+    
+    <lastmod>2020-07-06T08:11:31.823Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/%E9%AB%98%E8%80%83%E5%BF%97%E6%84%BF%E5%A1%AB%E6%8A%A5/</loc>
     
     <lastmod>2020-07-05T15:41:47.204Z</lastmod>
@@ -103,13 +110,6 @@
     <loc>http://yoursite.com/2021%E8%80%83%E7%A0%94%E8%8B%B1%E8%AF%AD%E4%B8%80%E5%A4%A7%E4%BD%9C%E6%96%87%E6%94%BB%E7%95%A5/</loc>
     
     <lastmod>2020-06-07T01:43:56.697Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/how-to-read-papers/</loc>
-    
-    <lastmod>2020-06-07T01:40:13.850Z</lastmod>
     
   </url>
   
