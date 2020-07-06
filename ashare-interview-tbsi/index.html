@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Machine Learning,kaggle," />
+
+
+
+
+  
+
+
+  <link rel="alternate" href="/atom.xml" title="Louieworth's blog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="ashare的基本数据介绍和top teams的想法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ashare-interview-tbsi">
+<meta property="og:url" content="http://yoursite.com/ashare-interview-tbsi/index.html">
+<meta property="og:site_name" content="Louieworth&#39;s blog">
+<meta property="og:description" content="ashare的基本数据介绍和top teams的想法">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-06-06T23:17:09.000Z">
+<meta property="article:modified_time" content="2020-06-06T23:18:35.097Z">
+<meta property="article:author" content="Louieworth">
+<meta property="article:tag" content="Machine Learning">
+<meta property="article:tag" content="kaggle">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/ashare-interview-tbsi/"/>
+
+
+
+
+
+  <title>ashare-interview-tbsi | Louieworth's blog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Louieworth's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Stay foolish, stay healthy.</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tools">
+          <a href="/tools/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-bars"></i> <br />
+            
+            tools
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/ashare-interview-tbsi/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Louieworth">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Louieworth's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">ashare-interview-tbsi</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-07T07:17:09+08:00">
+                2020-06-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/tbsi-interview/" itemprop="url" rel="index">
+                    <span itemprop="name">tbsi_interview</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/ashare-interview-tbsi/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/ashare-interview-tbsi/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+              <div class="post-description">
+                  ashare的基本数据介绍和top teams的想法
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>train.csv</strong></p>
+<ul>
+<li>building_id - Foreign key for the building metadata.</li>
+<li>meter - The meter id code. Read as {0: electricity, 1: chilledwater, 2: steam, 3: hotwater}. Not every building has all meter types.</li>
+<li>timestamp - When the measurement was taken</li>
+<li>meter_reading - The target variable. Energy consumption in kWh (or equivalent). Note that this is real data with measurement error, which we expect will impose a baseline level of modeling error.</li>
+</ul>
+<p><strong>building_meta.csv</strong></p>
+<ul>
+<li>site_id - Foreign key for the weather files.</li>
+<li>building_id - Foreign key for training.csv</li>
+<li>primary_use - Indicator of the primary category of activities for the building based on EnergyStar property type definitions</li>
+<li>square_feet - Gross floor area of the building</li>
+<li>year_built - Year building was opened</li>
+<li>floor_count - Number of floors of the building</li>
+</ul>
+<p><strong>weather_[train/test].csv</strong> Weather data from a meteorological station as close as possible to the site.</p>
+<ul>
+<li>site_id</li>
+<li>air_temperature - Degrees Celsius</li>
+<li>cloud_coverage - Portion of the sky covered in clouds, in oktas</li>
+<li>dew_temperature - Degrees Celsius</li>
+<li>precip_depth_1_hr - Millimeters</li>
+<li>sea_level_pressure - Millibar/hectopascals</li>
+<li>wind_direction - Compass direction (0-360)</li>
+<li>wind_speed - Meters per second</li>
+</ul>
+<p><strong>test.csv</strong></p>
+<p>The submission files use row numbers for ID codes in order to save space on the file uploads. test.csv has no feature data; it exists so you can get your predictions into the correct order.</p>
+<ul>
+<li>row_id - Row id for your submission file</li>
+<li>building_id - Building id code</li>
+<li>meter - The meter id code</li>
+<li>timestamp - Timestamps for the test data period</li>
+</ul>
+<p><strong>sample_submission.csv</strong></p>
+<p>A valid sample submission.</p>
+<ul>
+<li>All floats in the solution file were truncated to four decimal places; we recommend you do the same to save space on your file upload.</li>
+<li>There are gaps in some of the meter readings for both the train and test sets. Gaps in the test set are not revealed or scored.</li>
+</ul>
+<h1 id="2-1-2-评价指标"><a href="#2-1-2-评价指标" class="headerlink" title="2 1.2 评价指标"></a>2 1.2 评价指标</h1><p>这次比赛的评价指标是RMSLE，Root Mean Squared Logarithmic Error。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from sklearn.metrics import mean_squared_log_error</span><br><span class="line">loss&#x3D;np.sqrt(mean_squared_log_error( y_test, predictions))</span><br></pre></td></tr></table></figure>
+
+<p>丢弃的特征</p>
+<figure class="highlight plain"><figcaption><span>"wind_direction", "wind_speed","year_built","floor_count```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## be careful about overfitting</span><br><span class="line"></span><br><span class="line">Here are a few notes that may help new kagglers to prevent overffiting.</span><br><span class="line"></span><br><span class="line">1. Since it&#39;s a timeseries problem,so you would be better to split train and validation set by timestamp , sometimes kfold is also can be used for timeseries problem but it&#39;s better to check first,you can split train and validation set by timestamp, then train a kfold-model using train set to watch the validation set performance.</span><br><span class="line">2. Don&#39;t use features only exsited in train but not in test,for example year, time-lagged targetencoding…also don&#39;t use features that very different between train and public&#x2F;private test,like a feature has no&#x2F;less null values in train but lots of null values in test, or public test has no&#x2F;less null but private test has a lot.</span><br><span class="line">3. Since the test time period is longer than train,it&#39;s hard to setup a robust validation time period,you will find parameters especially earlystop will have a big impact to leaderboard score,because it will overfit to local validation set but very different from test set. I suggested to try to adjust these parameters &#96;max_bin, num_leaves, bagging_fraction, feature_fraction, lambda_l1, lambda_l2, max_depth&#96; to deal with overfitting,and try to setup different timesplit validation to watch the change of earlystop round,At last can use a optimized round number to stop the training.</span><br><span class="line">4. Don&#39;t trust public leaderboard too much ,because public and private are also splited by time.You can split your train data to simulate train&#x2F;valid&#x2F;public&#x2F;private, make sure your model can improve all of them.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 1st</span><br><span class="line"></span><br><span class="line">Thank you to Kaggle and ASHRAE for hosting this competition. The decision to use only non-leak data for the private test set helped to make this competition fair. Thank you to all those who contributed to the kernels and discussions and especially those who made the leaks public. Last but not least, I&#39;d like to thank and congratulate my teammate [Isamu Yamashita](https:&#x2F;&#x2F;www.kaggle.com&#x2F;yamsam) for being a great teammate and becoming a Competitions Master.</span><br><span class="line"></span><br><span class="line">During the competition, we shared ideas and discussed progress within our team, but we tested and trained separate models. This helped us maintain diversity in our final ensemble. This is a combined summary our team&#39;s solution.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## Preprocessing</span><br><span class="line"></span><br><span class="line">### Remove anomalies</span><br><span class="line"></span><br><span class="line">As others have noted, cleaning the data was very important in this competition. The assumption is that there are unpredictable and hence unlearnable anomalies in the data that, if trained on, degrade the quality of the predictions. We identified and filtered out three types of anomalies:</span><br><span class="line"></span><br><span class="line">1. Long streaks of constant values</span><br><span class="line">2. Large positive&#x2F;negative spikes</span><br><span class="line">3. Additional anomalies determined by visual inspection</span><br><span class="line"></span><br><span class="line">We noticed that some of these anomalies were consistent across multiple buildings at a site. We validated potential anomalies using all buildings in a site--if an anomaly showed up at the same time at multiple buildings, we could be reasonably certain that this was indeed a true anomaly. This allowed us to remove anomalies that were not necessarily part of a long streak of constant values or a large spike.</span><br><span class="line"></span><br><span class="line">### Impute Missing Temperature Values</span><br><span class="line"></span><br><span class="line">There were a lot of missing values in temperature metadata. We found that imputing the missing data using **linear interpolation** helped our models.</span><br><span class="line"></span><br><span class="line">&gt;  linear interpolation(线性插值)</span><br><span class="line"></span><br><span class="line">### &#x3D;&#x3D;Target Transformations&#x3D;&#x3D;</span><br><span class="line"></span><br><span class="line">Like most competitors, we started by predicting &#96;log1p(meter_reading)&#96;. We also corrected the units for site 0 as per this [discussion post](https:&#x2F;&#x2F;www.kaggle.com&#x2F;c&#x2F;ashrae-energy-prediction&#x2F;discussion&#x2F;119261).</span><br><span class="line"></span><br><span class="line">Near the end of the competition, we tried standardizing &#96;meter_reading&#96; by dividing by &#96;square_feet&#96;; i.e., we predicted &#96;log1p(meter_reading&#x2F;square_feet)&#96;. Isamu came up with the idea after reading this [discussion post](https:&#x2F;&#x2F;www.kaggle.com&#x2F;c&#x2F;ashrae-energy-prediction&#x2F;discussion&#x2F;122263) by [Artyom Vorobyov](https:&#x2F;&#x2F;www.kaggle.com&#x2F;artoby). The models trained with the standardized target added diversity to our final ensemble and improved our score by about **0.002**. If we had more time we would have liked to explore this idea further; for example, we could have tried to predict &#96;log1p(meter_reading)&#x2F;square_feet&#96; or created features using the standardized targets.</span><br><span class="line"></span><br><span class="line">## Feature Engineering and Feature Selection</span><br><span class="line"></span><br><span class="line">We took different approaches to feature engineering and feature selection in this competition. Isamu took a conservative approach and carefully selected features; on the other hand, Matt took a brute force approach and used most of them. Here are the features that helped:</span><br><span class="line"></span><br><span class="line">- Raw features from train&#x2F;test, weather metadata, and building metadata</span><br><span class="line">- Categorical interactions such as the concatenation of &#96;building_id&#96; and &#96;meter&#96;</span><br><span class="line">- Time series features including holiday flags and time of day features</span><br><span class="line">- Count (frequency) features</span><br><span class="line">- Lag temperature features similar to those found in the public kernels</span><br><span class="line">- Smoothed and 1st, 2nd-order differentiation temperature features using Savitzky-Golay filter (see the figure below)</span><br><span class="line"></span><br><span class="line">- Cyclic encoding of periodic features; e.g., &#96;hour&#96; gets mapped to &#96;hour_x &#x3D; cos(2*pi*hour&#x2F;24)&#96; and &#96;hour_y &#x3D; sin(2*pi*hour&#x2F;24)&#96;</span><br><span class="line">- Bayesian target encoding (see this [kernel](https:&#x2F;&#x2F;www.kaggle.com&#x2F;mmotoki&#x2F;hierarchical-bayesian-target-encoding))</span><br><span class="line"></span><br><span class="line">## Models</span><br><span class="line"></span><br><span class="line">We trained CatBoost, LightGBM, and MLP models on different subsets of the data:</span><br><span class="line"></span><br><span class="line">- 1 model per meter</span><br><span class="line">- 1 model per site_id</span><br><span class="line">- 1 model per (building_id, meter)</span><br><span class="line"></span><br><span class="line">Our team tried different approaches to validation in this competition. Like other competitors, we tried K-Fold CV using consecutive months as the validation set. The following code shows one approach to getting validation months:</span><br></pre></td></tr></table></figure>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>import numpy as np<br>def get_validation_months(n):<br>…     return [np.arange(i, i+n) % 12 + 1 for i in range(12)]<br>…<br>get_validation_months(6)<br>[array([1, 2, 3, 4, 5, 6]),<br> array([2, 3, 4, 5, 6, 7]),<br> array([3, 4, 5, 6, 7, 8]),<br> array([4, 5, 6, 7, 8, 9]),<br> array([ 5,  6,  7,  8,  9, 10]),<br> array([ 6,  7,  8,  9, 10, 11]),<br> array([ 7,  8,  9, 10, 11, 12]),<br> array([ 8,  9, 10, 11, 12,  1]),<br> array([ 9, 10, 11, 12,  1,  2]),<br> array([10, 11, 12,  1,  2,  3]),<br> array([11, 12,  1,  2,  3,  4]),<br> array([12,  1,  2,  3,  4,  5])]</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Trying different validation schemes allowed us to train models that added diversity to our final ensemble.</span><br><span class="line"></span><br><span class="line">## Ensembling</span><br><span class="line"></span><br><span class="line">&#x3D;&#x3D;To reduce the risk of overfitting to the public LB and improve robustness&#x3D;&#x3D;, we ensembled predictions from many different models. Here are some of the things we did:</span><br><span class="line"></span><br><span class="line">- Used cleaned leak data as a holdout set to tune our second stage model</span><br><span class="line">- Averaged log values; i.e., &#96;expm1(mean(log1p(x)))&#96; rather than averaged the raw values</span><br><span class="line">- Used the &#x3D;&#x3D;generalized weighted&#x3D;&#x3D; mean and tuned the parameters using **Optuna**</span><br><span class="line">- Hedged our bets by including leak-free public kernels on cleaned data:</span><br><span class="line">  - [ASHRAE: Half and Half](https:&#x2F;&#x2F;www.kaggle.com&#x2F;rohanrao&#x2F;ashrae-half-and-half) by [Vopani](https:&#x2F;&#x2F;www.kaggle.com&#x2F;rohanrao)</span><br><span class="line">  - [ASHRAE- KFold LightGBM - without leak (1.08)](https:&#x2F;&#x2F;www.kaggle.com&#x2F;aitude&#x2F;ashrae-kfold-lightgbm-without-leak-1-08) by [Sandeep Kumar](https:&#x2F;&#x2F;www.kaggle.com&#x2F;aitude)</span><br><span class="line">  - [Ashrae: simple data cleanup (LB 1.08 no leaks)](https:&#x2F;&#x2F;www.kaggle.com&#x2F;purist1024&#x2F;ashrae-simple-data-cleanup-lb-1-08-no-leaks) by [Robert Stockton](https:&#x2F;&#x2F;www.kaggle.com&#x2F;purist1024)</span><br><span class="line"></span><br><span class="line">This [kernel](https:&#x2F;&#x2F;www.kaggle.com&#x2F;mmotoki&#x2F;generalized-weighted-mean) shows how we ensembled our predictions. Our final ensemble was a plain average of our top 4 submissions with respect to the public LB score.</span><br><span class="line"></span><br><span class="line">## What Didn&#39;t Work</span><br><span class="line"></span><br><span class="line">- Again, following this [discussion post](https:&#x2F;&#x2F;www.kaggle.com&#x2F;c&#x2F;ashrae-energy-prediction&#x2F;discussion&#x2F;122263) by [Artyom Vorobyov](https:&#x2F;&#x2F;www.kaggle.com&#x2F;artoby), we thought of ensembling the predictions for buildings with the same meter_readings; e.g., buildings 1225 and 1226 with meter 0. However, we were not able to improve our public LB result with this approach. It is possible that we did something wrong here, but we didn&#39;t have enough time to go back and explore this idea further.</span><br><span class="line">- Smoothing the predictions of our models. We had initial success with smoothing the final predictions of our models, but after a certain point, we started to find that smoothing hurt our public LB score. Our **guess is that smoothing helps spiky low quality predictions, but our ensemble predictions were already sufficiently smooth.**</span><br><span class="line"></span><br><span class="line"># 2rd</span><br><span class="line"></span><br><span class="line">Our team finished 2nd on private LB (12th on public). The private LB is finally released officially.</span><br><span class="line"></span><br><span class="line">So happy and pumped up for winning in the money for the first time on Kaggle (after 6 years). Santa has been kind this year :-)</span><br><span class="line">Our team will be kind too and share our complete solution.</span><br><span class="line"></span><br><span class="line">## Solution Architecture:</span><br><span class="line"></span><br><span class="line">**XGB:** XGBoost</span><br><span class="line">**LGBM:** LightGBM</span><br><span class="line">**CB:** Catboost</span><br><span class="line">**FFNN:** Feed-forward Neural Network</span><br><span class="line"></span><br><span class="line">## Short version</span><br><span class="line"></span><br><span class="line">- **Remove noise (Very important)**</span><br><span class="line">- Very few and basic features (For stability)</span><br><span class="line">- Optimize models for each site+meter (For site-specific patterns)</span><br><span class="line">- Ensemble of XGBoost, LightGBM, CatBoost, NeuralNetwork (To reduce variance)</span><br><span class="line">- **Postprocessing (Very critical)**</span><br><span class="line">- Leak insertion (Sucks, but probably doesn&#39;t matter)</span><br><span class="line"></span><br><span class="line">**Final Ensemble (approximate):** 30% XGB-bagging + 50% LGBM-bagging + 15% CB-bagging + 5% FFNN</span><br><span class="line"></span><br><span class="line">Many variations of XGB, LGBM, CB were bagged: at site+meter level, at building+meter level, at building-type+meter level. Bagged XGB gave the best results among the boosting methods.</span><br><span class="line"></span><br><span class="line">FFNN was used only for meter &#x3D; 0.</span><br><span class="line">It gave very poor results for other meters and didn&#39;t add value to ensemble.</span><br><span class="line">Also, FFNN was very poor for site-14 so we didn&#39;t use it and hence that tile is missing from the models section in the architecture diagram :-)</span><br><span class="line"></span><br><span class="line">Our solution was built heavily on [@oleg90777](https:&#x2F;&#x2F;www.kaggle.com&#x2F;oleg90777) &#39;s base XGB&#x2F;LGBM setup (which scores 1.04 on LB without leak) and our key points were cleaning the data and post-processing the predictions (validated on leaked data and LB). Read more about it [here](https:&#x2F;&#x2F;www.kaggle.com&#x2F;c&#x2F;ashrae-energy-prediction&#x2F;discussion&#x2F;123528).</span><br><span class="line"></span><br><span class="line">The final ensemble scores almost the best on public LB, on leaked data as well as private LB, so hopefully it is robust and useful.</span><br><span class="line"></span><br><span class="line">## Long version</span><br><span class="line"></span><br><span class="line">### Pre-Processing</span><br><span class="line"></span><br><span class="line">A lot of the low values of the target variable seem to be noise (as discussed multiple times in the forums, specifically for site-0) and removing these rows from the training data gives a good boost in score which has been done by several other competitors too.</span><br><span class="line"></span><br><span class="line">It was the most time consuming task as we visualized and wrote code to remove these rows for each of the 1449 buildings manually. We could have used a set of heuristics but that is not optimal due to some edge cases so we just decided to spend few minutes on every building and remove the outliers.</span><br><span class="line"></span><br><span class="line">### Feature Engineering</span><br><span class="line"></span><br><span class="line">Due to the size of the dataset and difficulty in setting up a robust validation framework, we did not focus much on feature engineering, fearing it might not extrapolate cleanly to the test data. Instead we chose to ensemble as many different models as possible to capture more information and help the predictions to be stable across years.</span><br><span class="line"></span><br><span class="line">Our models barely use any lag features or complex features. We have less than 30 features in our best single model. This was one of the major decisions taken at the beginning of our work. From past experience it is tricky to build good features without a reliable validation framework.</span><br><span class="line"></span><br><span class="line">### Modelling</span><br><span class="line"></span><br><span class="line">We bagged a bunch of boosting models XGB, LGBM, CB at various levels of data: Models for every site+meter, models for every building+meter, models for every building-type+meter and models using entire train data. It was very useful to build a separate model for each site so that the model could capture site-specific patterns and each site could be fitted with a different parameter set suitable for it. It also automatically solved for issues like timestamp alignment and feature measurement scale being different across sites so we didn&#39;t have to solve for them separately.</span><br><span class="line"></span><br><span class="line">Ensembling models at different levels were useful to improve score. Just bagging with different seeds didn&#39;t help much.</span><br><span class="line"></span><br><span class="line">Site-level FFNN was used only for meter &#x3D; 0. Each site had a different NN architecture.</span><br><span class="line">It gave very poor results for other meters and didn&#39;t add value to ensemble.</span><br><span class="line">Also, FFNN was very poor for site-14 so we didn&#39;t use it and hence that tile is missing from the models section in the architecture diagram :-)</span><br><span class="line"></span><br><span class="line">For tuning of all models, we used a combination of 4-fold and 5-fold CV on month from training data as well as validation on leaked data.</span><br><span class="line"></span><br><span class="line">### Post-Processing</span><br><span class="line"></span><br><span class="line">We have shared our post-processing experiments in another thread: https:&#x2F;&#x2F;www.kaggle.com&#x2F;c&#x2F;ashrae-energy-prediction&#x2F;discussion&#x2F;123528</span><br><span class="line"></span><br><span class="line">Since we **remove a lot of low value observations from training data**, it artificially increases the mean of the target variable and hence the model&#39;s raw predictions on test data also has an inflated mean. Since **RMSE is optimal at true mean value**, reducing the mean of predictions of test data by a reducing factor helps bring it down to its true mean, thus improving score.</span><br><span class="line"></span><br><span class="line">We tried a range of post-processing values and finally ended up using 0.8 - 0.85 for most models.</span><br><span class="line"></span><br><span class="line">### Ensembling</span><br><span class="line"></span><br><span class="line">Our best single type model was XGB but LGBM was very close and CB was not very bad either. All scored in the range of 1.04 - 1.06 on the public LB without leak.</span><br><span class="line"></span><br><span class="line">Since FFNN was built only for meter &#x3D; 0, we ensembled differently for every site+meter combination using a weighted average where the weights were determined using a combination of CV score, LB score, Leak score and intuition.</span><br><span class="line"></span><br><span class="line">**Final Ensemble (approximate) for meter &#x3D; 0:** 30% XGB-bagging + 50% LGBM-bagging + 15% CB-bagging + 5% FFNN</span><br><span class="line">**Final Ensemble (approximate) for meters 1, 2, 3:** 30% XGB-bagging + 50% LGBM-bagging + 20% CB-bagging</span><br><span class="line"></span><br><span class="line">The final ensemble scores almost the best on public LB, on leaked data as well as private LB, so hopefully it is robust and useful.</span><br><span class="line"></span><br><span class="line">### Leak</span><br><span class="line"></span><br><span class="line">We used leak data primarily for local validation and for inserting into the test data as many competitors did. We didn&#39;t use any leaks outside of sites 0, 1, 2, 4, 15.</span><br><span class="line"></span><br><span class="line">Since our core models were at site+meter level, we didn&#39;t explore leveraging the leaked data as additional train data.</span><br><span class="line"></span><br><span class="line">### Team</span><br><span class="line"></span><br><span class="line">Shout out to my **cHaOs** team-mates [@oleg90777](https:&#x2F;&#x2F;www.kaggle.com&#x2F;oleg90777) (one of the best team leaders I&#39;ve worked with), [@berserker408](https:&#x2F;&#x2F;www.kaggle.com&#x2F;berserker408) and [@isanton](https:&#x2F;&#x2F;www.kaggle.com&#x2F;isanton).</span><br><span class="line"></span><br><span class="line">### Code</span><br><span class="line"></span><br><span class="line">We will be happy to share our entire code if ASHRAE &#x2F; Kaggle can confirm if we can. No timeline &#x2F; commitment on this.</span><br><span class="line"></span><br><span class="line">### Credits</span><br><span class="line"></span><br><span class="line">- ASHRAE and Kaggle for hosting this competition.</span><br><span class="line">- Competitors who scraped data and made it public. You are winners too.</span><br><span class="line">- Kaggle admins for working hard to make the best out of the leak situation.</span><br><span class="line"></span><br><span class="line"># 2rd 2 </span><br><span class="line"></span><br><span class="line">It looks like data cleaning was the key to getting a good score. We mainly looked through most of the buildings individually and removed the outlier. The effect was mostly seen when you corrected the predictions with a value less than 1, since we mainly deleted values with 0 and raised the mean value of the prediction.</span><br><span class="line"></span><br><span class="line">I think this strategy enabled us to take 2nd place in private (14th. Public, without leak site-4)</span><br><span class="line"></span><br><span class="line">From the beginning, I have tried to make sure that this strategy does not backfire and did an experiment.</span><br><span class="line"></span><br><span class="line">------</span><br><span class="line"></span><br><span class="line">I took a building (building_id &#x3D;&#x3D; 1000, meter &#x3D;&#x3D; 0) that had no outlier.</span><br><span class="line">![img](https:&#x2F;&#x2F;www.googleapis.com&#x2F;download&#x2F;storage&#x2F;v1&#x2F;b&#x2F;kaggle-user-content&#x2F;o&#x2F;inbox%2F2749718%2Fa58b8c52f3a372b5331cd9270d7ce3c3%2Foriginal.PNG?generation&#x3D;1577536664878419&amp;alt&#x3D;media)</span><br><span class="line"></span><br><span class="line">If I train the model with this data and predict the same building, a cv: 0.15 and lb: 0.11 will result. With postprocessing&gt; 1 or &lt;1 lb gets worse. (Just to illustrate, that postprocess doesn&#39;t work for data without outlier)</span><br><span class="line"></span><br><span class="line">------</span><br><span class="line"></span><br><span class="line">However, if I have data with outliers (which I simply generated by setting month 2 to 0 in the train and testing month 11 to 0), a CV: 1.16 and **LB: 1.255** come out</span><br><span class="line"></span><br><span class="line">TRAIN:</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">TEST:</span><br><span class="line"></span><br><span class="line">With postprocess (* 0.94) slightly better **LB: 1.23**</span><br><span class="line"></span><br><span class="line"># 3rd</span><br><span class="line"></span><br><span class="line">Thank you to Kaggle and ASHRAE for hosting this competition</span><br><span class="line"></span><br><span class="line">My solution is likely to disappoint some of you given the lack of sophistication.</span><br><span class="line"></span><br><span class="line">I spent most of my time (too much) on trying feature engineering, trying to look a cv split correlated to public LB (didn’t happen), trying to find a neural network architecture that will give me a boost in local cv and public LB (didn’t happen) and browsing research papers related energy prediction in the subway.</span><br><span class="line"></span><br><span class="line">So, I didn’t explore much the dataset except for reading the excellent exploration publics kernels and I used the data cleaning from several public kernels. I also am quite clueless about web scraping but thanks to [@gunesevitan](https:&#x2F;&#x2F;www.kaggle.com&#x2F;gunesevitan) for showing the way and teaching me a lot in the process nevertheless.</span><br><span class="line"></span><br><span class="line">Given diverse experiments with different CV schemes I did over the period of the competition, I decided to simply combine all the results (over 30), I got into a single submission using a simple average after selection by pearson correlation (6th on private LB).</span><br><span class="line">In two instances over the last 3 weeks, I used a subset without leak of these experiments and use the leak to ensemble them but I gave up because the public LB was quite poor despite a better local CV and I thought it was overfitting. However, as I selected this method as my alternative solution, it appears this was the best on the final private LB.</span><br><span class="line"></span><br><span class="line">## Preprocessing:</span><br><span class="line"></span><br><span class="line">By lack of time, I only used the ideas and code of some excellent public kernels. I was more concerned about meter 1,2,3 and I didn&#39;t find a way to distinguish between the good 0s and the fake 0s.</span><br><span class="line"></span><br><span class="line">Edit: I forgot that I did some quick cleaning a while ago: I eliminated all 0s in the same period when these 0s occurs in the same site, at the same period and across all meters. [@ganfear](https:&#x2F;&#x2F;www.kaggle.com&#x2F;ganfear)</span><br><span class="line">wrote an excellent visualization [here](https:&#x2F;&#x2F;www.kaggle.com&#x2F;ganfear&#x2F;missing-data-and-zeros-visualized). My goal was to eliminate a maximum of &quot;vertical&quot; lines.</span><br><span class="line"></span><br><span class="line">## Feature Engineering:</span><br><span class="line"></span><br><span class="line">- Row feature from train&#x2F;test, weather metadata, and building metadata</span><br><span class="line">- Count features and combination of features (see excellent write up on IEEE competition)</span><br><span class="line">- Lag on row features but only the temperature feature lags seemed to be actually useful.</span><br><span class="line">- Features mentioned in public kernel such as RH, feel_likes and presence of other meters seems to have a marginal upside.</span><br><span class="line">- A feature that I only included in the other submission in the last days found in a research paper was working well with meter&#x3D;&#x3D;1 was :</span><br></pre></td></tr></table></figure>
+<p>latitude_dict = {0 :28.5383,<br>1 :50.9097,<br>2 :33.4255,<br>3 :38.9072,<br>4 :37.8715,<br>5 :50.9097,<br>6 :40.7128,<br>7 :45.4215,<br>8 :28.5383,<br>9 :30.2672,<br>10 :40.10677,<br>11 :45.4215,<br>12 :53.3498,<br>13 :44.9375,<br>14 :38.0293,<br>15: 40.7128,}</p>
+<p>train_df[‘latitude’] = train_df[‘site_id’].map(latitude_dict)<br>train_df[‘solarHour’] = (train_df[‘hour’]-12)<em>15 # to be removed<br>train_df[‘solarDec’] = -23.45*np.cos(np.deg2rad(360</em>(train_df[‘doy’]+10)/365)) # to be removed<br>train_df[‘horizsolar’] = np.cos(np.deg2rad(train_df[‘solarHour’]))<em>np.cos(np.deg2rad(train_df[‘solarDec’]))</em>np.cos(np.deg2rad(train_df[‘latitude’])) + np.sin(np.deg2rad(train_df[‘solarDec’]))*np.sin(np.deg2rad(train_df[‘latitude’]))</p>
+<p>train_df[‘horizsolar’] = train_df[‘horizsolar’].apply(lambda x: 0 if x &lt;0 else x)</p>
+<p>```</p>
+<p>it is supposed to calculate the solar horizontal radiation coming into the building.</p>
+<h2 id="Models"><a href="#Models" class="headerlink" title="Models:"></a>Models:</h2><p>I trained Keras CNN (@aerdem4 style), LightGBM and Catboost on diverse version of cleaned data, various feature selection (including removal of building_id) - without ever beating the best kernel without leak to my disappointment.</p>
+<p>I had better success on local CV with meter level model using decision trees rather than using all the meter in the same decision trees model. Catboost and Lightgbm are clearly using different selection of features for the splits, so they are quite complementary.</p>
+<p>Only towards the end of the competition, I realized that the NN was giving approximately the same results on both local cv and public LB than decision trees models and that most of the performance was due to the cleaning more than my feature engineering. However, the results were quite uncorrelated, so it was good for diversity.</p>
+<h2 id="Ensembling"><a href="#Ensembling" class="headerlink" title="Ensembling:"></a>Ensembling:</h2><p>My best submission is an ensemble of a small samples of leak free (~10) predictions among all my experiments. Using lightgbm, I used these different predictions as feature with the addition of the original feature “meter” in order to reduce overfitting. The leaky rows are used as training set in the ensembling model.</p>
+<p>My idea was that it is likely that the prediction of first 11% of the test set (included in the public LB) are going to be much better than the last 11% of the test set (private LB), so if I were to use the leak on the test set, I may be able to correct the last 11%. I was expecting a small hit on public LB but my public LB took such a larger hit than expected (+.025) that I thought I was overfitting and didn’t pursue that path. I kept the submission as my second final submission which became my best on private LB.</p>
+<h2 id="Didn’t-work-for-me-or-didn’t-give-any-significative-improvement"><a href="#Didn’t-work-for-me-or-didn’t-give-any-significative-improvement" class="headerlink" title="Didn’t work for me or didn’t give any significative improvement:"></a>Didn’t work for me or didn’t give any significative improvement:</h2><p>Pseudo labeling (read <a href="https://www.kaggle.com/hengck23" target="_blank" rel="noopener">@hengck23</a> posts for more information)<br>NN decoder-encoder using the leak in <a href="https://www.kaggle.com/mjahrer" target="_blank" rel="noopener">@mjahrer</a> style (reniew seems to have succeed in this direction: see here (<a href="https://www.kaggle.com/c/ashrae-energy-prediction/discussion/122203#699375" target="_blank" rel="noopener">https://www.kaggle.com/c/ashrae-energy-prediction/discussion/122203#699375</a>)<br>Thermometer encoding on cloud coverage<br>Treat temperature features as categorical variables (given limited number of values) and use target encoding.<br>Adaptation of <a href="https://www.kaggle.com/anokas" target="_blank" rel="noopener">@anokas</a> tool for time series feature<br>…</p>
+<p>Otherwise, I would like to thank all the people who taught me a lot on Kaggle among whom <a href="https://www.kaggle.com/Raddar" target="_blank" rel="noopener">@Raddar</a>, <a href="https://www.kaggle.com/cpmpml" target="_blank" rel="noopener">@cpmpml</a> and <a href="https://www.kaggle.com/titericz" target="_blank" rel="noopener">@titericz</a> during the years.</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
+          
+            <a href="/tags/kaggle/" rel="tag"># kaggle</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/professional-interview-tbsi/" rel="next" title="professional-interview-tbsi">
+                <i class="fa fa-chevron-left"></i> professional-interview-tbsi
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/daily-question-interview-tbsi/" rel="prev" title="daily-question-interview-tbsi">
+                daily-question-interview-tbsi <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Louieworth" />
+            
+              <p class="site-author-name" itemprop="name">Louieworth</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7Carchive">
+              
+                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/louieworth" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#2-1-2-评价指标"><span class="nav-number">1.</span> <span class="nav-text">2 1.2 评价指标</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Models"><span class="nav-number">1.1.</span> <span class="nav-text">Models:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ensembling"><span class="nav-number">1.2.</span> <span class="nav-text">Ensembling:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Didn’t-work-for-me-or-didn’t-give-any-significative-improvement"><span class="nav-number">1.3.</span> <span class="nav-text">Didn’t work for me or didn’t give any significative improvement:</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Louieworth</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <span id="busuanzi_container_site_pv">总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv">总访客<span id="busuanzi_value_site_uv"></span>人</span>
+    <span class="post-meta-divider">|</span>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '4YkTMPdpq8gz4Y5cE7p16Vqm-gzGzoHsz',
+        appKey: '730GISNngxd7utFYrHdOFLbf',
+        placeholder: 'Just go for it',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>

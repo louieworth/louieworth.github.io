@@ -1,0 +1,1860 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Machine Learning," />
+
+
+
+
+  
+
+
+  <link rel="alternate" href="/atom.xml" title="Louieworth's blog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="摘录于nowcoder 算法工程师面试宝典">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法面试宝典">
+<meta property="og:url" content="http://yoursite.com/%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/index.html">
+<meta property="og:site_name" content="Louieworth&#39;s blog">
+<meta property="og:description" content="摘录于nowcoder 算法工程师面试宝典">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8%5Cfullsizerender(1).jpg">
+<meta property="og:image" content="http://yoursite.com/%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8%5Cimage-20200413104105248.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181031190850939.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM0ODg2NDAz,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628156809_464688A482D54A6B76D55AA22FE87CB6">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628192618_98FB0B648654ED4EB53DB8328218EA39">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628310825_12B43EC8C612374358A755E3711D0E3D">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628292820_16431AAE44FC27E61915C82CA6E38106">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628269067_8364E171D17D19191B75A317F75A5524">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628246681_74701FC2F6C6C809BD5C59620A71092A">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628336860_EDEA503FC06A9E195A68CEF95901677C">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628377892_4CAE7B286EA23760C0C438021A40C421">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628401215_E1CD321FE302C02B257A0840F415EE68">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628429031_022DC6628FAD2431547AB90BBC660033">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628490936_9D5E76E02B87531758512D79F642D093">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628603079_E4A3B22C3777267277A22FCB86F16A09">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628624395_1E29A25BBD05C193537EF96F4F367DDB">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628645965_97E3996D719420BD8FD046698495AC8D">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628669311_78F800D5EE77C087FAD8A7ED4D493AD2">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628691243_0E7F39CE64ED9B7B74CB3FD687B5CE2F">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628712611_A404F50FEC299DA5F90B0E1D3F6E97BC">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628740669_2879AB5674152443C45A35FA698390A7">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628754920_9124D1BE8521BDD45298192B8F57C46C">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628780880_BCAC67BA50235D5ECBC62002777A1675">
+<meta property="og:image" content="http://yoursite.com/%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8%5Cimage-20200311164740765.png">
+<meta property="og:image" content="http://yoursite.com/%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8%5Cimage-20200311164749530.png">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552627851763_F616533D5B04DDB7D7B15192990F8374">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552627881133_7BB9D520F71DCFD398E4AA9CD3407F7D">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552627909278_948E6CCA17A9D6B5BFF1DA3D49844077">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552627977636_23F58DFE507EBF294F6744DFF6FA5F97">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552627960637_56487D7EE55D123BC95C7EA3BF165A97">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552627991042_D00D1C7AD0BB4157F322B1C27021FF2C">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628049041_E97F977CF363620D9944FCD1001BCA6B">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552653124869_EF9E9922885E2C62406891E4B3B65F31">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552653108200_7B75C800713DA165E37727C5020EFA80">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552653168282_889B72178AB5071E4E2BB49C30005340">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552653191923_4B98744FC993A4F5636CD930199EFCB4">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552654356997_C14022E909704D601526BE46C12F5B32">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552654336100_D9D86CDDDFD56E5AC66FA7122337BB34">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552654318424_C601668340D98EE27A9FD52BE0B41E17">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552654218581_DA95B0A56591F1C9282B2990A1722F21">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552654229021_2B788F295514EACE36B431E4834D5F61">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552654275454_6D0F9075126C579116BABEBA0744F1BD">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552654545445_AA41B6FD9D442CD3F1BD7E58A9FADF6E">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552654531702_8C8E87DEB95D4EE1251D4C1727E6E338">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552654515691_247EF8F9FB11113DF4095C2AF693DB7E">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552654498504_E74F441D04F2B635B26975278595311D">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552654483338_BA4FD8E055E6CC4DDBA93F9774B548A4">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552654469172_F531D4625946FBDE30017CF92A508DD8">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552654451035_2DB3B28ECCF5B5A190EDE8F315E673D9">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552654624457_DADDD0F0171B5F2ADFDC767043C36B94">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552654685059_2842BAC8D592204451186D4BB0281E21">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552654671657_8915C25DF2078E084BCD9002BE3FADB9">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552654657763_0C64F280CB46F2223B5E422CD44DDDCA">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656677625_FF34E061732DAAD6F56E628A04C973E6">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656704748_9089EB58C9CA105E9B5104A9D94C7AA7">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656732709_6BFE2F1945BF6A79249C6D6DDDEE333B">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656754223_12F0C02F17079F8B944E7694DC211CB3">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656770652_D2CDC96BBFB62EEF0487ACD1DC5264D3">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656827857_2EE502CE04932EF4279481D28018B177">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656804373_EC9091B97CCB534D853840BD04FE6A7F">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656848034_C658E5EB67ECE128C8D07E8CC71149DA">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656886322_1E1FD7D35C2B1DCAFEB70CABF0239E03">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656911226_61F97563CECD1A6F6E5028F9524E6541">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656925875_72041D6C6CC34609D29F55069B0311A2">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656966099_2B43AED945D3B62E88A8D38952145614">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656992885_40F1E38D81E7721E017831E71763F32F">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552657014300_70EDAB8FC8EFDAA1942F72ADE1D43390">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552657030794_F1079F5DA0EA513EE47824D37795038E">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552657050271_B07B91CEB729EA962F28412AEBFCB6C7">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552657068967_464BB8DF4799DC22DE520628B0F42624">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552657087871_34B55AE81571311B22B43DF2F49D3F0F">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552657107386_9952B4D00DB6F50BF841E077515A3AA9">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552657125940_C25B7BCDF1E4894B22AC1FAF5FDD7AD2">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552657141501_FDB405EA6E266038BD5EC5F99B0C0939">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552657159215_E240C1B6CD76B3FC1518B7BE52A03B69">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552657180118_B84C74766069C38C760D55C4E5709BB1">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552657197885_93D6433C47DE87FDB33F04C1616D4ED8">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552657211255_6665CAB3A3F4293F4531C6BEF6AC158E">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552657231203_3FDC52400C0A2EBCFC47E0CE42A3EF3F">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552657260170_076D779534DB894413D97466ADF992EB">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552657274597_01DDF1500C0F149B8D61AFA16F268C53">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552657292040_D1B69B77582B1C699434A12C4362D163">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552657306876_AE49C56181F81364C52C4320C096A65F">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552657321955_465152844F4D5F9BDCB7D7D43D7AA23C">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552657337012_AA79E45F5BB3F5BF77BED9B4C6C999D3">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552657360598_6B3983E303AC7B5A489F85F0803A84B1">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552657377762_5D1A1F0A842C55BC853101A3A7E9F9F2">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656623279_51F811FC3B63504DD5431AF7002964B3">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656602182_0D31BBDD73A76C383BB2A5C9E399CCE3">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656587658_E7EAAFAC1B564EB02FB34B7C011B3A95">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656564973_1544DF6BE05D68029AD76D2D4B702998">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656540364_98DFAD890ECD62189D5536AA9DB847A9">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656518837_318849129B615DE36D0A83C9FD5C1C81">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656505656_E712403E822207687A520953DAEDA0A7">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656489287_C6C098B994B79A7AF323D95D295E8072">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656461569_895AAA9A0A0E2CD4A8B03DE08B3084DF">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656446220_27BD5599218262EDAA8A5001AB587C17">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656431985_2EFEF4BCCDC11C4BAF9D1EBB838FF680">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656409137_05F42387CE0EDBA59A60B1E5C4811EE0">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656392960_E0DD2E188790E5A02EC754BCFACB62AF">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656340146_9C63ED721D886E77D5FE6E2338B71032">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656322624_4C09F6A58029239D1F23589B927D49A8">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656309240_BF8BCAE96917ACD0A8DD21D12FACD0BE">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656288880_23AD4B453566E704D4D2E202F108B030">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656266616_45A20D0A9862DB6760A8E6FED66FF022">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656245516_9A3B5E337162684A35963B34DD2664F8">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656220402_ADB8903117E980E303E440463D8B8241">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656204236_8E6FC4314DE15D388F98BD3DF3E51DAC">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656172149_602749E68CEB5CE1B57F555BEE7A34C9">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656157638_D920156D24954BA2C5B89763F65C15F3">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656141597_9C2812809D5788A879AF146456C3F9E4">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656122019_C0D8C9E00395775C9797AEAF5E09C046">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656104966_30B30C0B0612F65E8F2D82F5B7C35FF4">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656069961_A1C4792A0C76FCE7E8D385FD03CB0F02">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656053181_0F000183E0D3A734CFC84AE5596DEB58">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656036127_1FC3995EAB08ED094DD4DFC1FA1C04DB">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656017395_CAE8E56F913E3E851B1CBD9DD0091A14">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552655991598_2895D0185B0F5A2CA83A52CCE36A2B7C">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552655973151_CF419F037C10C1CE1567B88065FB90FB">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552655942553_9B8C6D511BFF35C8A749D00197468740">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552655923695_CCD81F07EB9E6C74DA25248291C51583">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552655841514_59FF926517000E3489AB302F701396FF">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552655803749_6A67769E416B886272A59347BE217460">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552655779212_9389B3273638C142D32F989091FFF783">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552655760860_777D4809B1E4212B0FA8992D6DD39F0A">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552655738327_F6088594CD21E495E728AE032DD5440F">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552655685749_F81E0FE60A972524B16733C5D081A2CC">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552655605718_922CBCB515D74D41675482672DE098F0">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552655632422_341A9542C89D756E1ECF40E98D437BAF">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552655514310_C24BD4F81FE2BC277BBA048ACB319ACE">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552655537580_09189906EEE453215C5A4209DA8489AD">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552655051313_C4EBEEB2A4ECD0C589E64DACF8E59A21">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552655442602_F6434E4F72AA10C3D4B71164C3909C3B">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552655421168_D31E3FC278C55C6FFE20B4AC4D6A70A8">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552655394365_8607A96CD03E4088717E3246934622C1">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552655322029_D418144E5B109EDDF8B6325FDBAF467C">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552655171001_A815CFF6D10A553AEDC2BB002E0FFB97">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20190315/311436_1552655011455_32E13B7D17BDE8B45B6D788808C74D17">
+<meta property="article:published_time" content="2020-06-06T23:04:24.000Z">
+<meta property="article:modified_time" content="2020-06-07T01:11:40.042Z">
+<meta property="article:author" content="Louieworth">
+<meta property="article:tag" content="Machine Learning">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8%5Cfullsizerender(1).jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/算法面试宝典/"/>
+
+
+
+
+
+  <title>算法面试宝典 | Louieworth's blog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Louieworth's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Stay foolish, stay healthy.</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tools">
+          <a href="/tools/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-bars"></i> <br />
+            
+            tools
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Louieworth">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Louieworth's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">算法面试宝典</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-07T07:04:24+08:00">
+                2020-06-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/tbsi-interview/" itemprop="url" rel="index">
+                    <span itemprop="name">tbsi_interview</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>摘录于nowcoder <a href="https://www.nowcoder.com/tutorial/95/8e6d5dae0758456089640d5f42cc77ab" target="_blank" rel="noopener">算法工程师面试宝典</a><a id="more"></a></p>
+<p><img src="/%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8%5Cfullsizerender(1).jpg" alt="\fullsizerender(F:/md笔记/复试/算法面试宝典/fullsizerender(1).jpg).jpg)"></p>
+<h1 id="数学基础"><a href="#数学基础" class="headerlink" title="数学基础"></a>数学基础</h1><h2 id="L1不可导的时候该怎么办"><a href="#L1不可导的时候该怎么办" class="headerlink" title="L1不可导的时候该怎么办"></a>L1不可导的时候该怎么办</h2><p>当损失函数不可导,梯度下降不再有效,可以使用<strong>坐标轴下降法</strong>,梯度下降是沿着当前点的负梯度方向进行参数更新,而坐标轴下降法是沿着坐标轴的方向,假设有m个特征个数,坐标轴下降法进参数更新的时候,先固定m-1个值,然后再求另外一个的局部最优解,从而避免损失函数不可导问题。</p>
+<p>使用Proximal Algorithm对L1进行求解,此方法是去优化损失函数上界结果。</p>
+<h2 id="最大似然估计和最大后验概率的区别"><a href="#最大似然估计和最大后验概率的区别" class="headerlink" title="最大似然估计和最大后验概率的区别?"></a>最大似然估计和最大后验概率的区别?</h2><p>最大似然估计提供了一种给定观察数据来评估模型参数的方法,而最大似然估计中的采样满足所有采样都是<strong>独立同分布</strong>的假设。最大后验概率是<strong>根据经验数据获难以观察量的点估计</strong>,与最大似然估计最大的不同是最大后验概率<strong>融入了要估计量的先验分布</strong>在其中,所以最大后验概率可以看做<strong>规则化</strong>的最大似然估计。</p>
+<h2 id="频率学派和贝叶斯学派的区别"><a href="#频率学派和贝叶斯学派的区别" class="headerlink" title="频率学派和贝叶斯学派的区别"></a>频率学派和贝叶斯学派的区别</h2><p>频率派认为抽样是无限的,在无限的抽样中,对于决策的规则可以很精确。</p>
+<p>The frequency group thinks that sampling is infinite, so the decision rule can be precision.</p>
+<p>贝叶斯派认为世界无时无刻不在改变,未知的变量和事件都有一定的概率,即<strong>后验概率是先验概率的修正</strong>。</p>
+<p>频率派认为模型参数是固定的,一个模型在无数次抽样后,参数是不变的。而贝叶斯学派认为数据才是固定的而参数并不是。</p>
+<p>频率派认为模型不存在先验而贝叶斯派认为模型存在先验。</p>
+<h2 id="PCA"><a href="#PCA" class="headerlink" title="PCA"></a>PCA</h2><p>PCA是比较常见的线性降维方法,通过线性投影将高维数据映射到低维数据中,所期望的是在投影的维度上,新特征自身的<strong>方差尽量大</strong>,方差越大特征越有效,尽量使产生的新特征间的相关性越小。</p>
+<p>PCA算法的具体操作为对所有的样本进行中心化操作,计算样本的协方差矩阵,然后对协方差矩阵做特征值分解,取最大的n个特征值对应的特征向量构造投影矩阵。</p>
+<h2 id="拟牛顿法的原理"><a href="#拟牛顿法的原理" class="headerlink" title="拟牛顿法的原理"></a>拟牛顿法的原理</h2><p>牛顿法大致的思路是采用泰勒展开的二阶近似。若Hessian矩阵是正定的，函数的局部最小值可以通过使上面的二次型的一阶导数等于0来获取。</p>
+<p>牛顿法的收敛速度快,迭代次数少,但是Hessian矩阵很稠密时,每次迭代的计算量很大,随着数据规模增大,Hessian矩阵也会变大,需要更多的存储空间以及计算量。</p>
+<p>拟牛顿法就是在牛顿法的基础上<strong>引入了Hessian矩阵的近似矩阵</strong>,避免了每次都计算Hessian矩阵的逆,在拟牛顿法中,用<strong>Hessian矩阵的逆矩阵</strong>来代替Hessian矩阵,虽然不能像牛顿法那样保证最优化的方向,但其<strong>逆矩阵始终是正定</strong>的,因此算法始终 朝最优化的方向搜索。</p>
+<p>正定矩阵(Positive matrix):</p>
+<p><img src="/%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8%5Cimage-20200413104105248.png" alt="image-20200413104105248"></p>
+<p><img src="https://img-blog.csdnimg.cn/20181031190850939.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM0ODg2NDAz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h1 id="前面几个算法模型"><a href="#前面几个算法模型" class="headerlink" title="前面几个算法模型"></a>前面几个算法模型</h1><h2 id="朴素贝叶斯基本原理"><a href="#朴素贝叶斯基本原理" class="headerlink" title="朴素贝叶斯基本原理"></a>朴素贝叶斯基本原理</h2><p>朴素贝叶斯分类和预测算法的原理</p>
+<p>决策树和朴素贝叶斯是最常用的两种分类算法，本篇文章介绍朴素贝叶斯算法。贝叶斯定理是以英国数学家贝叶斯命名，用来解决两个条件概率之间的关系问题。简单的说就是在已知P(A|B)时如何获得P(B|A)的概率。朴素贝叶斯（Naive Bayes）假设特征P(A)在特定结果P(B)下是独立的。</p>
+<p>1.概率基础：</p>
+<p>在开始介绍贝叶斯之前，先简单介绍下概率的基础知识。概率是某一结果出现的可能性。例如，抛一枚匀质硬币，正面向上的可能性多大？概率值是一个0-1之间的数字，用来衡量一个事件发生可能性的大小。概率值越接近1，事件发生的可能性越大，概率值越接近0，事件越不可能发生。我们日常生活中听到最多的是天气预报中的降水概率。概率的表示方法叫维恩图。下面我们通过维恩图来说明贝叶斯公式中常见的几个概率。</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628156809_464688A482D54A6B76D55AA22FE87CB6" alt="img"></p>
+<p>在维恩图中：</p>
+<p>S：S是样本空间，是所有可能事件的总和。</p>
+<p>P(A)：是样本空间S中A事件发生的概率，维恩图中绿色的部分。</p>
+<p>P(B)：是样本空间S中B事件发生的概率，维恩图中蓝色的部分。</p>
+<p>P(A∩B)：是样本空间S中A事件和B事件同时发生的概率，也就是A和B相交的区域。</p>
+<p>P(A|B)：是条件概率，是B事件已经发生时A事件发生的概率。</p>
+<p>对于条件概率，还有一种更清晰的表示方式叫概率树。下面的概率树表示了条件概率P(A|B)。与维恩图中的P(A∩B)相比，可以发现两者明显的区别。P(A∩B)是事件A和事件B同时发现的情况，因此是两者相交区域的概率。而事件概率P(A|B)是事件B发生时事件A发生的概率。这里有一个先决条件就是P(B)要首先发生。</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628192618_98FB0B648654ED4EB53DB8328218EA39" alt="img"></p>
+<p>因为条件概率P(A|B)是在事件B已经发生的情况下，事件A发生的概率，因此P(A|B)可以表示为事件A与B的交集与事件B的比率。</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628310825_12B43EC8C612374358A755E3711D0E3D" alt="img">该公式还可以转换为以下形式，以便我们下面进行贝叶斯公式计算时使用。</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628292820_16431AAE44FC27E61915C82CA6E38106" alt="img">2.贝叶斯公式：</p>
+<p>贝叶斯算法通过已知的P(A|B)，P(A),和P(B)三个概率计算P(B|A)发生的概率。假设我们现在已知P(A|B)，P(A)和P(B)三个概率，如何计算P(B|A)呢？通过前面的概率树及P(A|B)的概率可知，P(B|A)的概率是在事件A发生的前提下事件B发生的概率，因此P(B|A)可以表示为事件B与事件A的交集与事件A的比率。</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628269067_8364E171D17D19191B75A317F75A5524" alt="img">该公式同样可以转化为以下形式：</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628246681_74701FC2F6C6C809BD5C59620A71092A" alt="img">)到这一步，我们只需要证明P(A∩B)= P(B∩A)就可以证明在已知P(A|B)的情况下可以通过计算获得P(B|A)的概率。我们将概率树转化为下面的概率表，分别列出P(A|B),P(B|A),P(A),和P(B)的概率。<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628336860_EDEA503FC06A9E195A68CEF95901677C" alt="img"></p>
+<p>通过计算可以证明P(A|B)<em>P(B)和P(B|A)</em>P(A)最后求得的结果是概率表中的同一个区域的值，因此：</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628377892_4CAE7B286EA23760C0C438021A40C421" alt="img"></p>
+<p>我们通过P(A∩B)= P(B∩A)证明了在已知P(A|B)，P(A),和P(B)三个概率的情况下可以计算出P(B|A)发生的概率。整个推导和计算过程可以说得通。但从统计学的角度来看，P(A|B)和P(B|A)两个条件概率之间存在怎样的关系呢？我们从贝叶斯推断里可以找到答案。</p>
+<p>3.贝叶斯推断：</p>
+<p>贝叶斯推断可以说明贝叶斯定理中两个条件概率之间的关系。换句话说就是我们为什么可以通过P(A|B)，P(A),和P(B)三个概率计算出P(B|A)发生的概率。</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628401215_E1CD321FE302C02B257A0840F415EE68" alt="img"></p>
+<p>在贝叶斯推断中，每一种概率都有一个特定的名字：</p>
+<p>P(B)是”先验概率”(Prior probability)。</p>
+<p>P(A)是”先验概率”(Prior probability)，也作标准化常量(normalized constant)。</p>
+<p>P(A|B)是已知B发生后A的条件概率，叫做似然函数(likelihood)。</p>
+<p>P(B|A)是已知A发生后B的条件概率，是我们要求的值，叫做后验概率。</p>
+<p>P(A|B)/P(A)是调整因子，也被称作标准似然度（standardised likelihood）。</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628429031_022DC6628FAD2431547AB90BBC660033" alt="img"></p>
+<p>贝叶斯推断中有几个关键的概念需要说明下：</p>
+<p>第一个是先验概率，先验概率是指我们主观通过事件发生次数对概率的判断。</p>
+<p>第二个是似然函数，似然函数是对某件事发生可能性的判断，与条件概率正好相反。通过事件已经发生的概率推算事件可能性的概率。</p>
+<p>维基百科中对似然函数与概率的解释：</p>
+<p>概率：是给定某一参数值，求某一结果的可能性。</p>
+<p>例如，抛一枚匀质硬币，抛10次，6次正面向上的可能性多大？</p>
+<p>似然函数：给定某一结果，求某一参数值的可能性。</p>
+<p>例如，抛一枚硬币，抛10次，结果是6次正面向上，其是匀质的可能性多大？</p>
+<p>第三个是调整因子：调整因子是似然函数与先验概率的比值，这个比值相当于一个权重，用来调整后验概率的值，使后验概率更接近真实概率。调整因子有三种情况，大于1，等于1和小于1。</p>
+<p>调整因子P(A|B)/P(A)&gt;1：说明事件可能发生的概率要大于事件已经发生次数的概率。</p>
+<p>调整因子P(A|B)/P(A)=1：说明事件可能发生的概率与事件已经发生次数的概率相等。</p>
+<p>调整因子P(A|B)/P(A)&lt;1：说明事件可能发生的概率与事件小于已经发生次数的概率。</p>
+<p>因此，贝叶斯推断可以理解为通过先验概率和调整因子来获得后验概率。其中调整因子是根据事件已经发生的概率推断事件可能发生的概率（通过硬币正面出现的次数来推断硬币均匀的可能性），并与已经发生的先验概率（硬币正面出现的概率）的比值。通过这个比值调整先验概率来获得后验概率。</p>
+<p>后验概率＝先验概率ｘ调整因子</p>
+<h2 id="朴素贝叶斯和贝叶斯网络的区别"><a href="#朴素贝叶斯和贝叶斯网络的区别" class="headerlink" title="朴素贝叶斯和贝叶斯网络的区别"></a>朴素贝叶斯和贝叶斯网络的区别</h2><table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">贝叶斯网络</th>
+<th align="center">朴素贝叶斯</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">假设前提</td>
+<td align="center">各变量都是离散型的各特征有依赖（不确定的因果推理）关系（变量无关）贝叶斯网络每一个节点在其直接前驱节点的值制定后，这个节点条件独立于其所有非直接前驱前辈节点。P(v|par(v),x1,x2…,xn) = P(v|par(v))贝叶斯网络放宽了每个变量独立的假设</td>
+<td align="center">各特征彼此独立朴素贝叶斯中对于若干条件概率值不存在的问题，一般通过将所有的概率值加1来解决且对被解释变量的影响一致，不能进行变量筛选</td>
+</tr>
+<tr>
+<td align="center">应用案例</td>
+<td align="center">在信息不完备的情况下通过可以观察随机变量推断不可观察的随机变量[1]解决文本分类时，相邻词的关系、近义词的关系</td>
+<td align="center">分类</td>
+</tr>
+<tr>
+<td align="center">缺点</td>
+<td align="center">不能对变量进行筛选，因为不能放宽对被解释变量影响一致的假设</td>
+<td align="center">彼此不独立的特征之间建立朴素贝叶斯，反而加大了模型复杂性</td>
+</tr>
+<tr>
+<td align="center">优点</td>
+<td align="center">贝叶斯原理和图论相结合，建立起一种基于概率推理的数学模型,对于解决复杂的不确定性和关联性问题有很强的优势 对缺失数据不敏感可以学习因果关系，加深对数据的理解能将先验知识融入建模避免了过度拟合问题，不需要保留数据进行检验【4】</td>
+<td align="center">简单，对于给出的待分类项，会选择条件概率最大的类别，这就是朴素贝叶斯的思想基础</td>
+</tr>
+</tbody></table>
+<h2 id="LR推导"><a href="#LR推导" class="headerlink" title="LR推导"></a>LR推导</h2><p>逻辑回归本质上是线性回归，只是在特征到结果的映射中加入了一层逻辑函数g(z)，即先把特征线性求和，然后使用函数g(z)作为假设函数来预测。g(z)可以将连续值映射到0 和1。g(z)为sigmoid function.</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628490936_9D5E76E02B87531758512D79F642D093" alt="img">则<br><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628603079_E4A3B22C3777267277A22FCB86F16A09" alt="img"></p>
+<p>sigmoid function 的导数如下：</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628624395_1E29A25BBD05C193537EF96F4F367DDB" alt="img"></p>
+<p>逻辑回归用来分类0/1 问题，也就是预测结果属于0 或者1 的二值分类问题。这里假设了二值满足伯努利分布，也就是</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628645965_97E3996D719420BD8FD046698495AC8D" alt="img"></p>
+<p>其也可以写成如下的形式：</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628669311_78F800D5EE77C087FAD8A7ED4D493AD2" alt="img"></p>
+<p>对于训练数据集，特征数据x={x1, x2, … , xm}和对应的分类标签y={y1, y2, … , ym}，假设m个样本是相互独立的，那么，极大似然函数为：</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628691243_0E7F39CE64ED9B7B74CB3FD687B5CE2F" alt="img"></p>
+<p>log似然为：</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628712611_A404F50FEC299DA5F90B0E1D3F6E97BC" alt="img"></p>
+<p>如何使其最大呢？与线性回归类似，我们使用梯度上升的方法（求最小使用梯度下降），那么<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628740669_2879AB5674152443C45A35FA698390A7" alt="img">。</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628754920_9124D1BE8521BDD45298192B8F57C46C" alt="img"></p>
+<p>如果只用一个训练样例（x，y），采用随机梯度上升规则，那么随机梯度上升更新规则为：</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628780880_BCAC67BA50235D5ECBC62002777A1675" alt="img"></p>
+<h2 id="逻辑回归的损失函数MLE？"><a href="#逻辑回归的损失函数MLE？" class="headerlink" title="逻辑回归的损失函数MLE？"></a>逻辑回归的损失函数MLE？</h2><ul>
+<li><p>损失函数一般有四种，平方损失函数，对数损失函数，HingeLoss0-1损失函数，绝对值损失函数。将极大似然函数取对数以后等同于对数损失函数。在逻辑回归这个模型下，对数损失函数的训练求解参数的速度是比较快的。至于原因大家可以求出这个式子的梯度更新</p>
+<p><img src="/%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8%5Cimage-20200311164740765.png" alt="image-20200311164740765"></p>
+<p>这个式子的更新速度只和</p>
+<p><img src="/%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8%5Cimage-20200311164749530.png" alt="image-20200311164749530"></p>
+<p>相关。和sigmod函数本身的梯度是无关的。这样更新的速度是可以自始至终都比较的稳定。</p>
+</li>
+<li><p>为什么不选平方损失函数的呢？其一是因为如果你使用平方损失函数，你会发现梯度更新的速度和sigmod函数本身的梯度是很相关的。sigmod函数在它在定义域内的梯度都不大于0.25。这样训练会非常的慢。</p>
+</li>
+</ul>
+<h2 id="关于正则化参数的问题"><a href="#关于正则化参数的问题" class="headerlink" title="关于正则化参数的问题"></a>关于正则化参数的问题</h2><p>在逻辑回归中加入了惩罚项：α</p>
+<p>我们使用的是梯度下降来减少cost function.当我们不断加大参数的大小的时候，为了使得损失函数变小，相应的预测函数theta也会在一定程度上减少，所以当惩罚项很大的时候，最后变成一条直线。会导致underfitting.<br>$$<br>h(\theta_0,\theta_1)=\theta_0+\theta_1x<br>$$<br>会使得theta1几乎等于0.但是当惩罚项又太小的话，不会改变他overfitting的状况。</p>
+<h2 id="L1和L2正则化的区别"><a href="#L1和L2正则化的区别" class="headerlink" title="L1和L2正则化的区别"></a>L1和L2正则化的区别</h2><p>L1是模型各个参数的绝对值之和,L2为各个参数平方和的开方值。L1更趋向于产生少量的特征,其它特征为0,最优的参数值很大概率出现在坐标轴上,从而导致产生稀疏的权重矩阵,而L2会选择更多的矩阵,但是这些矩阵趋向于0。</p>
+<ul>
+<li>解空间角度</li>
+<li>贝叶斯先验概率角度（GOSS分布和拉普拉斯分布）</li>
+<li>纯数学推导角度</li>
+</ul>
+<h2 id="ID3-C4-5和CART三种决策树的区别"><a href="#ID3-C4-5和CART三种决策树的区别" class="headerlink" title="ID3,C4.5和CART三种决策树的区别"></a>ID3,C4.5和CART三种决策树的区别</h2><p>ID3决策树优先选择信息增益大的属性来对样本进行划分,但是这样的分裂节点方法有一个很大的缺点,当一个<strong>属性可取值数目较多时,可能在这个属性对应值下的样本只有一个或者很少个</strong>,此时它的信息增益将很高,ID3会认为这个属性很适合划分,但实际情况下叫多属性的取值会使模型的泛化能力较差,所以C4.5不采用信息增益作为划分依据,而是采用信息增益率作为划分依据。但是<strong>仍不能完全解决以上问题,而是有所改善</strong>,这个时候引入了CART树,它使用gini系数作为节点的分裂依据。</p>
+<h2 id="决策树的减枝"><a href="#决策树的减枝" class="headerlink" title="决策树的减枝"></a>决策树的减枝</h2><p>决策树的剪枝通常高两种方法，预剪枝（ Pre - Prun i ng ）和 后剪枝( Post - Pruning ）。那么这两种万法是如何进行的呢？ ‘8 们又各有什么优缺点？<br>分析与解答<br>预剪枝 即在生成决策树的过程中提前停止树的增长 。 而后剪枝 ，是在巴生成的过拟台决策树上进行剪枝 3 得到简化版的剪枝决策树 。</p>
+<p>•  预剪枝<br>预剪枝的核心思想是在树中结点进行扩展之前，<strong>先计算当前的划分是否能带来模型泛化能力Generalization capability的提升</strong>，如果不能，则不再继续生长子树 。此时可能存在不同类别的样本同时存于结点中，搜照多数投票的原则判断该结点所属类别。预剪枝对于何时停止决策树的生长有以下几种方法 。</p>
+<p>(  1 ）当树到达一定深度的时候，停止树的主长 。<br>( 2 ）当到达当前结点的样本数量小于某个闺值的时候，停止树的生长 。<br>( 3 ）计算每次分裂对测试集的准确度提升 3 当小于某个｜渴值的时候 3 不再继续扩展 。<br>预剪枝真奇思想直接、算法简单、效率高等特点，适合解决大规模问题 。 但如何准确地估计何时停止树的生长（即上述方法中的深度或闺值），针对不同问题会有很大差别，需要一定经验判断。且预剪枝存在一定局限性，高欠拟台的风险，虽然当前的划分会导致测试集准确率降低 3 但在之后的划分中，准确率可能会高显著上升 。</p>
+<p>后剪枝</p>
+<p>后剪枝的核心思想是让算法生成一棵完全生长的决策树，然后从最底层向上计算是否剪枝。剪枝过程将子树删除 3 用一个叶子结点苔代，该结点的类别同样按照多数投票的原则进行判断 。 同样地 3 后剪枝也可以通过在测试集上的准确率进行判断，如果剪枝过后准确率有所提升，则进行剪枝 。 相比于预剪枝，后剪枝方法通常可以得到泛化能力更强的决策树，但时间开销会更大。常见的后剪枝方法包括错误率降低剪枝（ Reduced Error Pruning,<br>REP ）、悲观剪枝（ Pess i mistic Error Pruning,  PEP ）、代价复杂度剪枝（ Cost Complexity Pruning ,  CCP ）、最小误差剪枝（ MinimumError Pruning ,  MEP ）、 CVP ( Critical Value Pruning ）、 OPP ( Optimal<br>Pruning ）等方法，这些剪枝万法各有利弊，关注不同的优化角度，本文选取著名的 <strong>CART 剪枝方法</strong> CCP 进行介绍 。</p>
+<p>CART-pruning</p>
+<ol>
+<li>首先从生成算法产生的决策树T0底端开始不断剪枝，直到T0根节点，形成一个子树subtree 序列｛T0,T1,T2…..TN｝；</li>
+<li>通过交叉验证（cross-validation）对子树集进行测试，从选出最优子树。</li>
+</ol>
+<h1 id="SVM"><a href="#SVM" class="headerlink" title="SVM"></a>SVM</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">SVM核函数的使用和了解</span><br><span class="line"></span><br><span class="line">SVM的特点，解决线性不可分的优势</span><br><span class="line"></span><br><span class="line">SVM选择原因</span><br><span class="line"></span><br><span class="line">SVM模型参数调整</span><br><span class="line"></span><br><span class="line">SVM模型优化</span><br><span class="line"></span><br><span class="line">SVM的应用场景，应用方式</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="SVM中核函数的选择"><a href="#SVM中核函数的选择" class="headerlink" title="SVM中核函数的选择?"></a>SVM中核函数的选择?</h2><p>当数据的<strong>特征提取的较好</strong>,所包含的信息量足够大,很多问题是线性可分的那么可以采用线性核。若<strong>特征数较少,样本数适中,对于时间不敏感,遇到的问题是线性不可分</strong>的时候可以使用高斯核来达到更好的效果。</p>
+<p>SVM支持向量机，一般用于二分类模型，支持线性可分和非线性划分。SVM中用到的核函数有线性核’linear’、多项式核函数pkf以及高斯核函数rbf。</p>
+<ol>
+<li><p>当训练数据线性可分时，一 般用线性核函数，直接实现可分；</p>
+</li>
+<li><p>当训练数据不可分时，需要使用核技巧，将训练数据映射到另一个高维空间，使再高维空间中，数据可线性划分。</p>
+</li>
+</ol>
+<p>1）可以利用专家<strong>先验知识余弦</strong>选定核函数，例如已经知道问题是线性可分的，就可以使用线性核，不必选用非线性核</p>
+<p>2）利用交叉验证，试用不同的核函数，误差最小的即为效果最好的核函数</p>
+<p>3）混合核函数方法，将不同的核函数结合起来</p>
+<p>我觉得问题是线性可分和线性不可分其中之一，那在选择核函数的时候，如果不清楚问题属于哪一类，就两类核都尝试一下，所以可以主要尝试线性核以及RBF核。</p>
+<p>1） Linear核：主要用于线性可分的情形。参数少，速度快，对于一般数据，分类效果已经很理想了。</p>
+<p>2）RBF核：主要用于线性不可分的情形。参数多，分类结果非常依赖于参数。有很多人是通过训练数据的<strong>交叉验证</strong>来寻找合适的参数，不过这个过程比较耗时。</p>
+<p>至于到底该采用哪种核，要根据具体问题，有的数据是线性可分的，有的不可分，需要多尝试不同核不同参数。如果特征的提取的好，包含的信息量足够大，很多问题都是线性可分的。当然，如果有足够的时间去寻找RBF核参数，应该能达到更好的效果。</p>
+<p>没有一种黄金规则可以确定哪种核函数将推导出最准确的SVM，在实践中，核函数的选择一般并不导致准确率的很大差别。SVM总是发现全局解，而不是局部解。</p>
+<h2 id="SVM与LR的区别"><a href="#SVM与LR的区别" class="headerlink" title="SVM与LR的区别?"></a>SVM与LR的区别?</h2><ul>
+<li>LR采用的损失函数为logisticalloss（通过伯努利二项分布，最大似然函数）,而SVM采用的是hingeloss(合页损失)。</li>
+<li>支持向量机只考虑局部的边界线附近的点，而逻辑回归考虑全局（远离的点对边界线的确定也起作用）。</li>
+<li>在解决非线性问题时，支持向量机采用核函数的机制，而LR通常不采用核函数的方法。</li>
+<li>线性SVM依赖数据表达的距离测度，所以需要对数据先做normalization，LR不受其影响。（引自<a href="http://www.zhihu.com/question/26768865/answer/34078149）" target="_blank" rel="noopener">http://www.zhihu.com/question/26768865/answer/34078149）</a></li>
+<li><strong>**SVM的损失函数就自带正则！！！（损失函数中的1/2||w||^2项），这就是为什么SVM是</strong>结构风险最小化算法的原因！！！**而LR必须另外在损失函数上添加正则项！！！</li>
+</ul>
+<p>以前一直不理解为什么SVM叫做结构风险最小化算法，所谓结构风险最小化，意思就是在训练误差和模型复杂度之间寻求平衡，防止过拟合，从而达到真实误差的最小化。未达到结构风险最小化的目的，最常用的方法就是添加正则项，后面的博客我会具体分析各种正则因子的不同，这里就不扯远了。但是，你发现没，SVM的目标函数里居然自带正则项！！！</p>
+<p>在Andrew NG的课里讲到过：<br>\1. 如果Feature的数量很大，跟样本数量差不多，这时候选用LR或者是Linear Kernel的SVM   m&gt;&gt;n<br>\2. 如果Feature的数量比较小，样本数量一般，不算大也不算小，选用SVM+Gaussian Kernel  m=10-1000 n=10-10000<br>\3. 如果Feature的数量比较小，而样本数量很多，需要手工添加一些feature变成第一种情况</p>
+<hr>
+<ul>
+<li><p>形式简单，模型的可解释性非常好。从特征的权重可以看到不同的特征对最后结果的影响，某个特征的权重值比较高，那么这个特征最后对结果的影响会比较大。</p>
+</li>
+<li><p>模型效果不错。在工程上是可以接受的（作为baseline)，如果特征工程做的好，效果不会太差，并且特征工程可以大家并行开发，大大加快开发的速度。</p>
+</li>
+<li><p>训练速度较快。分类的时候，计算量仅仅只和特征的数目相关。并且逻辑回归的分布式优化sgd发展比较成熟，训练的速度可以通过堆机器进一步提高，这样我们可以在短时间内迭代好几个版本的模型。</p>
+</li>
+<li><p><strong>资源占用小,尤其是内存。因为只需要存储各个维度的特征值，</strong>。</p>
+</li>
+<li><p>方便输出结果调整。逻辑回归可以很方便的得到最后的分类结果，因为输出的是每个样本的概率分数，我们可以很容易的对这些概率分数进行cutoff，也就是划分阈值(大于某个阈值的是一类，小于某个阈值的是一类)。</p>
+</li>
+</ul>
+<h2 id="SVM使用对偶计算的目的是什么，如何推出来的，手写推导；"><a href="#SVM使用对偶计算的目的是什么，如何推出来的，手写推导；" class="headerlink" title="SVM使用对偶计算的目的是什么，如何推出来的，手写推导；"></a>SVM使用对偶计算的目的是什么，如何推出来的，手写推导；</h2><p>目的有两个：一是方便核函数的引入；二是原问题的求解复杂度与特征的维数相关，而转成对偶问题后只与问题的变量个数有关。由于SVM的变量个数为支持向量的个数，相较于特征位数较少，因此转对偶问题。通过拉格朗日算子发使带约束的优化目标转为不带约束的优化函数，使得W和b的偏导数等于零，带入原来的式子，再通过转成对偶问题。</p>
+<h2 id="SVM所有核函数的了解应用，SVM的损失函数"><a href="#SVM所有核函数的了解应用，SVM的损失函数" class="headerlink" title="SVM所有核函数的了解应用，SVM的损失函数"></a>SVM所有核函数的了解应用，SVM的损失函数</h2><p>SVM核函数：</p>
+<p>1 核函数本质</p>
+<p>核函数的本质可以概括为如下三点：</p>
+<p>1）实际应用中，常常遇到线性不可分的情况。针对这种情况，常用做法是把样例特征映射到高维空间中，转化为线性可分问题。</p>
+<p>2）将样例特征映射到高维空间，可能会遇到<strong>维度过高</strong>的问题。</p>
+<p>3）针对可能的维灾难，可以利用核函数。核函数也是将特征从低维到高维的转换，但避免了直接进行高维空间中的复杂计算，可以在低维上进行计算，却能在实质上将分类效果表现在高维上。</p>
+<p>当然，SVM也能处理线性可分问题，这时使用的就是线性核了。</p>
+<p>常用的核函数包括如下几个：线性核函数，多项式核函数，RBF核函数(高斯核)，Sigmoid核函数</p>
+<p>2 线性核</p>
+<p>2.1 线性核</p>
+<p>SVM肯定是可以处理线性问题的，这个就是斯坦福课程里讲SVM时候，最开始讲解的部分，以线性问题入手进行讲解。</p>
+<p>线性核计算为k(x1,x2)=，其实就是在原始空间中的内积。</p>
+<p>2.2 线性SVM和逻辑回归</p>
+<h2 id="当SVM使用线性核时，和逻辑回归比较有哪些异同"><a href="#当SVM使用线性核时，和逻辑回归比较有哪些异同" class="headerlink" title="当SVM使用线性核时，和逻辑回归比较有哪些异同"></a>当SVM使用线性核时，和逻辑回归比较有哪些异同</h2><p>1）线性核SVM和逻辑回归本质上没有区别</p>
+<p>2）n=特征数，m=训练样本数目</p>
+<p>如果n相对m比较大，使用逻辑回归或者线性SVM，例如n=10000，m=10-1000</p>
+<p>如果n比较小，m数值适中，使用高斯核的SVM，例如n=1-1000,m=10-10000</p>
+<p>如果n比较小，m很大，构建更多特征，然后使用逻辑回归或者线性SVM</p>
+<table>
+<thead>
+<tr>
+<th align="center">情况</th>
+<th align="center">选择</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">n&gt;&gt;m(n=10000，m=10-1000)</td>
+<td align="center">LR or 线性SVM</td>
+</tr>
+<tr>
+<td align="center">n比较小，m数值适中n=1-1000,m=10-10000</td>
+<td align="center">高斯核SVM</td>
+</tr>
+<tr>
+<td align="center">n比较小，m很大</td>
+<td align="center">构建更多特征，然后使用逻辑回归或者线性SVM</td>
+</tr>
+</tbody></table>
+<p>3 非线性核</p>
+<p>常用的非线性核包括多项式核，RBF核（高斯核），sigmoid核。</p>
+<p>RBF核通常是首选，实践中往往能表现出良好的性能。计算方法如下：</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552627851763_F616533D5B04DDB7D7B15192990F8374" alt="img"></p>
+<p>其中，如果σ选得很大的话，高次特征上的权重实际上衰减得非常快，所以实际上（数值上近似一下）相当于一个低维的子空间；反过来，如果σ选得很小，则可以将任意的数据映射为线性可分——当然，这并不一定是好事，因为随之而来的可能是非常严重的过拟合问题。不过，总的来说，通过调控参数，高斯核实际上具有相当高的灵活性，也是使用最广泛的核函数之一。</p>
+<p>多项式核计算方法如下：</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552627881133_7BB9D520F71DCFD398E4AA9CD3407F7D" alt="img"></p>
+<p>sigmoid核函数计算方法如下：</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552627909278_948E6CCA17A9D6B5BFF1DA3D49844077" alt="img"></p>
+<p>采用Sigmoid函数作为核函数时，支持向量机实现的就是一种多层感知器神经网络，应用SVM方法，隐含层节点数目(它确定神经网络的结构)、隐含层节点对输入节点的权值都是在设计(训练)的过程中自动确定的。而且支持向量机的理论基础决定了它最终求得的是全局最优值而不是局部最小值，也保证了它对于未知样本的良好泛化能力而不会出现过学习现象。</p>
+<p>5 其他</p>
+<p>SVM的复杂度主要由支持向量数刻画，而不是数据的维度，因此相比其他方法，SVM不太容易过拟合。</p>
+<p>SVM的损失函数：</p>
+<p>1、Hinge损失函数</p>
+<p>首先我们来看什么是合页损失函数（hinge loss function）：</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552627977636_23F58DFE507EBF294F6744DFF6FA5F97" alt="img"></p>
+<p>hinge loss function</p>
+<p>下标”+”表示以下取正值的函数，我们用z表示中括号中的部分：</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552627960637_56487D7EE55D123BC95C7EA3BF165A97" alt="img"></p>
+<p>也就是说，数据点如果被正确分类，损失为0，如果没有被正确分类，损失为z。合页损失函数如下图所示：</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552627991042_D00D1C7AD0BB4157F322B1C27021FF2C" alt="img"></p>
+<p>2、SVM损失函数</p>
+<p>SVM的损失函数就是合页损失函数加上正则化项：</p>
+<p>2、SVM损失函数</p>
+<p>SVM的损失函数就是合页损失函数加上正则化项：</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628049041_E97F977CF363620D9944FCD1001BCA6B" alt="img"></p>
+<p>损失函数</p>
+<h1 id="集成算法"><a href="#集成算法" class="headerlink" title="集成算法"></a>集成算法</h1><h2 id="one-hot-编码优势"><a href="#one-hot-编码优势" class="headerlink" title="one-hot 编码优势"></a>one-hot 编码优势</h2><p>通过one-hot编码，可以对<strong>特征进行了扩充</strong>. </p>
+<p>2，连续变量经过编码后，从一个权重变为多个权重，提升了模型的非线性能力。</p>
+<p>3，不需要多参数进行<strong>归一化处理</strong>。</p>
+<p>4，随着将大权重拆分成几个小权重管理特征，降低了异常值对模型的影响，增加了模型稳定性。</p>
+<p>5，生成了较大的稀疏矩阵。</p>
+<h2 id="one-hot-encoding-为什么不适用于树模型？"><a href="#one-hot-encoding-为什么不适用于树模型？" class="headerlink" title="one-hot encoding 为什么不适用于树模型？"></a>one-hot encoding 为什么不适用于树模型？</h2><p>将离散型特征使用one-hot编码，会让特征之间的<strong>距离计算更加合理</strong>。是基于欧式空间(Euclid space)的编码。</p>
+<p>为什么特征向量要映射到欧式空间？</p>
+<blockquote>
+<p> 将离散特征通过one-hot编码映射到欧式空间，是因为，在回归，分类，聚类等机器学习算法中，特征之间距离的计算或相似度的计算是非常重要的，而我们常用的距离或相似度的计算都是在欧式空间的相似度计算，计算余弦相似性，基于的就是欧式空间。</p>
+</blockquote>
+<p>决策树是没有特征大小的概念的，只有特征处于他分布的哪一部分的概念<br>　　one-hot可以解决线性可分问题 但是比不上label econding </p>
+<h2 id="boosting和-bagging区别"><a href="#boosting和-bagging区别" class="headerlink" title="boosting和 bagging区别"></a>boosting和 bagging区别</h2><p>Bagging和Boosting的区别：</p>
+<p>1）样本选择上：Bagging：训练集是在原始集中有放回选取的，从原始集中选出的各轮训练集之间是独立的。Boosting：每一轮的训练集不变，只是训练集中每个样例在分类器中的权重发生变化。而权值是根据上一轮的分类结果进行调整。</p>
+<p>2）样例权重：Bagging：使用均匀取样，每个样例的权重相等。Boosting：根据错误率不断调整样例的权值，错误率越大则权重越大。</p>
+<p>3）预测函数：Bagging：所有预测函数的权重相等。Boosting：每个弱分类器都有相应的权重，对于分类误差小的分类器会有更大的权重。</p>
+<p>4）并行计算：Bagging：各个预测函数可以并行生成。Boosting：各个预测函数只能顺序生成，因为后一个模型参数需要前一轮模型的结果。</p>
+<table>
+<thead>
+<tr>
+<th align="center">区别</th>
+<th align="center">Bagging</th>
+<th align="center">Boosting</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">样本选择</td>
+<td align="center">有放回的抽取，独立</td>
+<td align="center">每一轮的训练集不变</td>
+</tr>
+<tr>
+<td align="center">样例权重</td>
+<td align="center">不变</td>
+<td align="center">调整权重，错误率</td>
+</tr>
+<tr>
+<td align="center">预测函数</td>
+<td align="center">所有预测函数权重相等</td>
+<td align="center">错误低的权重高</td>
+</tr>
+<tr>
+<td align="center">并行计算</td>
+<td align="center">YES</td>
+<td align="center">NO</td>
+</tr>
+</tbody></table>
+<h2 id="bagging-reduce-variance-and-boosting-reduce-bias"><a href="#bagging-reduce-variance-and-boosting-reduce-bias" class="headerlink" title="bagging reduce variance and boosting reduce bias?"></a>bagging reduce variance and boosting reduce bias?</h2><p>boosting是把许多弱的分类器组合成一个强的分类器。弱的分类器bias高，而强的分类器bias低，所以说boosting起到了降低bias的作用。variance不是boosting的主要考虑因素。</p>
+<p>bagging是对许多强（甚至过强）的分类器求平均。在这里，每个单独的分类器的bias都是低的，平均之后bias依然低；而每个单独的分类器都强到可能产生overfitting的程度，也就是variance高，求<strong>平均的操作</strong>起到的作用就是降低这个variance。</p>
+<h2 id="●-XGBOOST和GDBT的区别"><a href="#●-XGBOOST和GDBT的区别" class="headerlink" title="● XGBOOST和GDBT的区别"></a>● XGBOOST和GDBT的区别</h2><ol>
+<li><p>GDBT在函数空间中利用<strong>梯度下降法</strong>进行优化而XGBoost在函数空间中使用了<strong>牛顿法</strong>进行优化。即GDBT在优化中使用了一阶导数信息,而XGB对损失函数进行了二阶泰勒展开,用到了一阶和二阶倒数信息。</p>
+</li>
+<li><p>XGB在损失函数中加入了<strong>正则项(</strong>树叶子节点个数,每个叶子节点上输出score的L2模平方和。</p>
+</li>
+<li><p>对于缺失的样本,XGB可以自动学习出它的分裂方向。</p>
+</li>
+<li><p>GDBT的节点分裂方式使用的是<strong>gini系数</strong>,XGB通过优化推导出分裂前后的增益来选择分裂节点。考虑到传统的贪心算法效率较低，实现了一种近似贪心算法，用来<strong>加速和减小内存消耗</strong>。</p>
+</li>
+<li><p>XGB在处理每个特征列时可以做到<strong>并行</strong>。XGBoost的并行不是在模型上的并行，而是在特征上的并行，将特征列排序后以block的形式存储在内存中，在后面的迭代中重复使用这个结构。这个block也使得并行化成为了可能，其次在进行节点分裂时，计算每个特征的增益，最终选择增益最大的那个特征去做分割，那么各个特征的增益计算就可以开多线程进行。</p>
+</li>
+<li><p>和GBDT只支持CART作为基分类器之外，还支持线性分类器，在使用线性分类器的时候可以使用L1，L2正则化。</p>
+</li>
+<li><p>引进了特征子采样，像RandomForest那样，这种方法既能降低过拟合，还能减少计算。</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="center">区别</th>
+<th align="center">GDBT</th>
+<th align="center">XGBOOST</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">优化方法</td>
+<td align="center">梯度下降</td>
+<td align="center">牛顿法</td>
+</tr>
+<tr>
+<td align="center">节点分裂</td>
+<td align="center">Gini系数</td>
+<td align="center">增益</td>
+</tr>
+<tr>
+<td align="center">正则化</td>
+<td align="center">否</td>
+<td align="center">是</td>
+</tr>
+<tr>
+<td align="center">处理缺失值</td>
+<td align="center">否</td>
+<td align="center">是</td>
+</tr>
+<tr>
+<td align="center">并行计算</td>
+<td align="center">否</td>
+<td align="center">是</td>
+</tr>
+<tr>
+<td align="center">分类器</td>
+<td align="center">CART分类器</td>
+<td align="center">多种分类器</td>
+</tr>
+<tr>
+<td align="center">特征采样</td>
+<td align="center">否</td>
+<td align="center">是</td>
+</tr>
+</tbody></table>
+<h2 id="●-GDBT的原理-以及常用的调参参数"><a href="#●-GDBT的原理-以及常用的调参参数" class="headerlink" title="● GDBT的原理,以及常用的调参参数"></a>● GDBT的原理,以及常用的调参参数</h2><p>先用一个初始值去学习一棵树,然后在叶子处得到预测值以及预测后的<strong>残差</strong>,之后的树则基于之前树的残差不断的拟合得到,从而训练出一系列的树作为模型。 </p>
+<p>n_estimators基学习器的最大迭代次数,learning_rate学习率，max_lead_nodes最大叶子节点数,max_depth树的最大深度,min_samples_leaf叶子节点上最少样本数。</p>
+<h2 id="AdaBoost和GBDT的区别"><a href="#AdaBoost和GBDT的区别" class="headerlink" title="AdaBoost和GBDT的区别"></a>AdaBoost和GBDT的区别</h2><p>AdaBoost通过调整错分的数据点的权重来改进模型,而GBDT是从<strong>负梯度的方向</strong>去拟合改进模型。</p>
+<h2 id="boosting和bagging在不同情况下的选用"><a href="#boosting和bagging在不同情况下的选用" class="headerlink" title="boosting和bagging在不同情况下的选用"></a>boosting和bagging在不同情况下的选用</h2><p>Bagging与Boosting的区别：</p>
+<p>1）取样方式（样本权重）：Bagging是均匀选取，样本的权重相等，Boosting根据错误率取样，错误率越大则权重越大。2）训练集的选择：Bagging随机选择训练集，训练集之间相互独立，Boosting的各轮训练集的选择与前面各轮的学习结果有关。3）预测函数：Bagging各个预测函数没有权重，可以并行生成，Boosting有权重，顺序生成。4）Bagging是减少variance，Boosting是减少bias。</p>
+<p>Bagging 是 Bootstrap Aggregating的简称，意思就是再取样 (Bootstrap) 然后在每个样本上训练出来的模型取平均，所以是降低模型的 variance. Bagging 比如 Random Forest 这种先天并行的算法都有这个效果。</p>
+<p>Boosting 则是迭代算法，每一次迭代都根据上一次迭代的预测结果对样本进行加权，所以随着迭代不不断进行行，误差会越来越小，所以模型的 bias 会不不断降低。这种算法无法并行。</p>
+<h2 id="gbdt推导和适用场景"><a href="#gbdt推导和适用场景" class="headerlink" title="gbdt推导和适用场景"></a>gbdt推导和适用场景</h2><p>1）明确损失函数是误差最小</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552653124869_EF9E9922885E2C62406891E4B3B65F31" alt="img"></p>
+<p>2）构建第一棵回归树</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552653108200_7B75C800713DA165E37727C5020EFA80" alt="img"></p>
+<p>3）学习多棵回归树</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552653168282_889B72178AB5071E4E2BB49C30005340" alt="img"></p>
+<p>迭代：计算梯度/残差gm(如果是均方误差为损失函数即为残差)</p>
+<p>步长/缩放因子p,用 a single Newton-Raphson step 去近似求解下降方向步长,通常的实现中 Step3 被省略,采用 shrinkage 的策略通过参数设置步长,避免过拟合：第m棵树fm=p<em>gm；模型Fm=Fm-1+p</em>gm</p>
+<p>4）F(x)等于所有树结果累加</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552653191923_4B98744FC993A4F5636CD930199EFCB4" alt="img"></p>
+<p>适用场景：GBDT几乎可用于所有回归问题（线性/非线性），GBDT的适用面非常广。亦可用于二分类问题（设定阈值，大于阈值为正例，反之为负例）。</p>
+<h2 id="GBDT与random-forest的区别"><a href="#GBDT与random-forest的区别" class="headerlink" title="GBDT与random forest的区别"></a>GBDT与random forest的区别</h2><p>GBDT和随机森林的相同点：</p>
+<p>1）都是由多棵树组成；2）最终的结果都是由多棵树一起决定</p>
+<p>GBDT和随机森林的不同点：</p>
+<p>1）组成随机森林的树可以是分类树，也可以是回归树；而GBDT只由回归树组成；</p>
+<p>2）组成随机森林的树可以<strong>并行生成</strong>；而GBDT只能是串行生成；</p>
+<p>3）对于最终的输出结果而言，随机森林采用多数投票等；而GBDT则是将所有结果累加起来，或者加权累加起来；</p>
+<p>4）随机森林对异常值不敏感，GBDT对异常值非常敏感；</p>
+<p>5）随机森林对训练集一视同仁，GBDT是基于权值的弱分类器的集成；</p>
+<p>6）随机森林是通过减少模型方差提高性能，GBDT是通过减少模型偏差提高性能。</p>
+<h2 id="xgboost原理，怎么防过拟合"><a href="#xgboost原理，怎么防过拟合" class="headerlink" title="xgboost原理，怎么防过拟合"></a>xgboost原理，怎么防过拟合</h2><p>XGBoost是一个树集成模型，它使用的是K（树的总数为K）个树的每棵树对样本的预测值的和作为该样本在XGBoost系统中的预测，定义函数如下：</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552654356997_C14022E909704D601526BE46C12F5B32" alt="img"></p>
+<p>对于所给的数据集有n个样本，m个特征，定义为：</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552654336100_D9D86CDDDFD56E5AC66FA7122337BB34" alt="img"></p>
+<p>其中Xi表示第i个样本，yi表示第i个样本的类别标签。CART树的空间为F，如下：</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552654318424_C601668340D98EE27A9FD52BE0B41E17" alt="img"></p>
+<p>其中q表示每棵树的结构映射每个样本到相应的叶节点的分数，即q表示树的模型，输入一个样本，根据模型将样本映射到叶节点输出预测的分数；Wq(x)表示树q的所有叶节点的分数组成集合；T是树q的叶节点数量。</p>
+<p>所以，由（1）式可以看出，XGBoost的预测值为每棵树的预测值之和，即每棵树相应的叶节点的得分之和（Wi的和，Wi表示第i个叶节点的得分）。</p>
+<p>我们的目标就是学习这样的K个树模型f(x).。为了学习模型f(x)，我们定义下面的目标函数：</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552654218581_DA95B0A56591F1C9282B2990A1722F21" alt="img"></p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552654229021_2B788F295514EACE36B431E4834D5F61" alt="img"></p>
+<p>其中，（2）式右边第一项为损失函数项，即训练误差，是一个可微的凸函数（比如用于回归的均方误差和用于分类的Logistic误差函数等），第二项为正则化项，即每棵树的复杂度之和，目的是控制模型的复杂度，防止过拟合。我们的目标是在L(φ)取得最小化时得出对应的模型f(x)。</p>
+<p>由于XGBoost模型中的优化参数是模型f(x)，不是一个具体的值，所以不能用传统的优化方法在欧式空间中进行优化，而是采用additive training的方式去学习模型。每一次保留原来的模型不变，加入一个新的函数f到模型中，如下：</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552654275454_6D0F9075126C579116BABEBA0744F1BD" alt="img"></p>
+<p>预测值在每一次迭代中加入一个新的函数f目的是使目标函数尽量最大地降低。</p>
+<p>因为我们的目标是最小化L(φ)时得到模型f(x)，但是L(φ)中并没有参数f(x)，所以，我们将上图中的最后一式代入L(φ)中可得到如下式子：</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552654545445_AA41B6FD9D442CD3F1BD7E58A9FADF6E" alt="img"></p>
+<p>对于平方误差（用于回归）来说（3）式转换成如下形式：</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552654531702_8C8E87DEB95D4EE1251D4C1727E6E338" alt="img"></p>
+<p>对于不是平方误差的情况下，一般会采用泰勒展开式来定义一个近似的目标函数，以方便我们的进一步计算。</p>
+<p>根据如下的泰勒展开式，移除高阶无穷小项，得：</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552654515691_247EF8F9FB11113DF4095C2AF693DB7E" alt="img"></p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552654498504_E74F441D04F2B635B26975278595311D" alt="img"></p>
+<p>（3）式等价于下面的式子：</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552654483338_BA4FD8E055E6CC4DDBA93F9774B548A4" alt="img"></p>
+<p>由于我们的目标是求L(φ)最小化时的模型f(x)（也是变量），当移除常数项时模型的最小值变化，但是取最小值的变量不变（比如：y=x^2+C，无论C去何值，x都在0处取最小值）。所以，为了简化计算，我们移除常数项，得到如下的目标函数：</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552654469172_F531D4625946FBDE30017CF92A508DD8" alt="img"></p>
+<p>定义<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552654451035_2DB3B28ECCF5B5A190EDE8F315E673D9" alt="img"> 为叶节点j的实例，重写（4）式，将关于树模型的迭代转换为关于树的叶子节点的迭代，得到如下过程：</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552654624457_DADDD0F0171B5F2ADFDC767043C36B94" alt="img"></p>
+<p>此时我们的目标是求每棵树的叶节点j的分数Wj，求出Wj后，将每棵树的Wj相加，即可得到最终的预测的分数。而要想得到最优的Wj的值，即最小化我们的目标函数，所以上式对Wj求偏导，并令偏导数为0，算出此时的W*j为：</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552654685059_2842BAC8D592204451186D4BB0281E21" alt="img"></p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552654671657_8915C25DF2078E084BCD9002BE3FADB9" alt="img"></p>
+<p>将W*j代入原式得：</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552654657763_0C64F280CB46F2223B5E422CD44DDDCA" alt="img"></p>
+<p>方程（5）可以用作得分(score)函数来测量树结构q的质量。该得分类似于评估决策树的不纯度得分，除了它是针对更广泛的目标函数得出的。</p>
+<p>在xgboost调中，一般有两种方式用于控制过拟合：</p>
+<p>1）直接控制参数的复杂度：包括max_depth min_child_weight gamma；</p>
+<p>2）add randomness来使得对训练对噪声鲁棒。包括subsample colsample_bytree，或者也可以减小步长 eta，但是需要增加num_round，来平衡步长因子的减小。</p>
+<h2 id="xgboost特征并行化怎么做的"><a href="#xgboost特征并行化怎么做的" class="headerlink" title="xgboost特征并行化怎么做的"></a>xgboost特征并行化怎么做的</h2><p>决策树的学习最耗时的一个步骤就是对<strong>特征值进行排序</strong>,在进行节点分裂时需要<strong>计算每个特征的增益</strong>,最终选增益大的特征做分裂,<font color="red">各个特征的增益计算就可开启多线程进行</font>。而且可以采用<strong>并行化的近似直方图算法进行节点分裂</strong>。</p>
+<h2 id="xgboost和lightgbm的区别和适用场景"><a href="#xgboost和lightgbm的区别和适用场景" class="headerlink" title="xgboost和lightgbm的区别和适用场景"></a>xgboost和lightgbm的区别和适用场景</h2><p>（1）xgboost采用的是level-wise的分裂策略，而lightGBM采用了leaf-wise的策略，区别是xgboost对每一层所有节点做无差别分裂，可能有些节点的增益非常小，对结果影响不大，但是xgboost也进行了分裂，带来了务必要的开销。 leaft-wise的做法是在当前所有叶子节点中选择<strong>分裂收益最大</strong>的节点进行分裂，如此递归进行，很明显leaf-wise这种做法容易过拟合，因为容易陷入比较高的深度中，因此需要对最大深度做限制，从而避免过拟合。</p>
+<p>（2）lightgbm使用了基于<strong>histogram的决策树算法</strong>，这一点不同与xgboost中的 exact 算法，histogram算法在内存和计算代价上都有不小优势。</p>
+<p>1）内存上优势：很明显，直方图算法的内存消耗为<font color="red">(#data* #features * 1Bytes)</font>(因为对特征分桶后只需保存特征离散化之后的值)，而xgboost的exact算法内存消耗为：<font color="red">(2 * #data * #features* 4Bytes),</font>，因为xgboost既要保存原始feature的值，也要保存这个值的顺序索引，这些值需要32位的浮点数来保存。</p>
+<p>2）计算上的优势，预排序算法在选择好分裂特征计算分裂收益时需要遍历所有样本的特征值，时间为(#data),而直方图算法只需要遍历桶就行了，时间为(#bin)</p>
+<p>3）lightgbm支持直接输入categorical 的feature，在对离散特征分裂时，每个取值都当作一个桶，分裂时的增益算的是”是否属于某个category“的gain。类似于one-hot编码。</p>
+<p>4）xgboost在每一层都动态构建直方图，因为xgboost的直方图算法不是针对某个特定的feature，而是所有feature共享一个直方图(每个样本的权重是二阶导),所以每一层都要重新构建直方图，而lightgbm中对每个特征都有一个直方图，所以构建一次直方图就够了。</p>
+<p>其适用场景根据实际项目和两种算法的优点进行选择。</p>
+<h2 id="LGB算法流程"><a href="#LGB算法流程" class="headerlink" title="LGB算法流程"></a>LGB算法流程</h2><p>Gradient-based One-Side Sampling (GOSS) 基于梯度的one-side采样</p>
+<blockquote>
+<p><strong>根据计算信息增益的定义，梯度大的实例对信息增益有更大的影响</strong></p>
+</blockquote>
+<p>和Exclusive Feature Bundling (EFB)互斥的特征捆</p>
+<blockquote>
+<p>我们完美地证明了捆绑互斥特征是NP难的，但贪心算法能够实现相当好的逼近率，因此我们能够在不损害分割点准确率许多的情况下，有效减少特征的数量。</p>
+</blockquote>
+<p>我们将捆绑问题<strong>归约</strong>到图着色问题，通过贪心算法求得近似解。</p>
+<p>histogram-based算法通过直方图寻找<font color="red">最优切分点</font>，其建直方图消耗O(#data * #feature)，寻找最优切分点消耗O(#bin * # feature)，而#bin的数量远小于#data，<strong>所以建直方图为主要时间消耗</strong>。如果能够减少数据量或特征量，那么还能够够加速GBDT的训练。（寻找最优切分点已经进行了优化，那么我们现在应该对建直方图的时间进行优化）</p>
+<h1 id="其他重要算法"><a href="#其他重要算法" class="headerlink" title="其他重要算法"></a>其他重要算法</h1><h2 id="朴素贝叶斯（naive-Bayes）法的要求是？"><a href="#朴素贝叶斯（naive-Bayes）法的要求是？" class="headerlink" title="朴素贝叶斯（naive Bayes）法的要求是？"></a>朴素贝叶斯（naive Bayes）法的要求是？</h2><p>贝叶斯定理、特征条件独立假设</p>
+<p>解析：朴素贝叶斯属于生成式模型，学习输入和输出的联合概率分布。给定输入x，利用贝叶斯概率定理求出最大的后验概率作为输出y。</p>
+<h2 id="HMM隐马尔可夫模型的参数估计方法是？"><a href="#HMM隐马尔可夫模型的参数估计方法是？" class="headerlink" title="HMM隐马尔可夫模型的参数估计方法是？"></a>HMM隐马尔可夫模型的参数估计方法是？</h2><p>EM算法</p>
+<p>解析：期望最大化（Expectation-Maximum,EM）算法</p>
+<h2 id="Bootstrap方法是什么？"><a href="#Bootstrap方法是什么？" class="headerlink" title="Bootstrap方法是什么？"></a>Bootstrap方法是什么？</h2><p>从一个数据集中有放回的抽取N次，每次抽M个。</p>
+<p>解析：Bagging算法基于bootstrap。面试时结合Bagging算法讲述会更好。</p>
+<h2 id="如何防止过拟合？"><a href="#如何防止过拟合？" class="headerlink" title="如何防止过拟合？"></a>如何防止过拟合？</h2><p>1.早停法；2.l1和l2正则化；3.神经网络的dropout；4.决策树剪枝；5.SVM的松弛变量；6.集成学习</p>
+<p>解析：能够达到模型权重减小，模型简单的效果</p>
+<h2 id="EM算法推导，jensen不等式确定的下界"><a href="#EM算法推导，jensen不等式确定的下界" class="headerlink" title="EM算法推导，jensen不等式确定的下界"></a>EM算法推导，jensen不等式确定的下界</h2><p>给定的训练样本是<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656677625_FF34E061732DAAD6F56E628A04C973E6" alt="img">)，样例间独立，我们想找到每个样例隐含的类别z，能使得p(x,z)最大。p(x,z)的最大似然估计如下：</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656704748_9089EB58C9CA105E9B5104A9D94C7AA7" alt="img"></p>
+<p>第一步是对极大似然取对数，第二步是对每个样例的每个可能类别z求联合分布概率和。但是直接求<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656732709_6BFE2F1945BF6A79249C6D6DDDEE333B" alt="img">一般比较困难，因为有隐藏变量z存在，但是一般确定了z后，求解就容易了。</p>
+<p>EM是一种解决存在隐含变量优化问题的有效方法。竟然不能直接最大化<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656754223_12F0C02F17079F8B944E7694DC211CB3" alt="img">)，我们可以不断地建立<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656770652_D2CDC96BBFB62EEF0487ACD1DC5264D3" alt="img">的下界（E步），然后优化下界（M步）。这句话比较抽象，看下面的。</p>
+<p>对于每一个样例i，让表示该样例隐含变量z的某种分布，<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656827857_2EE502CE04932EF4279481D28018B177" alt="img">)满足的条件是<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656804373_EC9091B97CCB534D853840BD04FE6A7F" alt="img">)。（如果z是连续性的，那么<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656848034_C658E5EB67ECE128C8D07E8CC71149DA" alt="img">是概率密度函数，需要将求和符号换做积分符号）。比如要将班上学生聚类，假设隐藏变量z是身高，那么就是连续的高斯分布。如果按照隐藏变量是男女，那么就是伯努利分布了。</p>
+<p>可以由前面阐述的内容得到下面的公式：</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656886322_1E1FD7D35C2B1DCAFEB70CABF0239E03" alt="img"></p>
+<p>（1）到（2）比较直接，就是分子分母同乘以一个相等的函数。（2）到（3）利用了Jensen不等式，考虑到<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656911226_61F97563CECD1A6F6E5028F9524E6541" alt="img">是凹函数（二阶导数小于0），而且</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656925875_72041D6C6CC34609D29F55069B0311A2" alt="img"></p>
+<p>就是<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656966099_2B43AED945D3B62E88A8D38952145614" alt="img">的期望（回想期望公式中的Lazy Statistician规则）</p>
+<p>设Y是随机变量X的函数<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656992885_40F1E38D81E7721E017831E71763F32F" alt="img">（g是连续函数），那么</p>
+<p>（1） X是离散型随机变量，它的分布律为<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552657014300_70EDAB8FC8EFDAA1942F72ADE1D43390" alt="img">)，k=1,2,…。若<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552657030794_F1079F5DA0EA513EE47824D37795038E" alt="img">绝对收敛，则有</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552657050271_B07B91CEB729EA962F28412AEBFCB6C7" alt="img"></p>
+<p>（2） X是连续型随机变量，它的概率密度为<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552657068967_464BB8DF4799DC22DE520628B0F42624" alt="img">)，若<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552657087871_34B55AE81571311B22B43DF2F49D3F0F" alt="img">绝对收敛，则有</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552657107386_9952B4D00DB6F50BF841E077515A3AA9" alt="img"></p>
+<p>对应于上述问题，Y是<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552657125940_C25B7BCDF1E4894B22AC1FAF5FDD7AD2" alt="img">)，X是<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552657141501_FDB405EA6E266038BD5EC5F99B0C0939" alt="img">)，<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552657159215_E240C1B6CD76B3FC1518B7BE52A03B69" alt="img">)是<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552657180118_B84C74766069C38C760D55C4E5709BB1" alt="img">)，g是<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552657197885_93D6433C47DE87FDB33F04C1616D4ED8" alt="img">)到<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552657211255_6665CAB3A3F4293F4531C6BEF6AC158E" alt="img">的映射。这样解释了式子（2）中的期望，再根据凹函数时的Jensen不等式：</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552657231203_3FDC52400C0A2EBCFC47E0CE42A3EF3F" alt="img"></p>
+<p>可以得到（3）。</p>
+<p>这个过程可以看作是对<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552657260170_076D779534DB894413D97466ADF992EB" alt="img">)求了下界。对于<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552657274597_01DDF1500C0F149B8D61AFA16F268C53" alt="img">)的选择，有多种可能，那种更好的？假设<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552657292040_D1B69B77582B1C699434A12C4362D163" alt="img">)已经给定，那么<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552657306876_AE49C56181F81364C52C4320C096A65F" alt="img">)的值就决定于<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552657321955_465152844F4D5F9BDCB7D7D43D7AA23C" alt="img">)和<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552657337012_AA79E45F5BB3F5BF77BED9B4C6C999D3" alt="img">)了。我们可以通过调整这两个概率使下界不断上升，以逼近<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552657360598_6B3983E303AC7B5A489F85F0803A84B1" alt="img">)的真实值，那么什么时候算是调整好了呢？当不等式变成等式时，说明我们调整后的概率能够等价于<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552657377762_5D1A1F0A842C55BC853101A3A7E9F9F2" alt="img">了。按照这个思路，我们要找到等式成立的条件。根据Jensen不等式，要想让等式成立，需要让随机变量变成常数值，这里得到：</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656623279_51F811FC3B63504DD5431AF7002964B3" alt="img"></p>
+<p>c为常数，不依赖于<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656602182_0D31BBDD73A76C383BB2A5C9E399CCE3" alt="img">)。对此式子做进一步推导，我们知道<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656587658_E7EAAFAC1B564EB02FB34B7C011B3A95" alt="img">)，那么也就有<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656564973_1544DF6BE05D68029AD76D2D4B702998" alt="img">，（多个等式分子分母相加不变，这个认为每个样例的两个概率比值都是c），那么有下式：</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656540364_98DFAD890ECD62189D5536AA9DB847A9" alt="img"></p>
+<p>至此，我们推出了在固定其他参数<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656518837_318849129B615DE36D0A83C9FD5C1C81" alt="img">)后，<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656505656_E712403E822207687A520953DAEDA0A7" alt="img">)的计算公式就是后验概率，解决了<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656489287_C6C098B994B79A7AF323D95D295E8072" alt="img">)如何选择的问题。这一步就是E步，建立<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656461569_895AAA9A0A0E2CD4A8B03DE08B3084DF" alt="img">)的下界。接下来的M步，就是在给定<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656446220_27BD5599218262EDAA8A5001AB587C17" alt="img">)后，调整<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656431985_2EFEF4BCCDC11C4BAF9D1EBB838FF680" alt="img">)，去极大化<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656409137_05F42387CE0EDBA59A60B1E5C4811EE0" alt="img">)的下界（在固定<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656392960_E0DD2E188790E5A02EC754BCFACB62AF" alt="img">后，下界还可以调整的更大）。那么一般的EM算法的步骤如下：</p>
+<p>循环重复直到收敛{</p>
+<p>（E步）对于每一个i，计算</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656340146_9C63ED721D886E77D5FE6E2338B71032" alt="img"></p>
+<p>（M步）计算</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656322624_4C09F6A58029239D1F23589B927D49A8" alt="img"></p>
+<p>那么究竟怎么确保EM收敛？假定<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656309240_BF8BCAE96917ACD0A8DD21D12FACD0BE" alt="img">)和<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656288880_23AD4B453566E704D4D2E202F108B030" alt="img">)是EM第t次和t+1次迭代后的结果。如果我们证明了<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656266616_45A20D0A9862DB6760A8E6FED66FF022" alt="img">)，也就是说极大似然估计单调增加，那么最终我们会到达最大似然估计的最大值。下面来证明，选定<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656245516_9A3B5E337162684A35963B34DD2664F8" alt="img">后，我们得到E步</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656220402_ADB8903117E980E303E440463D8B8241" alt="img"></p>
+<p>这一步保证了在给定<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656204236_8E6FC4314DE15D388F98BD3DF3E51DAC" alt="img">时，Jensen不等式中的等式成立，也就是</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656172149_602749E68CEB5CE1B57F555BEE7A34C9" alt="img"></p>
+<p>然后进行M步，固定<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656157638_D920156D24954BA2C5B89763F65C15F3" alt="img">)，并将<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656141597_9C2812809D5788A879AF146456C3F9E4" alt="img">)视作变量，对上面的<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656122019_C0D8C9E00395775C9797AEAF5E09C046" alt="img">)求导后，得到<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656104966_30B30C0B0612F65E8F2D82F5B7C35FF4" alt="img">，这样经过一些推导会有以下式子成立：</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656069961_A1C4792A0C76FCE7E8D385FD03CB0F02" alt="img"></p>
+<p>解释第（4）步，得到<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656053181_0F000183E0D3A734CFC84AE5596DEB58" alt="img">)时，只是最大化<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656036127_1FC3995EAB08ED094DD4DFC1FA1C04DB" alt="img">)，也就是<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656017395_CAE8E56F913E3E851B1CBD9DD0091A14" alt="img">)的下界，而没有使等式成立，等式成立只有是在固定<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552655991598_2895D0185B0F5A2CA83A52CCE36A2B7C" alt="img">)，并按E步得到<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552655973151_CF419F037C10C1CE1567B88065FB90FB" alt="img">时才能成立。</p>
+<p>况且根据我们前面得到的下式，对于所有的<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552655942553_9B8C6D511BFF35C8A749D00197468740" alt="img">)和<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552655923695_CCD81F07EB9E6C74DA25248291C51583" alt="img">都成立</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552655841514_59FF926517000E3489AB302F701396FF" alt="img"></p>
+<p>第（5）步利用了M步的定义，M步就是将<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552655803749_6A67769E416B886272A59347BE217460" alt="img">)调整到<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552655779212_9389B3273638C142D32F989091FFF783" alt="img">)，使得下界最大化。因此（5）成立，（6）是之前的等式结果。这样就证明了<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552655760860_777D4809B1E4212B0FA8992D6DD39F0A" alt="img">)会单调增加。一种收敛方法是<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552655738327_F6088594CD21E495E728AE032DD5440F" alt="img">不再变化，还有一种就是变化幅度很小。</p>
+<p>再次解释一下（4）、（5）、（6）。首先（4）对所有的参数都满足，而其等式成立条件只是在固定<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552655685749_F81E0FE60A972524B16733C5D081A2CC" alt="img">)，并调整好Q时成立，而第（4）步只是固定Q，调整<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552655605718_922CBCB515D74D41675482672DE098F0" alt="img">)，不能保证等式一定成立。（4）到（5）就是M步的定义，（5）到（6）是前面E步所保证等式成立条件。也就是说E步会将下界拉到与<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552655632422_341A9542C89D756E1ECF40E98D437BAF" alt="img">)一个特定值（这里<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552655514310_C24BD4F81FE2BC277BBA048ACB319ACE" alt="img">)）一样的高度，而此时发现下界仍然可以上升，因此经过M步后，下界又被拉升，但达不到与<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552655537580_09189906EEE453215C5A4209DA8489AD" alt="img">另外一个特定值一样的高度，之后E步又将下界拉到与这个特定值一样的高度，重复下去，直到最大值。</p>
+<p>如果我们定义</p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552655051313_C4EBEEB2A4ECD0C589E64DACF8E59A21" alt="img"></p>
+<p>从前面的推导中我们知，EM可以看作是J的坐标上升法，E步固定<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552655442602_F6434E4F72AA10C3D4B71164C3909C3B" alt="img">)，优化<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552655421168_D31E3FC278C55C6FFE20B4AC4D6A70A8" alt="img">)，M步固定<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552655394365_8607A96CD03E4088717E3246934622C1" alt="img">)。优化<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552655322029_D418144E5B109EDDF8B6325FDBAF467C" alt="img"></p>
+<p>Jensen不等式表述如下：</p>
+<p>如果f是凸函数，X是随机变量，那么：<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552655171001_A815CFF6D10A553AEDC2BB002E0FFB97" alt="img">，特别地，如果f是严格凸函数，当且</p>
+<p>仅当X是常量时，上式取等号。所以其下界是<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552655011455_32E13B7D17BDE8B45B6D788808C74D17" alt="img">。</p>
+<h2 id="特征工程的问题"><a href="#特征工程的问题" class="headerlink" title="特征工程的问题"></a>特征工程的问题</h2><p>特征工程包括数据与特征处理、特征选择和降纬三部分。数据与特征处理包括：</p>
+<p>1.数据选择、清洗、采样</p>
+<p>数据格式化；</p>
+<p>数据清洗，填充缺失值、去掉脏数据，将不可信的样本丢掉，缺省值极多的字段考虑不用；</p>
+<p>采样：针对正负样本不平衡的情况，当正样本远大于负样本时，且量都很大时，使用下采样，量不大时，可采集更多的数据或oversampling或修改损失函数；采样过程中可利用分层抽样保持不同类别数据的比例。</p>
+<p>2.不同类型数据的特征处理</p>
+<p>数值型：幅度调整/归一化、log等变化、统计值（例如max、min、mean、std）、离散化、分桶等</p>
+<p>类别型：one-hot编码等</p>
+<p>时间型：提取出连续值的持续时间和间隔时间；提取出离散值的“年”、“月”、“日”、“一年中哪个星期/季度”、“一周中的星期几”、“工作日/周末”等信息</p>
+<p>文本型：使用If-idf特征</p>
+<p>统计型：加减平均、分位线、次序、比例</p>
+<p>意义：</p>
+<p>对数据进行预处理，可提高数据质量，提高挖掘质量。对数据进行清洗可填充缺失值、光滑噪声数据，识别和删除离群点数据，保证数据的一致性；</p>
+<p>使用正确的采样方法可解决因数据不平衡带来的预测偏差；</p>
+<p>对不同的数据类型进行不同的特征处理有助于提高特征的可用性，例如对数值型数据进行归一化可将数据转化到统一量纲下；对类别型数据，可用one-hot编码方法将类别数据数字化，数字化特征之后可更用来计算距离、相似性等；可从时间型数据当中提取中更多的时间特征，例如年、月和日等，这些特征对于业务场景以及模型的预测往往有很大的帮助。统计型特征处理有助于从业务场景中挖掘更丰富的信息。</p>
+<p>特征选择包括：</p>
+<p>1.Filter：使用方差、Pearson相关系数、互信息等方法过滤特征，评估单个特征和结果值之间的相关程度，留下Top相关的特征部分。</p>
+<p>2.Wrapper：可利用“递归特征删除算法”，把特征选择看做一个特征子集搜索问题，筛选各种特征子集，用模型评估效果。</p>
+<p>3.Embedded：可利用正则化方式选择特征，使用带惩罚项的基模型，除了选择出特征外，同时也进行了降纬。</p>
+<p>意义：</p>
+<p>-剔除对结果预测不大的特征，减小冗余，选择有意义的特征输入模型，提高计算性能。</p>
+<p>降维：</p>
+<p>方法：主成分分析法（PCA）和线性判别分析（LDA）</p>
+<p>意义：通过PCA或LDA方法，将较高纬度样本空间映射到较低维度的样本空间，从而达到降纬的目的，减少模型的训练时间，提高模型的计算性能。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/mathmatics-interview-tbsi/" rel="next" title="mathmatics_interview_tbsi">
+                <i class="fa fa-chevron-left"></i> mathmatics_interview_tbsi
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/professional-interview-tbsi/" rel="prev" title="professional-interview-tbsi">
+                professional-interview-tbsi <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Louieworth" />
+            
+              <p class="site-author-name" itemprop="name">Louieworth</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7Carchive">
+              
+                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/louieworth" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数学基础"><span class="nav-number">1.</span> <span class="nav-text">数学基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#L1不可导的时候该怎么办"><span class="nav-number">1.1.</span> <span class="nav-text">L1不可导的时候该怎么办</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最大似然估计和最大后验概率的区别"><span class="nav-number">1.2.</span> <span class="nav-text">最大似然估计和最大后验概率的区别?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#频率学派和贝叶斯学派的区别"><span class="nav-number">1.3.</span> <span class="nav-text">频率学派和贝叶斯学派的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PCA"><span class="nav-number">1.4.</span> <span class="nav-text">PCA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拟牛顿法的原理"><span class="nav-number">1.5.</span> <span class="nav-text">拟牛顿法的原理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#前面几个算法模型"><span class="nav-number">2.</span> <span class="nav-text">前面几个算法模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#朴素贝叶斯基本原理"><span class="nav-number">2.1.</span> <span class="nav-text">朴素贝叶斯基本原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#朴素贝叶斯和贝叶斯网络的区别"><span class="nav-number">2.2.</span> <span class="nav-text">朴素贝叶斯和贝叶斯网络的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LR推导"><span class="nav-number">2.3.</span> <span class="nav-text">LR推导</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑回归的损失函数MLE？"><span class="nav-number">2.4.</span> <span class="nav-text">逻辑回归的损失函数MLE？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于正则化参数的问题"><span class="nav-number">2.5.</span> <span class="nav-text">关于正则化参数的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#L1和L2正则化的区别"><span class="nav-number">2.6.</span> <span class="nav-text">L1和L2正则化的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ID3-C4-5和CART三种决策树的区别"><span class="nav-number">2.7.</span> <span class="nav-text">ID3,C4.5和CART三种决策树的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#决策树的减枝"><span class="nav-number">2.8.</span> <span class="nav-text">决策树的减枝</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SVM"><span class="nav-number">3.</span> <span class="nav-text">SVM</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SVM中核函数的选择"><span class="nav-number">3.1.</span> <span class="nav-text">SVM中核函数的选择?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVM与LR的区别"><span class="nav-number">3.2.</span> <span class="nav-text">SVM与LR的区别?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVM使用对偶计算的目的是什么，如何推出来的，手写推导；"><span class="nav-number">3.3.</span> <span class="nav-text">SVM使用对偶计算的目的是什么，如何推出来的，手写推导；</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVM所有核函数的了解应用，SVM的损失函数"><span class="nav-number">3.4.</span> <span class="nav-text">SVM所有核函数的了解应用，SVM的损失函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#当SVM使用线性核时，和逻辑回归比较有哪些异同"><span class="nav-number">3.5.</span> <span class="nav-text">当SVM使用线性核时，和逻辑回归比较有哪些异同</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#集成算法"><span class="nav-number">4.</span> <span class="nav-text">集成算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#one-hot-编码优势"><span class="nav-number">4.1.</span> <span class="nav-text">one-hot 编码优势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#one-hot-encoding-为什么不适用于树模型？"><span class="nav-number">4.2.</span> <span class="nav-text">one-hot encoding 为什么不适用于树模型？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#boosting和-bagging区别"><span class="nav-number">4.3.</span> <span class="nav-text">boosting和 bagging区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bagging-reduce-variance-and-boosting-reduce-bias"><span class="nav-number">4.4.</span> <span class="nav-text">bagging reduce variance and boosting reduce bias?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#●-XGBOOST和GDBT的区别"><span class="nav-number">4.5.</span> <span class="nav-text">● XGBOOST和GDBT的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#●-GDBT的原理-以及常用的调参参数"><span class="nav-number">4.6.</span> <span class="nav-text">● GDBT的原理,以及常用的调参参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AdaBoost和GBDT的区别"><span class="nav-number">4.7.</span> <span class="nav-text">AdaBoost和GBDT的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#boosting和bagging在不同情况下的选用"><span class="nav-number">4.8.</span> <span class="nav-text">boosting和bagging在不同情况下的选用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gbdt推导和适用场景"><span class="nav-number">4.9.</span> <span class="nav-text">gbdt推导和适用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GBDT与random-forest的区别"><span class="nav-number">4.10.</span> <span class="nav-text">GBDT与random forest的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xgboost原理，怎么防过拟合"><span class="nav-number">4.11.</span> <span class="nav-text">xgboost原理，怎么防过拟合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xgboost特征并行化怎么做的"><span class="nav-number">4.12.</span> <span class="nav-text">xgboost特征并行化怎么做的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xgboost和lightgbm的区别和适用场景"><span class="nav-number">4.13.</span> <span class="nav-text">xgboost和lightgbm的区别和适用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LGB算法流程"><span class="nav-number">4.14.</span> <span class="nav-text">LGB算法流程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他重要算法"><span class="nav-number">5.</span> <span class="nav-text">其他重要算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#朴素贝叶斯（naive-Bayes）法的要求是？"><span class="nav-number">5.1.</span> <span class="nav-text">朴素贝叶斯（naive Bayes）法的要求是？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HMM隐马尔可夫模型的参数估计方法是？"><span class="nav-number">5.2.</span> <span class="nav-text">HMM隐马尔可夫模型的参数估计方法是？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bootstrap方法是什么？"><span class="nav-number">5.3.</span> <span class="nav-text">Bootstrap方法是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何防止过拟合？"><span class="nav-number">5.4.</span> <span class="nav-text">如何防止过拟合？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#EM算法推导，jensen不等式确定的下界"><span class="nav-number">5.5.</span> <span class="nav-text">EM算法推导，jensen不等式确定的下界</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特征工程的问题"><span class="nav-number">5.6.</span> <span class="nav-text">特征工程的问题</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Louieworth</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <span id="busuanzi_container_site_pv">总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv">总访客<span id="busuanzi_value_site_uv"></span>人</span>
+    <span class="post-meta-divider">|</span>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '4YkTMPdpq8gz4Y5cE7p16Vqm-gzGzoHsz',
+        appKey: '730GISNngxd7utFYrHdOFLbf',
+        placeholder: 'Just go for it',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>
