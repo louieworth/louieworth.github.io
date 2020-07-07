@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/tools/</loc>
+    
+    <lastmod>2020-07-07T02:50:11.310Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Group-Meeting3-0/</loc>
+    
+    <lastmod>2020-07-07T02:03:50.338Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/how-to-read-papers/</loc>
     
     <lastmod>2020-07-06T08:11:31.823Z</lastmod>
@@ -180,13 +194,6 @@
     <loc>http://yoursite.com/paper-LightGBM/</loc>
     
     <lastmod>2020-06-06T22:32:43.150Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/tools/</loc>
-    
-    <lastmod>2020-06-06T16:26:53.204Z</lastmod>
     
   </url>
   

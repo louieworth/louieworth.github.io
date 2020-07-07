@@ -1912,19 +1912,21 @@
   <entry>
     <title>tools</title>
     <url>/tools/</url>
-    <content><![CDATA[<blockquote>
+    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><blockquote>
 <p>介绍了一些常用的工具栏</p>
 </blockquote>
 <a id="more"></a>
 
-<h1 id="English"><a href="#English" class="headerlink" title="English"></a>English</h1><h2 id="Dictionary"><a href="#Dictionary" class="headerlink" title="Dictionary"></a>Dictionary</h2><p><a href="https://www.thesaurus.com/" target="_blank" rel="noopener">同义词词典</a></p>
+<h1 id="Dictionary"><a href="#Dictionary" class="headerlink" title="Dictionary"></a>Dictionary</h1><p><a href="https://www.thesaurus.com/" target="_blank" rel="noopener">同义词词典</a></p>
 <p><a href="https://www.collinsdictionary.com/" target="_blank" rel="noopener">Collins Online Dictionary</a></p>
 <p><a href="https://www.ldoceonline.com/" target="_blank" rel="noopener">Longman Dictionary</a></p>
 <p><a href="https://translate.google.cn/" target="_blank" rel="noopener">Google Translate</a></p>
-<h2 id="Reading"><a href="#Reading" class="headerlink" title="Reading"></a>Reading</h2><p><a href="https://www.tianfateng.cn/tag/magazine" target="_blank" rel="noopener">Magazine Download</a></p>
-<h2 id="Writting"><a href="#Writting" class="headerlink" title="Writting"></a>Writting</h2><p><a href="http://www.termonline.cn/index.htm" target="_blank" rel="noopener">termonline</a></p>
+<h1 id="Reading"><a href="#Reading" class="headerlink" title="Reading"></a>Reading</h1><p><a href="https://www.tianfateng.cn/tag/magazine" target="_blank" rel="noopener">Magazine Download</a></p>
+<h1 id="Writting"><a href="#Writting" class="headerlink" title="Writting"></a>Writting</h1><p><a href="http://www.termonline.cn/index.htm" target="_blank" rel="noopener">termonline</a></p>
 <p><a href="https://aimwriting.mtutor.engkoo.com/" target="_blank" rel="noopener">微软爱写作</a></p>
 <h1 id="软件语法"><a href="#软件语法" class="headerlink" title="软件语法"></a>软件语法</h1><p><a href="https://latex.vimsky.com/" target="_blank" rel="noopener">Latex在线公式编辑转换</a></p>
+<h1 id="Books-Search"><a href="#Books-Search" class="headerlink" title="Books Search"></a>Books Search</h1><p><a href="https://www.jiumodiary.com/" target="_blank" rel="noopener">Jiumo Research</a></p>
+<p><a href="https://b-ok.cc/?signAll=1" target="_blank" rel="noopener">Zlibrary</a></p>
 <h1 id="Documents"><a href="#Documents" class="headerlink" title="Documents"></a>Documents</h1><p><a href="https://cowtransfer.com/" target="_blank" rel="noopener">奶牛快传</a></p>
 <p><a href="https://www.uupoop.com/" target="_blank" rel="noopener">在线PS</a></p>
 <p><a href="https://www.ilovepdf.com/zh-cn" target="_blank" rel="noopener">PDF转换</a></p>
@@ -5071,5 +5073,10 @@
       <categories>
         <category>高考志愿填报</category>
       </categories>
+  </entry>
+  <entry>
+    <title>Group-Meeting3</title>
+    <url>/Group-Meeting3-0/</url>
+    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script>]]></content>
   </entry>
 </search>
