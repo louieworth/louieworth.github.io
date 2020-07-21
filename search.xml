@@ -4900,7 +4900,7 @@
 <p><img src="/group-metting2/Screenshot_11.png" alt>)<img src="/group-metting2/Screenshot_12.png" alt></p>
 ]]></content>
       <categories>
-        <category>Group Meetings</category>
+        <category>Workshop</category>
       </categories>
       <tags>
         <tag>Group Meeting</tag>
@@ -4940,7 +4940,7 @@
 <p><img src="/group-meeting3/Screenshot_11.png" alt></p>
 ]]></content>
       <categories>
-        <category>Group Meetings</category>
+        <category>Workshop</category>
       </categories>
       <tags>
         <tag>Group Meeting</tag>
@@ -5017,7 +5017,7 @@
 <p><img src="/Waymo-CVPR2020/Screenshot_21.png" alt></p>
 ]]></content>
       <categories>
-        <category>CVPR2020</category>
+        <category>Workshop</category>
       </categories>
       <tags>
         <tag>CVPR2020</tag>
@@ -5072,6 +5072,75 @@
 ]]></content>
       <categories>
         <category>高考志愿填报</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Group-Meeting200721</title>
+    <url>/Group-Meeting200721/</url>
+    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="Trasnfer-Learning-on-Sign-Language"><a href="#Trasnfer-Learning-on-Sign-Language" class="headerlink" title="Trasnfer Learning on Sign Language"></a>Trasnfer Learning on Sign Language</h1><blockquote>
+<p>Keren Artiaga</p>
+</blockquote>
+<h2 id="Changlleges"><a href="#Changlleges" class="headerlink" title="Changlleges"></a>Changlleges</h2><ol>
+<li>vast majority of existing work are done only on few sign languages.</li>
+</ol>
+<h2 id="Proposed-Solution"><a href="#Proposed-Solution" class="headerlink" title="Proposed Solution"></a>Proposed Solution</h2><p>Research Directions: </p>
+<ul>
+<li>Develope a model that recongnizes a high-resource sign language and use the resulting weights and features to recognize another related/non-related but low-resource sign language. </li>
+<li>Fine-tune a pre-trained 3D CNN to recongnize signs and use NLP techniques to translate sequence of signs to languages.</li>
+</ul>
+<p><img src="/Group-Meeting200721/Screenshot_8.png" alt></p>
+<p><img src="/Group-Meeting200721/Screenshot_1.png" alt></p>
+<p><img src="/Group-Meeting200721/Screenshot_2.png" alt></p>
+<h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><ol>
+<li>Data input is some images, and the output is alphabet. There are many pictures that are similar to others since only hands moving. </li>
+<li>Many languages are totally different, what’s the output of Chinese language?</li>
+</ol>
+<h1 id="Modeling-strategies-for-risk-prediction-in-clinical-medincine-with-restricted-data"><a href="#Modeling-strategies-for-risk-prediction-in-clinical-medincine-with-restricted-data" class="headerlink" title="Modeling strategies for risk prediction in clinical medincine with restricted data"></a>Modeling strategies for risk prediction in clinical medincine with restricted data</h1><blockquote>
+<p>Junyong Lee</p>
+</blockquote>
+<p>Cox’s proportional hazard model</p>
+]]></content>
+      <categories>
+        <category>Workshop</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>TBSI2020_WORKSHOP</title>
+    <url>/TBSI2020-WORKSHOP/</url>
+    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="Sample-Complexity-of-Asynchronous-Q-Learning"><a href="#Sample-Complexity-of-Asynchronous-Q-Learning" class="headerlink" title="Sample Complexity of Asynchronous Q-Learning"></a>Sample Complexity of Asynchronous Q-Learning</h1><blockquote>
+<p>Yuxin Chen, Assistant Professor, Princeton University</p>
+</blockquote>
+<p>off-policy</p>
+<h2 id="What-is-sample-complexity-of-async-Q-learning"><a href="#What-is-sample-complexity-of-async-Q-learning" class="headerlink" title="What is sample complexity of (async) Q-learning?"></a>What is sample complexity of (async) Q-learning?</h2><p><img src="/TBSI2020-WORKSHOP/Screenshot_1.png" alt></p>
+<p><img src="/TBSI2020-WORKSHOP/Screenshot_2.png" alt></p>
+<p><img src="/TBSI2020-WORKSHOP/Screenshot_3.png" alt></p>
+<h1 id="Implicit-Deep-Learning"><a href="#Implicit-Deep-Learning" class="headerlink" title="Implicit Deep Learning"></a>Implicit Deep Learning</h1><blockquote>
+<p>Laurent EI Ghaoui, Professor, UC Berkeley </p>
+</blockquote>
+<p><img src="/TBSI2020-WORKSHOP/Screenshot_4.png" alt></p>
+<p>Implicit models are more general: It allows loops.</p>
+<p><img src="/TBSI2020-WORKSHOP/Screenshot_5.png" alt></p>
+<p>Motivation:</p>
+<ul>
+<li>Diagonose a given (implicit) model.</li>
+<li>Generate adversarial attacks.</li>
+<li>Defense: modify the training process.</li>
+</ul>
+<blockquote>
+<p>Changing a few carefully choose pixels in a test image can cause a classifier to mis-categorize the imagie(Kwiatkowska et al., 2019).</p>
+</blockquote>
+<h1 id="Learning-low-complexity-models-from-data"><a href="#Learning-low-complexity-models-from-data" class="headerlink" title="Learning low-complexity models from data"></a>Learning low-complexity models from data</h1><p>Geometry, Optimization, and Applications</p>
+<blockquote>
+<p>Qing Qu, center for Data Science, New York University, ECE, University of Michigan - Ann Arbor</p>
+</blockquote>
+<p><img src="/TBSI2020-WORKSHOP/Screenshot_7.png" alt></p>
+<h1 id="Beyond-Trans-dimensional-Sampling-Generalized-Bayesian-Model-Selection"><a href="#Beyond-Trans-dimensional-Sampling-Generalized-Bayesian-Model-Selection" class="headerlink" title="Beyond Trans-dimensional Sampling: Generalized Bayesian Model Selection"></a>Beyond Trans-dimensional Sampling: Generalized Bayesian Model Selection</h1><blockquote>
+<p>Ercan E. Kuruoglu, Visiting Professor, Tsinghua-Berkeley Shenzhen Institute</p>
+</blockquote>
+<p>Given the model classification, which model should we choose and model dimension (numbers of parameters)?</p>
+<h2 id="Linear-Regression"><a href="#Linear-Regression" class="headerlink" title="Linear Regression"></a>Linear Regression</h2>]]></content>
+      <categories>
+        <category>Workshop</category>
       </categories>
   </entry>
 </search>
