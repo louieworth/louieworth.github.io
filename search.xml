@@ -5156,4 +5156,9 @@
         <category>Workshop</category>
       </categories>
   </entry>
+  <entry>
+    <title>try_mac</title>
+    <url>/try-mac/</url>
+    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script>]]></content>
+  </entry>
 </search>
