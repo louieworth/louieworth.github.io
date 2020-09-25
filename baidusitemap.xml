@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://yoursite.com/git-tutorial/</loc>
+    <lastmod>2020-09-25</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/Paper-GANs/</loc>
+    <lastmod>2020-09-25</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/Y1S1-EnglishAcademicWriting/</loc>
+    <lastmod>2020-09-14</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/Paper-StarNet/</loc>
+    <lastmod>2020-08-22</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/Retrieval/</loc>
+    <lastmod>2020-08-21</lastmod>
+  </url>  <url>
     <loc>http://yoursite.com/GroupMeeting0811/</loc>
     <lastmod>2020-08-11</lastmod>
   </url>  <url>

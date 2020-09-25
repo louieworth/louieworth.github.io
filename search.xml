@@ -5200,4 +5200,112 @@
         <category>Workshop</category>
       </categories>
   </entry>
+  <entry>
+    <title>Paper-GANs</title>
+    <url>/Paper-GANs/</url>
+    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>There are two models in this framework: </p>
+<ul>
+<li>A generative model G which captures the data distribution.</li>
+<li>A discriminative model D which estimates the probability that a sample came from the training data rather than G.</li>
+</ul>
+<p>Training process:</p>
+<ul>
+<li>G is to maximize the probability of D making a mistake.as analogous to a team of counterfeiters, trying to produce fake currency and use it without </li>
+<li>D learns to determine whether a sample is from the model distribution or the data distribution. As analogous to the police, trying to detect the counterfeit currency. </li>
+</ul>
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>The promise of deep learning is to discover rich, hierarchical models that represent probability distribution over the kinds of data encountered in AI application. Deep generative models have had less of an impact, due to the difficulty of approximating many intractable probabilistic computations that arise in MLE. </p>
+<p>This model generates samples by passing random noise through a multilayer perceptron, and the discriminative model is also a multilayer perceptron. In this case, we can train both models using only <strong>back-propagation and dropout algorithms</strong>. No approximate inference or Markov chains are necessary. </p>
+<h1 id="Adversarial-Nets"><a href="#Adversarial-Nets" class="headerlink" title="Adversarial Nets"></a>Adversarial Nets</h1><p>$p_g$ is the generator’s distribution over data $x$</p>
+<p>$p_z(z)$ is a prior input noise variables </p>
+<p>$G(z;\theta_g)$ represents a mapping to data space, G is a differentiable function represented by a multiplayer perceptron with parameter $\theta_g$</p>
+<p>$D(x;\theta_d) $ is a second multiplayer perceptron, $D(X)$ represents the probability that x cam e from the data rather than $p_g$</p>
+<p>$$\min_{G}<br>\max_{D}<br>V(D, G) = E_{x∼p_{data(x)}}[logD(x)] + E_{z∼pz(z)}[log(1 −D(G(z)))].$$</p>
+<h1 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h1><ol>
+<li>why we alternate between k steps of optimizing D and one step of optimizing G. <ul>
+<li>Optimizing D to completion in the inner loop of training is computationally prohibitive, and on finite datasets would result in <strong>overfitting</strong>.</li>
+<li><strong>This results in D being maintained near its optimal solution, so long as G changes slowly enough.</strong> This strategy is analogous to the way that SML/PCD [31, 29] training maintains samples from a Markov chain from one learning step to the next in order to <strong>avoid burning</strong> in a Markov chain as part of the inner loop of learning. The procedure is formally presented in Algorithm 1.</li>
+</ul>
+</li>
+<li>why we transform G to minimize log(1-D(G(z))) to G to maximum log(D(G(x)))?<ul>
+<li>Because it provides much strong gradients in early learning. </li>
+<li>explain it from mathematical anger. </li>
+</ul>
+</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>GANs;</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Image Retrieval</title>
+    <url>/Retrieval/</url>
+    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="2015-Aggregating-Deep-Convolutional-Features-for-Image-Retrieval"><a href="#2015-Aggregating-Deep-Convolutional-Features-for-Image-Retrieval" class="headerlink" title="2015 Aggregating Deep Convolutional Features for Image Retrieval"></a>2015 Aggregating Deep Convolutional Features for Image Retrieval</h1><h1 id="2017-Fine-tuning-CNN-Image-Retrieval-with-No-Human-Annotation"><a href="#2017-Fine-tuning-CNN-Image-Retrieval-with-No-Human-Annotation" class="headerlink" title="2017 Fine-tuning CNN Image Retrieval with No Human Annotation"></a>2017 Fine-tuning CNN Image Retrieval with No Human Annotation</h1><h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>Training of CNNs, either from scratch or fine-tuning, requires a large amount of annotated data, where a high quality of annotation is often crucial. In</p>
+<h2 id="Main-contribution"><a href="#Main-contribution" class="headerlink" title="Main contribution"></a>Main contribution</h2><ol>
+<li>fine-tune CNNs—– Reconstructed 3D models obtained CNN descriptor whitening discriminatively learned from the same training data outperforms commonly used PCA whitening. </li>
+<li>Whitening: Traditonal whitening performed on short representations is, in some cases, unstable. We propose to learn the Whitening through the same training data. Performing whitening as a post-processing step is better and much faster to train compared to learning it end-to-end. </li>
+<li><strong>Generalized-Mean (GeM) pooling layer</strong> that generalizes max and average pooling and show that it boosts retrieval performance. </li>
+<li>In addition, we propose a novel α-weighted query expansion that is more robust compared to the standard average query expansion technique widely used for compact image rep- resentations.</li>
+<li>Applying the proposed method to the VGG network achieves state-of-the-art performance on the standard benchmarks: Oxford Buildings, Paris, and Holidays datasets.</li>
+</ol>
+]]></content>
+  </entry>
+  <entry>
+    <title>Paper_StarNet</title>
+    <url>/Paper-StarNet/</url>
+    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p><img src="/Paper-StarNet/Xnip2020-08-22_12-36-54.jpg" alt></p>
+<p>&lt;–more–&gt;</p>
+<h1 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h1><ol>
+<li>Previous methods model about Pedestrian trajectory prediction only the <strong>pairwise interactions</strong> between pedestrians, which not only oversimpfilies the interactions among pedestrians but also is computationally inefficient. </li>
+<li>Other methods are limited by the quality of manually designed features.</li>
+</ol>
+<h1 id="Contribution"><a href="#Contribution" class="headerlink" title="Contribution"></a>Contribution</h1><h2 id="StarNet"><a href="#StarNet" class="headerlink" title="StarNet"></a>StarNet</h2><p><img src="/Paper-StarNet/Xnip2020-08-22_12-51-46.jpg" alt></p>
+<p>There is two parameters in StarNet. The centreal part of StarNet is the hub network, which produces a reprensetation <strong>r</strong> of the interactions among pedestrians. </p>
+]]></content>
+      <tags>
+        <tag>Self-Driving</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Y1S1_EnglishAcademicWriting</title>
+    <url>/Y1S1-EnglishAcademicWriting/</url>
+    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="C1-Orientation"><a href="#C1-Orientation" class="headerlink" title="C1-Orientation"></a>C1-Orientation</h1><ol>
+<li>Attendance &amp; Reflection journal 20%</li>
+<li>Written assignment 30% </li>
+<li>academic oral presentations 20%</li>
+<li>Scientific paper analysis 30%</li>
+</ol>
+<h2 id="Academic-Style"><a href="#Academic-Style" class="headerlink" title="Academic Style"></a>Academic Style</h2><p>No phrasal verbs: Go up/look up</p>
+<p>No personal pronouns: I, we, opinion</p>
+<p>No contractions: It’ll: It will</p>
+<p>No Questions: so why did the project fall?</p>
+<p>No personal adverbs: Surprisingly</p>
+<p>No vague language: And so on/ etc.</p>
+<p>No basic language: like: For example/thing: factor/ lots of: significant amount/amazing: Important</p>
+<blockquote>
+<p>If our environment is not protected, our children will suffer the most.</p>
+</blockquote>
+<p>If <font color="red">the</font> environment is not protected, <font color="color">children</font> will suffer the most.</p>
+<blockquote>
+<p>I believe that we need to address these problems.</p>
+</blockquote>
+<p>These problems need to be addressed.</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>git_tutorial</title>
+    <url>/git-tutorial/</url>
+    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="Github的注册和绑定"><a href="#Github的注册和绑定" class="headerlink" title="Github的注册和绑定"></a>Github的注册和绑定</h1><ol>
+<li><p>上到<a href="https://github.com" target="_blank" rel="noopener">Github</a>官网点击sign in进行注册</p>
+<p><img src="/git-tutorial/1.webp" alt></p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Tutorial</category>
+      </categories>
+      <tags>
+        <tag>Github;</tag>
+      </tags>
+  </entry>
 </search>

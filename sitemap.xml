@@ -2,6 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/git-tutorial/</loc>
+    
+    <lastmod>2020-09-25T07:06:50.890Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Paper-GANs/</loc>
+    
+    <lastmod>2020-09-25T00:59:46.902Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Y1S1-EnglishAcademicWriting/</loc>
+    
+    <lastmod>2020-09-14T12:19:28.561Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Paper-StarNet/</loc>
+    
+    <lastmod>2020-08-22T04:56:47.951Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Retrieval/</loc>
+    
+    <lastmod>2020-08-21T02:35:03.077Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/GroupMeeting0811/</loc>
     
     <lastmod>2020-08-11T08:15:24.526Z</lastmod>
