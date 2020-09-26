@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://yoursite.com/git-tutorial/</loc>
+    <lastmod>2020-09-26</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/GPU-ssh/</loc>
     <lastmod>2020-09-25</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/GroupMeeting0811/</loc>
