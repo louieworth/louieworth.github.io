@@ -2,7 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://yoursite.com/git-tutorial/</loc>
-    <lastmod>2020-09-26</lastmod>
+    <lastmod>2020-10-02</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/logistic-regression/</loc>
+    <lastmod>2020-10-02</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/GPU-ssh/</loc>
     <lastmod>2020-09-25</lastmod>
@@ -39,9 +42,6 @@
   </url>  <url>
     <loc>http://yoursite.com/group-metting2/</loc>
     <lastmod>2020-07-20</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/%E9%AB%98%E8%80%83%E5%BF%97%E6%84%BF%E5%A1%AB%E6%8A%A5/</loc>
-    <lastmod>2020-07-07</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/tools/</loc>
     <lastmod>2020-07-07</lastmod>

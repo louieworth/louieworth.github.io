@@ -96,7 +96,7 @@
 <meta property="og:image" content="https://www.liaoxuefeng.com/files/attachments/919023000423040/0">
 <meta property="og:image" content="https://www.liaoxuefeng.com/files/attachments/919023031831104/0">
 <meta property="article:published_time" content="2020-09-25T07:01:01.000Z">
-<meta property="article:modified_time" content="2020-09-26T01:07:30.350Z">
+<meta property="article:modified_time" content="2020-10-02T11:56:58.354Z">
 <meta property="article:author" content="Louieworth">
 <meta property="article:tag" content="Github;">
 <meta name="twitter:card" content="summary">
@@ -425,7 +425,14 @@
       
 
       
-        <script src="/assets/js/APlayer.min.js"> </script><h1 id="快速操作"><a href="#快速操作" class="headerlink" title="快速操作"></a>快速操作</h1><h2 id="从云端克隆"><a href="#从云端克隆" class="headerlink" title="从云端克隆"></a>从云端克隆</h2><p>克隆仓库的命令格式是 <code>git clone [url]</code> 。 比如，要克隆 Git 的上面创建的仓库 <code>git-start.git</code>，可以用下面的命令：</p>
+        <script src="/assets/js/APlayer.min.js"> </script><h1 id="快速操作"><a href="#快速操作" class="headerlink" title="快速操作"></a>快速操作</h1><h2 id="简单的代码提交流程"><a href="#简单的代码提交流程" class="headerlink" title="简单的代码提交流程"></a>简单的代码提交流程</h2><ol>
+<li>git status 查看工作区代码相对于暂存区的差别</li>
+<li>git add . 将当前目录下修改的所有代码从工作区添加到暂存区 . 代表当前目录</li>
+<li>git commit -m ‘注释’ 将缓存区内容添加到本地仓库</li>
+<li>git pull origin master先将远程仓库master中的信息同步到本地仓库master中</li>
+<li>git push origin master 将本地版本库推送到远程服务器，<br> origin是远程主机，master表示是远程服务器上的master分支和本地分支重名的简写，分支名是可以修改的</li>
+</ol>
+<h2 id="从云端克隆"><a href="#从云端克隆" class="headerlink" title="从云端克隆"></a>从云端克隆</h2><p>克隆仓库的命令格式是 <code>git clone [url]</code> 。 比如，要克隆 Git 的上面创建的仓库 <code>git-start.git</code>，可以用下面的命令：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> http://github.com/yiibai/git-start.git</span></span><br></pre></td></tr></table></figure>
 
 <p>这会在当前目录下创建一个名为 “<code>git-start.git</code>” 的目录，并在这个目录下初始化一个 <code>.git</code> 文件夹，从远程仓库拉取下所有数据放入 <code>.git</code> 文件夹，然后从中读取最新版本的文件的拷贝。上面命令执行后，输出结果如下所示 </p>
@@ -698,6 +705,7 @@
 </ul>
 <h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://www.liaoxuefeng.com/wiki/896043488029600" target="_blank" rel="noopener">Git教程</a></p>
 <p><a href="https://www.yiibai.com/git/git-quick-start.html" target="_blank" rel="noopener">Git快速入门</a></p>
+<p><a href="https://rogerdudler.github.io/git-guide/index.de.html" target="_blank" rel="noopener">git cheat sheet</a></p>
 
       
     </div>
@@ -837,7 +845,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -898,7 +906,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#快速操作"><span class="nav-number">1.</span> <span class="nav-text">快速操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#从云端克隆"><span class="nav-number">1.1.</span> <span class="nav-text">从云端克隆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跟踪文件"><span class="nav-number">1.2.</span> <span class="nav-text">跟踪文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#暂存已修改文件"><span class="nav-number">1.3.</span> <span class="nav-text">暂存已修改文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Github的注册和绑定"><span class="nav-number">2.</span> <span class="nav-text">Github的注册和绑定</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git的初步使用"><span class="nav-number">3.</span> <span class="nav-text">Git的初步使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建本地仓库"><span class="nav-number">3.1.</span> <span class="nav-text">创建本地仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gitgnore的创建和使用"><span class="nav-number">3.2.</span> <span class="nav-text">Gitgnore的创建和使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-使本地和云端同步"><span class="nav-number">3.3.</span> <span class="nav-text">Git 使本地和云端同步</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git分支管理"><span class="nav-number">4.</span> <span class="nav-text">Git分支管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建和合并分支"><span class="nav-number">4.1.</span> <span class="nav-text">创建和合并分支</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">4.1.1.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#冲突解决"><span class="nav-number">4.2.</span> <span class="nav-text">冲突解决</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#小结-1"><span class="nav-number">4.2.1.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多人协作"><span class="nav-number">4.3.</span> <span class="nav-text">多人协作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#推送分支"><span class="nav-number">4.3.1.</span> <span class="nav-text">推送分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结-2"><span class="nav-number">4.3.2.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">5.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#快速操作"><span class="nav-number">1.</span> <span class="nav-text">快速操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简单的代码提交流程"><span class="nav-number">1.1.</span> <span class="nav-text">简单的代码提交流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从云端克隆"><span class="nav-number">1.2.</span> <span class="nav-text">从云端克隆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跟踪文件"><span class="nav-number">1.3.</span> <span class="nav-text">跟踪文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#暂存已修改文件"><span class="nav-number">1.4.</span> <span class="nav-text">暂存已修改文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Github的注册和绑定"><span class="nav-number">2.</span> <span class="nav-text">Github的注册和绑定</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git的初步使用"><span class="nav-number">3.</span> <span class="nav-text">Git的初步使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建本地仓库"><span class="nav-number">3.1.</span> <span class="nav-text">创建本地仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gitgnore的创建和使用"><span class="nav-number">3.2.</span> <span class="nav-text">Gitgnore的创建和使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-使本地和云端同步"><span class="nav-number">3.3.</span> <span class="nav-text">Git 使本地和云端同步</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git分支管理"><span class="nav-number">4.</span> <span class="nav-text">Git分支管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建和合并分支"><span class="nav-number">4.1.</span> <span class="nav-text">创建和合并分支</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">4.1.1.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#冲突解决"><span class="nav-number">4.2.</span> <span class="nav-text">冲突解决</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#小结-1"><span class="nav-number">4.2.1.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多人协作"><span class="nav-number">4.3.</span> <span class="nav-text">多人协作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#推送分支"><span class="nav-number">4.3.1.</span> <span class="nav-text">推送分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结-2"><span class="nav-number">4.3.2.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">5.</span> <span class="nav-text">Reference</span></a></li></ol></div>
             
 
           </div>
