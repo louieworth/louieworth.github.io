@@ -47,16 +47,22 @@
     <link href="http://yoursite.com/optimal-tricks/"/>
     <id>http://yoursite.com/optimal-tricks/</id>
     <published>2020-10-23T12:40:13.000Z</published>
-    <updated>2020-10-23T13:38:39.359Z</updated>
+    <updated>2020-10-29T01:39:23.282Z</updated>
     
-    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="优化算法"><a href="#优化算法" class="headerlink" title="优化算法"></a>优化算法</h1><h2 id="指数加权平均-exponentially-weighted-average"><a href="#指数加权平均-exponentially-weighted-average" class="headerlink" title="指数加权平均(exponentially weighted average)"></a>指数加权平均(exponentially weighted average)</h2><ol><li>公式是什么？</li><li>代表过去几天的平均，思维是怎样的？</li><li>指数加权平均的优势和缺点是什么，以及缺点如何解决？<ul><li>为什么不直接平均过去10天的天气？</li><li>缺点的描述，如何解决：曲线有平移</li></ul></li></ol><h2 id="Momentum"><a href="#Momentum" class="headerlink" title="Momentum"></a>Momentum</h2><ol><li>公式是什么</li><li>如何理解momentum</li></ol><h2 id="RMSprop"><a href="#RMSprop" class="headerlink" title="RMSprop"></a>RMSprop</h2><ol><li>如何理解</li><li>有什么缺点缺点，： （如果$S_{dw}$接近于0的话，怎么处理？</li></ol><h2 id="Adam"><a href="#Adam" class="headerlink" title="Adam"></a>Adam</h2><h2 id="Learning-rate-decay"><a href="#Learning-rate-decay" class="headerlink" title="Learning rate decay"></a>Learning rate decay</h2><h1 id="Batch-Normalization"><a href="#Batch-Normalization" class="headerlink" title="Batch Normalization"></a>Batch Normalization</h1>]]></content>
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="优化算法"><a href="#优化算法" class="headerlink" title="优化算法"></a>优化算法</h1><h2 id="指数加权平均-exponentially-weighted-average"><a href="#指数加权平均-exponentially-weighted-average" class="headerlink" title="指数加权平均(exponentially weighted average)"></a>指数加权平均(exponentially weighted average)</h2><ol><li><p>公式是什么？</p></li><li><p>代表过去几天的平均，思维是怎样的？</p></li><li><p>指数加权平均的优势和缺点是什么，以及缺点如何解决？</p><ul><li>为什么不直接平均过去10天的天气？</li><li>缺点的描述，如何解决：曲线有平移</li></ul><a id="more"></a></li></ol><h2 id="Momentum"><a href="#Momentum" class="headerlink" title="Momentum"></a>Momentum</h2><ol><li>公式是什么</li><li>如何理解momentum</li></ol><h2 id="RMSprop"><a href="#RMSprop" class="headerlink" title="RMSprop"></a>RMSprop</h2><ol><li>如何理解</li><li>有什么缺点缺点，： （如果$S_{dw}$接近于0的话，怎么处理？</li></ol><h2 id="Adam"><a href="#Adam" class="headerlink" title="Adam"></a>Adam</h2><h2 id="Learning-rate-decay"><a href="#Learning-rate-decay" class="headerlink" title="Learning rate decay"></a>Learning rate decay</h2><h1 id="Batch-Normalization"><a href="#Batch-Normalization" class="headerlink" title="Batch Normalization"></a>Batch Normalization</h1>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;h1 id=&quot;优化算法&quot;&gt;&lt;a href=&quot;#优化算法&quot; class=&quot;headerlink&quot; title=&quot;优化算法&quot;&gt;&lt;/a&gt;优化算法&lt;/h1&gt;&lt;h2 id=&quot;指数加权平均-
-      
+      &lt;h1 id=&quot;优化算法&quot;&gt;&lt;a href=&quot;#优化算法&quot; class=&quot;headerlink&quot; title=&quot;优化算法&quot;&gt;&lt;/a&gt;优化算法&lt;/h1&gt;&lt;h2 id=&quot;指数加权平均-exponentially-weighted-average&quot;&gt;&lt;a href=&quot;#指数加权平均-exponentially-weighted-average&quot; class=&quot;headerlink&quot; title=&quot;指数加权平均(exponentially weighted average)&quot;&gt;&lt;/a&gt;指数加权平均(exponentially weighted average)&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;公式是什么？&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;代表过去几天的平均，思维是怎样的？&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;指数加权平均的优势和缺点是什么，以及缺点如何解决？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;为什么不直接平均过去10天的天气？&lt;/li&gt;
+&lt;li&gt;缺点的描述，如何解决：曲线有平移&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;&lt;/ol&gt;
     
     </summary>
     

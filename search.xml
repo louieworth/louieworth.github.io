@@ -5755,12 +5755,17 @@
     <title>optimal-tricks</title>
     <url>/optimal-tricks/</url>
     <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="优化算法"><a href="#优化算法" class="headerlink" title="优化算法"></a>优化算法</h1><h2 id="指数加权平均-exponentially-weighted-average"><a href="#指数加权平均-exponentially-weighted-average" class="headerlink" title="指数加权平均(exponentially weighted average)"></a>指数加权平均(exponentially weighted average)</h2><ol>
-<li>公式是什么？</li>
-<li>代表过去几天的平均，思维是怎样的？</li>
-<li>指数加权平均的优势和缺点是什么，以及缺点如何解决？<ul>
+<li><p>公式是什么？</p>
+</li>
+<li><p>代表过去几天的平均，思维是怎样的？</p>
+</li>
+<li><p>指数加权平均的优势和缺点是什么，以及缺点如何解决？</p>
+<ul>
 <li>为什么不直接平均过去10天的天气？</li>
 <li>缺点的描述，如何解决：曲线有平移</li>
 </ul>
+<a id="more"></a>
+
 </li>
 </ol>
 <h2 id="Momentum"><a href="#Momentum" class="headerlink" title="Momentum"></a>Momentum</h2><ol>
