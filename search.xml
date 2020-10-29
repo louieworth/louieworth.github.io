@@ -5570,7 +5570,8 @@
     <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="模型介绍"><a href="#模型介绍" class="headerlink" title="模型介绍"></a>模型介绍</h1><h2 id="Logistic-分布"><a href="#Logistic-分布" class="headerlink" title="Logistic 分布"></a>Logistic 分布</h2><p>Logistic regression分布是一种二分类法则，其分布函数和密度函数为：</p>
 <p><img src="https://www.zhihu.com/equation?tex=F%28x%29+%3D+P%28X+%5Cleq+x%29%3D%5Cfrac%7B1%7D%7B1%2Be%5E%7B-%28x-%5Cmu%29%2F%5Cgamma%7D%7D+%5C%5C+f%28x%29+%3D+F%5E%7B%27%7D%28X+%5Cleq+x%29%3D%5Cfrac%7Be%5E%7B-%28x-%5Cmu%29%2F%5Cgamma%7D%7D%7B%5Cgamma%281%2Be%5E%7B-%28x-%5Cmu%29%2F%5Cgamma%7D%29%5E%7B2%7D%7D+%5C%5C" alt="[公式]"></p>
 <p>其中$\mu$表示位置参数，$\gamma&gt;0$为形状参数，我们可以看以下形状特点：</p>
-<p>&lt;–more–&gt;</p>
+<a id="more"></a>
+
 <p><img src="https://pic2.zhimg.com/80/v2-b15289fd1162a807e11949e5396c7989_720w.jpg" alt="img"></p>
 <p>深度学习中经常用到的sigmoid函数，使用到的就是$u=0,r=1$的参数形式。</p>
 <p>决策边界可以表示为 <img src="https://www.zhihu.com/equation?tex=w_1x_1%2Bw_2x_2%2Bb%3D0" alt="[公式]"> ，假设某个样本点 <img src="https://www.zhihu.com/equation?tex=h_w%28x%29+%3D+w_1x_1%2Bw_2x_2%2Bb+%3E+0" alt="[公式]"> 那么可以判断它的类别为 1，这个过程其实是感知机。</p>

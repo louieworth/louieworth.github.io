@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://yoursite.com/logistic-regression/</loc>
+    <lastmod>2020-10-29</lastmod>
+  </url>  <url>
     <loc>http://yoursite.com/optimal-tricks/</loc>
     <lastmod>2020-10-29</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C%E5%88%9D%E7%BA%A7/</loc>
     <lastmod>2020-10-28</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/logistic-regression/</loc>
-    <lastmod>2020-10-05</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/git-tutorial/</loc>
     <lastmod>2020-10-02</lastmod>
