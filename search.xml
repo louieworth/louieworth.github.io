@@ -4870,51 +4870,6 @@
       </categories>
   </entry>
   <entry>
-    <title>group_metting2</title>
-    <url>/group-metting2/</url>
-    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="COVID-19-RELATED"><a href="#COVID-19-RELATED" class="headerlink" title="COVID-19 RELATED"></a>COVID-19 RELATED</h1><a id="more"></a>
-
-<blockquote>
-<p>Prensentation: Yi Zhang</p>
-</blockquote>
-<p><img src="/group-metting2/Screenshot_1.png" alt></p>
-<p><strong>The Information Flow</strong></p>
-<p><img src="/group-metting2/Screenshot_2.png" alt></p>
-<h2 id="Suggestion"><a href="#Suggestion" class="headerlink" title="Suggestion"></a>Suggestion</h2><blockquote>
-<p>Steve: about the postive strageties and information transformation model </p>
-</blockquote>
-<p>A: Authority will do the information part job better. It will generate postive influence. </p>
-<blockquote>
-<p>Victor Chan: you need to think more ahead of the future. 2022 will be the graduation day. COVID-19 may not be the hotest topic. Don’t limit your topics and ideas. 摩拜&amp;小黄车, Make your topic border, since these topics and research may be your tools to find a good job. BRODER AND BRODER  [Information transmission]. How individual accepts and checks the information? I think it will be difficult. Think this problem from the <strong>engineering</strong> aspect. </p>
-</blockquote>
-<p>How to select topic. You guys must read a lot of papers. Some ideas may be soloved, so you have to keep reading papers. <strong>Agent-based model</strong> </p>
-<h2 id="Simulation"><a href="#Simulation" class="headerlink" title="Simulation"></a>Simulation</h2><p>It doesn’t means simulation will substitute the real data. Because a lot of people don’t have confusion about simulation, they believe in real data. However, simulation can cover all of the data. </p>
-<ul>
-<li><strong>controlled</strong>. You can change the parameter when you need. The important part of it is the <strong>sensitivity anlysis</strong> of the simulation model. </li>
-<li><strong>General</strong>. It will be more general than other alogrithms, you can not add some behaviors in those models. However, you can make simulation when you need. You can try something that you need. </li>
-<li><strong>Repeatable</strong>. Your model can be repeated by other researchers. </li>
-</ul>
-<h1 id="Fariness-aware-Shared-Taxi"><a href="#Fariness-aware-Shared-Taxi" class="headerlink" title="Fariness-aware Shared Taxi"></a>Fariness-aware Shared Taxi</h1><blockquote>
-<p>linear regression/log function fariness? </p>
-</blockquote>
-<p>Prensentation: 刘兴禄</p>
-<p><img src="/group-metting2/Screenshot_3.png" alt></p>
-<p><img src="/group-metting2/Screenshot_4.png" alt></p>
-<img src="/group-metting2/Screenshot_5.png" style="zoom:150%;">
-
-<p><img src="/group-metting2/Screenshot_6.png" alt></p>
-<p><img src="/group-metting2/Screenshot_7.png" alt></p>
-<p>Solve the ride-sharing model by solver: <a href="http://www.gurobi.cn/" target="_blank" rel="noopener">Gurobi</a></p>
-<h2 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h2><p><img src="/group-metting2/Screenshot_8.png" alt></p>
-<p><img src="/group-metting2/Screenshot_9.png" alt></p>
-<p><img src="/group-metting2/Screenshot_10.png" alt></p>
-<blockquote>
-<p>Victor Chan: A general question: How do you ensure fariness?</p>
-</blockquote>
-<p><img src="/group-metting2/Screenshot_11.png" alt>)<img src="/group-metting2/Screenshot_12.png" alt></p>
-]]></content>
-  </entry>
-  <entry>
     <title>吴恩达NN-1</title>
     <url>/%E5%90%B4%E6%81%A9%E8%BE%BENN/</url>
     <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="WEEK2"><a href="#WEEK2" class="headerlink" title="WEEK2"></a>WEEK2</h1><h2 id="Logistic-Regression"><a href="#Logistic-Regression" class="headerlink" title="Logistic Regression"></a>Logistic Regression</h2><p>损失函数为：</p>
@@ -5988,5 +5943,103 @@
       <tags>
         <tag>paper</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>google-colab-handbook</title>
+    <url>/google-colab-handbook/</url>
+    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="基础篇"><a href="#基础篇" class="headerlink" title="基础篇"></a>基础篇</h1><p>选择GPU：</p>
+<p><img src="/google-colab-handbook/jiangli/Workspaces/hexo/source/_posts/google-colab-handbook/v2-036d55f33726443d055d00345bd9682d_720w.jpg" alt></p>
+<p>红框可以修改页面名称，绿框点击连接（点击第一个：<strong>连接到托管代码执行程序</strong>），但是连接之后并不是以及在GPU环境下，所以需要点击蓝框进行设置。</p>
+<p>如何确定在GPU环境下运行:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line">tf.test.gpu_device_name()</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"><span class="string">'/device:GPU:0'</span></span><br></pre></td></tr></table></figure>
+
+<p>如果输出和上面一样的话就是已经在GPU环境下了。</p>
+<p>接着是Pytorch, Pytorch的安装和我们在Linux上安装一样,点击<a href="https://link.zhihu.com/?target=https%3A//pytorch.org/">官网</a>选择要环境。然后只需要将官网提供的代码copy到我们的代码块中，<strong>并且在代码前加上一个“!”点击运行即可，如下</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">!pip3 install https://download.pytorch.org/whl/cu80/torch<span class="number">-1.0</span><span class="number">.0</span>-cp36-cp36m-linux_x86_64.whl</span><br><span class="line">!pip3 install torchvision</span><br></pre></td></tr></table></figure>
+
+<p>查看GPU信息：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">!/opt/bin/nvidia-smi</span><br></pre></td></tr></table></figure>
+
+<p>其实到这里基本上所有的操作都是Linux的操作，google drive也类似于一个远程服务器。</p>
+<p>那么关于Linux的操作可以参考：<a href="https://louieworth.github.io/GPU-ssh/" target="_blank" rel="noopener">https://louieworth.github.io/GPU-ssh/</a></p>
+<h1 id="数据篇"><a href="#数据篇" class="headerlink" title="数据篇"></a>数据篇</h1><h2 id="上传，下载数据"><a href="#上传，下载数据" class="headerlink" title="上传，下载数据"></a>上传，下载数据</h2><p>2.1上传数据</p>
+<p> 2.1.1网络上数据集</p>
+<p> 由于 Colaboratory其实本质上是linux服务器，我们可以通过linux命令来下载数据。但由于在 Colaboratory上，所以我们需要注意 Colaboratory不能直接执行linux命令，我们可以通过在命令前面加上!来执行命令（大部分linux命令在前面加上“!”都能实现），比如我们下载Stanford Dogs数据集，可以通过下面命令：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">!wget <span class="string">http:</span><span class="comment">//vision.stanford.edu/aditya86/ImageNetDogs/images.tar</span></span><br></pre></td></tr></table></figure>
+
+<p>2.1.2 解压数据</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> google.colab <span class="keyword">import</span> files</span><br><span class="line">uploaded = files.upload()</span><br><span class="line"> </span><br><span class="line"><span class="keyword">for</span> fn <span class="keyword">in</span> uploaded.keys():</span><br><span class="line">  print(<span class="string">'User uploaded file "&#123;name&#125;" with length &#123;length&#125; bytes'</span>.format(</span><br><span class="line">      name=fn, length=len(uploaded[fn])))</span><br></pre></td></tr></table></figure>
+
+<p>下载数据</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> google.colab <span class="keyword">import</span> files</span><br><span class="line"> </span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'123.txt'</span>, <span class="string">'w'</span>) <span class="keyword">as</span> f:</span><br><span class="line">  f.write(<span class="string">'some content'</span>)</span><br><span class="line"> </span><br><span class="line">files.download(<span class="string">'123.txt'</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="GPU篇"><a href="#GPU篇" class="headerlink" title="GPU篇"></a>GPU篇</h1><p>查看GPU情况</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line">tf.test.gpu_device_name()</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 指定当前的工作目录</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="comment"># 此处为google drive中的文件路径,drive为之前指定的工作根目录要加上.</span></span><br><span class="line"><span class="comment">#Colab Notebooks为你的文件存放的路径，可以自行更改</span></span><br><span class="line">os.chdir(<span class="string">"drive/GoogleInnoCamp2019_LZ-master"</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="提高篇"><a href="#提高篇" class="headerlink" title="提高篇"></a><strong>提高篇</strong></h1><h2 id="如何在google-drive上运行自己的代码"><a href="#如何在google-drive上运行自己的代码" class="headerlink" title="如何在google drive上运行自己的代码"></a>如何在google drive上运行自己的代码</h2><p>如果利用GPU不运用自己本地的数据集，而是跑跑框架自带的MNIST这些数据已经是够了的。 如果要跑自己的数据集就需要将自己的数据先上传到Google Colab云盘上面去。</p>
+<p><strong>注意</strong>：如果是比较大的数据集，将本地数据上传上去就需要安装一个连接本地计算机与Google Colab的一个名为<strong>备份与同步</strong>的软件，这时候你只需要选择本地文件夹，然后点击同步，然后只需等待即可。</p>
+<p>如果是比较小的数据集直接点击桌面文件拖到Google Colab界面等待上传即可。</p>
+<p>然后上传完数据，我们又要如何调用呢。 我们需要先运行这段代码：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">!apt-get install -y -qq software-properties-common python-software-properties module-init-tools</span><br><span class="line">!add-apt-repository -y ppa:alessandro-strada/ppa <span class="number">2</span>&gt;&amp;<span class="number">1</span> &gt; /dev/null</span><br><span class="line">!apt-get update -qq <span class="number">2</span>&gt;&amp;<span class="number">1</span> &gt; /dev/null</span><br><span class="line">!apt-get -y install -qq google-drive-ocamlfuse fuse</span><br><span class="line"><span class="keyword">from</span> google.colab <span class="keyword">import</span> auth</span><br><span class="line">auth.authenticate_user()</span><br><span class="line"><span class="keyword">from</span> oauth2client.client <span class="keyword">import</span> GoogleCredentials</span><br><span class="line">creds = GoogleCredentials.get_application_default()</span><br><span class="line"><span class="keyword">import</span> getpass</span><br><span class="line">!google-drive-ocamlfuse -headless -id=&#123;creds.client_id&#125; -secret=&#123;creds.client_secret&#125; &lt; /dev/null <span class="number">2</span>&gt;&amp;<span class="number">1</span> | grep URL</span><br><span class="line">vcode = getpass.getpass()</span><br><span class="line">!echo &#123;vcode&#125; | google-drive-ocamlfuse -headless -id=&#123;creds.client_id&#125; -secret=&#123;creds.client_secret&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行这段代码会跳出两条链接你只需点击然后将链接的内容输入即可。这段代码的目的是为了将页面挂在到Google drive上。</p>
+<p>然后只需要运行以下代码:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">!mkdir -p drive</span><br><span class="line">!google-drive-ocamlfuse drive</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">os.chdir(<span class="string">'drive/Colab Notebooks'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>目的是进到我们需要到的目录下，然后就可以在当前目录下调用我的数据集</p>
+<blockquote>
+<p>Cuda/cudnn的安装： <a href="https://colab.research.google.com/drive/14OyDrmxzBmkJ8H51iodPE2aXHzCduKJP#scrollTo=TY9LSAfZ8zJx" target="_blank" rel="noopener">google cola NVIDIA</a></p>
+</blockquote>
+<h2 id="如何将大文件从-Colab-发送到-Google-Drive？"><a href="#如何将大文件从-Colab-发送到-Google-Drive？" class="headerlink" title="如何将大文件从 Colab 发送到 Google Drive？"></a>如何将大文件从 Colab 发送到 Google Drive？</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 需要发送哪个文件？</span></span><br><span class="line">file_name = <span class="string">"REPO.tar"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> googleapiclient.http <span class="keyword">import</span> MediaFileUpload</span><br><span class="line"><span class="keyword">from</span> googleapiclient.discovery <span class="keyword">import</span> build</span><br><span class="line"></span><br><span class="line">auth.authenticate_user()</span><br><span class="line">drive_service = build(<span class="string">'drive'</span>, <span class="string">'v3'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">save_file_to_drive</span><span class="params">(name, path)</span>:</span></span><br><span class="line">  file_metadata = &#123;<span class="string">'name'</span>: name, <span class="string">'mimeType'</span>: <span class="string">'application/octet-stream'</span>&#125;</span><br><span class="line">  media = MediaFileUpload(path, mimetype=<span class="string">'application/octet-stream'</span>, resumable=<span class="literal">True</span>)</span><br><span class="line">  created = drive_service.files().create(body=file_metadata, media_body=media, fields=<span class="string">'id'</span>).execute()</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">return</span> created</span><br><span class="line"></span><br><span class="line">save_file_to_drive(file_name, file_name)</span><br></pre></td></tr></table></figure>
+
+<h2 id="整理工作流"><a href="#整理工作流" class="headerlink" title="整理工作流"></a>整理工作流</h2><p>即使是 Colab Pro 用户，也会受限于 Colab 的各种约束，跟纯本地的开发、训练过程肯定有所不同，我们需要知道 Colab 具体有哪些限制，以及如何以最简单的方式来应对这些限制。</p>
+<p>Colab 的常见限制如下：</p>
+<ol>
+<li>使用了容器技术，<strong>实例释放后所有实例中的数据会清空</strong>。这会影响数据集和模型存储的方式。</li>
+<li>运行 24 小时之后系统会自动回收实例。这会考验代码是否支持无缝衔接（resumption）。</li>
+</ol>
+<p><strong>下面是我在 Colab 上的工作流：</strong></p>
+<ol>
+<li>将本地数据集压缩成单个压缩文件，上传到 Google Drive 中。</li>
+<li>打开一个 Notebook，mount Google Drive。</li>
+</ol>
+<p><img src="https://pic2.zhimg.com/v2-0ccf79ced53142dd06c094137f37b9c9_b.jpg" alt="v2-0ccf79ced53142dd06c094137f37b9c9_b"></p>
+<ol start="3">
+<li>在 Notebook 中添加一个 Section 命名为「安装环境」。然后在这个 Section 中做一些数据复制、解压，以及安装第三方包的工作。实例代码如下：</li>
+</ol>
+<p><img src="https://pic4.zhimg.com/v2-1ec575a9f8a33b43bfcd645df3060447_b.jpg" alt="v2-1ec575a9f8a33b43bfcd645df3060447_b"></p>
+<blockquote>
+<p>为什么不直接将数据集存放至 Drive 直接使用，而是要先压缩，再从 Drive 中拷贝出来解压使用？</p>
+</blockquote>
+<p>因为直接从 Drive 中读取数据是通过网络传输的，并不是从本地文件磁盘读取。如果数据文件多，那么就会发很多次网络请求，导致加载数据非常慢，进而严重影响训练速度；这也是很多小伙伴抱怨 Colab 慢的原因之一。所以我们提前压缩好数据集文件，每次训练前复制压缩文件到实例的磁盘，再进行解压，最大程度保证网络传输次数少，传输数据量小。</p>
+<ol start="4">
+<li>环境准备好后，写好训练代码就可以开始训练了。在选择训练工具框架或自己徒手写训练代码的时候，将训练产生的所有中间文件（如图片、日志、Checkpoint等）都存放至 Drive 的目录中。另外，训练的代码要能够完美地从某个 Checkpoint 中恢复训练。</li>
+</ol>
+<p>我所使用的深度学习框架是 PyTorch，辅助的训练工具是 MineTorch，MineTorch 可以将所有的训练日志同步至 Google Sheet，以方便我做实验的结果可视化和对比：<a href="https://github.com/minetorch/minetorch" target="_blank" rel="noopener">miniTorch</a></p>
+<h2 id="自动断开"><a href="#自动断开" class="headerlink" title="自动断开"></a>自动断开</h2><p><strong>针对这个问题我在网上找到了一个大神写的js脚本具体是这样的</strong>: <a href="https://colab.research.google.com/drive/1RrllgRozkus6ks4HOnSKhKI0DrUx1cdS?usp=sharing#scrollTo=jtClEMAMLVHw" target="_blank" rel="noopener">防止自动断开</a></p>
+<h2 id="数据上传"><a href="#数据上传" class="headerlink" title="数据上传"></a>数据上传</h2><p>这个问题之前真的是困扰了我很久啊，本来连接国际因特耐特就难，机场流量还贵，，这数据集动不动就几十个g这tm要传到啥时候啊，，，，，</p>
+<p>大家要始终记住这句话：<strong>colab是个云端linux系统，linux系统！！！</strong></p>
+<p>所以 wget git命令全都可以用！！！！</p>
+<p><img src="https://pic4.zhimg.com/v2-2c195e5cef9d447ed617b1b295e6cd3b_b.jpg" alt="img"></p>
+<p>这是采用wget 至于git命令嘛，git clone 地址就好了</p>
+<h2 id="连接断开数据丢失"><a href="#连接断开数据丢失" class="headerlink" title="连接断开数据丢失"></a>连接断开数据丢失</h2><p>其实这个问题呢，本来就是可以解决的嘛，把我们的数据放到谷歌云盘就好了，可以 谷歌云盘只有15g 可是我上面下载的数据可是有30g啊 所以怎么办呢？</p>
+<p>哈哈哈 这里就要提到薅羊毛的技术了，Google云端硬盘有个共享盘，他有多大呢？</p>
+<p><img src="https://pic1.zhimg.com/v2-54db171cf28ad900baef54d46b9dabe8_b.jpg" alt="img"></p>
+<p>如上图 8EB，，，，，</p>
+<p>至于怎么薅，请大家自行Google</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ol>
+<li><a href="https://juejin.im/post/6844903730370838542?tdsourcetag=s_pctim_aiomsg#heading-5" target="_blank" rel="noopener">https://juejin.im/post/6844903730370838542?tdsourcetag=s_pctim_aiomsg#heading-5</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/145520434" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/145520434</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>Tutorial</category>
+      </categories>
   </entry>
 </search>

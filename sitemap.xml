@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/google-colab-handbook/</loc>
+    
+    <lastmod>2020-11-16T14:50:11.346Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/logistic-regression/</loc>
     
     <lastmod>2020-10-29T02:50:33.484Z</lastmod>
@@ -61,13 +68,6 @@
     <loc>http://yoursite.com/Waymo-CVPR2020/</loc>
     
     <lastmod>2020-07-20T02:42:13.922Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/group-metting2/</loc>
-    
-    <lastmod>2020-07-20T02:41:46.059Z</lastmod>
     
   </url>
   
