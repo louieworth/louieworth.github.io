@@ -4393,11 +4393,6 @@
       </tags>
   </entry>
   <entry>
-    <title>my_plan_in_TBSI</title>
-    <url>/my-plan-in-TBSI/</url>
-    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script>]]></content>
-  </entry>
-  <entry>
     <title>beamer使用教程</title>
     <url>/beamer%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p><strong><code>Beamer</code></strong> is a powerful and flexible LaTeX class to create great looking presentations. This article outlines the basis steps to making a Beamer slideshow: creating the title page, adding a logo, highlighting important points, making a table of contents and adding effects to the slideshow.</p>
@@ -4918,52 +4913,6 @@
 </blockquote>
 <p><img src="/group-metting2/Screenshot_11.png" alt>)<img src="/group-metting2/Screenshot_12.png" alt></p>
 ]]></content>
-      <categories>
-        <category>Workshop</category>
-      </categories>
-      <tags>
-        <tag>Group Meeting</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>group-meeting3</title>
-    <url>/group-meeting3/</url>
-    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><blockquote>
-<p>Presenter： 徐星宇</p>
-</blockquote>
-<p><img src="/group-meeting3/Screenshot_1.png" alt></p>
-<blockquote>
-<p>Victor Chan: 图片的显示问题。</p>
-</blockquote>
-<h1 id="Literature-review-Social-Internet-of-Things"><a href="#Literature-review-Social-Internet-of-Things" class="headerlink" title="Literature review: Social Internet of Things"></a>Literature review: Social Internet of Things</h1><blockquote>
-<p>Presentor: Pingdong Wang</p>
-</blockquote>
-<p><img src="/group-meeting3/Screenshot_2.png" alt></p>
-<p><img src="/group-meeting3/Screenshot_3.png" alt></p>
-<h1 id="NN-Optimization-using-simulated-annealing-algorithm"><a href="#NN-Optimization-using-simulated-annealing-algorithm" class="headerlink" title="NN Optimization using simulated annealing algorithm"></a>NN Optimization using simulated annealing algorithm</h1><blockquote>
-<p>Presenter: Jack Kuo</p>
-</blockquote>
-<p><img src="/group-meeting3/Screenshot_4.png" alt></p>
-<h2 id="Goal"><a href="#Goal" class="headerlink" title="Goal"></a>Goal</h2><p><img src="/group-meeting3/Screenshot_5.png" alt></p>
-<p><strong>Edges Disconnetion</strong></p>
-<p><img src="/group-meeting3/Screenshot_6.png" alt></p>
-<p><img src="/group-meeting3/Screenshot_7.png" alt></p>
-<p><img src="/group-meeting3/Screenshot_8.png" alt></p>
-<p>Just reoder the dataset and train it for one time….==why==</p>
-<blockquote>
-<p>Jiang: Time series/ Data Leakage  </p>
-<p>Jiang: Trade-off of mask and accuracy</p>
-</blockquote>
-<p><img src="/group-meeting3/group-meeting3%5CScreenshot_9.png" alt></p>
-<p><img src="/group-meeting3/Screenshot_10.png" alt></p>
-<p><img src="/group-meeting3/Screenshot_11.png" alt></p>
-]]></content>
-      <categories>
-        <category>Workshop</category>
-      </categories>
-      <tags>
-        <tag>Group Meeting</tag>
-      </tags>
   </entry>
   <entry>
     <title>吴恩达NN-1</title>
@@ -5044,49 +4993,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Group-Meeting200721</title>
-    <url>/Group-Meeting200721/</url>
-    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="Trasnfer-Learning-on-Sign-Language"><a href="#Trasnfer-Learning-on-Sign-Language" class="headerlink" title="Trasnfer Learning on Sign Language"></a>Trasnfer Learning on Sign Language</h1><blockquote>
-<p>Keren Artiaga</p>
-</blockquote>
-<h2 id="Changlleges"><a href="#Changlleges" class="headerlink" title="Changlleges"></a>Changlleges</h2><ol>
-<li>vast majority of existing work are done only on few sign languages.</li>
-</ol>
-<h2 id="Proposed-Solution"><a href="#Proposed-Solution" class="headerlink" title="Proposed Solution"></a>Proposed Solution</h2><p>Research Directions: </p>
-<ul>
-<li>Develope a model that recongnizes a high-resource sign language and use the resulting weights and features to recognize another related/non-related but low-resource sign language. </li>
-<li>Fine-tune a pre-trained 3D CNN to recongnize signs and use NLP techniques to translate sequence of signs to languages.</li>
-</ul>
-<p><img src="/Group-Meeting200721/Screenshot_8.png" alt></p>
-<p><img src="/Group-Meeting200721/Screenshot_1.png" alt></p>
-<p><img src="/Group-Meeting200721/Screenshot_2.png" alt></p>
-<h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><ol>
-<li>Data input is some images, and the output is alphabet. There are many pictures that are similar to others since only hands moving. </li>
-<li>Many languages are totally different, what’s the output of Chinese language?</li>
-</ol>
-<h1 id="Modeling-strategies-for-risk-prediction-in-clinical-medincine-with-restricted-data"><a href="#Modeling-strategies-for-risk-prediction-in-clinical-medincine-with-restricted-data" class="headerlink" title="Modeling strategies for risk prediction in clinical medincine with restricted data"></a>Modeling strategies for risk prediction in clinical medincine with restricted data</h1><blockquote>
-<p>Junyong Lee</p>
-</blockquote>
-<p>Cox’s proportional hazard model</p>
-<center>**总结** </center>
-
-<br>
-
-
-
-	<div class="row">
-    <embed src="2020-07-21.pdf" width="100%" height="550" type="application/pdf">
-	</div>
-
-
-
-
-<br>]]></content>
-      <categories>
-        <category>Workshop</category>
-      </categories>
-  </entry>
-  <entry>
     <title>TBSI2020_WORKSHOP</title>
     <url>/TBSI2020-WORKSHOP/</url>
     <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="Sample-Complexity-of-Asynchronous-Q-Learning"><a href="#Sample-Complexity-of-Asynchronous-Q-Learning" class="headerlink" title="Sample Complexity of Asynchronous Q-Learning"></a>Sample Complexity of Asynchronous Q-Learning</h1><blockquote>
@@ -5121,31 +5027,6 @@
 </blockquote>
 <p>Given the model classification, which model should we choose and model dimension (numbers of parameters)?</p>
 <h2 id="Linear-Regression"><a href="#Linear-Regression" class="headerlink" title="Linear Regression"></a>Linear Regression</h2>]]></content>
-      <categories>
-        <category>Workshop</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>GroupMeeting0811</title>
-    <url>/GroupMeeting0811/</url>
-    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><img src="/GroupMeeting0811/Xnip2020-08-11_11-02-00.jpg" style="zoom:50%;">
-
-<p>Question:</p>
-<blockquote>
-<p>Where is the hidden part of Markov Chain? </p>
-</blockquote>
-<blockquote>
-<p>SEIR model <a href="https://zhuanlan.zhihu.com/p/142117573" target="_blank" rel="noopener">传染病模型</a>. Based on the SEIR, we can also get the result of SEIR without Markov Chain. Why we need it? What’s the influences? </p>
-</blockquote>
-<blockquote>
-<p>What’s the output of the Markov Chain?</p>
-</blockquote>
-<blockquote>
-<p>Mengxuan Chen, Literature review</p>
-</blockquote>
-<p><img src="/GroupMeeting0811/Xnip2020-08-11_11-44-24.jpg" alt></p>
-<p><img src="/GroupMeeting0811/Xnip2020-08-11_11-47-08.jpg" alt></p>
-]]></content>
       <categories>
         <category>Workshop</category>
       </categories>
@@ -5186,61 +5067,6 @@
       <tags>
         <tag>GANs;</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Image Retrieval</title>
-    <url>/Retrieval/</url>
-    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="2015-Aggregating-Deep-Convolutional-Features-for-Image-Retrieval"><a href="#2015-Aggregating-Deep-Convolutional-Features-for-Image-Retrieval" class="headerlink" title="2015 Aggregating Deep Convolutional Features for Image Retrieval"></a>2015 Aggregating Deep Convolutional Features for Image Retrieval</h1><h1 id="2017-Fine-tuning-CNN-Image-Retrieval-with-No-Human-Annotation"><a href="#2017-Fine-tuning-CNN-Image-Retrieval-with-No-Human-Annotation" class="headerlink" title="2017 Fine-tuning CNN Image Retrieval with No Human Annotation"></a>2017 Fine-tuning CNN Image Retrieval with No Human Annotation</h1><h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>Training of CNNs, either from scratch or fine-tuning, requires a large amount of annotated data, where a high quality of annotation is often crucial. In</p>
-<h2 id="Main-contribution"><a href="#Main-contribution" class="headerlink" title="Main contribution"></a>Main contribution</h2><ol>
-<li>fine-tune CNNs—– Reconstructed 3D models obtained CNN descriptor whitening discriminatively learned from the same training data outperforms commonly used PCA whitening. </li>
-<li>Whitening: Traditonal whitening performed on short representations is, in some cases, unstable. We propose to learn the Whitening through the same training data. Performing whitening as a post-processing step is better and much faster to train compared to learning it end-to-end. </li>
-<li><strong>Generalized-Mean (GeM) pooling layer</strong> that generalizes max and average pooling and show that it boosts retrieval performance. </li>
-<li>In addition, we propose a novel α-weighted query expansion that is more robust compared to the standard average query expansion technique widely used for compact image rep- resentations.</li>
-<li>Applying the proposed method to the VGG network achieves state-of-the-art performance on the standard benchmarks: Oxford Buildings, Paris, and Holidays datasets.</li>
-</ol>
-]]></content>
-  </entry>
-  <entry>
-    <title>Paper_StarNet</title>
-    <url>/Paper-StarNet/</url>
-    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p><img src="/Paper-StarNet/Xnip2020-08-22_12-36-54.jpg" alt></p>
-<p>&lt;–more–&gt;</p>
-<h1 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h1><ol>
-<li>Previous methods model about Pedestrian trajectory prediction only the <strong>pairwise interactions</strong> between pedestrians, which not only oversimpfilies the interactions among pedestrians but also is computationally inefficient. </li>
-<li>Other methods are limited by the quality of manually designed features.</li>
-</ol>
-<h1 id="Contribution"><a href="#Contribution" class="headerlink" title="Contribution"></a>Contribution</h1><h2 id="StarNet"><a href="#StarNet" class="headerlink" title="StarNet"></a>StarNet</h2><p><img src="/Paper-StarNet/Xnip2020-08-22_12-51-46.jpg" alt></p>
-<p>There is two parameters in StarNet. The centreal part of StarNet is the hub network, which produces a reprensetation <strong>r</strong> of the interactions among pedestrians. </p>
-]]></content>
-      <tags>
-        <tag>Self-Driving</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Y1S1_EnglishAcademicWriting</title>
-    <url>/Y1S1-EnglishAcademicWriting/</url>
-    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="C1-Orientation"><a href="#C1-Orientation" class="headerlink" title="C1-Orientation"></a>C1-Orientation</h1><ol>
-<li>Attendance &amp; Reflection journal 20%</li>
-<li>Written assignment 30% </li>
-<li>academic oral presentations 20%</li>
-<li>Scientific paper analysis 30%</li>
-</ol>
-<h2 id="Academic-Style"><a href="#Academic-Style" class="headerlink" title="Academic Style"></a>Academic Style</h2><p>No phrasal verbs: Go up/look up</p>
-<p>No personal pronouns: I, we, opinion</p>
-<p>No contractions: It’ll: It will</p>
-<p>No Questions: so why did the project fall?</p>
-<p>No personal adverbs: Surprisingly</p>
-<p>No vague language: And so on/ etc.</p>
-<p>No basic language: like: For example/thing: factor/ lots of: significant amount/amazing: Important</p>
-<blockquote>
-<p>If our environment is not protected, our children will suffer the most.</p>
-</blockquote>
-<p>If <font color="red">the</font> environment is not protected, <font color="color">children</font> will suffer the most.</p>
-<blockquote>
-<p>I believe that we need to address these problems.</p>
-</blockquote>
-<p>These problems need to be addressed.</p>
-]]></content>
   </entry>
   <entry>
     <title>git_tutorial</title>
