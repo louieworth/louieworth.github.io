@@ -83,12 +83,12 @@
 
 
 
-<meta name="description" content="基础篇选择GPU：  红框可以修改页面名称，绿框点击连接（点击第一个：连接到托管代码执行程序），但是连接之后并不是以及在GPU环境下，所以需要点击蓝框进行设置。 如何确定在GPU环境下运行: 12345import tensorflow as tftf.test.gpu_device_name()---&#39;&#x2F;device:GPU:0&#39;  如果输出和上面一样的话就是已经在GPU环境下了。 接着是Py">
+<meta name="description" content="基础篇选择GPU：  红框可以修改页面名称，绿框点击连接（点击第一个：连接到托管代码执行程序），但是连接之后并不是以及在GPU环境下，所以需要点击蓝框进行设置。 如何确定在GPU环境下运行:">
 <meta property="og:type" content="article">
 <meta property="og:title" content="google-colab-handbook">
 <meta property="og:url" content="http://yoursite.com/google-colab-handbook/index.html">
 <meta property="og:site_name" content="Louieworth&#39;s blog">
-<meta property="og:description" content="基础篇选择GPU：  红框可以修改页面名称，绿框点击连接（点击第一个：连接到托管代码执行程序），但是连接之后并不是以及在GPU环境下，所以需要点击蓝框进行设置。 如何确定在GPU环境下运行: 12345import tensorflow as tftf.test.gpu_device_name()---&#39;&#x2F;device:GPU:0&#39;  如果输出和上面一样的话就是已经在GPU环境下了。 接着是Py">
+<meta property="og:description" content="基础篇选择GPU：  红框可以修改页面名称，绿框点击连接（点击第一个：连接到托管代码执行程序），但是连接之后并不是以及在GPU环境下，所以需要点击蓝框进行设置。 如何确定在GPU环境下运行:">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://yoursite.com/google-colab-handbook/jiangli/Workspaces/hexo/source/_posts/google-colab-handbook/v2-036d55f33726443d055d00345bd9682d_720w.jpg">
 <meta property="og:image" content="https://pic2.zhimg.com/v2-0ccf79ced53142dd06c094137f37b9c9_b.jpg">
@@ -96,7 +96,7 @@
 <meta property="og:image" content="https://pic4.zhimg.com/v2-2c195e5cef9d447ed617b1b295e6cd3b_b.jpg">
 <meta property="og:image" content="https://pic1.zhimg.com/v2-54db171cf28ad900baef54d46b9dabe8_b.jpg">
 <meta property="article:published_time" content="2020-11-16T14:03:12.000Z">
-<meta property="article:modified_time" content="2020-11-16T14:50:11.346Z">
+<meta property="article:modified_time" content="2020-11-16T14:55:37.856Z">
 <meta property="article:author" content="Louieworth">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/google-colab-handbook/jiangli/Workspaces/hexo/source/_posts/google-colab-handbook/v2-036d55f33726443d055d00345bd9682d_720w.jpg">
@@ -424,6 +424,8 @@
 <p><img src="/google-colab-handbook/jiangli/Workspaces/hexo/source/_posts/google-colab-handbook/v2-036d55f33726443d055d00345bd9682d_720w.jpg" alt></p>
 <p>红框可以修改页面名称，绿框点击连接（点击第一个：<strong>连接到托管代码执行程序</strong>），但是连接之后并不是以及在GPU环境下，所以需要点击蓝框进行设置。</p>
 <p>如何确定在GPU环境下运行:</p>
+<a id="more"></a>
+
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line">tf.test.gpu_device_name()</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"><span class="string">'/device:GPU:0'</span></span><br></pre></td></tr></table></figure>
 
 <p>如果输出和上面一样的话就是已经在GPU环境下了。</p>
