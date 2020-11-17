@@ -1660,7 +1660,7 @@
       
         
           
-            <p>写这篇博客的原因是，网上很多关于Lightgbm的讲解都是从Lightgbm的官方文档来的，官方文档只会告诉你怎么用，很多细节都没讲。所以自己翻过来Lightgbm的源论文：LightGBM: A Highly Efficient Gradient Boosting Decision Tree仔细看了几遍，现在整理一下源论文，加深自己对Lightgbm技术细节的认识和思考。</p>
+            <script src="/assets/js/APlayer.min.js"> </script><p>写这篇博客的原因是，网上很多关于Lightgbm的讲解都是从Lightgbm的官方文档来的，官方文档只会告诉你怎么用，很多细节都没讲。所以自己翻过来Lightgbm的源论文：LightGBM: A Highly Efficient Gradient Boosting Decision Tree仔细看了几遍，现在整理一下源论文，加深自己对Lightgbm技术细节的认识和思考。</p>
 <p>首先感谢网友<a href="https://blog.csdn.net/shine19930820/article/details/79123216" target="_blank" rel="noopener">立刻有</a>的博客，省去了我很多翻译的工作。我更改了他博客的部分不当（翻译或者公式）的地方，又加入了自己的一些思考。</p>
 <h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>Gradient Boosting Decision Tree (GBDT)非常流行却鲜有实现，只有像XGBoost和pGBRT实现。当特征维度较高和数据量巨大的时候，仍然存在效率和可扩展性的问题。一个主要原因就是对于每一个特征的每一个分裂点，都需要遍历全部数据计算信息增益，这一过程非常耗时。针对这一问题，本文提出两种新方法：<strong>Gradient-based One-Side Sampling (GOSS) 和Exclusive Feature Bundling (EFB)</strong>（<strong>基于梯度的one-side采样</strong>和<strong>互斥的特征捆绑</strong>）。在GOSS中，我们排除了重要的比例-具有小梯度的实例，只用剩下的来估计信息增益，我们证明，<strong>这些梯度大的实例在计算信息增益中扮演重要角色</strong>，GOSS可以用更小的数据量对信息增益进行相当准确的估计。对于EFB，我们捆绑互斥的特征（例如，特征间很少同时非零的特征），来降低特征的个数。我们完美地证明了捆绑互斥特征是NP难的，但贪心算法能够实现相当好的逼近率，因此我们能够在不损害分割点准确率许多的情况下，有效减少特征的数量。（牺牲一点分割准确率降低特征数量），这一算法命名为LightGBM。在多个公共数据集实验证明，LightGBM加速了传统GBDT训练过程20倍以上，同时达到了几乎相同的精度。</p>
 <h1 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a>1. Introduction</h1><p>GBDT因为其本身的有效性、准确性、可解释性，成为了广泛使用的机器学习算法。GBDT在许多机器学习任务上均取得了最好的效果，例如多分类，点击预测，排序。但最近几年随着大数据的爆发（特征量和数据量），GBDT面临平衡准确率和效率的调整。</p>
