@@ -5975,7 +5975,15 @@
 <p>下载数据</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> google.colab <span class="keyword">import</span> files</span><br><span class="line"> </span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'123.txt'</span>, <span class="string">'w'</span>) <span class="keyword">as</span> f:</span><br><span class="line">  f.write(<span class="string">'some content'</span>)</span><br><span class="line"> </span><br><span class="line">files.download(<span class="string">'123.txt'</span>)</span><br></pre></td></tr></table></figure>
 
-<h1 id="GPU篇"><a href="#GPU篇" class="headerlink" title="GPU篇"></a>GPU篇</h1><p>查看GPU情况</p>
+<h1 id="GPU篇"><a href="#GPU篇" class="headerlink" title="GPU篇"></a>GPU篇</h1><p>查看是否可以使用GPU:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">torch.cuda.is_available()</span><br></pre></td></tr></table></figure>
+
+<p>如果可用的话:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> torch.cuda.is_avaibale():</span><br><span class="line">    model = model.cuda()</span><br></pre></td></tr></table></figure>
+
+
+
+<p>查看GPU情况</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line">tf.test.gpu_device_name()</span><br></pre></td></tr></table></figure>
 
 
