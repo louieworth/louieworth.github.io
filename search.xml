@@ -6100,16 +6100,20 @@
     <title>python深拷贝与浅拷贝</title>
     <url>/python%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/</url>
     <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h1><ol>
-<li>可变数据类型与不可变数据类型<ol>
+<li><p>可变数据类型与不可变数据类型</p>
+<ol>
 <li>不可变数据类型：当我们对<strong>字符串、数值型、布尔值</strong>的数据改变变量名，并不会影响到数据在内存中的位置。</li>
 <li>可变数据类型：虽然是相同的数据，但是变量名字不同，<strong>内存中仍然会开辟新的内存地址</strong>来进行存放相同的数据，</li>
 </ol>
 </li>
-<li>浅拷贝与深拷贝<ol>
+<li><p>浅拷贝与深拷贝</p>
+<ol>
 <li>浅拷贝只是拷贝数据的第一层，不会拷贝子对象。</li>
 <li>深拷贝不仅会拷贝数据的第一层，还会拷贝数据的元素。</li>
 <li>知道如何解释这个？吗？</li>
 </ol>
+<a id="more"></a>
+
 </li>
 </ol>
 <h1 id="Python对象"><a href="#Python对象" class="headerlink" title="Python对象"></a>Python对象</h1><p><strong>在python中，一切皆可对象。</strong>换句话说，我们在pyhton中构造的任何数据类型都可以是一个对象，不管是数字，字符串，字典等常见数据类型，或者说函数，甚至是我们导入的模块。</p>
