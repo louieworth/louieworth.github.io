@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-12-07T03:18:13.769Z</updated>
+  <updated>2020-12-10T07:27:13.563Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Batch_normalization</title>
+    <link href="http://yoursite.com/Batch-normalization/"/>
+    <id>http://yoursite.com/Batch-normalization/</id>
+    <published>2020-12-10T03:33:10.000Z</published>
+    <updated>2020-12-10T07:27:13.563Z</updated>
+    
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="Batch-Norm的作用以及"><a href="#Batch-Norm的作用以及" class="headerlink" title="Batch Norm的作用以及"></a>Batch Norm的作用以及</h1><h1 id="为什么BN会有作用"><a href="#为什么BN会有作用" class="headerlink" title="为什么BN会有作用"></a>为什么BN会有作用</h1><ul><li>它在做类似的工作，不仅仅对于输入值，也还有隐藏单元值。</li><li><font color="red">它可以使得权重比我们的网络更滞后或更深层。</font><ul><li>从神经网络后层的角度来看，前层的网络不会移动地那么多，因为受到了均值和方差的限制，所以这使得后层的工作和学习变得更加容易。</li></ul></li><li>轻微的正则化作用<ul><li>Each mini-batch is scaled by the mean/variance computed on just that mini-batch.</li><li>This adds some noise to the values z within that mini-batch. So, similar to dropout, it adds some noise to each hidden layers’ activations.</li><li>This has a slightly regularization effect.</li></ul></li></ul><h1 id="面试"><a href="#面试" class="headerlink" title="面试"></a>面试</h1><ol><li><p>Batch Norm发生在哪一层</p><p>发生在activate function 之前，也就是z和a之间。</p></li><li><p>Batch-norm如何工作的，以及在反向传播时候的情况是什么样子的</p><p>假设你在使用 mini-batch 梯度下降法，你运行 𝑡 = 1到 batch 数量的 for 循环，你会在 mini-batch 𝑋 { 𝑡 } 上应用正向 prop， 每个隐藏层都应用正向 prop，用 Batch 归一化代替𝑧 [ 𝑙 ] 为𝑧̃ [ 𝑙 ] 。接下来，它确保在这个 minibatch 中，𝑧值有归一化的均值和方差，归一化均值和方差后是𝑧̃ [ 𝑙 ] ，然后，你用反向 prop 计 算 𝑑𝑤 [ 𝑙 ] 和 𝑑𝑏 [ 𝑙 ] ，及所有 l 层所有的参数， 𝑑 𝛽 [ 𝑙 ] 和 𝑑 𝛾 [ 𝑙 ] 。尽管严格来说，因为你要去掉 𝑏 ，这 部分其实已经去掉了。最后，你更新这些参数： 𝑤 [ 𝑙 ] = 𝑤 [ 𝑙 ] − αd𝑤 [ 𝑙 ] ，和以前一样， 𝛽 [ 𝑙 ] = 𝛽 [ 𝑙 ]  - 𝛼𝑑 𝛽 [ 𝑙 ] ，对于 𝛾 也是如此 𝛾 [ 𝑙 ] = 𝛾 [ 𝑙 ] − 𝛼𝑑 𝛾 [ 𝑙 ] 。</p><p>如果你已将梯度计算如下，你就可以使用梯度下降法了，这就是我写到这里的，但也适 用于有 Momentum、RMSprop、Adam 的梯度下降法。与其使用梯度下降法更新 mini-batch， 你可以使用这些其它算法来更新，我们在之前几个星期中的视频中讨论过的，也可以应用其 它的一些优化算法来更新由 Batch 归一化添加到算法中的 𝛽 和 𝛾 参数。</p></li><li><p>Batch-norm 为什么没有添加variance b？</p><p>先前我说过每层的参数是 𝑤 [𝑙]和 𝑏 [𝑙]，还有 𝛽 [𝑙]和 𝛾 [𝑙]， 请注意计算𝑧的方式如下，𝑧 [ 𝑙 ] = 𝑤 [ 𝑙 ] 𝑎 [ 𝑙−1 ] + 𝑏 [ 𝑙 ] ，但 Batch 归一化做的是，它要看这个 mini𝑙 batch，先将𝑧 [ 𝑙 ] 𝛽 和归一化，结果为均值 0 和标准方差，再由 𝛾 重缩放，但这意味着，无论 𝑏 [ ] 的值是多少，都是要被减去的，因为在 Batch 归一化的过程中，你要计算𝑧 [ 𝑙 ] 的均值，再减去 平均值，在此例中的 mini-batch 中增加任何常数，数值都不会改变，因为加上的任何常数都 将会被均值减去所抵消。</p><p>所以总结一下，因为 Batch 归一化超过了此层𝑧 [ 𝑙 ] 的均值， [ 𝑙 ] 这个参数没有意义，所以， 𝑏 你必须去掉它，由 𝛽 [ 𝑙 ] 代替，这是个控制参数，会影响转移或偏置条件。</p></li></ol><h1 id="优点和缺点"><a href="#优点和缺点" class="headerlink" title="优点和缺点"></a>优点和缺点</h1><h1 id="Batch-Norm-总结"><a href="#Batch-Norm-总结" class="headerlink" title="Batch Norm 总结"></a>Batch Norm 总结</h1><h2 id="1-优点"><a href="#1-优点" class="headerlink" title="1 优点"></a>1 优点</h2><p>（1）没有它之前，需要小心的调整学习率和权重初始化，但是有了BN可以放心的使用大学习率，但是使用了BN，就不用小心的调参了，较大的学习率极大的提高了学习速度。（因为batchnorm<strong>将特征归一化到0点附近，显然会加快训练速度</strong>；并更进一步的通过变换拉大数据之间的<strong>相对差异性</strong>，使特征更容易区分）<br>（2）Batchnorm本身上也是一种正则的方式，可以代替其他正则方式如dropout等<br>（3）batchnorm降低了数据之间的绝对差异，有一个去相关的性质，更多的考虑相对差异性，因此在分类任务上具有更好的效果。</p><h2 id="2-缺点"><a href="#2-缺点" class="headerlink" title="2 缺点"></a>2 缺点</h2><p>韩国团队在2017NTIRE图像超分辨率中取得了top1的成绩，主要原因竟是去掉了网络中的batchnorm层，由此可见，BN并不是适用于所有任务的，<strong>在image-to-image这样的任务中，尤其是超分辨率上，图像的绝对差异显得尤为重要，所以batchnorm的scale并不适合。</strong></p><h1 id="Drop-out的实现细节"><a href="#Drop-out的实现细节" class="headerlink" title="Drop out的实现细节"></a>Drop out的实现细节</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># keep_prob is the chance to ignore drop out the nerual </span></span><br><span class="line"></span><br><span class="line">d3 = np.random.randint(a3.shape[<span class="number">0</span>]) &lt; keep_prob </span><br><span class="line">a3  = np.multply(a3, d3)</span><br><span class="line">a3 /= keep_prob</span><br><span class="line"></span><br><span class="line"><span class="comment"># inorder not changing the z4 </span></span><br><span class="line">z[<span class="number">4</span>] = w[<span class="number">4</span>]a[<span class="number">3</span>] + b[<span class="number">4</span>]</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;&lt;h1 id=&quot;Batch-Norm的作用以及&quot;&gt;&lt;a href=&quot;#Batch-Norm的作用以及&quot; class=&quot;headerlink&quot; title=&quot;Batch Norm的作
+      
+    
+    </summary>
+    
+    
+      <category term="Deep Learning" scheme="http://yoursite.com/categories/Deep-Learning/"/>
+    
+    
+      <category term="CNN" scheme="http://yoursite.com/tags/CNN/"/>
+    
+  </entry>
   
   <entry>
     <title>python深拷贝与浅拷贝</title>
@@ -472,31 +498,6 @@
     
       <category term="Notes" scheme="http://yoursite.com/categories/Notes/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>catboost</title>
-    <link href="http://yoursite.com/catboost/"/>
-    <id>http://yoursite.com/catboost/</id>
-    <published>2020-06-07T01:35:21.000Z</published>
-    <updated>2020-06-07T08:44:02.000Z</updated>
-    
-    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p><img src="https://www.biaodianfu.com/wp-content/uploads/2019/03/catboost.png" alt="img"></p><p><img src="http://p1.pstatp.com/large/pgc-image/78cd3c52f9884ddea6252fe18cad3429" alt="深入理解CatBoost"></p><h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>This paper presents a new open-sourced gradients boosting library that successfully handles categorical features and outperforms other gradient boosting algorithms based on CUPs and GPUs. Initally, the reason that this paper proposed is to handle categotical features. </p><h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Why we need to pay attention to categorical features and transform them?</p><ul><li>categorical feature is a feature having a discrete set of values that are not comparable with each other (e.g., user ID or name of a city). So we need to transform into valueable feature.</li></ul><p>This paper lists the problems about how we deal with categorical features and proposes:</p><ul><li>A new schema for calculating leaf values when selecting the tree structure, which helps reduce overfitting.</li><li>Catboost has both GPU and CPU implementations. The GPU implementation allows for faster training and the CPU implement allows for faster scoring. </li></ul><h1 id="Categotical-Features"><a href="#Categotical-Features" class="headerlink" title="Categotical Features"></a>Categotical Features</h1><ol><li><p>one-hot encoding</p><p>The most widely used technique which is usually applied to low-cardinality categotical features is <em>one-hot encoding</em>. However, there are two issues: </p><ul><li>When it comes to high-cardinality categorical features,  the sparse martrix will be so huge that the computation cost soaring.</li><li>For the high important categorical features, the tree will grow the very unbalance tree and need to grow very deeply to achieve the accurancy. It will cause overfitting. </li></ul><p>What we need to notice is that <em>one-hot encoding</em> can be done during the preprocessing phase or during the training, the latter can be implemented more efficiently in terms of training time and is implemented in Catboost.</p></li><li><p>Greedy Target-based Statistics (Greedy TBS)</p><p>Another way to deal with categorical features is to compute some statistics using the label values of the example. The simplest way is to substitue the category with <strong>the average label value</strong> on the whole training set.<br>$$<br>\hat{x}<em>k^i=\frac{\sum</em>{j=1}^{n}[x_{j,k}=x_{i,k}]\cdot Y_i}{\sum_{j=1}^{n}[x_{j,k}=x_{i,k}]}<br>$$<br>Problem: </p><ul><li>overfitting</li><li>bias gradients</li></ul></li><li><p>Improved version of Greedy TBS<br>$$<br>\hat{x}<em>k^i=\frac{\sum</em>{j=1}^{p-1}[x_{\sigma <em>j,k}=x</em>{\sigma <em>p,k}]Y</em>{\sigma <em>j}+a\cdot P}{\sum</em>{j=1}^{p-1}[x_{\sigma <em>j,k}=x</em>{\sigma _p,k}]+a}<br>$$<br>Adding prior $P$ is a common practice and it helps to reduce the noise obtained from low-frequency categories. </p><p>Regression Task:</p><ul><li>calculating prior is to take the average label value in the dataset.</li></ul><p>Binary Classification:</p><ul><li>prior is usually an priori probability of encountering  a postive class.</li></ul><p>Problem:</p><ul><li>overfitting</li></ul><h2 id="Feature-combinations"><a href="#Feature-combinations" class="headerlink" title="Feature combinations"></a>Feature combinations</h2><p>Note that any combination of several categorical features could be considered as a new one (e.g., user ID and music genre). If we just use one-hot encoding or label encoding, we loose a new powerful information. So, we need to combine some features. </p><p>However, the number of combinations grows exponentially with the number of categorical featuees in dataset and it is not possible to consider all of them in the algorithm. </p><h3 id="CatBoost-method"><a href="#CatBoost-method" class="headerlink" title="CatBoost method"></a>CatBoost method</h3><p>CatBoost considers combination in a greedy way. </p><ol><li>No combinations are considered for the first split in the tree. </li><li>For the next splits CatBoost combines all combinations and categorical features present in the current tree with all categorical features in dataset. </li><li>Combination values are converted to numbers on the fly. </li></ol><p><strong>Notice</strong>: </p><p>CatBoost also generates combinations of numberical and categorical features in the following way: all the splits selected in the tree are considered as categorical with two values and used in combinations in the same way as categotical ones.</p><h3 id="count-encoding"><a href="#count-encoding" class="headerlink" title="count encoding"></a>count encoding</h3><p>Caboost also uses a number that calculates number of appearances of this category in the dataset.</p><h1 id="Fighting-Gradient-Bias"><a href="#Fighting-Gradient-Bias" class="headerlink" title="Fighting Gradient Bias"></a>Fighting Gradient Bias</h1><blockquote><p>why gradients have gradients bias?</p><p>what problem will cause by gradient bias?</p><p>how to fix it?</p></blockquote><p>All classical boosting algorithms suffer from overfitting caused by the problem of biased pointwise gradient estimates. Gradients used same data points to estimate each step. This leads to a shift of the distribution of estimated gradients in any domain of feature space in comparison with the true distribution of gradients in this domain, which leads to overfitting. </p><p>In many GBDTs (e.g., XGBoost, LightGBM) building trees with two steps:</p><ol><li>Choosing the tree structure and setting values in leafts after the tree structure is fixed.</li><li>To choose the best tree structure, the algorithm enumerates through different splits, builds trees with theses splits, set values in the obtained leafts, scores the trees and selects the best split. </li></ol><p>CatBoost modified the first phase and hold the same second phase. </p></li></ol><p><img src="https://pic4.zhimg.com/80/v2-94510dc35d717921ccb0cfa0aa109907_720w.jpg" alt="img"></p><p>我们运用下面这个技巧来处理这个问题：对于每一个样本 ，我们训练一个单独的模型$M$，且该模型从不使用基于该样本的梯度估计进行更新。我们使用$g_i$来估计 上的梯度，并使用这个估计对结果树进行评分。</p><p> <img src="http://p9.pstatp.com/large/pgc-image/c41d966835c641f48f5839de35ef8c57" alt="深入理解CatBoost"></p><h1 id="预测偏移和排序提升"><a href="#预测偏移和排序提升" class="headerlink" title="预测偏移和排序提升"></a>预测偏移和排序提升</h1><h2 id="预测偏移"><a href="#预测偏移" class="headerlink" title="预测偏移"></a>预测偏移</h2><p>对于学习预测偏移的内容，我提出了两个问题：</p><blockquote><p>什么是预测偏移？</p><p>用什么办法解决预测偏移问题？</p></blockquote><p>预测偏移（Prediction shift）是由梯度偏差造成的。在GDBT的每一步迭代中, 损失函数使用相同的数据集求得当前模型的梯度, 然后训练得到基学习器, 但这会导致梯度估计偏差, 进而导致模型产生过拟合的问题。CatBoost通过采用排序提升 （Ordered boosting） 的方式替换传统算法中梯度估计方法，进而减轻梯度估计的偏差，提高模型的泛化能力。下面我们对预测偏移进行详细的描述和分析。</p><h3 id="首先来看下GBDT的整体迭代过程："><a href="#首先来看下GBDT的整体迭代过程：" class="headerlink" title="首先来看下GBDT的整体迭代过程："></a>首先来看下GBDT的整体迭代过程：</h3><p>GBDT算法是通过一组分类器的串行迭代，最终得到一个强学习器，以此来进行更高精度的分类。它使用了前向分布算法，弱学习器使用分类回归树（CART）。</p><p>假设前一轮迭代得到的强学习器是, 损失函数是 ，则本轮迭代的目的是找到一个CART回归树模型的弱学习器 ，让本轮的损失函数最小。式（1）表示的是本轮迭代的目标函数 。</p><p>GBDT使用损失函数的负梯度来拟合每一轮的损失的近似值，式（2）中 表示的是上述梯度。</p><p>通常用式（3）近似拟合 。</p><p>最终得到本轮的强学习器，如式（4）所示：</p><h3 id="在这个过程当中，偏移是这样发生的："><a href="#在这个过程当中，偏移是这样发生的：" class="headerlink" title="在这个过程当中，偏移是这样发生的："></a>在这个过程当中，偏移是这样发生的：</h3><p>根据进行随机计算的条件分布 与测试集的分布 发生偏移，这样由公式（3）定义的基学习器 与公式（1）定义的产生偏差，最后影响模型 的泛化能力。</p><h2 id="排序提升"><a href="#排序提升" class="headerlink" title="排序提升"></a>排序提升</h2><p>为了克服预测偏移问题，CatBoost提出了一种新的叫做Ordered boosting的算法。</p><p><img src="http://p1.pstatp.com/large/pgc-image/0b520547dc9148dcbb94fbfc919dad0b" alt="深入理解CatBoost"></p><p>由上图的Ordered boosting算法可知，为了得到无偏梯度估计, CatBoost对每一个样本都会训练一个单独的模型 ，模型 由使用不包含样本的训练集训练得到。我们使用 来得到关于样本的梯度估计，并使用该梯度来训练基学习器并得到最终的模型。</p><p>Ordered boosting算法好是好，但是在大部分的实际任务当中都不具备使用价值，因为需要训练个不同的模型，大大增加的内存消耗和时间复杂度。在CatBoost当中，我们以决策树为基学习器的梯度提升算法的基础上，对该算法进行了改进。</p><p>前面提到过，在传统的GBDT框架当中，构建下一棵树分为两个阶段：选择树结构和在树结构固定后计算叶子节点的值。CatBoost主要在第一阶段进行优化。在建树的阶段，CatBoost有两种提升模式，Ordered和Plain。Plain模式是采用内建的ordered TS对类别型特征进行转化后的标准GBDT算法。Ordered则是对Ordered boosting算法的优化。两种提升模式的具体介绍可以翻看论文《CatBoost: unbiased boosting with categorical features》。</p>]]></content>
-    
-    <summary type="html">
-    
-      A powerful boosting algorithm for categorical encoding
-    
-    </summary>
-    
-    
-      <category term="Machine Learning" scheme="http://yoursite.com/categories/Machine-Learning/"/>
-    
-    
-      <category term="Machine Learning" scheme="http://yoursite.com/tags/Machine-Learning/"/>
-    
-      <category term="boosting" scheme="http://yoursite.com/tags/boosting/"/>
     
   </entry>
   

@@ -6254,4 +6254,45 @@
         <tag>python</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Batch_normalization</title>
+    <url>/Batch-normalization/</url>
+    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="Batch-Norm的作用以及"><a href="#Batch-Norm的作用以及" class="headerlink" title="Batch Norm的作用以及"></a>Batch Norm的作用以及</h1><h1 id="为什么BN会有作用"><a href="#为什么BN会有作用" class="headerlink" title="为什么BN会有作用"></a>为什么BN会有作用</h1><ul>
+<li>它在做类似的工作，不仅仅对于输入值，也还有隐藏单元值。</li>
+<li><font color="red">它可以使得权重比我们的网络更滞后或更深层。</font><ul>
+<li>从神经网络后层的角度来看，前层的网络不会移动地那么多，因为受到了均值和方差的限制，所以这使得后层的工作和学习变得更加容易。</li>
+</ul>
+</li>
+<li>轻微的正则化作用<ul>
+<li>Each mini-batch is scaled by the mean/variance computed on just that mini-batch.</li>
+<li>This adds some noise to the values z within that mini-batch. So, similar to dropout, it adds some noise to each hidden layers’ activations.</li>
+<li>This has a slightly regularization effect.</li>
+</ul>
+</li>
+</ul>
+<h1 id="面试"><a href="#面试" class="headerlink" title="面试"></a>面试</h1><ol>
+<li><p>Batch Norm发生在哪一层</p>
+<p>发生在activate function 之前，也就是z和a之间。</p>
+</li>
+<li><p>Batch-norm如何工作的，以及在反向传播时候的情况是什么样子的</p>
+<p>假设你在使用 mini-batch 梯度下降法，你运行 𝑡 = 1到 batch 数量的 for 循环，你会在 mini-batch 𝑋 { 𝑡 } 上应用正向 prop， 每个隐藏层都应用正向 prop，用 Batch 归一化代替𝑧 [ 𝑙 ] 为𝑧̃ [ 𝑙 ] 。接下来，它确保在这个 minibatch 中，𝑧值有归一化的均值和方差，归一化均值和方差后是𝑧̃ [ 𝑙 ] ，然后，你用反向 prop 计 算 𝑑𝑤 [ 𝑙 ] 和 𝑑𝑏 [ 𝑙 ] ，及所有 l 层所有的参数， 𝑑 𝛽 [ 𝑙 ] 和 𝑑 𝛾 [ 𝑙 ] 。尽管严格来说，因为你要去掉 𝑏 ，这 部分其实已经去掉了。最后，你更新这些参数： 𝑤 [ 𝑙 ] = 𝑤 [ 𝑙 ] − αd𝑤 [ 𝑙 ] ，和以前一样， 𝛽 [ 𝑙 ] = 𝛽 [ 𝑙 ]  - 𝛼𝑑 𝛽 [ 𝑙 ] ，对于 𝛾 也是如此 𝛾 [ 𝑙 ] = 𝛾 [ 𝑙 ] − 𝛼𝑑 𝛾 [ 𝑙 ] 。</p>
+<p>如果你已将梯度计算如下，你就可以使用梯度下降法了，这就是我写到这里的，但也适 用于有 Momentum、RMSprop、Adam 的梯度下降法。与其使用梯度下降法更新 mini-batch， 你可以使用这些其它算法来更新，我们在之前几个星期中的视频中讨论过的，也可以应用其 它的一些优化算法来更新由 Batch 归一化添加到算法中的 𝛽 和 𝛾 参数。</p>
+</li>
+<li><p>Batch-norm 为什么没有添加variance b？</p>
+<p>先前我说过每层的参数是 𝑤 [𝑙]和 𝑏 [𝑙]，还有 𝛽 [𝑙]和 𝛾 [𝑙]， 请注意计算𝑧的方式如下，𝑧 [ 𝑙 ] = 𝑤 [ 𝑙 ] 𝑎 [ 𝑙−1 ] + 𝑏 [ 𝑙 ] ，但 Batch 归一化做的是，它要看这个 mini𝑙 batch，先将𝑧 [ 𝑙 ] 𝛽 和归一化，结果为均值 0 和标准方差，再由 𝛾 重缩放，但这意味着，无论 𝑏 [ ] 的值是多少，都是要被减去的，因为在 Batch 归一化的过程中，你要计算𝑧 [ 𝑙 ] 的均值，再减去 平均值，在此例中的 mini-batch 中增加任何常数，数值都不会改变，因为加上的任何常数都 将会被均值减去所抵消。</p>
+<p>所以总结一下，因为 Batch 归一化超过了此层𝑧 [ 𝑙 ] 的均值， [ 𝑙 ] 这个参数没有意义，所以， 𝑏 你必须去掉它，由 𝛽 [ 𝑙 ] 代替，这是个控制参数，会影响转移或偏置条件。</p>
+</li>
+</ol>
+<h1 id="优点和缺点"><a href="#优点和缺点" class="headerlink" title="优点和缺点"></a>优点和缺点</h1><h1 id="Batch-Norm-总结"><a href="#Batch-Norm-总结" class="headerlink" title="Batch Norm 总结"></a>Batch Norm 总结</h1><h2 id="1-优点"><a href="#1-优点" class="headerlink" title="1 优点"></a>1 优点</h2><p>（1）没有它之前，需要小心的调整学习率和权重初始化，但是有了BN可以放心的使用大学习率，但是使用了BN，就不用小心的调参了，较大的学习率极大的提高了学习速度。（因为batchnorm<strong>将特征归一化到0点附近，显然会加快训练速度</strong>；并更进一步的通过变换拉大数据之间的<strong>相对差异性</strong>，使特征更容易区分）<br>（2）Batchnorm本身上也是一种正则的方式，可以代替其他正则方式如dropout等<br>（3）batchnorm降低了数据之间的绝对差异，有一个去相关的性质，更多的考虑相对差异性，因此在分类任务上具有更好的效果。</p>
+<h2 id="2-缺点"><a href="#2-缺点" class="headerlink" title="2 缺点"></a>2 缺点</h2><p>韩国团队在2017NTIRE图像超分辨率中取得了top1的成绩，主要原因竟是去掉了网络中的batchnorm层，由此可见，BN并不是适用于所有任务的，<strong>在image-to-image这样的任务中，尤其是超分辨率上，图像的绝对差异显得尤为重要，所以batchnorm的scale并不适合。</strong></p>
+<h1 id="Drop-out的实现细节"><a href="#Drop-out的实现细节" class="headerlink" title="Drop out的实现细节"></a>Drop out的实现细节</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># keep_prob is the chance to ignore drop out the nerual </span></span><br><span class="line"></span><br><span class="line">d3 = np.random.randint(a3.shape[<span class="number">0</span>]) &lt; keep_prob </span><br><span class="line">a3  = np.multply(a3, d3)</span><br><span class="line">a3 /= keep_prob</span><br><span class="line"></span><br><span class="line"><span class="comment"># inorder not changing the z4 </span></span><br><span class="line">z[<span class="number">4</span>] = w[<span class="number">4</span>]a[<span class="number">3</span>] + b[<span class="number">4</span>]</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Deep Learning</category>
+      </categories>
+      <tags>
+        <tag>CNN</tag>
+      </tags>
+  </entry>
 </search>
