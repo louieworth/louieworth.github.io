@@ -6298,7 +6298,10 @@
   <entry>
     <title>pandas</title>
     <url>/pandas/</url>
-    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="Groupby"><a href="#Groupby" class="headerlink" title="Groupby"></a>Groupby</h1><p>在日常的数据分析中，经常需要将数据<strong>根据某个（多个）字段划分为不同的群体（group）</strong>进行分析，如电商领域将全国的总销售额根据省份进行划分，分析各省销售额的变化情况，社交领域将用户根据画像（性别、年龄）进行细分，研究用户的使用情况和偏好等。在Pandas中，上述的数据处理操作主要运用<code>groupby</code>完成，这篇文章就介绍一下<code>groupby</code>的基本原理及对应的<code>agg</code>、<code>transform</code>和<code>apply</code>操作。</p>
+    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>对于pandas一些操作的介绍</p>
+<a id="more"></a>
+
+<h1 id="Groupby"><a href="#Groupby" class="headerlink" title="Groupby"></a>Groupby</h1><p>在日常的数据分析中，经常需要将数据<strong>根据某个（多个）字段划分为不同的群体（group）</strong>进行分析，如电商领域将全国的总销售额根据省份进行划分，分析各省销售额的变化情况，社交领域将用户根据画像（性别、年龄）进行细分，研究用户的使用情况和偏好等。在Pandas中，上述的数据处理操作主要运用<code>groupby</code>完成，这篇文章就介绍一下<code>groupby</code>的基本原理及对应的<code>agg</code>、<code>transform</code>和<code>apply</code>操作。</p>
 <p>为了后续图解的方便，采用模拟生成的10个样本数据，代码和数据如下：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">company = [<span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>]</span><br><span class="line"></span><br><span class="line">data = pd.DataFrame(&#123;</span><br><span class="line">    <span class="string">"company"</span>: [company[x] <span class="keyword">for</span> x <span class="keyword">in</span> np.random.randint(<span class="number">0</span>, len(company), <span class="number">10</span>)],</span><br><span class="line">    <span class="string">"salary"</span>: np.random.randint(<span class="number">5</span>, <span class="number">50</span>, <span class="number">10</span>),</span><br><span class="line">    <span class="string">'age'</span>: np.random.randint(<span class="number">15</span>, <span class="number">50</span>, <span class="number">10</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
