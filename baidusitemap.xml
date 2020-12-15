@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://yoursite.com/pandas-groupby/</loc>
+    <lastmod>2020-12-15</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/pandas/</loc>
+    <lastmod>2020-12-14</lastmod>
+  </url>  <url>
     <loc>http://yoursite.com/Batch-normalization/</loc>
     <lastmod>2020-12-10</lastmod>
   </url>  <url>

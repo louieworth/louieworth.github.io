@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-12-10T07:27:13.563Z</updated>
+  <updated>2020-12-15T01:56:38.081Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,54 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>pandas_groupby</title>
+    <link href="http://yoursite.com/pandas-groupby/"/>
+    <id>http://yoursite.com/pandas-groupby/</id>
+    <published>2020-12-15T01:55:42.000Z</published>
+    <updated>2020-12-15T01:56:38.081Z</updated>
+    
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;
+      
+    
+    </summary>
+    
+    
+      <category term="pandas" scheme="http://yoursite.com/categories/pandas/"/>
+    
+    
+      <category term="pandas; python" scheme="http://yoursite.com/tags/pandas-python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>pandas</title>
+    <link href="http://yoursite.com/pandas/"/>
+    <id>http://yoursite.com/pandas/</id>
+    <published>2020-12-14T12:56:21.000Z</published>
+    <updated>2020-12-14T12:56:50.374Z</updated>
+    
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Batch_normalization</title>
@@ -450,53 +498,6 @@
     
     
       <category term="tbsi_interview" scheme="http://yoursite.com/categories/tbsi-interview/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>2021考研英语一大作文攻略</title>
-    <link href="http://yoursite.com/2021%E8%80%83%E7%A0%94%E8%8B%B1%E8%AF%AD%E4%B8%80%E5%A4%A7%E4%BD%9C%E6%96%87%E6%94%BB%E7%95%A5/"/>
-    <id>http://yoursite.com/2021%E8%80%83%E7%A0%94%E8%8B%B1%E8%AF%AD%E4%B8%80%E5%A4%A7%E4%BD%9C%E6%96%87%E6%94%BB%E7%95%A5/</id>
-    <published>2020-06-07T01:41:59.000Z</published>
-    <updated>2020-06-07T01:43:58.000Z</updated>
-    
-    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="提出背景"><a href="#提出背景" class="headerlink" title="提出背景"></a>提出背景</h1><blockquote><p> 2020考研英语一北京地区：小作文8（满分10分）+大作文16（满分20分）=24分。全国平均分为5+9</p></blockquote><p>最开始催生这篇文章的是引出是2019年大概11月中旬我在准备作文的时候，我一直有关注我的同桌，可能他的英语不是特别好，我下午的时候看到他在座位上背《XXX作文必背20篇》，那会儿我正在和数学鏖战，晚上我看到他拿出一张作文纸，看着某篇模拟作文，却提不起笔。<a id="more"></a>去年也是几个同学让我分享一下自己的作文模板，分享过后也得到了很多同学的认可。再说回背作文，我相信有些记忆力好的同学有能力去背下这20篇作文。但是有两个问题在这里：</p><blockquote><p>你背的这20篇话题和考场上的话题一样吗？</p><p>有没有必要分配这么多时间给英语？</p></blockquote><p> 英语不是数学，在你准备好你的词汇基础量的时候，我提倡：==用最少的时间让英语不拖你后腿==，大头永远在数学和专业课上。那么多少的分数不拖你的后腿呢？对于一个考名校的同学，你可以关注下录取的平均分数线，那么这个就是你的目标。我在这一年英语基本上是放养状态，只是偶尔数学专业课累了会看一看，后期有专门的时间去模拟，有两个原因：一是我经历过一次考研，二是我底子还不错。两次的分数虽都不及80，但是也就差一两分。我并不提倡你用大量的时间把英语提高到80或者85，英语的学习曲线是log函数，在后期你付出和产出并不成正比。而通过历年的数据来看，考名校研究生的同学，大部分落榜的都不是英语，而是==数学和专业课==，有同学建议的时间分配比为<strong>政治：英语：数学：专业课0.5:1.5:4:4</strong>，我觉得是非常合适的。我会在最后说一下我初试英语的复习过程。</p><h1 id="初看逻辑"><a href="#初看逻辑" class="headerlink" title="初看逻辑"></a>初看逻辑</h1><p>用==逻辑==去写作文，是一个很重要的且需要训练的东西。在这篇文章，我会教会你如何用逻辑去取胜。而你需要做什么呢？你只需要把我提供的关于各种话题的段子（一句话），再背一个作文框架就可以了，下面我展示下怎么去使用。</p><p>在考研英语中，我们大概会遇见各种<strong>话题</strong>：科技，习俗，道德风尚，个人品格等等。我们一般只有两种方向：我们去描述这个东西好或者这个东西不好。说这个东西好，（习俗，个人品格等等），那么我们就说：有了这个美好的品格，那么我们就可以…（良好管理我们的时间；拥有更多的朋友；让我们性格开朗；得到职位的晋升…）而括号中的那些，就是你需要背诵的东西。</p><p>我们可以把考场上的作文当做一个孤独的岛屿，我们现在在一个群岛上（我们准备的素材）。我们现在写作文就是需要在我们的群岛上建两座桥，如下图，==考场上你唯一需要做的就是把这个桥搭起来==。现在看起来非常抽象，直接以2020考研英语一题目为例。</p><p><img src="https://i.loli.net/2020/06/04/TACQg1yVcuJEPve.png" alt="QQ截图20200604004127"></p><p>2020考研英语一话题key word: habit, 养成良好的习惯，会有很多好处。</p><ul><li>得到职位的晋升。</li><li>获得更多的朋友。</li></ul><p>那么这篇文章就写完了，但是总感觉差点什么，有点逻辑的断链。对，就是需要你来搭桥。</p><p><img src="https://i.loli.net/2020/06/04/djLW7fDw4MhEtnQ.png" alt="2"></p><h2 id="如何搭桥"><a href="#如何搭桥" class="headerlink" title="如何搭桥"></a>如何搭桥</h2><p>搭桥的过程非常简单，也就是填空。把图画内容的关键词和你背诵的关键词填空填进去就可以了。</p><p>举个栗子：</p><p>在2020考研英语中我把【habit】和【获得职位晋升】联系起来。首先背诵出来【获得职位晋升的段子】。</p><blockquote><p>Impressive performance would entitle them to win the competitive edge and gain a upper hand as climbing the career ladder. And this will lead to considerable economic returns with the attempt to bring home the bacon.</p></blockquote><p>在此处我们直接在XXX处填入<strong>exceptional habits allow they to attain steadier and more energetic performances</strong>就完成了搭桥。另外再看段子中的逻辑链是不是真的完整的：</p><blockquote><p>好的习惯—&gt;更加好的表现—&gt;获得竞争优势，职位晋升，经济回报</p></blockquote><p>一气呵成。我们用<strong>背</strong>的方式完成了一个非常优秀的句子，且与文章主题高度关联。</p><h2 id="如何训练我的逻辑"><a href="#如何训练我的逻辑" class="headerlink" title="如何训练我的逻辑"></a>如何训练我的逻辑</h2><p>对于考研英语而言，当连接作文主题词和你的段子的时候，自己觉得有道理的时候，换句话说：==言之有理==</p><p>那么这个逻辑就是没问题的，你可以尝试自己把以往的作文的主题词和自己准备的段子试着搭一下桥。这个过程看起来非常复杂，但是只要你花一个晚上去思考这座桥，就可以基本上把所有的主题词连接起来。下图是我备考过程的基本逻辑梳理。希望你能够自己去梳理自己的逻辑过程，加深自己对逻辑过程的理解。</p><p><img src="https://i.loli.net/2020/06/05/n3RxVopBPGfMOqi.png" alt="5"></p><h1 id="语料积累"><a href="#语料积累" class="headerlink" title="语料积累"></a>语料积累</h1><p>关于观点的展开，我的积累大概有以下部分，</p><p>a. 可以让我们有更好的生活态度</p><p>b. 可以让我们充满社会责任感</p><p>c. 可以让工作晋升</p><p>d. 可以节约时间，时间管理</p><p>e. 可以交朋友</p><p>f. 一个环境</p><p>g. 可以传播我们的文化</p><p>h. 科技负面，带来人情冷漠</p><p>i. 文化消除偏见</p><p>以上观点大概可以应付所有的考研作文，那么该怎么写？我们现在有什么，我们拿到了作文，我们有了题目，然后同时，我们有了话题。那么，我们需要找什么？我们需要找这个连接点。</p><p>我们直接拿19年的作文来讲，19年作文讲了坚持，爬山。我们就可以抓住坚持的这个品质，这个品质肯定是好的。怎么个好法呢？他可以让我们有<strong>更好的生活态度(a)</strong>，这个没什么问题直接展开。他也可以让我们可以<strong>交到更多的朋友(e)</strong>，但是这个就感觉怪怪的，怎么可以有坚持这个品质就可以让我们交到好朋友？到了重点来了， 这里的逻辑点需要你自己补充。我可以这样说，你有了坚持的这个品质，大家就会发现你这个优秀的品质，从此很乐于和你交朋友，大家都愿意和积极向上的人做朋友呀！这里我就添加了这个逻辑点。我还可以展开啊，坚持可以让我们工作上晋升啊。这里需要补充逻辑：坚持可以让你有更加稳定的工作表现以及更好的去攻克困难的任务，当然你工作就会有成绩。</p><p>我们再文化火锅那篇作文举例。首先我们背了一个段子是<strong>文化交流可以消除偏见(i)</strong>，这是肯定没问题的不需要补充逻辑。我们也可以说文化交流<strong>可以交到更多的朋友(e)</strong>，有问题吗？有。需要补充一个逻辑点，文化可以让各种各样的人聚在一起，当然可以交到更多的朋友。同时我们更可以说文化可以促进工作晋升，怎么个晋升法？你会自己补充逻辑吗？</p><p>最后再举一个例子，05年作文提到了孝道。我们一定要坚持对吧，<strong>它可以让我们增加社会责任感(b)</strong>，这里需要补充逻辑吗?不需要。同时我们也可以说孝道可以让我们有更多的朋友。同学就会想，怎么孝道都可以让你交朋友？很简单，你是一个尊敬老人的同学， 你同学看到了你对待老人的表现，愿不愿意和你做朋友，从你身上学习。</p><p><strong>可是有些同学会说，我在逻辑补充点一句话都写不出来。</strong>那么同时你也需要做的就是积累这方面的词句和单词，例如前文说到的attain/entitle/lay the bedrock….. </p><p>在表达正面的话题的时候：<strong>XX(作文主题词)对XXX(自己的段子)很重要</strong>基本上有以下说法：</p><ul><li>XX Place sb as the beneficiaries in terms of </li><li>Exert/generate considering benefits to sb</li><li>Entitle sb to do  sth</li><li>Open the door/shut  the door of </li><li>Lay the bedrock of</li><li>Served as a fundamental element in</li><li>Play an significant role in </li></ul><h1 id="几个非常重要的问题"><a href="#几个非常重要的问题" class="headerlink" title="几个非常重要的问题"></a>几个非常重要的问题</h1><h2 id="关于作文模板"><a href="#关于作文模板" class="headerlink" title="关于作文模板"></a>关于作文模板</h2><p>我最先想谈是作文模板。源于一次我帮我朋友批改作文，他说他看到B站某位前阅卷组组长说：</p><blockquote><p> 现在背作文模板得不到高分，阅卷老师看到模板就会反感。</p></blockquote><p>那么我的答案是：==不会== </p><p>首先我们要说你如何理解模板，可能有两种理解。</p><ul><li>所有单词，句子都一模一样。</li><li>逻辑点一样。</li></ul><p>显然第一种情况是完全不存在的，每个人在考场的发挥和记忆程度都会有偏差，导致基本上不存在完全一模一样的考场作文。那么逻辑点一样呢？</p><p>我可以有这样的假设</p><blockquote><p> 如果大家都这样写逻辑，我这样写的话，就会低分。</p></blockquote><p>假如文章图片很明显表达了一个观点就是让我们要帮助朋友，你会想大家都这写，我要找一个新奇的角度，另辟蹊径，这个图片其实要告诉我们作为人我们要时刻准备好接受别人的帮助，有问题吗？没问题，只要你==言之有理==，好写吗？==不好写==。你不是写文章出刊，你不能也没有时间在考场上反复思考，如果你真的有那种在考场上随意发挥作文的能力，你可以右上角这篇文章。</p><p>那么有同学又会问，我说的背模板就是那些句型，大家都用烂了，the more the more….之类的，有问题吗？==没问题==。这本身就是基本句型，用有什么问题呢？假如只是一个英语水平一般的同学，我用play an important role这个句型难道有问题？我一定要用exert considerable influence/ lay the bedrock/essence 之类的句子吗？不用。写英语考场作文不要本末倒置。如果我这篇文章在被大家反复传播，受到了大家的认可，也不用怕。今年考研多少人？</p><p>现在再思考一下：即使你在准备的时候对于the more the more这个句型再熟悉不过，不说考场，自己模拟的时候有几次能写出来？</p><p>==别交智商税，在网上去定制模板==，至于为什么，我想在前文说的非常清楚了。</p><h2 id="作文框架"><a href="#作文框架" class="headerlink" title="作文框架"></a>作文框架</h2><p>我建议所有看过这篇文章的学生采用最简单的作文结构：<strong>三段式</strong></p><p>第一段：描述图画内容</p><p>第二段：首句表达观点（正向或者负向）以及两个段子</p><p>第三段：总结</p><p>如果你按照我的模板，这样写下来大概会把一张答题纸写完，只会空一两行。也基本上达到了考研英语作文要求字数的上限，这样大概率在字数上给了你一个高分的保证。</p><h2 id="首段描述"><a href="#首段描述" class="headerlink" title="首段描述"></a>首段描述</h2><p>这里参考<strong>见山学长作文模板</strong>。同时也建议本篇文章和见山学长模板综合食用。</p><p><img src="https://i.loli.net/2020/06/04/fxVJneq5YSw8lcz.png" alt="某 个 位 置 有 中 心 事 物 一 中 心 事 物 什 么 样 （ 在 做 什 么 ） 一 周 围 事 物 怎 么 样 （ 在 做 什 么 ）  完 全 倒 装  t  非 谓 语 动 词  t  独 立 主 格 "></p><blockquote><p>As is depicted in the picture, around a table sit some young people, staring at their smart phones. Without any intention to taste the seemingly palatable and nutritious dishes or to chat with each other.</p></blockquote><h2 id="考场作文"><a href="#考场作文" class="headerlink" title="考场作文"></a>考场作文</h2><p>很多同学本末倒置，去背所谓的很生僻的词句，为自己的作文“添光溢彩”。我这里想陈述一个事实，写作文，重要程度分为三层。</p><p>第一层，占了半个根基的东西，词语的规范性。（我这里还不谈用词的准确，为了追求不让英语拖自己后腿的学生也没有必要关注）时态，主谓宾，从句，请保证你的所写没有语法错误，这是最基本的东西。</p><p>第二层，占了另外一半根基的以及构建你所有框架的东西，==逻辑==。纵观考研作文，你会发现，所有的话题，我们都可以发展到两个方向。这个图想说明这个事件好或者不好。比如说，自信是好的，帮助老人是好的。接下来，你就要展开你的论点了，为什么说这个好？这就是所谓的逻辑，有没有阅读的感觉？写英语作文不像写中文那样，你可以随便说说，最后都不知道自己说什么，感觉高大上就可以了。这也就是为什么大部分考生追求所谓的辞藻的根基，英语逻辑永远是开文点名观点，所有后面这一部分的内容都是为这个观点作补充的。好，那些接下来，我就会讲，我的总结的一些观点以及如何运用。</p><h2 id="反面话题"><a href="#反面话题" class="headerlink" title="反面话题"></a>反面话题</h2><p><strong>我建议所有考生只准备正面的话题。</strong> </p><p>那么还有同学会说？09年讲到了沉迷网络这件事情是有害的。除了科技类，人情冷漠，上面的观点的全部都是正面的怎么写？反过来写呀，<strong>if we didn’t do this.</strong> 这不就是回来了吗？这样就好写了吧？不沉迷网络有什么好处，多了去了。我可以串一堆逻辑出来。不沉迷网络，我们是不是可以节省更多的时间了去做其他事情，我们有了更多的时间我们是不是就可以让工作效率提高，工作就会晋升。我们有了更多的时间是不是能够去更多的社交场合去认识更多的朋友，认识更多的朋友是不是在我们失意的时候能给我们温暖和帮助。我基本上把工作晋升会怎样，交朋友会怎样，对社会积极态度会怎样，后面的逻辑点全部都给你补充完了，你需要做的就是，找到这条线。考研英语作文，不及托福或者雅思，不需要讲究严谨的逻辑规范，言之成理就可。==只要你讲得通，就是没问题的。==</p><h1 id="备考过程"><a href="#备考过程" class="headerlink" title="备考过程"></a>备考过程</h1><p>我拿我第一年的备考来说，我英语准备得非常迟，这也是因为我有英语底子的情况之下，我的经验不适合所有备考英语的学生，请合理评估自己的能力再决定是否参考。在Your vocabulary 测试的英语单词数量稳定在7000左右。最开始我也在背考研英语单词，背着背着就没兴趣了，开始经常看外刊积累，一是大部分都认识，二是非常重要的<strong>一词多意</strong>你只有在语境中才能感受到他的存在。</p><p><strong>阅读和翻译</strong>： 阅读部分我只看了<strong>唐迟的真题视频解析</strong>【吐血推荐，唯一推荐】，没有用任何其他的辅导资料。在新题型部分我看了几个老师的讲课，也花不了多长时间，确实有一定的技巧在里面，但是所有的技巧在没有英语底子的情况下都是白谈。完形填空只做了真题，翻译只做了真题。</p><p><strong>作文</strong>：大作文在11月中旬开始准备我自己的语料，不断地积累，因为自己写的，背起来也非常轻松。在12月就开始进行每周两篇的模拟，并且和同学互相批改。小作文由于当时也在申请国外的学校，所以那段时间和招生办以及教授联系非常频繁，没有刻意去背诵模板。在此建议把小作文<strong>所有的基础模板</strong>背熟背牢，才能做到随机应变。</p><hr><p>==重要==</p><ul><li>请打好自己的英语基础，在没有基础的情况之下任何技巧都是白谈。</li><li>我建议所有考生养成看外刊的习惯，从中去积累自己的表达和优秀的句子，从而形成自己独一无二的语料库。</li><li>请不要叫任何的智商税：诸如定制模板、保录班等等。</li><li>英语基础尚可的同学，请阶段性放弃英语，自己的主要精力留给数学和专业课。</li><li>请学会用英英词典。</li><li>请把大部分时间关注在文章的规范性和逻辑部分，这才是根基，词语替换只是很表面的东西。</li><li>现如今互联网如此发达，获取信息非常容易，请不要做伸手党，其实在你搜集信息的过程可能会得到意想不到的东西。</li></ul><p>后台回复==语料==免费获得语料文档，文档包括：</p><blockquote><ol><li>高质量话题语料内容 2. 大作文统一模板 3. 必备短语（正面，负面描述）4. 基本单词替换 5. 其他</li></ol></blockquote><p>如果你认可学长的内容，欢迎分享给你的朋友。</p><p>在线同义词词典：<a href="https://www.thesaurus.com/" target="_blank" rel="noopener">https://www.thesaurus.com/</a></p><p>科斯林在线词典：<a href="https://www.collinsdictionary.com/" target="_blank" rel="noopener">https://www.collinsdictionary.com/</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;提出背景&quot;&gt;&lt;a href=&quot;#提出背景&quot; class=&quot;headerlink&quot; title=&quot;提出背景&quot;&gt;&lt;/a&gt;提出背景&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt; 2020考研英语一北京地区：小作文8（满分10分）+大作文16（满分20分）=24分。全国平均分为5+9&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;最开始催生这篇文章的是引出是2019年大概11月中旬我在准备作文的时候，我一直有关注我的同桌，可能他的英语不是特别好，我下午的时候看到他在座位上背《XXX作文必背20篇》，那会儿我正在和数学鏖战，晚上我看到他拿出一张作文纸，看着某篇模拟作文，却提不起笔。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="tbsi_interview" scheme="http://yoursite.com/categories/tbsi-interview/"/>
-    
-    
-      <category term="考研" scheme="http://yoursite.com/tags/%E8%80%83%E7%A0%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>how_to_read_papers</title>
-    <link href="http://yoursite.com/how-to-read-papers/"/>
-    <id>http://yoursite.com/how-to-read-papers/</id>
-    <published>2020-06-07T01:38:27.000Z</published>
-    <updated>2020-08-10T03:49:15.000Z</updated>
-    
-    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><blockquote><p>在科研领域中，读论文大概是大家的日常基本操作了。但如何读论文，才能实现效率最大化呢？斯坦福大学教授吴恩达在斯坦福 CS230 深度学习课程中专门讲述了如何读论文，那么具体效果如何呢？本文作者以「姿态估计」为例复现了吴恩达的读论文方法，并提出了他自己的读论文小技巧，希望对大家的科研有所帮助。</p></blockquote><p>理解人工智能和机器学习领域中的前沿研究是每一位机器学习从业者应该掌握的技能。</p><p>要想实时追踪前沿研究并增加自己的知识，机器学习从业者需要养成开放的学术心态和习惯。人工智能、机器学习和深度学习领域每时每刻都在更新发展，所以我们必须用知识来武装自己，紧跟领域发展步伐，而这些只能通过读论文来实现。</p><p>但是读论文也不是盲目而就的，也需要一定的方法和流程。如果只是流水账似的通读下来，恐怕也不会有特别好的效果。</p><p>之前，斯坦福大学教授、Coursera 联合创始人吴恩达（Andrew Ng）在斯坦福 2018 年秋季 CS230 深度学习课程中就如何读论文提出了一些建议。但具体效果怎么样呢？按照吴恩达的方法是否可以充分地从论文中获取自己想要了解和掌握的知识和技能呢？</p><p>近日，计算机科学工程师 Richmond Alake 以「姿态估计」为例，示范了吴恩达 CS230 课程的读论文方法，目前相关文章已在 Medium 获得 3000 多赞。除了课程中提到的方法，Alake 还为读者介绍了他本人读论文时的一些小技巧。</p><p>在这篇博文中，读者不仅能够掌握高效、恰当读论文的系统性方法和技巧，还可以获取一些有助于搜索论文和关键信息的辅助性在线资源。</p><p>想要了解吴恩达 CS230 课程详细内容的读者，可以参考文章《<a href="http://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2650780679&idx=1&sn=a9358fe26492d1159939d0095d9c87bf&chksm=871a7079b06df96f4b14d7888b0d9d2b9e95a89092c1b4364f39a6e51ac77590cf6552c59180&scene=21#wechat_redirect" target="_blank" rel="noopener">机器学习研究者的养成指南，吴恩达建议这么读论文</a>》。</p><p>接下来，我们就来看 Richmond Alake 如何一步步复现吴恩达的读论文方法，这包括阅读多篇相关性论文和阅读单篇论文两部分内容。</p><h1 id="整合论文资源，记录理解程度"><a href="#整合论文资源，记录理解程度" class="headerlink" title="整合论文资源，记录理解程度"></a><strong>整合论文资源，记录理解程度</strong></h1><p>有时在开展某项主题研究时，我们需要阅读大量的文献，这就需要学会整合资源的方法了。Richmond Alake 以姿态估计为例为我们展示了如何有效地整合与该主题相关的论文等资源，以及论文阅读量等实用建议。</p><ol><li><p><strong>收集和研究主题相关的资源。</strong>这些资源可以是研究论文、Medium 文章、博客、视频、GitHub 项目等等。在谷歌搜索引擎中键入「pose estimation」进行快速搜索，你会得到一些与该主题相关的不错资源。这一步的目的是整理所有与研究主题相关的资源，如视频、实现文档和研究论文。理想状况下，这一阶段你不用对自己认为重要的资源数量设置上限，但你需要创建一个有用论文、视频和文章的列表。</p></li><li><p>接下来，你将<strong>深入探索找到的资源**</strong>。**这里的关键点在于，找到一种方法来跟踪记录对列表内每一项资源的理解程度。</p></li></ol><p>吴恩达教授建议，用一个表格记录自己对相关资源的理解，如下图所示：</p><p><img src="/how-to-read-papers/1.png" alt></p><hr><p>建议先至少对列表内每项资源的内容了解 10–20%。这可以确保你对每项资源的介绍性内容有足够了解，从而能够准确判断它与研究主题的相关度。</p><p>对于相关度最高的论文或资源，你可以进行更深层次的理解。最终，你会对某些资源产生充分的理解。</p><p>你可能会问自己：「多少论文 / 资源才足够？」。</p><p>吴恩达教授认为，<strong>5–20 篇论文</strong>可以让你对某个研究主题有一个基础了解，或许可以进一步去了解实现技术。50-100 篇论文可以提供对特定领域比较深的理解。</p><h1 id="如何研读一篇论文"><a href="#如何研读一篇论文" class="headerlink" title="如何研读一篇论文"></a><strong>如何研读一篇论文</strong></h1><p><strong>要想理解一篇论文，只读一遍是不够的。</strong>吴恩达教授认为，从头到尾阅读一遍并不是理解论文的最佳方法。</p><p>想要理解一篇论文的内容，你至少需要阅读 3 遍。</p><p>\4. 第一遍：读标题、摘要和图片。</p><p>\5. 第二遍：读引言和结论部分，再浏览一遍图片，并快速浏览论文的其他部分。引言和结论部分清晰明了地概括了论文内容和研究发现。这两个部分通常只包含关键信息，对其他补充信息不作赘述。而这些关键信息有助于你接下来阅读论文的其他部分。</p><p>\6. 第三遍：阅读论文的全部内容，跳过你不熟悉的复杂数学或技术公式。这一遍阅读时，你还可以跳过不理解或不熟悉的专业术语。</p><p>\7. 对某一领域进行深入研究的研究者还可以阅读更多遍，这主要是为了理解论文中的数学、技术以及不了解的术语。</p><p>不过，对于出于获取信息和工程目的而阅读论文的人来说，深入研究可能比较耗时，尤其是在有 20 多篇论文需要读的时候。</p><h1 id="阅读论文时，你需要问自己这些问题"><a href="#阅读论文时，你需要问自己这些问题" class="headerlink" title="阅读论文时，你需要问自己这些问题"></a><strong>阅读论文时，你需要问自己这些问题</strong></h1><p>吴恩达教授还提供了一些阅读论文时读者需要问自己的问题。通过这些问题，能够看出你是否理解了论文的关键信息。</p><p>Richmond Alake 选取了以下几个重要问题作为参考：</p><ol><li>描述论文作者旨在实现或已经实现的研究目标。</li><li>如果论文中提出了新的方法 / 技术，那么新方法的关键要素是什么？</li><li>这篇论文中哪些内容对你来说是有用的？</li><li>你还想要继续阅读哪些参考内容？</li></ol><p>此外，Richmond Alake 还分享了一些查询相关研究信息的在线资源：</p><ul><li>The Machine Learning Subreddit (<a href="https://www.reddit.com/r/MachineLearning/" target="_blank" rel="noopener">https://www.reddit.com/r/MachineLearning/</a>)</li><li>The Deep Learning Subreddit (<a href="https://www.reddit.com/r/deeplearning/" target="_blank" rel="noopener">https://www.reddit.com/r/deeplearning/</a>)</li><li>PapersWithCode (<a href="https://paperswithcode.com/" target="_blank" rel="noopener">https://paperswithcode.com/</a>)</li><li>NeurIPS、ICML、ICLR 等顶级会议论文</li><li>Research Gate (<a href="https://www.researchgate.net/" target="_blank" rel="noopener">https://www.researchgate.net/</a>)</li></ul><h1 id="如何⾼效阅读机器学习顶会论⽂"><a href="#如何⾼效阅读机器学习顶会论⽂" class="headerlink" title="如何⾼效阅读机器学习顶会论⽂"></a>如何⾼效阅读机器学习顶会论⽂</h1><p>1.读书与读论⽂的区别<br>教材仔细读：经过⻓时间的打磨，是精品；书籍如CSAPP, ESL, MLAPP, GEB（最后这个花费作者⼀辈⼦<br>⼼⾎）<br>论⽂要甄别：<br>顶会论⽂：cvpr, icml, nips, 等<br>70%：在前⼈基础上做了⼀丁点改进，如改⼀下损失函数、调调正则化  -&gt; 不值得花⼤量时间<br>研读<br>10%：给领域的从业者带来灵感的启发<br>1%：给⾏业所有的从业者都有启发，甚⾄带来⽅向性的影响<br>⚠<br>：只有⼀⼩部分的⽂章值得复现，如顶会论⽂的best paper 或 oral；<br>⚠<br>：经典的论⽂在你之前可能已经有很多⼈复现过了，作者也可能会给出官⽅的代码；<br>⚠<br>：硕⼠、⾼年级的本科⽣、刚⼊⻔者这些垃圾可以不⽤读；但博⼠⽣为了在这个特别⼩的⽅向上能有<br>所建树、保持敏锐的嗅觉，这些垃圾也要读，宁滥勿缺。</p><ol start="2"><li>论⽂来源<br>第⼀类：⼀⼿来源<br>会议的官⽹：cvpr、iccv、eccv、icml、nips（看best paper &amp; oral &amp; 获奖论⽂）<br>arxiv.org (放着未发表的或者预览版的论⽂)，需要⼀个账号<br>Google scholar;订阅功能 （⾃然语⾔处理、auto ml），订阅搜索结果，每⽇会⾃动搜索，关注最<br>新论⽂<br>第⼆类：⼆⼿来源<br>野⽣收集：如github上的awesome list，可以订阅watch、star<br>可靠信息筛选：公开课（cs224n, cs224w, cs231n, 李宏毅⽼师机器学习公开课）的幻灯⽚⾥有论<br>⽂列表⼀定要好好读；被⼈认可的个⼈来源、知乎⼤v、微博；项⽬源码的注释中的论⽂<br>第三类：三⼿来源<br>综述性论⽂</li><li>如何读论⽂<br>场景：刚开完会议或正在开，⼿中有⼀次会议上所有被接收的论⽂或者随意按顺序拿出20篇<br>对20篇论⽂进⾏简单分类：整理、分三类记录</li><li>论⽂标题和作者</li><li>⽂章摘要（⽤⾃⼰的话复述，⽤⼀句话或50字以内如何向别⼈推荐和介绍这篇论⽂，最好<br>⽤英语；【这篇⽂章⽤了什么⽅法、在⼲什么】）</li><li>这篇⽂章要不要继续精读+当时作出决定的⽇期<br>精读环节：带着问题读【把⾃⼰想象成⼀个杠精去挑刺】（你开始提出的问题以及最关⼼的问题有<br>没有在看完⽂章后得到解答）<br>精读顺序：摘要（产⽣问题Q）-&gt; 引⾔（上述问题是否被放⼤、有没有出现新问题、前⾯的<br>问题有没有得到回答A ）-&gt; 再次确认要不要读下去 -&gt; 总结部分，即conclusion、feature<br>work（作者总结的⽂章重点以及未来的打算是否明确）-&gt; 知识介绍（重点读每⼀段的第⼀句<br>话；如果遇到图表，先仔细的看图表）-&gt; 再次确定要不要继续读 -&gt; 进⼊最耗时的核⼼算法部<br>分 -&gt; 实验部分（数据集、评价标准）-&gt; 决定要不要复现、将⾃⼰的实验结果与论⽂进⾏⽐较<br>相关⼯作：仔仔细细的看；这个⽅法是不是在某篇⽂章的基础上做的、与其他⽂章有什么关<br>系、借鉴了哪些⽅法、以及该领域之前是⽤什么⽅法、有哪些数据集是被其他⼈做过实验<br>的、其他⼈得到了什么效果；【related works】相关⽂章的题⽬ + ⾃⼰总结这篇⽂章与其他<br>相关⼯作的关系或区别。<br>时间：⼀个半⼩时；上述红⾊部分是笔记的记录内容；如果⽂章对于⾃⼰的难度较⼤，可以暂缓阅<br>读，等把⽂章中提到的概念、需要的基础知识补⼀下再回过头来看。<br>最后在总结了所有的论⽂后，再附⼀张纸：总结多少⽂章都在关注什么⽅⾯的内容，有多少⽂章在针对<br>某类技术、某个⽅向，⼤家都在研究什么。<br>整个过程中要思考 ：这个东⻄有没有价值、为什么⼤家都在做这些、你对他是什么看法。过⼏年<br>之后，回过头来，可以看到随着时间研究内容发⽣的变化。<br>将这些样本数据，转化为⾃⼰的记忆是⾮常重要的。</li><li>⽂献管理⼯具<br>Zotero : <a href="https://www.zotero.org/" target="_blank" rel="noopener">https://www.zotero.org/</a> (免费&amp;跨平台)<br>Mendeley : <a href="https://www.mendeley.com/" target="_blank" rel="noopener">https://www.mendeley.com/</a> (免费&amp;跨平台)<br>Endnote ：<a href="https://www.endnote.com" target="_blank" rel="noopener">https://www.endnote.com</a><br>Papers : <a href="https://www.papersapp.com/" target="_blank" rel="noopener">https://www.papersapp.com/</a></li></ol><center>how to read paper</center><br><div class="row">    <embed src="how" width="100%" height="550" type="application/pdf"></div><br>]]></content>
-    
-    <summary type="html">
-    
-      the way to read papers
-    
-    </summary>
-    
-    
-      <category term="Notes" scheme="http://yoursite.com/categories/Notes/"/>
     
     
   </entry>

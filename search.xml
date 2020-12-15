@@ -6295,4 +6295,20 @@
         <tag>CNN</tag>
       </tags>
   </entry>
+  <entry>
+    <title>pandas_groupby</title>
+    <url>/pandas-groupby/</url>
+    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script>]]></content>
+      <categories>
+        <category>pandas</category>
+      </categories>
+      <tags>
+        <tag>pandas; python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>pandas</title>
+    <url>/pandas/</url>
+    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script>]]></content>
+  </entry>
 </search>
