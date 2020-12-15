@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, Louieworth" />
+
+
+
+
+  
+
+
+  <link rel="alternate" href="/atom.xml" title="Louieworth's blog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="基础篇选择GPU：  红框可以修改页面名称，绿框点击连接（点击第一个：连接到托管代码执行程序），但是连接之后并不是以及在GPU环境下，所以需要点击蓝框进行设置。 如何确定在GPU环境下运行:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="google-colab-handbook">
+<meta property="og:url" content="http://yoursite.com/google-colab-handbook/index.html">
+<meta property="og:site_name" content="Louieworth&#39;s blog">
+<meta property="og:description" content="基础篇选择GPU：  红框可以修改页面名称，绿框点击连接（点击第一个：连接到托管代码执行程序），但是连接之后并不是以及在GPU环境下，所以需要点击蓝框进行设置。 如何确定在GPU环境下运行:">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/google-colab-handbook/jiangli/Workspaces/hexo/source/_posts/google-colab-handbook/v2-036d55f33726443d055d00345bd9682d_720w.jpg">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-0ccf79ced53142dd06c094137f37b9c9_b.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-1ec575a9f8a33b43bfcd645df3060447_b.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/v2-2c195e5cef9d447ed617b1b295e6cd3b_b.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-54db171cf28ad900baef54d46b9dabe8_b.jpg">
+<meta property="article:published_time" content="2020-11-16T14:03:12.000Z">
+<meta property="article:modified_time" content="2020-11-16T15:17:48.333Z">
+<meta property="article:author" content="Louieworth">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/google-colab-handbook/jiangli/Workspaces/hexo/source/_posts/google-colab-handbook/v2-036d55f33726443d055d00345bd9682d_720w.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/google-colab-handbook/"/>
+
+
+
+
+
+  <title>google-colab-handbook | Louieworth's blog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Louieworth's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Stay foolish, stay healthy.</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tools">
+          <a href="/tools/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-bars"></i> <br />
+            
+            tools
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/google-colab-handbook/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Louieworth">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Louieworth's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">google-colab-handbook</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-11-16T22:03:12+08:00">
+                2020-11-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tutorial/" itemprop="url" rel="index">
+                    <span itemprop="name">Tutorial</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/google-colab-handbook/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/google-colab-handbook/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <script src="/assets/js/APlayer.min.js"> </script><h1 id="基础篇"><a href="#基础篇" class="headerlink" title="基础篇"></a>基础篇</h1><p>选择GPU：</p>
+<p><img src="/google-colab-handbook/jiangli/Workspaces/hexo/source/_posts/google-colab-handbook/v2-036d55f33726443d055d00345bd9682d_720w.jpg" alt></p>
+<p>红框可以修改页面名称，绿框点击连接（点击第一个：<strong>连接到托管代码执行程序</strong>），但是连接之后并不是以及在GPU环境下，所以需要点击蓝框进行设置。</p>
+<p>如何确定在GPU环境下运行:</p>
+<a id="more"></a>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line">tf.test.gpu_device_name()</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"><span class="string">'/device:GPU:0'</span></span><br></pre></td></tr></table></figure>
+
+<p>如果输出和上面一样的话就是已经在GPU环境下了。</p>
+<p>接着是Pytorch, Pytorch的安装和我们在Linux上安装一样,点击<a href="https://link.zhihu.com/?target=https%3A//pytorch.org/">官网</a>选择要环境。然后只需要将官网提供的代码copy到我们的代码块中，<strong>并且在代码前加上一个“!”点击运行即可，如下</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">!pip3 install https://download.pytorch.org/whl/cu80/torch<span class="number">-1.0</span><span class="number">.0</span>-cp36-cp36m-linux_x86_64.whl</span><br><span class="line">!pip3 install torchvision</span><br></pre></td></tr></table></figure>
+
+<p>查看GPU信息：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!/opt/bin/nvidia-smi</span><br></pre></td></tr></table></figure>
+
+<p>其实到这里基本上所有的操作都是Linux的操作，google drive也类似于一个远程服务器。</p>
+<p>那么关于Linux的操作可以参考：<a href="https://louieworth.github.io/GPU-ssh/" target="_blank" rel="noopener">https://louieworth.github.io/GPU-ssh/</a></p>
+<h1 id="数据篇"><a href="#数据篇" class="headerlink" title="数据篇"></a>数据篇</h1><h2 id="上传，下载数据"><a href="#上传，下载数据" class="headerlink" title="上传，下载数据"></a>上传，下载数据</h2><p>2.1上传数据</p>
+<p> 2.1.1网络上数据集</p>
+<p> 由于 Colaboratory其实本质上是linux服务器，我们可以通过linux命令来下载数据。但由于在 Colaboratory上，所以我们需要注意 Colaboratory不能直接执行linux命令，我们可以通过在命令前面加上!来执行命令（大部分linux命令在前面加上“!”都能实现），比如我们下载Stanford Dogs数据集，可以通过下面命令：</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!wget <span class="string">http:</span><span class="comment">//vision.stanford.edu/aditya86/ImageNetDogs/images.tar</span></span><br></pre></td></tr></table></figure>
+
+<p>2.1.2 解压数据</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> google.colab <span class="keyword">import</span> files</span><br><span class="line">uploaded = files.upload()</span><br><span class="line"> </span><br><span class="line"><span class="keyword">for</span> fn <span class="keyword">in</span> uploaded.keys():</span><br><span class="line">  print(<span class="string">'User uploaded file "&#123;name&#125;" with length &#123;length&#125; bytes'</span>.format(</span><br><span class="line">      name=fn, length=len(uploaded[fn])))</span><br></pre></td></tr></table></figure>
+
+<p>下载数据</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> google.colab <span class="keyword">import</span> files</span><br><span class="line"> </span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'123.txt'</span>, <span class="string">'w'</span>) <span class="keyword">as</span> f:</span><br><span class="line">  f.write(<span class="string">'some content'</span>)</span><br><span class="line"> </span><br><span class="line">files.download(<span class="string">'123.txt'</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="GPU篇"><a href="#GPU篇" class="headerlink" title="GPU篇"></a>GPU篇</h1><p>查看是否可以使用GPU:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">torch.cuda.is_available()</span><br></pre></td></tr></table></figure>
+
+<p>如果可用的话:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> torch.cuda.is_avaibale():</span><br><span class="line">    model = model.cuda()</span><br></pre></td></tr></table></figure>
+
+
+
+<p>查看GPU情况</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line">tf.test.gpu_device_name()</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 指定当前的工作目录</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="comment"># 此处为google drive中的文件路径,drive为之前指定的工作根目录要加上.</span></span><br><span class="line"><span class="comment">#Colab Notebooks为你的文件存放的路径，可以自行更改</span></span><br><span class="line">os.chdir(<span class="string">"drive/GoogleInnoCamp2019_LZ-master"</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="提高篇"><a href="#提高篇" class="headerlink" title="提高篇"></a><strong>提高篇</strong></h1><h2 id="如何在google-drive上运行自己的代码"><a href="#如何在google-drive上运行自己的代码" class="headerlink" title="如何在google drive上运行自己的代码"></a>如何在google drive上运行自己的代码</h2><p>如果利用GPU不运用自己本地的数据集，而是跑跑框架自带的MNIST这些数据已经是够了的。 如果要跑自己的数据集就需要将自己的数据先上传到Google Colab云盘上面去。</p>
+<p><strong>注意</strong>：如果是比较大的数据集，将本地数据上传上去就需要安装一个连接本地计算机与Google Colab的一个名为<strong>备份与同步</strong>的软件，这时候你只需要选择本地文件夹，然后点击同步，然后只需等待即可。</p>
+<p>如果是比较小的数据集直接点击桌面文件拖到Google Colab界面等待上传即可。</p>
+<p>然后上传完数据，我们又要如何调用呢。 我们需要先运行这段代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">!apt-get install -y -qq software-properties-common python-software-properties module-init-tools</span><br><span class="line">!add-apt-repository -y ppa:alessandro-strada/ppa <span class="number">2</span>&gt;&amp;<span class="number">1</span> &gt; /dev/null</span><br><span class="line">!apt-get update -qq <span class="number">2</span>&gt;&amp;<span class="number">1</span> &gt; /dev/null</span><br><span class="line">!apt-get -y install -qq google-drive-ocamlfuse fuse</span><br><span class="line"><span class="keyword">from</span> google.colab <span class="keyword">import</span> auth</span><br><span class="line">auth.authenticate_user()</span><br><span class="line"><span class="keyword">from</span> oauth2client.client <span class="keyword">import</span> GoogleCredentials</span><br><span class="line">creds = GoogleCredentials.get_application_default()</span><br><span class="line"><span class="keyword">import</span> getpass</span><br><span class="line">!google-drive-ocamlfuse -headless -id=&#123;creds.client_id&#125; -secret=&#123;creds.client_secret&#125; &lt; /dev/null <span class="number">2</span>&gt;&amp;<span class="number">1</span> | grep URL</span><br><span class="line">vcode = getpass.getpass()</span><br><span class="line">!echo &#123;vcode&#125; | google-drive-ocamlfuse -headless -id=&#123;creds.client_id&#125; -secret=&#123;creds.client_secret&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行这段代码会跳出两条链接你只需点击然后将链接的内容输入即可。这段代码的目的是为了将页面挂在到Google drive上。</p>
+<p>然后只需要运行以下代码:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">!mkdir -p drive</span><br><span class="line">!google-drive-ocamlfuse drive</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">os.chdir(<span class="string">'drive/Colab Notebooks'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>目的是进到我们需要到的目录下，然后就可以在当前目录下调用我的数据集</p>
+<blockquote>
+<p>Cuda/cudnn的安装： <a href="https://colab.research.google.com/drive/14OyDrmxzBmkJ8H51iodPE2aXHzCduKJP#scrollTo=TY9LSAfZ8zJx" target="_blank" rel="noopener">google cola NVIDIA</a></p>
+</blockquote>
+<h2 id="如何将大文件从-Colab-发送到-Google-Drive？"><a href="#如何将大文件从-Colab-发送到-Google-Drive？" class="headerlink" title="如何将大文件从 Colab 发送到 Google Drive？"></a>如何将大文件从 Colab 发送到 Google Drive？</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 需要发送哪个文件？</span></span><br><span class="line">file_name = <span class="string">"REPO.tar"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> googleapiclient.http <span class="keyword">import</span> MediaFileUpload</span><br><span class="line"><span class="keyword">from</span> googleapiclient.discovery <span class="keyword">import</span> build</span><br><span class="line"></span><br><span class="line">auth.authenticate_user()</span><br><span class="line">drive_service = build(<span class="string">'drive'</span>, <span class="string">'v3'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">save_file_to_drive</span><span class="params">(name, path)</span>:</span></span><br><span class="line">  file_metadata = &#123;<span class="string">'name'</span>: name, <span class="string">'mimeType'</span>: <span class="string">'application/octet-stream'</span>&#125;</span><br><span class="line">  media = MediaFileUpload(path, mimetype=<span class="string">'application/octet-stream'</span>, resumable=<span class="literal">True</span>)</span><br><span class="line">  created = drive_service.files().create(body=file_metadata, media_body=media, fields=<span class="string">'id'</span>).execute()</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">return</span> created</span><br><span class="line"></span><br><span class="line">save_file_to_drive(file_name, file_name)</span><br></pre></td></tr></table></figure>
+
+<h2 id="整理工作流"><a href="#整理工作流" class="headerlink" title="整理工作流"></a>整理工作流</h2><p>即使是 Colab Pro 用户，也会受限于 Colab 的各种约束，跟纯本地的开发、训练过程肯定有所不同，我们需要知道 Colab 具体有哪些限制，以及如何以最简单的方式来应对这些限制。</p>
+<p>Colab 的常见限制如下：</p>
+<ol>
+<li>使用了容器技术，<strong>实例释放后所有实例中的数据会清空</strong>。这会影响数据集和模型存储的方式。</li>
+<li>运行 24 小时之后系统会自动回收实例。这会考验代码是否支持无缝衔接（resumption）。</li>
+</ol>
+<p><strong>下面是我在 Colab 上的工作流：</strong></p>
+<ol>
+<li>将本地数据集压缩成单个压缩文件，上传到 Google Drive 中。</li>
+<li>打开一个 Notebook，mount Google Drive。</li>
+</ol>
+<p><img src="https://pic2.zhimg.com/v2-0ccf79ced53142dd06c094137f37b9c9_b.jpg" alt="v2-0ccf79ced53142dd06c094137f37b9c9_b"></p>
+<ol start="3">
+<li>在 Notebook 中添加一个 Section 命名为「安装环境」。然后在这个 Section 中做一些数据复制、解压，以及安装第三方包的工作。实例代码如下：</li>
+</ol>
+<p><img src="https://pic4.zhimg.com/v2-1ec575a9f8a33b43bfcd645df3060447_b.jpg" alt="v2-1ec575a9f8a33b43bfcd645df3060447_b"></p>
+<blockquote>
+<p>为什么不直接将数据集存放至 Drive 直接使用，而是要先压缩，再从 Drive 中拷贝出来解压使用？</p>
+</blockquote>
+<p>因为直接从 Drive 中读取数据是通过网络传输的，并不是从本地文件磁盘读取。如果数据文件多，那么就会发很多次网络请求，导致加载数据非常慢，进而严重影响训练速度；这也是很多小伙伴抱怨 Colab 慢的原因之一。所以我们提前压缩好数据集文件，每次训练前复制压缩文件到实例的磁盘，再进行解压，最大程度保证网络传输次数少，传输数据量小。</p>
+<ol start="4">
+<li>环境准备好后，写好训练代码就可以开始训练了。在选择训练工具框架或自己徒手写训练代码的时候，将训练产生的所有中间文件（如图片、日志、Checkpoint等）都存放至 Drive 的目录中。另外，训练的代码要能够完美地从某个 Checkpoint 中恢复训练。</li>
+</ol>
+<p>我所使用的深度学习框架是 PyTorch，辅助的训练工具是 MineTorch，MineTorch 可以将所有的训练日志同步至 Google Sheet，以方便我做实验的结果可视化和对比：<a href="https://github.com/minetorch/minetorch" target="_blank" rel="noopener">miniTorch</a></p>
+<h2 id="自动断开"><a href="#自动断开" class="headerlink" title="自动断开"></a>自动断开</h2><p><strong>针对这个问题我在网上找到了一个大神写的js脚本具体是这样的</strong>: <a href="https://colab.research.google.com/drive/1RrllgRozkus6ks4HOnSKhKI0DrUx1cdS?usp=sharing#scrollTo=jtClEMAMLVHw" target="_blank" rel="noopener">防止自动断开</a></p>
+<h2 id="数据上传"><a href="#数据上传" class="headerlink" title="数据上传"></a>数据上传</h2><p>这个问题之前真的是困扰了我很久啊，本来连接国际因特耐特就难，机场流量还贵，，这数据集动不动就几十个g这tm要传到啥时候啊，，，，，</p>
+<p>大家要始终记住这句话：<strong>colab是个云端linux系统，linux系统！！！</strong></p>
+<p>所以 wget git命令全都可以用！！！！</p>
+<p><img src="https://pic4.zhimg.com/v2-2c195e5cef9d447ed617b1b295e6cd3b_b.jpg" alt="img"></p>
+<p>这是采用wget 至于git命令嘛，git clone 地址就好了</p>
+<h2 id="连接断开数据丢失"><a href="#连接断开数据丢失" class="headerlink" title="连接断开数据丢失"></a>连接断开数据丢失</h2><p>其实这个问题呢，本来就是可以解决的嘛，把我们的数据放到谷歌云盘就好了，可以 谷歌云盘只有15g 可是我上面下载的数据可是有30g啊 所以怎么办呢？</p>
+<p>哈哈哈 这里就要提到薅羊毛的技术了，Google云端硬盘有个共享盘，他有多大呢？</p>
+<p><img src="https://pic1.zhimg.com/v2-54db171cf28ad900baef54d46b9dabe8_b.jpg" alt="img"></p>
+<p>如上图 8EB，，，，，</p>
+<p>至于怎么薅，请大家自行Google</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ol>
+<li><a href="https://juejin.im/post/6844903730370838542?tdsourcetag=s_pctim_aiomsg#heading-5" target="_blank" rel="noopener">https://juejin.im/post/6844903730370838542?tdsourcetag=s_pctim_aiomsg#heading-5</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/145520434" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/145520434</a></li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C%E5%88%9D%E7%BA%A7/" rel="next" title="论文写作初级">
+                <i class="fa fa-chevron-left"></i> 论文写作初级
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/python-basic/" rel="prev" title="python-basic">
+                python-basic <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Louieworth" />
+            
+              <p class="site-author-name" itemprop="name">Louieworth</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7Carchive">
+              
+                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/louieworth" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:jiangli3859@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://vel.life/" title="Vel" target="_blank">Vel</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基础篇"><span class="nav-number">1.</span> <span class="nav-text">基础篇</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据篇"><span class="nav-number">2.</span> <span class="nav-text">数据篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#上传，下载数据"><span class="nav-number">2.1.</span> <span class="nav-text">上传，下载数据</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GPU篇"><span class="nav-number">3.</span> <span class="nav-text">GPU篇</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#提高篇"><span class="nav-number">4.</span> <span class="nav-text">提高篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何在google-drive上运行自己的代码"><span class="nav-number">4.1.</span> <span class="nav-text">如何在google drive上运行自己的代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何将大文件从-Colab-发送到-Google-Drive？"><span class="nav-number">4.2.</span> <span class="nav-text">如何将大文件从 Colab 发送到 Google Drive？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#整理工作流"><span class="nav-number">4.3.</span> <span class="nav-text">整理工作流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自动断开"><span class="nav-number">4.4.</span> <span class="nav-text">自动断开</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据上传"><span class="nav-number">4.5.</span> <span class="nav-text">数据上传</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#连接断开数据丢失"><span class="nav-number">4.6.</span> <span class="nav-text">连接断开数据丢失</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Louieworth</span>
+
+
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '4YkTMPdpq8gz4Y5cE7p16Vqm-gzGzoHsz',
+        appKey: '730GISNngxd7utFYrHdOFLbf',
+        placeholder: 'Just go for it',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>

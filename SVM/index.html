@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="SVM," />
+
+
+
+
+  
+
+
+  <link rel="alternate" href="/atom.xml" title="Louieworth's blog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="The basic knowledge of hard-margin of Support Vector Machine.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SVM">
+<meta property="og:url" content="http://yoursite.com/SVM/index.html">
+<meta property="og:site_name" content="Louieworth&#39;s blog">
+<meta property="og:description" content="The basic knowledge of hard-margin of Support Vector Machine.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMthmVMG1y1Af8iaia8ibejbe8G15t6D6rZJK1RnxU8PD7Y6627ZWufpoibA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMeLCKWDGHl9CwvScGBJnKeWWQTdBjIjXPTM0mELicHx6593lbSOiaeSzg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMJlts4DztsticMyM1UhsjuCF9k866f746WnNiahWIU9Fy4mTccjrQibwJQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMLH7UjFmgfYhCQzp0FCTyQSALbkXUw34tEGCYISaFsnknnIGuvrNxSA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMtZnVvmuzRQNVKI1bEvyvYvnEMaEWA3nYVqY2sEtmxryuRH8gytlwzg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicM9FzAhhDLFk5TO0g7MsHo7LSRjZ5oeG0ibqsObduu05VtzFzPkSP3Rpg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMzzg8DKP1y1I097C7MGux5DuurFp41bLN2sqT6vJf4gn9m3pSgnxXyA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMBhryFnUazak5M617ZlicrSoG8ic1MXYZQ41jbm7RGYEsx0Qe3U4t8Qtw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicM43Ul2USOtNGQ2PwVRfq1MSm6uuQ7Z5reZMgfVFFyA9hWA5aiaZPNiaAA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMTgkzPdV9ffthWNZ9NVQib3eSyCUfyx3uX405aTxLC2GZ71zoIdSKgxA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicM7vjX9gRqFknYCYiaibJqgOkyJzKPicJZxJl6TX55CrNKvZN1ymRszllUA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMxvrKE6bicMCNjPE3YNP60PGwDxBlZnZyQoDNgc9n5iaylf89MiboesxsQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMOQExicc8qS4aia2tvsiaoDE8myw8IGtm34edbRib1marq8LYBxticbOl82g/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMTgkzPdV9ffthWNZ9NVQib3eSyCUfyx3uX405aTxLC2GZ71zoIdSKgxA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMTgkzPdV9ffthWNZ9NVQib3eSyCUfyx3uX405aTxLC2GZ71zoIdSKgxA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wE5x5dHgW58Eu8wwzQzYM4UDYBnymhEanndCBhr83SDAarmYicEGiaOrA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wDFdATG6HlgSmM9iccpmhmCkdv6k9tiaOoZ5gPsOEVnuwsGoROjBIgibEw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wMBw3Pvk14Xmg0z0R8wuZibjSDorUCtdccawNddf1jnMEwDHPKDzIOag/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wowX2wia63nI4mHPKhRjibtMK3c7bUibPd0ocdxCZucY1Cj1IsMJVqNEQg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9w5Cg4kprUxvcBnY3iaanibiau8p0dSuWdiay9qFNo9aicVW89P9DlTcy8Eww/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wBxdu8GiaNOwYmSyhWNAPEouic09sRp4EjF3aB1IRkQ1XibskGBGrVVQWQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9w6pPxiaSr441f5L2XU5KzO8w9vEb76YKa8Q9BdQKm2ia1arIKHsc3wxZQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wJglM2dd7Oican0VMfjINBeZRudtViaK3QSjblq5d68MdlHddxoJdY4Gw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wMYCLIjia9JNnkk17FVCrkgHE7Hl1OnRrkr4ziadcTIHOj0D9icnUPlibvw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wIzCr39bAPw9Vltib2R1grMT1OdbQEP02I083sRRU5PCwZUeFRQtERPg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wGian0fJAhtfQa1r8NqBIyr8JT8FQJTVXZWCg8SElfszrzfgRc3OBibIA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wbpIeiaDds01l12jBTk4m1vFLQQYJngK4EvGAcKoibuf4DUOYx8weo8MQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_gif/nJZZib3qIQW5R6zszzOMRYNrKj4w0d6LmoL9YYbmsGiaTOXztsyxCTibqZ5YKezRgLfBYRSXkF9SVsuT1xvbHic3MQ/0?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_gif/nJZZib3qIQW5R6zszzOMRYNrKj4w0d6LmSu1t4a4aRQaOXp5L5Ug1gJ4ia461lMAPVOMqclw124sodraeogQlkFQ/0?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wM5mHjKRaf4kvzfgSameFxL8vhaXZNdNuicaWeV4cOqcwnWhmPyogBsg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_gif/nJZZib3qIQW5R6zszzOMRYNrKj4w0d6LmHw5oDL5ib0eqPlYm2KAjXnr4fONZCj9xsrb3uQcibprRpoNibpzibzkQxg/0?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9w2DSgm9ThYiblKrvnU638ltmzMPIiaGOPTNr2hlwrDhSglJLr9Y13ImXQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_gif/nJZZib3qIQW5R6zszzOMRYNrKj4w0d6LmtdEbnxfEwkuEEZ7FmGKyojhSogaPN4LricqQocaRXqhmHdaYLeNfVcQ/0?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wzrQxKeyPLeJBadaq2QPvcOjFJpwJ0voY9X8icmOnxLQP6ohxpQMgppQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wSnqPMkPCojT5c3Vg2yYc2aywzm5sPoPdRSTJdbyqnno8Hz2j3sVBZw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wSnqPMkPCojT5c3Vg2yYc2aywzm5sPoPdRSTJdbyqnno8Hz2j3sVBZw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wydddCtqQIK6ZXwxGM9xjnsZicmXziasCrtgBShQ0xIkRfC4qp5NKZu7A/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wXQXFv4kBQqZtbw22AnUH0fvB3ks18fZrFIXicuWNFcjoQpaZ7GSDsOw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9w73JVcia8yByo1zHcA0jY6dgYoA8icnCK7rbhZypnuEjQN09z9JicVasHw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wicEg5Dm0uXWbIlO0VXcHq5RpwUDbex5sz8HIPicR8UZbjLITex8BSbfg/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wEd0RlNpRKQ3wHJCFBueSUnrErknicRic7SRqXCsLKaqzrrEiaEF3EicjcQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wydddCtqQIK6ZXwxGM9xjnsZicmXziasCrtgBShQ0xIkRfC4qp5NKZu7A/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wedOfia8LLCdb2nXWdfzV6ES2c3urmXvmiaz401A9JfeSTGhibPu1cIA1g/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wEd0RlNpRKQ3wHJCFBueSUnrErknicRic7SRqXCsLKaqzrrEiaEF3EicjcQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wydddCtqQIK6ZXwxGM9xjnsZicmXziasCrtgBShQ0xIkRfC4qp5NKZu7A/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wQ99nNKDCqN9MNibfCJ6ufa6Iy9b9QO4ibknmBibZ09ybE2vp18UZyRVeA/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wNZ8iannUuTBWwBE9SyDKOXc4gMo5ETbjO8xnichzlHlbSrW2tiaaT55GA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wAn5jjr4XYAaf5k7EB6OCQ80GLe5MiaqBehGytZwKZcIvH6D7R4sALCA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wcZmeMOHGjgberlRdf44byQ0sAAEo1P2EwicmLYVxWRN3fSqujFicbeTQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9w4LFfR5qYtJaktAxT0erDf51ib1bjvefrpNR1gpCjkot9L4jbdeg6c4g/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wpYN2oQWNIiaicdbGJbiaQb2aFpkfIxgfwWJVH3d455ZsIyHSN0ia4U2PHw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wX7NeiaNQ6Tau6ibTde9S86U0RW9O65KhX79hHc5JXHiaYic3FUv74TtLYw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wibGm0JRA5ic9fazEiagzoFriaicggQUb3SZprkcA9gLicAT0V0ZL4S0nUZMQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wJNfbBic76nATBFToJkZn2kJXegaBN8qRI1lC7Yk1pH3UbNlVjWYMQAA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9w9CIVtDnbfcydASuvAQSjqkH5cKaM8WEFJEud9CiaicOenVJ5wws1fiaug/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wsZh29A9EXFvTymGhiaAicNNMc1QEqjeULN6DgDxm9A0WlZib8o8RCibPRw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wyeaHgElZUcXBeJK2tH9h0vibA2Tkppic5J9DmYmd9lVVyfrxRAxLGPNg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wv8EKzOogfV4L9Ty0ZKqf8NRxM2rqd6ftU86oSMVVDXaGicp51qVVFrA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wJNfbBic76nATBFToJkZn2kJXegaBN8qRI1lC7Yk1pH3UbNlVjWYMQAA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wibGm0JRA5ic9fazEiagzoFriaicggQUb3SZprkcA9gLicAT0V0ZL4S0nUZMQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wEibpNpXJUSFCGVqYMruxrd868r911gxHRbjZ0Efpm3y6dOsLwz55gHA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wKBg5GabD5oCDBbjzIK8xxibc5ndyrgK3oIqbQkeuXJOBLKL2yhXqrgw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wOibNZFLkuYIz1aGJ28avDQ0f1uSAs8xCOYUAIarWStstEnLic8BYicFLw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wELLs2YZpvG5QibeTcficdIribOdeHWePqouftbds6G6u3Eu663BE9Nx1w/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9w3Bicz0CFJkBJicEVeDc7qgEjzpc6MfN2S7WKVxbQ00CVK34jP0TVTQxA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wiaiaaDDVtcL6qliclMzq8QWS9ichZkTYicej8r3l5lAiaQlJ8HXpUC0u6ziaA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wD6SFIDgtcc9bA5xenjTTrAAttZabqPO3eUjZTkuc5nxXwbenkZ7bkw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9w2egpRU139BWHSpo6VIboulLib6ianAIGibbk9pGX6GI9ibshFichqEx4Weg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wGfgkBFg8MFhfJtBnvbZ1Jpibg6PUWicf1ECW4ctMw2FMrPzibEIeHPuAQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wIE3hIszJOfIqk3oKGORhlW8ibv5BeibtMic5mnxzta3lQEpGVE3bVic3zA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wR1yfgEOXdSep65fJhLaQx9C9vWNRbPHicmjheZl6bFLQIram1jMCfrw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wRQGNnb1ia2kvk81BW8jlq80mgpoJrlAWoLqJYvEIXiaPRX5hQf9o8beA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wbsMgFh6OQz1JQickicK4RTL7eZCNSQPDKyToeZlJvA9XhxPTBGeSsdVw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wJTLuRXKy189gRmqLskUZgpTpyuKp8cb33qEUFW88pzhJB6wowAobmg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wg5RMibuic7icM0hiam6XQPFzjibf0bEQDZwo9n6VugYCjXWZkol1jUyxT0Q/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wiaEum2KtwibArYqSvapibiaic7fiaKzibnWN6FN7QibBfY6Am1UnDxibMibIVqeg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wGljBPp0iaTDPpW8ibTVzV9gcuvcNqZKTW1mlfloEjFZ3jXLxfZQEicsNg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wiaEum2KtwibArYqSvapibiaic7fiaKzibnWN6FN7QibBfY6Am1UnDxibMibIVqeg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wGljBPp0iaTDPpW8ibTVzV9gcuvcNqZKTW1mlfloEjFZ3jXLxfZQEicsNg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wOE2QRhYO37ia3YT0dDAR0yU3JmKtV3Fw4QJeViasEmwKTkpjpoW2g8qQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wd5ibjQlSEPxWkicEnBN4FzUQGBaRP8xu15Rh70ownWCnCEuUKfNLz6OA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wwyVabiabeuc8WdhSZWEnZXYsdcFib4jiaRoFX6iaDvfwmAZoj2GoSm5Tnw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9w4PWibS7IZb6cqmYjVse5Vf5wWicvGO7VJ5AibygpNt1Hc7udGUrV87JFQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wP3qibyclypFGCXdtJxIXzUKduWv5GFTuicwFV9Z8Rgz6YXXnCMibs3KmQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wMzjVcJAqicarkt3t18SfBNIDjrfj73xS7416ETFleicGCpOCUBcLQtzg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wDGNmn4Bh2xp3PNzfrRZxI6pcGcYyUYiaHCDpibgSTCm4FhLlEk2F2RNw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wXfUXwftqibkreqhiapp1ZpuxGzk6bibyrHRElshhLQMc2CZZZzK3Ime3Q/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wcib2UQWZ36cgygEUGVWuAjCribv78HBL99DaJQMqkMKepJ04DsmZfQAQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wT4GXexB3TSRnKSwW6uF1vVIMxMm9foeEZjpttP6FdFn3PwEHVXibia9A/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9w5pWMI0iaaIkB9zcrRNTiaQGIdvw5aiclFlmr6icMwlCSDvChuT28rLUEAw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wsR6ibAttmQicBfbCOhmlqlTaeffBIYOGXibJd74aUibOmacQiaNUDibQJZYA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9w7trWIEKoUptMolRWpbAziaATBSYO0uQ6lbQxIKQLpIARibQrH8tKUYQw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wupcH7B8PmwXNgibeLibj5E8yVgicjVsUlkrTbiaicFRBibp8Wic9tRWBDpDOA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wiaSATibsaUlX3f36ZgLpAFmA3yxWCbFERYpcO54KzFNbTzmCWBwlbujQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wEPIKRBTNibQa4CJ5QAdpc6XWTo7qKCAh0qbD3GR0OrxC3KxXaY2Vtzw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wpDCdLRqtxyJrCCTIvMCk62yIiatX9RH0bMtUj5deaXfygwicyzhrQ4pg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wicU47Z5FewxaqxmtPDh94picCENolcpKcxbj65Kgq0ALfMFU5JDD6uvA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9w6fuGzmCB16MicFc2HaZuHp63YV7xQq67Mp0mJm8eEbGIAMTiblm8xzhw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wqyjhoBCo0Yq1A43ojqricJJicZa8yj7CMKwDYrhtUjQTQ6DibAs5Sibcow/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9waNcYtzLqp1aHvwxnLWGOIwLBtfbRHQtPg34yDicmkejge2fpicibjZiaiaA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wPToen53tOj58TcloYyiccgZvgGPlPk8gAPPelc3CYwqUkEY8yzXCgcw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wz8icEVeaScBK4JKBgEiaa3AuaEm1fibOXCODYochkicqrKx4584SxFIwjw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wqcDM4pAtjAcqrGRHdQjnibYwf6WN9icXFXLhlmQDXT1icgDce8YYT1GNw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wMlhCMiaheyKCrzDICuKeS8baIh1bqKJSFNvx0eZqNibsXJy42fnibNKibA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wAegtjKfvnFWibNBh5sjpPNu2RVkOBZwjyKtdx5HoAxTv5KCmqLDqJVQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wZMs6pcohiarq6HXrajTnEduup6zwGq1UvBehCKLvI6AOV6WJl0rAyuA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9whOme41Ficq3zIL0icficX3pEt86uMfic4416la63clNYjMu7TFUFxPibLeg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wibJDtJME4sYTrSdF0QicBMbHTElqQuNvdoOT7qy3MkK4p40gd6GGiazrQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wNc2MtTQWlXfUaYnXciciaVaTcw9zxwufuBjkW3eVVBlghcSh5exjEvicQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:image" content="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wxufyNQfsgiaPWOibibVuoP4HuDd6icZFicZN8TcnqRDcnibFLfrNwqQedO4g/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="article:published_time" content="2020-06-06T22:39:21.000Z">
+<meta property="article:modified_time" content="2020-06-06T22:47:46.000Z">
+<meta property="article:author" content="Louieworth">
+<meta property="article:tag" content="SVM">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMthmVMG1y1Af8iaia8ibejbe8G15t6D6rZJK1RnxU8PD7Y6627ZWufpoibA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/SVM/"/>
+
+
+
+
+
+  <title>SVM | Louieworth's blog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Louieworth's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Stay foolish, stay healthy.</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tools">
+          <a href="/tools/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-bars"></i> <br />
+            
+            tools
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/SVM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Louieworth">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Louieworth's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">SVM</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-07T06:39:21+08:00">
+                2020-06-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Machine-Learning/" itemprop="url" rel="index">
+                    <span itemprop="name">Machine Learning</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/SVM/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/SVM/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <script src="/assets/js/APlayer.min.js"> </script><p>The basic knowledge of hard-margin of Support Vector Machine. <a id="more"></a></p>
+<h1 id="1-感知机"><a href="#1-感知机" class="headerlink" title="1. 感知机"></a>1. 感知机</h1><p>感知机是个相当简单的模型，<strong>但它既可以发展成支持向量机（通过简单地修改一下损失函数）、又可以发展成神经网络（通过简单地堆叠），</strong>所以它也拥有一定的地位。</p>
+<p>为方便，我们统一讨论二分类问题，并将两个类别的样本分别称为正、负样本。</p>
+<h2 id="1-感知机可以做什么？"><a href="#1-感知机可以做什么？" class="headerlink" title="1. 感知机可以做什么？"></a>1. 感知机可以做什么？</h2><p>感知机能（且一定能）将线性可分的数据集分开。</p>
+<p>什么叫线性可分？</p>
+<blockquote>
+<p>在二维平面上、线性可分意味着能用一条线将正负样本分开，在三维空间中、线性可分意味着能用一个平面将正负样本分开.</p>
+</blockquote>
+<h2 id="2如何搭建感知机？"><a href="#2如何搭建感知机？" class="headerlink" title="2如何搭建感知机？"></a>2如何搭建感知机？</h2><p>为了搭建感知机模型，我们需要知道<strong>高维数据的线性可分</strong>是指什么。</p>
+<p>为此我们需要定义“<strong>超平面</strong>”的概念：<br>$$<br>w·x+b=0<br>$$<br>其中、<img src="https://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMthmVMG1y1Af8iaia8ibejbe8G15t6D6rZJK1RnxU8PD7Y6627ZWufpoibA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)都是n维向量，<img src="https://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMeLCKWDGHl9CwvScGBJnKeWWQTdBjIjXPTM0mELicHx6593lbSOiaeSzg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)则<img src="https://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMJlts4DztsticMyM1UhsjuCF9k866f746WnNiahWIU9Fy4mTccjrQibwJQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)是中的超平面。对于二维平面来说<img src="https://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMLH7UjFmgfYhCQzp0FCTyQSALbkXUw34tEGCYISaFsnknnIGuvrNxSA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>，上式就可以化为<img src="https://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMtZnVvmuzRQNVKI1bEvyvYvnEMaEWA3nYVqY2sEtmxryuRH8gytlwzg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>此即直线方程。有了中超平面的定义后，线性可分的概念也就清晰了：对于一个数据集<img src="https://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicM9FzAhhDLFk5TO0g7MsHo7LSRjZ5oeG0ibqsObduu05VtzFzPkSP3Rpg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)（<img src="https://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMzzg8DKP1y1I097C7MGux5DuurFp41bLN2sqT6vJf4gn9m3pSgnxXyA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)为输入，<img src="https://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMBhryFnUazak5M617ZlicrSoG8ic1MXYZQ41jbm7RGYEsx0Qe3U4t8Qtw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)为标签），如果存在一个超平面<img src="https://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicM43Ul2USOtNGQ2PwVRfq1MSm6uuQ7Z5reZMgfVFFyA9hWA5aiaZPNiaAA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)，能够将<img src="https://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMTgkzPdV9ffthWNZ9NVQib3eSyCUfyx3uX405aTxLC2GZ71zoIdSKgxA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)中正负样本（<strong>对于某个样本</strong><img src="https://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicM7vjX9gRqFknYCYiaibJqgOkyJzKPicJZxJl6TX55CrNKvZN1ymRszllUA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)，若<img src="https://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMxvrKE6bicMCNjPE3YNP60PGwDxBlZnZyQoDNgc9n5iaylf89MiboesxsQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)则称其为正样本，若则称其为负样本，且标签<img src="https://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMOQExicc8qS4aia2tvsiaoDE8myw8IGtm34edbRib1marq8LYBxticbOl82g/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">只能取正负 1 这两个值）分开，那么就称<img src="https://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMTgkzPdV9ffthWNZ9NVQib3eSyCUfyx3uX405aTxLC2GZ71zoIdSKgxA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">是线性可分的。</p>
+<p>否则，就称<img src="https://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMTgkzPdV9ffthWNZ9NVQib3eSyCUfyx3uX405aTxLC2GZ71zoIdSKgxA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">是<strong>线性不可分</strong>的。</p>
+<p>对于感知机模型来说，以上的这些信息就足够了。</p>
+<h2 id="2-支持向量机（Linear）"><a href="#2-支持向量机（Linear）" class="headerlink" title="2. 支持向量机（Linear）"></a>2. 支持向量机（Linear）</h2><p>那么应该如何将这种理想的决策面的状态翻译成机器能够学习的东西呢？直观来说，就是<strong>让决策面离正负样本点的间隔都尽可能大</strong>；而这个“间隔”翻译成数学语言，其实就是简单的：</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wE5x5dHgW58Eu8wwzQzYM4UDYBnymhEanndCBhr83SDAarmYicEGiaOrA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>在有了样本点到决策面的间隔后，数据集到决策面的间隔也就好定义了：</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wDFdATG6HlgSmM9iccpmhmCkdv6k9tiaOoZ5gPsOEVnuwsGoROjBIgibEw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>所以我们现在的目的就转化为：</p>
+<ul>
+<li>让所有样本点都被正确分类：<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wMBw3Pvk14Xmg0z0R8wuZibjSDorUCtdccawNddf1jnMEwDHPKDzIOag/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></li>
+<li>让决策面离正负样本点的间隔都尽可能大：<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wowX2wia63nI4mHPKhRjibtMK3c7bUibPd0ocdxCZucY1Cj1IsMJVqNEQg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></li>
+</ul>
+<p>注意到<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9w5Cg4kprUxvcBnY3iaanibiau8p0dSuWdiay9qFNo9aicVW89P9DlTcy8Eww/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)的值<strong>在</strong><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wBxdu8GiaNOwYmSyhWNAPEouic09sRp4EjF3aB1IRkQ1XibskGBGrVVQWQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"><strong>同时扩大 k 倍时不会改变</strong>，所以我们完全可以假设：</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9w6pPxiaSr441f5L2XU5KzO8w9vEb76YKa8Q9BdQKm2ia1arIKHsc3wxZQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>但是这会导致另一个问题：当数据集线性不可分时，上述优化问题是必定无解的，这就会导致模型震荡（换句话说，<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wJglM2dd7Oican0VMfjINBeZRudtViaK3QSjblq5d68MdlHddxoJdY4Gw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">这个约束太“硬”了）。</p>
+<p>所以为了让模型在线性不可分的数据上仍有不错的表现，从直观来说，我们应该“放松”对我们模型的限制（让我们模型的约束“软”一点）：</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wMYCLIjia9JNnkk17FVCrkgHE7Hl1OnRrkr4ziadcTIHOj0D9icnUPlibvw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>注意我们感知机的损失函数为<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wIzCr39bAPw9Vltib2R1grMT1OdbQEP02I083sRRU5PCwZUeFRQtERPg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">，于是综上所述可以看出，LinearSVM 在形式上和感知机的差别只在于损失函数、且这两个损失函数确实长得很像</p>
+<h2 id="SVM的训练"><a href="#SVM的训练" class="headerlink" title="SVM的训练"></a>SVM的训练</h2><p><strong>虽然比较简单，但是调优 LinearSVM 的训练这个过程是相当有启发性的事情。</strong></p>
+<p><strong>仍然是那句老话：麻雀虽小，五脏俱全。我们会先展示“极大梯度下降法”的有效性，然后会展示极大梯度下降法存在的问题，**</strong>最后则会介绍如何应用 Mini-Batch 梯度下降法（MBGD）来进行训练**】</p>
+<p>为了使用梯度下降法，我们需要先求导。我们已知：</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wGian0fJAhtfQa1r8NqBIyr8JT8FQJTVXZWCg8SElfszrzfgRc3OBibIA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>我们完全可以照搬感知机里的代码来完成实现（由于思路基本一致，这里就略去注释了）：</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wbpIeiaDds01l12jBTk4m1vFLQQYJngK4EvGAcKoibuf4DUOYx8weo8MQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>下面这张动图是该 LinearSVM 的训练过程：</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_gif/nJZZib3qIQW5R6zszzOMRYNrKj4w0d6LmoL9YYbmsGiaTOXztsyxCTibqZ5YKezRgLfBYRSXkF9SVsuT1xvbHic3MQ/0?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1" alt="img"></p>
+<p>虽然看上去不错，但仍然存在着<u><strong>问题</strong>：</u></p>
+<ul>
+<li>训练过程其实非常不稳定</li>
+<li>从直观上来说，由于 LinearSVM 的损失函数比感知机要更复杂，所以相应的函数形状也会更复杂。这意味着当数据集稍微差一点的时候，直接单纯地应用极大梯度下降法可能会导致一些问题——比如说模型会卡在某个很奇怪的地方无法自拔（什么鬼）</li>
+</ul>
+<p>通过将正负样本点的“中心”从原点 (0, 0)（默认值）挪到 (5, 5)（亦即破坏了一定的对称性）并将正负样本点之间的距离拉近一点，我们可以复现这个问题：</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_gif/nJZZib3qIQW5R6zszzOMRYNrKj4w0d6LmSu1t4a4aRQaOXp5L5Ug1gJ4ia461lMAPVOMqclw124sodraeogQlkFQ/0?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1" alt="img"></p>
+<p>原理我不敢乱说，这里只提供一个牵强附会的直观解释：</p>
+<ul>
+<li><strong>每次只取使得损失函数极大的一个样本进行梯度下降模型在某个地方可能来来回回都只受那么几个样本的影响死循环（什么鬼！）</strong></li>
+</ul>
+<p>专业的理论就留待专业的观众老爷补充吧 ( σ’ω’)σ</p>
+<p>然后解决方案的话，主要还是从<strong>改进随机梯度下降（SGD）的思路入手</strong>（因为极大梯度下降法其实就是 SGD 的特殊形式）。</p>
+<p>我们知道 SGD 的“升级版”是 MBGD、亦即拿随机 Mini-Batch 代替随机抽样，我们这里也完全可以依样画葫芦。</p>
+<p>以下是对应代码（只显示出了核心部分）：</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wM5mHjKRaf4kvzfgSameFxL8vhaXZNdNuicaWeV4cOqcwnWhmPyogBsg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>这样的话，通常而言会比 SGD 要好</p>
+<p><strong>但是问题仍然是存在的</strong>：那就是它们所运用的梯度下降法都只是朴素的 Vanilla Update，这会导致当数据的 scale 很大时模型对参数极为敏感、从而导致持续的震荡（所谓的 scale 比较大，可以理解为“规模很大”，或者直白一点——以二维数据为例的话——就是横纵坐标的数值很大）。</p>
+<p>下面这张动图或许能提供一些直观：</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_gif/nJZZib3qIQW5R6zszzOMRYNrKj4w0d6LmHw5oDL5ib0eqPlYm2KAjXnr4fONZCj9xsrb3uQcibprRpoNibpzibzkQxg/0?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1" alt="img"></p>
+<p>Again，原理我不敢乱说，所以只提供一个有可能对（更有可能错）（喂）的直观解释：</p>
+<ul>
+<li>scale太大梯度很大蹦跶得很欢（什么鬼！）</li>
+</ul>
+<p>专业的理论就留待专业的观众老爷补充吧 ( σ’ω’)σ</p>
+<p>解决方案的话，一个很直接的想法就是进行<strong>数据归一化</strong>：<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9w2DSgm9ThYiblKrvnU638ltmzMPIiaGOPTNr2hlwrDhSglJLr9Y13ImXQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>。事实证明这样做了之后，最基本的极大梯度下降法也能解决上文出现过的所有问题了</p>
+<p>然后一个稍微“偷懒”一点的做法就是，用更好的梯度下降算法来代替朴素的 Vanilla Update。</p>
+<p>比如说 Adam 的训练过程将如下（这张动图被知乎弄得有点崩……将就着看吧 ( σ’ω’)σ）：</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_gif/nJZZib3qIQW5R6zszzOMRYNrKj4w0d6LmtdEbnxfEwkuEEZ7FmGKyojhSogaPN4LricqQocaRXqhmHdaYLeNfVcQ/0?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1" alt="img"></p>
+<h1 id="相关数学理论"><a href="#相关数学理论" class="headerlink" title="相关数学理论"></a>相关数学理论</h1><p>我们尚未解决的问题有三个，但这些问题基本都挺直观的，所以大体上不深究也没问题（趴：</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wzrQxKeyPLeJBadaq2QPvcOjFJpwJ0voY9X8icmOnxLQP6ohxpQMgppQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>这三个问题有一定递进关系，我们一个个来看</p>
+<p><strong>1）间隔的定义</strong></p>
+<p>我们在定义点<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wSnqPMkPCojT5c3Vg2yYc2aywzm5sPoPdRSTJdbyqnno8Hz2j3sVBZw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">到平面（超平面）的间隔时，一般都是这样做的：</p>
+<ul>
+<li>将<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wSnqPMkPCojT5c3Vg2yYc2aywzm5sPoPdRSTJdbyqnno8Hz2j3sVBZw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)（垂直）投影到<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wydddCtqQIK6ZXwxGM9xjnsZicmXziasCrtgBShQ0xIkRfC4qp5NKZu7A/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">上</li>
+<li>设投影点为<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wXQXFv4kBQqZtbw22AnUH0fvB3ks18fZrFIXicuWNFcjoQpaZ7GSDsOw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)，则定义<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9w73JVcia8yByo1zHcA0jY6dgYoA8icnCK7rbhZypnuEjQN09z9JicVasHw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></li>
+</ul>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wicEg5Dm0uXWbIlO0VXcHq5RpwUDbex5sz8HIPicR8UZbjLITex8BSbfg/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>注意这里我们允许（当样本被错分类时的）间隔为负数，所以<strong>间隔其实严格来说并不是一般意义上的距离</strong></p>
+<p>那么为了找到垂直投影，我们得先找到垂直于超平面的方向。不难看出<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wEd0RlNpRKQ3wHJCFBueSUnrErknicRic7SRqXCsLKaqzrrEiaEF3EicjcQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)就是垂直于<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wydddCtqQIK6ZXwxGM9xjnsZicmXziasCrtgBShQ0xIkRfC4qp5NKZu7A/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)的，因为对<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wedOfia8LLCdb2nXWdfzV6ES2c3urmXvmiaz401A9JfeSTGhibPu1cIA1g/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>（两式相减即可），从而<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wEd0RlNpRKQ3wHJCFBueSUnrErknicRic7SRqXCsLKaqzrrEiaEF3EicjcQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)垂直于向量，从而也就垂直于<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wydddCtqQIK6ZXwxGM9xjnsZicmXziasCrtgBShQ0xIkRfC4qp5NKZu7A/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">：</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wQ99nNKDCqN9MNibfCJ6ufa6Iy9b9QO4ibknmBibZ09ybE2vp18UZyRVeA/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)那么结合之前那张图，不难得知我们可以设<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wNZ8iannUuTBWwBE9SyDKOXc4gMo5ETbjO8xnichzlHlbSrW2tiaaT55GA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)（这里的<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wAn5jjr4XYAaf5k7EB6OCQ80GLe5MiaqBehGytZwKZcIvH6D7R4sALCA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)可正可负），于是就有（注意由<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wcZmeMOHGjgberlRdf44byQ0sAAEo1P2EwicmLYVxWRN3fSqujFicbeTQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)知<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9w4LFfR5qYtJaktAxT0erDf51ib1bjvefrpNR1gpCjkot9L4jbdeg6c4g/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">）</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wpYN2oQWNIiaicdbGJbiaQb2aFpkfIxgfwWJVH3d455ZsIyHSN0ia4U2PHw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>从而</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wX7NeiaNQ6Tau6ibTde9S86U0RW9O65KhX79hHc5JXHiaYic3FUv74TtLYw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>注意这么定义的间隔有一个大问题：当<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wibGm0JRA5ic9fazEiagzoFriaicggQUb3SZprkcA9gLicAT0V0ZL4S0nUZMQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)同时增大<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wJNfbBic76nATBFToJkZn2kJXegaBN8qRI1lC7Yk1pH3UbNlVjWYMQAA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)倍时，新得到的超平面<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9w9CIVtDnbfcydASuvAQSjqkH5cKaM8WEFJEud9CiaicOenVJ5wws1fiaug/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)其实等价于原超平面<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wsZh29A9EXFvTymGhiaAicNNMc1QEqjeULN6DgDxm9A0WlZib8o8RCibPRw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">：</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wyeaHgElZUcXBeJK2tH9h0vibA2Tkppic5J9DmYmd9lVVyfrxRAxLGPNg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>但此时<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wv8EKzOogfV4L9Ty0ZKqf8NRxM2rqd6ftU86oSMVVDXaGicp51qVVFrA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)却会直接增大<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wJNfbBic76nATBFToJkZn2kJXegaBN8qRI1lC7Yk1pH3UbNlVjWYMQAA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)倍。极端的情况就是，当<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wibGm0JRA5ic9fazEiagzoFriaicggQUb3SZprkcA9gLicAT0V0ZL4S0nUZMQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">同时增大无穷倍时，超平面没变，间隔却也跟着增大了无穷倍，这当然是不合理的</p>
+<p>所以我们需要把 scale 的影响给抹去，常见的做法就是做某种意义上的归一化：</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wEibpNpXJUSFCGVqYMruxrd868r911gxHRbjZ0Efpm3y6dOsLwz55gHA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p><strong>（注意：由于 scale 的影响已被抹去，所以也就跟着被抹去了；同时由</strong><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wKBg5GabD5oCDBbjzIK8xxibc5ndyrgK3oIqbQkeuXJOBLKL2yhXqrgw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)<strong>知，我们需要在抹去</strong><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wOibNZFLkuYIz1aGJ28avDQ0f1uSAs8xCOYUAIarWStstEnLic8BYicFLw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)<strong>的同时、给</strong><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wELLs2YZpvG5QibeTcficdIribOdeHWePqouftbds6G6u3Eu663BE9Nx1w/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)<strong>套一个绝对值)</strong></p>
+<p>不难看出上式可改写为：</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9w3Bicz0CFJkBJicEVeDc7qgEjzpc6MfN2S7WKVxbQ00CVK34jP0TVTQxA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>这正是我们想要的结果</p>
+<p><strong>2）优化问题的转化的合理性</strong></p>
+<p>我们已知原问题为</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wiaiaaDDVtcL6qliclMzq8QWS9ichZkTYicej8r3l5lAiaQlJ8HXpUC0u6ziaA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>且由 <strong>1）</strong>知，式中的<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wD6SFIDgtcc9bA5xenjTTrAAttZabqPO3eUjZTkuc5nxXwbenkZ7bkw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">其实就是（没有抹去 scale 的影响的）间隔。所以想要放松对模型的限制的话，很自然的想法就是让这个间隔不必一定要不小于 1、而是只要不小于<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9w2egpRU139BWHSpo6VIboulLib6ianAIGibbk9pGX6GI9ibshFichqEx4Weg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)就行，其中<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wGfgkBFg8MFhfJtBnvbZ1Jpibg6PUWicf1ECW4ctMw2FMrPzibEIeHPuAQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">是个不小于 0 的数。</p>
+<p>正如前文所说，只放松限制的话肯定不行、还得给这个放松一些惩罚，所以就在损失函数中加一个<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wIE3hIszJOfIqk3oKGORhlW8ibv5BeibtMic5mnxzta3lQEpGVE3bVic3zA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)即可，其中<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wR1yfgEOXdSep65fJhLaQx9C9vWNRbPHicmjheZl6bFLQIram1jMCfrw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">是个大于 0 的常数、可以理解为对放松的惩罚力度</p>
+<p>综上所述，优化问题即可合理地转化为：</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wRQGNnb1ia2kvk81BW8jlq80mgpoJrlAWoLqJYvEIXiaPRX5hQf9o8beA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p><strong>3）优化问题的等价性</strong></p>
+<p>为方便，称优化问题：</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wbsMgFh6OQz1JQickicK4RTL7eZCNSQPDKyToeZlJvA9XhxPTBGeSsdVw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>为问题一；称：</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wJTLuRXKy189gRmqLskUZgpTpyuKp8cb33qEUFW88pzhJB6wowAobmg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>为问题二，则我们需要证明问题一与问题二等价</p>
+<p>先来看问题一怎么转为问题二。事实上不难得知：</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wg5RMibuic7icM0hiam6XQPFzjibf0bEQDZwo9n6VugYCjXWZkol1jUyxT0Q/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>注意问题一是针对<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wiaEum2KtwibArYqSvapibiaic7fiaKzibnWN6FN7QibBfY6Am1UnDxibMibIVqeg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)和<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wGljBPp0iaTDPpW8ibTVzV9gcuvcNqZKTW1mlfloEjFZ3jXLxfZQEicsNg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)进行优化的，且当<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wiaEum2KtwibArYqSvapibiaic7fiaKzibnWN6FN7QibBfY6Am1UnDxibMibIVqeg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)和<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wGljBPp0iaTDPpW8ibTVzV9gcuvcNqZKTW1mlfloEjFZ3jXLxfZQEicsNg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)固定时，为使<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wOE2QRhYO37ia3YT0dDAR0yU3JmKtV3Fw4QJeViasEmwKTkpjpoW2g8qQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">最小，必有：</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wd5ibjQlSEPxWkicEnBN4FzUQGBaRP8xu15Rh70ownWCnCEuUKfNLz6OA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>亦即<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wwyVabiabeuc8WdhSZWEnZXYsdcFib4jiaRoFX6iaDvfwmAZoj2GoSm5Tnw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)。此时损失函数即为<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9w4PWibS7IZb6cqmYjVse5Vf5wWicvGO7VJ5AibygpNt1Hc7udGUrV87JFQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">，换句话说，我们就把问题一转为了问题二</p>
+<p>再来看问题二怎么转为问题一。事实上，直接令<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wP3qibyclypFGCXdtJxIXzUKduWv5GFTuicwFV9Z8Rgz6YXXnCMibs3KmQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">，就有：</p>
+<ul>
+<li>模型的损失为<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wMzjVcJAqicarkt3t18SfBNIDjrfj73xS7416ETFleicGCpOCUBcLQtzg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></li>
+<li>模型的约束为<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wDGNmn4Bh2xp3PNzfrRZxI6pcGcYyUYiaHCDpibgSTCm4FhLlEk2F2RNw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></li>
+</ul>
+<p>亦即转为了问题一</p>
+<p><strong>4）LinearSVM 的对偶问题</strong></p>
+<p>原始问题</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wXfUXwftqibkreqhiapp1ZpuxGzk6bibyrHRElshhLQMc2CZZZzK3Ime3Q/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>的对偶问题为</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wcib2UQWZ36cgygEUGVWuAjCribv78HBL99DaJQMqkMKepJ04DsmZfQAQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>通过拉格朗日乘子法可以比较简单地完成证明。不难得知原始问题相应的拉格朗日函数为：</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wT4GXexB3TSRnKSwW6uF1vVIMxMm9foeEZjpttP6FdFn3PwEHVXibia9A/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>其中<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9w5pWMI0iaaIkB9zcrRNTiaQGIdvw5aiclFlmr6icMwlCSDvChuT28rLUEAw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">，于是原始问题为</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wsR6ibAttmQicBfbCOhmlqlTaeffBIYOGXibJd74aUibOmacQiaNUDibQJZYA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>从而对偶问题为</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9w7trWIEKoUptMolRWpbAziaATBSYO0uQ6lbQxIKQLpIARibQrH8tKUYQw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>于是我们需要求偏导并令它们为 0：</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wupcH7B8PmwXNgibeLibj5E8yVgicjVsUlkrTbiaicFRBibp8Wic9tRWBDpDOA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>注意这些约束中<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wiaSATibsaUlX3f36ZgLpAFmA3yxWCbFERYpcO54KzFNbTzmCWBwlbujQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)除了<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wEPIKRBTNibQa4CJ5QAdpc6XWTo7qKCAh0qbD3GR0OrxC3KxXaY2Vtzw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)之外没有其它约束，<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wpDCdLRqtxyJrCCTIvMCk62yIiatX9RH0bMtUj5deaXfygwicyzhrQ4pg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)的约束可以转为<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wicU47Z5FewxaqxmtPDh94picCENolcpKcxbj65Kgq0ALfMFU5JDD6uvA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)。然后把这些东西代入拉格朗日函数<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9w6fuGzmCB16MicFc2HaZuHp63YV7xQq67Mp0mJm8eEbGIAMTiblm8xzhw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">、即可得到：</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wqyjhoBCo0Yq1A43ojqricJJicZa8yj7CMKwDYrhtUjQTQ6DibAs5Sibcow/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>于是对偶问题为</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9waNcYtzLqp1aHvwxnLWGOIwLBtfbRHQtPg34yDicmkejge2fpicibjZiaiaA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>亦即</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wPToen53tOj58TcloYyiccgZvgGPlPk8gAPPelc3CYwqUkEY8yzXCgcw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>可以看到在对偶形式中，样本仅以内积的形式（<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wz8icEVeaScBK4JKBgEiaa3AuaEm1fibOXCODYochkicqrKx4584SxFIwjw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">）出现，这就使得核方法的引入变得简单而自然</p>
+<p><strong>5）Extra</strong></p>
+<p>作为结尾，我来叙述一些上文用到过的、但是没有给出具体名字的概念（假设样本为<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wqcDM4pAtjAcqrGRHdQjnibYwf6WN9icXFXLhlmQDXT1icgDce8YYT1GNw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">)，超平面为<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wMlhCMiaheyKCrzDICuKeS8baIh1bqKJSFNvx0eZqNibsXJy42fnibNKibA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">）</p>
+<ul>
+<li><p>样本到超平面的<strong>函数间隔</strong>为：<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wAegtjKfvnFWibNBh5sjpPNu2RVkOBZwjyKtdx5HoAxTv5KCmqLDqJVQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+</li>
+<li><p>样本到超平面的<strong>几何间隔</strong>为：<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wZMs6pcohiarq6HXrajTnEduup6zwGq1UvBehCKLvI6AOV6WJl0rAyuA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+</li>
+<li><p>优化问题</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9whOme41Ficq3zIL0icficX3pEt86uMfic4416la63clNYjMu7TFUFxPibLeg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>的求解过程常称为<strong>硬间隔最大化</strong>，求解出来的超平面则常称为<strong>最大硬间隔分离超平面</strong></p>
+</li>
+<li><p>优化问题</p>
+</li>
+</ul>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wibJDtJME4sYTrSdF0QicBMbHTElqQuNvdoOT7qy3MkK4p40gd6GGiazrQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>的求解过程常称为<strong>软间隔最大化</strong>，求解出来的超平面则常称为<strong>最大软间隔分离超平面</strong></p>
+<p>然后最后的最后，请允许我<strong>不加证明地给出两个结论</strong>（因为结论直观且证明太长……）：</p>
+<ul>
+<li><p>若数据集线性可分，则最大硬间隔分离超平面存在且唯一</p>
+</li>
+<li><p>若数据集线性不可分，则最大软间隔分离超平面的解存在但不唯一，其中：</p>
+</li>
+<li><ul>
+<li>法向量<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wNc2MtTQWlXfUaYnXciciaVaTcw9zxwufuBjkW3eVVBlghcSh5exjEvicQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">）唯一</li>
+<li>偏置量（<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW6rcfq5meDicP8IPiaGYEicu9wxufyNQfsgiaPWOibibVuoP4HuDd6icZFicZN8TcnqRDcnibFLfrNwqQedO4g/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">）<strong>可能</strong>不唯一（感谢评论区@shuyu cheng 指出）</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/SVM/" rel="tag"># SVM</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/paper-LightGBM/" rel="next" title="paper-LightGBM">
+                <i class="fa fa-chevron-left"></i> paper-LightGBM
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/decision-tree/" rel="prev" title="decision_tree">
+                decision_tree <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Louieworth" />
+            
+              <p class="site-author-name" itemprop="name">Louieworth</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7Carchive">
+              
+                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/louieworth" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:jiangli3859@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://vel.life/" title="Vel" target="_blank">Vel</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-感知机"><span class="nav-number">1.</span> <span class="nav-text">1. 感知机</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-感知机可以做什么？"><span class="nav-number">1.1.</span> <span class="nav-text">1. 感知机可以做什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2如何搭建感知机？"><span class="nav-number">1.2.</span> <span class="nav-text">2如何搭建感知机？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-支持向量机（Linear）"><span class="nav-number">1.3.</span> <span class="nav-text">2. 支持向量机（Linear）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVM的训练"><span class="nav-number">1.4.</span> <span class="nav-text">SVM的训练</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#相关数学理论"><span class="nav-number">2.</span> <span class="nav-text">相关数学理论</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Louieworth</span>
+
+
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '4YkTMPdpq8gz4Y5cE7p16Vqm-gzGzoHsz',
+        appKey: '730GISNngxd7utFYrHdOFLbf',
+        placeholder: 'Just go for it',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>

@@ -6296,19 +6296,105 @@
       </tags>
   </entry>
   <entry>
-    <title>pandas_groupby</title>
-    <url>/pandas-groupby/</url>
-    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script>]]></content>
+    <title>pandas</title>
+    <url>/pandas/</url>
+    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="Groupby"><a href="#Groupby" class="headerlink" title="Groupby"></a>Groupby</h1><p>在日常的数据分析中，经常需要将数据<strong>根据某个（多个）字段划分为不同的群体（group）</strong>进行分析，如电商领域将全国的总销售额根据省份进行划分，分析各省销售额的变化情况，社交领域将用户根据画像（性别、年龄）进行细分，研究用户的使用情况和偏好等。在Pandas中，上述的数据处理操作主要运用<code>groupby</code>完成，这篇文章就介绍一下<code>groupby</code>的基本原理及对应的<code>agg</code>、<code>transform</code>和<code>apply</code>操作。</p>
+<p>为了后续图解的方便，采用模拟生成的10个样本数据，代码和数据如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">company = [<span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>]</span><br><span class="line"></span><br><span class="line">data = pd.DataFrame(&#123;</span><br><span class="line">    <span class="string">"company"</span>: [company[x] <span class="keyword">for</span> x <span class="keyword">in</span> np.random.randint(<span class="number">0</span>, len(company), <span class="number">10</span>)],</span><br><span class="line">    <span class="string">"salary"</span>: np.random.randint(<span class="number">5</span>, <span class="number">50</span>, <span class="number">10</span>),</span><br><span class="line">    <span class="string">'age'</span>: np.random.randint(<span class="number">15</span>, <span class="number">50</span>, <span class="number">10</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p><img src="/pandas/data.jpg" alt></p>
+<h2 id="Groupby的基本原理"><a href="#Groupby的基本原理" class="headerlink" title="Groupby的基本原理"></a>Groupby的基本原理</h2><p>在pandas中，实现分组操作的代码很简单，仅需一行代码，在这里，将上面的数据集按照<code>company</code>字段进行划分：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">In [<span class="number">1</span>]: group = data.groupby(<span class="string">"company"</span>)</span><br></pre></td></tr></table></figure>
+
+<p>将上述代码输入<code>ipython</code>后，会得到一个<code>DataFrameGroupBy</code>对象</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">In [<span class="number">6</span>]: group</span><br><span class="line">Out[<span class="number">6</span>]: &lt;pandas.core.groupby.generic.DataFrameGroupBy object at <span class="number">0x000002B7E2650240</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<p>那这个生成的<code>DataFrameGroupBy</code>是啥呢？对<code>data</code>进行了<code>groupby</code>后发生了什么？<code>ipython</code>所返回的结果是其内存地址，并不利于直观地理解，为了看看<code>group</code>内部究竟是什么，这里把<code>group</code>转换成<code>list</code>的形式来看一看：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">In [<span class="number">8</span>]: list(group)</span><br><span class="line">Out[<span class="number">8</span>]:</span><br><span class="line">[(<span class="string">'A'</span>,   company  salary  age</span><br><span class="line">  <span class="number">3</span>       A      <span class="number">20</span>   <span class="number">22</span></span><br><span class="line">  <span class="number">6</span>       A      <span class="number">23</span>   <span class="number">33</span>), </span><br><span class="line"> (<span class="string">'B'</span>,   company  salary  age</span><br><span class="line">  <span class="number">4</span>       B      <span class="number">10</span>   <span class="number">17</span></span><br><span class="line">  <span class="number">5</span>       B      <span class="number">21</span>   <span class="number">40</span></span><br><span class="line">  <span class="number">8</span>       B       <span class="number">8</span>   <span class="number">30</span>), </span><br><span class="line"> (<span class="string">'C'</span>,   company  salary  age</span><br><span class="line">  <span class="number">0</span>       C      <span class="number">43</span>   <span class="number">35</span></span><br><span class="line">  <span class="number">1</span>       C      <span class="number">17</span>   <span class="number">25</span></span><br><span class="line">  <span class="number">2</span>       C       <span class="number">8</span>   <span class="number">30</span></span><br><span class="line">  <span class="number">7</span>       C      <span class="number">49</span>   <span class="number">19</span>)]</span><br></pre></td></tr></table></figure>
+
+<p>转换成列表的形式后，可以看到，列表由三个元组组成，每个元组中，第一个元素是组别（这里是按照<code>company</code>进行分组，所以最后分为了<code>A</code>,<code>B</code>,<code>C</code>），第二个元素的是对应组别下的<code>DataFrame</code>，整个过程可以图解如下：</p>
+<p><img src="/pandas/1.jpg" alt></p>
+<h2 id="Age的聚合操作"><a href="#Age的聚合操作" class="headerlink" title="Age的聚合操作"></a>Age的聚合操作</h2><table>
+<thead>
+<tr>
+<th align="center">函数</th>
+<th align="center">用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Min</td>
+<td align="center">最小值</td>
+</tr>
+<tr>
+<td align="center">max</td>
+<td align="center">最大值</td>
+</tr>
+<tr>
+<td align="center">sum</td>
+<td align="center">和</td>
+</tr>
+<tr>
+<td align="center">mean</td>
+<td align="center">均值</td>
+</tr>
+<tr>
+<td align="center">median</td>
+<td align="center">中位数</td>
+</tr>
+<tr>
+<td align="center">std</td>
+<td align="center">标准差</td>
+</tr>
+<tr>
+<td align="center">var</td>
+<td align="center">方差</td>
+</tr>
+<tr>
+<td align="center">Count</td>
+<td align="center">计数</td>
+</tr>
+</tbody></table>
+<p>针对样例数据集，如果我想求不同公司员工的平均年龄和平均薪水，可以按照下方的代码进行：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">In [<span class="number">12</span>]: data.groupby(<span class="string">"company"</span>).agg(<span class="string">'mean'</span>)</span><br><span class="line">Out[<span class="number">12</span>]:</span><br><span class="line">         salary    age</span><br><span class="line">company</span><br><span class="line">A         <span class="number">21.50</span>  <span class="number">27.50</span></span><br><span class="line">B         <span class="number">13.00</span>  <span class="number">29.00</span></span><br><span class="line">C         <span class="number">29.25</span>  <span class="number">27.25</span></span><br></pre></td></tr></table></figure>
+
+<p>如果想对针对不同的列求不同的值，比如要计算不同公司员工的平均年龄以及薪水的中位数，可以利用字典进行聚合操作的指定：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">In [<span class="number">17</span>]: data.groupby(<span class="string">'company'</span>).agg(&#123;<span class="string">'salary'</span>:<span class="string">'median'</span>,<span class="string">'age'</span>:<span class="string">'mean'</span>&#125;)</span><br><span class="line">Out[<span class="number">17</span>]:</span><br><span class="line">         salary    age</span><br><span class="line">company</span><br><span class="line">A          <span class="number">21.5</span>  <span class="number">27.50</span></span><br><span class="line">B          <span class="number">10.0</span>  <span class="number">29.00</span></span><br><span class="line">C          <span class="number">30.0</span>  <span class="number">27.25</span></span><br></pre></td></tr></table></figure>
+
+<p><code>agg</code>聚合过程可以图解如下（第二个例子为例）：</p>
+<p><img src="/pandas/3.jpg" alt></p>
+<h2 id="Transform"><a href="#Transform" class="headerlink" title="Transform"></a>Transform</h2><p><code>transform</code>是一种什么数据操作？和<code>agg</code>有什么区别呢？为了更好地理解<code>transform</code>和<code>agg</code>的不同，下面从实际的应用场景出发进行对比。</p>
+<p>在上面的<code>agg</code>中，我们学会了如何求不同公司员工的平均薪水，如果现在需要在原数据集中新增一列<code>avg_salary</code>，代表<strong>员工所在的公司的平均薪水（相同公司的员工具有一样的平均薪水）</strong>，该怎么实现呢？如果按照正常的步骤来计算，需要先求得不同公司的平均薪水，然后按照员工和公司的对应关系填充到对应的位置，不用<code>transform</code>的话，实现代码如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">In [<span class="number">21</span>]: avg_salary_dict = data.groupby(<span class="string">'company'</span>)[<span class="string">'salary'</span>].mean().to_dict()</span><br><span class="line">​</span><br><span class="line">In [<span class="number">22</span>]: data[<span class="string">'avg_salary'</span>] = data[<span class="string">'company'</span>].map(avg_salary_dict)</span><br><span class="line">​</span><br><span class="line">In [<span class="number">23</span>]: data</span><br><span class="line">Out[<span class="number">23</span>]:</span><br><span class="line">  company  salary  age  avg_salary</span><br><span class="line"><span class="number">0</span>       C      <span class="number">43</span>   <span class="number">35</span>       <span class="number">29.25</span></span><br><span class="line"><span class="number">1</span>       C      <span class="number">17</span>   <span class="number">25</span>       <span class="number">29.25</span></span><br><span class="line"><span class="number">2</span>       C       <span class="number">8</span>   <span class="number">30</span>       <span class="number">29.25</span></span><br><span class="line"><span class="number">3</span>       A      <span class="number">20</span>   <span class="number">22</span>       <span class="number">21.50</span></span><br><span class="line"><span class="number">4</span>       B      <span class="number">10</span>   <span class="number">17</span>       <span class="number">13.00</span></span><br><span class="line"><span class="number">5</span>       B      <span class="number">21</span>   <span class="number">40</span>       <span class="number">13.00</span></span><br><span class="line"><span class="number">6</span>       A      <span class="number">23</span>   <span class="number">33</span>       <span class="number">21.50</span></span><br><span class="line"><span class="number">7</span>       C      <span class="number">49</span>   <span class="number">19</span>       <span class="number">29.25</span></span><br><span class="line"><span class="number">8</span>       B       <span class="number">8</span>   <span class="number">30</span>       <span class="number">13.00</span></span><br></pre></td></tr></table></figure>
+
+<p>如果使用<code>transform</code>的话，仅需要一行代码：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">In [<span class="number">24</span>]: data[<span class="string">'avg_salary'</span>] = data.groupby(<span class="string">'company'</span>)[<span class="string">'salary'</span>].transform(<span class="string">'mean'</span>)</span><br><span class="line">​</span><br><span class="line">In [<span class="number">25</span>]: data</span><br><span class="line">Out[<span class="number">25</span>]:</span><br><span class="line">  company  salary  age  avg_salary</span><br><span class="line"><span class="number">0</span>       C      <span class="number">43</span>   <span class="number">35</span>       <span class="number">29.25</span></span><br><span class="line"><span class="number">1</span>       C      <span class="number">17</span>   <span class="number">25</span>       <span class="number">29.25</span></span><br><span class="line"><span class="number">2</span>       C       <span class="number">8</span>   <span class="number">30</span>       <span class="number">29.25</span></span><br><span class="line"><span class="number">3</span>       A      <span class="number">20</span>   <span class="number">22</span>       <span class="number">21.50</span></span><br><span class="line"><span class="number">4</span>       B      <span class="number">10</span>   <span class="number">17</span>       <span class="number">13.00</span></span><br><span class="line"><span class="number">5</span>       B      <span class="number">21</span>   <span class="number">40</span>       <span class="number">13.00</span></span><br><span class="line"><span class="number">6</span>       A      <span class="number">23</span>   <span class="number">33</span>       <span class="number">21.50</span></span><br><span class="line"><span class="number">7</span>       C      <span class="number">49</span>   <span class="number">19</span>       <span class="number">29.25</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/pandas/2.jpg" alt></p>
+<p>图中的大方框是<code>transform</code>和<code>agg</code>所不一样的地方，对<code>agg</code>而言，会计算得到<code>A</code>，<code>B</code>，<code>C</code>公司对应的均值并直接返回，但对<code>transform</code>而言，则会<strong>对每一条数据求得相应的结果，同一组内的样本会有相同的值</strong>，组内求完均值后会<strong>按照原索引的顺序</strong>返回结果，如果有不理解的可以拿这张图和<code>agg</code>那张对比一下。</p>
+<h2 id="apply"><a href="#apply" class="headerlink" title="apply"></a><strong>apply</strong></h2><p><code>apply</code>应该是大家的老朋友了，它相比<code>agg</code>和<code>transform</code>而言更加灵活，能够传入任意自定义的函数，实现复杂的数据操作。在<a href="https://zhuanlan.zhihu.com/p/100064394" target="_blank" rel="noopener">Pandas数据处理三板斧——map、apply、applymap详解</a>中，介绍了<code>apply</code>的使用，那在<code>groupby</code>后使用<code>apply</code>和之前所介绍的有什么区别呢？</p>
+<p>区别是有的，但是整个实现原理是基本一致的。两者的区别在于，对于<code>groupby</code>后的<code>apply</code>，以分组后的<code>子DataFrame</code>作为参数传入指定函数的，基本操作单位是<code>DataFrame</code>，而之前介绍的<code>apply</code>的基本操作单位是<code>Series</code>。还是以一个案例来介绍<code>groupby</code>后的<code>apply</code>用法。</p>
+<p>假设我现在需要获取各个公司年龄最大的员工的数据，该怎么实现呢？可以用以下代码实现：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">In [<span class="number">38</span>]: <span class="function"><span class="keyword">def</span> <span class="title">get_oldest_staff</span><span class="params">(x)</span>:</span></span><br><span class="line">    ...:     df = x.sort_values(by = <span class="string">'age'</span>, ascending=<span class="literal">True</span>)</span><br><span class="line">    ...:     <span class="keyword">return</span> df.iloc[<span class="number">-1</span>,:]</span><br><span class="line">    ...:</span><br><span class="line">​</span><br><span class="line">In [<span class="number">39</span>]: oldest_staff = data.groupby(<span class="string">'company'</span>,as_index=<span class="literal">False</span>).apply(get_oldest_staff)</span><br><span class="line">​</span><br><span class="line">In [<span class="number">40</span>]: oldest_staff</span><br><span class="line">Out[<span class="number">40</span>]:</span><br><span class="line">  company  salary  age  </span><br><span class="line"><span class="number">0</span>       A      <span class="number">23</span>   <span class="number">33</span>       </span><br><span class="line"><span class="number">1</span>       B      <span class="number">21</span>   <span class="number">40</span>       </span><br><span class="line"><span class="number">2</span>       C      <span class="number">43</span>   <span class="number">35</span></span><br></pre></td></tr></table></figure>
+
+<p>可以看到，此处的<code>apply</code>和上篇文章中所介绍的作用原理基本一致，只是传入函数的参数由<code>Series</code>变为了此处的<code>分组DataFrame</code>。</p>
+<p>最后，关于<code>apply</code>的使用，这里有个小建议，虽然说<code>apply</code>拥有更大的灵活性，但<code>apply</code>的运行效率会比<code>agg</code>和<code>transform</code>更慢。所以，<code>groupby</code>之后能用<code>agg</code>和<code>transform</code>解决的问题还是优先使用这两个方法，实在解决不了了才考虑使用<code>apply</code>进行操作。</p>
+<p><strong>相关文章：</strong></p>
+<ol>
+<li><a href="https://zhuanlan.zhihu.com/p/100064394" target="_blank" rel="noopener">Pandas数据处理三板斧——map、apply、applymap详解</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/102274476" target="_blank" rel="noopener">Pandas数据分析——Merge数据拼接图文详解</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/106675563" target="_blank" rel="noopener">Pandas数据处理——玩转时间序列数据</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/106722583" target="_blank" rel="noopener">Pandas数据处理——盘点那些常用的函数（上）</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/106724730" target="_blank" rel="noopener">Pandas数据处理——盘点那些常用的函数（下）</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/122361747" target="_blank" rel="noopener">天秀！Pandas还能用来写爬虫？</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/126223075" target="_blank" rel="noopener">提高数据的颜值！一起看看Pandas中的那些Style</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/97012199" target="_blank" rel="noopener">提速百倍的Pandas性能优化方法，让你的Pandas飞起来！</a></li>
+</ol>
+]]></content>
       <categories>
-        <category>pandas</category>
+        <category>python</category>
       </categories>
       <tags>
         <tag>pandas; python</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>pandas</title>
-    <url>/pandas/</url>
-    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script>]]></content>
   </entry>
 </search>
