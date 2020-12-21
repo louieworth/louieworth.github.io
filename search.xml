@@ -125,6 +125,22 @@
       </tags>
   </entry>
   <entry>
+    <title>AdaBelief-NeurIPS2020</title>
+    <url>/AdaBelief-NeurIPS2020/</url>
+    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>最常用的深度学习优化器大致可分为自适应方法（如Adam）和加速方案（如带有动量的随机梯度下降（SGD））。与 SGD 相比，许多模型（如卷积神经网络）采用自适应方法通常收敛速度更快，但泛化效果却较差。对于生成对抗网络（GAN）这类的复杂情况，通常默认使用自适应方法，因为其具有稳定性。</p>
+<p>在 NeurIPS 2020 的一篇 Spotlight 论文中，来自耶鲁大学、伊利诺伊大学香槟分校等机构的研究者提出了一种名为「AdaBelief」的新型优化器，可以同时满足 3 个优点：自适应方法的快速收敛、SGD 的良好泛化性、训练稳定性。论文代码也已经放出。</p>
+<p><img src="/AdaBelief-NeurIPS2020/1.jpg" alt></p>
+<ul>
+<li>论文链接：<a href="https://link.zhihu.com/?target=https%3A//arxiv.org/pdf/2010.07468.pdf">https://arxiv.org/pdf/2010.07468.pdf</a></li>
+<li>论文页面：<a href="https://link.zhihu.com/?target=https%3A//juntang-zhuang.github.io/adabelief/">https://juntang-zhuang.github.io/adabelief/</a></li>
+<li>代码链接：<a href="https://link.zhihu.com/?target=https%3A//github.com/juntang-zhuang/Adabelief-Optimizer">https://github.com/juntang-zhuang/Adabelief-Optimizer</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Paper</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Batch_normalization</title>
     <url>/Batch-normalization/</url>
     <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="Batch-Norm的作用以及"><a href="#Batch-Norm的作用以及" class="headerlink" title="Batch Norm的作用以及"></a>Batch Norm的作用以及</h1><h1 id="为什么BN会有作用"><a href="#为什么BN会有作用" class="headerlink" title="为什么BN会有作用"></a>为什么BN会有作用</h1><a id="more"></a>
@@ -160,22 +176,6 @@
 ]]></content>
       <tags>
         <tag>DL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>AdaBelief-NeurIPS2020</title>
-    <url>/AdaBelief-NeurIPS2020/</url>
-    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>最常用的深度学习优化器大致可分为自适应方法（如Adam）和加速方案（如带有动量的随机梯度下降（SGD））。与 SGD 相比，许多模型（如卷积神经网络）采用自适应方法通常收敛速度更快，但泛化效果却较差。对于生成对抗网络（GAN）这类的复杂情况，通常默认使用自适应方法，因为其具有稳定性。</p>
-<p>在 NeurIPS 2020 的一篇 Spotlight 论文中，来自耶鲁大学、伊利诺伊大学香槟分校等机构的研究者提出了一种名为「AdaBelief」的新型优化器，可以同时满足 3 个优点：自适应方法的快速收敛、SGD 的良好泛化性、训练稳定性。论文代码也已经放出。</p>
-<p><img src="/AdaBelief-NeurIPS2020/1.jpg" alt></p>
-<ul>
-<li>论文链接：<a href="https://link.zhihu.com/?target=https%3A//arxiv.org/pdf/2010.07468.pdf">https://arxiv.org/pdf/2010.07468.pdf</a></li>
-<li>论文页面：<a href="https://link.zhihu.com/?target=https%3A//juntang-zhuang.github.io/adabelief/">https://juntang-zhuang.github.io/adabelief/</a></li>
-<li>代码链接：<a href="https://link.zhihu.com/?target=https%3A//github.com/juntang-zhuang/Adabelief-Optimizer">https://github.com/juntang-zhuang/Adabelief-Optimizer</a></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>Paper</tag>
       </tags>
   </entry>
   <entry>
@@ -387,6 +387,15 @@
       </tags>
   </entry>
   <entry>
+    <title>PCA</title>
+    <url>/PCA/</url>
+    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>之前学了Principal Component Analysis（PCA）,一直学的似懂非懂。这次总结一下。</p>
+<a id="more"></a>]]></content>
+      <tags>
+        <tag>ML</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Paper-GANs</title>
     <url>/Paper-GANs/</url>
     <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>There are two models in this framework: </p>
@@ -438,15 +447,6 @@ V(D, G) = E_{x∼p_{data(x)}}[logD(x)] + E_{z∼pz(z)}[log(1 −D(G(z)))].</scri
 ]]></content>
       <tags>
         <tag>RL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>PCA</title>
-    <url>/PCA/</url>
-    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>之前学了Principal Component Analysis（PCA）,一直学的似懂非懂。这次总结一下。</p>
-<a id="more"></a>]]></content>
-      <tags>
-        <tag>ML</tag>
       </tags>
   </entry>
   <entry>
@@ -511,62 +511,6 @@ V(D, G) = E_{x∼p_{data(x)}}[logD(x)] + E_{z∼pz(z)}[log(1 −D(G(z)))].</scri
 <p>Given the model classification, which model should we choose and model dimension (numbers of parameters)?</p>
 <h2 id="Linear-Regression"><a href="#Linear-Regression" class="headerlink" title="Linear Regression"></a>Linear Regression</h2>]]></content>
       <tags>
-        <tag>Note</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Waymo-CVPR2020</title>
-    <url>/Waymo-CVPR2020/</url>
-    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><blockquote>
-<p>Presenter： Drago Anguelov</p>
-<p><a href="https://mp.weixin.qq.com/s/sP5gS92UhXCRSXQ2g6haqg">视频地址</a></p>
-</blockquote>
-<p><img src="/Waymo-CVPR2020/Screenshot_1.png" alt></p>
-<h1 id="How-we-do-the-mapping-process"><a href="#How-we-do-the-mapping-process" class="headerlink" title="How we do the mapping process?"></a>How we do the mapping process?</h1><p>? Deep Neural Net?</p>
-<p>Now. there’s more interesting research which is based on an end-to-end branch. However, this end-to-end branch can not match the production of the self-driving system, which is led by the leading companies.</p>
-<h2 id="Why-difficult"><a href="#Why-difficult" class="headerlink" title="Why difficult?"></a>Why difficult?</h2><p><img src="/Waymo-CVPR2020/Screenshot_2.png" alt></p>
-<p><img src="/Waymo-CVPR2020/Screenshot_3.png" alt></p>
-<p><img src="/Waymo-CVPR2020/Screenshot_4.png" alt></p>
-<p><img src="/Waymo-CVPR2020/Screenshot_5.png" alt></p>
-<p><img src="/Waymo-CVPR2020/Screenshot_6.png" alt></p>
-<h1 id="Modular"><a href="#Modular" class="headerlink" title="Modular"></a>Modular</h1><p><img src="/Waymo-CVPR2020/Screenshot_7.png" alt></p>
-<ul>
-<li><p>Hierarchical planning: Router, Planer, Controls</p>
-</li>
-<li><p>Early part. In Perception part, we can use <strong>supervised learning and self-supervised learning.</strong> </p>
-</li>
-<li>When it comes <strong>Planer</strong>, actions affect the environment, supervised learning is not enough. We need to take care about <strong>cost function learning, imitation learning, reinforce learning.</strong></li>
-</ul>
-<p>A Modular autonomous driving system also end to end?</p>
-<h1 id="STINet"><a href="#STINet" class="headerlink" title="STINet"></a>STINet</h1><p><img src="/Waymo-CVPR2020/Screenshot_8.png" alt></p>
-<p>simultaneous detection tracking and prediction model.</p>
-<p>This model not only detect the obstacles’ location, but also predict the where was the obstacle in the past. </p>
-<p>We also use GNN to predict the final directions. </p>
-<p><img src="/Waymo-CVPR2020/Screenshot_9.png" alt></p>
-<p><img src="/Waymo-CVPR2020/Screenshot_10.png" alt></p>
-<h1 id="VectorNet"><a href="#VectorNet" class="headerlink" title="VectorNet"></a>VectorNet</h1><p>How people encode the map?</p>
-<p><img src="/Waymo-CVPR2020/11.png" alt></p>
-<p><img src="/Waymo-CVPR2020/12.png" alt></p>
-<p><img src="/Waymo-CVPR2020/Screenshot_11.png" alt></p>
-<h1 id="Open-Dataset"><a href="#Open-Dataset" class="headerlink" title="Open Dataset"></a>Open Dataset</h1><p><a href="waymo.com/open">link</a></p>
-<p><img src="/Waymo-CVPR2020/Screenshot_12.png" alt></p>
-<p><img src="/Waymo-CVPR2020/Screenshot_13.png" alt></p>
-<h1 id="ViDAR-Deep-Structure-from-Motion"><a href="#ViDAR-Deep-Structure-from-Motion" class="headerlink" title="ViDAR: Deep Structure from Motion"></a>ViDAR: Deep Structure from Motion</h1><p><img src="/Waymo-CVPR2020/Screenshot_14.png" alt></p>
-<p><img src="/Waymo-CVPR2020/Screenshot_16.png" alt></p>
-<h1 id="Consistency-Modeling-Framework"><a href="#Consistency-Modeling-Framework" class="headerlink" title="Consistency Modeling Framework"></a>Consistency Modeling Framework</h1><p><img src="/Waymo-CVPR2020/Screenshot_17.png" alt></p>
-<h1 id="SurfelGAN"><a href="#SurfelGAN" class="headerlink" title="SurfelGAN"></a>SurfelGAN</h1><p>CVPR2020</p>
-<p>Data-Driven sensor synthesis</p>
-<ul>
-<li>Need to develop and test behavior models in simulated environments</li>
-<li>Want scenario replay with realistic in the loop </li>
-</ul>
-<p><img src="/Waymo-CVPR2020/Screenshot_18.png" alt></p>
-<p><img src="/Waymo-CVPR2020/Screenshot_19.png" alt></p>
-<p><img src="/Waymo-CVPR2020/Screenshot_20.png" alt></p>
-<p><img src="/Waymo-CVPR2020/Screenshot_21.png" alt></p>
-]]></content>
-      <tags>
-        <tag>DL</tag>
         <tag>Note</tag>
       </tags>
   </entry>
@@ -694,6 +638,62 @@ p(\mathbf{x} \mid \mathbf{h})=\prod_{t=1}^{T} p\left(x_{t} \mid x_{1}, \ldots, x
 ]]></content>
       <tags>
         <tag>DL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Waymo-CVPR2020</title>
+    <url>/Waymo-CVPR2020/</url>
+    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><blockquote>
+<p>Presenter： Drago Anguelov</p>
+<p><a href="https://mp.weixin.qq.com/s/sP5gS92UhXCRSXQ2g6haqg">视频地址</a></p>
+</blockquote>
+<p><img src="/Waymo-CVPR2020/Screenshot_1.png" alt></p>
+<h1 id="How-we-do-the-mapping-process"><a href="#How-we-do-the-mapping-process" class="headerlink" title="How we do the mapping process?"></a>How we do the mapping process?</h1><p>? Deep Neural Net?</p>
+<p>Now. there’s more interesting research which is based on an end-to-end branch. However, this end-to-end branch can not match the production of the self-driving system, which is led by the leading companies.</p>
+<h2 id="Why-difficult"><a href="#Why-difficult" class="headerlink" title="Why difficult?"></a>Why difficult?</h2><p><img src="/Waymo-CVPR2020/Screenshot_2.png" alt></p>
+<p><img src="/Waymo-CVPR2020/Screenshot_3.png" alt></p>
+<p><img src="/Waymo-CVPR2020/Screenshot_4.png" alt></p>
+<p><img src="/Waymo-CVPR2020/Screenshot_5.png" alt></p>
+<p><img src="/Waymo-CVPR2020/Screenshot_6.png" alt></p>
+<h1 id="Modular"><a href="#Modular" class="headerlink" title="Modular"></a>Modular</h1><p><img src="/Waymo-CVPR2020/Screenshot_7.png" alt></p>
+<ul>
+<li><p>Hierarchical planning: Router, Planer, Controls</p>
+</li>
+<li><p>Early part. In Perception part, we can use <strong>supervised learning and self-supervised learning.</strong> </p>
+</li>
+<li>When it comes <strong>Planer</strong>, actions affect the environment, supervised learning is not enough. We need to take care about <strong>cost function learning, imitation learning, reinforce learning.</strong></li>
+</ul>
+<p>A Modular autonomous driving system also end to end?</p>
+<h1 id="STINet"><a href="#STINet" class="headerlink" title="STINet"></a>STINet</h1><p><img src="/Waymo-CVPR2020/Screenshot_8.png" alt></p>
+<p>simultaneous detection tracking and prediction model.</p>
+<p>This model not only detect the obstacles’ location, but also predict the where was the obstacle in the past. </p>
+<p>We also use GNN to predict the final directions. </p>
+<p><img src="/Waymo-CVPR2020/Screenshot_9.png" alt></p>
+<p><img src="/Waymo-CVPR2020/Screenshot_10.png" alt></p>
+<h1 id="VectorNet"><a href="#VectorNet" class="headerlink" title="VectorNet"></a>VectorNet</h1><p>How people encode the map?</p>
+<p><img src="/Waymo-CVPR2020/11.png" alt></p>
+<p><img src="/Waymo-CVPR2020/12.png" alt></p>
+<p><img src="/Waymo-CVPR2020/Screenshot_11.png" alt></p>
+<h1 id="Open-Dataset"><a href="#Open-Dataset" class="headerlink" title="Open Dataset"></a>Open Dataset</h1><p><a href="waymo.com/open">link</a></p>
+<p><img src="/Waymo-CVPR2020/Screenshot_12.png" alt></p>
+<p><img src="/Waymo-CVPR2020/Screenshot_13.png" alt></p>
+<h1 id="ViDAR-Deep-Structure-from-Motion"><a href="#ViDAR-Deep-Structure-from-Motion" class="headerlink" title="ViDAR: Deep Structure from Motion"></a>ViDAR: Deep Structure from Motion</h1><p><img src="/Waymo-CVPR2020/Screenshot_14.png" alt></p>
+<p><img src="/Waymo-CVPR2020/Screenshot_16.png" alt></p>
+<h1 id="Consistency-Modeling-Framework"><a href="#Consistency-Modeling-Framework" class="headerlink" title="Consistency Modeling Framework"></a>Consistency Modeling Framework</h1><p><img src="/Waymo-CVPR2020/Screenshot_17.png" alt></p>
+<h1 id="SurfelGAN"><a href="#SurfelGAN" class="headerlink" title="SurfelGAN"></a>SurfelGAN</h1><p>CVPR2020</p>
+<p>Data-Driven sensor synthesis</p>
+<ul>
+<li>Need to develop and test behavior models in simulated environments</li>
+<li>Want scenario replay with realistic in the loop </li>
+</ul>
+<p><img src="/Waymo-CVPR2020/Screenshot_18.png" alt></p>
+<p><img src="/Waymo-CVPR2020/Screenshot_19.png" alt></p>
+<p><img src="/Waymo-CVPR2020/Screenshot_20.png" alt></p>
+<p><img src="/Waymo-CVPR2020/Screenshot_21.png" alt></p>
+]]></content>
+      <tags>
+        <tag>DL</tag>
+        <tag>Note</tag>
       </tags>
   </entry>
   <entry>
@@ -1497,6 +1497,33 @@ H(p) = -\sum_{i=1}^np_ilogp_i</script><p>熵(entropy)越大，那么随机变量
       </tags>
   </entry>
   <entry>
+    <title>tools</title>
+    <url>/tools/</url>
+    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><blockquote>
+<p>介绍了一些常用的工具栏</p>
+</blockquote>
+<a id="more"></a>
+<h1 id="Dictionary"><a href="#Dictionary" class="headerlink" title="Dictionary"></a>Dictionary</h1><p><a href="https://www.thesaurus.com/">同义词词典</a></p>
+<p><a href="https://www.collinsdictionary.com/">Collins Online Dictionary</a></p>
+<p><a href="https://www.ldoceonline.com/">Longman Dictionary</a></p>
+<p><a href="https://translate.google.cn/">Google Translate</a></p>
+<h1 id="Reading"><a href="#Reading" class="headerlink" title="Reading"></a>Reading</h1><p><a href="https://www.tianfateng.cn/tag/magazine">Magazine Download</a></p>
+<h1 id="Writting"><a href="#Writting" class="headerlink" title="Writting"></a>Writting</h1><p><a href="http://www.termonline.cn/index.htm">termonline</a></p>
+<p><a href="https://aimwriting.mtutor.engkoo.com/">微软爱写作</a></p>
+<h1 id="软件语法"><a href="#软件语法" class="headerlink" title="软件语法"></a>软件语法</h1><p><a href="https://latex.vimsky.com/">Latex在线公式编辑转换</a></p>
+<h1 id="Books-Search"><a href="#Books-Search" class="headerlink" title="Books Search"></a>Books Search</h1><p><a href="https://www.jiumodiary.com/">Jiumo Research</a></p>
+<p><a href="https://b-ok.cc/?signAll=1">Zlibrary</a></p>
+<h1 id="Documents"><a href="#Documents" class="headerlink" title="Documents"></a>Documents</h1><p><a href="https://cowtransfer.com/">奶牛快传</a></p>
+<p><a href="https://www.uupoop.com/">在线PS</a></p>
+<p><a href="https://www.ilovepdf.com/zh-cn">PDF转换</a></p>
+<p><a href="https://www.chuangkit.com/designtools/designindex">PPT图片设计</a></p>
+<p><a href="https://flourish.studio/">Flourish</a></p>
+<ul>
+<li>一个强大的数据可视化展示网站，你只需要按照他们的规则就可以生成动态的数据模型。</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
     <title>python深拷贝与浅拷贝</title>
     <url>/python%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/</url>
     <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h1><ol>
@@ -1627,33 +1654,6 @@ H(p) = -\sum_{i=1}^np_ilogp_i</script><p>熵(entropy)越大，那么随机变量
       <tags>
         <tag>Python</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>tools</title>
-    <url>/tools/</url>
-    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><blockquote>
-<p>介绍了一些常用的工具栏</p>
-</blockquote>
-<a id="more"></a>
-<h1 id="Dictionary"><a href="#Dictionary" class="headerlink" title="Dictionary"></a>Dictionary</h1><p><a href="https://www.thesaurus.com/">同义词词典</a></p>
-<p><a href="https://www.collinsdictionary.com/">Collins Online Dictionary</a></p>
-<p><a href="https://www.ldoceonline.com/">Longman Dictionary</a></p>
-<p><a href="https://translate.google.cn/">Google Translate</a></p>
-<h1 id="Reading"><a href="#Reading" class="headerlink" title="Reading"></a>Reading</h1><p><a href="https://www.tianfateng.cn/tag/magazine">Magazine Download</a></p>
-<h1 id="Writting"><a href="#Writting" class="headerlink" title="Writting"></a>Writting</h1><p><a href="http://www.termonline.cn/index.htm">termonline</a></p>
-<p><a href="https://aimwriting.mtutor.engkoo.com/">微软爱写作</a></p>
-<h1 id="软件语法"><a href="#软件语法" class="headerlink" title="软件语法"></a>软件语法</h1><p><a href="https://latex.vimsky.com/">Latex在线公式编辑转换</a></p>
-<h1 id="Books-Search"><a href="#Books-Search" class="headerlink" title="Books Search"></a>Books Search</h1><p><a href="https://www.jiumodiary.com/">Jiumo Research</a></p>
-<p><a href="https://b-ok.cc/?signAll=1">Zlibrary</a></p>
-<h1 id="Documents"><a href="#Documents" class="headerlink" title="Documents"></a>Documents</h1><p><a href="https://cowtransfer.com/">奶牛快传</a></p>
-<p><a href="https://www.uupoop.com/">在线PS</a></p>
-<p><a href="https://www.ilovepdf.com/zh-cn">PDF转换</a></p>
-<p><a href="https://www.chuangkit.com/designtools/designindex">PPT图片设计</a></p>
-<p><a href="https://flourish.studio/">Flourish</a></p>
-<ul>
-<li>一个强大的数据可视化展示网站，你只需要按照他们的规则就可以生成动态的数据模型。</li>
-</ul>
-]]></content>
   </entry>
   <entry>
     <title>Hexo-博文编辑手册</title>
