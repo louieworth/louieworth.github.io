@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/Networks/</loc>
+    
+    <lastmod>2020-12-21T15:12:27.044Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/Maxmum-likelihood-function/</loc>
     
     <lastmod>2020-12-21T07:14:23.018Z</lastmod>
