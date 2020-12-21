@@ -918,9 +918,6 @@
 </li>
 </ul>
 ]]></content>
-      <categories>
-        <category>Machine Learning</category>
-      </categories>
       <tags>
         <tag>ML</tag>
       </tags>
@@ -986,9 +983,9 @@
 </blockquote>
 <p>Given the model classification, which model should we choose and model dimension (numbers of parameters)?</p>
 <h2 id="Linear-Regression"><a href="#Linear-Regression" class="headerlink" title="Linear Regression"></a>Linear Regression</h2>]]></content>
-      <categories>
-        <category>Workshop</category>
-      </categories>
+      <tags>
+        <tag>Note</tag>
+      </tags>
   </entry>
   <entry>
     <title>Waymo-CVPR2020</title>
@@ -1042,10 +1039,8 @@
 <p><img src="/Waymo-CVPR2020/Screenshot_20.png" alt></p>
 <p><img src="/Waymo-CVPR2020/Screenshot_21.png" alt></p>
 ]]></content>
-      <categories>
-        <category>Workshop</category>
-      </categories>
       <tags>
+        <tag>Note</tag>
         <tag>DL</tag>
       </tags>
   </entry>
@@ -3131,9 +3126,6 @@
 <p>另一方面，交叉熵的梯度如下，当模型输出概率偏离于真实概率时，梯度较大，加快训练速度，当拟合值接近于真实概率时训练速度变缓慢，没有 MSE 的问题。</p>
 <p><img src="https://www.zhihu.com/equation?tex=g%5E%7B%27%7D%3D%5Csum_%7Bi%3D1%7D%5E%7BN%7D+x_%7Bi%7D%28y_%7Bi%7D-p%28x_%7Bi%7D%29%29++%5C%5C" alt="[公式]"></p>
 ]]></content>
-      <categories>
-        <category>Machine Learning</category>
-      </categories>
       <tags>
         <tag>ML</tag>
       </tags>
@@ -3409,11 +3401,8 @@
 <p><code>prior probability  obey</code></p>
 <p><code>smooth 平缓</code></p>
 ]]></content>
-      <categories>
-        <category>tbsi_interview</category>
-      </categories>
       <tags>
-        <tag>Mathematics</tag>
+        <tag>Interview</tag>
       </tags>
   </entry>
   <entry>
@@ -3937,9 +3926,6 @@
 </li>
 </ul>
 ]]></content>
-      <categories>
-        <category>tbsi_interview</category>
-      </categories>
       <tags>
         <tag>Interview</tag>
       </tags>
@@ -4045,9 +4031,6 @@
 <p>（3）内存做了优化，内存中仅仅需要保存直方图数值，而不是之前的所有数据，另外如果直方图比较小的时候，我们还可以使用保存uint8的形式保存来训练数据。        </p>
 <p>（4）额外的优化还有Cache命中率优化、多线程优化。 lightGBM优越性：速度快，代码清晰，占用内存小。lightGBM可以在更小的代价下控制分裂树。有更好的缓存利用，是带有深度限制的按叶子生长的策略，使用了leaf-wise策略，每次从当前所有叶子中，找到分裂增益最大的一个叶子，然后进行分裂，不断的进行循环下去，而lead-wise（智能）算法的缺点是可能生长出比较深的决策树，导致过拟合问题，为了解决过拟合问题，我们会在LightGBM中会对leaf-wise之上增加一个最大深度的限制，在保持高效率的同时防止过拟合。</p>
 ]]></content>
-      <categories>
-        <category>Machine Learning</category>
-      </categories>
       <tags>
         <tag>ML</tag>
         <tag>Paper</tag>
@@ -6004,9 +5987,6 @@
 </ul>
 <h1 id="MSRA正式岗位"><a href="#MSRA正式岗位" class="headerlink" title="MSRA正式岗位"></a>MSRA正式岗位</h1><p>MSRA转正率低。科研岗传说中7-11轮面试，而且基本上是一票否决。开发岗相对容易一些，但是也要5-7轮面试。</p>
 <h2 id="微软亚太"><a href="#微软亚太" class="headerlink" title="微软亚太"></a>微软亚太</h2><h2 id="微软苏州"><a href="#微软苏州" class="headerlink" title="微软苏州"></a>微软苏州</h2><h2 id="微软上海"><a href="#微软上海" class="headerlink" title="微软上海"></a>微软上海</h2>]]></content>
-      <categories>
-        <category>Experience</category>
-      </categories>
       <tags>
         <tag>Experience</tag>
       </tags>

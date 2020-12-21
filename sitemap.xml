@@ -2,6 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/mathmatics-interview-tbsi/</loc>
+    
+    <lastmod>2020-12-21T07:09:38.190Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/professional-interview-tbsi/</loc>
+    
+    <lastmod>2020-12-21T07:09:24.202Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/TBSI2020-WORKSHOP/</loc>
+    
+    <lastmod>2020-12-21T07:08:44.347Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/Waymo-CVPR2020/</loc>
+    
+    <lastmod>2020-12-21T07:08:23.836Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/paper-LightGBM/</loc>
+    
+    <lastmod>2020-12-21T07:07:43.202Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/SVM/</loc>
+    
+    <lastmod>2020-12-21T07:07:21.199Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/logistic-regression/</loc>
+    
+    <lastmod>2020-12-21T07:07:05.400Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/MSRA%E5%AE%9E%E4%B9%A0%E6%9C%BA%E4%BC%9A-%E8%B0%83%E7%A0%94/</loc>
+    
+    <lastmod>2020-12-21T07:06:38.726Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2021%E8%80%83%E7%A0%94%E8%8B%B1%E8%AF%AD%E4%B8%80%E5%A4%A7%E4%BD%9C%E6%96%87%E6%94%BB%E7%95%A5/</loc>
     
     <lastmod>2020-12-21T07:02:47.398Z</lastmod>
@@ -30,23 +86,9 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/Waymo-CVPR2020/</loc>
-    
-    <lastmod>2020-12-21T07:01:45.596Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/WaveNet%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/</loc>
     
     <lastmod>2020-12-21T07:01:34.800Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/SVM/</loc>
-    
-    <lastmod>2020-12-21T07:01:21.338Z</lastmod>
     
   </url>
   
@@ -79,23 +121,9 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/professional-interview-tbsi/</loc>
-    
-    <lastmod>2020-12-21T07:00:00.573Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/PCA/</loc>
     
     <lastmod>2020-12-21T06:59:44.692Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/paper-LightGBM/</loc>
-    
-    <lastmod>2020-12-21T06:59:34.179Z</lastmod>
     
   </url>
   
@@ -121,13 +149,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/MSRA%E5%AE%9E%E4%B9%A0%E6%9C%BA%E4%BC%9A-%E8%B0%83%E7%A0%94/</loc>
-    
-    <lastmod>2020-12-21T06:58:49.788Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/Maxmum-likelihood-function/</loc>
     
     <lastmod>2020-12-21T06:58:39.549Z</lastmod>
@@ -138,13 +159,6 @@
     <loc>http://yoursite.com/Lagrange-duality/</loc>
     
     <lastmod>2020-12-21T06:58:33.690Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/logistic-regression/</loc>
-    
-    <lastmod>2020-12-21T06:58:27.541Z</lastmod>
     
   </url>
   
@@ -254,23 +268,9 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/TBSI2020-WORKSHOP/</loc>
-    
-    <lastmod>2020-07-21T01:11:26.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/tools/</loc>
     
     <lastmod>2020-07-07T02:50:12.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/mathmatics-interview-tbsi/</loc>
-    
-    <lastmod>2020-06-07T08:47:50.000Z</lastmod>
     
   </url>
   
