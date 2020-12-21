@@ -705,9 +705,6 @@
 <p><strong>参考：</strong>JerryLead机器学习笔记</p>
 <p>线性回归损失函数为什么要用平方形式 - saltriver的专栏 - 博客频道 - CSDN.NET（博主采取用求偏导，假定方差越小越好，这也是一种思路）</p>
 ]]></content>
-      <categories>
-        <category>Mathematics</category>
-      </categories>
       <tags>
         <tag>ML</tag>
       </tags>
