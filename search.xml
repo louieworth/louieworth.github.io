@@ -26,9 +26,9 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">命令——功能描述——示例</span><br><span class="line"> </span><br><span class="line">mkdir——创建一个目录——mkdir dirname</span><br><span class="line"> </span><br><span class="line">touch - 创建文件</span><br><span class="line"> </span><br><span class="line">rmdir——删除一个目录——rmdir dirname</span><br><span class="line"> </span><br><span class="line">rm -rf filename  删除整个非空文件夹</span><br><span class="line"> </span><br><span class="line">mvdir——移动或重命名一个目录——mvdir dir1 dir2</span><br><span class="line"> </span><br><span class="line"><span class="built_in">cd</span>——改变当前目录——<span class="built_in">cd</span> dirname</span><br><span class="line"> </span><br><span class="line"><span class="built_in">pwd</span>——显示当前目录的路径名——<span class="built_in">pwd</span></span><br><span class="line"> </span><br><span class="line">ls——显示当前目录的内容——ls -la</span><br><span class="line"> </span><br><span class="line">dircmp——比较两个目录的内容——dircmp dir1 dir2</span><br><span class="line"> </span><br><span class="line">文件操作</span><br><span class="line"> </span><br><span class="line">命令——功能描述——示例</span><br><span class="line"> </span><br><span class="line">cat——显示或连接文件————cat filename</span><br><span class="line"> </span><br><span class="line">pg分页格式化显示文件内容——pg filename</span><br><span class="line"> </span><br><span class="line">more——分屏显示文件内容——more filename</span><br><span class="line"> </span><br><span class="line">od——显示非文本文件的内容——od -c filename</span><br><span class="line"> </span><br><span class="line">cp——复制文件或目录——cp file1 file2 </span><br><span class="line"> </span><br><span class="line">cp -ri 复制整个目录</span><br><span class="line"> </span><br><span class="line">rm——删除文件或目录——rm filename</span><br><span class="line"> </span><br><span class="line">mv——改变文件名或所在目录——mv file1 file2</span><br><span class="line"> </span><br><span class="line">ln——联接文件——ln -s file1 file2</span><br><span class="line"> </span><br><span class="line">find——使用匹配表达式查找文件——find . -name “*.c” -<span class="built_in">print</span></span><br><span class="line"> </span><br><span class="line">file——显示文件类型——file filename</span><br><span class="line"> </span><br><span class="line">open——使用默认的程序打开文件——open filename（open . 打开当前目录）</span><br><span class="line"> </span><br><span class="line">选择操作</span><br><span class="line"> </span><br><span class="line">命令——功能描述——示例</span><br><span class="line"> </span><br><span class="line">head——显示文件的最初几行——head -20 filename</span><br><span class="line"> </span><br><span class="line">tail——显示文件的最后几行——tail -15 filename</span><br><span class="line"> </span><br><span class="line">cut——显示文件每行中的某些域——cut -f1,7 -d: /etc/passwd</span><br><span class="line"> </span><br><span class="line">colrm——从标准输入中删除若干列——colrm 8 20 file2</span><br><span class="line"> </span><br><span class="line">paste——横向连接文件——paste file1 file2</span><br><span class="line"> </span><br><span class="line">diff——比较并显示两个文件的差异——diff file1 file2</span><br><span class="line"> </span><br><span class="line">sed————非交互方式流编辑器——sed “s/red/green/g” filename</span><br><span class="line"> </span><br><span class="line">grep——在文件中按模式查找——grep “^[a-zA-Z]” filename</span><br><span class="line"> </span><br><span class="line">awk——在文件中查找并处理模式——awk ‘&#123;<span class="built_in">print</span> 111&#125;’ filename</span><br><span class="line"> </span><br><span class="line">sort——排序或归并文件——sort -d -f -u file1</span><br><span class="line"> </span><br><span class="line">uniq——去掉文件中的重复行——uniq file1 file2</span><br><span class="line"> </span><br><span class="line">comm——显示两有序文件的公共和非公共行——comm file1 file2</span><br><span class="line"> </span><br><span class="line">wc——统计文件的字符数、词数和行数——wc filename</span><br><span class="line"> </span><br><span class="line">nl——给文件加上行号——nl file1 &gt;file2</span><br><span class="line"> </span><br><span class="line">安全操作</span><br><span class="line"> </span><br><span class="line">命令——功能描述——示例</span><br><span class="line"> </span><br><span class="line">passwd——修改用户密码——passwd</span><br><span class="line"> </span><br><span class="line">chmod——改变文件或目录的权限——chmod ug+x filename</span><br><span class="line"> </span><br><span class="line"><span class="built_in">umask</span>————定义创建文件的权限掩码——<span class="built_in">umask</span> 027</span><br><span class="line"> </span><br><span class="line">chown——改变文件或目录的属主——chown newowner filename</span><br><span class="line"> </span><br><span class="line">chgrp——改变文件或目录的所属组——chgrp staff filename</span><br><span class="line"> </span><br><span class="line">xlock——给终端上锁——xlock -remote</span><br><span class="line"> </span><br><span class="line">编程操作</span><br><span class="line"> </span><br><span class="line">命令——功能描述——示例</span><br><span class="line"> </span><br><span class="line">make——维护可执行程序的最新版本——make</span><br><span class="line"> </span><br><span class="line">touch——更新文件的访问和修改时间——touch -m 05202400 filename</span><br><span class="line"> </span><br><span class="line">dbx——命令行界面调试工具——dbx a.out</span><br><span class="line"> </span><br><span class="line">xde——图形用户界面调试工具——xde a.out</span><br><span class="line"> </span><br><span class="line">进程操作</span><br><span class="line"> </span><br><span class="line">命令——功能描述——示例</span><br><span class="line"> </span><br><span class="line">ps——显示进程当前状态——ps u</span><br><span class="line"> </span><br><span class="line"><span class="built_in">kill</span>——终止进程——<span class="built_in">kill</span> -9 30142</span><br><span class="line"> </span><br><span class="line">nice——改变待执行命令的优先级——nice cc -c *.c</span><br><span class="line"> </span><br><span class="line">renice——改变已运行进程的优先级——renice +20 32768</span><br><span class="line"> </span><br><span class="line">时间操作</span><br><span class="line"> </span><br><span class="line">命令——功能描述——示例</span><br><span class="line"> </span><br><span class="line">date——显示系统的当前日期和时间——date</span><br><span class="line"> </span><br><span class="line">cal——显示日历——cal 8 1996</span><br><span class="line"> </span><br><span class="line">time——统计程序的执行时间——time a.out</span><br><span class="line"> </span><br><span class="line">网络与通信操作</span><br><span class="line"> </span><br><span class="line">命令——功能描述——示例</span><br><span class="line"> </span><br><span class="line">telnet——远程登录——telnet hpc.sp.net.edu.cn</span><br><span class="line"> </span><br><span class="line">rlogin——远程登录——rlogin hostname -l username</span><br><span class="line"> </span><br><span class="line">rsh——在远程主机执行指定命令——rsh f01n03 date</span><br><span class="line"> </span><br><span class="line">ftp——在本地主机与远程主机之间传输文件——ftp ftp.sp.net.edu.cn</span><br><span class="line"> </span><br><span class="line">rcp——在本地主机与远程主机 之间复制文件——rcp file1 host1:file2</span><br><span class="line"> </span><br><span class="line">ping——给一个网络主机发送 回应请求——ping hpc.sp.net.edu.cn</span><br><span class="line"> </span><br><span class="line">mail——阅读和发送电子邮件——mail</span><br><span class="line"> </span><br><span class="line">write——给另一用户发送报文——write username pts/1</span><br><span class="line"> </span><br><span class="line">mesg——允许或拒绝接收报文——mesg n</span><br><span class="line"> </span><br><span class="line">Korn Shell 命令</span><br><span class="line"> </span><br><span class="line">命令——功能描述——示例</span><br><span class="line"> </span><br><span class="line"><span class="built_in">history</span>——列出最近执行过的 几条命令及编号——<span class="built_in">history</span></span><br><span class="line"> </span><br><span class="line">r——重复执行最近执行过的 某条命令——r -2</span><br><span class="line"> </span><br><span class="line"><span class="built_in">alias</span>——给某个命令定义别名——<span class="built_in">alias</span> del=rm -i</span><br><span class="line"> </span><br><span class="line"><span class="built_in">unalias</span>——取消对某个别名的定义——<span class="built_in">unalias</span> del</span><br><span class="line"> </span><br><span class="line">其它命令</span><br><span class="line"> </span><br><span class="line">命令——功能描述——示例</span><br><span class="line"> </span><br><span class="line">uname——显示操作系统的有关信息——uname -a</span><br><span class="line"> </span><br><span class="line">clear——清除屏幕或窗口内容——clear</span><br><span class="line"> </span><br><span class="line">env——显示当前所有设置过的环境变量——env</span><br><span class="line"> </span><br><span class="line">who——列出当前登录的所有用户——who</span><br><span class="line"> </span><br><span class="line">whoami——显示当前正进行操作的用户名——whoami</span><br><span class="line"> </span><br><span class="line">tty——显示终端或伪终端的名称——tty</span><br><span class="line"> </span><br><span class="line">stty——显示或重置控制键定义——stty -a</span><br><span class="line"> </span><br><span class="line">du——查询磁盘使用情况——du -k subdir</span><br><span class="line"> </span><br><span class="line">df——显示文件系统的总空间和可用空间——df /tmp</span><br><span class="line"> </span><br><span class="line">w——显示当前系统活动的总信息——w</span><br><span class="line"> </span><br><span class="line">一些常用技巧</span><br><span class="line"> </span><br><span class="line">vim xx 打开xx文件，如果没有就创建xx文件，且挑到编辑页面 </span><br><span class="line"> </span><br><span class="line">i 刚进到编辑页面的时候是无法编辑的，所以输入i就可以编辑了 </span><br><span class="line"> </span><br><span class="line">esc 按esc就会退出编辑模式 </span><br><span class="line"> </span><br><span class="line">:w 输入:w就是保存刚才编辑 </span><br><span class="line"> </span><br><span class="line">:q 退出vim编辑页面 </span><br><span class="line"> </span><br><span class="line">:wq 保存并退出</span><br><span class="line"> </span><br><span class="line">所以你可以使用▲（上箭头）或▼（下箭头）来上下移动，使用　空格键 来翻页，输入/和关键字来按照关键字搜索按Q来退出使用指南页面tab按键自动补全唯一路径中止一个错误的或者发疯的命令，可以使用组合键control + C。你可以在执行前编辑命令，只需要使用箭头和键盘上的其他字母。没有输入任何命令时，你可以用▲和▼来浏览历史命令。同样可以编辑和再次执行。你也可以使用<span class="built_in">history</span>命令查看历史记录。你可以使用组合键control + L清屏。</span><br></pre></td></tr></table></figure>
 
 <h1 id="如何搭建自己的环境"><a href="#如何搭建自己的环境" class="headerlink" title="如何搭建自己的环境"></a>如何搭建自己的环境</h1>]]></content>
-      <categories>
-        <category>Tutorial</category>
-      </categories>
+      <tags>
+        <tag>Note</tag>
+      </tags>
   </entry>
   <entry>
     <title>Gradient-descent</title>
@@ -81,12 +81,9 @@
 <p><strong>Stochastic gradient descent:</strong> Use 1 example in each iteration；</p>
 <p><strong>Mini-batch gradient descent:</strong> Use b examples in each iteration.</p>
 ]]></content>
-      <categories>
-        <category>Mathematics</category>
-      </categories>
       <tags>
-        <tag>Machine Learning</tag>
-        <tag>Optimization</tag>
+        <tag>ML</tag>
+        <tag>Interview</tag>
       </tags>
   </entry>
   <entry>
@@ -209,11 +206,8 @@
 <p>在线同义词词典：<a href="https://www.thesaurus.com/" target="_blank" rel="noopener">https://www.thesaurus.com/</a></p>
 <p>科斯林在线词典：<a href="https://www.collinsdictionary.com/" target="_blank" rel="noopener">https://www.collinsdictionary.com/</a></p>
 ]]></content>
-      <categories>
-        <category>tbsi_interview</category>
-      </categories>
       <tags>
-        <tag>考研</tag>
+        <tag>Interview</tag>
       </tags>
   </entry>
   <entry>
@@ -642,9 +636,9 @@
 <p><a href="https://blog.csdn.net/ithomer/article/details/10239183" target="_blank" rel="noopener">六款网站统计工具介绍</a></p>
 <p><a href="https://novnan.github.io/Hexo/emojis-for-hexo-next/" target="_blank" rel="noopener">让 Hexo NexT 支持 emoji 表情</a> 新版已经不需要在修改a标签，警告，新版本可能会覆盖图片相对路径</p>
 ]]></content>
-      <categories>
-        <category>Tutorial</category>
-      </categories>
+      <tags>
+        <tag>Note</tag>
+      </tags>
   </entry>
   <entry>
     <title>Lagrange-duality</title>
@@ -666,9 +660,9 @@
 <p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMHyzxBI6KmFL3jILh6iboqJdDJvuyV3EzhN8FWsP8EOyKz34uluOMIWg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
 <p><strong>从而在训练过程中如果要用到相应的内积、只需从 Gram 矩阵中提取即可，这样在大多数情况下都能大大提高效率。</strong></p>
 ]]></content>
-      <categories>
-        <category>Mathematics</category>
-      </categories>
+      <tags>
+        <tag>ML</tag>
+      </tags>
   </entry>
   <entry>
     <title>Maximum-likelihood-function</title>
@@ -715,7 +709,7 @@
         <category>Mathematics</category>
       </categories>
       <tags>
-        <tag>Mathematics</tag>
+        <tag>ML</tag>
       </tags>
   </entry>
   <entry>
@@ -752,7 +746,7 @@
 </ol>
 ]]></content>
       <tags>
-        <tag>GANs;</tag>
+        <tag>Paper</tag>
       </tags>
   </entry>
   <entry>
@@ -928,7 +922,7 @@
         <category>Machine Learning</category>
       </categories>
       <tags>
-        <tag>SVM</tag>
+        <tag>ML</tag>
       </tags>
   </entry>
   <entry>
@@ -953,11 +947,8 @@
 <p>cracking the whip: 严苛</p>
 <p>fed up: 受够了  call it quits: 放弃</p>
 ]]></content>
-      <categories>
-        <category>Notes</category>
-      </categories>
       <tags>
-        <tag>spoken_English</tag>
+        <tag>Interview</tag>
       </tags>
   </entry>
   <entry>
@@ -1055,8 +1046,7 @@
         <category>Workshop</category>
       </categories>
       <tags>
-        <tag>CVPR2020</tag>
-        <tag>self-Driving</tag>
+        <tag>DL</tag>
       </tags>
   </entry>
   <entry>
@@ -1549,11 +1539,9 @@
 <li>repeat until convergence    </li>
 </ol>
 ]]></content>
-      <categories>
-        <category>tbsi_interview</category>
-      </categories>
       <tags>
-        <tag>Machine Learning</tag>
+        <tag>ML</tag>
+        <tag>Experience</tag>
       </tags>
   </entry>
   <entry>
@@ -1626,12 +1614,9 @@
 <h2 id="Didn’t-work-for-me-or-didn’t-give-any-significative-improvement"><a href="#Didn’t-work-for-me-or-didn’t-give-any-significative-improvement" class="headerlink" title="Didn’t work for me or didn’t give any significative improvement:"></a>Didn’t work for me or didn’t give any significative improvement:</h2><p>Pseudo labeling (read <a href="https://www.kaggle.com/hengck23" target="_blank" rel="noopener">@hengck23</a> posts for more information)<br>NN decoder-encoder using the leak in <a href="https://www.kaggle.com/mjahrer" target="_blank" rel="noopener">@mjahrer</a> style (reniew seems to have succeed in this direction: see here (<a href="https://www.kaggle.com/c/ashrae-energy-prediction/discussion/122203#699375" target="_blank" rel="noopener">https://www.kaggle.com/c/ashrae-energy-prediction/discussion/122203#699375</a>)<br>Thermometer encoding on cloud coverage<br>Treat temperature features as categorical variables (given limited number of values) and use target encoding.<br>Adaptation of <a href="https://www.kaggle.com/anokas" target="_blank" rel="noopener">@anokas</a> tool for time series feature<br>…</p>
 <p>Otherwise, I would like to thank all the people who taught me a lot on Kaggle among whom <a href="https://www.kaggle.com/Raddar" target="_blank" rel="noopener">@Raddar</a>, <a href="https://www.kaggle.com/cpmpml" target="_blank" rel="noopener">@cpmpml</a> and <a href="https://www.kaggle.com/titericz" target="_blank" rel="noopener">@titericz</a> during the years.</p>
 ]]></content>
-      <categories>
-        <category>tbsi_interview</category>
-      </categories>
       <tags>
-        <tag>Machine Learning</tag>
-        <tag>kaggle</tag>
+        <tag>ML</tag>
+        <tag>Interview</tag>
       </tags>
   </entry>
   <entry>
@@ -1724,12 +1709,9 @@
 <p>Ordered boosting算法好是好，但是在大部分的实际任务当中都不具备使用价值，因为需要训练个不同的模型，大大增加的内存消耗和时间复杂度。在CatBoost当中，我们以决策树为基学习器的梯度提升算法的基础上，对该算法进行了改进。</p>
 <p>前面提到过，在传统的GBDT框架当中，构建下一棵树分为两个阶段：选择树结构和在树结构固定后计算叶子节点的值。CatBoost主要在第一阶段进行优化。在建树的阶段，CatBoost有两种提升模式，Ordered和Plain。Plain模式是采用内建的ordered TS对类别型特征进行转化后的标准GBDT算法。Ordered则是对Ordered boosting算法的优化。两种提升模式的具体介绍可以翻看论文《CatBoost: unbiased boosting with categorical features》。</p>
 ]]></content>
-      <categories>
-        <category>Machine Learning</category>
-      </categories>
       <tags>
-        <tag>Machine Learning</tag>
-        <tag>boosting</tag>
+        <tag>ML</tag>
+        <tag>Interview</tag>
       </tags>
   </entry>
   <entry>
@@ -2205,9 +2187,9 @@
 <h1 id="参考链接："><a href="#参考链接：" class="headerlink" title="参考链接："></a>参考链接：</h1><p><a href="https://www.overleaf.com/learn/latex/Inserting_Images" target="_blank" rel="noopener">Inserting Images</a></p>
 <p><a href="https://www.overleaf.com/learn/latex/Beamer#Further_reading" target="_blank" rel="noopener">Beamer in Overleaf</a></p>
 ]]></content>
-      <categories>
-        <category>Tutorial</category>
-      </categories>
+      <tags>
+        <tag>Notes</tag>
+      </tags>
   </entry>
   <entry>
     <title>cv_interview_tbsi</title>
@@ -2511,9 +2493,9 @@
 </ul>
 <p>对于项目的提问。</p>
 ]]></content>
-      <categories>
-        <category>tbsi_interview</category>
-      </categories>
+      <tags>
+        <tag>Interview</tag>
+      </tags>
   </entry>
   <entry>
     <title>decision_tree</title>
@@ -2548,11 +2530,9 @@
 <p>条件熵：表示</p>
 </blockquote>
 ]]></content>
-      <categories>
-        <category>Machine Learning</category>
-      </categories>
       <tags>
-        <tag>decision tree</tag>
+        <tag>ML</tag>
+        <tag>Interview</tag>
       </tags>
   </entry>
   <entry>
@@ -2593,6 +2573,9 @@
 </blockquote>
 <p>Thank you for your question, professor. I think my most significant accomplishment is that I organized a team for hiking in my university. It’s still running by other students. you may ask why I love hiking? There’re a lot of reasons for it. Shaping my body and enjoying the beautiful scenery. But I think the most important thing is that by hiking, I can meet my psychology needs. Cuz when you look at sky at night, you will realize that how big the universe is and how small we are. We don’t need to win everyone’s credits around us. We just need to care about ourselves and do what we want to do. You will not fall into depression or other problems like that. I think most of the members of our team hold the same idea as mine. </p>
 <h2 id="7-introduce-your-hometown"><a href="#7-introduce-your-hometown" class="headerlink" title="7. introduce your hometown"></a>7. introduce your hometown</h2><h2 id="9-introduce-your-family"><a href="#9-introduce-your-family" class="headerlink" title="9. introduce your family"></a>9. introduce your family</h2>]]></content>
+      <tags>
+        <tag>Interview</tag>
+      </tags>
   </entry>
   <entry>
     <title>git_tutorial</title>
@@ -2879,11 +2862,8 @@
 <p><a href="https://www.yiibai.com/git/git-quick-start.html" target="_blank" rel="noopener">Git快速入门</a></p>
 <p><a href="https://rogerdudler.github.io/git-guide/index.de.html" target="_blank" rel="noopener">git cheat sheet</a></p>
 ]]></content>
-      <categories>
-        <category>Tutorial</category>
-      </categories>
       <tags>
-        <tag>Github;</tag>
+        <tag>Note</tag>
       </tags>
   </entry>
   <entry>
@@ -2966,9 +2946,9 @@
 <br>
 
 ]]></content>
-      <categories>
-        <category>Notes</category>
-      </categories>
+      <tags>
+        <tag>Note</tag>
+      </tags>
   </entry>
   <entry>
     <title>Logistic regression</title>
@@ -3155,7 +3135,7 @@
         <category>Machine Learning</category>
       </categories>
       <tags>
-        <tag>Machine Learning</tag>
+        <tag>ML</tag>
       </tags>
   </entry>
   <entry>
@@ -3463,7 +3443,7 @@
 </ol>
 <h2 id="Adam"><a href="#Adam" class="headerlink" title="Adam"></a>Adam</h2><h2 id="Learning-rate-decay"><a href="#Learning-rate-decay" class="headerlink" title="Learning rate decay"></a>Learning rate decay</h2><h1 id="Batch-Normalization"><a href="#Batch-Normalization" class="headerlink" title="Batch Normalization"></a>Batch Normalization</h1>]]></content>
       <tags>
-        <tag>deep learning,</tag>
+        <tag>DL</tag>
       </tags>
   </entry>
   <entry>
@@ -3598,9 +3578,9 @@
 <li><a href="https://zhuanlan.zhihu.com/p/145520434" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/145520434</a></li>
 </ol>
 ]]></content>
-      <categories>
-        <category>Tutorial</category>
-      </categories>
+      <tags>
+        <tag>Note</tag>
+      </tags>
   </entry>
   <entry>
     <title>professional-interview-tbsi</title>
@@ -3961,25 +3941,7 @@
         <category>tbsi_interview</category>
       </categories>
       <tags>
-        <tag>Data Science</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>吴恩达NN-1</title>
-    <url>/%E5%90%B4%E6%81%A9%E8%BE%BENN/</url>
-    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="WEEK2"><a href="#WEEK2" class="headerlink" title="WEEK2"></a>WEEK2</h1><h2 id="Logistic-Regression"><a href="#Logistic-Regression" class="headerlink" title="Logistic Regression"></a>Logistic Regression</h2><p>损失函数为：</p>
-<p>$$L(y,\hat{y})=-ylog(\hat{y})-(1-y)log(1-\hat{y})$$</p>
-<blockquote>
-<p>为什么我们使用cross entropy ?</p>
-</blockquote>
-<p>A: 1. 解决梯度消失的问题   2. 解决非凸优化问题</p>
-]]></content>
-      <categories>
-        <category>Deep Learning</category>
-      </categories>
-      <tags>
-        <tag>Deep Learning</tag>
-        <tag>Neural Network</tag>
+        <tag>Interview</tag>
       </tags>
   </entry>
   <entry>
@@ -4087,9 +4049,8 @@
         <category>Machine Learning</category>
       </categories>
       <tags>
-        <tag>boosting</tag>
-        <tag>paper</tag>
-        <tag>LightGBM</tag>
+        <tag>ML</tag>
+        <tag>Paper</tag>
       </tags>
   </entry>
   <entry>
@@ -4285,9 +4246,9 @@
 <p>后续如有更新，请关注github仓库TBSI板块址：<a href="https://github.com/stellarkey/912_project" target="_blank" rel="noopener">https://github.com/stellarkey/912_project</a></p>
 <p>任何未尽问题，欢迎联系邮箱：荔枝 <a href="mailto:514636586@qq.com">514636586@qq.com</a></p>
 ]]></content>
-      <categories>
-        <category>tbsi_interview</category>
-      </categories>
+      <tags>
+        <tag>Interview</tag>
+      </tags>
   </entry>
   <entry>
     <title>算法面试宝典</title>
@@ -4806,11 +4767,9 @@
 <p>方法：主成分分析法（PCA）和线性判别分析（LDA）</p>
 <p>意义：通过PCA或LDA方法，将较高纬度样本空间映射到较低维度的样本空间，从而达到降纬的目的，减少模型的训练时间，提高模型的计算性能。</p>
 ]]></content>
-      <categories>
-        <category>tbsi_interview</category>
-      </categories>
       <tags>
-        <tag>Machine Learning</tag>
+        <tag>ML</tag>
+        <tag>Interview</tag>
       </tags>
   </entry>
   <entry>
@@ -5187,11 +5146,8 @@
 <li>写到极致，完成完美精致的艺术品</li>
 </ul>
 <h1 id="常用论文模板"><a href="#常用论文模板" class="headerlink" title="常用论文模板"></a>常用论文模板</h1>]]></content>
-      <categories>
-        <category>academic</category>
-      </categories>
       <tags>
-        <tag>paper</tag>
+        <tag>Paper</tag>
       </tags>
   </entry>
   <entry>
@@ -6051,6 +6007,9 @@
       <categories>
         <category>Experience</category>
       </categories>
+      <tags>
+        <tag>Experience</tag>
+      </tags>
   </entry>
   <entry>
     <title>python-basic</title>
@@ -6089,11 +6048,8 @@
 
 <p>当一个类需要继承另外一个类的时候，例如<code>Myfoo</code>需要继承<code>Foo</code>，假设我们不知道<code>Foo</code>有哪些参数，而只是关于<code>Foo</code>的一些扩展而己，<strong>（另一种情况是将来Foo可能会有变化）</strong>，这时你就可以利用<em>args, *</em>kwargs 来代表Foo的所有参数，传入到MyFoo</p>
 ]]></content>
-      <categories>
-        <category>python</category>
-      </categories>
       <tags>
-        <tag>python</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -6247,17 +6203,16 @@
 <li><a href="https://mp.weixin.qq.com/s/KrdXyYMtyElUGuPH5eNYvg" target="_blank" rel="noopener">python深拷贝与浅拷贝详解</a></li>
 </ol>
 ]]></content>
-      <categories>
-        <category>python</category>
-      </categories>
       <tags>
-        <tag>python</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
     <title>Batch_normalization</title>
     <url>/Batch-normalization/</url>
-    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="Batch-Norm的作用以及"><a href="#Batch-Norm的作用以及" class="headerlink" title="Batch Norm的作用以及"></a>Batch Norm的作用以及</h1><h1 id="为什么BN会有作用"><a href="#为什么BN会有作用" class="headerlink" title="为什么BN会有作用"></a>为什么BN会有作用</h1><ul>
+    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="Batch-Norm的作用以及"><a href="#Batch-Norm的作用以及" class="headerlink" title="Batch Norm的作用以及"></a>Batch Norm的作用以及</h1><h1 id="为什么BN会有作用"><a href="#为什么BN会有作用" class="headerlink" title="为什么BN会有作用"></a>为什么BN会有作用</h1><a id="more"></a>
+
+<ul>
 <li>它在做类似的工作，不仅仅对于输入值，也还有隐藏单元值。</li>
 <li><font color="red">它可以使得权重比我们的网络更滞后或更深层。</font><ul>
 <li>从神经网络后层的角度来看，前层的网络不会移动地那么多，因为受到了均值和方差的限制，所以这使得后层的工作和学习变得更加容易。</li>
@@ -6288,11 +6243,8 @@
 <h1 id="Drop-out的实现细节"><a href="#Drop-out的实现细节" class="headerlink" title="Drop out的实现细节"></a>Drop out的实现细节</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># keep_prob is the chance to ignore drop out the nerual </span></span><br><span class="line"></span><br><span class="line">d3 = np.random.randint(a3.shape[<span class="number">0</span>]) &lt; keep_prob </span><br><span class="line">a3  = np.multply(a3, d3)</span><br><span class="line">a3 /= keep_prob</span><br><span class="line"></span><br><span class="line"><span class="comment"># inorder not changing the z4 </span></span><br><span class="line">z[<span class="number">4</span>] = w[<span class="number">4</span>]a[<span class="number">3</span>] + b[<span class="number">4</span>]</span><br></pre></td></tr></table></figure>
 
 ]]></content>
-      <categories>
-        <category>Deep Learning</category>
-      </categories>
       <tags>
-        <tag>CNN</tag>
+        <tag>DL</tag>
       </tags>
   </entry>
   <entry>
@@ -6393,11 +6345,8 @@
 <li><a href="https://zhuanlan.zhihu.com/p/97012199" target="_blank" rel="noopener">提速百倍的Pandas性能优化方法，让你的Pandas飞起来！</a></li>
 </ol>
 ]]></content>
-      <categories>
-        <category>python</category>
-      </categories>
       <tags>
-        <tag>pandas; python</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -6412,11 +6361,8 @@
 <li>代码链接：<a href="https://link.zhihu.com/?target=https%3A//github.com/juntang-zhuang/Adabelief-Optimizer">https://github.com/juntang-zhuang/Adabelief-Optimizer</a></li>
 </ul>
 ]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
       <tags>
-        <tag>paper; NeurIPS; optimization</tag>
+        <tag>Paper</tag>
       </tags>
   </entry>
   <entry>
@@ -6426,6 +6372,8 @@
 <p><img src="/WaveNet%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/1.jpg" alt></p>
 <p><a href="https://zhuanlan.zhihu.com/p/24568596" target="_blank" rel="noopener">源码详解</a></p>
 <p><strong>评论：</strong>文章对模型的设计非常好，很有参考价值。模型中采用的扩大卷积的方法来极大的增加感受野，对序列数据建模很有用。</p>
+<a id="more"></a>
+
 <h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>本文提出了一种对于生成原始语音模型的深度神经网络。这个模型是完全的概率自回归模型。有以下几个亮点：</p>
 <ol>
 <li>通过这个模型，可以生成更加真实的语音。</li>
@@ -6527,11 +6475,33 @@
 <h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://zhuanlan.zhihu.com/p/24317897" target="_blank" rel="noopener">谷歌WaveNet如何通过深度学习方法来生成声音？</a></p>
 <p><a href="https://my.oschina.net/stephenyng/blog/1621584" target="_blank" rel="noopener">WaveNet翻译</a></p>
 ]]></content>
-      <categories>
-        <category>paper</category>
-      </categories>
       <tags>
-        <tag>deep learning;</tag>
+        <tag>DL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PCA</title>
+    <url>/PCA/</url>
+    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>之前学了Principal Component Analysis（PCA）,一直学的似懂非懂。这次总结一下。</p>
+<a id="more"></a>]]></content>
+      <tags>
+        <tag>ML</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Reinforce Learning Groups</title>
+    <url>/Reinforce%20Learning%20Groups/</url>
+    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><ol>
+<li>清华大学交叉信息研究院<a href="http://people.iiis.tsinghua.edu.cn/~zhang/" target="_blank" rel="noopener"><strong>张崇杰</strong></a>老师组</li>
+<li>清华大学交叉信息研究院<a href="https://jxwuyi.weebly.com/" target="_blank" rel="noopener">吴翼</a>老师</li>
+<li>北京大学计算机科学技术系<a href="https://z0ngqing.github.io/" target="_blank" rel="noopener"><strong>卢宗青</strong></a>老师组</li>
+<li>中国科学技术大学计算机科学与技术学院<a href="http://staff.ustc.edu.cn/~wufeng02/" target="_blank" rel="noopener"><strong>吴锋</strong></a>老师组</li>
+<li>南京大学计算机科学与技术系<a href="http://www.lamda.nju.edu.cn/yuy/default.aspx?AspxAutoDetectCookieSupport=1" target="_blank" rel="noopener"><strong>俞扬</strong></a>老师:star:</li>
+<li>天津大学智能与计算学部<a href="http://www.icdai.org/jianye.html" target="_blank" rel="noopener"><strong>郝建业</strong></a>老师组</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>RL</tag>
       </tags>
   </entry>
 </search>

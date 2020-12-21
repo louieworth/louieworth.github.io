@@ -1,118 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://yoursite.com/WaveNet%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/</loc>
-    <lastmod>2020-12-20</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/AdaBelief-NeurIPS2020/</loc>
-    <lastmod>2020-12-15</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/pandas/</loc>
-    <lastmod>2020-12-15</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/Batch-normalization/</loc>
-    <lastmod>2020-12-10</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/python%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/</loc>
-    <lastmod>2020-12-07</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/</loc>
-    <lastmod>2020-12-04</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/python-basic/</loc>
-    <lastmod>2020-11-29</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/google-colab-handbook/</loc>
-    <lastmod>2020-11-16</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/logistic-regression/</loc>
-    <lastmod>2020-10-29</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/optimal-tricks/</loc>
-    <lastmod>2020-10-29</lastmod>
+    <loc>http://yoursite.com/2021%E8%80%83%E7%A0%94%E8%8B%B1%E8%AF%AD%E4%B8%80%E5%A4%A7%E4%BD%9C%E6%96%87%E6%94%BB%E7%95%A5/</loc>
+    <lastmod>2020-12-21</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C%E5%88%9D%E7%BA%A7/</loc>
-    <lastmod>2020-10-28</lastmod>
+    <lastmod>2020-12-21</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/git-tutorial/</loc>
-    <lastmod>2020-10-02</lastmod>
+    <loc>http://yoursite.com/%E8%80%83%E7%A0%94tbsi%E5%BF%85%E7%9C%8B/</loc>
+    <lastmod>2020-12-21</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/GPU-ssh/</loc>
-    <lastmod>2020-09-25</lastmod>
+    <loc>http://yoursite.com/%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/</loc>
+    <lastmod>2020-12-21</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/Waymo-CVPR2020/</loc>
+    <lastmod>2020-12-21</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/WaveNet%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/</loc>
+    <lastmod>2020-12-21</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/SVM/</loc>
+    <lastmod>2020-12-21</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/Spoken-English/</loc>
+    <lastmod>2020-12-21</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/Reinforce%20Learning%20Groups/</loc>
+    <lastmod>2020-12-21</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/python%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/</loc>
+    <lastmod>2020-12-21</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/python-basic/</loc>
+    <lastmod>2020-12-21</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/professional-interview-tbsi/</loc>
+    <lastmod>2020-12-21</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/PCA/</loc>
+    <lastmod>2020-12-21</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/paper-LightGBM/</loc>
+    <lastmod>2020-12-21</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/Paper-GANs/</loc>
-    <lastmod>2020-09-25</lastmod>
+    <lastmod>2020-12-21</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/pandas/</loc>
+    <lastmod>2020-12-21</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/optimal-tricks/</loc>
+    <lastmod>2020-12-21</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/MSRA%E5%AE%9E%E4%B9%A0%E6%9C%BA%E4%BC%9A-%E8%B0%83%E7%A0%94/</loc>
+    <lastmod>2020-12-21</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/Maxmum-likelihood-function/</loc>
+    <lastmod>2020-12-21</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/Lagrange-duality/</loc>
+    <lastmod>2020-12-21</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/logistic-regression/</loc>
+    <lastmod>2020-12-21</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/how-to-read-papers/</loc>
-    <lastmod>2020-08-10</lastmod>
+    <lastmod>2020-12-21</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/Hexo-%E5%8D%9A%E6%96%87%E7%BC%96%E8%BE%91%E6%89%8B%E5%86%8C/</loc>
+    <lastmod>2020-12-21</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/Gradient-descent/</loc>
+    <lastmod>2020-12-21</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/GPU-ssh/</loc>
+    <lastmod>2020-12-21</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/google-colab-handbook/</loc>
+    <lastmod>2020-12-21</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/git-tutorial/</loc>
+    <lastmod>2020-12-21</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/decision-tree/</loc>
+    <lastmod>2020-12-21</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/daily-question-interview-tbsi/</loc>
+    <lastmod>2020-12-21</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/cv-interview-tbsi/</loc>
+    <lastmod>2020-12-21</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/catboost/</loc>
+    <lastmod>2020-12-21</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/beamer%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2020-12-21</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/Batch-normalization/</loc>
+    <lastmod>2020-12-21</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/algorithms-interview-tbsi/</loc>
+    <lastmod>2020-12-21</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/AdaBelief-NeurIPS2020/</loc>
+    <lastmod>2020-12-21</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/ashare-interview-tbsi/</loc>
+    <lastmod>2020-12-21</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/TBSI2020-WORKSHOP/</loc>
     <lastmod>2020-07-21</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/Waymo-CVPR2020/</loc>
-    <lastmod>2020-07-20</lastmod>
-  </url>  <url>
     <loc>http://yoursite.com/tools/</loc>
     <lastmod>2020-07-07</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/Hexo-%E5%8D%9A%E6%96%87%E7%BC%96%E8%BE%91%E6%89%8B%E5%86%8C/</loc>
-    <lastmod>2020-07-04</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/%E5%90%B4%E6%81%A9%E8%BE%BENN/</loc>
-    <lastmod>2020-07-04</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/beamer%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2020-06-24</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/Maxmum-likelihood-function/</loc>
-    <lastmod>2020-06-07</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/Gradient-descent/</loc>
-    <lastmod>2020-06-07</lastmod>
-  </url>  <url>
     <loc>http://yoursite.com/mathmatics-interview-tbsi/</loc>
     <lastmod>2020-06-07</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/Lagrange-duality/</loc>
-    <lastmod>2020-06-07</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/catboost/</loc>
-    <lastmod>2020-06-07</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/%E8%80%83%E7%A0%94tbsi%E5%BF%85%E7%9C%8B/</loc>
-    <lastmod>2020-06-07</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/2021%E8%80%83%E7%A0%94%E8%8B%B1%E8%AF%AD%E4%B8%80%E5%A4%A7%E4%BD%9C%E6%96%87%E6%94%BB%E7%95%A5/</loc>
-    <lastmod>2020-06-07</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/algorithms-interview-tbsi/</loc>
-    <lastmod>2020-06-07</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/Spoken-English/</loc>
-    <lastmod>2020-06-07</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/daily-question-interview-tbsi/</loc>
-    <lastmod>2020-06-06</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/ashare-interview-tbsi/</loc>
-    <lastmod>2020-06-06</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/professional-interview-tbsi/</loc>
-    <lastmod>2020-06-06</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/SVM/</loc>
-    <lastmod>2020-06-06</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/decision-tree/</loc>
-    <lastmod>2020-06-06</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/cv-interview-tbsi/</loc>
-    <lastmod>2020-06-06</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/paper-LightGBM/</loc>
-    <lastmod>2020-06-06</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/MSRA%E5%AE%9E%E4%B9%A0%E6%9C%BA%E4%BC%9A-%E8%B0%83%E7%A0%94/</loc>
-    <lastmod>2020-06-06</lastmod>
   </url>
 </urlset>

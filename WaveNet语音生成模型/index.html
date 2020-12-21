@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="deep learning;," />
+  <meta name="keywords" content="DL," />
 
 
 
@@ -83,12 +83,12 @@
 
 
 
-<meta name="description" content="论文阅读： WaveNet: A Generative Model for raw Audio  源码详解 评论：文章对模型的设计非常好，很有参考价值。模型中采用的扩大卷积的方法来极大的增加感受野，对序列数据建模很有用。 Abstract本文提出了一种对于生成原始语音模型的深度神经网络。这个模型是完全的概率自回归模型。有以下几个亮点：  通过这个模型，可以生成更加真实的语音。 可以以相同的保真度">
+<meta name="description" content="论文阅读： WaveNet: A Generative Model for raw Audio  源码详解 评论：文章对模型的设计非常好，很有参考价值。模型中采用的扩大卷积的方法来极大的增加感受野，对序列数据建模很有用。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="WaveNet语音生成模型">
 <meta property="og:url" content="http://yoursite.com/WaveNet%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/index.html">
 <meta property="og:site_name" content="Louieworth&#39;s blog">
-<meta property="og:description" content="论文阅读： WaveNet: A Generative Model for raw Audio  源码详解 评论：文章对模型的设计非常好，很有参考价值。模型中采用的扩大卷积的方法来极大的增加感受野，对序列数据建模很有用。 Abstract本文提出了一种对于生成原始语音模型的深度神经网络。这个模型是完全的概率自回归模型。有以下几个亮点：  通过这个模型，可以生成更加真实的语音。 可以以相同的保真度">
+<meta property="og:description" content="论文阅读： WaveNet: A Generative Model for raw Audio  源码详解 评论：文章对模型的设计非常好，很有参考价值。模型中采用的扩大卷积的方法来极大的增加感受野，对序列数据建模很有用。">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://yoursite.com/WaveNet%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/1.jpg">
 <meta property="og:image" content="http://yoursite.com/WaveNet%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/2.jpg">
@@ -97,9 +97,9 @@
 <meta property="og:image" content="http://yoursite.com/WaveNet%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/4.jpg">
 <meta property="og:image" content="http://yoursite.com/WaveNet%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/5.jpg">
 <meta property="article:published_time" content="2020-12-18T13:04:24.000Z">
-<meta property="article:modified_time" content="2020-12-20T06:49:03.891Z">
+<meta property="article:modified_time" content="2020-12-21T07:01:34.800Z">
 <meta property="article:author" content="Louieworth">
-<meta property="article:tag" content="deep learning;">
+<meta property="article:tag" content="DL">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/WaveNet%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/1.jpg">
 
@@ -358,28 +358,6 @@
           </span>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/paper/" itemprop="url" rel="index">
-                    <span itemprop="name">paper</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -426,6 +404,8 @@
 <p><img src="/WaveNet%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/1.jpg" alt></p>
 <p><a href="https://zhuanlan.zhihu.com/p/24568596" target="_blank" rel="noopener">源码详解</a></p>
 <p><strong>评论：</strong>文章对模型的设计非常好，很有参考价值。模型中采用的扩大卷积的方法来极大的增加感受野，对序列数据建模很有用。</p>
+<a id="more"></a>
+
 <h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>本文提出了一种对于生成原始语音模型的深度神经网络。这个模型是完全的概率自回归模型。有以下几个亮点：</p>
 <ol>
 <li>通过这个模型，可以生成更加真实的语音。</li>
@@ -543,7 +523,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/deep-learning/" rel="tag"># deep learning;</a>
+            <a href="/tags/DL/" rel="tag"># DL</a>
           
         </div>
       
@@ -565,6 +545,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/PCA/" rel="prev" title="PCA">
+                PCA <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -650,7 +634,7 @@
               
                 <a href="/archives/%7C%7Carchive">
               
-                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-count">39</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -661,7 +645,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -672,7 +656,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
