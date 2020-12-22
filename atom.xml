@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-12-21T15:12:27.044Z</updated>
+  <updated>2020-12-22T01:56:18.954Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/Untitled/"/>
+    <id>http://yoursite.com/Untitled/</id>
+    <published>2020-12-22T01:56:18.287Z</published>
+    <updated>2020-12-22T01:56:18.954Z</updated>
+    
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;script src=&quot;/assets/js/APlayer.min.js&quot;&gt; &lt;/script&gt;
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Attention in Neural Networks</title>
@@ -451,27 +473,6 @@
     
     
       <category term="Notes" scheme="http://yoursite.com/tags/Notes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Maximum-likelihood-function</title>
-    <link href="http://yoursite.com/Maxmum-likelihood-function/"/>
-    <id>http://yoursite.com/Maxmum-likelihood-function/</id>
-    <published>2020-06-07T08:59:52.000Z</published>
-    <updated>2020-12-21T07:14:23.018Z</updated>
-    
-    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="最大似然估计"><a href="#最大似然估计" class="headerlink" title="最大似然估计"></a>最大似然估计</h1><p>现在已经拿到了很多个样本（你的数据集中所有因变量），这些样本值已经实现，最大似然估计就是去找到那个（组）参数估计值，**使得前面已经实现的样本值发生概率最大。<a id="more"></a></p><p>因为你手头上的样本已经实现了，<strong>其发生概率最大才符合逻辑。</strong></p><p>这时是求样本所有观测的联合概率最大化，是个连乘积，只要取对数，就变成了<strong>线性加总</strong>。</p><p><strong>此时通过对参数求导数，并令一阶导数为零，就可以通过解方程（组），得到最大似然估计值。</strong></p><h1 id="最小二乘法"><a href="#最小二乘法" class="headerlink" title="最小二乘法"></a>最小二乘法</h1><figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">最小二乘：找到一个（组）估计值，使得实际值与估计值的距离最小。</span><br><span class="line"></span><br><span class="line">本来用两者差的绝对值汇总并使之最小是最理想的，但绝对值在数学上求最小值比较麻烦，因而替代做法是，找一个（组）估计值，使得实际值与估计值之差的平方加总之后的值最小，称为最小二乘。</span><br><span class="line"></span><br><span class="line">“二乘”的英文为least <span class="built_in">square</span>，其实英文的字面意思是“平方最小”。</span><br><span class="line"></span><br><span class="line">这时，将这个差的平方的和式对参数求导数，并取一阶导数为零，就是OLSE。</span><br><span class="line"></span><br><span class="line">我所认为的还有一个原因是估计值和实际值之间的误差服从高斯分布，因为高斯分布有二次。</span><br></pre></td></tr></table></figure><p>这就是自己的一点理解，欢迎大家交流~</p><h1 id="为什么线性回归的损失函数是平方？"><a href="#为什么线性回归的损失函数是平方？" class="headerlink" title="为什么线性回归的损失函数是平方？"></a>为什么线性回归的损失函数是平方？</h1><p>线性回归假设特征和结果满足线性关系。 其实线性关系的表达能力非常强大，<strong>每个特征**</strong>对结果的影响强弱可以有前面的参数体现，**一般化线性模型，我们是有多个变量的线性模型。我们用向量形式来表达线性模型，如下：</p><p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1EXHf9ov2f9VDYGHY2Pw9uWtmLFwia7dfN6ibO4ibLdaNxHT2E0YjBxzcQ/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p><p>那么我们可以求出不同的<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1RsEoF4ZicktHlZZhBadCbnGgRkl376gSRuqgZ9nt7gTnfEcvWOQ34gQ/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">，来得到不同的模型。</p><p><strong>这样的话，问题来了，我们如何知道每一个模型的好坏，也就是说，我们需要一个机制来判断我们的**</strong>是好是坏！**</p><p>这就引出了我们的损失函数，如下：</p><p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1jLGEcRtK2wZM1QS4bqHrRQoSkIzFNurIWd8WHmjpScrPQObEcK20Gw/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p><p>我们通过最小化损失函数得到的<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1RsEoF4ZicktHlZZhBadCbnGgRkl376gSRuqgZ9nt7gTnfEcvWOQ34gQ/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">，就是我们觉得最优的<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1RsEoF4ZicktHlZZhBadCbnGgRkl376gSRuqgZ9nt7gTnfEcvWOQ34gQ/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">，也就是我们认为此时的模型（知道了参数<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1RsEoF4ZicktHlZZhBadCbnGgRkl376gSRuqgZ9nt7gTnfEcvWOQ34gQ/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">也就确定了我们的模型）最优（<strong>这里也很好理解，这个公式尽可能使得我们预测出来的值与真实的值无限逼近！！</strong>）</p><p>那么损失函数为什么是平方形式呢？如果只是表达模型预测出来的值与真实值无限逼近，<strong>三次方，四次方，哪怕绝对值形式也是可以的</strong>，如下这些：</p><p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1nSia4nhaMQRPenKiaLL0HoZReehrhABLLt9CjZeCkxSYmhojPtGsIZFw/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p><p>为什么是平方形式呢？不要急，这也是下面要解释的内容。</p><h2 id="损失函数采用平方的数学解释？"><a href="#损失函数采用平方的数学解释？" class="headerlink" title="损失函数采用平方的数学解释？"></a>损失函数采用平方的数学解释？</h2><p>假设根据特征的预测结果与实际结果有误差<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib18WvRfiaHxItgsO9fwtuTiay36yfremHydHsnDUwricLhY3iaoHiccm7ZAIg/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">，那么预测结果<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1wIlibsqL0FFpEqhz3U9tFMV0AAmeMdxV1EKMocs4fEmz10PHv81SQpA/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">真实结果<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1ySG85zug5aKGgXzdQzPlWdW6IUxxF0wIHGK6Z9oNqhzVmWZIMdCQBQ/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">满足下式：</p><p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1Wp3BjzFHlFvkDYZeFaUXKepR8yqS9oV5nrL5clLUicg4upVsxPxxKtQ/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p><p><strong>一般在实际应用中，我们的训练数据都是海量的，根据中心极限定理，我们可以假定误差满足平均值u为0的正态分布。</strong></p><p><strong>那么x，y的条件概率满足如下：</strong></p><p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1ZgcQMhYTLWnoKf6qbibF2YX2icNw0ibzVElia5enarJNzK9WA1ibZVu8wTA/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p><p>上式相当于估计了一条样本的结果概率，根据极大似然估计<strong>（后面会写一篇文章详细介绍）我们希望在给定的训练数据中，给定的训练数据出现的概率（可能性）最大，也就是概率积最大！累积形式如下：</strong></p><p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1tk0KwypjdEmughYpXIR71PmTbqIcwrTzibwOBqk4B9jZaOB1icaMN2Yw/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p><p><strong>取对数如下：</strong></p><p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib12kddTotIyyyDl99icesMRvlOU02Zsv6jARaj3W3mxW5vcofiaM8sr5yA/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p><p>这时我们想 <img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1yonvEaatEbQDCFI8IOvHZLKd8jwyvqKa9rAH6j8R8hzoCmkJaNowiag/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">函数值最大，这些训练数据的误差方差我们假设是一个定值<strong>（数据趋于无穷大的时候，均值与方差都是可以看成定值），</strong>也就是对求似然估计没有影响。</p><p><strong>那么我们此时想要使得<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1yonvEaatEbQDCFI8IOvHZLKd8jwyvqKa9rAH6j8R8hzoCmkJaNowiag/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">最大，只需要将<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1uk52vRpmzCALsR41Xpxt0TBWUlfKQISibslnSTAiaiaCnvKZjKpBwaQPw/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">最小化即可!（因为除了该项其它各项都是定值！）如下面公式是定值：</strong></p><p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW63puVPCR79HXfP6ib1ibRaib1KniaicAb9lUM46aPYnfxWMnZJKwl9NNIfho2TKiaXHRq1XibBgD2IAyFyQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p><p><strong>这也就是我们损失函数采取平方形式的数学解释！欢迎大家指错交流~</strong></p><hr><p>一句话总结：</p><p>首先根据中心极限定理，误差满足正态分布。</p><p>再根据最大似然函数定理，求的最大的误差，也就是最小的平方</p><hr><p><strong>参考：</strong>JerryLead机器学习笔记</p><p>线性回归损失函数为什么要用平方形式 - saltriver的专栏 - 博客频道 - CSDN.NET（博主采取用求偏导，假定方差越小越好，这也是一种思路）</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;最大似然估计&quot;&gt;&lt;a href=&quot;#最大似然估计&quot; class=&quot;headerlink&quot; title=&quot;最大似然估计&quot;&gt;&lt;/a&gt;最大似然估计&lt;/h1&gt;&lt;p&gt;现在已经拿到了很多个样本（你的数据集中所有因变量），这些样本值已经实现，最大似然估计就是去找到那个（组）参数估计值，**使得前面已经实现的样本值发生概率最大。&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="ML" scheme="http://yoursite.com/tags/ML/"/>
     
   </entry>
   
