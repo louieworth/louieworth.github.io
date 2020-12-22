@@ -414,12 +414,13 @@
 <li>上传文件</li>
 </ol>
 <p><strong>上传的文件必须是压缩包</strong></p>
-<p>在sftp下使用命令：put 本地路径 服务器路径。例如你想把文件放到服务器的``/var/www/tmp<code>目录下  </code>put /User/xxx.zip /var/www/tmp`</p>
-<ol start="2">
+<p>在sftp下使用命令：put 本地路径 服务器路径。例如你想把文件放到服务器的<code>`/var/www/tmp</code>目录下  <code>put /User/xxx.zip /var/www/tmp</code></p>
+<ol>
 <li>解压文件</li>
 </ol>
-<p>在ssh连接到服务器的窗口下，进入上传文件的目录中  例如：<code>cd /var/www/tmp 执行 unzip xxx.zip</code></p>
-<ol start="3">
+<p>在ssh连接到服务器的窗口下，进入上传文件的目录中  例如：<code>cd /var/www/tmp
+执行 unzip xxx.zip</code></p>
+<ol>
 <li>下载文件</li>
 </ol>
 <p>在sftp下使用命令：get 源文件路径 存放本地路径。例如你想把文件放到服务器的<code>/var/www/tmp</code>目录下  <code>get /var/www/tmp/xxx.zip /User/xxx.zip</code></p>

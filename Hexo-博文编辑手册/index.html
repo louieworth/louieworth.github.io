@@ -412,7 +412,7 @@
 
       
         <script src="/assets/js/APlayer.min.js"> </script><blockquote>
-<p>转载自 <a href="%5Bhttps://vel.life/Hexo-%E5%8D%9A%E6%96%87%E7%BC%96%E8%BE%91%E6%89%8B%E5%86%8C/#Reference%5D(https://vel.life/Hexo-%E5%8D%9A%E6%96%87%E7%BC%96%E8%BE%91%E6%89%8B%E5%86%8C/#Reference)">Hexo-博文编辑手册</a></p>
+<p>转载自 <a href="[https://vel.life/Hexo-%E5%8D%9A%E6%96%87%E7%BC%96%E8%BE%91%E6%89%8B%E5%86%8C/#Reference](https://vel.life/Hexo-博文编辑手册/#Reference">Hexo-博文编辑手册</a>)</p>
 </blockquote>
 <h1 id="Hexo常见命令"><a href="#Hexo常见命令" class="headerlink" title="Hexo常见命令"></a>Hexo常见命令</h1><p>更多知识见hexo的<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">官方文档</a>。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">&quot;postName&quot;</span> <span class="comment">#新建文章</span></span><br><span class="line">hexo new page <span class="string">&quot;pageName&quot;</span> <span class="comment">#新建页面</span></span><br><span class="line">hexo generate <span class="comment">#生成静态页面至public目录</span></span><br><span class="line">hexo server <span class="comment">#开启预览访问端口（默认端口4000，&#x27;ctrl + c&#x27;关闭server）</span></span><br><span class="line">hexo deploy <span class="comment">#部署到GitHub</span></span><br><span class="line">hexo <span class="built_in">help</span>  <span class="comment"># 查看帮助</span></span><br><span class="line">hexo version  <span class="comment">#查看Hexo的版本</span></span><br></pre></td></tr></table></figure>
@@ -420,14 +420,14 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo n == hexo new</span><br><span class="line">hexo g == hexo generate</span><br><span class="line">hexo s == hexo server</span><br><span class="line">hexo d == hexo deploy</span><br></pre></td></tr></table></figure>
 <p>组合命令：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo s -g <span class="comment">#生成并本地预览</span></span><br><span class="line">hexo d -g <span class="comment">#生成并上传</span></span><br></pre></td></tr></table></figure>
-<p>其中，**hexo d -g **是最常用的。</p>
+<p>其中，<strong>hexo d -g </strong>是最常用的。</p>
 <h2 id="草稿"><a href="#草稿" class="headerlink" title="草稿"></a>草稿</h2><p>草稿相当于很多博客都有的“私密文章”功能。</p>
 <p>$ hexo new draft “new draft”</p>
 <p>会在source/_drafts目录下生成一个new-draft.md文件。但是这个文件不被显示在页面上，链接也访问不到。也就是说如果你想把某一篇文章移除显示，又不舍得删除，可以把它移动到_drafts目录之中。</p>
 <p>如果你希望强行预览草稿，更改配置文件：</p>
 <p>render_drafts: true</p>
 <p>或者，如下方式启动server：</p>
-<p>$ hexo server –drafts</p>
+<p>$ hexo server —drafts</p>
 <p>下面这条命令可以把草稿变成文章，或者页面：</p>
 <p>$ hexo publish [layout] <filename></filename></p>
 <h1 id="博文参数设置"><a href="#博文参数设置" class="headerlink" title="博文参数设置"></a>博文参数设置</h1><p>默认参数三个：</p>
@@ -479,7 +479,7 @@
 <p>值得注意的是，图片的引用格式需要<strong>无前缀</strong>：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![期望效果](<span class="number">1530785095341.</span>png)</span><br></pre></td></tr></table></figure>
 <p>Plus. 尝试了如下的Typora修改，发现会有一个asset的后缀名，也挺麻烦。</p>
-<p><img src="/Hexo-%E5%8D%9A%E6%96%87%E7%BC%96%E8%BE%91%E6%89%8B%E5%86%8C/1530786175568.png"></p>
+<p><img src="/Hexo-%E5%8D%9A%E6%96%87%E7%BC%96%E8%BE%91%E6%89%8B%E5%86%8C/1530786175568.png" alt></p>
 <p>这个方法暂时不能用。233.</p>
 <p>比较尴尬的是，此时，图片在本地编辑的时候就不能实时查看了。。。简单来说，实际操作起来有点麻烦。。。</p>
 <p>学（zhuang）习（bi）的道路果然天高地远~</p>
@@ -489,7 +489,7 @@
 </blockquote>
 <h1 id="NexT主题"><a href="#NexT主题" class="headerlink" title="NexT主题"></a>NexT主题</h1><p>Hexo有很多主题可以用。</p>
 <p>我选用了<a target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next/blob/master/README.cn.md">NexT</a>主题，看起来很不错~（<a target="_blank" rel="noopener" href="http://theme-next.iissnan.com/">next官网</a>)</p>
-<p>​    （超级Fancy的 <strong>Muse 方案</strong>: <a target="_blank" rel="noopener" href="https://leaferx.online/">LEAFERx</a> | <a target="_blank" rel="noopener" href="https://notes.wanghao.work/">XiaMo</a> | <a target="_blank" rel="noopener" href="https://oawan.me/">OAwan</a> ）</p>
+<p>​    （超级Fancy的 <strong>Muse 方案</strong>: <a target="_blank" rel="noopener" href="https://leaferx.online/">LEAFERx</a> | <a target="_blank" rel="noopener" href="https://notes.wanghao.work/">XiaMo</a> | <a target="_blank" rel="noopener" href="https://oawan.me/">OAwan</a> ）</p>
 <p>Github开源，有官方中文Handbook【点击前面<a target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next/blob/master/README.cn.md">NexT</a>链接即可】。就不啰嗦了~</p>
 <p>也可以参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/fengxiongZz/p/7707568.html">使用Hexo+Github一步步搭建属于自己的博客（进阶）</a>（相对来说比较简明）</p>
 <p>最后的效果如何呢~既然你已经看到这里了。。。2333</p>
@@ -515,20 +515,17 @@
 <p>实现：<br>网上有大神已经写好一个插件，具体实现如下：</p>
 <p>在博客bash中执行下列命令安装</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm <span class="keyword">install</span> <span class="comment">--save hexo-pdf</span></span><br></pre></td></tr></table></figure>
-<ol start="2">
+<ol>
 <li>使用<br>外部文章网页链接</li>
 </ol>
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% pdf http:<span class="regexp">//</span><span class="number">7</span>xov2f.com1.z0.glb.clouddn.com/bash_freshman.pdf %&#125;</span><br></pre></td></tr></table></figure>
-
 <p>本地，即我们需要上传的【需求】</p>
 <p>在博客source_posts\，文件夹下创建一个文章如test.md,同时需要再创建一个==同名的test文件夹==，放我们要上传的PDF文章</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 论文研究</span><br><span class="line">date: 2018-05-30 20:07:12</span><br><span class="line">tags: 笔记</span><br><span class="line">categories: 论文笔记</span><br><span class="line">---</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">center</span>&gt;</span></span><span class="strong">**端对端记忆网络**</span><span class="xml"><span class="tag">&lt;/<span class="name">center</span>&gt;</span></span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">&#123;% pdf  test.pdf %&#125; </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-
 <h1 id="评论区设置"><a href="#评论区设置" class="headerlink" title="评论区设置"></a>评论区设置</h1><p>使用<a target="_blank" rel="noopener" href="https://valine.js.org/quickstart.html">Valine</a>。极简主义，赞。</p>
 <p>更实在的教程：<a target="_blank" rel="noopener" href="https://blog.csdn.net/blue_zy/article/details/79071414">为你的Hexo加上评论系统-Valine</a>。</p>
 <p>新增：一个 <a target="_blank" rel="noopener" href="https://github.com/ZvonimirSun/Valine-Admin">Valine 的拓展应用</a>，用来增强 Valine 的邮件通知。</p>
-<p>​    也可以参考：<a target="_blank" rel="noopener" href="http://www.zhaojun.im/hexo-valine-admin/">Hexo 优化 — Valine 扩展之邮件通知</a>。</p>
+<p>​    也可以参考：<a target="_blank" rel="noopener" href="http://www.zhaojun.im/hexo-valine-admin/">Hexo 优化 —- Valine 扩展之邮件通知</a>。</p>
 <blockquote>
 <p>注：SMTP用户名和密码就是：应用想要登上你的邮箱账户所需要的密码。（一般就是邮箱用户名和密码）<br><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-hans/%E7%AE%80%E5%8D%95%E9%82%AE%E4%BB%B6%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE">SMTP</a>是一个邮箱传输协议。</p>
 </blockquote>
@@ -542,17 +539,21 @@
 <p>(网易云外链播放器)</p>
 <p>Plus. <a target="_blank" rel="noopener" href="http://link.hhtjim.com/">外链转换工具</a>, <a target="_blank" rel="noopener" href="https://www.hhtjim.com/">HHTjim’S 部落格</a>（需要手动参数调整）</p>
 <p>最后采用了折中的办法~如下：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="center"><a target="_blank" rel="noopener" href="http://link.hhtjim.com/163/29737644.mp3">BGM</a></th>
+<th style="text-align:center"><a target="_blank" rel="noopener" href="http://link.hhtjim.com/163/29737644.mp3">BGM</a></th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center"><em>Towards the Light - Jacoo</em></td>
+<tbody>
+<tr>
+<td style="text-align:center"><em>Towards the Light - Jacoo</em></td>
 </tr>
-</tbody></table>
-<h2 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h2><p>hexo-tag-dplayer： <a target="_blank" rel="noopener" href="https://github.com/NextMoe/hexo-tag-dplayer">https://github.com/NextMoe/hexo-tag-dplayer</a> </p>
+</tbody>
+</table>
+</div>
+<h2 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h2><p>hexo-tag-dplayer： <a target="_blank" rel="noopener" href="https://github.com/NextMoe/hexo-tag-dplayer">https://github.com/NextMoe/hexo-tag-dplayer</a> </p>
 <p>安装命令：</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> hexo-tag-dplayer</span><br></pre></td></tr></table></figure>
 <p>效果展示：</p>
@@ -561,8 +562,7 @@
 <p>(Bilibili分享-嵌入)</p>
 <p>More： <a target="_blank" rel="noopener" href="https://blog.csdn.net/ei__nino/article/details/7435794">在HTML中添加视频的代码</a></p>
 <h3 id="视频属性常用设定"><a href="#视频属性常用设定" class="headerlink" title="视频属性常用设定"></a>视频属性常用设定</h3><ul>
-<li><p><strong>视频居中</strong></p>
-<ul>
+<li><strong>视频居中</strong><ul>
 <li>使用<code>&lt;center&gt; ... &lt;/center&gt;</code></li>
 </ul>
 </li>
@@ -579,26 +579,30 @@
 </ul>
 </li>
 </ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="center">值</th>
-<th align="left">描述</th>
+<th style="text-align:center">值</th>
+<th style="text-align:left">描述</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">auto</td>
-<td align="left">在需要的情况下出现滚动条（默认值）。</td>
+<tbody>
+<tr>
+<td style="text-align:center">auto</td>
+<td style="text-align:left">在需要的情况下出现滚动条（默认值）。</td>
 </tr>
 <tr>
-<td align="center">yes</td>
-<td align="left">始终显示滚动条（即使不需要）。</td>
+<td style="text-align:center">yes</td>
+<td style="text-align:left">始终显示滚动条（即使不需要）。</td>
 </tr>
 <tr>
-<td align="center">no</td>
-<td align="left">从不显示滚动条（即使需要）。</td>
+<td style="text-align:center">no</td>
+<td style="text-align:left">从不显示滚动条（即使需要）。</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <ul>
 <li><code>src</code><ul>
 <li>文件的地址。</li>
@@ -614,22 +618,26 @@
 </ul>
 </li>
 </ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="center">值</th>
-<th align="left">描述</th>
+<th style="text-align:center">值</th>
+<th style="text-align:left">描述</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">1</td>
-<td align="left">有边框（默认值）。</td>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:left">有边框（默认值）。</td>
 </tr>
 <tr>
-<td align="center">0</td>
-<td align="left">无边框。</td>
+<td style="text-align:center">0</td>
+<td style="text-align:left">无边框。</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <ul>
 <li>framespacing是框架元素与它周边元素的空格个数。一般没什么作用。</li>
 <li><code>allowfullscreen</code><ul>
@@ -638,12 +646,12 @@
 </li>
 </ul>
 <ul>
-<li><code>scale </code><ul>
+<li><code>scale</code><ul>
 <li>说明: （可选）当 width 和 height 值是百分比时，定义应用程序如何放置在浏览器窗口中。</li>
-<li>  “Showall”（默认值）使整个 flash 内容显示在指定区域中，且不会发生扭曲，同时保持它的原始高宽比。边框可能会出现在应用程序的两侧。  </li>
+<li>“Showall”（默认值）使整个 flash 内容显示在指定区域中，且不会发生扭曲，同时保持它的原始高宽比。边框可能会出现在应用程序的两侧。  </li>
 <li>“Noborder”对 flash 内容进行缩放以填充指定区域，不会发生扭曲，它会使应用程序保持原始高宽比，但有可能会进行一些裁剪。</li>
-<li>  “Exactfit”使整个 flash 内容显示在指定区域中，但不尝试保持原始高宽比。可能会发生扭曲。</li>
-<li>  如果忽略此属性（而且 width 和 height 值是百分比），则它的默认值是 showall。  </li>
+<li>“Exactfit”使整个 flash 内容显示在指定区域中，但不尝试保持原始高宽比。可能会发生扭曲。</li>
+<li>如果忽略此属性（而且 width 和 height 值是百分比），则它的默认值是 showall。  </li>
 </ul>
 </li>
 </ul>
@@ -665,11 +673,20 @@
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;font <span class="attribute">face</span>=<span class="string">&quot;黑体&quot;</span>&gt;黑体字示例&lt;/font&gt;</span><br><span class="line">&lt;font <span class="attribute">face</span>=<span class="string">&quot;微软雅黑&quot;</span>&gt;微软雅黑示例&lt;/font&gt;</span><br><span class="line">&lt;font <span class="attribute">face</span>=<span class="string">&quot;STCAIYUN&quot;</span>&gt;华文彩云示例&lt;/font&gt;</span><br><span class="line">&lt;font <span class="attribute">color</span>=#0099ff <span class="attribute">size</span>=5 <span class="attribute">face</span>=<span class="string">&quot;STCAIYUN&quot;</span>&gt;color=#0099ff <span class="attribute">size</span>=6 <span class="attribute">face</span>=<span class="string">&quot;黑体&quot;</span>&lt;/font&gt;</span><br><span class="line">&lt;font <span class="attribute">color</span>=red <span class="attribute">size</span>=5&gt;color=#00ffff&lt;/font&gt;12345</span><br></pre></td></tr></table></figure>
 <p>size可以根据实际大小进行设置，一般不超过7。</p>
 <p><strong>来看看效果：</strong></p>
-<p><font face="黑体">黑体字示例</font><br><font face="微软雅黑">微软雅黑示例</font><br><font face="STCAIYUN">华文彩云示例</font><br><font color="#0099ff" size="5" face="STCAIYUN">color=#0099ff size=6 face=”黑体”</font><br><font color="red" size="5">color=#00ffff</font>12345</p>
-<p><strong>常用</strong>：</p>
-<p><font color="turquoiseblue">turquoiseblue 翠蓝色</font></p>
-<p><font color="red">red 红色</font>其他常用颜色。</p>
-<p><font face="华文楷体">华文楷体示例</font></p>
+<font face="黑体">黑体字示例</font>
+<font face="微软雅黑">微软雅黑示例</font>
+<font face="STCAIYUN">华文彩云示例</font>
+<font color="#0099ff" size="5" face="STCAIYUN">color=#0099ff size=6 face="黑体"</font>
+<font color="red" size="5">color=#00ffff</font>12345
+
+**常用**：
+
+<font color="turquoiseblue">turquoiseblue 翠蓝色</font>
+
+<font color="red">red 红色</font>其他常用颜色。
+
+<font face="华文楷体">华文楷体示例</font>
+
 <h1 id="修改字体大小"><a href="#修改字体大小" class="headerlink" title="修改字体大小"></a>修改字体大小</h1><p>打开<code>\themes\next\source\css\ _variables\base.styl</code>文件，将<code>$font-size-base</code>改成<code>16px</code>，如下所示：</p>
 <figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"><span class="meta-keyword">$font</span>-size-base =16px</span></span><br></pre></td></tr></table></figure>
 <h1 id="RSS"><a href="#RSS" class="headerlink" title="RSS"></a>RSS</h1><p>RSS就是我博客右边边栏站点概览中显示RSS文字的东西。RSS(Really Simple Syndication)是一种描述和同步网站内容的格式，是使用最广泛的XML应用发布一个RSS文件。<br>这个RSS Feed中包含的信息就能直接被其他站点调用，而且由于这些数据都是标准的XML格式，所以也能在其他的终端和服务中使用，是一种描述和同步网站内容的格式。<br>可以通过以下命令进行安装</p>
@@ -692,14 +709,14 @@
 <hr>
 <p>更新：个人域名开通~</p>
 <blockquote>
-<p><a target="_blank" rel="noopener" href="https://skvel.tk/">skvel.tk</a></p>
+<p><a target="_blank" rel="noopener" href="https://skvel.tk">skvel.tk</a></p>
 </blockquote>
 <p>这是一个免费的域名。从<a target="_blank" rel="noopener" href="https://my.freenom.com/domains.php">freenom</a>上申请，在<a target="_blank" rel="noopener" href="https://wanwang.aliyun.com/domain/dns/free/">阿里云解析</a>上定向到指定的博客地址（还得在frennom上更新一下DNSserver，会有提示），在<code>source</code>目录下新建CNAME保存域名，即可生效！</p>
-<p>还要更新Valine评论系统的白名单，可登录<a target="_blank" rel="noopener" href="https://leancloud.cn/">LeanCloud</a>修改。</p>
+<p>还要更新Valine评论系统的白名单，可登录<a target="_blank" rel="noopener" href="https://leancloud.cn">LeanCloud</a>修改。</p>
 <p>不过，从这个域名访问的话，<strong>点击量是重新统计的</strong>。这就比较尴尬orz</p>
 <p>更新：个人域名更新~</p>
 <blockquote>
-<p><a target="_blank" rel="noopener" href="https://vel.life/">vel.life</a></p>
+<p><a target="_blank" rel="noopener" href="https://vel.life">vel.life</a></p>
 </blockquote>
 <p>BTW，现在Github设置Https协议可以直接在Setting里的Custom domain里<code>Enforce HTTPS</code>就好。</p>
 <p>参考：</p>
@@ -767,7 +784,7 @@
 <hr>
 <p>如今网络审查愈演愈烈。VPN或已经不再具有好的效用了？</p>
 <blockquote>
-<p>**<a target="_blank" rel="noopener" href="https://github.com/shadowsocks/shadowsocks-windows/wiki/Shadowsocks-Windows-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E">Shadowsocks</a>**（SS），SSR，Brook等基于分布式链路的加密传输方式比较流行。</p>
+<p><strong><a target="_blank" rel="noopener" href="https://github.com/shadowsocks/shadowsocks-windows/wiki/Shadowsocks-Windows-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E">Shadowsocks</a></strong>（SS），SSR，Brook等基于分布式链路的加密传输方式比较流行。</p>
 <p>可使用免费节点：（需要翻墙才能打开）</p>
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://free-ss.site/">https://free-ss.site/</a><br><a target="_blank" rel="noopener" href="https://www.free-ss.tw/">https://www.free-ss.tw/</a><br><a target="_blank" rel="noopener" href="https://www.ssrtool.com/tool/free_ssr">https://www.ssrtool.com/tool/free_ssr</a><br><a target="_blank" rel="noopener" href="https://shadowsocks-share.herokuapp.com/">https://shadowsocks-share.herokuapp.com/</a><br><a target="_blank" rel="noopener" href="https://www.wuwweb.com/">https://www.wuwweb.com/</a><br><a target="_blank" rel="noopener" href="http://www.softpen.net/#Portfolio">http://www.softpen.net/#Portfolio</a><br><a target="_blank" rel="noopener" href="https://doub.io/sszhfx/">https://doub.io/sszhfx/</a><br><a target="_blank" rel="noopener" href="https://www.hongchengziyuan.com/?cat=4">https://www.hongchengziyuan.com/?cat=4</a></p>
@@ -782,9 +799,9 @@
 <p>（这些站点的学名叫：<strong>shadowsocks 面板</strong>（Panal）。可见：<a target="_blank" rel="noopener" href="https://doub.io/ss-jc13/">这里</a>。如果想多用户建站可以参考：<a target="_blank" rel="noopener" href="https://lala.im/931.html">教程</a>，<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/18ba7b6809cc">教程2</a>）</p>
 </blockquote>
 <hr>
-<p>BTW，**<a target="_blank" rel="noopener" href="https://www.wuwweb.com/?page_id=1030">Tor</a><strong>可以用来保护个人隐私，</strong><a target="_blank" rel="noopener" href="https://telegram.org/">Telegram</a>**用来加密通信。</p>
+<p>BTW，<strong><a target="_blank" rel="noopener" href="https://www.wuwweb.com/?page_id=1030">Tor</a></strong>可以用来保护个人隐私，<strong><a target="_blank" rel="noopener" href="https://telegram.org/">Telegram</a></strong>用来加密通信。</p>
 <hr>
-<p>BBTW，再推荐一个开源的中文输入法：**<a target="_blank" rel="noopener" href="https://rime.im/">Rime</a>**中州韻輸入法。以及<a target="_blank" rel="noopener" href="https://github.com/rime/home/wiki/UserGuide">使用指南</a>。</p>
+<p>BBTW，再推荐一个开源的中文输入法：<strong><a target="_blank" rel="noopener" href="https://rime.im/">Rime</a></strong>中州韻輸入法。以及<a target="_blank" rel="noopener" href="https://github.com/rime/home/wiki/UserGuide">使用指南</a>。</p>
 <h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><h2 id="博文编辑Reference"><a href="#博文编辑Reference" class="headerlink" title="博文编辑Reference"></a>博文编辑Reference</h2><p><a target="_blank" rel="noopener" href="http://linbinghe.com/2017/982b12f0.html">如何搭建一个拥有个人域名又带点Geek味的独立博客【主题超棒】</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html">使用hexo+github搭建免费个人博客详细教程【内容详细】</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/fengxiongZz/p/7707219.html">使用Hexo+Github一步步搭建属于自己的博客【基础】</a></p>

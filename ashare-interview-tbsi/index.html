@@ -88,14 +88,14 @@
 <meta property="og:site_name" content="Louieworth&#39;s blog">
 <meta property="og:description" content="ashare的基本数据介绍和top teams的想法">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://www.googleapis.com/download/storage/v1/b/kaggle-user-content/o/inbox%2F2749718%2Fa58b8c52f3a372b5331cd9270d7ce3c3%2Foriginal.PNG?generation=1577536664878419&alt=media">
+<meta property="og:image" content="https://www.googleapis.com/download/storage/v1/b/kaggle-user-content/o/inbox%2F2749718%2Fa58b8c52f3a372b5331cd9270d7ce3c3%2Foriginal.PNG?generation=1577536664878419&amp;alt=media">
 <meta property="article:published_time" content="2020-06-06T23:17:09.000Z">
 <meta property="article:modified_time" content="2020-12-21T06:53:25.920Z">
 <meta property="article:author" content="Louieworth">
 <meta property="article:tag" content="Interview">
 <meta property="article:tag" content="ML">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://www.googleapis.com/download/storage/v1/b/kaggle-user-content/o/inbox%2F2749718%2Fa58b8c52f3a372b5331cd9270d7ce3c3%2Foriginal.PNG?generation=1577536664878419&alt=media">
+<meta name="twitter:image" content="https://www.googleapis.com/download/storage/v1/b/kaggle-user-content/o/inbox%2F2749718%2Fa58b8c52f3a372b5331cd9270d7ce3c3%2Foriginal.PNG?generation=1577536664878419&amp;alt=media">
 
 
 
@@ -469,7 +469,7 @@
 <li>Large positive/negative spikes</li>
 <li>Additional anomalies determined by visual inspection</li>
 </ol>
-<p>We noticed that some of these anomalies were consistent across multiple buildings at a site. We validated potential anomalies using all buildings in a site–if an anomaly showed up at the same time at multiple buildings, we could be reasonably certain that this was indeed a true anomaly. This allowed us to remove anomalies that were not necessarily part of a long streak of constant values or a large spike.</p>
+<p>We noticed that some of these anomalies were consistent across multiple buildings at a site. We validated potential anomalies using all buildings in a site—if an anomaly showed up at the same time at multiple buildings, we could be reasonably certain that this was indeed a true anomaly. This allowed us to remove anomalies that were not necessarily part of a long streak of constant values or a large spike.</p>
 <h3 id="Impute-Missing-Temperature-Values"><a href="#Impute-Missing-Temperature-Values" class="headerlink" title="Impute Missing Temperature Values"></a>Impute Missing Temperature Values</h3><p>There were a lot of missing values in temperature metadata. We found that imputing the missing data using <strong>linear interpolation</strong> helped our models.</p>
 <blockquote>
 <p> linear interpolation(线性插值)</p>
@@ -478,22 +478,16 @@
 <p>Near the end of the competition, we tried standardizing <code>meter_reading</code> by dividing by <code>square_feet</code>; i.e., we predicted <code>log1p(meter_reading/square_feet)</code>. Isamu came up with the idea after reading this <a target="_blank" rel="noopener" href="https://www.kaggle.com/c/ashrae-energy-prediction/discussion/122263">discussion post</a> by <a target="_blank" rel="noopener" href="https://www.kaggle.com/artoby">Artyom Vorobyov</a>. The models trained with the standardized target added diversity to our final ensemble and improved our score by about <strong>0.002</strong>. If we had more time we would have liked to explore this idea further; for example, we could have tried to predict <code>log1p(meter_reading)/square_feet</code> or created features using the standardized targets.</p>
 <h2 id="Feature-Engineering-and-Feature-Selection"><a href="#Feature-Engineering-and-Feature-Selection" class="headerlink" title="Feature Engineering and Feature Selection"></a>Feature Engineering and Feature Selection</h2><p>We took different approaches to feature engineering and feature selection in this competition. Isamu took a conservative approach and carefully selected features; on the other hand, Matt took a brute force approach and used most of them. Here are the features that helped:</p>
 <ul>
-<li><p>Raw features from train/test, weather metadata, and building metadata</p>
-</li>
-<li><p>Categorical interactions such as the concatenation of <code>building_id</code> and <code>meter</code></p>
-</li>
-<li><p>Time series features including holiday flags and time of day features</p>
-</li>
-<li><p>Count (frequency) features</p>
-</li>
-<li><p>Lag temperature features similar to those found in the public kernels</p>
-</li>
+<li>Raw features from train/test, weather metadata, and building metadata</li>
+<li>Categorical interactions such as the concatenation of <code>building_id</code> and <code>meter</code></li>
+<li>Time series features including holiday flags and time of day features</li>
+<li>Count (frequency) features</li>
+<li>Lag temperature features similar to those found in the public kernels</li>
 <li><p>Smoothed and 1st, 2nd-order differentiation temperature features using Savitzky-Golay filter (see the figure below)</p>
 </li>
 <li><p>Cyclic encoding of periodic features; e.g., <code>hour</code> gets mapped to <code>hour_x = cos(2*pi*hour/24)</code> and <code>hour_y = sin(2*pi*hour/24)</code></p>
 </li>
-<li><p>Bayesian target encoding (see this <a target="_blank" rel="noopener" href="https://www.kaggle.com/mmotoki/hierarchical-bayesian-target-encoding">kernel</a>)</p>
-</li>
+<li>Bayesian target encoding (see this <a target="_blank" rel="noopener" href="https://www.kaggle.com/mmotoki/hierarchical-bayesian-target-encoding">kernel</a>)</li>
 </ul>
 <h2 id="Models"><a href="#Models" class="headerlink" title="Models"></a>Models</h2><p>We trained CatBoost, LightGBM, and MLP models on different subsets of the data:</p>
 <ul>
@@ -565,13 +559,13 @@
 <p>I think this strategy enabled us to take 2nd place in private (14th. Public, without leak site-4)</p>
 <p>From the beginning, I have tried to make sure that this strategy does not backfire and did an experiment.</p>
 <hr>
-<p>I took a building (building_id == 1000, meter == 0) that had no outlier.<br><img src="https://www.googleapis.com/download/storage/v1/b/kaggle-user-content/o/inbox%2F2749718%2Fa58b8c52f3a372b5331cd9270d7ce3c3%2Foriginal.PNG?generation=1577536664878419&alt=media" alt="img"></p>
+<p>I took a building (building_id == 1000, meter == 0) that had no outlier.<br><img src="https://www.googleapis.com/download/storage/v1/b/kaggle-user-content/o/inbox%2F2749718%2Fa58b8c52f3a372b5331cd9270d7ce3c3%2Foriginal.PNG?generation=1577536664878419&amp;alt=media" alt="img"></p>
 <p>If I train the model with this data and predict the same building, a cv: 0.15 and lb: 0.11 will result. With postprocessing&gt; 1 or &lt;1 lb gets worse. (Just to illustrate, that postprocess doesn’t work for data without outlier)</p>
 <hr>
 <p>However, if I have data with outliers (which I simply generated by setting month 2 to 0 in the train and testing month 11 to 0), a CV: 1.16 and <strong>LB: 1.255</strong> come out</p>
 <p>TRAIN:</p>
 <p>TEST:</p>
-<p>With postprocess (* 0.94) slightly better <strong>LB: 1.23</strong></p>
+<p>With postprocess (<em> 0.94) slightly better <em>*LB: 1.23</em></em></p>
 <h1 id="3rd"><a href="#3rd" class="headerlink" title="3rd"></a>3rd</h1><p>Thank you to Kaggle and ASHRAE for hosting this competition</p>
 <p>My solution is likely to disappoint some of you given the lack of sophistication.</p>
 <p>I spent most of my time (too much) on trying feature engineering, trying to look a cv split correlated to public LB (didn’t happen), trying to find a neural network architecture that will give me a boost in local cv and public LB (didn’t happen) and browsing research papers related energy prediction in the subway.</p>

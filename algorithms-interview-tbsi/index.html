@@ -89,27 +89,26 @@
 <meta property="og:description" content="Machine Learning models for interview">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://yoursite.com/algorithms-interview-tbsi/image-20200319095835000.png">
-<meta property="og:image" content="http://yoursite.com/algorithms-interview-tbsi/algorithms-interview-tbsi%5Cimage-20200319101927163.png">
-<meta property="og:image" content="http://yoursite.com/algorithms-interview-tbsi/algorithms-interview-tbsi%5Cimage-20200319102452402.png">
+<meta property="og:image" content="http://yoursite.com/algorithms-interview-tbsi/image-20200319101927163.png">
+<meta property="og:image" content="http://yoursite.com/algorithms-interview-tbsi/image-20200319102452402.png">
 <meta property="og:image" content="http://yoursite.com/algorithms-interview-tbsi/fullsizerender(3).jpg">
-<meta property="og:image" content="http://yoursite.com/algorithms-interview-tbsi/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20200310111936547.png">
 <meta property="og:image" content="http://yoursite.com/algorithms-interview-tbsi/image-20200319114320476.png">
-<meta property="og:image" content="http://yoursite.com/algorithms-interview-tbsi/algorithms-interview-tbsi%5Cfullsizerender(4).jpg">
-<meta property="og:image" content="http://yoursite.com/algorithms-interview-tbsi/algorithms-interview-tbsi%5Cfullsizerender(5).jpg">
+<meta property="og:image" content="http://yoursite.com/algorithms-interview-tbsi/fullsizerender(4">
+<meta property="og:image" content="http://yoursite.com/algorithms-interview-tbsi/fullsizerender(5">
 <meta property="og:image" content="http://yoursite.com/algorithms-interview-tbsi/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20200325183431891.png">
 <meta property="og:image" content="http://yoursite.com/algorithms-interview-tbsi/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20200325183447961.png">
-<meta property="og:image" content="http://yoursite.com/algorithms-interview-tbsi/algorithms-interview-tbsi%5Cimage-20200424111509351.png">
+<meta property="og:image" content="http://yoursite.com/algorithms-interview-tbsi/image-20200424111509351.png">
 <meta property="og:image" content="http://yoursite.com/algorithms-interview-tbsi/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20200424111345363.png">
-<meta property="og:image" content="http://yoursite.com/algorithms-interview-tbsi/algorithms-interview-tbsi%5Cimage-20200424111525138.png">
+<meta property="og:image" content="http://yoursite.com/algorithms-interview-tbsi/image-20200424111525138.png">
 <meta property="og:image" content="http://yoursite.com/algorithms-interview-tbsi/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20200424111444356.png">
-<meta property="og:image" content="http://yoursite.com/algorithms-interview-tbsi/algorithms-interview-tbsi%5Cimage-20200424111638362.png">
+<meta property="og:image" content="http://yoursite.com/algorithms-interview-tbsi/image-20200424111638362.png">
 <meta property="og:image" content="http://yoursite.com/algorithms-interview-tbsi/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20200424111647537.png">
-<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5B-y_i(w%C2%B7x_i+b)%5D_+">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5B-y_i%28w%C2%B7x_i%2Bb%29%5D_%2B">
 <meta property="og:image" content="https://pic4.zhimg.com/50/v2-0884e199d2198ec716f3b09536b10213_hd.jpg">
 <meta property="og:image" content="https://pic4.zhimg.com/80/v2-0884e199d2198ec716f3b09536b10213_720w.jpg">
 <meta property="og:image" content="https://www.zhihu.com/equation?tex=x_4">
 <meta property="og:image" content="https://pic4.zhimg.com/80/v2-a04fdb43f41bd9e4fd06306558ab61f2_720w.jpg">
-<meta property="og:image" content="http://yoursite.com/algorithms-interview-tbsi/algorithms-interview-tbsi%5Cimage-20200327094209310.png">
+<meta property="og:image" content="http://yoursite.com/algorithms-interview-tbsi/image-20200327094209310.png">
 <meta property="article:published_time" content="2020-06-06T22:48:38.000Z">
 <meta property="article:modified_time" content="2020-12-21T06:54:44.389Z">
 <meta property="article:author" content="Louieworth">
@@ -432,27 +431,28 @@
       
         <script src="/assets/js/APlayer.min.js"> </script><h1 id="Linear-Regression"><a href="#Linear-Regression" class="headerlink" title="Linear Regression"></a>Linear Regression</h1><ol>
 <li><p>First, define the hypothesis function as </p>
-<p>$$<br>h_\theta=\theta_0 + \theta_1 x<br>$$</p>
-</li>
+<script type="math/tex; mode=display">
+h_\theta=\theta_0 + \theta_1 x</script></li>
 <li><p>define the cost function as</p>
 </li>
 </ol>
-<p>$$<br>J(\theta_1,\theta_2)=\frac{1}{2m}\sum_{i=1}^m(h_\theta(x^{(i)})-y^{(i)})^2<br>$$</p>
-<ol start="3">
+<script type="math/tex; mode=display">
+J(\theta_1,\theta_2)=\frac{1}{2m}\sum_{i=1}^m(h_\theta(x^{(i)})-y^{(i)})^2</script><ol>
 <li><p>our goal is to minimize the cost function</p>
 <p>  we have two ways to minimize the cost function.</p>
 <ol>
 <li><p>since it’s a convex optimization, we can use the gradient descent to minimize it.</p>
 <p>batch gradient descent</p>
 <blockquote>
-<p><font color="red">(考点1.三种梯度下降的区别和联系)</font></p>
+<font color="red">(考点1.三种梯度下降的区别和联系)</font>
+
 </blockquote>
-<p>$$<br>repeat\ untill\ convergence\\theta_j:=\theta_j-\alpha J(\theta_0,\theta_1)\   (for\ j=0\ and\ j=1)<br>$$</p>
-<blockquote>
-<p><font color="red">考点2，如何确定学利率alpha的大小？以及学习率大小对拟合的影响？</font></p>
-</blockquote>
-<blockquote>
-<p><font color="red">考点3 normal equation(正规方程)和梯度下降求解的区别？</font></p>
+<script type="math/tex; mode=display">
+repeat\ untill\ convergence\\\theta_j:=\theta_j-\alpha J(\theta_0,\theta_1)\   (for\ j=0\ and\ j=1)</script><blockquote>
+<font color="red">考点2，如何确定学利率alpha的大小？以及学习率大小对拟合的影响？</font>
+
+<font color="red">考点3 normal equation(正规方程)和梯度下降求解的区别？</font>
+
 </blockquote>
 </li>
 </ol>
@@ -460,22 +460,20 @@
 </ol>
 <h1 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h1><blockquote>
 <p>L1-norm和L2-norm的区别？</p>
-</blockquote>
-<blockquote>
 <p>为什么正则化可以防止过拟合？</p>
-</blockquote>
-<blockquote>
 <p>什么是曼哈顿距离，什么是欧式几何距离？</p>
 </blockquote>
 <h1 id="Logistic-Regression"><a href="#Logistic-Regression" class="headerlink" title="Logistic Regression"></a>Logistic Regression</h1><p> 如何凸显你是一个对逻辑回归已经非常了解的人呢。那就是用一句话概括它！逻辑回归假设数据服从<font color="red">伯努利分布,</font>通过<font color="red">极大化似然函数</font>的方法，运用梯度下降来求解参数，来达到将数据二分类的目的。</p>
 <blockquote>
-<p><font color="red">考点1  伯努利分布 与MLE的定义</font></p>
+<font color="red">考点1  伯努利分布 与MLE的定义</font>
+
 </blockquote>
 <p><img src="/algorithms-interview-tbsi/image-20200319095835000.png" alt="image-20200319095835000"></p>
-<ol start="2">
+<ol>
 <li><p>优化损失函数的方法。  <strong>梯度下降</strong>。</p>
 <blockquote>
-<p><font color="red">考点2 为什么要使用极大似然函数作为损失函数，为什么不继续使用平方损失函数？</font></p>
+<font color="red">考点2 为什么要使用极大似然函数作为损失函数，为什么不继续使用平方损失函数？</font>
+
 </blockquote>
 <ol>
 <li>如果使用MSE(mean square estimation)的话，就变成Non-convex(非凸优化)问题。</li>
@@ -501,7 +499,7 @@
 <p>1）计算简单</p>
 <p>2）简化模型</p>
 <p>3）增强模型的泛化能力，不易受噪声的影响</p>
-<ol start="4">
+<ol>
 <li>为什么LR采用交叉熵而不是MSE？  <a target="_blank" rel="noopener" href="https://blog.csdn.net/dpengwang/article/details/96597606">answer</a></li>
 </ol>
 <h2 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h2><p>优点</p>
@@ -556,18 +554,21 @@
 </blockquote>
 <p>优点：精度高、对异常值不敏感、无数据输入假定 缺点：计算复杂度高、空间复杂度高 适用数据范围：数值型和标称型</p>
 <blockquote>
-<p><font color="red">问题1 k的选择有什么影响？过大会怎样？过小会怎样？</font></p>
+<font color="red">问题1 k的选择有什么影响？过大会怎样？过小会怎样？</font>
+
 </blockquote>
 </li>
 </ol>
 <h2 id="KNN的实现"><a href="#KNN的实现" class="headerlink" title="KNN的实现"></a>KNN的实现</h2><p><strong>更通俗说一遍算法的过程，来了一个新的输入实例，我们算出该实例与每一个训练点的距离（这里的复杂度为0(n)比较大，所以引出了下文的kd树等结构），然后找到前k个，这k个哪个类别数最多，我们就判断新的输入实例就是哪类！</strong></p>
 <blockquote>
-<p><font color="red">问题2 liner scanling knn disadvantages?</font></p>
+<font color="red">问题2 liner scanling knn disadvantages?</font>
+
 </blockquote>
 <p>2.与该实例最近邻的k个实例，那么最近邻的衡量标准是是什么。<strong>这个最近邻的定义</strong>是通过不同距离函数来定义，我们最常用的是<strong>欧式距离</strong>。</p>
 <p>3.为了保证每个特征同等重要性，我们这里对每个特征进行<strong>归一化。</strong></p>
 <blockquote>
-<p><font color="red">问题3 为什么需要归一化？</font></p>
+<font color="red">问题3 为什么需要归一化？</font>
+
 </blockquote>
 <p>是一种二叉树，表示对K维空间的一个划分，kd树的每个节点对应于一个K维超矩形区域。</p>
 <p>k近邻方法的一些优缺点总结</p>
@@ -575,9 +576,9 @@
 <p>2.KNN是一种在线技术，新数据可以直接加入数据集而<strong>不必进行重新训练</strong></p>
 <h2 id="缺点及改进"><a href="#缺点及改进" class="headerlink" title="缺点及改进"></a>缺点及改进</h2><p>1.当样本不平衡时，<strong>比如一个类的样本容量很大，其他类的样本容量很小</strong>，输入一个样本的时候，K个邻近值大多数都是大样本容量的那个类，这时可能会导致分类错误。</p>
 <p><strong>改进方法：对K邻近点进行加权，也就是距离近的权值大，距离远的点权值小。</strong></p>
-<p><strong>2.**计算量较大，</strong>每个待分类的样本都要计算它到全部点的距离**，根据距离排序才能求得K个临近点。</p>
+<p><strong>2.</strong>计算量较大，<strong>每个待分类的样本都要计算它到全部点的距离</strong>，根据距离排序才能求得K个临近点。</p>
 <p>改进方法：先对已知样本带你进行裁剪，事先去除分类作用不大的样本，采取kd树以及其它高级搜索方法BBF等算法减少搜索时间。</p>
-<h1 id="Naive-Bayes"><a href="#Naive-Bayes" class="headerlink" title="Naive Bayes"></a>Naive Bayes</h1><h2 id="算法流程"><a href="#算法流程" class="headerlink" title="算法流程"></a>算法流程</h2><p>In <a target="_blank" rel="noopener" href="https://en.wanweibaike.com/wiki-Machine_learning">machine learning</a>, <strong>naïve Bayes classifiers</strong> based on applying <a target="_blank" rel="noopener" href="https://en.wanweibaike.com/wiki-Bayes'_theorem">Bayes’ theorem</a> with strong (naïve) <a target="_blank" rel="noopener" href="https://en.wanweibaike.com/wiki-Statistical_independence">independence</a> assumptions between the features. </p>
+<h1 id="Naive-Bayes"><a href="#Naive-Bayes" class="headerlink" title="Naive Bayes"></a>Naive Bayes</h1><h2 id="算法流程"><a href="#算法流程" class="headerlink" title="算法流程"></a>算法流程</h2><p>In <a target="_blank" rel="noopener" href="https://en.wanweibaike.com/wiki-Machine_learning">machine learning</a>, <strong>naïve Bayes classifiers</strong> based on applying <a target="_blank" rel="noopener" href="https://en.wanweibaike.com/wiki-Bayes&#39;_theorem">Bayes’ theorem</a> with strong (naïve) <a target="_blank" rel="noopener" href="https://en.wanweibaike.com/wiki-Statistical_independence">independence</a> assumptions between the features. </p>
 <p>也是应用MLE进行估计的。</p>
 <h2 id="概率论补充知识"><a href="#概率论补充知识" class="headerlink" title="概率论补充知识"></a>概率论补充知识</h2><ol>
 <li>贝叶斯定理 Bayes’ theorem</li>
@@ -587,11 +588,10 @@
 <li>posterior probability 后验概率</li>
 <li>conditional probability 条件概率</li>
 </ul>
-<p><img src="/algorithms-interview-tbsi/algorithms-interview-tbsi%5Cimage-20200319101927163.png" alt="image-20200319101927163"></p>
-<p><img src="/algorithms-interview-tbsi/algorithms-interview-tbsi%5Cimage-20200319102452402.png" alt="image-20200319102452402"></p>
+<p><img src="/algorithms-interview-tbsi/image-20200319101927163.png" alt="image-20200319101927163"></p>
+<p><img src="/algorithms-interview-tbsi/image-20200319102452402.png" alt="image-20200319102452402"></p>
 <h2 id="贝叶斯估计"><a href="#贝叶斯估计" class="headerlink" title="贝叶斯估计"></a>贝叶斯估计</h2><p>当我们用MLE的时候可能会出现<strong>需要估计的概率值为0的情况</strong>，这会影响到后验概率的计算结果，使得分类产生误差。解决这一办法就是贝叶斯估计。具体的是：</p>
-<img src="/algorithms-interview-tbsi/fullsizerender(3).jpg" alt="fullsizerender(3)" style="zoom: 33%;">
-
+<p><img src="/algorithms-interview-tbsi/fullsizerender(3).jpg" alt="fullsizerender(3)" style="zoom: 33%;"></p>
 <p>其中，λ&gt;=0,等于在随机变量上各个取值的频数上赋予一个正数λ，当λ=1，这时候我们称为拉普拉斯平滑(Laplace smoothing)。</p>
 <h2 id="优势与缺点"><a href="#优势与缺点" class="headerlink" title="优势与缺点"></a>优势与缺点</h2><p>实现简单，高效。缺点是是分类的性能不一定高。</p>
 <h1 id="decision-Tree"><a href="#decision-Tree" class="headerlink" title="decision Tree"></a>decision Tree</h1><blockquote>
@@ -624,53 +624,72 @@
 </li>
 </ol>
 <hr>
-<h2 id="统计学知识"><a href="#统计学知识" class="headerlink" title="统计学知识"></a>统计学知识</h2><p><font color="red">1. entropy(熵)</font>: 表示了随机变量的不确定性程度。Entropy is a measure of the <em>unpredictability</em> of the Random variables.</p>
-<p><img src="/algorithms-interview-tbsi/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200310111936547.png" alt="image-20200310111936547"></p>
-<p>​    entropy越大，unpredictability 越高。</p>
-<p><font color="red">2. 信息增益  information gain</font>  information gain is the change in information entropy H from a prior state to a state that takes some information as given:</p>
+<h2 id="统计学知识"><a href="#统计学知识" class="headerlink" title="统计学知识"></a>统计学知识</h2><font color="red">1. entropy(熵)</font>: 表示了随机变量的不确定性程度。Entropy is a measure of the *unpredictability* of the Random variables.
+
+![image-20200310111936547](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200310111936547.png)
+
+​    entropy越大，unpredictability 越高。
+
+<font color="red">2. 信息增益  information gain</font>  information gain is the change in information entropy H from a prior state to a state that takes some information as given:
+
 <img src="/algorithms-interview-tbsi/image-20200319114320476.png" alt="image-20200319114320476" style="zoom:150%;">
 
-<p>​    信息增益越大的特征具有更强的分类能力。</p>
-<p><font color="red">3. 信息增益比  information gain ratio</font> 特征A对训练数据集D的信息增益比的定义：<br>$$<br>g_R(D,A)=\frac{g(D,A)}{H(D)}<br>$$<br>​    g(D,A)表示信息增益    H(D)表示经验熵</p>
-<h2 id="ID3"><a href="#ID3" class="headerlink" title="ID3"></a>ID3</h2><ul>
-<li>ID3 chooses the features based on <strong><em>information gain</em></strong></li>
-<li>untill all features’ <em>information gain</em> is pretty small or no feature we can choose </li>
-</ul>
-<h2 id="C4-5"><a href="#C4-5" class="headerlink" title="C4.5"></a>C4.5</h2><p>C4.5 is similar to ID3, but we use the information gain ratio to choose features.</p>
-<h2 id="CART"><a href="#CART" class="headerlink" title="CART"></a>CART</h2><p>classification and regression tree(CART)</p>
-<p>CART assumed decision tree is <strong>Binary Tree</strong></p>
-<p>CART tree is based on <strong>Gini index</strong> 基尼系数表示集合的不确定性</p>
-<p>we choose the gini index <strong>minmize</strong></p>
-<p>算法停止的条件就是节点中的样本个数小于预定值，或样本集的gini index指数小于预定值，或者没有更多特征。</p>
-<blockquote>
-<p><font color="red">问题1 为什么有如上三个算法</font></p>
-</blockquote>
+​    信息增益越大的特征具有更强的分类能力。
+
+<font color="red">3. 信息增益比  information gain ratio</font> 特征A对训练数据集D的信息增益比的定义：
+$$
+g_R(D,A)=\frac{g(D,A)}{H(D)}
+$$
+​    g(D,A)表示信息增益    H(D)表示经验熵
+
+## ID3
+
+- ID3 chooses the features based on ***information gain***
+- untill all features' *information gain* is pretty small or no feature we can choose 
+
+## C4.5
+
+C4.5 is similar to ID3, but we use the information gain ratio to choose features.
+
+## CART
+
+classification and regression tree(CART)
+
+CART assumed decision tree is **Binary Tree**
+
+CART tree is based on **Gini index** 基尼系数表示集合的不确定性
+
+we choose the gini index **minmize**
+
+算法停止的条件就是节点中的样本个数小于预定值，或样本集的gini index指数小于预定值，或者没有更多特征。
+
+> <font color="red">问题1 为什么有如上三个算法</font>
+
 <h2 id="CART减枝（pruning）"><a href="#CART减枝（pruning）" class="headerlink" title="CART减枝（pruning）"></a>CART减枝（pruning）</h2><p>cart 剪枝是从“完全生成”的决策树的底端剪去一些子树，使得决策树变小。</p>
 <ol>
-<li><p>首先从生成算法产生的决策树T0底端开始不断剪，直到根节点。形成子树序列。</p>
-</li>
+<li>首先从生成算法产生的决策树T0底端开始不断剪，直到根节点。形成子树序列。</li>
 <li><p>通过<strong>交叉验证</strong>法在独立的验证数据集上对子树进行测试，选择最优。</p>
 </li>
 <li><p>Start from the bottom of the decision tree T0, Form a subtree sequence.{T0,T1,T3….}</p>
 </li>
-<li><p>using the cross-validation method to decide whether to cut the subtree.</p>
-</li>
+<li>using the cross-validation method to decide whether to cut the subtree.</li>
 </ol>
 <blockquote>
-<p><font color="red">问题2 什么是交叉验证？有哪些交叉验证的方法</font></p>
+<font color="red">问题2 什么是交叉验证？有哪些交叉验证的方法</font>
+
 </blockquote>
 <h3 id="pruning的具体过程"><a href="#pruning的具体过程" class="headerlink" title="pruning的具体过程"></a>pruning的具体过程</h3><ol>
 <li>计算子树的损失函数为：</li>
 </ol>
-<p>$$<br>C_\alpha(T)=C(T)+\alpha T<br>$$</p>
-<p>​        其中： T为任意子树，C(T)为对训练集的误差如（GINI index）,T为子树的叶节点个数。</p>
+<script type="math/tex; mode=display">
+C_\alpha(T)=C(T)+\alpha T</script><p>​        其中： T为任意子树，C(T)为对训练集的误差如（GINI index）,T为子树的叶节点个数。</p>
 <p>​        对于固定的α，Tα（T）最小的意义下是最优的，容易验证最优子树唯一。</p>
 <p>​        当α偏大的时候，最优子树偏小，α偏小的时候，最优子树偏大。</p>
-<ol start="2">
-<li><p>​    <img src="/algorithms-interview-tbsi/algorithms-interview-tbsi%5Cfullsizerender(4).jpg"></p>
+<ol>
+<li><p>​    <img src="/algorithms-interview-tbsi/fullsizerender(4" alt>.jpg)</p>
 <p>如此下去直到根节点。</p>
 </li>
-<li><p>在剪枝得到的子树序列中通过交叉验证选择最优的子树。<img src="/algorithms-interview-tbsi/algorithms-interview-tbsi%5Cfullsizerender(5).jpg"></p>
+<li><p>在剪枝得到的子树序列中通过交叉验证选择最优的子树。<img src="/algorithms-interview-tbsi/fullsizerender(5" alt>.jpg)</p>
 </li>
 </ol>
 <h2 id="优点和缺点"><a href="#优点和缺点" class="headerlink" title="优点和缺点"></a>优点和缺点</h2><p>优点: 决策树模型可读性好，具有描述性，有助于人工分析；效率高，决策树只需要一次性构建，反复使用，每一次预测的最大计算次数不超过决策树的深度。<br>缺点: 对中间值的缺失敏感；可能产生过度匹配的问题，即过拟合。</p>
@@ -707,7 +726,7 @@
 <p>14.一个核函数都隐式定义了一个成为“再生核希尔伯特空间”的特征空间(iff条件)？</p>
 <p>15.感知机的对偶形式和SVM对偶形式的对比  dual algorithm: 对偶函数 </p>
 <p>16.为什么要用对偶形式？如何理解对偶函数的引入对计 算带来的优势？</p>
-<ol start="17">
+<ol>
 <li>SMO</li>
 </ol>
 </blockquote>
@@ -716,23 +735,23 @@
 <p>函数间隔可以表示<strong>分类预测的正确性及确信度</strong>credits of predictions，但选择分离超平面时，只有函数间隔还不够，因为只要成比例改变w和b，超平面并没有改变，但函数间隔却变了，因此需要对分离超平面的法向量加上某些约束，如规范化，||w||=1，使用间隔是确定的，这时函数间隔成为了几何间隔。</p>
 <h2 id="comparsion-of-kernels"><a href="#comparsion-of-kernels" class="headerlink" title="comparsion of kernels"></a>comparsion of kernels</h2><ol>
 <li><p>Linear kernel</p>
-<p><img src="/algorithms-interview-tbsi/algorithms-interview-tbsi%5Cimage-20200424111509351.png" alt="image-20200424111509351"></p>
+<p><img src="/algorithms-interview-tbsi/image-20200424111509351.png" alt="image-20200424111509351"></p>
 </li>
 </ol>
 <p><img src="/algorithms-interview-tbsi/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200424111345363.png" alt="image-20200424111345363"></p>
 <p>优点： 计算简单，快速，便于理解</p>
 <p>缺点：并不是所有模型都是线性可分的</p>
-<ol start="2">
+<ol>
 <li>Polynomial Kernel</li>
 </ol>
-<p><img src="/algorithms-interview-tbsi/algorithms-interview-tbsi%5Cimage-20200424111525138.png" alt="image-20200424111525138"></p>
+<p><img src="/algorithms-interview-tbsi/image-20200424111525138.png" alt="image-20200424111525138"></p>
 <p><img src="/algorithms-interview-tbsi/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200424111444356.png" alt="image-20200424111444356"></p>
 <p>优点： 阶数Q可以灵活设置，相比较于linear kernel 限制更小</p>
 <p>缺点： Q很大的时候，K的数值波动范围很大，而且参数很多，比较难以选择</p>
-<ol start="3">
+<ol>
 <li>Gaussian Kernel</li>
 </ol>
-<p><img src="/algorithms-interview-tbsi/algorithms-interview-tbsi%5Cimage-20200424111638362.png" alt="image-20200424111638362"></p>
+<p><img src="/algorithms-interview-tbsi/image-20200424111638362.png" alt="image-20200424111638362"></p>
 <p><img src="/algorithms-interview-tbsi/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200424111647537.png" alt="image-20200424111647537"></p>
 <p>Gaussian Kernel的优点是边界更加复杂多样，能最准确地区分数据样本，数值计算K值波动较小，而<br>且只有一个参数，容易选择；</p>
 <p>缺点是由于特征转换到无限维度中，w没有求解出来，计算速度要低于<br>linear kernel，而且可能会发生过拟合。</p>
@@ -741,16 +760,17 @@
 </li>
 <li><p>保持了支持向量机解的稀疏性</p>
 </li>
-<li><p>正是因为HingeLoss的零区域对应的正是非支持向量的普通样本，从而所有的普通样本都不参与最终超平面的决定，这才是支持向量机最大的优势所在，对训练样本数目的依赖大大减少，而且提高了训练效率。</p>
-</li>
+<li>正是因为HingeLoss的零区域对应的正是非支持向量的普通样本，从而所有的普通样本都不参与最终超平面的决定，这才是支持向量机最大的优势所在，对训练样本数目的依赖大大减少，而且提高了训练效率。</li>
 </ol>
-<p>对比感知机的损失函数 <img src="https://www.zhihu.com/equation?tex=%5B-y_i(w%C2%B7x_i+b)%5D_+" alt="[公式]"> 来说，hinge loss不仅要分类正确，而且置信度足够高的时候，损失才为0，对学习有更高的要求。对比一下感知机损失和hinge loss的图像，<strong>明显Hinge loss更加严格</strong></p>
+<p>对比感知机的损失函数 <img src="https://www.zhihu.com/equation?tex=%5B-y_i%28w%C2%B7x_i%2Bb%29%5D_%2B" alt="[公式]"> 来说，hinge loss不仅要分类正确，而且置信度足够高的时候，损失才为0，对学习有更高的要求。对比一下感知机损失和hinge loss的图像，<strong>明显Hinge loss更加严格</strong></p>
 <p><img src="https://pic4.zhimg.com/50/v2-0884e199d2198ec716f3b09536b10213_hd.jpg" alt="img"><img src="https://pic4.zhimg.com/80/v2-0884e199d2198ec716f3b09536b10213_720w.jpg" alt="img"></p>
 <p>如下图中，点 <img src="https://www.zhihu.com/equation?tex=x_4" alt="[公式]"> 被分类正确了，但是它的损失不是0。其实这个道理和SVM中的Margin是一样的，不仅要分类正确，还要使得Margin最大化，所以说hinge loss的另外一种解释。</p>
 <p><img src="https://pic4.zhimg.com/80/v2-a04fdb43f41bd9e4fd06306558ab61f2_720w.jpg" alt="img"></p>
 <h1 id="Ensemble-Method"><a href="#Ensemble-Method" class="headerlink" title="Ensemble Method"></a>Ensemble Method</h1><blockquote>
-<p><font color="red">rf和gbdt的区别？</font></p>
-<p><font color="red">boosting和bagging的区别？</font></p>
+<font color="red">rf和gbdt的区别？</font>
+
+<font color="red">boosting和bagging的区别？</font>
+
 </blockquote>
 <ol>
 <li><p>GBDT和随机森林的相同点：</p>
@@ -812,14 +832,19 @@
 <li>While creating the next model, higher weights are given to the data points which were predicted incorrectly.</li>
 <li>This process is repeated until the error function does not change, or we reach the maximum limit of estimators. </li>
 </ol>
-<h2 id="GBDT"><a href="#GBDT" class="headerlink" title="GBDT"></a>GBDT</h2><p>加法模型（additive model）<br>$$<br>f(x)=\sum_{m=1}^M\beta b(x;\gamma_m)<br>$$<br>其中<code>b(x;Υ)</code>为基函数，<code>r</code>为基函数的参数，<code>β</code>为基函数的系数。</p>
+<h2 id="GBDT"><a href="#GBDT" class="headerlink" title="GBDT"></a>GBDT</h2><p>加法模型（additive model）</p>
+<script type="math/tex; mode=display">
+f(x)=\sum_{m=1}^M\beta b(x;\gamma_m)</script><p>其中<code>b(x;Υ)</code>为基函数，<code>r</code>为基函数的参数，<code>β</code>为基函数的系数。</p>
 <hr>
 <p>forward-stagewise</p>
-<p><img src="/algorithms-interview-tbsi/algorithms-interview-tbsi%5Cimage-20200327094209310.png" alt="image-20200327094209310"></p>
+<p><img src="/algorithms-interview-tbsi/image-20200327094209310.png" alt="image-20200327094209310"></p>
 <blockquote>
-<p><font color="red">为什么提出了GBDT？</font></p>
+<font color="red">为什么提出了GBDT？</font>
+
 </blockquote>
-<p>提升树利用<strong>加法模型</strong>（additive model）和<strong>向前分布算法</strong>(forward-stagewise)实现学习的优化过程。如果损失函数是平方或者指数的时候，每一步优化都简单，但是对于一般损失函数来说，不是那么容易，所以提出了梯度提升。关键是利用损失函数的负梯度在当前模型的值：<br>$$<br>\frac{\partial L(y,f(x_i))}{\partial f(x_i)}<br>$$<br>作为<strong>残差</strong>的近似值，去拟合一个回归树。</p>
+<p>提升树利用<strong>加法模型</strong>（additive model）和<strong>向前分布算法</strong>(forward-stagewise)实现学习的优化过程。如果损失函数是平方或者指数的时候，每一步优化都简单，但是对于一般损失函数来说，不是那么容易，所以提出了梯度提升。关键是利用损失函数的负梯度在当前模型的值：</p>
+<script type="math/tex; mode=display">
+\frac{\partial L(y,f(x_i))}{\partial f(x_i)}</script><p>作为<strong>残差</strong>的近似值，去拟合一个回归树。</p>
 <p>Boosting trees are based on additive models and forward distribution algorithm to realize the optimization process. </p>
 <ol>
 <li><p>initially, estimating a constant(常数) to minimize the <strong>cost function</strong>.(it’s just a tree node)</p>
@@ -835,16 +860,14 @@
 <p>让损失函数沿着梯度方向的下降。这个就是gbdt 的 gb的核心了。 利用损失函数的负梯度在当前模型的值作为回归问题提升树算法中的残差的近似值去拟合一个回归树。gbdt 每轮迭代的时候，都去拟合损失函数在当前模型下的负梯度。</p>
 <p>gbdt 无论用于分类还是回归一直都是使用的CART 回归树</p>
 <blockquote>
-<p><font color="red">GBDT的损失函数是什么？</font></p>
-</blockquote>
-<blockquote>
-<p><font color="red">为什么用负梯度拟合残差？</font></p>
-</blockquote>
-<blockquote>
-<p><font color="red">残差的定义 residuals?</font></p>
-</blockquote>
-<blockquote>
-<p><font color="red">前向分布算法的定义</font></p>
+<font color="red">GBDT的损失函数是什么？</font>
+
+<font color="red">为什么用负梯度拟合残差？</font>
+
+<font color="red">残差的定义 residuals?</font>
+
+<font color="red">前向分布算法的定义</font>
+
 </blockquote>
 <p>GBDT的主要优点：</p>
 <p>　　1）可以灵活的处理各种类型的数据</p>
@@ -865,11 +888,11 @@
 <li><p>XGB在处理每个特征列时可以做到并行。</p>
 </li>
 </ol>
-<h2 id="LGB"><a href="#LGB" class="headerlink" title="LGB"></a>LGB</h2><p>histogram-based算法通过直方图寻找<font color="red">最优切分点</font>，其建直方图消耗O(#data * #feature)，寻找最优切分点消耗O(#bin * # feature)，而#bin的数量远小于#data，<strong>所以建直方图为主要时间消耗</strong>。如果能够减少数据量或特征量，那么还能够够加速GBDT的训练。（寻找最优切分点已经进行了优化，那么我们现在应该对建直方图的时间进行优化）</p>
+<h2 id="LGB"><a href="#LGB" class="headerlink" title="LGB"></a>LGB</h2><p>histogram-based算法通过直方图寻找<font color="red">最优切分点</font>，其建直方图消耗O(#data <em> #feature)，寻找最优切分点消耗O(#bin </em> # feature)，而#bin的数量远小于#data，<strong>所以建直方图为主要时间消耗</strong>。如果能够减少数据量或特征量，那么还能够够加速GBDT的训练。（寻找最优切分点已经进行了优化，那么我们现在应该对建直方图的时间进行优化）</p>
 <p><strong>Light GBM beats all the other algorithms when the dataset is extremely large</strong></p>
 <p>Leaf-wise growth may cause over-fitting on <strong>smaller datasets</strong> but that can be avoided by using the ‘max_depth’ parameter for learning.</p>
 <p>（1）xgboost采用的是level-wise的分裂策略，而lightGBM采用了leaf-wise的策略，区别是xgboost对每一层所有节点做无差别分裂，可能有些节点的增益非常小，对结果影响不大，但是xgboost也进行了分裂，带来了务必要的开销。 leaft-wise的做法是在当前所有叶子节点中选择分裂收益最大的节点进行分裂，如此递归进行，很明显leaf-wise这种做法容易过拟合，因为容易陷入比较高的深度中，因此需要对最大深度做限制，从而避免过拟合。</p>
-<p>（2）lightgbm使用了基于histogram的决策树算法，这一点不同与xgboost中的 exact 算法，histogram算法在内存和计算代价上都有不小优势。1）内存上优势：很明显，直方图算法的内存消耗为(#data* #features * 1Bytes)(因为对特征分桶后只需保存特征离散化之后的值)，而xgboost的exact算法内存消耗为：(2 * #data * #features* 4Bytes)，因为xgboost既要保存原始feature的值，也要保存这个值的顺序索引，这些值需要32位的浮点数来保存。2）计算上的优势，预排序算法在选择好分裂特征计算分裂收益时需要遍历所有样本的特征值，时间为(#data),而直方图算法只需要遍历桶就行了，时间为(#bin)</p>
+<p>（2）lightgbm使用了基于histogram的决策树算法，这一点不同与xgboost中的 exact 算法，histogram算法在内存和计算代价上都有不小优势。1）内存上优势：很明显，直方图算法的内存消耗为(#data<em> #features </em> 1Bytes)(因为对特征分桶后只需保存特征离散化之后的值)，而xgboost的exact算法内存消耗为：(2 <em> #data </em> #features* 4Bytes)，因为xgboost既要保存原始feature的值，也要保存这个值的顺序索引，这些值需要32位的浮点数来保存。2）计算上的优势，预排序算法在选择好分裂特征计算分裂收益时需要遍历所有样本的特征值，时间为(#data),而直方图算法只需要遍历桶就行了，时间为(#bin)</p>
 <p>（3）直方图做差加速，一个子节点的直方图可以通过父节点的直方图减去兄弟节点的直方图得到，从而加速计算。</p>
 <p>（4）lightgbm支持直接输入categorical 的feature，在对离散特征分裂时，每个取值都当作一个桶，分裂时的增益算的是”是否属于某个category“的gain。类似于one-hot编码。</p>
 <p>（5）xgboost在每一层都动态构建直方图，因为xgboost的直方图算法不是针对某个特定的feature，而是所有feature共享一个直方图(每个样本的权重是二阶导),所以每一层都要重新构建直方图，而lightgbm中对每个特征都有一个直方图，所以构建一次直方图就够了。</p>
@@ -905,10 +928,10 @@
 <li>重复直到收敛</li>
 </ol>
 <blockquote>
-<p><font color="red">为什么不用极大似然函数?</font></p>
-</blockquote>
-<blockquote>
-<p><font color="red">E的步骤具体是怎样？</font></p>
+<font color="red">为什么不用极大似然函数?</font>
+
+<font color="red">E的步骤具体是怎样？</font>
+
 </blockquote>
 <ol>
 <li>Initially, we give a initial value to the theta, and then go for iteration;</li>
@@ -1135,7 +1158,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linear-Regression"><span class="nav-number">1.</span> <span class="nav-text">Linear Regression</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E5%8C%96"><span class="nav-number">2.</span> <span class="nav-text">正则化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Logistic-Regression"><span class="nav-number">3.</span> <span class="nav-text">Logistic Regression</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="nav-number">3.1.</span> <span class="nav-text">优缺点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#KNN"><span class="nav-number">4.</span> <span class="nav-text">KNN</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">4.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#KNN%E5%8E%9F%E7%90%86"><span class="nav-number">4.2.</span> <span class="nav-text">KNN原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#KNN%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="nav-number">4.3.</span> <span class="nav-text">KNN的实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E7%82%B9"><span class="nav-number">4.4.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9%E5%8F%8A%E6%94%B9%E8%BF%9B"><span class="nav-number">4.5.</span> <span class="nav-text">缺点及改进</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Naive-Bayes"><span class="nav-number">5.</span> <span class="nav-text">Naive Bayes</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E6%B5%81%E7%A8%8B"><span class="nav-number">5.1.</span> <span class="nav-text">算法流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E7%8E%87%E8%AE%BA%E8%A1%A5%E5%85%85%E7%9F%A5%E8%AF%86"><span class="nav-number">5.2.</span> <span class="nav-text">概率论补充知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%9D%E5%8F%B6%E6%96%AF%E4%BC%B0%E8%AE%A1"><span class="nav-number">5.3.</span> <span class="nav-text">贝叶斯估计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E5%8A%BF%E4%B8%8E%E7%BC%BA%E7%82%B9"><span class="nav-number">5.4.</span> <span class="nav-text">优势与缺点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#decision-Tree"><span class="nav-number">6.</span> <span class="nav-text">decision Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%9F%E8%AE%A1%E5%AD%A6%E7%9F%A5%E8%AF%86"><span class="nav-number">6.1.</span> <span class="nav-text">统计学知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ID3"><span class="nav-number">6.2.</span> <span class="nav-text">ID3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C4-5"><span class="nav-number">6.3.</span> <span class="nav-text">C4.5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CART"><span class="nav-number">6.4.</span> <span class="nav-text">CART</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CART%E5%87%8F%E6%9E%9D%EF%BC%88pruning%EF%BC%89"><span class="nav-number">6.5.</span> <span class="nav-text">CART减枝（pruning）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pruning%E7%9A%84%E5%85%B7%E4%BD%93%E8%BF%87%E7%A8%8B"><span class="nav-number">6.5.1.</span> <span class="nav-text">pruning的具体过程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E7%82%B9%E5%92%8C%E7%BC%BA%E7%82%B9"><span class="nav-number">6.6.</span> <span class="nav-text">优点和缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E7%A7%8D%E8%AE%A1%E7%AE%97%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">6.7.</span> <span class="nav-text">三种计算的区别</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SVM"><span class="nav-number">7.</span> <span class="nav-text">SVM</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%A2%E8%AF%95%E7%9C%9F%E9%A2%98"><span class="nav-number">7.1.</span> <span class="nav-text">面试真题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Functional-margin%E5%92%8CGeometric-margin"><span class="nav-number">7.2.</span> <span class="nav-text">Functional margin和Geometric margin</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#comparsion-of-kernels"><span class="nav-number">7.3.</span> <span class="nav-text">comparsion of kernels</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E4%BA%8ESVM%E7%9A%84%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E3%80%82Hinge-lost-%E5%90%88%E9%A1%B5%E6%8D%9F%E5%A4%B1%E3%80%82"><span class="nav-number">7.4.</span> <span class="nav-text">关于SVM的损失函数。Hinge lost 合页损失。</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ensemble-Method"><span class="nav-number">8.</span> <span class="nav-text">Ensemble Method</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#xgboost%EF%BC%8Crf%EF%BC%8Clr%E4%BC%98%E7%BC%BA%E7%82%B9%E5%9C%BA%E6%99%AF"><span class="nav-number">8.1.</span> <span class="nav-text">xgboost，rf，lr优缺点场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#random-forest"><span class="nav-number">8.2.</span> <span class="nav-text">random forest</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Adaboost"><span class="nav-number">8.3.</span> <span class="nav-text">Adaboost</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GBDT"><span class="nav-number">8.4.</span> <span class="nav-text">GBDT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XGboost"><span class="nav-number">8.5.</span> <span class="nav-text">XGboost</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LGB"><span class="nav-number">8.6.</span> <span class="nav-text">LGB</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#EFB"><span class="nav-number">8.6.1.</span> <span class="nav-text">EFB</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%81%9A%E7%B1%BB"><span class="nav-number">9.</span> <span class="nav-text">聚类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#EM"><span class="nav-number">9.1.</span> <span class="nav-text">EM</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linear-Regression"><span class="nav-number">1.</span> <span class="nav-text">Linear Regression</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E5%8C%96"><span class="nav-number">2.</span> <span class="nav-text">正则化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Logistic-Regression"><span class="nav-number">3.</span> <span class="nav-text">Logistic Regression</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="nav-number">3.1.</span> <span class="nav-text">优缺点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#KNN"><span class="nav-number">4.</span> <span class="nav-text">KNN</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">4.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#KNN%E5%8E%9F%E7%90%86"><span class="nav-number">4.2.</span> <span class="nav-text">KNN原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#KNN%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="nav-number">4.3.</span> <span class="nav-text">KNN的实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E7%82%B9"><span class="nav-number">4.4.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9%E5%8F%8A%E6%94%B9%E8%BF%9B"><span class="nav-number">4.5.</span> <span class="nav-text">缺点及改进</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Naive-Bayes"><span class="nav-number">5.</span> <span class="nav-text">Naive Bayes</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E6%B5%81%E7%A8%8B"><span class="nav-number">5.1.</span> <span class="nav-text">算法流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E7%8E%87%E8%AE%BA%E8%A1%A5%E5%85%85%E7%9F%A5%E8%AF%86"><span class="nav-number">5.2.</span> <span class="nav-text">概率论补充知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%9D%E5%8F%B6%E6%96%AF%E4%BC%B0%E8%AE%A1"><span class="nav-number">5.3.</span> <span class="nav-text">贝叶斯估计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E5%8A%BF%E4%B8%8E%E7%BC%BA%E7%82%B9"><span class="nav-number">5.4.</span> <span class="nav-text">优势与缺点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#decision-Tree"><span class="nav-number">6.</span> <span class="nav-text">decision Tree</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%9F%E8%AE%A1%E5%AD%A6%E7%9F%A5%E8%AF%86"><span class="nav-number">6.1.</span> <span class="nav-text">统计学知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CART%E5%87%8F%E6%9E%9D%EF%BC%88pruning%EF%BC%89"><span class="nav-number">6.2.</span> <span class="nav-text">CART减枝（pruning）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pruning%E7%9A%84%E5%85%B7%E4%BD%93%E8%BF%87%E7%A8%8B"><span class="nav-number">6.2.1.</span> <span class="nav-text">pruning的具体过程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E7%82%B9%E5%92%8C%E7%BC%BA%E7%82%B9"><span class="nav-number">6.3.</span> <span class="nav-text">优点和缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E7%A7%8D%E8%AE%A1%E7%AE%97%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">6.4.</span> <span class="nav-text">三种计算的区别</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SVM"><span class="nav-number">7.</span> <span class="nav-text">SVM</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%A2%E8%AF%95%E7%9C%9F%E9%A2%98"><span class="nav-number">7.1.</span> <span class="nav-text">面试真题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Functional-margin%E5%92%8CGeometric-margin"><span class="nav-number">7.2.</span> <span class="nav-text">Functional margin和Geometric margin</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#comparsion-of-kernels"><span class="nav-number">7.3.</span> <span class="nav-text">comparsion of kernels</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E4%BA%8ESVM%E7%9A%84%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E3%80%82Hinge-lost-%E5%90%88%E9%A1%B5%E6%8D%9F%E5%A4%B1%E3%80%82"><span class="nav-number">7.4.</span> <span class="nav-text">关于SVM的损失函数。Hinge lost 合页损失。</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ensemble-Method"><span class="nav-number">8.</span> <span class="nav-text">Ensemble Method</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#xgboost%EF%BC%8Crf%EF%BC%8Clr%E4%BC%98%E7%BC%BA%E7%82%B9%E5%9C%BA%E6%99%AF"><span class="nav-number">8.1.</span> <span class="nav-text">xgboost，rf，lr优缺点场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#random-forest"><span class="nav-number">8.2.</span> <span class="nav-text">random forest</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Adaboost"><span class="nav-number">8.3.</span> <span class="nav-text">Adaboost</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GBDT"><span class="nav-number">8.4.</span> <span class="nav-text">GBDT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XGboost"><span class="nav-number">8.5.</span> <span class="nav-text">XGboost</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LGB"><span class="nav-number">8.6.</span> <span class="nav-text">LGB</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#EFB"><span class="nav-number">8.6.1.</span> <span class="nav-text">EFB</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%81%9A%E7%B1%BB"><span class="nav-number">9.</span> <span class="nav-text">聚类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#EM"><span class="nav-number">9.1.</span> <span class="nav-text">EM</span></a></li></ol></li></ol></div>
             
 
           </div>

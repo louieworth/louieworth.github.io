@@ -422,8 +422,9 @@
 <p>$p_z(z)$ is a prior input noise variables </p>
 <p>$G(z;\theta_g)$ represents a mapping to data space, G is a differentiable function represented by a multiplayer perceptron with parameter $\theta_g$</p>
 <p>$D(x;\theta_d) $ is a second multiplayer perceptron, $D(X)$ represents the probability that x cam e from the data rather than $p_g$</p>
-<p>$$\min_{G}<br>\max_{D}<br>V(D, G) = E_{x∼p_{data(x)}}[logD(x)] + E_{z∼pz(z)}[log(1 −D(G(z)))].$$</p>
-<h1 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h1><ol>
+<script type="math/tex; mode=display">\min_{G}
+\max_{D}
+V(D, G) = E_{x∼p_{data(x)}}[logD(x)] + E_{z∼pz(z)}[log(1 −D(G(z)))].</script><h1 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h1><ol>
 <li>why we alternate between k steps of optimizing D and one step of optimizing G. <ul>
 <li>Optimizing D to completion in the inner loop of training is computationally prohibitive, and on finite datasets would result in <strong>overfitting</strong>.</li>
 <li><strong>This results in D being maintained near its optimal solution, so long as G changes slowly enough.</strong> This strategy is analogous to the way that SML/PCD [31, 29] training maintains samples from a Markov chain from one learning step to the next in order to <strong>avoid burning</strong> in a Markov chain as part of the inner loop of learning. The procedure is formally presented in Algorithm 1.</li>

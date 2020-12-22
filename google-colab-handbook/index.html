@@ -409,14 +409,13 @@
 
       
         <script src="/assets/js/APlayer.min.js"> </script><h1 id="基础篇"><a href="#基础篇" class="headerlink" title="基础篇"></a>基础篇</h1><p>选择GPU：</p>
-<p><img src="/google-colab-handbook/jiangli/Workspaces/hexo/source/_posts/google-colab-handbook/v2-036d55f33726443d055d00345bd9682d_720w.jpg"></p>
+<p><img src="/google-colab-handbook/jiangli/Workspaces/hexo/source/_posts/google-colab-handbook/v2-036d55f33726443d055d00345bd9682d_720w.jpg" alt></p>
 <p>红框可以修改页面名称，绿框点击连接（点击第一个：<strong>连接到托管代码执行程序</strong>），但是连接之后并不是以及在GPU环境下，所以需要点击蓝框进行设置。</p>
 <p>如何确定在GPU环境下运行:</p>
 <a id="more"></a>
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line">tf.test.gpu_device_name()</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"><span class="string">&#x27;/device:GPU:0&#x27;</span></span><br></pre></td></tr></table></figure>
 <p>如果输出和上面一样的话就是已经在GPU环境下了。</p>
-<p>接着是Pytorch, Pytorch的安装和我们在Linux上安装一样,点击<a href="https://link.zhihu.com/?target=https://pytorch.org/">官网</a>选择要环境。然后只需要将官网提供的代码copy到我们的代码块中，<strong>并且在代码前加上一个“!”点击运行即可，如下</strong></p>
+<p>接着是Pytorch, Pytorch的安装和我们在Linux上安装一样,点击<a href="https://link.zhihu.com/?target=https%3A//pytorch.org/">官网</a>选择要环境。然后只需要将官网提供的代码copy到我们的代码块中，<strong>并且在代码前加上一个“!”点击运行即可，如下</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">!pip3 install https://download.pytorch.org/whl/cu80/torch-<span class="number">1.0</span><span class="number">.0</span>-cp36-cp36m-linux_x86_64.whl</span><br><span class="line">!pip3 install torchvision</span><br></pre></td></tr></table></figure>
 <p>查看GPU信息：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!/opt/<span class="built_in">bin</span>/nvidia-smi</span><br></pre></td></tr></table></figure>
@@ -434,15 +433,9 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">torch.cuda.is_available()</span><br></pre></td></tr></table></figure>
 <p>如果可用的话:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> torch.cuda.is_avaibale():</span><br><span class="line">    model = model.cuda()</span><br></pre></td></tr></table></figure>
-
-
 <p>查看GPU情况</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line">tf.test.gpu_device_name()</span><br></pre></td></tr></table></figure>
-
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 指定当前的工作目录</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="comment"># 此处为google drive中的文件路径,drive为之前指定的工作根目录要加上.</span></span><br><span class="line"><span class="comment">#Colab Notebooks为你的文件存放的路径，可以自行更改</span></span><br><span class="line">os.chdir(<span class="string">&quot;drive/GoogleInnoCamp2019_LZ-master&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-
 <h1 id="提高篇"><a href="#提高篇" class="headerlink" title="提高篇"></a><strong>提高篇</strong></h1><h2 id="如何在google-drive上运行自己的代码"><a href="#如何在google-drive上运行自己的代码" class="headerlink" title="如何在google drive上运行自己的代码"></a>如何在google drive上运行自己的代码</h2><p>如果利用GPU不运用自己本地的数据集，而是跑跑框架自带的MNIST这些数据已经是够了的。 如果要跑自己的数据集就需要将自己的数据先上传到Google Colab云盘上面去。</p>
 <p><strong>注意</strong>：如果是比较大的数据集，将本地数据上传上去就需要安装一个连接本地计算机与Google Colab的一个名为<strong>备份与同步</strong>的软件，这时候你只需要选择本地文件夹，然后点击同步，然后只需等待即可。</p>
 <p>如果是比较小的数据集直接点击桌面文件拖到Google Colab界面等待上传即可。</p>
@@ -468,7 +461,7 @@
 <li>打开一个 Notebook，mount Google Drive。</li>
 </ol>
 <p><img src="https://pic2.zhimg.com/v2-0ccf79ced53142dd06c094137f37b9c9_b.jpg" alt="v2-0ccf79ced53142dd06c094137f37b9c9_b"></p>
-<ol start="3">
+<ol>
 <li>在 Notebook 中添加一个 Section 命名为「安装环境」。然后在这个 Section 中做一些数据复制、解压，以及安装第三方包的工作。实例代码如下：</li>
 </ol>
 <p><img src="https://pic4.zhimg.com/v2-1ec575a9f8a33b43bfcd645df3060447_b.jpg" alt="v2-1ec575a9f8a33b43bfcd645df3060447_b"></p>
@@ -476,7 +469,7 @@
 <p>为什么不直接将数据集存放至 Drive 直接使用，而是要先压缩，再从 Drive 中拷贝出来解压使用？</p>
 </blockquote>
 <p>因为直接从 Drive 中读取数据是通过网络传输的，并不是从本地文件磁盘读取。如果数据文件多，那么就会发很多次网络请求，导致加载数据非常慢，进而严重影响训练速度；这也是很多小伙伴抱怨 Colab 慢的原因之一。所以我们提前压缩好数据集文件，每次训练前复制压缩文件到实例的磁盘，再进行解压，最大程度保证网络传输次数少，传输数据量小。</p>
-<ol start="4">
+<ol>
 <li>环境准备好后，写好训练代码就可以开始训练了。在选择训练工具框架或自己徒手写训练代码的时候，将训练产生的所有中间文件（如图片、日志、Checkpoint等）都存放至 Drive 的目录中。另外，训练的代码要能够完美地从某个 Checkpoint 中恢复训练。</li>
 </ol>
 <p>我所使用的深度学习框架是 PyTorch，辅助的训练工具是 MineTorch，MineTorch 可以将所有的训练日志同步至 Google Sheet，以方便我做实验的结果可视化和对比：<a target="_blank" rel="noopener" href="https://github.com/minetorch/minetorch">miniTorch</a></p>

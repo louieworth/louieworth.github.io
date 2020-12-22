@@ -435,13 +435,17 @@
 <p>What we need to notice is that <em>one-hot encoding</em> can be done during the preprocessing phase or during the training, the latter can be implemented more efficiently in terms of training time and is implemented in Catboost.</p>
 </li>
 <li><p>Greedy Target-based Statistics (Greedy TBS)</p>
-<p>Another way to deal with categorical features is to compute some statistics using the label values of the example. The simplest way is to substitue the category with <strong>the average label value</strong> on the whole training set.<br>$$<br>\hat{x}<em>k^i=\frac{\sum</em>{j=1}^{n}[x_{j,k}=x_{i,k}]\cdot Y_i}{\sum_{j=1}^{n}[x_{j,k}=x_{i,k}]}<br>$$<br>Problem: </p>
+<p>Another way to deal with categorical features is to compute some statistics using the label values of the example. The simplest way is to substitue the category with <strong>the average label value</strong> on the whole training set. </p>
+<script type="math/tex; mode=display">
+\hat{x}_k^i=\frac{\sum_{j=1}^{n}[x_{j,k}=x_{i,k}]\cdot Y_i}{\sum_{j=1}^{n}[x_{j,k}=x_{i,k}]}</script><p>Problem: </p>
 <ul>
 <li>overfitting</li>
 <li>bias gradients</li>
 </ul>
 </li>
-<li><p>Improved version of Greedy TBS<br>$$<br>\hat{x}<em>k^i=\frac{\sum</em>{j=1}^{p-1}[x_{\sigma <em>j,k}=x</em>{\sigma <em>p,k}]Y</em>{\sigma <em>j}+a\cdot P}{\sum</em>{j=1}^{p-1}[x_{\sigma <em>j,k}=x</em>{\sigma _p,k}]+a}<br>$$<br>Adding prior $P$ is a common practice and it helps to reduce the noise obtained from low-frequency categories. </p>
+<li><p>Improved version of Greedy TBS</p>
+<script type="math/tex; mode=display">
+\hat{x}_k^i=\frac{\sum_{j=1}^{p-1}[x_{\sigma _j,k}=x_{\sigma _p,k}]Y_{\sigma _j}+a\cdot P}{\sum_{j=1}^{p-1}[x_{\sigma _j,k}=x_{\sigma _p,k}]+a}</script><p>Adding prior $P$ is a common practice and it helps to reduce the noise obtained from low-frequency categories. </p>
 <p>Regression Task:</p>
 <ul>
 <li>calculating prior is to take the average label value in the dataset.</li>

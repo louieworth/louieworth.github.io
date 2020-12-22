@@ -452,149 +452,161 @@
 <p>更多功能参考 <a target="_blank" rel="noopener" href="https://www.latexstudio.net/archives/4051.html">link</a></p>
 </blockquote>
 <h1 id="Title-Page"><a href="#Title-Page" class="headerlink" title="Title Page"></a>Title Page</h1><figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">\title[About</span> Beamer] %optional</span><br><span class="line">&#123;About the Beamer <span class="class"><span class="keyword">class</span> <span class="title">in</span> <span class="title">presentation</span> <span class="title">making</span>&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="string">\subtitle&#123;A</span> short story&#125;</span><br><span class="line"></span><br><span class="line"><span class="string">\author[Arthur,</span> Doe] % (optional, <span class="keyword">for</span> multiple authors)</span><br><span class="line">&#123;A.~B.~Arthur<span class="string">\inst&#123;1&#125;</span> <span class="string">\and</span> J.~Doe<span class="string">\inst&#123;2&#125;&#125;</span> </span><br><span class="line"></span><br><span class="line"><span class="string">\institute[VFU]</span> % (optional)</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">\inst&#123;1&#125;%</span></span><br><span class="line">  Faculty <span class="keyword">of</span> Physics<span class="string">\\</span></span><br><span class="line">  Very Famous University</span><br><span class="line">  <span class="string">\and</span></span><br><span class="line">  <span class="string">\inst&#123;2&#125;%</span></span><br><span class="line">  Faculty <span class="keyword">of</span> Chemistry<span class="string">\\</span></span><br><span class="line">  Very Famous University</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="string">\date[VLC</span> <span class="number">2013</span>] % (optional)</span><br><span class="line">&#123;Very Large Conference, April <span class="number">2013</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="string">\logo&#123;\includegraphics[height=1.5cm]&#123;lion-logo.png&#125;&#125;</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/5/59/Beamer-titlepage.png"></p>
+<p><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/5/59/Beamer-titlepage.png" alt></p>
 <h1 id="table-of-contents"><a href="#table-of-contents" class="headerlink" title="table of contents"></a>table of contents</h1><p>Usually when you have a long presentation, it’s convenient to divide it into sections or even subsections. In this case, you can add a table of contents at the beginning of the document. Here is an example:</p>
 <figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">\begin&#123;frame&#125;</span></span><br><span class="line"><span class="string">\frametitle&#123;Table</span> <span class="keyword">of</span> Contents&#125;</span><br><span class="line"><span class="string">\tableofcontents</span></span><br><span class="line"><span class="string">\end&#123;frame&#125;</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/b/b7/BeamerExample2.png"></p>
+<p><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/b/b7/BeamerExample2.png" alt></p>
 <p>As you see, is simple. Inside the <em>frame</em> environment you set the title and add the command <code>\titlepage</code>.</p>
 <p>It’s also possible to put the table of contents at the beginning of each section and highlight the title of the current section. Just add the code below to the <strong><em>preamble</em></strong> of your LATEX document:</p>
 <figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">\AtBeginSection[]</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">\begin&#123;frame&#125;</span></span><br><span class="line">    <span class="string">\frametitle&#123;Table</span> <span class="keyword">of</span> Contents&#125;</span><br><span class="line">    <span class="string">\tableofcontents[currentsection]</span></span><br><span class="line">  <span class="string">\end&#123;frame&#125;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/2/2a/BeamerExample3.png"></p>
+<p><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/2/2a/BeamerExample3.png" alt></p>
 <h1 id="Font-Size-amp-Font-color"><a href="#Font-Size-amp-Font-color" class="headerlink" title="Font Size&amp;Font color"></a>Font Size&amp;Font color</h1><p>In this article three basic text formatting tools will be explained: italics, bold and underline. Let’s begin with an example:</p>
 <figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Some <span class="keyword">of</span> the <span class="string">\textbf&#123;greatest&#125;</span> </span><br><span class="line">discoveries <span class="keyword">in</span> <span class="string">\underline&#123;science&#125;</span> </span><br><span class="line">were made <span class="keyword">by</span> <span class="string">\textbf&#123;\textit&#123;accident&#125;&#125;.</span></span><br></pre></td></tr></table></figure>
 <p><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/a/a9/Biu1.png" alt="Example of italics, bold and underline"></p>
 <p>As you can see, there are three basic commands and they can be nested to get combined effects.</p>
 <p>Note: <em>The commands <strong>\it</strong> and <strong>\bf</strong> also work to italicize and boldface text, but it’s not recommended to use them since they don’t preserve previous styles. With these you can’t, for instance, italicize and make a text bold at the same time.</em></p>
 <p><strong>Font sizes</strong></p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="left">Command</th>
-<th align="left">Output</th>
+<th style="text-align:left">Command</th>
+<th style="text-align:left">Output</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">\tiny</td>
-<td align="left"><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/6/65/F-tiny.png" alt="F-tiny.png"></td>
+<tbody>
+<tr>
+<td style="text-align:left">\tiny</td>
+<td style="text-align:left"><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/6/65/F-tiny.png" alt="F-tiny.png"></td>
 </tr>
 <tr>
-<td align="left">\scriptsize</td>
-<td align="left"><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/2/2e/F-scriptsize.png" alt="F-scriptsize.png"></td>
+<td style="text-align:left">\scriptsize</td>
+<td style="text-align:left"><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/2/2e/F-scriptsize.png" alt="F-scriptsize.png"></td>
 </tr>
 <tr>
-<td align="left">\footnotesize</td>
-<td align="left"><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/6/69/F-footnotesize.png" alt="F-footnotesize.png"></td>
+<td style="text-align:left">\footnotesize</td>
+<td style="text-align:left"><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/6/69/F-footnotesize.png" alt="F-footnotesize.png"></td>
 </tr>
 <tr>
-<td align="left">\small</td>
-<td align="left"><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/b/be/F-small.png" alt="F-small.png"></td>
+<td style="text-align:left">\small</td>
+<td style="text-align:left"><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/b/be/F-small.png" alt="F-small.png"></td>
 </tr>
 <tr>
-<td align="left">\normalsize</td>
-<td align="left"><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/4/47/F-normalsize.png" alt="F-normalsize.png"></td>
+<td style="text-align:left">\normalsize</td>
+<td style="text-align:left"><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/4/47/F-normalsize.png" alt="F-normalsize.png"></td>
 </tr>
 <tr>
-<td align="left">\large</td>
-<td align="left"><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/7/7e/F-large.png" alt="F-large.png"></td>
+<td style="text-align:left">\large</td>
+<td style="text-align:left"><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/7/7e/F-large.png" alt="F-large.png"></td>
 </tr>
 <tr>
-<td align="left">\Large</td>
-<td align="left"><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/0/04/F-large2.png" alt="F-large2.png"></td>
+<td style="text-align:left">\Large</td>
+<td style="text-align:left"><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/0/04/F-large2.png" alt="F-large2.png"></td>
 </tr>
 <tr>
-<td align="left">\LARGE</td>
-<td align="left"><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/5/54/F-large3.png" alt="F-large3.png"></td>
+<td style="text-align:left">\LARGE</td>
+<td style="text-align:left"><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/5/54/F-large3.png" alt="F-large3.png"></td>
 </tr>
 <tr>
-<td align="left">\huge</td>
-<td align="left"><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/7/78/F-huge.png" alt="F-huge.png"></td>
+<td style="text-align:left">\huge</td>
+<td style="text-align:left"><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/7/78/F-huge.png" alt="F-huge.png"></td>
 </tr>
 <tr>
-<td align="left">\Huge</td>
-<td align="left"><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/4/4f/F-huge2.png" alt="F-huge2.png"></td>
+<td style="text-align:left">\Huge</td>
+<td style="text-align:left"><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/4/4f/F-huge2.png" alt="F-huge2.png"></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p><strong>Default font families</strong></p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="left">typeface = family</th>
-<th align="left">command</th>
-<th align="left">switch command</th>
-<th align="left">output</th>
+<th style="text-align:left">typeface = family</th>
+<th style="text-align:left">command</th>
+<th style="text-align:left">switch command</th>
+<th style="text-align:left">output</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">serif (roman)</td>
-<td align="left"><code>\textrm&#123;Sample Text 0123&#125;</code></td>
-<td align="left"><code>\rmfamily</code></td>
-<td align="left"><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/4/48/F-textrm.png" alt="F-textrm.png"></td>
+<tbody>
+<tr>
+<td style="text-align:left">serif (roman)</td>
+<td style="text-align:left"><code>\textrm&#123;Sample Text 0123&#125;</code></td>
+<td style="text-align:left"><code>\rmfamily</code></td>
+<td style="text-align:left"><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/4/48/F-textrm.png" alt="F-textrm.png"></td>
 </tr>
 <tr>
-<td align="left">sans serif</td>
-<td align="left"><code>\textsf&#123;Sample Text 0123&#125;</code></td>
-<td align="left"><code>\sffamily</code></td>
-<td align="left"><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/e/e3/F-textsf.png" alt="F-textsf.png"></td>
+<td style="text-align:left">sans serif</td>
+<td style="text-align:left"><code>\textsf&#123;Sample Text 0123&#125;</code></td>
+<td style="text-align:left"><code>\sffamily</code></td>
+<td style="text-align:left"><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/e/e3/F-textsf.png" alt="F-textsf.png"></td>
 </tr>
 <tr>
-<td align="left">typewriter (monospace)</td>
-<td align="left"><code>\texttt&#123;Sample Text 0123&#125;</code></td>
-<td align="left"><code>\ttfamily</code></td>
-<td align="left"><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/0/01/F-texttt.png" alt="F-texttt.png"></td>
+<td style="text-align:left">typewriter (monospace)</td>
+<td style="text-align:left"><code>\texttt&#123;Sample Text 0123&#125;</code></td>
+<td style="text-align:left"><code>\ttfamily</code></td>
+<td style="text-align:left"><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/0/01/F-texttt.png" alt="F-texttt.png"></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p><strong>Font styles</strong></p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="left">style</th>
-<th align="left">command</th>
-<th align="left">switch command</th>
-<th align="left">output</th>
+<th style="text-align:left">style</th>
+<th style="text-align:left">command</th>
+<th style="text-align:left">switch command</th>
+<th style="text-align:left">output</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">medium</td>
-<td align="left"><code>\textmd&#123;Sample Text 0123&#125;</code></td>
-<td align="left"><code>\mdseries</code></td>
-<td align="left"><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/1/1d/F-textmd.png" alt="F-textmd.png"></td>
+<tbody>
+<tr>
+<td style="text-align:left">medium</td>
+<td style="text-align:left"><code>\textmd&#123;Sample Text 0123&#125;</code></td>
+<td style="text-align:left"><code>\mdseries</code></td>
+<td style="text-align:left"><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/1/1d/F-textmd.png" alt="F-textmd.png"></td>
 </tr>
 <tr>
-<td align="left">bold</td>
-<td align="left"><code>\textbf&#123;Sample Text 0123&#125;</code></td>
-<td align="left"><code>\bfseries</code></td>
-<td align="left"><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/3/31/F-textbf.png" alt="F-textbf.png"></td>
+<td style="text-align:left">bold</td>
+<td style="text-align:left"><code>\textbf&#123;Sample Text 0123&#125;</code></td>
+<td style="text-align:left"><code>\bfseries</code></td>
+<td style="text-align:left"><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/3/31/F-textbf.png" alt="F-textbf.png"></td>
 </tr>
 <tr>
-<td align="left">upright</td>
-<td align="left"><code>\textup&#123;Sample Text 0123&#125;</code></td>
-<td align="left"><code>\upshape</code></td>
-<td align="left"><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/4/48/F-textrm.png" alt="F-textrm.png"></td>
+<td style="text-align:left">upright</td>
+<td style="text-align:left"><code>\textup&#123;Sample Text 0123&#125;</code></td>
+<td style="text-align:left"><code>\upshape</code></td>
+<td style="text-align:left"><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/4/48/F-textrm.png" alt="F-textrm.png"></td>
 </tr>
 <tr>
-<td align="left">italic</td>
-<td align="left"><code>\textit&#123;Sample Text 0123&#125;</code></td>
-<td align="left"><code>\itshape</code></td>
-<td align="left"><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/e/e3/F-textit2.png" alt="F-textit2.png"></td>
+<td style="text-align:left">italic</td>
+<td style="text-align:left"><code>\textit&#123;Sample Text 0123&#125;</code></td>
+<td style="text-align:left"><code>\itshape</code></td>
+<td style="text-align:left"><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/e/e3/F-textit2.png" alt="F-textit2.png"></td>
 </tr>
 <tr>
-<td align="left">slanted</td>
-<td align="left"><code>\textsl&#123;Sample Text 0123&#125;</code></td>
-<td align="left"><code>\slshape</code></td>
-<td align="left"><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/2/29/F-textsl.png" alt="F-textsl.png"></td>
+<td style="text-align:left">slanted</td>
+<td style="text-align:left"><code>\textsl&#123;Sample Text 0123&#125;</code></td>
+<td style="text-align:left"><code>\slshape</code></td>
+<td style="text-align:left"><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/2/29/F-textsl.png" alt="F-textsl.png"></td>
 </tr>
 <tr>
-<td align="left">small caps</td>
-<td align="left"><code>\textsc&#123;Sample Text 0123&#125;</code></td>
-<td align="left"><code>\scshape</code></td>
-<td align="left"><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/e/ee/F-textsc.png" alt="F-textsc.png"></td>
+<td style="text-align:left">small caps</td>
+<td style="text-align:left"><code>\textsc&#123;Sample Text 0123&#125;</code></td>
+<td style="text-align:left"><code>\scshape</code></td>
+<td style="text-align:left"><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/e/ee/F-textsc.png" alt="F-textsc.png"></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <hr>
 <p>A few description about <strong>Font typefaces</strong>: <a target="_blank" rel="noopener" href="https://www.overleaf.com/learn/latex/Font_typefaces">Reference</a></p>
 <h1 id="effects"><a href="#effects" class="headerlink" title="effects"></a>effects</h1><p>In the <a target="_blank" rel="noopener" href="https://www.overleaf.com/learn/latex/Beamer#Introduction">introduction</a>, we saw a simple slide using the <code>\begin&#123;frame&#125; \end&#123;frame&#125;</code> delimiters. It was mentioned that a <em>frame</em> is not equivalent to a <em>slide</em>, and the next example will illustrate why, by adding some effects to the slideshow.</p>
 <figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">\frametitle&#123;Sample</span> frame title&#125;</span><br><span class="line">This <span class="keyword">is</span> a text <span class="keyword">in</span> second frame. For the sake <span class="keyword">of</span> showing an example.</span><br><span class="line"></span><br><span class="line"><span class="string">\begin&#123;itemize&#125;</span></span><br><span class="line"> <span class="string">\item&lt;1-&gt;</span> Text visible <span class="literal">on</span> slide <span class="number">1</span></span><br><span class="line"> <span class="string">\item&lt;2-&gt;</span> Text visible <span class="literal">on</span> slide <span class="number">2</span></span><br><span class="line"> <span class="string">\item&lt;3&gt;</span> Text visible <span class="literal">on</span> slide <span class="number">3</span></span><br><span class="line"> <span class="string">\item&lt;4-&gt;</span> Text visible <span class="literal">on</span> slide <span class="number">4</span></span><br><span class="line"><span class="string">\end&#123;itemize&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="string">\end&#123;frame&#125;</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/4/4d/Animation.gif"></p>
+<p><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/4/4d/Animation.gif" alt></p>
 <p>In the final PDF file this code will generate 4 slides. This is intended to provide a visual effect in the presentation.</p>
 <p>In the code there’s a list, declared by the <code>\begin&#123;itemize&#125; \end&#123;itemize&#125;</code> commands, and next to each <code>item</code> is a number enclosed in two special characters: <code>&lt; &gt;</code>. This will determine in which slide the element will appear, if you append a <code>-</code> at the end of the number, the <em>item</em> will be shown in that and the subsequent slides of the current <strong>frame</strong>, otherwise it will appear only in that slide. Check the animation for a better understanding of this.</p>
 <p>These effects can be applied to any type of text, not only to the <em>itemize</em> environment. There’s a second command whose behaviour is similar, but it’s simpler since you don’t have to specify the slides where the text will be unveiled.</p>
@@ -631,22 +643,14 @@
 <h2 id="The-folder-path-to-images"><a href="#The-folder-path-to-images" class="headerlink" title="The folder path to images"></a>The folder path to images</h2><p>When working on a document which includes several images it’s possible to keep those images in one or more separated folders so that your project is more organised.</p>
 <p>The command <code>\graphicspath&#123; &#123;images/&#125; &#125;</code> tells LATEX to look in the <em>images</em> folder. The path is <strong><em>relative</em></strong> to the current working directory - so, the compiler will look for the file in the same folder as the code where the image is included. The path to the folder is relative by default, if there is no initial directory specified, for instance</p>
 <figure class="highlight erlang-repl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%Path relative to the .tex file containing the \includegraphics command</span></span><br><span class="line">\graphicspath&#123; &#123;images/&#125; &#125;</span><br></pre></td></tr></table></figure>
-
-
-<p>This is a typically straightforward way to reach the graphics folder within a file tree, but can leads to complications when .tex files within folders are included in the mail .tex file. Then, the compiler may end up looking for the images folder in the wrong place. Thus, <strong>it is best practice to specify the graphics path to be relative to the main .tex file</strong>, denoting the main .tex file directory as <code>./ </code>, for instance</p>
+<p>This is a typically straightforward way to reach the graphics folder within a file tree, but can leads to complications when .tex files within folders are included in the mail .tex file. Then, the compiler may end up looking for the images folder in the wrong place. Thus, <strong>it is best practice to specify the graphics path to be relative to the main .tex file</strong>, denoting the main .tex file directory as <code>./</code>, for instance</p>
 <figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">%Path relative to the main .tex <span class="keyword">file</span> </span><br><span class="line">\graphicspath&#123; &#123;.<span class="regexp">/images/</span>&#125; &#125;</span><br></pre></td></tr></table></figure>
-
-
 <p>as in the introduction.</p>
 <p>The path can also be <strong><em>absolute</em></strong>, if the exact location of the file on your system is specified. For example, if you were working on a local LaTeX installation on your own computer:</p>
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">%Path <span class="keyword">in</span> Windows format:</span><br><span class="line">\graphicspath&#123; &#123;c:<span class="regexp">/user/im</span>ages/&#125; &#125;</span><br><span class="line"></span><br><span class="line">%Path <span class="keyword">in</span> Unix-like (Linux, Mac OS) format</span><br><span class="line">\graphicspath&#123; &#123;<span class="regexp">/home/u</span>ser<span class="regexp">/images/</span>&#125; &#125;</span><br></pre></td></tr></table></figure>
-
-
-<p>Notice that this command requires a trailing slash <code>/ </code>and that the path is in between double braces.</p>
+<p>Notice that this command requires a trailing slash <code>/</code>and that the path is in between double braces.</p>
 <p>You can also set multiple paths if the images are saved in more than one folder. For instance, if there are two folders named <em>images1</em> and <em>images2</em>, use the command.</p>
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\graphicspath&#123; &#123;.<span class="regexp">/images1/</span>&#125;&#123;.<span class="regexp">/images2/</span>&#125; &#125;</span><br></pre></td></tr></table></figure>
-
-
 <p>If no path is set LATEX will look for pictures in the folder where the .tex file the image is included in is saved.</p>
 <h2 id="Changing-the-image"><a href="#Changing-the-image" class="headerlink" title="Changing the image"></a>Changing the image</h2><p>If we want to further specify how LATEX should include our image in the document (length, height, etc), we can pass those settings in the following format:</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">\<span class="keyword">begin</span>&#123;<span class="keyword">document</span>&#125;</span><br><span class="line"></span><br><span class="line">Overleaf <span class="keyword">is</span> a great professional tool <span class="keyword">to</span> edit <span class="keyword">online</span>, </span><br><span class="line"><span class="keyword">share</span> <span class="keyword">and</span> <span class="keyword">backup</span> your \LaTeX&#123;&#125; projects. Also offers a </span><br><span class="line">rather <span class="keyword">large</span> <span class="keyword">help</span> documentation.</span><br><span class="line"></span><br><span class="line">\includegraphics[scale=<span class="number">1.5</span>]&#123;lion-logo&#125;</span><br></pre></td></tr></table></figure>
@@ -669,38 +673,42 @@
 <p><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/1/19/InsertingImagesEx6.png" alt="Example of positioning figures"></p>
 <p>The <code>figure</code> environment is used to display pictures as floating elements within the document. This means you include the picture inside the <em>figure</em> environment and you don’t have to worry about it’s placement, LATEX will position it in a such way that it fits the flow of the document.</p>
 <p>Anyway, sometimes we need to have more control on the way the figures are displayed. An additional parameter can be passed to determine the figure positioning. In the example, <code>begin&#123;figure&#125;[h]</code>, the parameter inside the brackets set the position of the figure to <strong><em>here</em></strong>. Below a table to list the possible positioning values.</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="left">Parameter</th>
-<th align="left">Position</th>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:left">Position</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left"><code>h</code></td>
-<td align="left">Place the float <em>here</em>, i.e., <em>approximately</em> at the same point it occurs in the source text (however, not <em>exactly</em> at the spot)</td>
+<tbody>
+<tr>
+<td style="text-align:left"><code>h</code></td>
+<td style="text-align:left">Place the float <em>here</em>, i.e., <em>approximately</em> at the same point it occurs in the source text (however, not <em>exactly</em> at the spot)</td>
 </tr>
 <tr>
-<td align="left"><code>t</code></td>
-<td align="left">Position at the <em>top</em> of the page.</td>
+<td style="text-align:left"><code>t</code></td>
+<td style="text-align:left">Position at the <em>top</em> of the page.</td>
 </tr>
 <tr>
-<td align="left"><code>b</code></td>
-<td align="left">Position at the <em>bottom</em> of the page.</td>
+<td style="text-align:left"><code>b</code></td>
+<td style="text-align:left">Position at the <em>bottom</em> of the page.</td>
 </tr>
 <tr>
-<td align="left"><code>p</code></td>
-<td align="left">Put on a special <em>page</em> for floats only.</td>
+<td style="text-align:left"><code>p</code></td>
+<td style="text-align:left">Put on a special <em>page</em> for floats only.</td>
 </tr>
 <tr>
-<td align="left"><code>!</code></td>
-<td align="left">Override internal parameters LaTeX uses for determining “good” float positions.</td>
+<td style="text-align:left"><code>!</code></td>
+<td style="text-align:left">Override internal parameters LaTeX uses for determining “good” float positions.</td>
 </tr>
 <tr>
-<td align="left"><code>H</code></td>
-<td align="left">Places the float at precisely the location in the LATEX code. Requires the <code>float</code> package, though may cause problems occasionally. This is somewhat equivalent to <code>h!</code>.</td>
+<td style="text-align:left"><code>H</code></td>
+<td style="text-align:left">Places the float at precisely the location in the LATEX code. Requires the <code>float</code> package, though may cause problems occasionally. This is somewhat equivalent to <code>h!</code>.</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>In the next example you can see a picture at the <code>t</code>op of the document, despite being declared below the text.</p>
 <figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">In <span class="built_in">this</span> picture you can see a bar graph <span class="literal">that</span> shows</span><br><span class="line">the results <span class="keyword">of</span> a survey which involved some important</span><br><span class="line">data studied <span class="keyword">as</span> time passed.</span><br><span class="line"></span><br><span class="line"><span class="string">\begin&#123;figure&#125;[t]</span></span><br><span class="line"><span class="string">\includegraphics[width=8cm]&#123;Plot&#125;</span></span><br><span class="line"><span class="string">\centering</span></span><br><span class="line"><span class="string">\end&#123;figure&#125;</span></span><br></pre></td></tr></table></figure>
 <p><img src="https://sharelatex-wiki-cdn-671420.c.cdn77.org/learn-scripts/images/2/22/InsertingImagesEx7.png" alt="Example of bar graph"></p>
@@ -770,18 +778,11 @@
 </ul>
 <p>Thus, if we have two versions of an image, venndiagram.pdf (high-resolution) and venndiagram.png (low-resolution), then we can include the following line in the preamble to use the .png version while developing the report -</p>
 <figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\DeclareGraphicsExtensions&#123;<span class="string">.png</span>,<span class="string">.pdf</span>&#125;</span><br></pre></td></tr></table></figure>
-
-
 <p>The command above will ensure that if two files are encountered with the same base name but different extensions (for example venndiagram.pdf and venndiagram.png), then the .png version will be used first, and in its absence the .pdf version will be used, this is also a good ideas if some low-resolution versions are not available.</p>
 <p>Once the report has been developed, to use the high-resolution .pdf version, we can change the line in the preamble specifying the extension search order to</p>
 <figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\DeclareGraphicsExtensions&#123;<span class="string">.pdf</span>,<span class="string">.png</span>&#125;</span><br></pre></td></tr></table></figure>
-
-
-
 <p>Improving on the technique described in the previous paragraphs, we can also instruct LATEX to generate low-resolution .png versions of images on the fly while compiling the document if there is a PDF that has not been converted to PNG yet. To achieve that, we can include the following in the preamble after <code>\usepackage&#123;graphicx&#125;</code></p>
 <figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">\usepackage</span><span class="template-variable">&#123;epstopdf&#125;</span></span><br><span class="line"><span class="xml">\epstopdfDeclareGraphicsRule</span><span class="template-variable">&#123;.pdf&#125;</span><span class="template-variable">&#123;png&#125;</span><span class="template-variable">&#123;.png&#125;</span><span class="template-variable">&#123;convert #1 \OutputFile&#125;</span></span><br><span class="line"><span class="xml">\DeclareGraphicsExtensions</span><span class="template-variable">&#123;.png,.pdf&#125;</span></span><br></pre></td></tr></table></figure>
-
-
 <p>If venndiagram2.pdf exists but not venndiagram2.png, the file venndiagram2-pdf-converted-to.png will be created and loaded in its place. The command <em>convert #1</em> is responsible for the conversion and additional parameters may be passed between <em>convert</em> and <em>#1</em>. For example - <em>convert -density 100 #1</em>.</p>
 <p>There are some important things to have in mind though:</p>
 <ul>
@@ -789,70 +790,74 @@
 <li>For the final <em>production</em> version, we must comment out the <code>\epstopdfDeclareGraphicsRule</code>, so that only high-resolution PDF files are loaded. We’ll also need to change the order of precedence.</li>
 </ul>
 <h2 id="Reference-guide"><a href="#Reference-guide" class="headerlink" title="Reference guide"></a>Reference guide</h2><p><strong>LATEX units and legths</strong></p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="left">Abbreviation</th>
-<th align="left">Definition</th>
+<th style="text-align:left">Abbreviation</th>
+<th style="text-align:left">Definition</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left"><code>pt</code></td>
-<td align="left">A point, is the default length unit. About 0.3515mm</td>
+<tbody>
+<tr>
+<td style="text-align:left"><code>pt</code></td>
+<td style="text-align:left">A point, is the default length unit. About 0.3515mm</td>
 </tr>
 <tr>
-<td align="left"><code>mm</code></td>
-<td align="left">a millimetre</td>
+<td style="text-align:left"><code>mm</code></td>
+<td style="text-align:left">a millimetre</td>
 </tr>
 <tr>
-<td align="left"><code>cm</code></td>
-<td align="left">a centimetre</td>
+<td style="text-align:left"><code>cm</code></td>
+<td style="text-align:left">a centimetre</td>
 </tr>
 <tr>
-<td align="left"><code>in</code></td>
-<td align="left">an inch</td>
+<td style="text-align:left"><code>in</code></td>
+<td style="text-align:left">an inch</td>
 </tr>
 <tr>
-<td align="left"><code>ex</code></td>
-<td align="left">the height of an <strong>x</strong> in the current font</td>
+<td style="text-align:left"><code>ex</code></td>
+<td style="text-align:left">the height of an <strong>x</strong> in the current font</td>
 </tr>
 <tr>
-<td align="left"><code>em</code></td>
-<td align="left">the width of an <strong>m</strong> in the current font</td>
+<td style="text-align:left"><code>em</code></td>
+<td style="text-align:left">the width of an <strong>m</strong> in the current font</td>
 </tr>
 <tr>
-<td align="left"><code>\columnsep</code></td>
-<td align="left">distance between columns</td>
+<td style="text-align:left"><code>\columnsep</code></td>
+<td style="text-align:left">distance between columns</td>
 </tr>
 <tr>
-<td align="left"><code>\columnwidth</code></td>
-<td align="left">width of the column</td>
+<td style="text-align:left"><code>\columnwidth</code></td>
+<td style="text-align:left">width of the column</td>
 </tr>
 <tr>
-<td align="left"><code>\linewidth</code></td>
-<td align="left">width of the line in the current environment</td>
+<td style="text-align:left"><code>\linewidth</code></td>
+<td style="text-align:left">width of the line in the current environment</td>
 </tr>
 <tr>
-<td align="left"><code>\paperwidth</code></td>
-<td align="left">width of the page</td>
+<td style="text-align:left"><code>\paperwidth</code></td>
+<td style="text-align:left">width of the page</td>
 </tr>
 <tr>
-<td align="left"><code>\paperheight</code></td>
-<td align="left">height of the page</td>
+<td style="text-align:left"><code>\paperheight</code></td>
+<td style="text-align:left">height of the page</td>
 </tr>
 <tr>
-<td align="left"><code>\textwidth</code></td>
-<td align="left">width of the text</td>
+<td style="text-align:left"><code>\textwidth</code></td>
+<td style="text-align:left">width of the text</td>
 </tr>
 <tr>
-<td align="left"><code>\textheight</code></td>
-<td align="left">height of the text</td>
+<td style="text-align:left"><code>\textheight</code></td>
+<td style="text-align:left">height of the text</td>
 </tr>
 <tr>
-<td align="left"><code>\unitlength</code></td>
-<td align="left">units of length in the <em>picture</em> environment.</td>
+<td style="text-align:left"><code>\unitlength</code></td>
+<td style="text-align:left">units of length in the <em>picture</em> environment.</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p><strong>About image types in LATEX</strong></p>
 <ul>
 <li><p>latex</p>
@@ -868,7 +873,7 @@
 <p>Images can be of either vector format of bit-map format. Generally we don’t need to worry about it, but if we do happen to know the format the image is in, we can use that information to choose an appropriate image format to include in our latex document. If we have an image in vector format, we should go for PDF or EPS. If we have it in bit-map format, we should go for JPG or PNG, as storing bit-map pictures in PDF or EPS takes a lot of disk space.</p>
 </li>
 </ul>
-<p>[ Open an example of the pgfplots package in Overleaf](<a target="_blank" rel="noopener" href="https://www.sharelatex.com/project/new/template?zipUrl=/project/52f4102815577d644c0017fb/download/zip&amp;templateName=Inserting">https://www.sharelatex.com/project/new/template?zipUrl=/project/52f4102815577d644c0017fb/download/zip&amp;templateName=Inserting</a> Images&amp;compiler=pdflatex)</p>
+<p><a target="_blank" rel="noopener" href="https://www.sharelatex.com/project/new/template?zipUrl=/project/52f4102815577d644c0017fb/download/zip&amp;templateName=Inserting Images&amp;compiler=pdflatex"> Open an example of the pgfplots package in Overleaf</a></p>
 <h2 id="Further-reading"><a href="#Further-reading" class="headerlink" title="Further reading"></a>Further reading</h2><p>For more information see</p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://www.overleaf.com/learn/Positioning_images_and_tables">Positioning images and tables</a></li>
@@ -877,7 +882,7 @@
 <li><a target="_blank" rel="noopener" href="https://www.overleaf.com/learn/Lengths_in_LaTeX">Lengths in LaTeX</a></li>
 <li><a target="_blank" rel="noopener" href="http://tug.ctan.org/tex-archive/macros/latex/contrib/floatrow/floatrow.pdf"><strong>floatrow</strong> package for advanced caption managing of floating elements (tables and figures)</a></li>
 <li><a href="ftp://ctan.tug.org/tex-archive/macros/latex/contrib/sidecap/sidecap.pdf"><strong>sidecap</strong> package documentation, for side-figure captions</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=3&cad=rja&ved=0CEEQFjAC&url=http://mirror.hmc.edu/ctan/macros/latex/contrib/oberdiek/epstopdf.pdf&ei=N4v2UpK7D4eHqQHz2IDACg&usg=AFQjCNG9CxIXjrbc22kl-8QweEXeEauFew&sig2=qamKo3qpid8CEqzsHhpIrQ&bvm=bv.60983673,d.aWM"><strong>epstopdf</strong> package documentation (PDF to EPS conversion)</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=3&amp;cad=rja&amp;ved=0CEEQFjAC&amp;url=http%3A%2F%2Fmirror.hmc.edu%2Fctan%2Fmacros%2Flatex%2Fcontrib%2Foberdiek%2Fepstopdf.pdf&amp;ei=N4v2UpK7D4eHqQHz2IDACg&amp;usg=AFQjCNG9CxIXjrbc22kl-8QweEXeEauFew&amp;sig2=qamKo3qpid8CEqzsHhpIrQ&amp;bvm=bv.60983673,d.aWM"><strong>epstopdf</strong> package documentation (PDF to EPS conversion)</a></li>
 </ul>
 <h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><ul>
 <li>公式中的粗体斜体问题 <code>\usepackage[BoldFont,SlantFont]&#123;xeCJK&#125;</code></li>

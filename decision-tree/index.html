@@ -366,7 +366,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  568
+                  566
                 </span>
               
 
@@ -404,7 +404,9 @@
 
       
         <script src="/assets/js/APlayer.min.js"> </script><p>The basic knowledge of decision tree. <a id="more"></a></p>
-<h1 id="决策树模型和学习过程"><a href="#决策树模型和学习过程" class="headerlink" title="决策树模型和学习过程"></a>决策树模型和学习过程</h1><h2 id="决策树还表示给定特征条件下类的条件概率分布。"><a href="#决策树还表示给定特征条件下类的条件概率分布。" class="headerlink" title="决策树还表示给定特征条件下类的条件概率分布。"></a>决策树还表示给定特征条件下类的条件概率分布。</h2><p>当某个单元C的条件概率满足：<br>$$<br>P(Y=+1|C)&gt;0.5<br>$$<br>那么我们认为这个单元就属于正类。</p>
+<h1 id="决策树模型和学习过程"><a href="#决策树模型和学习过程" class="headerlink" title="决策树模型和学习过程"></a>决策树模型和学习过程</h1><h2 id="决策树还表示给定特征条件下类的条件概率分布。"><a href="#决策树还表示给定特征条件下类的条件概率分布。" class="headerlink" title="决策树还表示给定特征条件下类的条件概率分布。"></a>决策树还表示给定特征条件下类的条件概率分布。</h2><p>当某个单元C的条件概率满足：</p>
+<script type="math/tex; mode=display">
+P(Y=+1|C)>0.5</script><p>那么我们认为这个单元就属于正类。</p>
 <h2 id="决策树的损失函数？"><a href="#决策树的损失函数？" class="headerlink" title="决策树的损失函数？"></a>决策树的损失函数？</h2><p>决策树的损失函数一般都是正则化的极大似然函数。</p>
 <p>现实生活中采用启发式的方法，近似求解这一最优化问题。这样得到的决策树是次最优的。（sub-optional）</p>
 <ul>
@@ -425,11 +427,15 @@
 <h1 id="信息增益"><a href="#信息增益" class="headerlink" title="信息增益"></a>信息增益</h1><blockquote>
 <p>熵(entropy)： 表示随机变量不不确定性的度量。</p>
 </blockquote>
-<p>X是一个取有限个值的离散随机变量，概率分布：<br>$$<br>P(X = x_i)=p_i, i=1,2,3,···n<br>$$<br>则随机变量X的熵的定义为:<br>$$<br>H(X) = -\sum_{i=1}^np_ilogp_i<br>$$<br>由定义可知，熵只依赖于X的分布，与X的取值无关，所有也可以记为H(p)<br>$$<br>H(p) = -\sum_{i=1}^np_ilogp_i<br>$$<br>熵(entropy)越大，那么随机变量的不确定性越大。</p>
+<p>X是一个取有限个值的离散随机变量，概率分布：</p>
+<script type="math/tex; mode=display">
+P(X = x_i)=p_i, i=1,2,3,···n</script><p>则随机变量X的熵的定义为:</p>
+<script type="math/tex; mode=display">
+H(X) = -\sum_{i=1}^np_ilogp_i</script><p>由定义可知，熵只依赖于X的分布，与X的取值无关，所有也可以记为H(p)</p>
+<script type="math/tex; mode=display">
+H(p) = -\sum_{i=1}^np_ilogp_i</script><p>熵(entropy)越大，那么随机变量的不确定性越大。</p>
 <blockquote>
 <p>0-1分布作为引子，当p=0或者1的时候没有不确定性，p=0.5时，H(p)=1,随机变量的不确定性越大。</p>
-</blockquote>
-<blockquote>
 <p>条件熵：表示</p>
 </blockquote>
 
