@@ -212,30 +212,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Lagrange-duality</title>
-    <url>/Lagrange-duality/</url>
-    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="拉格朗日对偶性（Lagrange-Duality）"><a href="#拉格朗日对偶性（Lagrange-Duality）" class="headerlink" title="拉格朗日对偶性（Lagrange Duality）"></a>拉格朗日对偶性（<strong>Lagrange Duality</strong>）</h1><p>在<strong>有约束的最优化</strong>问题中，为了便于求解、我们常常会利用它来将比较原始问题转化为更好解决的对偶问题。  <a id="more"></a></p>
-<p>对于特定的问题，原始算法的对偶形式也常常会有一些共性存在。比如对于感知机和后文会介绍的支持向量机来说，<strong>它们的对偶算法都会将模型的参数表示为样本点的某种线性组合、并把问题转化为求解线性组合中的各个系数</strong></p>
-<p>虽说感知机算法的原始形式已经非常简单，但是通过将它转化为对偶形式、我们可以比较清晰地感受到转化的过程，这有助于理解和记忆后文介绍的、较为复杂的支持向量机的对偶形式</p>
-<p>考虑到原始算法的核心步骤为：</p>
-<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMAL8c1XpyRHoD2KPff9uoqgLqQh6MWOxnzMSH3m7VrtA2a0CrELWNibg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
-<p>其中、<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMUZic1vnlOgWQbGVfpmGF5ev5B8aDFpxE88Gr8fSTdbCrg61O7DHj8ew/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">是当前被误分类的样本点的集合；可以看见、参数的更新是完全基于样本点的。</p>
-<p>考虑到我们要将参数<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMrtLOP6887y6BvMX98icyxQQjs23ibNjg17PvZt5Pu58k6HVxGBe6lANA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">表示为样本点的线性组合，<strong>一个自然的想法就是记录下在核心步骤中、各个样本点分别被利用了多少次、</strong>然后利用这个次数来将<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMrtLOP6887y6BvMX98icyxQQjs23ibNjg17PvZt5Pu58k6HVxGBe6lANA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">表示出来。</p>
-<p>比如说，若设样本点共在上述核心步骤中被利用了<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicM93FUta26BC0G07Klqju0rETGicGvCxnLe2ia6EIqUUnU4USLRApNrjPA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">次、那么就有（假设初始化参数时<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMSPxcbEoPNC8R1u7Cr4QyqzNY3tWzWialvFeVSQS0mfCvIH5VmqribAOQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">：</p>
-<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMeZfFHfsQTDAfgOqkrTcxZNpCEGh0OJs0UYlCsicaicrQa6hASOF8aeibA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
-<p>如果进一步设<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMC38Sn9Z4phEAuD4agJIzvoCTwbmpc6UyRMd6RMHUutGGe3Du6QrrNg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">，则有：</p>
-<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMa01bfK9OuviaMoJgrP2s1mNwOKIaaI9nZslbo8F0HEwjdtT2WPxlTmQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
-<p>此即感知机模型的对偶形式。</p>
-<p>需要指出的是，在<strong>对偶形式中、样本点里面的<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMqSIAK5fNnhgYO0MrUCELOcNT8ysYQV20MFDqh2l20TPmOAOLvXr5Gw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">仅以内积的形式<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMfYc02NkLhZVfRmrDII75GI9ib6RyibxCaeIq9iaJibahCny3RSZNRibUTRA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">出现；这是一个非常重要且深刻的性质，</strong>利用它和后文将进行介绍核技巧、能够将许多算法从线性算法“升级”成为非线性算法</p>
-<p>注意到对偶形式的训练过程常常会重复用到大量的、样本点之间的内积，<strong>我们通常会提前将样本点两两之间的内积计算出来并存储在一个矩阵中；</strong>这个矩阵就是著名的 Gram 矩阵、其数学定义即为：</p>
-<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMHyzxBI6KmFL3jILh6iboqJdDJvuyV3EzhN8FWsP8EOyKz34uluOMIWg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
-<p><strong>从而在训练过程中如果要用到相应的内积、只需从 Gram 矩阵中提取即可，这样在大多数情况下都能大大提高效率。</strong></p>
-]]></content>
-      <tags>
-        <tag>ML</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Gradient-descent</title>
     <url>/Gradient-descent/</url>
     <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="梯度下降以及其定义"><a href="#梯度下降以及其定义" class="headerlink" title="梯度下降以及其定义"></a>梯度下降以及其定义</h1><blockquote>
@@ -288,6 +264,30 @@
 ]]></content>
       <tags>
         <tag>Interview</tag>
+        <tag>ML</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Lagrange-duality</title>
+    <url>/Lagrange-duality/</url>
+    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="拉格朗日对偶性（Lagrange-Duality）"><a href="#拉格朗日对偶性（Lagrange-Duality）" class="headerlink" title="拉格朗日对偶性（Lagrange Duality）"></a>拉格朗日对偶性（<strong>Lagrange Duality</strong>）</h1><p>在<strong>有约束的最优化</strong>问题中，为了便于求解、我们常常会利用它来将比较原始问题转化为更好解决的对偶问题。  <a id="more"></a></p>
+<p>对于特定的问题，原始算法的对偶形式也常常会有一些共性存在。比如对于感知机和后文会介绍的支持向量机来说，<strong>它们的对偶算法都会将模型的参数表示为样本点的某种线性组合、并把问题转化为求解线性组合中的各个系数</strong></p>
+<p>虽说感知机算法的原始形式已经非常简单，但是通过将它转化为对偶形式、我们可以比较清晰地感受到转化的过程，这有助于理解和记忆后文介绍的、较为复杂的支持向量机的对偶形式</p>
+<p>考虑到原始算法的核心步骤为：</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMAL8c1XpyRHoD2KPff9uoqgLqQh6MWOxnzMSH3m7VrtA2a0CrELWNibg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>其中、<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMUZic1vnlOgWQbGVfpmGF5ev5B8aDFpxE88Gr8fSTdbCrg61O7DHj8ew/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">是当前被误分类的样本点的集合；可以看见、参数的更新是完全基于样本点的。</p>
+<p>考虑到我们要将参数<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMrtLOP6887y6BvMX98icyxQQjs23ibNjg17PvZt5Pu58k6HVxGBe6lANA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">表示为样本点的线性组合，<strong>一个自然的想法就是记录下在核心步骤中、各个样本点分别被利用了多少次、</strong>然后利用这个次数来将<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMrtLOP6887y6BvMX98icyxQQjs23ibNjg17PvZt5Pu58k6HVxGBe6lANA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">表示出来。</p>
+<p>比如说，若设样本点共在上述核心步骤中被利用了<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicM93FUta26BC0G07Klqju0rETGicGvCxnLe2ia6EIqUUnU4USLRApNrjPA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">次、那么就有（假设初始化参数时<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMSPxcbEoPNC8R1u7Cr4QyqzNY3tWzWialvFeVSQS0mfCvIH5VmqribAOQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">：</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMeZfFHfsQTDAfgOqkrTcxZNpCEGh0OJs0UYlCsicaicrQa6hASOF8aeibA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>如果进一步设<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMC38Sn9Z4phEAuD4agJIzvoCTwbmpc6UyRMd6RMHUutGGe3Du6QrrNg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">，则有：</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMa01bfK9OuviaMoJgrP2s1mNwOKIaaI9nZslbo8F0HEwjdtT2WPxlTmQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>此即感知机模型的对偶形式。</p>
+<p>需要指出的是，在<strong>对偶形式中、样本点里面的<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMqSIAK5fNnhgYO0MrUCELOcNT8ysYQV20MFDqh2l20TPmOAOLvXr5Gw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">仅以内积的形式<img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMfYc02NkLhZVfRmrDII75GI9ib6RyibxCaeIq9iaJibahCny3RSZNRibUTRA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img">出现；这是一个非常重要且深刻的性质，</strong>利用它和后文将进行介绍核技巧、能够将许多算法从线性算法“升级”成为非线性算法</p>
+<p>注意到对偶形式的训练过程常常会重复用到大量的、样本点之间的内积，<strong>我们通常会提前将样本点两两之间的内积计算出来并存储在一个矩阵中；</strong>这个矩阵就是著名的 Gram 矩阵、其数学定义即为：</p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW64IdNwXBiaWRm18FPnPEgicMHyzxBI6KmFL3jILh6iboqJdDJvuyV3EzhN8FWsP8EOyKz34uluOMIWg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p><strong>从而在训练过程中如果要用到相应的内积、只需从 Gram 矩阵中提取即可，这样在大多数情况下都能大大提高效率。</strong></p>
+]]></content>
+      <tags>
         <tag>ML</tag>
       </tags>
   </entry>
@@ -683,101 +683,6 @@
       </tags>
   </entry>
   <entry>
-    <title>catboost</title>
-    <url>/catboost/</url>
-    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p><img src="https://www.biaodianfu.com/wp-content/uploads/2019/03/catboost.png" alt="img"></p>
-<p><img src="http://p1.pstatp.com/large/pgc-image/78cd3c52f9884ddea6252fe18cad3429" alt="深入理解CatBoost"></p>
-<h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>This paper presents a new open-sourced gradients boosting library that successfully handles categorical features and outperforms other gradient boosting algorithms based on CUPs and GPUs. Initally, the reason that this paper proposed is to handle categotical features. </p>
-<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Why we need to pay attention to categorical features and transform them?</p>
-<ul>
-<li>categorical feature is a feature having a discrete set of values that are not comparable with each other (e.g., user ID or name of a city). So we need to transform into valueable feature.</li>
-</ul>
-<p>This paper lists the problems about how we deal with categorical features and proposes:</p>
-<ul>
-<li>A new schema for calculating leaf values when selecting the tree structure, which helps reduce overfitting.</li>
-<li>Catboost has both GPU and CPU implementations. The GPU implementation allows for faster training and the CPU implement allows for faster scoring. </li>
-</ul>
-<h1 id="Categotical-Features"><a href="#Categotical-Features" class="headerlink" title="Categotical Features"></a>Categotical Features</h1><ol>
-<li><p>one-hot encoding</p>
-<p>The most widely used technique which is usually applied to low-cardinality categotical features is <em>one-hot encoding</em>. However, there are two issues: </p>
-<ul>
-<li>When it comes to high-cardinality categorical features,  the sparse martrix will be so huge that the computation cost soaring.</li>
-<li>For the high important categorical features, the tree will grow the very unbalance tree and need to grow very deeply to achieve the accurancy. It will cause overfitting. </li>
-</ul>
-<p>What we need to notice is that <em>one-hot encoding</em> can be done during the preprocessing phase or during the training, the latter can be implemented more efficiently in terms of training time and is implemented in Catboost.</p>
-</li>
-<li><p>Greedy Target-based Statistics (Greedy TBS)</p>
-<p>Another way to deal with categorical features is to compute some statistics using the label values of the example. The simplest way is to substitue the category with <strong>the average label value</strong> on the whole training set.<br>$$<br>\hat{x}<em>k^i=\frac{\sum</em>{j=1}^{n}[x_{j,k}=x_{i,k}]\cdot Y_i}{\sum_{j=1}^{n}[x_{j,k}=x_{i,k}]}<br>$$<br>Problem: </p>
-<ul>
-<li>overfitting</li>
-<li>bias gradients</li>
-</ul>
-</li>
-<li><p>Improved version of Greedy TBS<br>$$<br>\hat{x}<em>k^i=\frac{\sum</em>{j=1}^{p-1}[x_{\sigma <em>j,k}=x</em>{\sigma <em>p,k}]Y</em>{\sigma <em>j}+a\cdot P}{\sum</em>{j=1}^{p-1}[x_{\sigma <em>j,k}=x</em>{\sigma _p,k}]+a}<br>$$<br>Adding prior $P$ is a common practice and it helps to reduce the noise obtained from low-frequency categories. </p>
-<p>Regression Task:</p>
-<ul>
-<li>calculating prior is to take the average label value in the dataset.</li>
-</ul>
-<p>Binary Classification:</p>
-<ul>
-<li>prior is usually an priori probability of encountering  a postive class.</li>
-</ul>
-<p>Problem:</p>
-<ul>
-<li>overfitting</li>
-</ul>
-<h2 id="Feature-combinations"><a href="#Feature-combinations" class="headerlink" title="Feature combinations"></a>Feature combinations</h2><p>Note that any combination of several categorical features could be considered as a new one (e.g., user ID and music genre). If we just use one-hot encoding or label encoding, we loose a new powerful information. So, we need to combine some features. </p>
-<p>However, the number of combinations grows exponentially with the number of categorical featuees in dataset and it is not possible to consider all of them in the algorithm. </p>
-<h3 id="CatBoost-method"><a href="#CatBoost-method" class="headerlink" title="CatBoost method"></a>CatBoost method</h3><p>CatBoost considers combination in a greedy way. </p>
-<ol>
-<li>No combinations are considered for the first split in the tree. </li>
-<li>For the next splits CatBoost combines all combinations and categorical features present in the current tree with all categorical features in dataset. </li>
-<li>Combination values are converted to numbers on the fly. </li>
-</ol>
-<p><strong>Notice</strong>: </p>
-<p>CatBoost also generates combinations of numberical and categorical features in the following way: all the splits selected in the tree are considered as categorical with two values and used in combinations in the same way as categotical ones.</p>
-<h3 id="count-encoding"><a href="#count-encoding" class="headerlink" title="count encoding"></a>count encoding</h3><p>Caboost also uses a number that calculates number of appearances of this category in the dataset.</p>
-<h1 id="Fighting-Gradient-Bias"><a href="#Fighting-Gradient-Bias" class="headerlink" title="Fighting Gradient Bias"></a>Fighting Gradient Bias</h1><blockquote>
-<p>why gradients have gradients bias?</p>
-<p>what problem will cause by gradient bias?</p>
-<p>how to fix it?</p>
-</blockquote>
-<p>All classical boosting algorithms suffer from overfitting caused by the problem of biased pointwise gradient estimates. Gradients used same data points to estimate each step. This leads to a shift of the distribution of estimated gradients in any domain of feature space in comparison with the true distribution of gradients in this domain, which leads to overfitting. </p>
-<p>In many GBDTs (e.g., XGBoost, LightGBM) building trees with two steps:</p>
-<ol>
-<li>Choosing the tree structure and setting values in leafts after the tree structure is fixed.</li>
-<li>To choose the best tree structure, the algorithm enumerates through different splits, builds trees with theses splits, set values in the obtained leafts, scores the trees and selects the best split. </li>
-</ol>
-<p>CatBoost modified the first phase and hold the same second phase. </p>
-</li>
-</ol>
-<p><img src="https://pic4.zhimg.com/80/v2-94510dc35d717921ccb0cfa0aa109907_720w.jpg" alt="img"></p>
-<p>我们运用下面这个技巧来处理这个问题：对于每一个样本 ，我们训练一个单独的模型$M$，且该模型从不使用基于该样本的梯度估计进行更新。我们使用$g_i$来估计 上的梯度，并使用这个估计对结果树进行评分。</p>
-<p> <img src="http://p9.pstatp.com/large/pgc-image/c41d966835c641f48f5839de35ef8c57" alt="深入理解CatBoost"></p>
-<h1 id="预测偏移和排序提升"><a href="#预测偏移和排序提升" class="headerlink" title="预测偏移和排序提升"></a>预测偏移和排序提升</h1><h2 id="预测偏移"><a href="#预测偏移" class="headerlink" title="预测偏移"></a>预测偏移</h2><p>对于学习预测偏移的内容，我提出了两个问题：</p>
-<blockquote>
-<p>什么是预测偏移？</p>
-<p>用什么办法解决预测偏移问题？</p>
-</blockquote>
-<p>预测偏移（Prediction shift）是由梯度偏差造成的。在GDBT的每一步迭代中, 损失函数使用相同的数据集求得当前模型的梯度, 然后训练得到基学习器, 但这会导致梯度估计偏差, 进而导致模型产生过拟合的问题。CatBoost通过采用排序提升 （Ordered boosting） 的方式替换传统算法中梯度估计方法，进而减轻梯度估计的偏差，提高模型的泛化能力。下面我们对预测偏移进行详细的描述和分析。</p>
-<h3 id="首先来看下GBDT的整体迭代过程："><a href="#首先来看下GBDT的整体迭代过程：" class="headerlink" title="首先来看下GBDT的整体迭代过程："></a>首先来看下GBDT的整体迭代过程：</h3><p>GBDT算法是通过一组分类器的串行迭代，最终得到一个强学习器，以此来进行更高精度的分类。它使用了前向分布算法，弱学习器使用分类回归树（CART）。</p>
-<p>假设前一轮迭代得到的强学习器是, 损失函数是 ，则本轮迭代的目的是找到一个CART回归树模型的弱学习器 ，让本轮的损失函数最小。式（1）表示的是本轮迭代的目标函数 。</p>
-<p>GBDT使用损失函数的负梯度来拟合每一轮的损失的近似值，式（2）中 表示的是上述梯度。</p>
-<p>通常用式（3）近似拟合 。</p>
-<p>最终得到本轮的强学习器，如式（4）所示：</p>
-<h3 id="在这个过程当中，偏移是这样发生的："><a href="#在这个过程当中，偏移是这样发生的：" class="headerlink" title="在这个过程当中，偏移是这样发生的："></a>在这个过程当中，偏移是这样发生的：</h3><p>根据进行随机计算的条件分布 与测试集的分布 发生偏移，这样由公式（3）定义的基学习器 与公式（1）定义的产生偏差，最后影响模型 的泛化能力。</p>
-<h2 id="排序提升"><a href="#排序提升" class="headerlink" title="排序提升"></a>排序提升</h2><p>为了克服预测偏移问题，CatBoost提出了一种新的叫做Ordered boosting的算法。</p>
-<p><img src="http://p1.pstatp.com/large/pgc-image/0b520547dc9148dcbb94fbfc919dad0b" alt="深入理解CatBoost"></p>
-<p>由上图的Ordered boosting算法可知，为了得到无偏梯度估计, CatBoost对每一个样本都会训练一个单独的模型 ，模型 由使用不包含样本的训练集训练得到。我们使用 来得到关于样本的梯度估计，并使用该梯度来训练基学习器并得到最终的模型。</p>
-<p>Ordered boosting算法好是好，但是在大部分的实际任务当中都不具备使用价值，因为需要训练个不同的模型，大大增加的内存消耗和时间复杂度。在CatBoost当中，我们以决策树为基学习器的梯度提升算法的基础上，对该算法进行了改进。</p>
-<p>前面提到过，在传统的GBDT框架当中，构建下一棵树分为两个阶段：选择树结构和在树结构固定后计算叶子节点的值。CatBoost主要在第一阶段进行优化。在建树的阶段，CatBoost有两种提升模式，Ordered和Plain。Plain模式是采用内建的ordered TS对类别型特征进行转化后的标准GBDT算法。Ordered则是对Ordered boosting算法的优化。两种提升模式的具体介绍可以翻看论文《CatBoost: unbiased boosting with categorical features》。</p>
-]]></content>
-      <tags>
-        <tag>Interview</tag>
-        <tag>ML</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>cv_interview_tbsi</title>
     <url>/cv-interview-tbsi/</url>
     <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>The 100% asked questions for my cv in the interview of TBSI.</p>
@@ -1081,6 +986,101 @@
 ]]></content>
       <tags>
         <tag>Interview</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>catboost</title>
+    <url>/catboost/</url>
+    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p><img src="https://www.biaodianfu.com/wp-content/uploads/2019/03/catboost.png" alt="img"></p>
+<p><img src="http://p1.pstatp.com/large/pgc-image/78cd3c52f9884ddea6252fe18cad3429" alt="深入理解CatBoost"></p>
+<h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>This paper presents a new open-sourced gradients boosting library that successfully handles categorical features and outperforms other gradient boosting algorithms based on CUPs and GPUs. Initally, the reason that this paper proposed is to handle categotical features. </p>
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Why we need to pay attention to categorical features and transform them?</p>
+<ul>
+<li>categorical feature is a feature having a discrete set of values that are not comparable with each other (e.g., user ID or name of a city). So we need to transform into valueable feature.</li>
+</ul>
+<p>This paper lists the problems about how we deal with categorical features and proposes:</p>
+<ul>
+<li>A new schema for calculating leaf values when selecting the tree structure, which helps reduce overfitting.</li>
+<li>Catboost has both GPU and CPU implementations. The GPU implementation allows for faster training and the CPU implement allows for faster scoring. </li>
+</ul>
+<h1 id="Categotical-Features"><a href="#Categotical-Features" class="headerlink" title="Categotical Features"></a>Categotical Features</h1><ol>
+<li><p>one-hot encoding</p>
+<p>The most widely used technique which is usually applied to low-cardinality categotical features is <em>one-hot encoding</em>. However, there are two issues: </p>
+<ul>
+<li>When it comes to high-cardinality categorical features,  the sparse martrix will be so huge that the computation cost soaring.</li>
+<li>For the high important categorical features, the tree will grow the very unbalance tree and need to grow very deeply to achieve the accurancy. It will cause overfitting. </li>
+</ul>
+<p>What we need to notice is that <em>one-hot encoding</em> can be done during the preprocessing phase or during the training, the latter can be implemented more efficiently in terms of training time and is implemented in Catboost.</p>
+</li>
+<li><p>Greedy Target-based Statistics (Greedy TBS)</p>
+<p>Another way to deal with categorical features is to compute some statistics using the label values of the example. The simplest way is to substitue the category with <strong>the average label value</strong> on the whole training set.<br>$$<br>\hat{x}<em>k^i=\frac{\sum</em>{j=1}^{n}[x_{j,k}=x_{i,k}]\cdot Y_i}{\sum_{j=1}^{n}[x_{j,k}=x_{i,k}]}<br>$$<br>Problem: </p>
+<ul>
+<li>overfitting</li>
+<li>bias gradients</li>
+</ul>
+</li>
+<li><p>Improved version of Greedy TBS<br>$$<br>\hat{x}<em>k^i=\frac{\sum</em>{j=1}^{p-1}[x_{\sigma <em>j,k}=x</em>{\sigma <em>p,k}]Y</em>{\sigma <em>j}+a\cdot P}{\sum</em>{j=1}^{p-1}[x_{\sigma <em>j,k}=x</em>{\sigma _p,k}]+a}<br>$$<br>Adding prior $P$ is a common practice and it helps to reduce the noise obtained from low-frequency categories. </p>
+<p>Regression Task:</p>
+<ul>
+<li>calculating prior is to take the average label value in the dataset.</li>
+</ul>
+<p>Binary Classification:</p>
+<ul>
+<li>prior is usually an priori probability of encountering  a postive class.</li>
+</ul>
+<p>Problem:</p>
+<ul>
+<li>overfitting</li>
+</ul>
+<h2 id="Feature-combinations"><a href="#Feature-combinations" class="headerlink" title="Feature combinations"></a>Feature combinations</h2><p>Note that any combination of several categorical features could be considered as a new one (e.g., user ID and music genre). If we just use one-hot encoding or label encoding, we loose a new powerful information. So, we need to combine some features. </p>
+<p>However, the number of combinations grows exponentially with the number of categorical featuees in dataset and it is not possible to consider all of them in the algorithm. </p>
+<h3 id="CatBoost-method"><a href="#CatBoost-method" class="headerlink" title="CatBoost method"></a>CatBoost method</h3><p>CatBoost considers combination in a greedy way. </p>
+<ol>
+<li>No combinations are considered for the first split in the tree. </li>
+<li>For the next splits CatBoost combines all combinations and categorical features present in the current tree with all categorical features in dataset. </li>
+<li>Combination values are converted to numbers on the fly. </li>
+</ol>
+<p><strong>Notice</strong>: </p>
+<p>CatBoost also generates combinations of numberical and categorical features in the following way: all the splits selected in the tree are considered as categorical with two values and used in combinations in the same way as categotical ones.</p>
+<h3 id="count-encoding"><a href="#count-encoding" class="headerlink" title="count encoding"></a>count encoding</h3><p>Caboost also uses a number that calculates number of appearances of this category in the dataset.</p>
+<h1 id="Fighting-Gradient-Bias"><a href="#Fighting-Gradient-Bias" class="headerlink" title="Fighting Gradient Bias"></a>Fighting Gradient Bias</h1><blockquote>
+<p>why gradients have gradients bias?</p>
+<p>what problem will cause by gradient bias?</p>
+<p>how to fix it?</p>
+</blockquote>
+<p>All classical boosting algorithms suffer from overfitting caused by the problem of biased pointwise gradient estimates. Gradients used same data points to estimate each step. This leads to a shift of the distribution of estimated gradients in any domain of feature space in comparison with the true distribution of gradients in this domain, which leads to overfitting. </p>
+<p>In many GBDTs (e.g., XGBoost, LightGBM) building trees with two steps:</p>
+<ol>
+<li>Choosing the tree structure and setting values in leafts after the tree structure is fixed.</li>
+<li>To choose the best tree structure, the algorithm enumerates through different splits, builds trees with theses splits, set values in the obtained leafts, scores the trees and selects the best split. </li>
+</ol>
+<p>CatBoost modified the first phase and hold the same second phase. </p>
+</li>
+</ol>
+<p><img src="https://pic4.zhimg.com/80/v2-94510dc35d717921ccb0cfa0aa109907_720w.jpg" alt="img"></p>
+<p>我们运用下面这个技巧来处理这个问题：对于每一个样本 ，我们训练一个单独的模型$M$，且该模型从不使用基于该样本的梯度估计进行更新。我们使用$g_i$来估计 上的梯度，并使用这个估计对结果树进行评分。</p>
+<p> <img src="http://p9.pstatp.com/large/pgc-image/c41d966835c641f48f5839de35ef8c57" alt="深入理解CatBoost"></p>
+<h1 id="预测偏移和排序提升"><a href="#预测偏移和排序提升" class="headerlink" title="预测偏移和排序提升"></a>预测偏移和排序提升</h1><h2 id="预测偏移"><a href="#预测偏移" class="headerlink" title="预测偏移"></a>预测偏移</h2><p>对于学习预测偏移的内容，我提出了两个问题：</p>
+<blockquote>
+<p>什么是预测偏移？</p>
+<p>用什么办法解决预测偏移问题？</p>
+</blockquote>
+<p>预测偏移（Prediction shift）是由梯度偏差造成的。在GDBT的每一步迭代中, 损失函数使用相同的数据集求得当前模型的梯度, 然后训练得到基学习器, 但这会导致梯度估计偏差, 进而导致模型产生过拟合的问题。CatBoost通过采用排序提升 （Ordered boosting） 的方式替换传统算法中梯度估计方法，进而减轻梯度估计的偏差，提高模型的泛化能力。下面我们对预测偏移进行详细的描述和分析。</p>
+<h3 id="首先来看下GBDT的整体迭代过程："><a href="#首先来看下GBDT的整体迭代过程：" class="headerlink" title="首先来看下GBDT的整体迭代过程："></a>首先来看下GBDT的整体迭代过程：</h3><p>GBDT算法是通过一组分类器的串行迭代，最终得到一个强学习器，以此来进行更高精度的分类。它使用了前向分布算法，弱学习器使用分类回归树（CART）。</p>
+<p>假设前一轮迭代得到的强学习器是, 损失函数是 ，则本轮迭代的目的是找到一个CART回归树模型的弱学习器 ，让本轮的损失函数最小。式（1）表示的是本轮迭代的目标函数 。</p>
+<p>GBDT使用损失函数的负梯度来拟合每一轮的损失的近似值，式（2）中 表示的是上述梯度。</p>
+<p>通常用式（3）近似拟合 。</p>
+<p>最终得到本轮的强学习器，如式（4）所示：</p>
+<h3 id="在这个过程当中，偏移是这样发生的："><a href="#在这个过程当中，偏移是这样发生的：" class="headerlink" title="在这个过程当中，偏移是这样发生的："></a>在这个过程当中，偏移是这样发生的：</h3><p>根据进行随机计算的条件分布 与测试集的分布 发生偏移，这样由公式（3）定义的基学习器 与公式（1）定义的产生偏差，最后影响模型 的泛化能力。</p>
+<h2 id="排序提升"><a href="#排序提升" class="headerlink" title="排序提升"></a>排序提升</h2><p>为了克服预测偏移问题，CatBoost提出了一种新的叫做Ordered boosting的算法。</p>
+<p><img src="http://p1.pstatp.com/large/pgc-image/0b520547dc9148dcbb94fbfc919dad0b" alt="深入理解CatBoost"></p>
+<p>由上图的Ordered boosting算法可知，为了得到无偏梯度估计, CatBoost对每一个样本都会训练一个单独的模型 ，模型 由使用不包含样本的训练集训练得到。我们使用 来得到关于样本的梯度估计，并使用该梯度来训练基学习器并得到最终的模型。</p>
+<p>Ordered boosting算法好是好，但是在大部分的实际任务当中都不具备使用价值，因为需要训练个不同的模型，大大增加的内存消耗和时间复杂度。在CatBoost当中，我们以决策树为基学习器的梯度提升算法的基础上，对该算法进行了改进。</p>
+<p>前面提到过，在传统的GBDT框架当中，构建下一棵树分为两个阶段：选择树结构和在树结构固定后计算叶子节点的值。CatBoost主要在第一阶段进行优化。在建树的阶段，CatBoost有两种提升模式，Ordered和Plain。Plain模式是采用内建的ordered TS对类别型特征进行转化后的标准GBDT算法。Ordered则是对Ordered boosting算法的优化。两种提升模式的具体介绍可以翻看论文《CatBoost: unbiased boosting with categorical features》。</p>
+]]></content>
+      <tags>
+        <tag>Interview</tag>
+        <tag>ML</tag>
       </tags>
   </entry>
   <entry>
@@ -3147,112 +3147,6 @@
       </tags>
   </entry>
   <entry>
-    <title>paper-LightGBM</title>
-    <url>/paper-LightGBM/</url>
-    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>写这篇博客的原因是，网上很多关于Lightgbm的讲解都是从Lightgbm的官方文档来的，官方文档只会告诉你怎么用，很多细节都没讲。所以自己翻过来Lightgbm的源论文：LightGBM: A Highly Efficient Gradient Boosting Decision Tree仔细看了几遍，现在整理一下源论文，加深自己对Lightgbm技术细节的认识和思考。</p>
-<p>首先感谢网友<a href="https://blog.csdn.net/shine19930820/article/details/79123216">立刻有</a>的博客，省去了我很多翻译的工作。我更改了他博客的部分不当（翻译或者公式）的地方，又加入了自己的一些思考。</p>
-<h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>Gradient Boosting Decision Tree (GBDT)非常流行却鲜有实现，只有像XGBoost和pGBRT实现。当特征维度较高和数据量巨大的时候，仍然存在效率和可扩展性的问题。一个主要原因就是对于每一个特征的每一个分裂点，都需要遍历全部数据计算信息增益，这一过程非常耗时。针对这一问题，本文提出两种新方法：<strong>Gradient-based One-Side Sampling (GOSS) 和Exclusive Feature Bundling (EFB)**（</strong>基于梯度的one-side采样<strong>和</strong>互斥的特征捆绑<strong>）。在GOSS中，我们排除了重要的比例-具有小梯度的实例，只用剩下的来估计信息增益，我们证明，</strong>这些梯度大的实例在计算信息增益中扮演重要角色**，GOSS可以用更小的数据量对信息增益进行相当准确的估计。对于EFB，我们捆绑互斥的特征（例如，特征间很少同时非零的特征），来降低特征的个数。我们完美地证明了捆绑互斥特征是NP难的，但贪心算法能够实现相当好的逼近率，因此我们能够在不损害分割点准确率许多的情况下，有效减少特征的数量。（牺牲一点分割准确率降低特征数量），这一算法命名为LightGBM。在多个公共数据集实验证明，LightGBM加速了传统GBDT训练过程20倍以上，同时达到了几乎相同的精度。</p>
-<h1 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a>1. Introduction</h1><p>GBDT因为其本身的有效性、准确性、可解释性，成为了广泛使用的机器学习算法。GBDT在许多机器学习任务上均取得了最好的效果，例如多分类，点击预测，排序。但最近几年随着大数据的爆发（特征量和数据量），GBDT面临平衡准确率和效率的调整。</p>
-<p>GBDT缺点：<strong>对于每一个特征的每一个分裂点，都需要遍历全部数据来计算信息增益</strong>。因此，其计算复杂度将受到特征数量和数据量双重影响，造成处理大数据时十分耗时。</p>
-<p>解决这个问题的直接方法就是减少特征量和数据量而且不影响精确度，有部分工作根据数据权重采样来加速boosting的过程，但由于gbdt没有样本权重而不能应用。而本文提出两种新方法实现此目标。</p>
-<p><strong>Gradient-based One-Side Sampling (GOSS)**：GBDT虽然没有数据权重，但每个数据实例有不同的梯度，</strong>根据计算信息增益的定义，梯度大的实例对信息增益有更大的影响**，因此在下采样时，我们应该尽量保留梯度大的样本（预先设定阈值，或者最高百分位间），<font color="red">随机去掉梯度小的样本</font>。我们证明此措施在相同的采样率下比随机采样获得更准确的结果，尤其是在信息增益范围较大时。</p>
-<p>**Exclusive Feature Bundling (EFB)**：通常在真实应用中，虽然特征量比较多，但是由于特征空间十分稀疏，是否可以设计一种无损的方法来减少有效特征呢？特别在稀疏特征空间上，许多特征几乎是互斥的（例如许多特征不会同时为非零值，像one-hot），我们可以捆绑互斥的特征。最后，我们将捆绑问题归约到图着色问题，通过贪心算法求得近似解。</p>
-<h1 id="2-Preliminaries"><a href="#2-Preliminaries" class="headerlink" title="2. Preliminaries"></a>2. Preliminaries</h1><h2 id="2-1-GBDT-and-Its-Complexity-Analysis"><a href="#2-1-GBDT-and-Its-Complexity-Analysis" class="headerlink" title="2.1 GBDT and Its Complexity Analysis"></a>2.1 GBDT and Its Complexity Analysis</h2><p>GBDT是一种集成模型的决策树，顺序训练决策树。每次迭代中，GBDT通过拟合负梯度（残差）来学到决策树。</p>
-<p>学习决策树是GBDT主要的时间花销，而学习决策树中找到最优切分点最消耗时间。广泛采用的预排序算法来找到最优切分点，这种方法会列举预排序中所有可能的切分点。这种算法虽然能够找到最优的切分点，但对于训练速度和内存消耗上都效率低。另一种流行算法是直方图算法（histogram-based algorithm）。直方图算法并不通过特征排序找到最优的切分点，而是将连续的特征值抽象成离散的分箱，并使用这些分箱在训练过程中构建特征直方图，这种算法更加训练速度和内存消耗上都更加高效，lightGBM使用此种算法。</p>
-<p>histogram-based算法通过直方图寻找最优切分点，其建直方图消耗O(#data * #feature)，寻找最优切分点消耗O(#bin * # feature)，而#bin的数量远小于#data，<strong>所以建直方图为主要时间消耗</strong>。如果能够减少数据量或特征量，那么还能够够加速GBDT的训练。（寻找最优切分点已经进行了优化，那么我们现在应该对建直方图的时间进行优化）</p>
-<h2 id="2-2-Related-Work"><a href="#2-2-Related-Work" class="headerlink" title="2.2 Related Work"></a>2.2 Related Work</h2><p>GBDT有许多实现，如XGBoost，PGBRT，Scikit-learn，gbm in R。Scikit-learn和gbm in R实现都用了预排序，pGBRT使用了直方图算法，XGBoost支持预排序和直方图算法，由于XGBoost胜过其他算法，我们用它作为baseline。</p>
-<p>为了减小训练数据集，通常做法是下采样。例如过滤掉权重小于阈值的数据。SGB每次迭代中用随机子集训练弱学习器。或者采样率基于训练过程动态调整。基于AdaBoost的SGB不能直接应用于GBDT，因为GBDT中没有原始的权重。虽然SGB也能间接应用于GBDT，但往往会影响精度。</p>
-<p>同样，可以考虑过滤掉弱特征（什么是弱特征）来减少特征量。通常用主成分分析或者投影法。当然，这些方法依赖于一个假设-特征有高冗余性，但实际中往往不是。（设计特征来自于其独特的贡献，移除任何一维度都可以某种程度上影响精度）。</p>
-<p>实际中大规模的数据集通常都是非常稀疏的，<strong>使用预排序算法的GBDT能够通过无视为0的特征来降低训练时间消耗。然而直方图算法没有优化稀疏的方案。因为直方图算法无论特征值是否为0，都需要为每个数据检索特征区间值</strong>。如果基于直方图的GBDT能够有效解决稀疏特征中的0值，那么这样将会有很好的性能。</p>
-<p>下图为直方图算法的流程：</p>
-<p><img src="https://img-blog.csdn.net/2018101417401264?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fuc2h1YWlfYXcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"></p>
-<h1 id="3-Gradient-based-One-Side-Sampling"><a href="#3-Gradient-based-One-Side-Sampling" class="headerlink" title="3. Gradient-based One-Side Sampling"></a>3. Gradient-based One-Side Sampling</h1><p>GOSS是一种在减少数据量和保证精度上平衡的算法。</p>
-<h2 id="3-1-Algorithm-Description"><a href="#3-1-Algorithm-Description" class="headerlink" title="3.1 Algorithm Description"></a>3.1 Algorithm Description</h2><p>AdaBoost中，样本权重是数据实例重要性的指标。然而在GBDT中没有原始样本权重，不能应用权重采样。幸运的事，我们观察到GBDT中每个数据都有不同的梯度值，对采样十分有用，<strong>即实例的梯度小，实例训练误差也就较小，已经被学习得很好了，直接想法就是丢掉这部分梯度小的数据</strong>。然而这样做会改变数据的分布，将会影响训练的模型的精确度，为了避免此问题，我们提出了GOSS。</p>
-<p><strong>GOSS保留所有的梯度较大的实例，在梯度小的实例上使用随机采样</strong>（Random sampling）。为了抵消对数据分布的影响，计算信息增益的时候，GOSS对小梯度的数据引入常量乘数。GOSS首先根据数据的梯度绝对值排序，选取top a个实例。然后在剩余的数据中随机采样b个实例。接着计算信息增益时为采样出的小梯度数据乘以**(1-a)/b（<strong>即，小梯度样本总数/随机采样出的小梯度样本数量</strong>）**，这样算法就会更关注训练不足的实例，而不会过多改变原数据集的分布。</p>
-<p>GOSS的算法流程如下：</p>
-<p><img src="https://img-blog.csdn.net/20181015103352340?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fuc2h1YWlfYXcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"></p>
-<h2 id="3-2-Theoretical-Analysis"><a href="#3-2-Theoretical-Analysis" class="headerlink" title="3.2 Theoretical Analysis"></a>3.2 Theoretical Analysis</h2><p>GBDT使用决策树，来学习获得一个将输入空间映射到梯度空间的函数。假设训练集有n个实例 <img src="https://private.codecogs.com/gif.latex?%7Bx_1,...,x_n%7D%25u200B" alt="{x_1,...,x_n}">，特征维度为s。每次迭代时，模型数据变量的损失函数的负梯度方向表示为<img src="https://private.codecogs.com/gif.latex?g_1,...,g_n" alt="g_1,...,g_n">，决策树通过最优切分点（最大信息增益点）将数据分到各个节点。GBDT通过分割后的方差衡量信息增益</p>
-<p><strong>定义3.1</strong>：O表示某个固定叶子节点的训练集，分割特征j的分割点d定义为：</p>
-<p>​                          <img src="https://private.codecogs.com/gif.latex?V_%7Bj%7CO%7D(d)%20=%20%5Cfrac%7B1%7D%7Bn_O%7D%20(%20%5Cfrac%7B%20(%20%5Csum_%7B%20%5C%7Bx_i%20%5Cin%20O:%20x_%7Bij%7D%20%5Cle%20d%20%5C%7D%20%7D%20g_i%20)%5E2%20%7D%7Bn%5Ej_%7Bl%7CO%7D(d)%7D%20&plus;%20%5Cfrac%7B%20(%20%5Csum_%7B%20%5C%7Bx_i%20%5Cin%20O:%20x_%7Bij%7D%20%3E%20d%20%5C%7D%20%7D%20g_i%20)%5E2%20%7D%7Bn%5Ej_%7Br%7CO%7D(d)%7D%20)" alt="V_{j|O}(d) = \frac{1}{n_O} ( \frac{ ( \sum_{ \{x_i \in O: x_{ij} \le d \} } g_i )^2 }{n^j_{l|O}(d)} + \frac{ ( \sum_{ \{x_i \in O: x_{ij} &gt; d \} } g_i )^2 }{n^j_{r|O}(d)} )"></p>
-<p>其中，<img src="https://private.codecogs.com/gif.latex?n_O%20=%20%5Csum%20I%5Bx_i%20%5Cin%20O%5D" alt="n_O = \sum I[x_i \in O]">(某个固定叶子节点的训练集样本的个数)，<img src="https://private.codecogs.com/gif.latex?n%5Ej_%7Bl%7CO%7D(d)%20=%20%5Csum%20I%5Bx_i%20%5Cin%20O:%20x_i%20%5Cle%20d%20%5D" alt="n^j_{l|O}(d) = \sum I[x_i \in O: x_i \le d ]">(在第j个特征上值小于等于d的样本个数)，<img src="https://private.codecogs.com/gif.latex?n%5Ej_%7Br%7CO%7D%20(d)=%20%5Csum%20I%5Bx_i%20%5Cin%20O:%20x_i%20%3E%20d%20%5D" alt="n^j_{r|O} (d)= \sum I[x_i \in O: x_i &gt; d ]">(在第j个特征上值大于d的样本个数)。</p>
-<p>遍历每个特征的每个分裂点，找到<img src="https://private.codecogs.com/gif.latex?d%5E*_j%20=%20argmax_d%20V_j(d)" alt="d^*_j = argmax_d V_j(d)"> 并计算最大的信息增益<img src="https://private.codecogs.com/gif.latex?V_j(d_j%5E*)" alt="V_j(d_j^*)">，然后，将数据根据特征<img src="https://private.codecogs.com/gif.latex?j%5E*" alt="j^*">的分裂点<img src="https://private.codecogs.com/gif.latex?d_%7Bj%5E*%7D" alt="d_{j^*}">将数据分到左右子节点。</p>
-<p>在GOSS中，</p>
-<ol>
-<li>首先根据数据的梯度进行降序排序。</li>
-<li>保留top %a个数据实例，作为数据子集A。</li>
-<li>对于剩下的数据的实例集合**<img src="https://private.codecogs.com/gif.latex?A%5Ec" alt="A^c">**，随机采样获得大小为<img src="https://private.codecogs.com/gif.latex?b*%7CA%5Ec%7C" alt="b*|A^c|">的数据子集B。</li>
-<li>最后我们在集合<img src="https://private.codecogs.com/gif.latex?A%5Ccup%20B" alt="A\cup B">上，通过以下方程估计信息增益<img src="https://private.codecogs.com/gif.latex?%5Ctilde%20V_j(d)" alt="\tilde V_j(d)">:</li>
-</ol>
-<p>​         <img src="https://private.codecogs.com/gif.latex?%5Ctilde%7BV%7D_j%20(d)%20=%20%5Cfrac%7B1%7D%7Bn%7D%20(%20%5Cfrac%7B%20(%20%5Csum_%7B%20%7Bx_i%20%5Cin%20A:%20x_%7Bij%7D%20%5Cle%20d%20%7D%20%7D%20g_i%20&plus;%20%5Cfrac%7B1-a%7D%7Bb%7D%5Csum_%7B%20%7Bx_i%20%5Cin%20B:%20x_%7Bij%7D%5Cle%20d%20%7D%20%7D%20g_i%20)%5E2%20%7D%7Bn_l%5E%7Bj%7D(d)%7D%20&plus;%20%5Cfrac%7B%20(%20%5Csum_%7B%20%7Bx_i%20%5Cin%20A:%20x_%7Bij%7D%20%3E%20d%20%7D%20%7D%20g_i%20&plus;%20%5Cfrac%7B1-a%7D%7Bb%7D%5Csum_%7B%20%7Bx_i%20%5Cin%20B:%20x_%7Bij%7D%20%3E%20d%20%7D%20%7D%20g_i%20)%5E2%20%7D%7Bn_r%5E%7Bj%7D(d)%7D%20)" alt="\tilde{V}_j (d) = \frac{1}{n} ( \frac{ ( \sum_{ {x_i \in A: x_{ij} \le d } } g_i + \frac{1-a}{b}\sum_{ {x_i \in B: x_{ij}\le d } } g_i )^2 }{n_l^{j}(d)} + \frac{ ( \sum_{ {x_i \in A: x_{ij} &gt; d } } g_i + \frac{1-a}{b}\sum_{ {x_i \in B: x_{ij} &gt; d } } g_i )^2 }{n_r^{j}(d)} )"></p>
-<p>此处GOSS通过较小的数据集估计信息增益 <img src="https://private.codecogs.com/gif.latex?%5Ctilde%7BV%7D%7Bj%7D(d)" alt="\tilde{V}{j}(d)">，将大大地减小计算量。更重要的是，我们接下来理论表明GOSS不会丢失许多训练精度，且胜过随机采样，理论的证明在附加材料(参考文献【2】)。</p>
-<p><strong>Theorem 3.2</strong>：我们定义GOSS近似误差为<img src="https://private.codecogs.com/gif.latex?%5Cepsilon%20(d)=%7C%5Ctilde%7BV%7D%7Bj%7D(d)-%7BV%7D%7Bj%7D(d)%7C" alt="\epsilon (d)=|\tilde{V}{j}(d)-{V}{j}(d)|">，<img src="https://private.codecogs.com/gif.latex?%5Cbar%7Bg%7D_l%5Ej(d)=%5Cfrac%7B%5Csum_%7Bx_i%20%5Cin%20(A%20%5Ccup%20A%5Ec)_l%7D%20%7Cg_i%7C%7D%7Bn_l%5Ej(d)%7D" alt="\bar{g}_l^j(d)=\frac{\sum_{x_i \in (A \cup A^c)_l} |g_i|}{n_l^j(d)}">，<img src="https://private.codecogs.com/gif.latex?%5Cbar%7Bg%7D_r%5Ej(d)=%5Cfrac%7B%5Csum%7Bx_i%20%5Cin%20(A%20%5Ccup%20A%5Ec)_r%7D%20%7Cg_i%7C%7D%7Bn_r%5Ej(d)%7D" alt="\bar{g}_r^j(d)=\frac{\sum{x_i \in (A \cup A^c)_r} |g_i|}{n_r^j(d)}">，概率至少是<img src="https://private.codecogs.com/gif.latex?1-%20%5Cdelta" alt="1- \delta">，有：</p>
-<p>​                     <img src="https://private.codecogs.com/gif.latex?%5Cvarepsilon(d)%20%5Cle%20C_%7Ba,%20b%7D%5E2%20%5Cln%20(1/%5Cdelta)%20*%20%5Cmax%5C%7B%20%5Cfrac%7B1%7D%7Bn_l%5Ej(d)%7D%20,%20%5Cfrac%7B1%7D%7Bn_r%5Ej(d)%7D%20%5C%7D%20&plus;%202*D*C_%7Ba,b%7D%20%5Csqrt%7B%20%5Cfrac%7B%5Cln(1/%5Cdelta)%7D%7Bn%7D%7D" alt="\varepsilon(d) \le C_{a, b}^2 \ln (1/\delta) * \max\{ \frac{1}{n_l^j(d)} , \frac{1}{n_r^j(d)} \} + 2*D*C_{a,b} \sqrt{ \frac{\ln(1/\delta)}{n}}"></p>
-<p>其中<img src="https://private.codecogs.com/gif.latex?C_%7Ba,b%7D=%5Cfrac%7B1-a%7D%7B%5Csqrt%7Bb%7D%7D%20%5Cmax_%7Bx%20%5Cin%20A%5Ec%7D%7B%7Cg_i%7C%7D,%20D=%5Cmax(%5Cbar%7Bg%7D_l%5Ej(d),%20%5Cbar%7Bg%7D_r%5Ej(d))" alt="C_{a,b}=\frac{1-a}{\sqrt{b}} \max_{x \in A^c}{|g_i|}, D=\max(\bar{g}_l^j(d), \bar{g}_r^j(d))">。</p>
-<p>根据理论3.2，我们得出以下结论：</p>
-<p>GOSS的渐近近似比率<img src="https://private.codecogs.com/gif.latex?O(%5Cfrac%7B1%7D%7Bn_l%5Ej(d)%7D&plus;%20%5Cfrac%7B1%7D%7Bn_r%5Ej(d)%7D%20&plus;%20%5Cfrac%7B1%7D%7B%5Csqrt%7Bn%7D%7D)" alt="O(\frac{1}{n_l^j(d)}+ \frac{1}{n_r^j(d)} + \frac{1}{\sqrt{n}})"> 。如果数据分割不是极不平衡（也就是<img src="https://private.codecogs.com/gif.latex?n_l%5Ej(d)%20%5Cge%20O(%5Csqrt%7Bn%7D)" alt="n_l^j(d) \ge O(\sqrt{n})"> 且<img src="https://private.codecogs.com/gif.latex?n_r%5Ej%20(d)%5Cge%20O(%5Csqrt%7Bn%7D)" alt="n_r^j (d)\ge O(\sqrt{n})">），那么定理3.2中近似误差将由第二项主导，且在第二项中，当n趋于无穷（数据量很大）时<img src="https://private.codecogs.com/gif.latex?1/O(%5Csqrt%7Bn%7D)$" alt="1/O(\sqrt{n})$">将趋于0，即数据量越大，误差越小，精度越高。</p>
-<p>随机采样是GOSS在a=0的一种情况。多数情况下，GOSS性能优于随机采样，即以下情况：<img src="https://private.codecogs.com/gif.latex?C_%7B0,%5Cbeta%20%7D%3EC_%7Ba,%5Cbeta-a%20%7D" alt="C_{0,\beta }&gt;C_{a,\beta-a }">(C代表误差，即随机抽<img src="https://private.codecogs.com/gif.latex?%5Cbeta" alt="\beta">比例的误差大于先抽top a%比例再抽<img src="https://private.codecogs.com/gif.latex?%5Cbeta%20-a" alt="\beta -a">比例的误差)，等价于<img src="https://private.codecogs.com/gif.latex?%5Cfrac%7B%5Calpha_a%7D%7B%5Csqrt%7B%5Cbeta%7D%7D%20%5Cleq%20%5Cfrac%7B1-a%7D%7B%5Csqrt%7B%5Cbeta-a%7D%7D" alt="\frac{\alpha_a}{\sqrt{\beta}} \leq \frac{1-a}{\sqrt{\beta-a}}">，其中<img src="https://private.codecogs.com/gif.latex?%5Calpha_a%20=%20%5Cmax_%7Bx_i%20%5Cin%20A%20%5Ccup%20A%5Ec%7D%20%7Cg_i%7C%20/%20%5Cmax_%7Bx_i%20%5Cin%20A%5Ec%7D%20%7Cg_i%7C" alt="\alpha_a = \max_{x_i \in A \cup A^c} |g_i| / \max_{x_i \in A^c} |g_i|">。</p>
-<p>（其实这里<img src="https://private.codecogs.com/gif.latex?C_%7B0,%5Cbeta%20%7D=%5Cfrac%7B1%7D%7B%5Csqrt%7B%5Cbeta%7D%7D*%5Cmax_%7Bx_i%20%5Cin%20A%20%5Ccup%20A%5Ec%7D%20%7Cg_i%7C" alt="C_{0,\beta }=\frac{1}{\sqrt{\beta}}*\max_{x_i \in A \cup A^c} |g_i|">，<img src="https://private.codecogs.com/gif.latex?C_%7Ba,%5Cbeta-a%20%7D=%5Cfrac%7B1-a%7D%7B%5Csqrt%7B%5Cbeta-a%7D%7D*%5Cmax_%7Bx_i%20%5Cin%20A%5Ec%7D%20%7Cg_i%7C" alt="C_{a,\beta-a }=\frac{1-a}{\sqrt{\beta-a}}*\max_{x_i \in A^c} |g_i|">，代入<img src="https://private.codecogs.com/gif.latex?C_%7B0,%5Cbeta%20%7D%3EC_%7Ba,%5Cbeta-a%20%7D" alt="C_{0,\beta }&gt;C_{a,\beta-a }">，就可以得到等价的不等式）</p>
-<p>下面分析GOSS的<strong>泛化性</strong>。考虑GOSS泛化误差<img src="https://private.codecogs.com/gif.latex?%5Cvarepsilon_%7Bgen%7D%5E%7BGOSS%7D(d)%20=%20%7C%5Ctilde%7BV%7D_j(d)%20-%20V_*(d)%7C" alt="\varepsilon_{gen}^{GOSS}(d) = |\tilde{V}_j(d) - V_*(d)|">，这是GOSS抽样的的实例计算出的方差增益与实际样本方差增益之间的差距。变换为，<img src="https://private.codecogs.com/gif.latex?%5Cvarepsilon_%7Bgen%7D%5E%7BGOSS%7D(d)%20%5Cleq%20%7C%5Ctilde%7BV%7D_j(d)%20-%20V_j(d)%7C&plus;%20%7CV_j(d)%20-%20V_*(d)%7C%20%5Ctriangleq%20%5Cvarepsilon_%7BGOSS%7D(d)&plus;%20%5Cvarepsilon_%7Bgen%7D(d)" alt="\varepsilon_{gen}^{GOSS}(d) \leq |\tilde{V}_j(d) - V_j(d)|+ |V_j(d) - V_*(d)| \triangleq \varepsilon_{GOSS}(d)+ \varepsilon_{gen}(d)">，因此，在GOSS准确的情况下，GOSS泛化误差近似于全量的真实数据。另一方面，采样将增加基学习器的多样性（因为每次采样获得的数据可能会不同），这将提高泛化性。</p>
-<h1 id="4-Exclusive-Feature-Bundling"><a href="#4-Exclusive-Feature-Bundling" class="headerlink" title="4 Exclusive Feature Bundling"></a>4 Exclusive Feature Bundling</h1><p>这一章介绍如何有效减少特征的数量。</p>
-<p>高维的数据通常是稀疏的，这种稀疏性启发我们可以设计一种无损地方法来减少特征的维度。特别地，在稀疏特征空间中，许多特征是互斥的，即它们从不同时为非零值。我们可以绑定互斥的特征为单一特征，通过仔细设计特征扫描算法，我们从特征捆绑中构建了与单个特征相同的特征直方图。*<em>这种方式的构建直方图时间复杂度从O(#data \</em> #feature)降到O(#data * #bundle)**，由于#bundle &lt;&lt; # feature，我们能够极大地加速GBDT的训练过程而且不损失精度。(构造直方图的时候，遍历一个“捆绑的大特征”可以得到一组exclusive feature的直方图。这样只需要遍历这些“大特征”就可以获取到所有特征的直方图，降低了需要遍历的特征量。)</p>
-<p>有两个问题：</p>
-<ol>
-<li>怎么判定哪些特征应该绑在一起（build bundled）？</li>
-<li>怎么把特征绑为一个（merge feature）？</li>
-</ol>
-<h2 id="4-1-bundle（什么样的特征被绑定）？"><a href="#4-1-bundle（什么样的特征被绑定）？" class="headerlink" title="4.1 bundle（什么样的特征被绑定）？"></a>4.1 bundle（<strong>什么样的特征被绑定</strong>）？</h2><p><strong>理论 4.1：</strong>将特征分割为较小量的互斥特征群是NP难的。</p>
-<blockquote>
-<p>证明：将图着色问题归约为此问题，而图着色是NP难的，所以此问题就是NP难的。</p>
-<p>给定图着色实例G=(V, E)。以G的关联矩阵的每一行为特征，得到我们问题的一个实例有|V|个特征。 很容易看到，在我们的问题中，一个独特的特征捆绑包与一组具有相同颜色的顶点相对应，反之亦然。</p>
-</blockquote>
-<p>对于第1个问题，理论4.1说明在多项式时间中求解这个NP难问题是不可行的。为了寻找好的近似算法，我们将最优捆绑问题归结为图着色问题，<strong>如果两个特征之间不是相互排斥，那么我们用一个边将他们连接</strong>，然后用合理的贪婪算法（具有恒定的近似比）用于图着色来做特征捆绑。 此外，我们注意到通常有很多特征，尽管不是100％相互排斥的，也很少同时取非零值。 如果我们的算法可以允许一小部分的冲突，我们可以得到更少的特征包，进一步提高计算效率。经过简单的计算，随机污染小部分特征值将影响精度最多<img src="https://private.codecogs.com/gif.latex?O(%5B(1%20-%20%5Cgamma)n%20%5D%5E%20%7B-2/3%7D)" alt="O([(1 - \gamma)n ]^ {-2/3})">(参考文献【2】)， <img src="https://private.codecogs.com/gif.latex?%5Cgamma" alt="\gamma">是每个绑定中的最大冲突比率，当其相对较小时，能够完成精度和效率之间的平衡。</p>
-<p>基于上面的讨论，我们设计了算法3，伪代码见下图，具体算法：</p>
-<p><img src="https://img-blog.csdn.net/20181015104909903?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fuc2h1YWlfYXcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"></p>
-<ol>
-<li>建立一个图，每个点代表特征，每个边有权重，其权重和特征之间总体冲突相关。</li>
-<li>按照降序排列图中点的度来排序特征。</li>
-<li>检查排序之后的每个特征，对它进行特征绑定或者建立新的绑定使得操作之后的总体冲突最小（由<img src="https://private.codecogs.com/gif.latex?%5Cgamma" alt="\gamma">控制）。</li>
-</ol>
-<p>算法3的时间复杂度是<img src="https://private.codecogs.com/gif.latex?O(%5C%23feature%5E2)" alt="O(\#feature^2)">，<strong>训练之前只处理一次</strong>，其时间复杂度在特征不是特别多的情况下是可以接受的，但难以应对百万维的特征。为了继续提高效率，我们提出了一个更加高效的不用构建图的排序策略：<strong>将特征按照非零值个数排序</strong>，这和使用图节点的度排序相似，因为更多的非零值通常会导致冲突。新算法在算法3基础上只是改变了排序策略。</p>
-<h2 id="4-2-merging-features-特征合并"><a href="#4-2-merging-features-特征合并" class="headerlink" title="4.2 merging features(特征合并)"></a>4.2 merging features(特征合并)</h2><p>对于第2个问题，如何合并同一个bundle的特征来降低训练时间复杂度<strong>。关键在于原始特征值可以从bundle中区分出来</strong>。鉴于直方图算法存储离散值而不是连续特征值，我们通过将互斥特征放在不同的箱中来构建bundle。这可以通过将偏移量添加到特征原始值中实现，例如，假设bundle中有两个特征，原始特征A取值[0, 10]，B取值[0, 20]。我们添加偏移量10到B中，因此B取值[10, 30]。通过这种做法，就可以安全地将A、B特征合并，使用一个取值[0, 30]的特征取代A和B。算法见算法4，算法流程如下：</p>
-<p><img src="https://img-blog.csdn.net/20181015111056303?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fuc2h1YWlfYXcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"></p>
-<p>EFB算法能够将许多互斥的特征变为低维稠密的特征，就能够有效的避免不必要0值特征的计算。实际，对每一个特征，建立一个记录数据中的非零值的表，通过用这个表，来忽略零值特征，达到优化基础的直方图算法的目的。**通过扫描表中的数据，建直方图的时间复杂度将从O(#data)降到O(#non_zero_data)**。当然，这种方法在构建树过程中需要而额外的内存和计算开销来维持这种表。我们在lightGBM中将此优化作为基本函数，因为当bundles是稀疏的时候，这个优化与EFB不冲突（可以用于EFB）</p>
-<h1 id="5-Experiments"><a href="#5-Experiments" class="headerlink" title="5 Experiments"></a>5 Experiments</h1><p>实验部分，比较简单。主要用了五个公开数据集，且这些数据集都比较大，而且包含了稀疏和稠密的特征，涵盖了很多真实的业务，因此它们能够完全地测试lightGBM的性能。</p>
-<p>经过与XGBoost，lightgbm without GOSS and EFB和SGB的对比，证明了LightGBM在计算速度和内存消耗上明显优于XGBoost和SGB，且不损失准确率。</p>
-<p>这部分详细内容可以看参考文献1和2.</p>
-<h1 id="6-Conclusion"><a href="#6-Conclusion" class="headerlink" title="6 Conclusion"></a>6 Conclusion</h1><p>本文提出了新颖的GBDT算法–LightGBM，它包含了2个新颖的技术：Gradient-based One-Side Sampling (GOSS) 和Exclusive Feature Bundling (EFB)（基于梯度的one-side采样和互斥的特征捆绑）来处理大数据量和高维特征的场景。我们在理论分析和实验研究表明，GOSS和EFB使得LightGBM在计算速度和内存消耗上明显优于XGBoost和SGB。</p>
-<p>未来，我们将研究优化如何在GOSS中选择a，b。继续提高EFB在高维特征上的性能，无论其是否是稀疏的。</p>
-<p>GBDT存在的几个问题<br>如何减少数据量</p>
-<p>常用的减少训练数据量的方式是down sample。例如在[5]中，权重小于阈值的数据会被过滤掉，SGB在每一轮迭代中用随机的子集训练弱学习器；在[6]中，采样率会在训练过程中动态调整。但是，所有这些工作除了SGB外都是基于AdaBoost的，并且由于GBDT没有数据实例的权重，所以不能直接运用到GBDT上。虽然SGB可以应用到GBDT，但是它这种做法对acc影响太大了。</p>
-<p>如何减少特征</p>
-<p>类似的，为了减少特征的数量，需要过滤若特征[22, 23, 7, 24]。这通常用PCA和projection pursuit来做。可是，这些方法高度依赖一个假设，那就是特征包含相当多的冗余的信息。而这个假设在实践中通常不成立（因为通常特征都被设计为具有独特作用的，移除了哪个都可能对训练的acc有影响）</p>
-<p>关于稀疏的数据</p>
-<p>现实应用中的大规模数据通常是相当稀疏的。使用pre-sorted algorithm的GBDT可以通过忽略值为0的特征来降低训练的开销。而使用histogram-based algorithm的GBDT没有针对稀疏数据的优化方案，因为histogram-based algorithm无论特征值是否为0，都需要检索特征的bin值，所以它能够有效地利用这种稀疏特性。</p>
-<p>为了解决上面的这些问题，我们提出了两个新的技术——GOSS和EFB。</p>
-<p>引入LightGBM<br>1.LightGBM是微软2017年新提出的，比Xgboost更强大、速度更快的模型，性能上有很大的提升，与传统算法相比具有的优点：        </p>
-<p>*更快的训练效率       </p>
-<p> *低内存使用        </p>
-<p> *更高的准确率        </p>
-<p> *支持并行化学习        </p>
-<p> *可处理大规模数据          </p>
-<p> *原生支持类别特征，不需要对类别特征再进行0-1编码这类的</p>
-<p>2.LightGBM一大的特点是在传统的GBDT基础上引入了两个 新技术和一个改进：</p>
-<p>（1）Gradient-based One-Side Sampling(GOSS)技术是去掉了很大一部分梯度很小的数据，只使用剩下的去估计信息增益，避免低梯度长尾部分的影响。由于梯度大的数据在计算信息增益的时候更重要，所以GOSS在小很多的数据上仍然可以取得相当准确的估计值。</p>
-<p>（2）Exclusive Feature Bundling(EFB)技术是指捆绑互斥的特征(i.e.，他们经常同时取值为0)，以减少特征的数量。但对互斥特征寻找最佳的捆绑方式是一个NP难问题，当时贪婪算法可以取得相当好的近似率(因此可以在不显著影响分裂点选择的准确性的情况下，显著地减少特征数量)。</p>
-<p>（3）在传统GBDT算法中，最耗时的步骤是找到最优划分点，传统方法是Pre-Sorted方式，其会在排好序的特征值上枚举所有可能的特征点，而LightGBM中会使用histogram算法替换了传统的Pre-Sorted。基本思想是先把连续的浮点特征值离散化成k个整数，同时构造出图8所示的一个宽度为k的直方图。最开始时将离散化后的值作为索引在直方图中累积统计量，当遍历完一次数据后，直方图累积了离散化需要的统计量，之后进行节点分裂时，可以根据直方图上的离散值，从这k个桶中找到最佳的划分点，从而能更快的找到最优的分割点，而且因为直方图算法无需像Pre-Sorted那样存储预排序的结果，而只是保存特征离散过得数值，所以使用直方图的方式可以减少对内存的消耗。</p>
-<p>Pre-sorted 算法需要 O(data) 次的计算<br>Histogram 算法只需要计算 O(bins) 次, 并且 bins 远少于data（直方图仍然需要 O(#data) 次来构建直方图, 而这仅仅包含总结操作，只是第一次做data此即可）</p>
-<p><strong>优势</strong><br>相比XGboost，其更强大的原因是：          </p>
-<p>（1）histogram算法替换了传统的Pre-Sorted，某种意义上是牺牲了精度换取速度，直方图作差构建叶子直方图更有创造力（直方图算法的基本思想：先把连续的浮点特征值离散化成k个整数，同时构造一个宽度为k的直方图。遍历数据时，根据离散化后的值作为索引在直方图中累积统计量，当遍历一次数据后，直方图累积了需要的统计量，然后根据直方图的离散值，遍历寻找最优的分割点[利于计算分割打分]。）。</p>
-<p>（2）带有深度限制的按叶子生长 (leaf-wise) 算法代替了传统的(level-wise) 决策树生长策略，提升精度，同时避免过拟合危险（不太深了）。        </p>
-<p>（3）内存做了优化，内存中仅仅需要保存直方图数值，而不是之前的所有数据，另外如果直方图比较小的时候，我们还可以使用保存uint8的形式保存来训练数据。        </p>
-<p>（4）额外的优化还有Cache命中率优化、多线程优化。 lightGBM优越性：速度快，代码清晰，占用内存小。lightGBM可以在更小的代价下控制分裂树。有更好的缓存利用，是带有深度限制的按叶子生长的策略，使用了leaf-wise策略，每次从当前所有叶子中，找到分裂增益最大的一个叶子，然后进行分裂，不断的进行循环下去，而lead-wise（智能）算法的缺点是可能生长出比较深的决策树，导致过拟合问题，为了解决过拟合问题，我们会在LightGBM中会对leaf-wise之上增加一个最大深度的限制，在保持高效率的同时防止过拟合。</p>
-]]></content>
-      <tags>
-        <tag>Paper</tag>
-        <tag>ML</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>professional-interview-tbsi</title>
     <url>/professional-interview-tbsi/</url>
     <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><ol>
@@ -3614,200 +3508,109 @@
       </tags>
   </entry>
   <entry>
-    <title>考研tbsi必看</title>
-    <url>/%E8%80%83%E7%A0%94tbsi%E5%BF%85%E7%9C%8B/</url>
-    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p><img src="https://i.loli.net/2020/05/22/8Smab3fls2FrZ6A.jpg" alt="img"></p>
-<h1 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h1><p>由于清华伯克利深圳学院（简称TBSI）的硕士2016年才开始招生且往年的录取人数非常之少，所以催生了本文。本文的结构行文参考了北大CS考研百问，同时也参考了知乎的一些问题的答案，在此对学长学姐表示感谢。</p>
-<p>本文的行文目的是为2021考研学子提供清华伯克利必要的学院信息和考研信息。</p>
-<p>本文均为学长学姐的个人经验及网上各种信息汇成，旨在造福有决心、有勇气、有毅力的学弟学妹们，普及TBSI专业的考研录取情况，主要为数据科学方向。本文属于2020年考研，具有时效性，未来情况未必和过去一样，属于考研群（以交流互助讨论解答问题为目的，无任何利益关系），且部分数据、说法可能存在偏差，与官方没有任何关系。本文仅供个人学习之用，==请勿用于任何商业用途==。 </p>
-<p><strong>TBSI2020官方宣传片</strong>: <a href="https://www.tbsi.edu.cn/">官网</a>    <a href="https://mp.weixin.qq.com/s/Pw8NVSklGgmnyslugjaDnw">微信公众号</a></p>
-<h1 id="学院篇"><a href="#学院篇" class="headerlink" title="学院篇"></a>学院篇</h1><p>清华-伯克利深圳学院由清华大学与美国伯克利加州大学于2014年9月7日签署合作协议共同创建，面向全球共同面临的重大科技问题和社会发展问题，联合高等学院、政府和企业界开展跨学科学术研究和人才培养。学院将探索“大学-政府-企业”三方合作的培养模式，整合高校、政府和产业界的资源，建立一个国际化的人才培养与研究平台。</p>
-<p>学院初期围绕“环境科学与新能源技术”、“数据科学和信息技术”、“精准医学与公共健康”建立跨学科研究中心，进行博士研究生及硕士研究生招生培养，未来将根据发展需要，拓展建立其他跨学科研究方向。</p>
-<p>2019年，清华深圳国际研究生院正式揭牌成立，作为清华大学国内唯一的异地办学机构，清华大学深圳国际研究生院是深圳市与清华大学市校合作进一步升级。清华大学深圳国际研究生院由清华大学与深圳市委市政府携手成立，在清华大学深圳研究生院和清华-伯克利深圳学院的基础上进一步拓展，面向全球延揽优秀教师和研究生，通过高层次的国际合作，高水平的人才培养，高质量的创新实践，建设国际一流研究生院，助力清华大学“双一流”建设，为深圳市、粤港澳大湾区建设和区域可持续发展增添创新动力。</p>
-<p>清华大学与伯克利加州大学已在2016年5月10日签署清华-伯克利双硕士学位项目协议，该项目已于2016年秋季启动。符合两校入学要求的学生将有机 会通过2年半到3年时间的学习同时获得清华大学的工学硕士学位（目前开设了环境科学与新能源技术、数据科学和信息技术、精准医疗与公共健康三个专业）和伯克利加州大学的工程硕士学位（工程领导力）。</p>
-<h1 id="考研篇"><a href="#考研篇" class="headerlink" title="考研篇"></a>考研篇</h1><h2 id="2019"><a href="#2019" class="headerlink" title="2019"></a>2019</h2><p>因为我是2020参加考研的，不清楚2019的复试流程以及录取方式，19年一志愿四名数据方向的学生全部上岸，且我认真2019年和2020年一个非常大的不同是：==2019年只需要按照方向来排名（如：数据数据方向），而2020年不仅仅分方向，且分中心。==在2019年TBSI真正体现他的保护一志愿初试成绩算法，数据方向前四名为一志愿考生。估计2020年，有一个复试成绩【不及格】选项。</p>
-<table>
-<thead>
-<tr>
-<th align="center">方向</th>
-<th align="center">录取人数</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">物理-化学</td>
-<td align="center">13</td>
-</tr>
-<tr>
-<td align="center">数学-数据</td>
-<td align="center">13（一志愿4个全部上岸）</td>
-</tr>
-<tr>
-<td align="center">生命科学</td>
-<td align="center">2</td>
-</tr>
-</tbody></table>
-<p>参考链接：<a href="https://mp.weixin.qq.com/s/MgubN6w3TgTZpdvlSxVluQ">2019年硕士研究生拟录取名单</a></p>
-<h2 id="2020"><a href="#2020" class="headerlink" title="2020"></a>2020</h2><p>即使到2020年，TBSI考研在清华里依旧是一个备胎选择，不被大多数人所知道，打好信息战，才能在下次残酷的竞争之中脱颖而出。可能由于TBSI2021要建新楼，迎接110周年校庆，2020年进行了大幅扩招，我相信在2021年会继续扩招（仅为本人判断，不代表任何官方意见）。自2016年招硕士以来，==TBSI每年收调剂，每年复试线就是校线。==所以有了本文来介绍TBSI。但是，我相信关注过TBSI的同学有知道一年三个一志愿上线全部被刷，秉承宁缺毋滥的原则。所以，在清楚认知自己的实际情况之下，谨慎报考。</p>
-<p>下图是今年统考名额与复试人数，具体录取人数和相关分数在本文撰写的时候尚未公布，请关注官网相关信息。</p>
-<img src="/%E8%80%83%E7%A0%94tbsi%E5%BF%85%E7%9C%8B/Users\Administrator\Desktop\pwM3m8yOtTL5PhY.png" alt="Screenshot_5">
-
-<p>有以下几点需要注意：</p>
-<ul>
-<li>复试人数包括调剂和一志愿，所有中心所有方向TBSI一志愿复试人数未达到统考名额。</li>
-<li>分中心，分方向分别面试再进行录取，一共今年有6个面试场（包括海外一个面试场）。</li>
-<li>2020年分中心录取，即使都是同一方向，二中心今年可能未刷一个人，而一中心刷了15个人。</li>
-<li>初试过了就认真准备初试，一中心的数据方向最高分被刷，==复试才是清华最难的一步==。</li>
-<li>照2020年情况来看，==TBSI依旧是价值洼地==。但是绝不是300大清，点击就送的价值洼地。</li>
-<li>理性选择，谨慎报考，不要随波逐流。</li>
-<li>特别提醒：英文至少不能成为你的弱点，==全英文授课==。</li>
-</ul>
-<h1 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h1><p><strong>Q1: TBSI和THU什么关系？如何报考？</strong></p>
-<p>TBSI是THU和UCB下属共建的学院，也是THU和UCB唯一异地教学的学院（TBSI下属SIGS），具体介绍参考学院介绍以及官网。报考一切过程依照清华大学研究生招生网进行，请参考清华大学研究生报考流程。</p>
-<p><strong>Q2: 学位证和毕业证和清华大学有什么区别？</strong></p>
-<p>没有任何区别，唯一的不同是标注院系不同，暂时不确定会标注清华大学深圳国际研究生院还是清华伯克利深圳学院。这是每个学院都有的标注，例如：你毕业于五道口金融学院，那么院系标注就是五道口金融学院。</p>
-<p><strong>Q3: TBSI的办学初衷和理念是怎样的？</strong></p>
-<p>清华-伯克利深圳学院由清华大学与美国伯克利加州大学于2014年9月7日签署合作协议共同创建，面向全球共同面临的重大科技问题和社会发展问题，联合高等学院、政府和企业界开展跨学科学术研究和人才培养。学院将探索“大学-政府-企业”三方合作的培养模式，整合高校、政府和产业界的资源，建立一个国际化的人才培养与研究平台。</p>
-<p><strong>Q4: TBSI和清华大学深圳国际研究生院什么关系？</strong></p>
-<p>2019年三月，清华大学深圳国际研究生院 (SIGS) 正式揭牌，其中提到是和清华大学深圳研究院和TBSI共同成立。但是从2020年的招生录取以及复试过程，TBSI和SIGS依旧是分开的。</p>
-<p>参考链接:  <a href="https://yz.chsi.com.cn/kyzx/yxzc/201904/20190403/1779671280.html">清华大学深圳国际研究生院在深圳揭牌</a></p>
-<p><strong>Q5: 请介绍一下清华大学和加州伯克利大学的双硕士项目？</strong></p>
-<p>在官网介绍中写到：</p>
+    <title>paper-LightGBM</title>
+    <url>/paper-LightGBM/</url>
+    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>写这篇博客的原因是，网上很多关于Lightgbm的讲解都是从Lightgbm的官方文档来的，官方文档只会告诉你怎么用，很多细节都没讲。所以自己翻过来Lightgbm的源论文：LightGBM: A Highly Efficient Gradient Boosting Decision Tree仔细看了几遍，现在整理一下源论文，加深自己对Lightgbm技术细节的认识和思考。</p>
+<p>首先感谢网友<a href="https://blog.csdn.net/shine19930820/article/details/79123216">立刻有</a>的博客，省去了我很多翻译的工作。我更改了他博客的部分不当（翻译或者公式）的地方，又加入了自己的一些思考。</p>
+<h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>Gradient Boosting Decision Tree (GBDT)非常流行却鲜有实现，只有像XGBoost和pGBRT实现。当特征维度较高和数据量巨大的时候，仍然存在效率和可扩展性的问题。一个主要原因就是对于每一个特征的每一个分裂点，都需要遍历全部数据计算信息增益，这一过程非常耗时。针对这一问题，本文提出两种新方法：<strong>Gradient-based One-Side Sampling (GOSS) 和Exclusive Feature Bundling (EFB)**（</strong>基于梯度的one-side采样<strong>和</strong>互斥的特征捆绑<strong>）。在GOSS中，我们排除了重要的比例-具有小梯度的实例，只用剩下的来估计信息增益，我们证明，</strong>这些梯度大的实例在计算信息增益中扮演重要角色**，GOSS可以用更小的数据量对信息增益进行相当准确的估计。对于EFB，我们捆绑互斥的特征（例如，特征间很少同时非零的特征），来降低特征的个数。我们完美地证明了捆绑互斥特征是NP难的，但贪心算法能够实现相当好的逼近率，因此我们能够在不损害分割点准确率许多的情况下，有效减少特征的数量。（牺牲一点分割准确率降低特征数量），这一算法命名为LightGBM。在多个公共数据集实验证明，LightGBM加速了传统GBDT训练过程20倍以上，同时达到了几乎相同的精度。</p>
+<h1 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a>1. Introduction</h1><p>GBDT因为其本身的有效性、准确性、可解释性，成为了广泛使用的机器学习算法。GBDT在许多机器学习任务上均取得了最好的效果，例如多分类，点击预测，排序。但最近几年随着大数据的爆发（特征量和数据量），GBDT面临平衡准确率和效率的调整。</p>
+<p>GBDT缺点：<strong>对于每一个特征的每一个分裂点，都需要遍历全部数据来计算信息增益</strong>。因此，其计算复杂度将受到特征数量和数据量双重影响，造成处理大数据时十分耗时。</p>
+<p>解决这个问题的直接方法就是减少特征量和数据量而且不影响精确度，有部分工作根据数据权重采样来加速boosting的过程，但由于gbdt没有样本权重而不能应用。而本文提出两种新方法实现此目标。</p>
+<p><strong>Gradient-based One-Side Sampling (GOSS)**：GBDT虽然没有数据权重，但每个数据实例有不同的梯度，</strong>根据计算信息增益的定义，梯度大的实例对信息增益有更大的影响**，因此在下采样时，我们应该尽量保留梯度大的样本（预先设定阈值，或者最高百分位间），<font color="red">随机去掉梯度小的样本</font>。我们证明此措施在相同的采样率下比随机采样获得更准确的结果，尤其是在信息增益范围较大时。</p>
+<p>**Exclusive Feature Bundling (EFB)**：通常在真实应用中，虽然特征量比较多，但是由于特征空间十分稀疏，是否可以设计一种无损的方法来减少有效特征呢？特别在稀疏特征空间上，许多特征几乎是互斥的（例如许多特征不会同时为非零值，像one-hot），我们可以捆绑互斥的特征。最后，我们将捆绑问题归约到图着色问题，通过贪心算法求得近似解。</p>
+<h1 id="2-Preliminaries"><a href="#2-Preliminaries" class="headerlink" title="2. Preliminaries"></a>2. Preliminaries</h1><h2 id="2-1-GBDT-and-Its-Complexity-Analysis"><a href="#2-1-GBDT-and-Its-Complexity-Analysis" class="headerlink" title="2.1 GBDT and Its Complexity Analysis"></a>2.1 GBDT and Its Complexity Analysis</h2><p>GBDT是一种集成模型的决策树，顺序训练决策树。每次迭代中，GBDT通过拟合负梯度（残差）来学到决策树。</p>
+<p>学习决策树是GBDT主要的时间花销，而学习决策树中找到最优切分点最消耗时间。广泛采用的预排序算法来找到最优切分点，这种方法会列举预排序中所有可能的切分点。这种算法虽然能够找到最优的切分点，但对于训练速度和内存消耗上都效率低。另一种流行算法是直方图算法（histogram-based algorithm）。直方图算法并不通过特征排序找到最优的切分点，而是将连续的特征值抽象成离散的分箱，并使用这些分箱在训练过程中构建特征直方图，这种算法更加训练速度和内存消耗上都更加高效，lightGBM使用此种算法。</p>
+<p>histogram-based算法通过直方图寻找最优切分点，其建直方图消耗O(#data * #feature)，寻找最优切分点消耗O(#bin * # feature)，而#bin的数量远小于#data，<strong>所以建直方图为主要时间消耗</strong>。如果能够减少数据量或特征量，那么还能够够加速GBDT的训练。（寻找最优切分点已经进行了优化，那么我们现在应该对建直方图的时间进行优化）</p>
+<h2 id="2-2-Related-Work"><a href="#2-2-Related-Work" class="headerlink" title="2.2 Related Work"></a>2.2 Related Work</h2><p>GBDT有许多实现，如XGBoost，PGBRT，Scikit-learn，gbm in R。Scikit-learn和gbm in R实现都用了预排序，pGBRT使用了直方图算法，XGBoost支持预排序和直方图算法，由于XGBoost胜过其他算法，我们用它作为baseline。</p>
+<p>为了减小训练数据集，通常做法是下采样。例如过滤掉权重小于阈值的数据。SGB每次迭代中用随机子集训练弱学习器。或者采样率基于训练过程动态调整。基于AdaBoost的SGB不能直接应用于GBDT，因为GBDT中没有原始的权重。虽然SGB也能间接应用于GBDT，但往往会影响精度。</p>
+<p>同样，可以考虑过滤掉弱特征（什么是弱特征）来减少特征量。通常用主成分分析或者投影法。当然，这些方法依赖于一个假设-特征有高冗余性，但实际中往往不是。（设计特征来自于其独特的贡献，移除任何一维度都可以某种程度上影响精度）。</p>
+<p>实际中大规模的数据集通常都是非常稀疏的，<strong>使用预排序算法的GBDT能够通过无视为0的特征来降低训练时间消耗。然而直方图算法没有优化稀疏的方案。因为直方图算法无论特征值是否为0，都需要为每个数据检索特征区间值</strong>。如果基于直方图的GBDT能够有效解决稀疏特征中的0值，那么这样将会有很好的性能。</p>
+<p>下图为直方图算法的流程：</p>
+<p><img src="https://img-blog.csdn.net/2018101417401264?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fuc2h1YWlfYXcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"></p>
+<h1 id="3-Gradient-based-One-Side-Sampling"><a href="#3-Gradient-based-One-Side-Sampling" class="headerlink" title="3. Gradient-based One-Side Sampling"></a>3. Gradient-based One-Side Sampling</h1><p>GOSS是一种在减少数据量和保证精度上平衡的算法。</p>
+<h2 id="3-1-Algorithm-Description"><a href="#3-1-Algorithm-Description" class="headerlink" title="3.1 Algorithm Description"></a>3.1 Algorithm Description</h2><p>AdaBoost中，样本权重是数据实例重要性的指标。然而在GBDT中没有原始样本权重，不能应用权重采样。幸运的事，我们观察到GBDT中每个数据都有不同的梯度值，对采样十分有用，<strong>即实例的梯度小，实例训练误差也就较小，已经被学习得很好了，直接想法就是丢掉这部分梯度小的数据</strong>。然而这样做会改变数据的分布，将会影响训练的模型的精确度，为了避免此问题，我们提出了GOSS。</p>
+<p><strong>GOSS保留所有的梯度较大的实例，在梯度小的实例上使用随机采样</strong>（Random sampling）。为了抵消对数据分布的影响，计算信息增益的时候，GOSS对小梯度的数据引入常量乘数。GOSS首先根据数据的梯度绝对值排序，选取top a个实例。然后在剩余的数据中随机采样b个实例。接着计算信息增益时为采样出的小梯度数据乘以**(1-a)/b（<strong>即，小梯度样本总数/随机采样出的小梯度样本数量</strong>）**，这样算法就会更关注训练不足的实例，而不会过多改变原数据集的分布。</p>
+<p>GOSS的算法流程如下：</p>
+<p><img src="https://img-blog.csdn.net/20181015103352340?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fuc2h1YWlfYXcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"></p>
+<h2 id="3-2-Theoretical-Analysis"><a href="#3-2-Theoretical-Analysis" class="headerlink" title="3.2 Theoretical Analysis"></a>3.2 Theoretical Analysis</h2><p>GBDT使用决策树，来学习获得一个将输入空间映射到梯度空间的函数。假设训练集有n个实例 <img src="https://private.codecogs.com/gif.latex?%7Bx_1,...,x_n%7D%25u200B" alt="{x_1,...,x_n}">，特征维度为s。每次迭代时，模型数据变量的损失函数的负梯度方向表示为<img src="https://private.codecogs.com/gif.latex?g_1,...,g_n" alt="g_1,...,g_n">，决策树通过最优切分点（最大信息增益点）将数据分到各个节点。GBDT通过分割后的方差衡量信息增益</p>
+<p><strong>定义3.1</strong>：O表示某个固定叶子节点的训练集，分割特征j的分割点d定义为：</p>
+<p>​                          <img src="https://private.codecogs.com/gif.latex?V_%7Bj%7CO%7D(d)%20=%20%5Cfrac%7B1%7D%7Bn_O%7D%20(%20%5Cfrac%7B%20(%20%5Csum_%7B%20%5C%7Bx_i%20%5Cin%20O:%20x_%7Bij%7D%20%5Cle%20d%20%5C%7D%20%7D%20g_i%20)%5E2%20%7D%7Bn%5Ej_%7Bl%7CO%7D(d)%7D%20&plus;%20%5Cfrac%7B%20(%20%5Csum_%7B%20%5C%7Bx_i%20%5Cin%20O:%20x_%7Bij%7D%20%3E%20d%20%5C%7D%20%7D%20g_i%20)%5E2%20%7D%7Bn%5Ej_%7Br%7CO%7D(d)%7D%20)" alt="V_{j|O}(d) = \frac{1}{n_O} ( \frac{ ( \sum_{ \{x_i \in O: x_{ij} \le d \} } g_i )^2 }{n^j_{l|O}(d)} + \frac{ ( \sum_{ \{x_i \in O: x_{ij} &gt; d \} } g_i )^2 }{n^j_{r|O}(d)} )"></p>
+<p>其中，<img src="https://private.codecogs.com/gif.latex?n_O%20=%20%5Csum%20I%5Bx_i%20%5Cin%20O%5D" alt="n_O = \sum I[x_i \in O]">(某个固定叶子节点的训练集样本的个数)，<img src="https://private.codecogs.com/gif.latex?n%5Ej_%7Bl%7CO%7D(d)%20=%20%5Csum%20I%5Bx_i%20%5Cin%20O:%20x_i%20%5Cle%20d%20%5D" alt="n^j_{l|O}(d) = \sum I[x_i \in O: x_i \le d ]">(在第j个特征上值小于等于d的样本个数)，<img src="https://private.codecogs.com/gif.latex?n%5Ej_%7Br%7CO%7D%20(d)=%20%5Csum%20I%5Bx_i%20%5Cin%20O:%20x_i%20%3E%20d%20%5D" alt="n^j_{r|O} (d)= \sum I[x_i \in O: x_i &gt; d ]">(在第j个特征上值大于d的样本个数)。</p>
+<p>遍历每个特征的每个分裂点，找到<img src="https://private.codecogs.com/gif.latex?d%5E*_j%20=%20argmax_d%20V_j(d)" alt="d^*_j = argmax_d V_j(d)"> 并计算最大的信息增益<img src="https://private.codecogs.com/gif.latex?V_j(d_j%5E*)" alt="V_j(d_j^*)">，然后，将数据根据特征<img src="https://private.codecogs.com/gif.latex?j%5E*" alt="j^*">的分裂点<img src="https://private.codecogs.com/gif.latex?d_%7Bj%5E*%7D" alt="d_{j^*}">将数据分到左右子节点。</p>
+<p>在GOSS中，</p>
+<ol>
+<li>首先根据数据的梯度进行降序排序。</li>
+<li>保留top %a个数据实例，作为数据子集A。</li>
+<li>对于剩下的数据的实例集合**<img src="https://private.codecogs.com/gif.latex?A%5Ec" alt="A^c">**，随机采样获得大小为<img src="https://private.codecogs.com/gif.latex?b*%7CA%5Ec%7C" alt="b*|A^c|">的数据子集B。</li>
+<li>最后我们在集合<img src="https://private.codecogs.com/gif.latex?A%5Ccup%20B" alt="A\cup B">上，通过以下方程估计信息增益<img src="https://private.codecogs.com/gif.latex?%5Ctilde%20V_j(d)" alt="\tilde V_j(d)">:</li>
+</ol>
+<p>​         <img src="https://private.codecogs.com/gif.latex?%5Ctilde%7BV%7D_j%20(d)%20=%20%5Cfrac%7B1%7D%7Bn%7D%20(%20%5Cfrac%7B%20(%20%5Csum_%7B%20%7Bx_i%20%5Cin%20A:%20x_%7Bij%7D%20%5Cle%20d%20%7D%20%7D%20g_i%20&plus;%20%5Cfrac%7B1-a%7D%7Bb%7D%5Csum_%7B%20%7Bx_i%20%5Cin%20B:%20x_%7Bij%7D%5Cle%20d%20%7D%20%7D%20g_i%20)%5E2%20%7D%7Bn_l%5E%7Bj%7D(d)%7D%20&plus;%20%5Cfrac%7B%20(%20%5Csum_%7B%20%7Bx_i%20%5Cin%20A:%20x_%7Bij%7D%20%3E%20d%20%7D%20%7D%20g_i%20&plus;%20%5Cfrac%7B1-a%7D%7Bb%7D%5Csum_%7B%20%7Bx_i%20%5Cin%20B:%20x_%7Bij%7D%20%3E%20d%20%7D%20%7D%20g_i%20)%5E2%20%7D%7Bn_r%5E%7Bj%7D(d)%7D%20)" alt="\tilde{V}_j (d) = \frac{1}{n} ( \frac{ ( \sum_{ {x_i \in A: x_{ij} \le d } } g_i + \frac{1-a}{b}\sum_{ {x_i \in B: x_{ij}\le d } } g_i )^2 }{n_l^{j}(d)} + \frac{ ( \sum_{ {x_i \in A: x_{ij} &gt; d } } g_i + \frac{1-a}{b}\sum_{ {x_i \in B: x_{ij} &gt; d } } g_i )^2 }{n_r^{j}(d)} )"></p>
+<p>此处GOSS通过较小的数据集估计信息增益 <img src="https://private.codecogs.com/gif.latex?%5Ctilde%7BV%7D%7Bj%7D(d)" alt="\tilde{V}{j}(d)">，将大大地减小计算量。更重要的是，我们接下来理论表明GOSS不会丢失许多训练精度，且胜过随机采样，理论的证明在附加材料(参考文献【2】)。</p>
+<p><strong>Theorem 3.2</strong>：我们定义GOSS近似误差为<img src="https://private.codecogs.com/gif.latex?%5Cepsilon%20(d)=%7C%5Ctilde%7BV%7D%7Bj%7D(d)-%7BV%7D%7Bj%7D(d)%7C" alt="\epsilon (d)=|\tilde{V}{j}(d)-{V}{j}(d)|">，<img src="https://private.codecogs.com/gif.latex?%5Cbar%7Bg%7D_l%5Ej(d)=%5Cfrac%7B%5Csum_%7Bx_i%20%5Cin%20(A%20%5Ccup%20A%5Ec)_l%7D%20%7Cg_i%7C%7D%7Bn_l%5Ej(d)%7D" alt="\bar{g}_l^j(d)=\frac{\sum_{x_i \in (A \cup A^c)_l} |g_i|}{n_l^j(d)}">，<img src="https://private.codecogs.com/gif.latex?%5Cbar%7Bg%7D_r%5Ej(d)=%5Cfrac%7B%5Csum%7Bx_i%20%5Cin%20(A%20%5Ccup%20A%5Ec)_r%7D%20%7Cg_i%7C%7D%7Bn_r%5Ej(d)%7D" alt="\bar{g}_r^j(d)=\frac{\sum{x_i \in (A \cup A^c)_r} |g_i|}{n_r^j(d)}">，概率至少是<img src="https://private.codecogs.com/gif.latex?1-%20%5Cdelta" alt="1- \delta">，有：</p>
+<p>​                     <img src="https://private.codecogs.com/gif.latex?%5Cvarepsilon(d)%20%5Cle%20C_%7Ba,%20b%7D%5E2%20%5Cln%20(1/%5Cdelta)%20*%20%5Cmax%5C%7B%20%5Cfrac%7B1%7D%7Bn_l%5Ej(d)%7D%20,%20%5Cfrac%7B1%7D%7Bn_r%5Ej(d)%7D%20%5C%7D%20&plus;%202*D*C_%7Ba,b%7D%20%5Csqrt%7B%20%5Cfrac%7B%5Cln(1/%5Cdelta)%7D%7Bn%7D%7D" alt="\varepsilon(d) \le C_{a, b}^2 \ln (1/\delta) * \max\{ \frac{1}{n_l^j(d)} , \frac{1}{n_r^j(d)} \} + 2*D*C_{a,b} \sqrt{ \frac{\ln(1/\delta)}{n}}"></p>
+<p>其中<img src="https://private.codecogs.com/gif.latex?C_%7Ba,b%7D=%5Cfrac%7B1-a%7D%7B%5Csqrt%7Bb%7D%7D%20%5Cmax_%7Bx%20%5Cin%20A%5Ec%7D%7B%7Cg_i%7C%7D,%20D=%5Cmax(%5Cbar%7Bg%7D_l%5Ej(d),%20%5Cbar%7Bg%7D_r%5Ej(d))" alt="C_{a,b}=\frac{1-a}{\sqrt{b}} \max_{x \in A^c}{|g_i|}, D=\max(\bar{g}_l^j(d), \bar{g}_r^j(d))">。</p>
+<p>根据理论3.2，我们得出以下结论：</p>
+<p>GOSS的渐近近似比率<img src="https://private.codecogs.com/gif.latex?O(%5Cfrac%7B1%7D%7Bn_l%5Ej(d)%7D&plus;%20%5Cfrac%7B1%7D%7Bn_r%5Ej(d)%7D%20&plus;%20%5Cfrac%7B1%7D%7B%5Csqrt%7Bn%7D%7D)" alt="O(\frac{1}{n_l^j(d)}+ \frac{1}{n_r^j(d)} + \frac{1}{\sqrt{n}})"> 。如果数据分割不是极不平衡（也就是<img src="https://private.codecogs.com/gif.latex?n_l%5Ej(d)%20%5Cge%20O(%5Csqrt%7Bn%7D)" alt="n_l^j(d) \ge O(\sqrt{n})"> 且<img src="https://private.codecogs.com/gif.latex?n_r%5Ej%20(d)%5Cge%20O(%5Csqrt%7Bn%7D)" alt="n_r^j (d)\ge O(\sqrt{n})">），那么定理3.2中近似误差将由第二项主导，且在第二项中，当n趋于无穷（数据量很大）时<img src="https://private.codecogs.com/gif.latex?1/O(%5Csqrt%7Bn%7D)$" alt="1/O(\sqrt{n})$">将趋于0，即数据量越大，误差越小，精度越高。</p>
+<p>随机采样是GOSS在a=0的一种情况。多数情况下，GOSS性能优于随机采样，即以下情况：<img src="https://private.codecogs.com/gif.latex?C_%7B0,%5Cbeta%20%7D%3EC_%7Ba,%5Cbeta-a%20%7D" alt="C_{0,\beta }&gt;C_{a,\beta-a }">(C代表误差，即随机抽<img src="https://private.codecogs.com/gif.latex?%5Cbeta" alt="\beta">比例的误差大于先抽top a%比例再抽<img src="https://private.codecogs.com/gif.latex?%5Cbeta%20-a" alt="\beta -a">比例的误差)，等价于<img src="https://private.codecogs.com/gif.latex?%5Cfrac%7B%5Calpha_a%7D%7B%5Csqrt%7B%5Cbeta%7D%7D%20%5Cleq%20%5Cfrac%7B1-a%7D%7B%5Csqrt%7B%5Cbeta-a%7D%7D" alt="\frac{\alpha_a}{\sqrt{\beta}} \leq \frac{1-a}{\sqrt{\beta-a}}">，其中<img src="https://private.codecogs.com/gif.latex?%5Calpha_a%20=%20%5Cmax_%7Bx_i%20%5Cin%20A%20%5Ccup%20A%5Ec%7D%20%7Cg_i%7C%20/%20%5Cmax_%7Bx_i%20%5Cin%20A%5Ec%7D%20%7Cg_i%7C" alt="\alpha_a = \max_{x_i \in A \cup A^c} |g_i| / \max_{x_i \in A^c} |g_i|">。</p>
+<p>（其实这里<img src="https://private.codecogs.com/gif.latex?C_%7B0,%5Cbeta%20%7D=%5Cfrac%7B1%7D%7B%5Csqrt%7B%5Cbeta%7D%7D*%5Cmax_%7Bx_i%20%5Cin%20A%20%5Ccup%20A%5Ec%7D%20%7Cg_i%7C" alt="C_{0,\beta }=\frac{1}{\sqrt{\beta}}*\max_{x_i \in A \cup A^c} |g_i|">，<img src="https://private.codecogs.com/gif.latex?C_%7Ba,%5Cbeta-a%20%7D=%5Cfrac%7B1-a%7D%7B%5Csqrt%7B%5Cbeta-a%7D%7D*%5Cmax_%7Bx_i%20%5Cin%20A%5Ec%7D%20%7Cg_i%7C" alt="C_{a,\beta-a }=\frac{1-a}{\sqrt{\beta-a}}*\max_{x_i \in A^c} |g_i|">，代入<img src="https://private.codecogs.com/gif.latex?C_%7B0,%5Cbeta%20%7D%3EC_%7Ba,%5Cbeta-a%20%7D" alt="C_{0,\beta }&gt;C_{a,\beta-a }">，就可以得到等价的不等式）</p>
+<p>下面分析GOSS的<strong>泛化性</strong>。考虑GOSS泛化误差<img src="https://private.codecogs.com/gif.latex?%5Cvarepsilon_%7Bgen%7D%5E%7BGOSS%7D(d)%20=%20%7C%5Ctilde%7BV%7D_j(d)%20-%20V_*(d)%7C" alt="\varepsilon_{gen}^{GOSS}(d) = |\tilde{V}_j(d) - V_*(d)|">，这是GOSS抽样的的实例计算出的方差增益与实际样本方差增益之间的差距。变换为，<img src="https://private.codecogs.com/gif.latex?%5Cvarepsilon_%7Bgen%7D%5E%7BGOSS%7D(d)%20%5Cleq%20%7C%5Ctilde%7BV%7D_j(d)%20-%20V_j(d)%7C&plus;%20%7CV_j(d)%20-%20V_*(d)%7C%20%5Ctriangleq%20%5Cvarepsilon_%7BGOSS%7D(d)&plus;%20%5Cvarepsilon_%7Bgen%7D(d)" alt="\varepsilon_{gen}^{GOSS}(d) \leq |\tilde{V}_j(d) - V_j(d)|+ |V_j(d) - V_*(d)| \triangleq \varepsilon_{GOSS}(d)+ \varepsilon_{gen}(d)">，因此，在GOSS准确的情况下，GOSS泛化误差近似于全量的真实数据。另一方面，采样将增加基学习器的多样性（因为每次采样获得的数据可能会不同），这将提高泛化性。</p>
+<h1 id="4-Exclusive-Feature-Bundling"><a href="#4-Exclusive-Feature-Bundling" class="headerlink" title="4 Exclusive Feature Bundling"></a>4 Exclusive Feature Bundling</h1><p>这一章介绍如何有效减少特征的数量。</p>
+<p>高维的数据通常是稀疏的，这种稀疏性启发我们可以设计一种无损地方法来减少特征的维度。特别地，在稀疏特征空间中，许多特征是互斥的，即它们从不同时为非零值。我们可以绑定互斥的特征为单一特征，通过仔细设计特征扫描算法，我们从特征捆绑中构建了与单个特征相同的特征直方图。*<em>这种方式的构建直方图时间复杂度从O(#data \</em> #feature)降到O(#data * #bundle)**，由于#bundle &lt;&lt; # feature，我们能够极大地加速GBDT的训练过程而且不损失精度。(构造直方图的时候，遍历一个“捆绑的大特征”可以得到一组exclusive feature的直方图。这样只需要遍历这些“大特征”就可以获取到所有特征的直方图，降低了需要遍历的特征量。)</p>
+<p>有两个问题：</p>
+<ol>
+<li>怎么判定哪些特征应该绑在一起（build bundled）？</li>
+<li>怎么把特征绑为一个（merge feature）？</li>
+</ol>
+<h2 id="4-1-bundle（什么样的特征被绑定）？"><a href="#4-1-bundle（什么样的特征被绑定）？" class="headerlink" title="4.1 bundle（什么样的特征被绑定）？"></a>4.1 bundle（<strong>什么样的特征被绑定</strong>）？</h2><p><strong>理论 4.1：</strong>将特征分割为较小量的互斥特征群是NP难的。</p>
 <blockquote>
-<p>学生同时注册清华-伯克利深圳学院与伯克利加州大学工学院，获得双边认可学分要求，按规定完成基础课程、 专业课程、创新训练营（Capstone）、学术活动、文献综述与选题报告、年度研究进展报告、学位论文等环节 及相应学位学分，学位论文经导师（组）和评审专家评审后提交答辩。由清华-伯克利深圳学院学术指导委员会 审批答辩委员会成员名单，主持论文答辩。学生通过答辩并符合毕业和学位要求，获得中美双硕士学位：清华 大学硕士学位，伯克利加州大学工学院工程硕士学位。</p>
+<p>证明：将图着色问题归约为此问题，而图着色是NP难的，所以此问题就是NP难的。</p>
+<p>给定图着色实例G=(V, E)。以G的关联矩阵的每一行为特征，得到我们问题的一个实例有|V|个特征。 很容易看到，在我们的问题中，一个独特的特征捆绑包与一组具有相同颜色的顶点相对应，反之亦然。</p>
 </blockquote>
-<p>参考链接：<a href="https://www.tbsi.edu.cn/index.php?s=/cms/20.html">硕士生教育</a></p>
-<p>这个项目是UCB EECS下的唯一一个非学术学位Master of Engineering项目。硕士申请伯克利的硕士依然是走伯克利正规申请流程且需要自费，学费是5W刀，伯克利EECS 下只有一个M. Eng 硕士项目，这个项目应该是和伯克利商学院有合作，所以卖点加了个工程领导力。之前在某乎也看到一个做硬件的学长拿到了这个项目的录取，同时也拿到了小奖。官方介绍并没有说读了这个学院申请这个项目有多少的加分。但是你能大概率接触到UCB的教授资源拿一个强推，所以懂者自懂。至于参加了这个项目能不能留下来美国工作或者其他问题可以自行查询美国的永签要求，在这里不作过多回答了。</p>
-<p>想了解UCB这个项目参考链接：<a href="https://eecs.berkeley.edu/resources/grads/meng">M.Eng. Student Guide</a></p>
-<p><strong>Q6: 学费多少？</strong></p>
-<p>按照清华大学正常学硕收费 8000人/年。</p>
-<p><strong>Q7: TBSI的奖助问题是怎么的？</strong></p>
-<p>TBSI 硕士 补助为 北京的补助1200+深圳的补助600+实验室的补助。</p>
-<p>TBSI 博士 补助为 北京的补助2800+深圳的补助1000+实验室的补助，另外TBSI对博士设立了学院奖学金，分为5W（占20%）,3W（占60%）,1W三挡（20%），所有的博士都会获得这个奖，只是根据学术成果评定相应的奖励档次。</p>
-<p>参考链接：<a href="https://www.tbsi.edu.cn/index.php?s=/cms/index/jiangxuejin.html">奖助学金</a></p>
-<p> <strong>Q8: TBSI的PI（核心科学家）有哪些？</strong></p>
-<p>TBSI的导师可分为四类，</p>
-<p>（1）第一类是北京本部的导师，有的经常来深圳，有的把学生托管给深研院的老师，有的实验室组会貌似是和本部的一起开的；</p>
-<p>（2）第二类是深研院的老师；</p>
-<p>（3）第三类是学院自己招聘的导师，可以去官网去看，全是清一色海外名校的博士；</p>
-<p>（4）第四类可能是伯克利的导师，因为国内导师名额有限，可能要挂靠在伯克利的导师名下，伯克利的导师应该不会管硕士生的；</p>
-<p>选择一个大牛的导师或者一个热血的年轻导师是有不同的价值观念的。选择一个大牛的导师可能由小老板带着，但是资源的问题是不可比拟的，学术也是一个圈子。选择一个年轻的导师，可能你会在被push的路上越走越远。仁者见仁智者见智，不作过多阐述。</p>
-<p><strong>Q9: TBSI如何确定导师？</strong></p>
-<p>开学双选。</p>
-<p><strong>Q10: 有哪些研究方向？</strong></p>
-<p>TBSI下设三个中心，主要分为：物理化学方向，数据科学方向，生命科学方向。每个中心有不等的实验室，在这里不作具体详细介绍。</p>
-<p>参考链接：<a href="https://www.tbsi.edu.cn/index.php?s=/cms/index/keyan.html">研究中心</a></p>
-<p><strong>Q11:培养方案是怎样的？</strong></p>
-<p>官网有详细介绍，请参考官网。</p>
-<p><strong>Q12: 就业如何？企业认可吗？</strong></p>
-<p>数据方向的就业基本上都是能叫的出名字的公司。</p>
-<p>参考链接：<a href="https://mp.weixin.qq.com/s/5yVFY_lpslL3f4hEIcqf3Q">2019毕业生报告</a></p>
-<p><strong>Q13: 为了以后的选调生，毕业可以转一级学科吗？</strong></p>
-<p>取决于导师，有转成功的，转到导师所在的一级学科。没有非常确切的信息。</p>
-<p><strong>Q14: 可以硕转博吗？</strong></p>
-<p>可以，TBSI的硕士为学硕。</p>
-<p><strong>Q15: 可以去北京培养吗？</strong></p>
-<p>取决权在于导师，如果你导师在北京有项目且需要长期呆在北京，是需要去北京的。</p>
-<p><strong>Q16: 全英文授课吗？</strong></p>
-<p>是的。</p>
-<p><strong>Q17: 我看到夏令营对报考生有英语要求和绩点要求？对一志愿考生有吗？调剂生呢？</strong></p>
-<p>夏令营和考研统考不一样，统考对英语和绩点没有任何要求，具有报考资格，但是英语和绩点是复试的重要的参考对象。</p>
-<p>对于调剂生而言，在2019年只要求过六级，2020要求六级过500，才有调剂资格，具体细节参考官网。其他语言：</p>
-<p>① 托福（TOEFL）网络考试成绩在 90 分及以上； ② 雅思（IELTS）成绩在 7 分及以上； ③ 传统 GRE 考试成绩在 1300 分及以上或新 GRE 考试成绩在 310 分及以上； ④ GMAT 成绩在 675 分及以上； ⑤ 国家六级英语考试成绩在 500 分及以上；</p>
-<p><strong>Q18: 我是双非跨考，怎么办，会被歧视吗？</strong> </p>
-<p>不歧视。</p>
-<p>其实对于歧视而讲，这是你的过往经历，不存在歧视一说，但是这是老师你评价的一个重要参考对象。最好的证明就是双非有上岸的，用能力说话。</p>
-<p><strong>Q19: 这个数学数据的研究生和国内普通计算机研究生学的东西一样吗？</strong></p>
-<p>大部分关注TBSI的都是他的数据track，在TBSI在非常强的教授和实验室。你想做前沿的DL, ML, TBSI也有非常多的机会。在知乎有介绍二中心实验室的老师信息，请自搜寻。但是TBSI建院的一个目标就是打破学术壁垒，学科交叉。这需要你把自己的视野再放大一点，问问自己你到底想做什么？什么是计算机技术和人工智能？我到底想做什么？我要不要去过更多人竞争的独木桥？我是不是一定要进入清华大学的贵系才能叫做我去学计算机了？包括如今的控制工程等其他学科都是和计算机技术离不开的，打好考研的信息战是你的一门必修课。</p>
-<p><strong>Q20: 有没有复试资料可以参考？</strong></p>
-<p>没有，每年考研情况科目由于特殊原因不尽相同。可能2021年又变了，但是==TBSI是会公布复试参考书目==。2020年数据方向考研科目为数据结构，参考书目是严奶奶的那一版。如果大部分人亡邓公的去看，又是怎样的场景？在这一点，TBSI已经为你降低难度了。但是几年看下来，数据结构这门课是不会怎么变的，是核心科目。余旷老师在知乎讲了一下复试问题，值得你报考之前好好读一下，同时也有2020年数据方向的初试回忆贴。</p>
-<p>参考链接：<a href="https://www.zhihu.com/question/341951107">知乎：清华-伯克利深圳学院考研如何准备？ </a></p>
-<p><strong>Q21: TBSI调剂生和一志愿一起复试吗？</strong></p>
-<p>是的，参考Q25</p>
-<p><strong>Q22: 什么样的学生在复试的时候比较有优势？</strong></p>
-<p>在我撰写本文的时候，SIGS官方微信公众号写了一篇文章，我非常认同。</p>
-<p>参考链接： <a href="https://mp.weixin.qq.com/s/joTwzKQHEP9VZ1esPae2mQ">什么样的学生在TBSI面试中更受青睐？</a></p>
-<p><strong>Q23: 专业课如何准备？</strong></p>
-<p>每年初试的专业课不尽相同，参考官方信息以及相关科目备考经验贴。</p>
-<p><strong>Q24: 导师信息？</strong></p>
-<p>请参考官方网站有相关介绍，同时你也可以查询导师评价网，知乎，贴吧。但是，请具有一定的分辨能力。</p>
-<p><strong>Q25: 复试流程是怎样的？</strong></p>
-<p>2020年是以网络复试进行的。首先学生在审核会议室进行资格审查，然后就等待进入面试室了，面试时间20分钟，包括3 -5分钟英语自我介绍，剩下为专业课和基础知识问答，严格控制时间。</p>
-<p><strong>Q26: 为什么每年都在改专业课？</strong></p>
-<p>这个问题余旷老师的问答具有一定的参考性。</p>
-<blockquote>
-<p>关于复试笔试，这个比统考更重要一些，但在我们track重要性也有限。这里我们TBSI，或者更确切的说，我们TBSI物理-化学track自有国情在此。根本原因在于我们现在搞交叉学科，物理-化学track其实是一个大杂烩，里面有做环境化学的，也有做光电器件的，需求很杂乱。最后决定考大学物理而不是大学化学其实也是大家扯皮均衡的结果，考题也不会很难。所以，我在这里替做环境的同事说句话，各位环境（还有化学）背景的学生，如果看到我们考大学物理请千万不要被吓到。考的没有其他考生好也不要灰心。因为again，真正重要的是面试，只要你在笔试中表现出了合理的智商，我们是会考虑你的专业背景的。</p>
-<p>作者：余旷<br>链接：<a href="https://www.zhihu.com/question/341951107/answer/800670281">https://www.zhihu.com/question/341951107/answer/800670281</a><br>来源：知乎<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
-</blockquote>
-<p><strong>Q27:一中心的低碳实验室怎样？金融可以报考吗？</strong></p>
-<p>孔老师人非常好，春风和煦的，目前实验室有一个研究助理，两个博士后，tbsi宣传交叉学科，欢迎各个学科的同学报考，仅供参考。</p>
-<p><strong>Q28: 保护一志愿吗？</strong></p>
-<p>保护一志愿的。</p>
-<p>但是照2020的情况来看，==复试有不及格选项，直接淘汰==，所以初试过了就请忘掉初试认真准备。</p>
-<p>调剂生初试成绩折合算法为：<br>$$<br>500-\frac{（500-初试成绩）<em>（500-学科门类复试分数线）}{500-考生所报考专业学术型硕士复试分数线}<br>$$<br>例如某调剂生考了380分，相关专业学硕线是360分，校线为300，那么他的初试折合分数就是：<br>$$<br>500-\frac{(500-380)</em>(500-300)}{500-360}=328.57<br>$$<br><strong>Q30: 到时候复试被刷可以校内调剂吗？</strong></p>
-<p>时间上来讲基本上不可以。</p>
-<p>因为往年包括今年都是在最后一批进行复试，这个时候其他学院的校内调剂基本上已经调剂完成了。</p>
-<p><strong>Q31: 报录比如何？</strong></p>
-<p>不了解，清华大学不公布报考人数。</p>
-<p><strong>Q32: 录取办法是怎样的？</strong></p>
-<ul>
-<li><p>总成绩计算办法 总成绩=初试成绩（若为调剂，则折算初试）+ 综合材料审核*1 + 复试面试成绩 * 4 </p>
-</li>
-<li><p>根据各面试小组的名额，依各组总成绩由高到低排序，遵循志愿，择优录取。</p>
-</li>
-</ul>
-<p>值得提起的是，今年是TBSI第一次把综合材料审核作为100分加入到总成绩的测算中，更加接近于国外大学入学的申请-审核制。</p>
-<p><strong>Q32: 计算机方向有机试吗？</strong></p>
-<p>没有。</p>
-<p><strong>Q33: 请客观评价一下清华伯克利的考研难度？</strong></p>
-<p>初试不难（相对比清华912和408难度），都是校线，复试看英语和专业能力。评价自己能力，合理选择。</p>
-<p><strong>Q34: 网上说的TBSI学生放养是真的吗？</strong></p>
-<p>不是当事人，真实性自己评价。由于双选制度，增加自己的核心竞争力才有可能跟上自己感兴趣的课题和导师。</p>
-<p><strong>Q35: 学长/学姐，你对TBSI怎么看？</strong></p>
-<p>TBSI还很年轻，所以固然存在一些问题。但是清华大学和加州伯克利大学在深圳市政府的支持下敢于尝试第一步。清华大学一直都是中国教育制度的探索者，从清华国际深圳研究生院，到清华大学新闻传播系不再招收本科生，都在尝试新的探索。TBSI的导师都是世界一流的导师。</p>
-<p>我在写个人陈述的时候有这么一句话： Begin with TBSI, step into the world. 你有多少能力，我相信清华伯克利就能给你多大的舞台。</p>
-<p><strong>Q36: 如何在本部和清华伯克利之间选择？</strong></p>
-<p>这个选择不仅仅是北京和深圳的选择，同时也是专业方向，考研难度，导师，环境未来职业发展规划的选择。如果你认为本部更加适合你的未来发展，那你应该去本部。</p>
-<p><strong>Q37: TBSI的学生的学籍在深圳还是北京？</strong></p>
-<p>2019年是同清华本部统一管理，北京。</p>
-<p><strong>Q38: 可以出去实习吗？</strong></p>
-<p>没有统一规定，取决权在于导师和中心。</p>
-<p><strong>Q39: 我看到淘宝上有相关专业课资料，我需要买吗？</strong></p>
-<p>没必要，淘宝上有的，你都能找到。</p>
-<p><strong>Q40: TBSI的官方系统需要填写吗，如果到时候需要修改怎么办呢？</strong></p>
-<p>按照规定，官方系统是必须填写的，且有截止时间，除去重要的审核材料。内容有：个人简历（中英文），个人陈述（中英文），研究计划（中英文）。一般来说，没有过初试不会认真去斟酌这些东西，我当时是全部提交空白文档上去。当你初试过了的时候，招生办老师会重新开放给你，你需要重新提交文件。</p>
-<p>注意：今年材料审核100分直接纳入总分，不可忽视材料部分的准备。</p>
-<p><strong>Q41: 能不能讲一下TBSI的好处和优势？</strong></p>
-<p>我相信在看完之前的所以的回答你会TBSI在学术方面已经有了一个非常直观的印象。那么我讲一讲其他三点：</p>
-<ul>
-<li><p>如果有某个导师愿意要你，你想找哪个老师都是可以的，不存在复试前就确定导师的情况。</p>
-</li>
-<li><p>实习优势，深圳。</p>
-</li>
-<li><p>环境和生活。环境非常好，在大学城。2021，清华大学深圳国际研究生院一期（TBSI院区）为了迎接110年校庆，预计在2021正式投入使用。你看到了首页那栋建筑了，就是TBSI新院区，所以2021大概率还会继续扩招。</p>
-</li>
-</ul>
-<h1 id="时间线"><a href="#时间线" class="headerlink" title="时间线"></a>时间线</h1><p>1、写在最前，建议合理评估自身实力，在清华，初试只是门票，初试考的高没啥优势，评估自己除了初试课程以外，有什么亮点能吸引老师，尤其建议跨考+无相关项目的学生，谨慎报考，清华的名头不值得大家前仆后继（虽然我知道还是会有一大批大佬和铁头我不在乎这些）。下面正式开始。</p>
-<p>2、如果你确定了报考TBSI，请时刻关注官网，说不定发的通知偷偷摸摸就找不到了。一定要避免闭门造车。大概在<strong>八月</strong>左右，TBSI会在官网上公布考纲，这一点在清华各院系里算是良心的。</p>
-<p>3、同时，清华研招网会在<strong>九月初</strong>公布招收统考生的招生专业目录，<strong>十月初到中旬</strong>公布带人数的招生简章，TBSI的官网也基本上会同时出一个统考须知。值得注意的是，TBSI不仅需要在研招网上填报志愿，还需要在自己TBSI官网的招生目录上填报相关信息，包括基本信息和各种经历奖项，<strong>简历（中英文），个人陈述（中英文），学习计划（中英文），成绩单，身份证</strong>什么的。报名系统开放时间跟研招网报志愿时间同步。根据经验，这个时候不填报官网的系统也是可以的，复试前这个系统会重新开放，可以这个时候填写或更新。不过你也可以报名的时候填报，看你权衡选择。</p>
-<p>4、研招网的填报不再赘述，应届生和往届生报名流程网上都有详细教程。记着<strong>十一月</strong>还有一个现场确认，各地政策不同，一定不能忘了。<strong>十二月初</strong>打印准考证，这玩意无论复试初试都是必须的，建议多打几份保存。不过初试成绩公布后会再次开放下载打印通道，不过没必要，建议十二月一次搞定。</p>
-<p>5、按照正常来说，<strong>二月初</strong>会出成绩，大概<strong>三月中下旬</strong>会进行复试，第一天资格审查加笔试，第二天面试完当天晚上出录取结果。值得注意的是调剂生和一志愿考生是一起复试的。名义上分数计算是保护一志愿的，但我一开始也说了，初试在清华压根没用，建议忘掉初试，所以实际上，对一志愿考生的保护的话，大家可以自行理解。</p>
-<p>6、录取之后的工作就是流程式的工作，跟着通知走就好，在此也不多言了。</p>
-<p>7、关于找老师，据我所知，复试前找老师的意义目前来看不算很大，老师大部分都不会回，自己心里不要虚。毕竟导师选择是九月双选。复试拟录取后找老师也会有很多老师不会回，每个老师的招生名额也得九月才能知道。</p>
-<p>8、最后说一句，建议能提早确定报考学校专业，确定了之后就别乱想了。临时改志愿然后成功的有，有不少，但是对于大部分来说，还是专一目标明确，可能性更大。同时，也希望大家能有信息搜索能力，这玩意别看对考试没用，但是事实上，考研是信息战，能更快找到更有用信息的同学，上岸的概率明显高于傻乎乎的同学。就是这样。</p>
-<h1 id="复试回忆"><a href="#复试回忆" class="headerlink" title="复试回忆"></a>复试回忆</h1><blockquote>
-<p>参考github仓库： <a href="https://github.com/stellarkey/912_project">https://github.com/stellarkey/912_project</a></p>
-</blockquote>
-<h1 id="学长学姐最后想给你说"><a href="#学长学姐最后想给你说" class="headerlink" title="学长学姐最后想给你说"></a>学长学姐最后想给你说</h1><p>除了你的父母，没有人会在乎你在这个过程中付出了多少努力和艰辛，他们在乎的只是你考上了还是没有考上。如果你选择了这条路，2021这一年必定更加难走，但是我们希望你能够一步一个脚印地来，期待明年在深圳与你相见。</p>
-<p>引用考研名师某句话：</p>
-<blockquote>
-<p>不要光有雄心壮志，这是远远不够的。真正遇到了困难，苦头能不能吃下去，才能决定你成功与否。而不是你的梦想是否远大，不是你的道德是否高尚。遇到难事了才能看出来你是不是真的能走下去。</p>
-</blockquote>
-<h1 id="我想了解更多"><a href="#我想了解更多" class="headerlink" title="我想了解更多"></a>我想了解更多</h1><p>请TBSI官方微信公众号：清华伯克利深圳学院 tbsi2014</p>
-<p>后续如有更新，请关注github仓库TBSI板块址：<a href="https://github.com/stellarkey/912_project">https://github.com/stellarkey/912_project</a></p>
-<p>任何未尽问题，欢迎联系邮箱：荔枝 <a href="mailto:&#53;&#49;&#52;&#54;&#x33;&#x36;&#x35;&#56;&#54;&#64;&#113;&#x71;&#x2e;&#99;&#x6f;&#x6d;">&#53;&#49;&#52;&#54;&#x33;&#x36;&#x35;&#56;&#54;&#64;&#113;&#x71;&#x2e;&#99;&#x6f;&#x6d;</a></p>
+<p>对于第1个问题，理论4.1说明在多项式时间中求解这个NP难问题是不可行的。为了寻找好的近似算法，我们将最优捆绑问题归结为图着色问题，<strong>如果两个特征之间不是相互排斥，那么我们用一个边将他们连接</strong>，然后用合理的贪婪算法（具有恒定的近似比）用于图着色来做特征捆绑。 此外，我们注意到通常有很多特征，尽管不是100％相互排斥的，也很少同时取非零值。 如果我们的算法可以允许一小部分的冲突，我们可以得到更少的特征包，进一步提高计算效率。经过简单的计算，随机污染小部分特征值将影响精度最多<img src="https://private.codecogs.com/gif.latex?O(%5B(1%20-%20%5Cgamma)n%20%5D%5E%20%7B-2/3%7D)" alt="O([(1 - \gamma)n ]^ {-2/3})">(参考文献【2】)， <img src="https://private.codecogs.com/gif.latex?%5Cgamma" alt="\gamma">是每个绑定中的最大冲突比率，当其相对较小时，能够完成精度和效率之间的平衡。</p>
+<p>基于上面的讨论，我们设计了算法3，伪代码见下图，具体算法：</p>
+<p><img src="https://img-blog.csdn.net/20181015104909903?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fuc2h1YWlfYXcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"></p>
+<ol>
+<li>建立一个图，每个点代表特征，每个边有权重，其权重和特征之间总体冲突相关。</li>
+<li>按照降序排列图中点的度来排序特征。</li>
+<li>检查排序之后的每个特征，对它进行特征绑定或者建立新的绑定使得操作之后的总体冲突最小（由<img src="https://private.codecogs.com/gif.latex?%5Cgamma" alt="\gamma">控制）。</li>
+</ol>
+<p>算法3的时间复杂度是<img src="https://private.codecogs.com/gif.latex?O(%5C%23feature%5E2)" alt="O(\#feature^2)">，<strong>训练之前只处理一次</strong>，其时间复杂度在特征不是特别多的情况下是可以接受的，但难以应对百万维的特征。为了继续提高效率，我们提出了一个更加高效的不用构建图的排序策略：<strong>将特征按照非零值个数排序</strong>，这和使用图节点的度排序相似，因为更多的非零值通常会导致冲突。新算法在算法3基础上只是改变了排序策略。</p>
+<h2 id="4-2-merging-features-特征合并"><a href="#4-2-merging-features-特征合并" class="headerlink" title="4.2 merging features(特征合并)"></a>4.2 merging features(特征合并)</h2><p>对于第2个问题，如何合并同一个bundle的特征来降低训练时间复杂度<strong>。关键在于原始特征值可以从bundle中区分出来</strong>。鉴于直方图算法存储离散值而不是连续特征值，我们通过将互斥特征放在不同的箱中来构建bundle。这可以通过将偏移量添加到特征原始值中实现，例如，假设bundle中有两个特征，原始特征A取值[0, 10]，B取值[0, 20]。我们添加偏移量10到B中，因此B取值[10, 30]。通过这种做法，就可以安全地将A、B特征合并，使用一个取值[0, 30]的特征取代A和B。算法见算法4，算法流程如下：</p>
+<p><img src="https://img-blog.csdn.net/20181015111056303?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fuc2h1YWlfYXcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="img"></p>
+<p>EFB算法能够将许多互斥的特征变为低维稠密的特征，就能够有效的避免不必要0值特征的计算。实际，对每一个特征，建立一个记录数据中的非零值的表，通过用这个表，来忽略零值特征，达到优化基础的直方图算法的目的。**通过扫描表中的数据，建直方图的时间复杂度将从O(#data)降到O(#non_zero_data)**。当然，这种方法在构建树过程中需要而额外的内存和计算开销来维持这种表。我们在lightGBM中将此优化作为基本函数，因为当bundles是稀疏的时候，这个优化与EFB不冲突（可以用于EFB）</p>
+<h1 id="5-Experiments"><a href="#5-Experiments" class="headerlink" title="5 Experiments"></a>5 Experiments</h1><p>实验部分，比较简单。主要用了五个公开数据集，且这些数据集都比较大，而且包含了稀疏和稠密的特征，涵盖了很多真实的业务，因此它们能够完全地测试lightGBM的性能。</p>
+<p>经过与XGBoost，lightgbm without GOSS and EFB和SGB的对比，证明了LightGBM在计算速度和内存消耗上明显优于XGBoost和SGB，且不损失准确率。</p>
+<p>这部分详细内容可以看参考文献1和2.</p>
+<h1 id="6-Conclusion"><a href="#6-Conclusion" class="headerlink" title="6 Conclusion"></a>6 Conclusion</h1><p>本文提出了新颖的GBDT算法–LightGBM，它包含了2个新颖的技术：Gradient-based One-Side Sampling (GOSS) 和Exclusive Feature Bundling (EFB)（基于梯度的one-side采样和互斥的特征捆绑）来处理大数据量和高维特征的场景。我们在理论分析和实验研究表明，GOSS和EFB使得LightGBM在计算速度和内存消耗上明显优于XGBoost和SGB。</p>
+<p>未来，我们将研究优化如何在GOSS中选择a，b。继续提高EFB在高维特征上的性能，无论其是否是稀疏的。</p>
+<p>GBDT存在的几个问题<br>如何减少数据量</p>
+<p>常用的减少训练数据量的方式是down sample。例如在[5]中，权重小于阈值的数据会被过滤掉，SGB在每一轮迭代中用随机的子集训练弱学习器；在[6]中，采样率会在训练过程中动态调整。但是，所有这些工作除了SGB外都是基于AdaBoost的，并且由于GBDT没有数据实例的权重，所以不能直接运用到GBDT上。虽然SGB可以应用到GBDT，但是它这种做法对acc影响太大了。</p>
+<p>如何减少特征</p>
+<p>类似的，为了减少特征的数量，需要过滤若特征[22, 23, 7, 24]。这通常用PCA和projection pursuit来做。可是，这些方法高度依赖一个假设，那就是特征包含相当多的冗余的信息。而这个假设在实践中通常不成立（因为通常特征都被设计为具有独特作用的，移除了哪个都可能对训练的acc有影响）</p>
+<p>关于稀疏的数据</p>
+<p>现实应用中的大规模数据通常是相当稀疏的。使用pre-sorted algorithm的GBDT可以通过忽略值为0的特征来降低训练的开销。而使用histogram-based algorithm的GBDT没有针对稀疏数据的优化方案，因为histogram-based algorithm无论特征值是否为0，都需要检索特征的bin值，所以它能够有效地利用这种稀疏特性。</p>
+<p>为了解决上面的这些问题，我们提出了两个新的技术——GOSS和EFB。</p>
+<p>引入LightGBM<br>1.LightGBM是微软2017年新提出的，比Xgboost更强大、速度更快的模型，性能上有很大的提升，与传统算法相比具有的优点：        </p>
+<p>*更快的训练效率       </p>
+<p> *低内存使用        </p>
+<p> *更高的准确率        </p>
+<p> *支持并行化学习        </p>
+<p> *可处理大规模数据          </p>
+<p> *原生支持类别特征，不需要对类别特征再进行0-1编码这类的</p>
+<p>2.LightGBM一大的特点是在传统的GBDT基础上引入了两个 新技术和一个改进：</p>
+<p>（1）Gradient-based One-Side Sampling(GOSS)技术是去掉了很大一部分梯度很小的数据，只使用剩下的去估计信息增益，避免低梯度长尾部分的影响。由于梯度大的数据在计算信息增益的时候更重要，所以GOSS在小很多的数据上仍然可以取得相当准确的估计值。</p>
+<p>（2）Exclusive Feature Bundling(EFB)技术是指捆绑互斥的特征(i.e.，他们经常同时取值为0)，以减少特征的数量。但对互斥特征寻找最佳的捆绑方式是一个NP难问题，当时贪婪算法可以取得相当好的近似率(因此可以在不显著影响分裂点选择的准确性的情况下，显著地减少特征数量)。</p>
+<p>（3）在传统GBDT算法中，最耗时的步骤是找到最优划分点，传统方法是Pre-Sorted方式，其会在排好序的特征值上枚举所有可能的特征点，而LightGBM中会使用histogram算法替换了传统的Pre-Sorted。基本思想是先把连续的浮点特征值离散化成k个整数，同时构造出图8所示的一个宽度为k的直方图。最开始时将离散化后的值作为索引在直方图中累积统计量，当遍历完一次数据后，直方图累积了离散化需要的统计量，之后进行节点分裂时，可以根据直方图上的离散值，从这k个桶中找到最佳的划分点，从而能更快的找到最优的分割点，而且因为直方图算法无需像Pre-Sorted那样存储预排序的结果，而只是保存特征离散过得数值，所以使用直方图的方式可以减少对内存的消耗。</p>
+<p>Pre-sorted 算法需要 O(data) 次的计算<br>Histogram 算法只需要计算 O(bins) 次, 并且 bins 远少于data（直方图仍然需要 O(#data) 次来构建直方图, 而这仅仅包含总结操作，只是第一次做data此即可）</p>
+<p><strong>优势</strong><br>相比XGboost，其更强大的原因是：          </p>
+<p>（1）histogram算法替换了传统的Pre-Sorted，某种意义上是牺牲了精度换取速度，直方图作差构建叶子直方图更有创造力（直方图算法的基本思想：先把连续的浮点特征值离散化成k个整数，同时构造一个宽度为k的直方图。遍历数据时，根据离散化后的值作为索引在直方图中累积统计量，当遍历一次数据后，直方图累积了需要的统计量，然后根据直方图的离散值，遍历寻找最优的分割点[利于计算分割打分]。）。</p>
+<p>（2）带有深度限制的按叶子生长 (leaf-wise) 算法代替了传统的(level-wise) 决策树生长策略，提升精度，同时避免过拟合危险（不太深了）。        </p>
+<p>（3）内存做了优化，内存中仅仅需要保存直方图数值，而不是之前的所有数据，另外如果直方图比较小的时候，我们还可以使用保存uint8的形式保存来训练数据。        </p>
+<p>（4）额外的优化还有Cache命中率优化、多线程优化。 lightGBM优越性：速度快，代码清晰，占用内存小。lightGBM可以在更小的代价下控制分裂树。有更好的缓存利用，是带有深度限制的按叶子生长的策略，使用了leaf-wise策略，每次从当前所有叶子中，找到分裂增益最大的一个叶子，然后进行分裂，不断的进行循环下去，而lead-wise（智能）算法的缺点是可能生长出比较深的决策树，导致过拟合问题，为了解决过拟合问题，我们会在LightGBM中会对leaf-wise之上增加一个最大深度的限制，在保持高效率的同时防止过拟合。</p>
 ]]></content>
       <tags>
-        <tag>Interview</tag>
+        <tag>Paper</tag>
+        <tag>ML</tag>
       </tags>
   </entry>
   <entry>
@@ -4187,6 +3990,203 @@
 <h1 id="常用论文模板"><a href="#常用论文模板" class="headerlink" title="常用论文模板"></a>常用论文模板</h1>]]></content>
       <tags>
         <tag>Paper</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>考研tbsi必看</title>
+    <url>/%E8%80%83%E7%A0%94tbsi%E5%BF%85%E7%9C%8B/</url>
+    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p><img src="https://i.loli.net/2020/05/22/8Smab3fls2FrZ6A.jpg" alt="img"></p>
+<h1 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h1><p>由于清华伯克利深圳学院（简称TBSI）的硕士2016年才开始招生且往年的录取人数非常之少，所以催生了本文。本文的结构行文参考了北大CS考研百问，同时也参考了知乎的一些问题的答案，在此对学长学姐表示感谢。</p>
+<p>本文的行文目的是为2021考研学子提供清华伯克利必要的学院信息和考研信息。</p>
+<p>本文均为学长学姐的个人经验及网上各种信息汇成，旨在造福有决心、有勇气、有毅力的学弟学妹们，普及TBSI专业的考研录取情况，主要为数据科学方向。本文属于2020年考研，具有时效性，未来情况未必和过去一样，属于考研群（以交流互助讨论解答问题为目的，无任何利益关系），且部分数据、说法可能存在偏差，与官方没有任何关系。本文仅供个人学习之用，==请勿用于任何商业用途==。 </p>
+<p><strong>TBSI2020官方宣传片</strong>: <a href="https://www.tbsi.edu.cn/">官网</a>    <a href="https://mp.weixin.qq.com/s/Pw8NVSklGgmnyslugjaDnw">微信公众号</a></p>
+<h1 id="学院篇"><a href="#学院篇" class="headerlink" title="学院篇"></a>学院篇</h1><p>清华-伯克利深圳学院由清华大学与美国伯克利加州大学于2014年9月7日签署合作协议共同创建，面向全球共同面临的重大科技问题和社会发展问题，联合高等学院、政府和企业界开展跨学科学术研究和人才培养。学院将探索“大学-政府-企业”三方合作的培养模式，整合高校、政府和产业界的资源，建立一个国际化的人才培养与研究平台。</p>
+<p>学院初期围绕“环境科学与新能源技术”、“数据科学和信息技术”、“精准医学与公共健康”建立跨学科研究中心，进行博士研究生及硕士研究生招生培养，未来将根据发展需要，拓展建立其他跨学科研究方向。</p>
+<p>2019年，清华深圳国际研究生院正式揭牌成立，作为清华大学国内唯一的异地办学机构，清华大学深圳国际研究生院是深圳市与清华大学市校合作进一步升级。清华大学深圳国际研究生院由清华大学与深圳市委市政府携手成立，在清华大学深圳研究生院和清华-伯克利深圳学院的基础上进一步拓展，面向全球延揽优秀教师和研究生，通过高层次的国际合作，高水平的人才培养，高质量的创新实践，建设国际一流研究生院，助力清华大学“双一流”建设，为深圳市、粤港澳大湾区建设和区域可持续发展增添创新动力。</p>
+<p>清华大学与伯克利加州大学已在2016年5月10日签署清华-伯克利双硕士学位项目协议，该项目已于2016年秋季启动。符合两校入学要求的学生将有机 会通过2年半到3年时间的学习同时获得清华大学的工学硕士学位（目前开设了环境科学与新能源技术、数据科学和信息技术、精准医疗与公共健康三个专业）和伯克利加州大学的工程硕士学位（工程领导力）。</p>
+<h1 id="考研篇"><a href="#考研篇" class="headerlink" title="考研篇"></a>考研篇</h1><h2 id="2019"><a href="#2019" class="headerlink" title="2019"></a>2019</h2><p>因为我是2020参加考研的，不清楚2019的复试流程以及录取方式，19年一志愿四名数据方向的学生全部上岸，且我认真2019年和2020年一个非常大的不同是：==2019年只需要按照方向来排名（如：数据数据方向），而2020年不仅仅分方向，且分中心。==在2019年TBSI真正体现他的保护一志愿初试成绩算法，数据方向前四名为一志愿考生。估计2020年，有一个复试成绩【不及格】选项。</p>
+<table>
+<thead>
+<tr>
+<th align="center">方向</th>
+<th align="center">录取人数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">物理-化学</td>
+<td align="center">13</td>
+</tr>
+<tr>
+<td align="center">数学-数据</td>
+<td align="center">13（一志愿4个全部上岸）</td>
+</tr>
+<tr>
+<td align="center">生命科学</td>
+<td align="center">2</td>
+</tr>
+</tbody></table>
+<p>参考链接：<a href="https://mp.weixin.qq.com/s/MgubN6w3TgTZpdvlSxVluQ">2019年硕士研究生拟录取名单</a></p>
+<h2 id="2020"><a href="#2020" class="headerlink" title="2020"></a>2020</h2><p>即使到2020年，TBSI考研在清华里依旧是一个备胎选择，不被大多数人所知道，打好信息战，才能在下次残酷的竞争之中脱颖而出。可能由于TBSI2021要建新楼，迎接110周年校庆，2020年进行了大幅扩招，我相信在2021年会继续扩招（仅为本人判断，不代表任何官方意见）。自2016年招硕士以来，==TBSI每年收调剂，每年复试线就是校线。==所以有了本文来介绍TBSI。但是，我相信关注过TBSI的同学有知道一年三个一志愿上线全部被刷，秉承宁缺毋滥的原则。所以，在清楚认知自己的实际情况之下，谨慎报考。</p>
+<p>下图是今年统考名额与复试人数，具体录取人数和相关分数在本文撰写的时候尚未公布，请关注官网相关信息。</p>
+<img src="/%E8%80%83%E7%A0%94tbsi%E5%BF%85%E7%9C%8B/Users\Administrator\Desktop\pwM3m8yOtTL5PhY.png" alt="Screenshot_5">
+
+<p>有以下几点需要注意：</p>
+<ul>
+<li>复试人数包括调剂和一志愿，所有中心所有方向TBSI一志愿复试人数未达到统考名额。</li>
+<li>分中心，分方向分别面试再进行录取，一共今年有6个面试场（包括海外一个面试场）。</li>
+<li>2020年分中心录取，即使都是同一方向，二中心今年可能未刷一个人，而一中心刷了15个人。</li>
+<li>初试过了就认真准备初试，一中心的数据方向最高分被刷，==复试才是清华最难的一步==。</li>
+<li>照2020年情况来看，==TBSI依旧是价值洼地==。但是绝不是300大清，点击就送的价值洼地。</li>
+<li>理性选择，谨慎报考，不要随波逐流。</li>
+<li>特别提醒：英文至少不能成为你的弱点，==全英文授课==。</li>
+</ul>
+<h1 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h1><p><strong>Q1: TBSI和THU什么关系？如何报考？</strong></p>
+<p>TBSI是THU和UCB下属共建的学院，也是THU和UCB唯一异地教学的学院（TBSI下属SIGS），具体介绍参考学院介绍以及官网。报考一切过程依照清华大学研究生招生网进行，请参考清华大学研究生报考流程。</p>
+<p><strong>Q2: 学位证和毕业证和清华大学有什么区别？</strong></p>
+<p>没有任何区别，唯一的不同是标注院系不同，暂时不确定会标注清华大学深圳国际研究生院还是清华伯克利深圳学院。这是每个学院都有的标注，例如：你毕业于五道口金融学院，那么院系标注就是五道口金融学院。</p>
+<p><strong>Q3: TBSI的办学初衷和理念是怎样的？</strong></p>
+<p>清华-伯克利深圳学院由清华大学与美国伯克利加州大学于2014年9月7日签署合作协议共同创建，面向全球共同面临的重大科技问题和社会发展问题，联合高等学院、政府和企业界开展跨学科学术研究和人才培养。学院将探索“大学-政府-企业”三方合作的培养模式，整合高校、政府和产业界的资源，建立一个国际化的人才培养与研究平台。</p>
+<p><strong>Q4: TBSI和清华大学深圳国际研究生院什么关系？</strong></p>
+<p>2019年三月，清华大学深圳国际研究生院 (SIGS) 正式揭牌，其中提到是和清华大学深圳研究院和TBSI共同成立。但是从2020年的招生录取以及复试过程，TBSI和SIGS依旧是分开的。</p>
+<p>参考链接:  <a href="https://yz.chsi.com.cn/kyzx/yxzc/201904/20190403/1779671280.html">清华大学深圳国际研究生院在深圳揭牌</a></p>
+<p><strong>Q5: 请介绍一下清华大学和加州伯克利大学的双硕士项目？</strong></p>
+<p>在官网介绍中写到：</p>
+<blockquote>
+<p>学生同时注册清华-伯克利深圳学院与伯克利加州大学工学院，获得双边认可学分要求，按规定完成基础课程、 专业课程、创新训练营（Capstone）、学术活动、文献综述与选题报告、年度研究进展报告、学位论文等环节 及相应学位学分，学位论文经导师（组）和评审专家评审后提交答辩。由清华-伯克利深圳学院学术指导委员会 审批答辩委员会成员名单，主持论文答辩。学生通过答辩并符合毕业和学位要求，获得中美双硕士学位：清华 大学硕士学位，伯克利加州大学工学院工程硕士学位。</p>
+</blockquote>
+<p>参考链接：<a href="https://www.tbsi.edu.cn/index.php?s=/cms/20.html">硕士生教育</a></p>
+<p>这个项目是UCB EECS下的唯一一个非学术学位Master of Engineering项目。硕士申请伯克利的硕士依然是走伯克利正规申请流程且需要自费，学费是5W刀，伯克利EECS 下只有一个M. Eng 硕士项目，这个项目应该是和伯克利商学院有合作，所以卖点加了个工程领导力。之前在某乎也看到一个做硬件的学长拿到了这个项目的录取，同时也拿到了小奖。官方介绍并没有说读了这个学院申请这个项目有多少的加分。但是你能大概率接触到UCB的教授资源拿一个强推，所以懂者自懂。至于参加了这个项目能不能留下来美国工作或者其他问题可以自行查询美国的永签要求，在这里不作过多回答了。</p>
+<p>想了解UCB这个项目参考链接：<a href="https://eecs.berkeley.edu/resources/grads/meng">M.Eng. Student Guide</a></p>
+<p><strong>Q6: 学费多少？</strong></p>
+<p>按照清华大学正常学硕收费 8000人/年。</p>
+<p><strong>Q7: TBSI的奖助问题是怎么的？</strong></p>
+<p>TBSI 硕士 补助为 北京的补助1200+深圳的补助600+实验室的补助。</p>
+<p>TBSI 博士 补助为 北京的补助2800+深圳的补助1000+实验室的补助，另外TBSI对博士设立了学院奖学金，分为5W（占20%）,3W（占60%）,1W三挡（20%），所有的博士都会获得这个奖，只是根据学术成果评定相应的奖励档次。</p>
+<p>参考链接：<a href="https://www.tbsi.edu.cn/index.php?s=/cms/index/jiangxuejin.html">奖助学金</a></p>
+<p> <strong>Q8: TBSI的PI（核心科学家）有哪些？</strong></p>
+<p>TBSI的导师可分为四类，</p>
+<p>（1）第一类是北京本部的导师，有的经常来深圳，有的把学生托管给深研院的老师，有的实验室组会貌似是和本部的一起开的；</p>
+<p>（2）第二类是深研院的老师；</p>
+<p>（3）第三类是学院自己招聘的导师，可以去官网去看，全是清一色海外名校的博士；</p>
+<p>（4）第四类可能是伯克利的导师，因为国内导师名额有限，可能要挂靠在伯克利的导师名下，伯克利的导师应该不会管硕士生的；</p>
+<p>选择一个大牛的导师或者一个热血的年轻导师是有不同的价值观念的。选择一个大牛的导师可能由小老板带着，但是资源的问题是不可比拟的，学术也是一个圈子。选择一个年轻的导师，可能你会在被push的路上越走越远。仁者见仁智者见智，不作过多阐述。</p>
+<p><strong>Q9: TBSI如何确定导师？</strong></p>
+<p>开学双选。</p>
+<p><strong>Q10: 有哪些研究方向？</strong></p>
+<p>TBSI下设三个中心，主要分为：物理化学方向，数据科学方向，生命科学方向。每个中心有不等的实验室，在这里不作具体详细介绍。</p>
+<p>参考链接：<a href="https://www.tbsi.edu.cn/index.php?s=/cms/index/keyan.html">研究中心</a></p>
+<p><strong>Q11:培养方案是怎样的？</strong></p>
+<p>官网有详细介绍，请参考官网。</p>
+<p><strong>Q12: 就业如何？企业认可吗？</strong></p>
+<p>数据方向的就业基本上都是能叫的出名字的公司。</p>
+<p>参考链接：<a href="https://mp.weixin.qq.com/s/5yVFY_lpslL3f4hEIcqf3Q">2019毕业生报告</a></p>
+<p><strong>Q13: 为了以后的选调生，毕业可以转一级学科吗？</strong></p>
+<p>取决于导师，有转成功的，转到导师所在的一级学科。没有非常确切的信息。</p>
+<p><strong>Q14: 可以硕转博吗？</strong></p>
+<p>可以，TBSI的硕士为学硕。</p>
+<p><strong>Q15: 可以去北京培养吗？</strong></p>
+<p>取决权在于导师，如果你导师在北京有项目且需要长期呆在北京，是需要去北京的。</p>
+<p><strong>Q16: 全英文授课吗？</strong></p>
+<p>是的。</p>
+<p><strong>Q17: 我看到夏令营对报考生有英语要求和绩点要求？对一志愿考生有吗？调剂生呢？</strong></p>
+<p>夏令营和考研统考不一样，统考对英语和绩点没有任何要求，具有报考资格，但是英语和绩点是复试的重要的参考对象。</p>
+<p>对于调剂生而言，在2019年只要求过六级，2020要求六级过500，才有调剂资格，具体细节参考官网。其他语言：</p>
+<p>① 托福（TOEFL）网络考试成绩在 90 分及以上； ② 雅思（IELTS）成绩在 7 分及以上； ③ 传统 GRE 考试成绩在 1300 分及以上或新 GRE 考试成绩在 310 分及以上； ④ GMAT 成绩在 675 分及以上； ⑤ 国家六级英语考试成绩在 500 分及以上；</p>
+<p><strong>Q18: 我是双非跨考，怎么办，会被歧视吗？</strong> </p>
+<p>不歧视。</p>
+<p>其实对于歧视而讲，这是你的过往经历，不存在歧视一说，但是这是老师你评价的一个重要参考对象。最好的证明就是双非有上岸的，用能力说话。</p>
+<p><strong>Q19: 这个数学数据的研究生和国内普通计算机研究生学的东西一样吗？</strong></p>
+<p>大部分关注TBSI的都是他的数据track，在TBSI在非常强的教授和实验室。你想做前沿的DL, ML, TBSI也有非常多的机会。在知乎有介绍二中心实验室的老师信息，请自搜寻。但是TBSI建院的一个目标就是打破学术壁垒，学科交叉。这需要你把自己的视野再放大一点，问问自己你到底想做什么？什么是计算机技术和人工智能？我到底想做什么？我要不要去过更多人竞争的独木桥？我是不是一定要进入清华大学的贵系才能叫做我去学计算机了？包括如今的控制工程等其他学科都是和计算机技术离不开的，打好考研的信息战是你的一门必修课。</p>
+<p><strong>Q20: 有没有复试资料可以参考？</strong></p>
+<p>没有，每年考研情况科目由于特殊原因不尽相同。可能2021年又变了，但是==TBSI是会公布复试参考书目==。2020年数据方向考研科目为数据结构，参考书目是严奶奶的那一版。如果大部分人亡邓公的去看，又是怎样的场景？在这一点，TBSI已经为你降低难度了。但是几年看下来，数据结构这门课是不会怎么变的，是核心科目。余旷老师在知乎讲了一下复试问题，值得你报考之前好好读一下，同时也有2020年数据方向的初试回忆贴。</p>
+<p>参考链接：<a href="https://www.zhihu.com/question/341951107">知乎：清华-伯克利深圳学院考研如何准备？ </a></p>
+<p><strong>Q21: TBSI调剂生和一志愿一起复试吗？</strong></p>
+<p>是的，参考Q25</p>
+<p><strong>Q22: 什么样的学生在复试的时候比较有优势？</strong></p>
+<p>在我撰写本文的时候，SIGS官方微信公众号写了一篇文章，我非常认同。</p>
+<p>参考链接： <a href="https://mp.weixin.qq.com/s/joTwzKQHEP9VZ1esPae2mQ">什么样的学生在TBSI面试中更受青睐？</a></p>
+<p><strong>Q23: 专业课如何准备？</strong></p>
+<p>每年初试的专业课不尽相同，参考官方信息以及相关科目备考经验贴。</p>
+<p><strong>Q24: 导师信息？</strong></p>
+<p>请参考官方网站有相关介绍，同时你也可以查询导师评价网，知乎，贴吧。但是，请具有一定的分辨能力。</p>
+<p><strong>Q25: 复试流程是怎样的？</strong></p>
+<p>2020年是以网络复试进行的。首先学生在审核会议室进行资格审查，然后就等待进入面试室了，面试时间20分钟，包括3 -5分钟英语自我介绍，剩下为专业课和基础知识问答，严格控制时间。</p>
+<p><strong>Q26: 为什么每年都在改专业课？</strong></p>
+<p>这个问题余旷老师的问答具有一定的参考性。</p>
+<blockquote>
+<p>关于复试笔试，这个比统考更重要一些，但在我们track重要性也有限。这里我们TBSI，或者更确切的说，我们TBSI物理-化学track自有国情在此。根本原因在于我们现在搞交叉学科，物理-化学track其实是一个大杂烩，里面有做环境化学的，也有做光电器件的，需求很杂乱。最后决定考大学物理而不是大学化学其实也是大家扯皮均衡的结果，考题也不会很难。所以，我在这里替做环境的同事说句话，各位环境（还有化学）背景的学生，如果看到我们考大学物理请千万不要被吓到。考的没有其他考生好也不要灰心。因为again，真正重要的是面试，只要你在笔试中表现出了合理的智商，我们是会考虑你的专业背景的。</p>
+<p>作者：余旷<br>链接：<a href="https://www.zhihu.com/question/341951107/answer/800670281">https://www.zhihu.com/question/341951107/answer/800670281</a><br>来源：知乎<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+</blockquote>
+<p><strong>Q27:一中心的低碳实验室怎样？金融可以报考吗？</strong></p>
+<p>孔老师人非常好，春风和煦的，目前实验室有一个研究助理，两个博士后，tbsi宣传交叉学科，欢迎各个学科的同学报考，仅供参考。</p>
+<p><strong>Q28: 保护一志愿吗？</strong></p>
+<p>保护一志愿的。</p>
+<p>但是照2020的情况来看，==复试有不及格选项，直接淘汰==，所以初试过了就请忘掉初试认真准备。</p>
+<p>调剂生初试成绩折合算法为：<br>$$<br>500-\frac{（500-初试成绩）<em>（500-学科门类复试分数线）}{500-考生所报考专业学术型硕士复试分数线}<br>$$<br>例如某调剂生考了380分，相关专业学硕线是360分，校线为300，那么他的初试折合分数就是：<br>$$<br>500-\frac{(500-380)</em>(500-300)}{500-360}=328.57<br>$$<br><strong>Q30: 到时候复试被刷可以校内调剂吗？</strong></p>
+<p>时间上来讲基本上不可以。</p>
+<p>因为往年包括今年都是在最后一批进行复试，这个时候其他学院的校内调剂基本上已经调剂完成了。</p>
+<p><strong>Q31: 报录比如何？</strong></p>
+<p>不了解，清华大学不公布报考人数。</p>
+<p><strong>Q32: 录取办法是怎样的？</strong></p>
+<ul>
+<li><p>总成绩计算办法 总成绩=初试成绩（若为调剂，则折算初试）+ 综合材料审核*1 + 复试面试成绩 * 4 </p>
+</li>
+<li><p>根据各面试小组的名额，依各组总成绩由高到低排序，遵循志愿，择优录取。</p>
+</li>
+</ul>
+<p>值得提起的是，今年是TBSI第一次把综合材料审核作为100分加入到总成绩的测算中，更加接近于国外大学入学的申请-审核制。</p>
+<p><strong>Q32: 计算机方向有机试吗？</strong></p>
+<p>没有。</p>
+<p><strong>Q33: 请客观评价一下清华伯克利的考研难度？</strong></p>
+<p>初试不难（相对比清华912和408难度），都是校线，复试看英语和专业能力。评价自己能力，合理选择。</p>
+<p><strong>Q34: 网上说的TBSI学生放养是真的吗？</strong></p>
+<p>不是当事人，真实性自己评价。由于双选制度，增加自己的核心竞争力才有可能跟上自己感兴趣的课题和导师。</p>
+<p><strong>Q35: 学长/学姐，你对TBSI怎么看？</strong></p>
+<p>TBSI还很年轻，所以固然存在一些问题。但是清华大学和加州伯克利大学在深圳市政府的支持下敢于尝试第一步。清华大学一直都是中国教育制度的探索者，从清华国际深圳研究生院，到清华大学新闻传播系不再招收本科生，都在尝试新的探索。TBSI的导师都是世界一流的导师。</p>
+<p>我在写个人陈述的时候有这么一句话： Begin with TBSI, step into the world. 你有多少能力，我相信清华伯克利就能给你多大的舞台。</p>
+<p><strong>Q36: 如何在本部和清华伯克利之间选择？</strong></p>
+<p>这个选择不仅仅是北京和深圳的选择，同时也是专业方向，考研难度，导师，环境未来职业发展规划的选择。如果你认为本部更加适合你的未来发展，那你应该去本部。</p>
+<p><strong>Q37: TBSI的学生的学籍在深圳还是北京？</strong></p>
+<p>2019年是同清华本部统一管理，北京。</p>
+<p><strong>Q38: 可以出去实习吗？</strong></p>
+<p>没有统一规定，取决权在于导师和中心。</p>
+<p><strong>Q39: 我看到淘宝上有相关专业课资料，我需要买吗？</strong></p>
+<p>没必要，淘宝上有的，你都能找到。</p>
+<p><strong>Q40: TBSI的官方系统需要填写吗，如果到时候需要修改怎么办呢？</strong></p>
+<p>按照规定，官方系统是必须填写的，且有截止时间，除去重要的审核材料。内容有：个人简历（中英文），个人陈述（中英文），研究计划（中英文）。一般来说，没有过初试不会认真去斟酌这些东西，我当时是全部提交空白文档上去。当你初试过了的时候，招生办老师会重新开放给你，你需要重新提交文件。</p>
+<p>注意：今年材料审核100分直接纳入总分，不可忽视材料部分的准备。</p>
+<p><strong>Q41: 能不能讲一下TBSI的好处和优势？</strong></p>
+<p>我相信在看完之前的所以的回答你会TBSI在学术方面已经有了一个非常直观的印象。那么我讲一讲其他三点：</p>
+<ul>
+<li><p>如果有某个导师愿意要你，你想找哪个老师都是可以的，不存在复试前就确定导师的情况。</p>
+</li>
+<li><p>实习优势，深圳。</p>
+</li>
+<li><p>环境和生活。环境非常好，在大学城。2021，清华大学深圳国际研究生院一期（TBSI院区）为了迎接110年校庆，预计在2021正式投入使用。你看到了首页那栋建筑了，就是TBSI新院区，所以2021大概率还会继续扩招。</p>
+</li>
+</ul>
+<h1 id="时间线"><a href="#时间线" class="headerlink" title="时间线"></a>时间线</h1><p>1、写在最前，建议合理评估自身实力，在清华，初试只是门票，初试考的高没啥优势，评估自己除了初试课程以外，有什么亮点能吸引老师，尤其建议跨考+无相关项目的学生，谨慎报考，清华的名头不值得大家前仆后继（虽然我知道还是会有一大批大佬和铁头我不在乎这些）。下面正式开始。</p>
+<p>2、如果你确定了报考TBSI，请时刻关注官网，说不定发的通知偷偷摸摸就找不到了。一定要避免闭门造车。大概在<strong>八月</strong>左右，TBSI会在官网上公布考纲，这一点在清华各院系里算是良心的。</p>
+<p>3、同时，清华研招网会在<strong>九月初</strong>公布招收统考生的招生专业目录，<strong>十月初到中旬</strong>公布带人数的招生简章，TBSI的官网也基本上会同时出一个统考须知。值得注意的是，TBSI不仅需要在研招网上填报志愿，还需要在自己TBSI官网的招生目录上填报相关信息，包括基本信息和各种经历奖项，<strong>简历（中英文），个人陈述（中英文），学习计划（中英文），成绩单，身份证</strong>什么的。报名系统开放时间跟研招网报志愿时间同步。根据经验，这个时候不填报官网的系统也是可以的，复试前这个系统会重新开放，可以这个时候填写或更新。不过你也可以报名的时候填报，看你权衡选择。</p>
+<p>4、研招网的填报不再赘述，应届生和往届生报名流程网上都有详细教程。记着<strong>十一月</strong>还有一个现场确认，各地政策不同，一定不能忘了。<strong>十二月初</strong>打印准考证，这玩意无论复试初试都是必须的，建议多打几份保存。不过初试成绩公布后会再次开放下载打印通道，不过没必要，建议十二月一次搞定。</p>
+<p>5、按照正常来说，<strong>二月初</strong>会出成绩，大概<strong>三月中下旬</strong>会进行复试，第一天资格审查加笔试，第二天面试完当天晚上出录取结果。值得注意的是调剂生和一志愿考生是一起复试的。名义上分数计算是保护一志愿的，但我一开始也说了，初试在清华压根没用，建议忘掉初试，所以实际上，对一志愿考生的保护的话，大家可以自行理解。</p>
+<p>6、录取之后的工作就是流程式的工作，跟着通知走就好，在此也不多言了。</p>
+<p>7、关于找老师，据我所知，复试前找老师的意义目前来看不算很大，老师大部分都不会回，自己心里不要虚。毕竟导师选择是九月双选。复试拟录取后找老师也会有很多老师不会回，每个老师的招生名额也得九月才能知道。</p>
+<p>8、最后说一句，建议能提早确定报考学校专业，确定了之后就别乱想了。临时改志愿然后成功的有，有不少，但是对于大部分来说，还是专一目标明确，可能性更大。同时，也希望大家能有信息搜索能力，这玩意别看对考试没用，但是事实上，考研是信息战，能更快找到更有用信息的同学，上岸的概率明显高于傻乎乎的同学。就是这样。</p>
+<h1 id="复试回忆"><a href="#复试回忆" class="headerlink" title="复试回忆"></a>复试回忆</h1><blockquote>
+<p>参考github仓库： <a href="https://github.com/stellarkey/912_project">https://github.com/stellarkey/912_project</a></p>
+</blockquote>
+<h1 id="学长学姐最后想给你说"><a href="#学长学姐最后想给你说" class="headerlink" title="学长学姐最后想给你说"></a>学长学姐最后想给你说</h1><p>除了你的父母，没有人会在乎你在这个过程中付出了多少努力和艰辛，他们在乎的只是你考上了还是没有考上。如果你选择了这条路，2021这一年必定更加难走，但是我们希望你能够一步一个脚印地来，期待明年在深圳与你相见。</p>
+<p>引用考研名师某句话：</p>
+<blockquote>
+<p>不要光有雄心壮志，这是远远不够的。真正遇到了困难，苦头能不能吃下去，才能决定你成功与否。而不是你的梦想是否远大，不是你的道德是否高尚。遇到难事了才能看出来你是不是真的能走下去。</p>
+</blockquote>
+<h1 id="我想了解更多"><a href="#我想了解更多" class="headerlink" title="我想了解更多"></a>我想了解更多</h1><p>请TBSI官方微信公众号：清华伯克利深圳学院 tbsi2014</p>
+<p>后续如有更新，请关注github仓库TBSI板块址：<a href="https://github.com/stellarkey/912_project">https://github.com/stellarkey/912_project</a></p>
+<p>任何未尽问题，欢迎联系邮箱：荔枝 <a href="mailto:&#x35;&#49;&#52;&#x36;&#x33;&#54;&#x35;&#x38;&#54;&#x40;&#113;&#113;&#46;&#x63;&#x6f;&#109;">&#x35;&#49;&#52;&#x36;&#x33;&#54;&#x35;&#x38;&#54;&#x40;&#113;&#113;&#46;&#x63;&#x6f;&#109;</a></p>
+]]></content>
+      <tags>
+        <tag>Interview</tag>
       </tags>
   </entry>
   <entry>
