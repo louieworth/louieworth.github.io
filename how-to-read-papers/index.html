@@ -1,37 +1,1300 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+  
 
 
-{% block content %}
+<html class="theme-next mist use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Note," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Louieworth's blog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="the way to read papers">
+<meta property="og:type" content="article">
+<meta property="og:title" content="how_to_read_papers">
+<meta property="og:url" content="http://yoursite.com/how-to-read-papers/index.html">
+<meta property="og:site_name" content="Louieworth&#39;s blog">
+<meta property="og:description" content="the way to read papers">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/how-to-read-papers/1.png">
+<meta property="article:published_time" content="2020-06-07T01:38:27.000Z">
+<meta property="article:modified_time" content="2020-12-21T06:57:44.813Z">
+<meta property="article:author" content="Louieworth">
+<meta property="article:tag" content="Note">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/how-to-read-papers/1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/how-to-read-papers/"/>
+
+
+
+
+
+  <title>how_to_read_papers | Louieworth's blog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Louieworth's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Stay foolish, stay healthy.</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
 
   <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/how-to-read-papers/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Louieworth's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">how_to_read_papers</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-07T09:38:27+08:00">
+                2020-06-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/how-to-read-papers/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/how-to-read-papers/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  2.7k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  9
+                </span>
+              
+            </div>
+          
+
+          
+              <div class="post-description">
+                  the way to read papers
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <script src="/assets/js/APlayer.min.js"> </script><blockquote>
+<p>在科研领域中，读论文大概是大家的日常基本操作了。但如何读论文，才能实现效率最大化呢？斯坦福大学教授吴恩达在斯坦福 CS230 深度学习课程中专门讲述了如何读论文，那么具体效果如何呢？本文作者以「姿态估计」为例复现了吴恩达的读论文方法，并提出了他自己的读论文小技巧，希望对大家的科研有所帮助。</p>
+</blockquote>
+<p>理解人工智能和机器学习领域中的前沿研究是每一位机器学习从业者应该掌握的技能。</p>
+<p>要想实时追踪前沿研究并增加自己的知识，机器学习从业者需要养成开放的学术心态和习惯。人工智能、机器学习和深度学习领域每时每刻都在更新发展，所以我们必须用知识来武装自己，紧跟领域发展步伐，而这些只能通过读论文来实现。</p>
+<p>但是读论文也不是盲目而就的，也需要一定的方法和流程。如果只是流水账似的通读下来，恐怕也不会有特别好的效果。</p>
+<p>之前，斯坦福大学教授、Coursera 联合创始人吴恩达（Andrew Ng）在斯坦福 2018 年秋季 CS230 深度学习课程中就如何读论文提出了一些建议。但具体效果怎么样呢？按照吴恩达的方法是否可以充分地从论文中获取自己想要了解和掌握的知识和技能呢？</p>
+<p>近日，计算机科学工程师 Richmond Alake 以「姿态估计」为例，示范了吴恩达 CS230 课程的读论文方法，目前相关文章已在 Medium 获得 3000 多赞。除了课程中提到的方法，Alake 还为读者介绍了他本人读论文时的一些小技巧。</p>
+<p>在这篇博文中，读者不仅能够掌握高效、恰当读论文的系统性方法和技巧，还可以获取一些有助于搜索论文和关键信息的辅助性在线资源。</p>
+<p>想要了解吴恩达 CS230 课程详细内容的读者，可以参考文章《<a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2650780679&idx=1&sn=a9358fe26492d1159939d0095d9c87bf&chksm=871a7079b06df96f4b14d7888b0d9d2b9e95a89092c1b4364f39a6e51ac77590cf6552c59180&scene=21#wechat_redirect">机器学习研究者的养成指南，吴恩达建议这么读论文</a>》。</p>
+<p>接下来，我们就来看 Richmond Alake 如何一步步复现吴恩达的读论文方法，这包括阅读多篇相关性论文和阅读单篇论文两部分内容。</p>
+<h1 id="整合论文资源，记录理解程度"><a href="#整合论文资源，记录理解程度" class="headerlink" title="整合论文资源，记录理解程度"></a><strong>整合论文资源，记录理解程度</strong></h1><p>有时在开展某项主题研究时，我们需要阅读大量的文献，这就需要学会整合资源的方法了。Richmond Alake 以姿态估计为例为我们展示了如何有效地整合与该主题相关的论文等资源，以及论文阅读量等实用建议。</p>
+<ol>
+<li><p><strong>收集和研究主题相关的资源。</strong>这些资源可以是研究论文、Medium 文章、博客、视频、GitHub 项目等等。在谷歌搜索引擎中键入「pose estimation」进行快速搜索，你会得到一些与该主题相关的不错资源。这一步的目的是整理所有与研究主题相关的资源，如视频、实现文档和研究论文。理想状况下，这一阶段你不用对自己认为重要的资源数量设置上限，但你需要创建一个有用论文、视频和文章的列表。</p>
+</li>
+<li><p>接下来，你将<strong>深入探索找到的资源**</strong>。**这里的关键点在于，找到一种方法来跟踪记录对列表内每一项资源的理解程度。</p>
+</li>
+</ol>
+<p>吴恩达教授建议，用一个表格记录自己对相关资源的理解，如下图所示：</p>
+<p><img src="/how-to-read-papers/1.png"></p>
+<hr>
+<p>建议先至少对列表内每项资源的内容了解 10–20%。这可以确保你对每项资源的介绍性内容有足够了解，从而能够准确判断它与研究主题的相关度。</p>
+<p>对于相关度最高的论文或资源，你可以进行更深层次的理解。最终，你会对某些资源产生充分的理解。</p>
+<p>你可能会问自己：「多少论文 / 资源才足够？」。</p>
+<p>吴恩达教授认为，<strong>5–20 篇论文</strong>可以让你对某个研究主题有一个基础了解，或许可以进一步去了解实现技术。50-100 篇论文可以提供对特定领域比较深的理解。</p>
+<h1 id="如何研读一篇论文"><a href="#如何研读一篇论文" class="headerlink" title="如何研读一篇论文"></a><strong>如何研读一篇论文</strong></h1><p><strong>要想理解一篇论文，只读一遍是不够的。</strong>吴恩达教授认为，从头到尾阅读一遍并不是理解论文的最佳方法。</p>
+<p>想要理解一篇论文的内容，你至少需要阅读 3 遍。</p>
+<p>\4. 第一遍：读标题、摘要和图片。</p>
+<p>\5. 第二遍：读引言和结论部分，再浏览一遍图片，并快速浏览论文的其他部分。引言和结论部分清晰明了地概括了论文内容和研究发现。这两个部分通常只包含关键信息，对其他补充信息不作赘述。而这些关键信息有助于你接下来阅读论文的其他部分。</p>
+<p>\6. 第三遍：阅读论文的全部内容，跳过你不熟悉的复杂数学或技术公式。这一遍阅读时，你还可以跳过不理解或不熟悉的专业术语。</p>
+<p>\7. 对某一领域进行深入研究的研究者还可以阅读更多遍，这主要是为了理解论文中的数学、技术以及不了解的术语。</p>
+<p>不过，对于出于获取信息和工程目的而阅读论文的人来说，深入研究可能比较耗时，尤其是在有 20 多篇论文需要读的时候。</p>
+<h1 id="阅读论文时，你需要问自己这些问题"><a href="#阅读论文时，你需要问自己这些问题" class="headerlink" title="阅读论文时，你需要问自己这些问题"></a><strong>阅读论文时，你需要问自己这些问题</strong></h1><p>吴恩达教授还提供了一些阅读论文时读者需要问自己的问题。通过这些问题，能够看出你是否理解了论文的关键信息。</p>
+<p>Richmond Alake 选取了以下几个重要问题作为参考：</p>
+<ol>
+<li>描述论文作者旨在实现或已经实现的研究目标。</li>
+<li>如果论文中提出了新的方法 / 技术，那么新方法的关键要素是什么？</li>
+<li>这篇论文中哪些内容对你来说是有用的？</li>
+<li>你还想要继续阅读哪些参考内容？</li>
+</ol>
+<p>此外，Richmond Alake 还分享了一些查询相关研究信息的在线资源：</p>
+<ul>
+<li>The Machine Learning Subreddit (<a target="_blank" rel="noopener" href="https://www.reddit.com/r/MachineLearning/">https://www.reddit.com/r/MachineLearning/</a>)</li>
+<li>The Deep Learning Subreddit (<a target="_blank" rel="noopener" href="https://www.reddit.com/r/deeplearning/">https://www.reddit.com/r/deeplearning/</a>)</li>
+<li>PapersWithCode (<a target="_blank" rel="noopener" href="https://paperswithcode.com/">https://paperswithcode.com/</a>)</li>
+<li>NeurIPS、ICML、ICLR 等顶级会议论文</li>
+<li>Research Gate (<a target="_blank" rel="noopener" href="https://www.researchgate.net/">https://www.researchgate.net/</a>)</li>
+</ul>
+<h1 id="如何⾼效阅读机器学习顶会论⽂"><a href="#如何⾼效阅读机器学习顶会论⽂" class="headerlink" title="如何⾼效阅读机器学习顶会论⽂"></a>如何⾼效阅读机器学习顶会论⽂</h1><p>1.读书与读论⽂的区别<br>教材仔细读：经过⻓时间的打磨，是精品；书籍如CSAPP, ESL, MLAPP, GEB（最后这个花费作者⼀辈⼦<br>⼼⾎）<br>论⽂要甄别：<br>顶会论⽂：cvpr, icml, nips, 等<br>70%：在前⼈基础上做了⼀丁点改进，如改⼀下损失函数、调调正则化  -&gt; 不值得花⼤量时间<br>研读<br>10%：给领域的从业者带来灵感的启发<br>1%：给⾏业所有的从业者都有启发，甚⾄带来⽅向性的影响<br>⚠<br>：只有⼀⼩部分的⽂章值得复现，如顶会论⽂的best paper 或 oral；<br>⚠<br>：经典的论⽂在你之前可能已经有很多⼈复现过了，作者也可能会给出官⽅的代码；<br>⚠<br>：硕⼠、⾼年级的本科⽣、刚⼊⻔者这些垃圾可以不⽤读；但博⼠⽣为了在这个特别⼩的⽅向上能有<br>所建树、保持敏锐的嗅觉，这些垃圾也要读，宁滥勿缺。</p>
+<ol start="2">
+<li>论⽂来源<br>第⼀类：⼀⼿来源<br>会议的官⽹：cvpr、iccv、eccv、icml、nips（看best paper &amp; oral &amp; 获奖论⽂）<br>arxiv.org (放着未发表的或者预览版的论⽂)，需要⼀个账号<br>Google scholar;订阅功能 （⾃然语⾔处理、auto ml），订阅搜索结果，每⽇会⾃动搜索，关注最<br>新论⽂<br>第⼆类：⼆⼿来源<br>野⽣收集：如github上的awesome list，可以订阅watch、star<br>可靠信息筛选：公开课（cs224n, cs224w, cs231n, 李宏毅⽼师机器学习公开课）的幻灯⽚⾥有论<br>⽂列表⼀定要好好读；被⼈认可的个⼈来源、知乎⼤v、微博；项⽬源码的注释中的论⽂<br>第三类：三⼿来源<br>综述性论⽂</li>
+<li>如何读论⽂<br>场景：刚开完会议或正在开，⼿中有⼀次会议上所有被接收的论⽂或者随意按顺序拿出20篇<br>对20篇论⽂进⾏简单分类：整理、分三类记录</li>
+<li>论⽂标题和作者</li>
+<li>⽂章摘要（⽤⾃⼰的话复述，⽤⼀句话或50字以内如何向别⼈推荐和介绍这篇论⽂，最好<br>⽤英语；【这篇⽂章⽤了什么⽅法、在⼲什么】）</li>
+<li>这篇⽂章要不要继续精读+当时作出决定的⽇期<br>精读环节：带着问题读【把⾃⼰想象成⼀个杠精去挑刺】（你开始提出的问题以及最关⼼的问题有<br>没有在看完⽂章后得到解答）<br>精读顺序：摘要（产⽣问题Q）-&gt; 引⾔（上述问题是否被放⼤、有没有出现新问题、前⾯的<br>问题有没有得到回答A ）-&gt; 再次确认要不要读下去 -&gt; 总结部分，即conclusion、feature<br>work（作者总结的⽂章重点以及未来的打算是否明确）-&gt; 知识介绍（重点读每⼀段的第⼀句<br>话；如果遇到图表，先仔细的看图表）-&gt; 再次确定要不要继续读 -&gt; 进⼊最耗时的核⼼算法部<br>分 -&gt; 实验部分（数据集、评价标准）-&gt; 决定要不要复现、将⾃⼰的实验结果与论⽂进⾏⽐较<br>相关⼯作：仔仔细细的看；这个⽅法是不是在某篇⽂章的基础上做的、与其他⽂章有什么关<br>系、借鉴了哪些⽅法、以及该领域之前是⽤什么⽅法、有哪些数据集是被其他⼈做过实验<br>的、其他⼈得到了什么效果；【related works】相关⽂章的题⽬ + ⾃⼰总结这篇⽂章与其他<br>相关⼯作的关系或区别。<br>时间：⼀个半⼩时；上述红⾊部分是笔记的记录内容；如果⽂章对于⾃⼰的难度较⼤，可以暂缓阅<br>读，等把⽂章中提到的概念、需要的基础知识补⼀下再回过头来看。<br>最后在总结了所有的论⽂后，再附⼀张纸：总结多少⽂章都在关注什么⽅⾯的内容，有多少⽂章在针对<br>某类技术、某个⽅向，⼤家都在研究什么。<br>整个过程中要思考 ：这个东⻄有没有价值、为什么⼤家都在做这些、你对他是什么看法。过⼏年<br>之后，回过头来，可以看到随着时间研究内容发⽣的变化。<br>将这些样本数据，转化为⾃⼰的记忆是⾮常重要的。</li>
+<li>⽂献管理⼯具<br>Zotero : <a target="_blank" rel="noopener" href="https://www.zotero.org/">https://www.zotero.org/</a> (免费&amp;跨平台)<br>Mendeley : <a target="_blank" rel="noopener" href="https://www.mendeley.com/">https://www.mendeley.com/</a> (免费&amp;跨平台)<br>Endnote ：<a target="_blank" rel="noopener" href="https://www.endnote.com/">https://www.endnote.com</a><br>Papers : <a target="_blank" rel="noopener" href="https://www.papersapp.com/">https://www.papersapp.com/</a></li>
+</ol>
+<center>how to read paper</center>
+
+<br>
+
+
+
+
+
+	<div class="row">
+    <embed src="how" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+
+
+
+
+<br>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Note/" rel="tag"># Note</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/catboost/" rel="next" title="catboost">
+                <i class="fa fa-chevron-left"></i> catboost
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021%E8%80%83%E7%A0%94%E8%8B%B1%E8%AF%AD%E4%B8%80%E5%A4%A7%E4%BD%9C%E6%96%87%E6%94%BB%E7%95%A5/" rel="prev" title="2021考研英语一大作文攻略">
+                2021考研英语一大作文攻略 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
 
     <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+      
     </div>
   </div>
 
-{% endblock %}
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+          </div>
+          
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7Carchive">
+              
+                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/louieworth" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:jiangli3859@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.linkedin.com/in/li-jiang-2014621b0/" target="_blank" title="Linkedin">
+                      
+                        <i class="fa fa-fw fa-linkedin"></i>Linkedin</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://vel.life/" title="Vel" target="_blank">Vel</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B4%E5%90%88%E8%AE%BA%E6%96%87%E8%B5%84%E6%BA%90%EF%BC%8C%E8%AE%B0%E5%BD%95%E7%90%86%E8%A7%A3%E7%A8%8B%E5%BA%A6"><span class="nav-number">1.</span> <span class="nav-text">整合论文资源，记录理解程度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E7%A0%94%E8%AF%BB%E4%B8%80%E7%AF%87%E8%AE%BA%E6%96%87"><span class="nav-number">2.</span> <span class="nav-text">如何研读一篇论文</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%98%85%E8%AF%BB%E8%AE%BA%E6%96%87%E6%97%B6%EF%BC%8C%E4%BD%A0%E9%9C%80%E8%A6%81%E9%97%AE%E8%87%AA%E5%B7%B1%E8%BF%99%E4%BA%9B%E9%97%AE%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">阅读论文时，你需要问自己这些问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E2%BE%BC%E6%95%88%E9%98%85%E8%AF%BB%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E9%A1%B6%E4%BC%9A%E8%AE%BA%E2%BD%82"><span class="nav-number">4.</span> <span class="nav-text">如何⾼效阅读机器学习顶会论⽂</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Louieworth</span>
+
+
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '4YkTMPdpq8gz4Y5cE7p16Vqm-gzGzoHsz',
+        appKey: '730GISNngxd7utFYrHdOFLbf',
+        placeholder: 'Just go for it',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>

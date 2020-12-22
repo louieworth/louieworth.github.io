@@ -449,9 +449,9 @@
     
     
     
-      <category term="DL" scheme="http://yoursite.com/tags/DL/"/>
-    
       <category term="Note" scheme="http://yoursite.com/tags/Note/"/>
+    
+      <category term="DL" scheme="http://yoursite.com/tags/DL/"/>
     
   </entry>
   

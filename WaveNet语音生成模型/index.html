@@ -1,37 +1,1331 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+  
 
 
-{% block content %}
+<html class="theme-next mist use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="DL," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Louieworth's blog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="论文阅读： WaveNet: A Generative Model for raw Audio  源码详解 评论：文章对模型的设计非常好，很有参考价值。模型中采用的扩大卷积的方法来极大的增加感受野，对序列数据建模很有用。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WaveNet语音生成模型">
+<meta property="og:url" content="http://yoursite.com/WaveNet%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/index.html">
+<meta property="og:site_name" content="Louieworth&#39;s blog">
+<meta property="og:description" content="论文阅读： WaveNet: A Generative Model for raw Audio  源码详解 评论：文章对模型的设计非常好，很有参考价值。模型中采用的扩大卷积的方法来极大的增加感受野，对序列数据建模很有用。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/WaveNet%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/1.jpg">
+<meta property="og:image" content="http://yoursite.com/WaveNet%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/2.jpg">
+<meta property="og:image" content="http://yoursite.com/WaveNet%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/3.jpg">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Cmu+-">
+<meta property="og:image" content="http://yoursite.com/WaveNet%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/4.jpg">
+<meta property="og:image" content="http://yoursite.com/WaveNet%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/5.jpg">
+<meta property="article:published_time" content="2020-12-18T13:04:24.000Z">
+<meta property="article:modified_time" content="2020-12-21T07:01:34.800Z">
+<meta property="article:author" content="Louieworth">
+<meta property="article:tag" content="DL">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/WaveNet%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/1.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/WaveNet语音生成模型/"/>
+
+
+
+
+
+  <title>WaveNet语音生成模型 | Louieworth's blog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Louieworth's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Stay foolish, stay healthy.</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
 
   <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/WaveNet%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Louieworth's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">WaveNet语音生成模型</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-12-18T21:04:24+08:00">
+                2020-12-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/WaveNet%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/WaveNet%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  3.1k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  11
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <script src="/assets/js/APlayer.min.js"> </script><p>论文阅读： WaveNet: A Generative Model for raw Audio</p>
+<p><img src="/WaveNet%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/1.jpg"></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/24568596">源码详解</a></p>
+<p><strong>评论：</strong>文章对模型的设计非常好，很有参考价值。模型中采用的扩大卷积的方法来极大的增加感受野，对序列数据建模很有用。</p>
+<a id="more"></a>
+
+<h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>本文提出了一种对于生成原始语音模型的深度神经网络。这个模型是完全的概率自回归模型。有以下几个亮点：</p>
+<ol>
+<li>通过这个模型，可以生成更加真实的语音。</li>
+<li>可以以相同的保真度捕捉多人的语音并且可以在多人之间切换。</li>
+<li>在音乐上的合成，也会生成高保真的语音片段。</li>
+<li>作为一个判别模型，在音素识别上有可观的前景。</li>
+</ol>
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>受到最近利用神经自回归生成模型模拟复杂的分布例如（图像和文字）的启发，这篇文章挖掘了原始语音生成的一些技术：使用神经网络架构，把<strong>像素或者单词的联合概率作为条件概率分布的乘积的建模方法</strong>。本文要试图解决的问题是：</p>
+<p>这些方法是否可以在宽带原始音频波形的生成中的应用。这些音频波形信号具有非常高的短时分辨率。</p>
+<p>基于 PixelCNN, 这篇文章的主要贡献是：</p>
+<ul>
+<li><p>展示了WaveNet可以生成原始语音信号，其自然度由人类裁判进行主观评分，这在语音合成（TTS）领域还未被报道过。</p>
+</li>
+<li><p>为了处理原始音频生成中所需的==大跨度时间依赖==，我们基于扩大因果卷积（dilated causal convolutions）开发了新的架构，它具有非常大的感受野(receptive filed)。</p>
+</li>
+<li><p>展示了如果基于说话人身份进行训练，单个模型可以生成不同风格的语音。</p>
+</li>
+<li><p>同样的架构在小规模语音识别数据集的测试中获得了很好的结果，同时用于音乐等其他形态的音频生成中也有很好的前景。</p>
+</li>
+</ul>
+<h1 id="WaveNet"><a href="#WaveNet" class="headerlink" title="WaveNet"></a>WaveNet</h1><p>类似于PixelCNN，我们有联合概率密度分布 $x = {x_1,…,x_T}$, 其作为条件概率密度的乘积：<br>$$<br>p(x)=\prod_{t=1}^Tp(x_t|x_1,…,x_{t-1})<br>$$<br>其实我们可以观察到，每一个音频样本都取决于前面的样本，也就说这里是一个时间序列模型。类似于PixelCNN，有以下特点：</p>
+<ul>
+<li>条件概率分布是通过多层卷积实现的，网络中没有pooling层。</li>
+<li>模型使用softamx的层来输出，使用最大似然函数（MLE）进行优化。</li>
+<li>因为对数易于处理，我们通过MLE在验证集上进行超参数优化的时候可以很容易测定模型的overfitting/underfitting。</li>
+</ul>
+<h2 id="扩大因果卷积-Dilated-causal-convolutions"><a href="#扩大因果卷积-Dilated-causal-convolutions" class="headerlink" title="扩大因果卷积(Dilated causal convolutions)"></a>扩大因果卷积(Dilated causal convolutions)</h2><p><img src="/WaveNet%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/2.jpg"></p>
+<p>使用因果卷积(causal convolutions)来保证 $p\left(x_{t+1} \mid x_{1}, \ldots, x_{t}\right)$ 不包含$x_{t+1}, …., x_T$的信息。对于图像处理任务中，类似的是采用masked convolution。对于1-D数据，秩序将输出偏移几步就行。动态图参考： <a href="https://link.zhihu.com/?target=https://deepmind.com/blog/wavenet-generative-model-raw-audio/">WaveNet: A Generative Model for Raw Audio | DeepMind</a></p>
+<p>Causal convolutions和RNN的区别：</p>
+<ol>
+<li>在训练阶段，由于标定真实数据x的所有时间步骤都是已知的，因此所有时间步骤的条件概率预测可以==并行进行==。在推断阶段，预测结果是==串行==的：每一个预测出的样本都被传回网络用于预测下一个样本。</li>
+<li>因为没有循环连接，通常训练起来比RNN更快。</li>
+</ol>
+<p>但是存在一个问题就是，因果卷积存在的一个问题就是需要很多的卷积层或者很大的filter来实现增加感受野的功能。比如说上面那张图片的感受野只有5 (= # layers + filter length - 1) ，关于感受野的计算， 参考<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/113487374">感受野(Receptive Field)的理解与计算</a>,  所以我们在这里使用了扩张卷积来成倍增加感受野，并且没有很大的计算消耗。</p>
+<p><img src="/WaveNet%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/3.jpg"></p>
+<p>在上图中，感受野分别增加了1，2，4，8倍。扩大卷积（dilated convolution）可以使模型在层数不大的情况下有非常大的感受野。在这篇论文中，扩大系数都翻倍至上限，然后重复循环， 例如：<br>$$<br>1, 2, 4, . . . , 512, 1, 2, 4, . . . , 512, 1, 2, 4, . . . , 512.<br>$$<br>为什么要这样配置呢？有两个intution：</p>
+<ul>
+<li>指数级增长(exponentially increasing)的扩大可以引起感受野指数级的增长。例如每一组1;2;4;:::;512这样的卷积模块都拥有1024大小的感受野， 可视为与1x1024卷积对等的更高效的（非线性）判别式卷积操作 。</li>
+<li>将多组这样的模块堆叠起来可以进一步增长模型的容量和感受野。</li>
+</ul>
+<h2 id="SoftMax的分布"><a href="#SoftMax的分布" class="headerlink" title="SoftMax的分布"></a>SoftMax的分布</h2><p>因为原始音频是按照16-bit（one per timestep）的整数值序列储存的，每个timestep，softmax层需要输出65536个概率值。为了便于运算，我们应用了<img src="https://www.zhihu.com/equation?tex=%5Cmu+-" alt="[公式]">law companding transformation进行转换，将输出概率数目降低为256个。公式如下：<br>$$<br>f\left(x_{t}\right)=\operatorname{sign}\left(x_{t}\right) \frac{\ln \left(1+\mu\left|x_{t}\right|\right)}{\ln (1+\mu)}<br>$$<br>其中$-1&lt;x_t&lt;1, \mu=255$</p>
+<h2 id="门控单元"><a href="#门控单元" class="headerlink" title="门控单元"></a>门控单元</h2><p>本文也采用了类似于PixelCNN的门控单元：<br>$$<br>\mathbf{z}=\tanh \left(W_{f, k} * \mathbf{x}\right) \odot \sigma\left(W_{g, k} * \mathbf{x}\right)<br>$$</p>
+<ul>
+<li>* ,一个卷积操作</li>
+<li>$\odot$ ,矩阵element-wise的乘积</li>
+<li>$\sigma$ ,sigmoid函数</li>
+<li>K，层数索引</li>
+<li>F,g 滤波器（filter） and gate</li>
+<li>W, 可学习的卷积核</li>
+</ul>
+<blockquote>
+<p>为什么不使用ReLU？</p>
+</blockquote>
+<p>In our initial experiments, we observed that this non-linearity worked significantly better than the rectified linear activation function (Nair &amp; Hinton, 2010) for modeling audio signals. 因为在音频信号分析中，sigmoid就是好一些。</p>
+<h2 id="Residual-and-skip-connections"><a href="#Residual-and-skip-connections" class="headerlink" title="Residual and skip connections"></a>Residual and skip connections</h2><p><img src="/WaveNet%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/4.jpg"></p>
+<p>文章中使用了residual 和skip connection技术来使模型更快收敛，并且使梯度能传到到更深层模型。</p>
+<h2 id="Conditional-WaveNet"><a href="#Conditional-WaveNet" class="headerlink" title="Conditional WaveNet"></a>Conditional WaveNet</h2><p>接受额外输出的h，我们可以如下建模：<br>$$<br>p(\mathbf{x} \mid \mathbf{h})=\prod_{t=1}^{T} p\left(x_{t} \mid x_{1}, \ldots, x_{t-1}, \mathbf{h}\right)<br>$$<br>通过条件分布输入其他变量建模，我们可以使得WaveNet生成具有目标特点的音频。额外信息可以是：在多人语音我们输入一个人声音作为额外输入，在TTS(text-to-speech)的任务中，我们可以额外输入text的信息。文章中有两种建模的方法：全局方法(global conditioning) 以及局部方法 (local conditioning).</p>
+<ol>
+<li><p>Global conditioning </p>
+<p>全局建模方法接受单额外输入h，并且h在所有时间节点影响输出。<br>$$<br>\mathbf{z}=\tanh \left(W_{f, k} * \mathbf{x}+V_{f, k}^{T} \mathbf{h}\right) \odot \sigma\left(W_{g, k} * \mathbf{x}+V_{g, k}^{T} \mathbf{h}\right)<br>$$<br>, $V_{*,k}$， 可学习的线性投影</p>
+<p>,$V_{*,k}^T$，在所有时间节点上传播。</p>
+</li>
+<li><p>Local conditioning</p>
+<p>我们有第二种时间序列$h_t$,可以通过对原始数据的低采样率获得（比如TTS模型中的线性特征）。我们首先通过transposed convolutional network（learned upsampling）$y=f(h)$将时间序列转换成和语音序列一样分辨率的新的时间序列。然后将其用于激活单元：<br>$$<br>\mathbf{z}=\tanh \left(W_{f, k} * \mathbf{x}+V_{f, k} * \mathbf{y}\right) \odot \sigma\left(W_{g, k} * \mathbf{x}+V_{g, k} * \mathbf{y}\right)<br>$$<br>, $V_{f,k}$， 1 x 1卷积层</p>
+<p>如果采用了transposed convolutional network (learned upsampling),我们也可以直接使用$V_{f,k} * h$,但是没有1x1卷积好</p>
+</li>
+</ol>
+<h2 id="Context-Stacking"><a href="#Context-Stacking" class="headerlink" title="Context Stacking"></a>Context Stacking</h2><p>我们提到的增加感受野(receptive filed)的方法：</p>
+<ul>
+<li>增加扩大卷积的数目</li>
+<li>使用更多层数</li>
+<li>更大的过滤层(filter)</li>
+<li>更大的空洞因子</li>
+</ul>
+<p>另外一种可以增加感受的野的补充方法是：</p>
+<p>使用一个独立的更小的上下文堆栈来处理语音信号的长跨度信息，并局部调试一个更大的WaveNet只用来处理语音信号的更短的局部信息（在结尾处截断）。可以使用多个变长的具有不同数量隐藏单元的上下文堆栈，拥有越大感受野的堆栈其每层含有的隐藏单元越少。上下文堆栈还可以使用池化层来降低频率，这使得计算成本被控制在合理范围，也与用更长的跨度对时间相关性建模会使体量更小的直觉相吻合。</p>
+<h1 id="Experiences"><a href="#Experiences" class="headerlink" title="Experiences"></a>Experiences</h1><p>主要进行了三个Tasks的实验：</p>
+<ul>
+<li>多说话人的语音合成（没有基于文本训练）</li>
+<li>文本合成语音</li>
+<li>语音音频建模</li>
+</ul>
+<p>关于实验部分：请见deepmind的<a target="_blank" rel="noopener" href="https://www.deepmind.com/blog/article/wavenet-generative-model-raw-audio">post</a></p>
+<h2 id="Multi-Speaker-Speech-Generation"><a href="#Multi-Speaker-Speech-Generation" class="headerlink" title="Multi-Speaker Speech Generation"></a>Multi-Speaker Speech Generation</h2><p>使用的多人语音材料是来自于: CSTR voice cloning toolkit (VCTK)，基于说话人的条件进行了建模，数据集一共包括44个小时的109个位不同的说话人。</p>
+<p>因为不是基本文本信息建模，所以这个也会产生一些现实中并不存在但是听起来还是不错的一些人类语言。这就像语言生成图片一样，乍一看还不错，细瞅瞅就不行了。部分由于感受野的大小，这些语音在长跨度上缺少连贯性，基本上每次只能记住2-3个场景信息。</p>
+<p>通过one-hot编码，单个的WaveNet可以建模任意一个说话者语音。我们发现，与在单人的数据集训练上相比，增加训练集说话人的数量可以在验证集上获得更好的效果。这表示：WaveNet的说话表达是多人共享的。同时WaveNet也会捕捉其他语音信息，例如声音质量，说话人的呼吸以及嘴部动作等。</p>
+<h2 id="Text-to-Speech"><a href="#Text-to-Speech" class="headerlink" title="Text-to-Speech"></a>Text-to-Speech</h2><p>数据集来自于Google’s North American English and Mandarin Chinese TTS systems。</p>
+<p>在TTS 的任务中，WaveNet只考虑了(were locally conditioned on)语言学特征。同时也考虑了语言学特征和对数基频(logarithmic fundamental frequency, $logF_0$)作为额外的feature考虑到模型生成中去。这个模型的感受野是250毫秒，还构建了HMM单元选择拼接(Gonzalvo et al., 2016)语音合成器作为基于例句的基线，以及LSTM-RNN统计参数(Zen et al., 2016)语音合成器作为基于模型的基线。整个评价采用了主观评分模式。五分制度（5为最高分。）</p>
+<p><img src="/WaveNet%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/5.jpg"></p>
+<h2 id="Music"><a href="#Music" class="headerlink" title="Music"></a>Music</h2><p>数据集来自于：</p>
+<ul>
+<li>the MagnaTagATune dataset (Law&amp;Von Ahn, 2009), which consists of about 200 hours of music audio. Each 29-second clip is annotated with tags from a set of 188, which describe the genre, instrumentation, tempo, volume and mood of the music.</li>
+<li> the YouTube piano dataset, which consists of about 60 hours of solo piano music obtained from YouTube videos. Because it is constrained to a single instrument, it is considerably easier to model.</li>
+</ul>
+<p>我们发现，对于让一段音乐获得音乐性，增加感受野的长度是非常重要的。即使感受野增加到几秒钟，这个模型也没表现出长的连续性。我们发现，即使是非条件建模，这个模型还是不错的，特别在合声部分。</p>
+<p>但是，我们希望进行条件建模，例如说题材和乐器等。类似于条件语音生成一般，我们插入了依赖于与每个训练片段相关联的标签的二进制向量表示的bias。当我们采样的时候，这就可以使我们能够去控制我们的输出样本，并且效果还不错。</p>
+<h2 id="Speech-Recognition"><a href="#Speech-Recognition" class="headerlink" title="Speech Recognition"></a>Speech Recognition</h2><p>WaveNet也可以用在语音识别里面。总结了下前人的工作，近期的研究转向到原始语音数据建模。例如：(Palaz et al., 2013; T¨uske et al., 2014; Hoshen et al., 2015; Sainath et al., 2015). LSTM-RNNs 是这些工作的核心部分，LSTM使得我们可以建立更大的感受野但是同时我们可以使用更小的代价函数。</p>
+<h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><p>本文提出了WaveNet，利用自回归且结合了扩大因果卷积增加感受野，这对于长时序问题建模的依赖非常重要。WaveNet可以通过两种方式建模，global (e.g. 语音识别)或者local way (e.g 语言特征的获取)。</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/24317897">谷歌WaveNet如何通过深度学习方法来生成声音？</a></p>
+<p><a target="_blank" rel="noopener" href="https://my.oschina.net/stephenyng/blog/1621584">WaveNet翻译</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/DL/" rel="tag"># DL</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/AdaBelief-NeurIPS2020/" rel="next" title="AdaBelief-NeurIPS2020">
+                <i class="fa fa-chevron-left"></i> AdaBelief-NeurIPS2020
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/PCA/" rel="prev" title="PCA">
+                PCA <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
 
     <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+      
     </div>
   </div>
 
-{% endblock %}
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+          </div>
+          
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7Carchive">
+              
+                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/louieworth" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:jiangli3859@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.linkedin.com/in/li-jiang-2014621b0/" target="_blank" title="Linkedin">
+                      
+                        <i class="fa fa-fw fa-linkedin"></i>Linkedin</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://vel.life/" title="Vel" target="_blank">Vel</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">2.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#WaveNet"><span class="nav-number">3.</span> <span class="nav-text">WaveNet</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%A9%E5%A4%A7%E5%9B%A0%E6%9E%9C%E5%8D%B7%E7%A7%AF-Dilated-causal-convolutions"><span class="nav-number">3.1.</span> <span class="nav-text">扩大因果卷积(Dilated causal convolutions)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SoftMax%E7%9A%84%E5%88%86%E5%B8%83"><span class="nav-number">3.2.</span> <span class="nav-text">SoftMax的分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%A8%E6%8E%A7%E5%8D%95%E5%85%83"><span class="nav-number">3.3.</span> <span class="nav-text">门控单元</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Residual-and-skip-connections"><span class="nav-number">3.4.</span> <span class="nav-text">Residual and skip connections</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conditional-WaveNet"><span class="nav-number">3.5.</span> <span class="nav-text">Conditional WaveNet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Context-Stacking"><span class="nav-number">3.6.</span> <span class="nav-text">Context Stacking</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiences"><span class="nav-number">4.</span> <span class="nav-text">Experiences</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Multi-Speaker-Speech-Generation"><span class="nav-number">4.1.</span> <span class="nav-text">Multi-Speaker Speech Generation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Text-to-Speech"><span class="nav-number">4.2.</span> <span class="nav-text">Text-to-Speech</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Music"><span class="nav-number">4.3.</span> <span class="nav-text">Music</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Speech-Recognition"><span class="nav-number">4.4.</span> <span class="nav-text">Speech Recognition</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Conclusion"><span class="nav-number">5.</span> <span class="nav-text">Conclusion</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">6.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Louieworth</span>
+
+
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '4YkTMPdpq8gz4Y5cE7p16Vqm-gzGzoHsz',
+        appKey: '730GISNngxd7utFYrHdOFLbf',
+        placeholder: 'Just go for it',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
