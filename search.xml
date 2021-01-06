@@ -179,6 +179,20 @@
       </tags>
   </entry>
   <entry>
+    <title>GAT_and_GCN</title>
+    <url>/GAT-and-GCN/</url>
+    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="离散卷积"><a href="#离散卷积" class="headerlink" title="离散卷积"></a>离散卷积</h1><p>了解GCN之前必须对离散卷积（或者说CNN中的卷积）有一个明确的认识：</p>
+<p><a href="https://www.zhihu.com/question/22298352">如何通俗易懂地解释卷积？</a>  这个链接的内容已经讲得很清楚了，离散卷积本质就是一种加权求和。</p>
+<p>如图1所示，CNN中的卷积本质上就是利用一个共享参数的过滤器（kernel），通过计算中心像素点 以及相邻像素点的加权和来构成feature map实现空间特征的提取，当然加权系数就是卷积核的权重系数。</p>
+<p>那么卷积核的系数如何确定的呢? 是<strong>随机化初值</strong>，然后根据误差函数通过反向传播梯度下降进行迭 代优化。这是一个关键点，卷积核的参数通过优化求出才能实现特征提取的作用，GCN的理论很大 一部分工作就是为了引入<strong>可以优化的卷积参数</strong>。</p>
+<h1 id="GCN的卷积是什么，为什么需要研究GCN？"><a href="#GCN的卷积是什么，为什么需要研究GCN？" class="headerlink" title="GCN的卷积是什么，为什么需要研究GCN？"></a>GCN的卷积是什么，为什么需要研究GCN？</h1><p>当我们研究CNN的时候，其实处理的信息或者视频中的像素点 (pixel) 是二维矩阵，他们也称为(Euclidean Structure)但是我们真实世界的很多信息都是 Non Euclidean Structure的。如社交网络，信息网络中的一些结构。实际上，GCN的graph就是图论中用顶点和边连接起来的拓扑图。</p>
+]]></content>
+      <tags>
+        <tag>DL</tag>
+        <tag>GNN</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>GPU_ssh</title>
     <url>/GPU-ssh/</url>
     <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="远程连接服务器"><a href="#远程连接服务器" class="headerlink" title="远程连接服务器"></a>远程连接服务器</h1><p>根据所使用的账号和密码登录例如：</p>
@@ -1497,33 +1511,6 @@ H(p) = -\sum_{i=1}^np_ilogp_i</script><p>熵(entropy)越大，那么随机变量
       </tags>
   </entry>
   <entry>
-    <title>tools</title>
-    <url>/tools/</url>
-    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><blockquote>
-<p>介绍了一些常用的工具栏</p>
-</blockquote>
-<a id="more"></a>
-<h1 id="Dictionary"><a href="#Dictionary" class="headerlink" title="Dictionary"></a>Dictionary</h1><p><a href="https://www.thesaurus.com/">同义词词典</a></p>
-<p><a href="https://www.collinsdictionary.com/">Collins Online Dictionary</a></p>
-<p><a href="https://www.ldoceonline.com/">Longman Dictionary</a></p>
-<p><a href="https://translate.google.cn/">Google Translate</a></p>
-<h1 id="Reading"><a href="#Reading" class="headerlink" title="Reading"></a>Reading</h1><p><a href="https://www.tianfateng.cn/tag/magazine">Magazine Download</a></p>
-<h1 id="Writting"><a href="#Writting" class="headerlink" title="Writting"></a>Writting</h1><p><a href="http://www.termonline.cn/index.htm">termonline</a></p>
-<p><a href="https://aimwriting.mtutor.engkoo.com/">微软爱写作</a></p>
-<h1 id="软件语法"><a href="#软件语法" class="headerlink" title="软件语法"></a>软件语法</h1><p><a href="https://latex.vimsky.com/">Latex在线公式编辑转换</a></p>
-<h1 id="Books-Search"><a href="#Books-Search" class="headerlink" title="Books Search"></a>Books Search</h1><p><a href="https://www.jiumodiary.com/">Jiumo Research</a></p>
-<p><a href="https://b-ok.cc/?signAll=1">Zlibrary</a></p>
-<h1 id="Documents"><a href="#Documents" class="headerlink" title="Documents"></a>Documents</h1><p><a href="https://cowtransfer.com/">奶牛快传</a></p>
-<p><a href="https://www.uupoop.com/">在线PS</a></p>
-<p><a href="https://www.ilovepdf.com/zh-cn">PDF转换</a></p>
-<p><a href="https://www.chuangkit.com/designtools/designindex">PPT图片设计</a></p>
-<p><a href="https://flourish.studio/">Flourish</a></p>
-<ul>
-<li>一个强大的数据可视化展示网站，你只需要按照他们的规则就可以生成动态的数据模型。</li>
-</ul>
-]]></content>
-  </entry>
-  <entry>
     <title>python深拷贝与浅拷贝</title>
     <url>/python%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/</url>
     <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h1><ol>
@@ -1654,6 +1641,33 @@ H(p) = -\sum_{i=1}^np_ilogp_i</script><p>熵(entropy)越大，那么随机变量
       <tags>
         <tag>Python</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>tools</title>
+    <url>/tools/</url>
+    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><blockquote>
+<p>介绍了一些常用的工具栏</p>
+</blockquote>
+<a id="more"></a>
+<h1 id="Dictionary"><a href="#Dictionary" class="headerlink" title="Dictionary"></a>Dictionary</h1><p><a href="https://www.thesaurus.com/">同义词词典</a></p>
+<p><a href="https://www.collinsdictionary.com/">Collins Online Dictionary</a></p>
+<p><a href="https://www.ldoceonline.com/">Longman Dictionary</a></p>
+<p><a href="https://translate.google.cn/">Google Translate</a></p>
+<h1 id="Reading"><a href="#Reading" class="headerlink" title="Reading"></a>Reading</h1><p><a href="https://www.tianfateng.cn/tag/magazine">Magazine Download</a></p>
+<h1 id="Writting"><a href="#Writting" class="headerlink" title="Writting"></a>Writting</h1><p><a href="http://www.termonline.cn/index.htm">termonline</a></p>
+<p><a href="https://aimwriting.mtutor.engkoo.com/">微软爱写作</a></p>
+<h1 id="软件语法"><a href="#软件语法" class="headerlink" title="软件语法"></a>软件语法</h1><p><a href="https://latex.vimsky.com/">Latex在线公式编辑转换</a></p>
+<h1 id="Books-Search"><a href="#Books-Search" class="headerlink" title="Books Search"></a>Books Search</h1><p><a href="https://www.jiumodiary.com/">Jiumo Research</a></p>
+<p><a href="https://b-ok.cc/?signAll=1">Zlibrary</a></p>
+<h1 id="Documents"><a href="#Documents" class="headerlink" title="Documents"></a>Documents</h1><p><a href="https://cowtransfer.com/">奶牛快传</a></p>
+<p><a href="https://www.uupoop.com/">在线PS</a></p>
+<p><a href="https://www.ilovepdf.com/zh-cn">PDF转换</a></p>
+<p><a href="https://www.chuangkit.com/designtools/designindex">PPT图片设计</a></p>
+<p><a href="https://flourish.studio/">Flourish</a></p>
+<ul>
+<li>一个强大的数据可视化展示网站，你只需要按照他们的规则就可以生成动态的数据模型。</li>
+</ul>
+]]></content>
   </entry>
   <entry>
     <title>Hexo-博文编辑手册</title>
@@ -6514,20 +6528,6 @@ h(\theta_0,\theta_1)=\theta_0+\theta_1x</script><p>会使得theta1几乎等于0.
 <h2 id="微软亚太"><a href="#微软亚太" class="headerlink" title="微软亚太"></a>微软亚太</h2><h2 id="微软苏州"><a href="#微软苏州" class="headerlink" title="微软苏州"></a>微软苏州</h2><h2 id="微软上海"><a href="#微软上海" class="headerlink" title="微软上海"></a>微软上海</h2>]]></content>
       <tags>
         <tag>Experience</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>GAT_and_GCN</title>
-    <url>/GAT-and-GCN/</url>
-    <content><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="离散卷积"><a href="#离散卷积" class="headerlink" title="离散卷积"></a>离散卷积</h1><p>了解GCN之前必须对离散卷积（或者说CNN中的卷积）有一个明确的认识：</p>
-<p><a href="https://www.zhihu.com/question/22298352">如何通俗易懂地解释卷积？</a>  这个链接的内容已经讲得很清楚了，离散卷积本质就是一种加权求和。</p>
-<p>如图1所示，CNN中的卷积本质上就是利用一个共享参数的过滤器（kernel），通过计算中心像素点 以及相邻像素点的加权和来构成feature map实现空间特征的提取，当然加权系数就是卷积核的权重系数。</p>
-<p>那么卷积核的系数如何确定的呢? 是<strong>随机化初值</strong>，然后根据误差函数通过反向传播梯度下降进行迭 代优化。这是一个关键点，卷积核的参数通过优化求出才能实现特征提取的作用，GCN的理论很大 一部分工作就是为了引入<strong>可以优化的卷积参数</strong>。</p>
-<h1 id="GCN的卷积是什么，为什么需要研究GCN？"><a href="#GCN的卷积是什么，为什么需要研究GCN？" class="headerlink" title="GCN的卷积是什么，为什么需要研究GCN？"></a>GCN的卷积是什么，为什么需要研究GCN？</h1><p>当我们研究CNN的时候，其实处理的信息或者视频中的像素点 (pixel) 是二维矩阵，他们也称为(Euclidean Structure)但是我们真实世界的很多信息都是 Non Euclidean Structure的。如社交网络，信息网络中的一些结构。实际上，GCN的graph就是图论中用顶点和边连接起来的拓扑图。</p>
-]]></content>
-      <tags>
-        <tag>DL</tag>
-        <tag>GNN</tag>
       </tags>
   </entry>
 </search>
