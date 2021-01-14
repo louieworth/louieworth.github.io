@@ -1,4 +1,6 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> professional-interview-tbsi · Louieworth's blog</title><meta name="description" content="professional-interview-tbsi - Louieworth"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="http://yoursite.com/atom.xml" title="Louieworth's blog"><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Louieworth's blog" type="application/atom+xml">
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> professional-interview-tbsi · Louieworth's blog</title><meta name="description" content="professional-interview-tbsi - Louieworth"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="http://yoursite.com/atom.xml" title="Louieworth's blog"><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Louieworth's blog" type="application/atom+xml">
 </head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/about/" target="_self" class="nav-list-link">ABOUT</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">professional-interview-tbsi</h1><div class="tags"><a href="/tags/Interview/" class="tag-title">#Interview</a></div><div class="post-info">Jun 7, 2020</div><div class="post-content"><script src="/assets/js/APlayer.min.js"> </script><ol>
 <li><p>一个有n个节点的线索二叉树。</p>
 <p>有<font color="#dd0000">n-1</font>条分支</p>
@@ -59,11 +61,11 @@ x^k>=n</script></li>
 <script type="math/tex; mode=display">
 N_h=N_{h-1}+N_{h-2}+1</script></li>
 </ol>
-<h1 id="DS"><a href="#DS" class="headerlink" title="DS"></a>DS</h1><h2 id="最小生成树（MST）唯一？"><a href="#最小生成树（MST）唯一？" class="headerlink" title="最小生成树（MST）唯一？"></a>最小生成树（MST）唯一？</h2><p>连通图的任意一个闭合的环不含有权值相同的边。</p>
+<h1><span id="ds">DS</span></h1><h2><span id="最小生成树mst唯一">最小生成树（MST）唯一？</span></h2><p>连通图的任意一个闭合的环不含有权值相同的边。</p>
 <p>如何判定？</p>
 <p>对图中每条边，扫描邻近的边，存在相同的边就标记。Prim或者Kuskual求最小生成树。如果未含有标记的边。就唯一，如果有标记的边，那么依次去掉这些边再求MST。如果权值相同就不唯一。</p>
 <p>if the connected graph of any closed loop doesn’t included the same weight of edges. It’s the only MST.</p>
-<h2 id="BFS-amp-DFS"><a href="#BFS-amp-DFS" class="headerlink" title="BFS&amp;DFS"></a>BFS&amp;DFS</h2><ul>
+<h2><span id="bfsampdfs">BFS&amp;DFS</span></h2><ul>
 <li><p>Breadth-First-search <u>/brɛdθ/</u> </p>
 <ul>
 <li>It starts at the <a target="_blank" rel="noopener" href="https://en.wanweibaike.com/wiki-Tree_(data_structure">tree root</a>#Terminology) (or some arbitrary<u>/‘ɑrbətrɛri/</u> node of a graph and explores all of the neighbor nodes at the present depth and moves on to the next depth level.</li>
@@ -86,7 +88,7 @@ N_h=N_{h-1}+N_{h-2}+1</script></li>
 </li>
 </ul>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">visited[MaxSize]=&#123;<span class="number">0</span>&#125;</span><br><span class="line"><span class="keyword">void</span> DFSTraverse(ALGrap G)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;G.vexnum;++i)&#123;</span><br><span class="line">        <span class="keyword">if</span>(!visited[i])</span><br><span class="line">            DFS(G,i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DFS</span><span class="params">(ALGrap &amp;G, <span class="keyword">int</span> v)</span></span>&#123;</span><br><span class="line">    visit(v);</span><br><span class="line">    visited[v]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(w=G-&gt;adjlist[v];w;w=w-nextarc)&#123;</span><br><span class="line">        k=w-&gt;adjvex;</span><br><span class="line">        <span class="keyword">if</span>(!visited[k])</span><br><span class="line">            DFS(G,k);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Prim-amp-amp-Kruskal"><a href="#Prim-amp-amp-Kruskal" class="headerlink" title="Prim &amp;&amp; Kruskal"></a>Prim &amp;&amp; Kruskal</h2><p>it’s all greedy algorithm. </p>
+<h2><span id="prim-ampamp-kruskal">Prim &amp;&amp; Kruskal</span></h2><p>it’s all greedy algorithm. </p>
 <p>prim time  complexity $O(V^2)$</p>
 <p>Kruskal time complexity $O(ElogE)$</p>
 <ul>
@@ -97,9 +99,9 @@ N_h=N_{h-1}+N_{h-2}+1</script></li>
 <p>核心</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(lowcost[j] !=<span class="number">0</span> &amp;&amp; lowcost[j] &gt; G.arc[k][j])</span><br><span class="line">    lowcost[j] = G.arc[k][j];</span><br></pre></td></tr></table></figure>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Kruskal</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> a,b;</span><br><span class="line">    <span class="keyword">int</span> weight;</span><br><span class="line">&#125;Edge;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Find</span><span class="params">(<span class="keyword">int</span> *parent, <span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(parent[x] &gt;= <span class="number">0</span>) </span><br><span class="line">        x=parent[x];</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Edge edges[MaxSize];</span><br><span class="line"><span class="keyword">int</span> parent[MaxSize];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MST_Kruskal</span><span class="params">(Mgraph G)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,n,m; sort(edges); <span class="comment">//按照权值大小排序</span></span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;G.vexnum;++i)&#123;</span><br><span class="line">        parent[x]=<span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;G.vexnum; ++i)&#123;</span><br><span class="line">        n=Find(parent.edges[i],a);<span class="comment">//n为这条边的第一个顶点</span></span><br><span class="line">        m=Find(parent.edges[i],b);<span class="comment">//m为第二个顶点</span></span><br><span class="line">        <span class="keyword">if</span>(n!=m)&#123;</span><br><span class="line">            parent[n]=m;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, edges[i].a, edges[i].b); </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Dijkstra-amp-amp-Floyed"><a href="#Dijkstra-amp-amp-Floyed" class="headerlink" title="Dijkstra &amp;&amp; Floyed"></a>Dijkstra &amp;&amp; Floyed</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(!<span class="keyword">final</span>[w] &amp;&amp; min + G.arc[w][v] &lt; D[w])</span><br><span class="line">    D[w] = min + G.arc[w][v];</span><br></pre></td></tr></table></figure>
-<h2 id="TOPO"><a href="#TOPO" class="headerlink" title="TOPO"></a>TOPO</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">TopologicSort</span><span class="params">(ALGraph G)</span></span>&#123;</span><br><span class="line">    FindIndegree(G,indegree);</span><br><span class="line">    InitStack(S);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>,i &lt; G.vexnum; ++i)</span><br><span class="line">        <span class="keyword">if</span>(!indegree) push(S,i);</span><br><span class="line">    <span class="keyword">int</span> count=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(!isEmpty(S))&#123;</span><br><span class="line">        pop(S,i);</span><br><span class="line">        <span class="built_in">printf</span>(i, G.vexnum[i].data);</span><br><span class="line">        count++;</span><br><span class="line">        <span class="keyword">for</span>(w=G.adjlist[i];w;w=w-&gt;nextarc)&#123;</span><br><span class="line">            k=w-&gt;adjvex;</span><br><span class="line">            <span class="keyword">if</span>(!(--indegree))</span><br><span class="line">                push(s,k);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(count == G.vexnum)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="指针和引用的区别？-point-and-inferene"><a href="#指针和引用的区别？-point-and-inferene" class="headerlink" title="指针和引用的区别？ point and inferene"></a>指针和引用的区别？ point and inferene</h2><hr>
+<h2><span id="dijkstra-ampamp-floyed">Dijkstra &amp;&amp; Floyed</span></h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(!<span class="keyword">final</span>[w] &amp;&amp; min + G.arc[w][v] &lt; D[w])</span><br><span class="line">    D[w] = min + G.arc[w][v];</span><br></pre></td></tr></table></figure>
+<h2><span id="topo">TOPO</span></h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">TopologicSort</span><span class="params">(ALGraph G)</span></span>&#123;</span><br><span class="line">    FindIndegree(G,indegree);</span><br><span class="line">    InitStack(S);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>,i &lt; G.vexnum; ++i)</span><br><span class="line">        <span class="keyword">if</span>(!indegree) push(S,i);</span><br><span class="line">    <span class="keyword">int</span> count=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(!isEmpty(S))&#123;</span><br><span class="line">        pop(S,i);</span><br><span class="line">        <span class="built_in">printf</span>(i, G.vexnum[i].data);</span><br><span class="line">        count++;</span><br><span class="line">        <span class="keyword">for</span>(w=G.adjlist[i];w;w=w-&gt;nextarc)&#123;</span><br><span class="line">            k=w-&gt;adjvex;</span><br><span class="line">            <span class="keyword">if</span>(!(--indegree))</span><br><span class="line">                push(s,k);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(count == G.vexnum)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2><span id="指针和引用的区别-point-and-inferene">指针和引用的区别？ point and inferene</span></h2><hr>
 <p>指针：</p>
 <p>Object: A memory space which stores data and its type. </p>
 <p>A object has the value and its address. </p>
@@ -128,7 +130,7 @@ N_h=N_{h-1}+N_{h-2}+1</script></li>
 <p>1) 引用必须被初始化，指针不必。</p>
 <p>2) 引用初始化以后不能被改变，指针可以改变所指的对象。</p>
 <p>3) 不存在指向空值的引用，但是存在指向空值的指针。</p>
-<h2 id="数据库中几种查找的的对比"><a href="#数据库中几种查找的的对比" class="headerlink" title="数据库中几种查找的的对比"></a>数据库中几种查找的的对比</h2><p>文件索引，一般用B树或者B+树。</p>
+<h2><span id="数据库中几种查找的的对比">数据库中几种查找的的对比</span></h2><p>文件索引，一般用B树或者B+树。</p>
 <p>我们查找的本质是为了减少磁盘读取的次数，那么基于这个目的。</p>
 <blockquote>
 <p>为什么不用二叉查找树？</p>
@@ -140,7 +142,7 @@ N_h=N_{h-1}+N_{h-2}+1</script></li>
 </blockquote>
 <p>在数据库中，我们很多时候会访问很多条元素 而不是仅仅一条。</p>
 <p>B树就会进行局部优先遍历，而由于B+树所有的数据都在叶子节点，那么我们可以通过链表遍历。减少了磁盘读取。</p>
-<h2 id="HashTable"><a href="#HashTable" class="headerlink" title="HashTable"></a>HashTable</h2><ol>
+<h2><span id="hashtable">HashTable</span></h2><ol>
 <li>How hash table deals with the conflicts?</li>
 </ol>
 <ul>
@@ -164,31 +166,31 @@ N_h=N_{h-1}+N_{h-2}+1</script></li>
 <p>​    追问2： 什么是装填因子$\alpha$</p>
 <script type="math/tex; mode=display">
 \alpha = \frac{表中记录数目m}{散列表长度n}</script><p>Notice： 散列表的平均查找长度依赖于装填因子，而不是直接依赖于m或者n。</p>
-<h2 id="C语言中的字节长度"><a href="#C语言中的字节长度" class="headerlink" title="C语言中的字节长度"></a>C语言中的字节长度</h2><p>char 1 short 2 int 4(32位,64位置都一样)</p>
+<h2><span id="c语言中的字节长度">C语言中的字节长度</span></h2><p>char 1 short 2 int 4(32位,64位置都一样)</p>
 <p>long 4(32位)  long 8(64位)</p>
 <p>1byte = 8bit  一个字节占八个二进制位</p>
-<h2 id="为什么在平均情况下快速排序比堆排序要优秀？"><a href="#为什么在平均情况下快速排序比堆排序要优秀？" class="headerlink" title="为什么在平均情况下快速排序比堆排序要优秀？"></a>为什么在平均情况下快速排序比堆排序要优秀？</h2><p>it can increase the spatial locality and improve the cache hit rate significantly  </p>
+<h2><span id="为什么在平均情况下快速排序比堆排序要优秀">为什么在平均情况下快速排序比堆排序要优秀？</span></h2><p>it can increase the spatial locality and improve the cache hit rate significantly  </p>
 <p> 因为堆排序下，数据读取的开销变大。在计算机进行运算的时候，数据不一定会从内存读取出来，而是从一种叫cache的存储单位读取。原因是cache相比内存，读取速度非常快，所以cache会把一部分我们经常读取的数据暂时储存起来，以便下一次读取的时候，可以不必跑到内存去读，而是直接在cache里面找。</p>
-<h2 id="priority-Queue"><a href="#priority-Queue" class="headerlink" title="priority Queue"></a>priority Queue</h2><ol>
+<h2><span id="priority-queue">priority Queue</span></h2><ol>
 <li>what’s priority queue?</li>
 <li>what’s kind of data structure priority queue use ? why ? others(vector, sorted vector, <strong>binary tree</strong>???)</li>
 <li>what’s the time complexity （insert(), delete(), getMax()）?</li>
 </ol>
-<h2 id="Leftist-Heap"><a href="#Leftist-Heap" class="headerlink" title="Leftist Heap"></a>Leftist Heap</h2><ol>
+<h2><span id="leftist-heap">Leftist Heap</span></h2><ol>
 <li>what’s the propose of leftist heap?</li>
 <li>what’s kind of data structure Leftist Heap use and why？</li>
 <li><strong>plz introduce the process of leafist Heap</strong>?</li>
 <li>what’s the time complexity of it? </li>
 </ol>
-<h2 id="Splay-Tree"><a href="#Splay-Tree" class="headerlink" title="Splay Tree"></a>Splay Tree</h2><ol>
+<h2><span id="splay-tree">Splay Tree</span></h2><ol>
 <li>why do we need splay tree?</li>
 <li><strong>what’s the most important part of splay tree</strong>？</li>
 <li>the average time complexity and worst complexity?</li>
 </ol>
-<h1 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h1><p><img src="/professional-interview-tbsi/image-20200312182745195.png" alt="image-20200312182745195" style="zoom:80%;"></p>
+<h1><span id="计算机网络">计算机网络</span></h1><p><img src="/professional-interview-tbsi/image-20200312182745195.png" alt="image-20200312182745195" style="zoom:80%;"></p>
 <p><img src="/professional-interview-tbsi/image-20200312182841379.png" alt="image-20200312182841379"></p>
 <p><img src="/professional-interview-tbsi/image-20200325182301086.png" alt="image-20200325182301086"></p>
-<h2 id="TCP-UDP区别"><a href="#TCP-UDP区别" class="headerlink" title="TCP/UDP区别"></a>TCP/UDP区别</h2><p>protocol: /‘protə’kɔl/ 协议</p>
+<h2><span id="tcpudp区别">TCP/UDP区别</span></h2><p>protocol: /‘protə’kɔl/ 协议</p>
 <div class="table-container">
 <table>
 <thead>
@@ -217,7 +219,7 @@ N_h=N_{h-1}+N_{h-2}+1</script></li>
 </tbody>
 </table>
 </div>
-<h3 id="why-TCP-will-shake-hands-with-three-times"><a href="#why-TCP-will-shake-hands-with-three-times" class="headerlink" title="why TCP will shake hands with three times?"></a>why TCP will shake hands with three times?</h3><p>message: 报文  network congestion: 网络拥塞</p>
+<h3><span id="why-tcp-will-shake-hands-with-three-times">why TCP will shake hands with three times?</span></h3><p>message: 报文  network congestion: 网络拥塞</p>
 <blockquote>
 <p>三次握手的目的是“为了防止已经失效的连接请求报文段突然又传到服务端，因而”产生错误”</p>
 </blockquote>
@@ -235,9 +237,9 @@ N_h=N_{h-1}+N_{h-2}+1</script></li>
 <blockquote>
 <p>SYN Cookie是对TCP服务器端的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/三次握手协议">三次握手协议</a>作一些修改，专门用来防范SYN Flood攻击的一种手段。它的原理是，在TCP服务器收到TCP SYN包并返回TCP SYN+ACK包时，<strong>不分配一个专门的数据区</strong>，而是根据这个SYN包计算出一个<strong>cookie值</strong>。在第三次握手的时候，TCP服务器在根据那个cookie值检查这个TCP ACK包的合法性。如果合法，再分配专门的数据区进行处理未来的TCP连接。</p>
 </blockquote>
-<h3 id="four-time-to-free-the-connection"><a href="#four-time-to-free-the-connection" class="headerlink" title="four-time to free the connection?"></a>four-time to free the connection?</h3><p>本质的原因是tcp是全双公的，要实现可靠的连接关闭。Full-duplex communication（全双公）</p>
+<h3><span id="four-time-to-free-the-connection">four-time to free the connection?</span></h3><p>本质的原因是tcp是全双公的，要实现可靠的连接关闭。Full-duplex communication（全双公）</p>
 <p>A发出结束报文FIN，收到B确认后A知道自己没有数据需要发送了，B知道A不再发送数据了，自己也不会接收数据了，但是此时A还是可以接收数据，B也可以发送数据；当B发出FIN报文的时候此时两边才会真正的断开连接，读写分开。</p>
-<h3 id="congestion-control-amp-traffic-control"><a href="#congestion-control-amp-traffic-control" class="headerlink" title="congestion control &amp; traffic control"></a>congestion control &amp; traffic control</h3><p>TCP traffic control </p>
+<h3><span id="congestion-control-amp-traffic-control">congestion control &amp; traffic control</span></h3><p>TCP traffic control </p>
 <blockquote>
 <p> based on the <strong>sliding window</strong>, the goal of Traffic Control is to match the speed of the sender and the recevier. </p>
 </blockquote>
@@ -274,37 +276,37 @@ N_h=N_{h-1}+N_{h-2}+1</script></li>
 </li>
 </ul>
 <p><img src="https://img2018.cnblogs.com/blog/443934/201907/443934-20190718131944933-703202720.png" alt="img"></p>
-<h3 id="why-http-uses-TCP"><a href="#why-http-uses-TCP" class="headerlink" title="why http uses TCP?"></a>why http uses TCP?</h3><p>reliability of the website which is based on text is very important.</p>
-<h1 id="OS"><a href="#OS" class="headerlink" title="OS"></a>OS</h1><h2 id="1-what’s-PCB？"><a href="#1-what’s-PCB？" class="headerlink" title="1. what’s PCB？"></a>1. what’s PCB？</h2><h2 id="2-process-amp-amp-thread"><a href="#2-process-amp-amp-thread" class="headerlink" title="2. process &amp;&amp; thread"></a>2. process &amp;&amp; thread</h2><p>1)  dispatch: Process is the unit to dispatch resources, thread is the unit to dispatch CPU.</p>
+<h3><span id="why-http-uses-tcp">why http uses TCP?</span></h3><p>reliability of the website which is based on text is very important.</p>
+<h1><span id="os">OS</span></h1><h2><span id="1-whats-pcb">1. what’s PCB？</span></h2><h2><span id="2-process-ampamp-thread">2. process &amp;&amp; thread</span></h2><p>1)  dispatch: Process is the unit to dispatch resources, thread is the unit to dispatch CPU.</p>
 <p>2)  resources: process can own process, thread cannot</p>
 <p>3) throughput: It also exist concurrency between two threads in the same process, so it can rise the system throughput. </p>
 <p>线程是独立调度的基本单位, 本身没有资源, 进程是资源分配的基本单位, 同一进程中的线程共享进程的地址空间(放着各种资源: 进程代码段, 全局变量, 打开的文件), 但是, 一个线程的栈指针对其他线程透明(心里的客栈, 只对自己开放)</p>
 <p><strong>进程为什么是资源分配的基本单位？</strong>进程是一个程序对某个数据集的一次运行活动，创建进程的时候要分配CPU和内存等资源。</p>
-<h2 id="3-中断和系统调用的区别"><a href="#3-中断和系统调用的区别" class="headerlink" title="3. 中断和系统调用的区别"></a>3. 中断和系统调用的区别</h2><p>中断是由外设产生, 无意的, 被动的</p>
+<h2><span id="3-中断和系统调用的区别">3. 中断和系统调用的区别</span></h2><p>中断是由外设产生, 无意的, 被动的</p>
 <p>系统调用是由应用程序请求操作系统提供服务产生, 有意的, 主动的。要从用户态通过中断进入内核态。（联系）</p>
 <p>中断过程：中断请求 中断响应 断点保护 执行中断服务程序 断点恢复 中断返回</p>
 <p>系统调用过程：应用程序在用户态执行时请求系统调用，中断，从用户态进入内核态，在内核态执行相应的内核代码。</p>
 <p>中断之后保存什么？保存pc, psw, 通用寄存器。Pc程序计数器program count，存放下一条指令所在的单元的地址。Psw，program status word程序状态字，指处理器的状态。</p>
-<h2 id="4-野指针"><a href="#4-野指针" class="headerlink" title="4.野指针"></a>4.野指针</h2><p>，指向不可用内存区域的指针。指针变量未初始化（会乱指，可能存储关键信息，一下子就比修改了），指针释放后未置空，指针操作超越变量作用域造成。对野指针进行操作很容易造成程序错误<strong>，甚至可能直接引起崩溃。</strong></p>
+<h2><span id="4野指针">4.野指针</span></h2><p>，指向不可用内存区域的指针。指针变量未初始化（会乱指，可能存储关键信息，一下子就比修改了），指针释放后未置空，指针操作超越变量作用域造成。对野指针进行操作很容易造成程序错误<strong>，甚至可能直接引起崩溃。</strong></p>
 <p>野指针与空指针不同，野指针无法通过简单地判断是否为<a target="_blank" rel="noopener" href="http://baike.baidu.com/view/329484.htm">NULL</a>避免.</p>
 <p>如何避免？指针变量初始化置null，指针释放后置null.</p>
-<h2 id="6-百度云网盘和FTP的区别"><a href="#6-百度云网盘和FTP的区别" class="headerlink" title="6.百度云网盘和FTP的区别"></a>6.百度云网盘和FTP的区别</h2><p>百度云网盘和FTP的区别</p>
+<h2><span id="6百度云网盘和ftp的区别">6.百度云网盘和FTP的区别</span></h2><p>百度云网盘和FTP的区别</p>
 <p>网盘侧重存储，FTP侧重上传</p>
 <p>FTP可以拷贝到其他计算机上，网盘不能拷贝。</p>
-<h2 id="Concurrency-amp-amp-parallelism"><a href="#Concurrency-amp-amp-parallelism" class="headerlink" title="Concurrency &amp;&amp; parallelism"></a><strong>Concurrency &amp;&amp; parallelism</strong></h2><p>/kənˈkɚrənsi/   /‘pærəlɛl’ɪzəm/</p>
+<h2><span id="concurrency-ampamp-parallelism"><strong>Concurrency &amp;&amp; parallelism</strong></span></h2><p>/kənˈkɚrənsi/   /‘pærəlɛl’ɪzəm/</p>
 <p><img src="https://pic2.zhimg.com/80/v2-674f0d37fca4fac1bd2df28a2b78e633_720w.jpg" alt="img"></p>
-<h2 id="death-lock-amp-amp-hungry"><a href="#death-lock-amp-amp-hungry" class="headerlink" title="death lock &amp;&amp; hungry?"></a>death lock &amp;&amp; hungry?</h2><p>The concurrency of processes will case death lock. It means that two processes are fighting for a resources without giving up. As a result, these two processes can not carry out. </p>
+<h2><span id="death-lock-ampamp-hungry">death lock &amp;&amp; hungry?</span></h2><p>The concurrency of processes will case death lock. It means that two processes are fighting for a resources without giving up. As a result, these two processes can not carry out. </p>
 <p>the problem of hungry of some processes is caused by the dispatch of CPU. some processes can not carry out because other processes occupy the resources for a long time. </p>
 <blockquote>
 <p>刚刚换出去的页面马上又换入主存，频换调换。原因：某个进程频繁访问的页面数目高于可用的物理页帧数。</p>
 </blockquote>
-<h2 id="why-we-need-buffer？-缓冲区"><a href="#why-we-need-buffer？-缓冲区" class="headerlink" title="why we need buffer？(缓冲区)"></a>why we need buffer？(缓冲区)</h2><ol>
+<h2><span id="why-we-need-buffer缓冲区">why we need buffer？(缓冲区)</span></h2><ol>
 <li>Matching the speed between CPU and I/O devices.</li>
 <li>Improving the concurrency(并发) between CPU and I/O</li>
 </ol>
-<h2 id="s"><a href="#s" class="headerlink" title="s"></a>s</h2><p>realzing Sequential Structure is very easy. When using the Linklist, the time complexity to delete or insert a value is $O(1)$</p>
+<h2><span id="s">s</span></h2><p>realzing Sequential Structure is very easy. When using the Linklist, the time complexity to delete or insert a value is $O(1)$</p>
 <p>when using the hash structure, the time complexity to search a value is $O(1)$. However, the length of hash table is confirmed and it’s not easy to delete a value.</p>
-<h2 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h2><ul>
+<h2><span id="文件系统">文件系统</span></h2><ul>
 <li><p>创建文件</p>
 <p>创建文件有两个必要的步骤，一是在文件系统为文件找到空间；二是在<strong>目录</strong>中为新文件创建条目，该条目记录了文件名称、在文件系统中的位置和其他可能的信息。</p>
 </li>
@@ -329,4 +331,4 @@ N_h=N_{h-1}+N_{h-2}+1</script></li>
 <p>同时，还用一个文件打开计数器(open Count)记录多少进程打开了文件。当为0的时候，系统将回收分配给该文件的内存空间等资源，若文件被修改过，则写回外存，并且将open file count中的条目删除，最后释放文件控制块。（file control block， FCB）</p>
 </li>
 </ul>
-</div></article></div></main><footer><div class="paginator"><a href="/ashare-interview-tbsi/" class="prev">PREV</a><a href="/%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/" class="next">NEXT</a></div><div class="copyright"><p>© 2016 - 2021 <a href="http://yoursite.com">Louieworth</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script></body></html>
+</div></article></div></main><footer><div class="paginator"><a href="/ashare-interview-tbsi/" class="prev">PREV</a><a href="/%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/" class="next">NEXT</a></div><div class="copyright"><p>© 2021 <a href="http://yoursite.com">Louieworth</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script></body></html>

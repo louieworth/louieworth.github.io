@@ -1,5 +1,7 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Logistic regression · Louieworth's blog</title><meta name="description" content="Logistic regression - Louieworth"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="http://yoursite.com/atom.xml" title="Louieworth's blog"><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Louieworth's blog" type="application/atom+xml">
-</head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/about/" target="_self" class="nav-list-link">ABOUT</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">Logistic regression</h1><div class="tags"><a href="/tags/ML/" class="tag-title">#ML</a></div><div class="post-info">Oct 2, 2020</div><div class="post-content"><script src="/assets/js/APlayer.min.js"> </script><h1 id="模型介绍"><a href="#模型介绍" class="headerlink" title="模型介绍"></a>模型介绍</h1><h2 id="Logistic-分布"><a href="#Logistic-分布" class="headerlink" title="Logistic 分布"></a>Logistic 分布</h2><p>Logistic regression分布是一种二分类法则，其分布函数和密度函数为：</p>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Logistic regression · Louieworth's blog</title><meta name="description" content="Logistic regression - Louieworth"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="http://yoursite.com/atom.xml" title="Louieworth's blog"><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Louieworth's blog" type="application/atom+xml">
+</head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/about/" target="_self" class="nav-list-link">ABOUT</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">Logistic regression</h1><div class="tags"><a href="/tags/ML/" class="tag-title">#ML</a></div><div class="post-info">Oct 2, 2020</div><div class="post-content"><script src="/assets/js/APlayer.min.js"> </script><h1><span id="模型介绍">模型介绍</span></h1><h2><span id="logistic-分布">Logistic 分布</span></h2><p>Logistic regression分布是一种二分类法则，其分布函数和密度函数为：</p>
 <p><img src="https://www.zhihu.com/equation?tex=F%28x%29+%3D+P%28X+%5Cleq+x%29%3D%5Cfrac%7B1%7D%7B1%2Be%5E%7B-%28x-%5Cmu%29%2F%5Cgamma%7D%7D+%5C%5C+f%28x%29+%3D+F%5E%7B%27%7D%28X+%5Cleq+x%29%3D%5Cfrac%7Be%5E%7B-%28x-%5Cmu%29%2F%5Cgamma%7D%7D%7B%5Cgamma%281%2Be%5E%7B-%28x-%5Cmu%29%2F%5Cgamma%7D%29%5E%7B2%7D%7D+%5C%5C" alt="[公式]"></p>
 <p>其中$\mu$表示位置参数，$\gamma&gt;0$为形状参数，我们可以看以下形状特点：</p>
 <a id="more"></a>
@@ -15,7 +17,7 @@
 <p><img src="https://www.zhihu.com/equation?tex=p%28y%3D1+%7C+x%29%3D%5Cbegin%7Bcases%7D+0%2C%26+z%5Clt+0+%5C%5C+0.5%2C%26+z+%3D+0%5C%5C+1%2C%26+z%5Cgt+0%5C+%5Cend%7Bcases%7D+%2C%5Cquad+z%3Dw%5ET+x%2Bb++%5C%5C" alt="[公式]"></p>
 <p>但是这个阶跃函数不可微，对数几率函数是一个常用的替代函数：</p>
 <p><img src="https://www.zhihu.com/equation?tex=+y+%3D+%5Cfrac%7B1%7D%7B1%2Be%5E%7B-%28w%5E%7BT%7D+x+%2B+b%29%7D%7D++%5C%5C" alt="[公式]"></p>
-<h2 id="代价函数"><a href="#代价函数" class="headerlink" title="代价函数"></a>代价函数</h2><p>逻辑回归模型的数学形式确定后，剩下就是如何去求解模型中的参数。在统计学中，常常使用极大似然估计法来求解，即找到一组参数，使得在这组参数下，我们的数据的似然度（概率）最大。</p>
+<h2><span id="代价函数">代价函数</span></h2><p>逻辑回归模型的数学形式确定后，剩下就是如何去求解模型中的参数。在统计学中，常常使用极大似然估计法来求解，即找到一组参数，使得在这组参数下，我们的数据的似然度（概率）最大。</p>
 <p>设：</p>
 <p><img src="https://www.zhihu.com/equation?tex=%5Cbegin%7Baligned%7D+P%28Y%3D1%7Cx%29+%26%3D+p%28x%29+%5C%5C++P%28Y%3D0%7Cx%29+%26%3D+1-+p%28x%29+%5Cend%7Baligned%7D%5C%5C" alt="[公式]"></p>
 <p>似然函数：</p>
@@ -25,7 +27,7 @@
 <p>在机器学习中我们有损失函数的概念，其衡量的是模型预测错误的程度。如果取整个数据集上的平均对数似然损失，我们可以得到:</p>
 <p><img src="https://www.zhihu.com/equation?tex=J%28w%29%3D-%5Cfrac%7B1%7D%7BN%7DlnL%28w%29+%5C%5C" alt="[公式]"></p>
 <p>即在逻辑回归模型中，我们<strong>最大化似然函数</strong>和<strong>最小化损失函数</strong>实际上是等价的。</p>
-<h2 id="求解"><a href="#求解" class="headerlink" title="求解"></a>求解</h2><p>求解逻辑回归的方法有非常多，我们这里主要聊下梯度下降和牛顿法。优化的主要目标是找到一个方向，参数朝这个方向移动之后使得损失函数的值能够减小，这个方向往往由一阶偏导或者二阶偏导各种组合求得。逻辑回归的损失函数是：</p>
+<h2><span id="求解">求解</span></h2><p>求解逻辑回归的方法有非常多，我们这里主要聊下梯度下降和牛顿法。优化的主要目标是找到一个方向，参数朝这个方向移动之后使得损失函数的值能够减小，这个方向往往由一阶偏导或者二阶偏导各种组合求得。逻辑回归的损失函数是：</p>
 <p><img src="https://www.zhihu.com/equation?tex=J%28w%29+%3D++-%5Cfrac%7B1%7D%7Bn%7D%28%5Csum_%7Bi%3D1%7D%5En%28y_ilnp%28x_i%29%2B%281-y_i%29ln%281-p%28x_i%29%29%29+%5C%5C" alt="[公式]"></p>
 <ol>
 <li>随机梯度下降</li>
@@ -62,7 +64,7 @@
 <p>取 ln 再取负，得到目标函数：</p>
 <p><img src="https://www.zhihu.com/equation?tex=-%5Cln+L%28w%29%3D-%5Csum_i+%5By_i%5Cln+p%28x_i%29%2B%281-y_i%29ln%281-p%28x_i%29%29%5D%2B%5Cfrac%7B1%7D%7B2%5Csigma%5E2%7Dw%5ETw+%5C%5C" alt="[公式]"></p>
 <p>等价于原始的损失函数后面加上了 L2 正则，因此 L2 正则的本质其实是为模型增加了“<strong>模型参数服从零均值正态分布</strong>”这一先验知识。</p>
-<h1 id="L1-L2的区别"><a href="#L1-L2的区别" class="headerlink" title="L1-L2的区别"></a>L1-L2的区别</h1><p>从上面的分析中我们可以看到，L1 正则化增加了所有权重 w 参数的绝对值之和逼迫更多 w 为零，也就是变稀疏（ L2 因为其导数也趋 0, 奔向零的速度不如 L1 给力了）。我们对稀疏规则趋之若鹜的一个关键原因在于它能<strong>实现特征的自动选择</strong>。一般来说，大部分特征 x_i 都是和最终的输出 y_i 没有关系或者不提供任何信息的。在最小化目标函数的时候考虑 x_i 这些额外的特征，虽然可以获得更小的训练误差，但在预测新的样本时，这些没用的特征权重反而会被考虑，从而干扰了对正确 y_i 的预测。L1 正则化的引入就是为了完成特征自动选择的光荣使命，它会学习地去掉这些无用的特征，也就是把这些特征对应的权重置为 0。</p>
+<h1><span id="l1-l2的区别">L1-L2的区别</span></h1><p>从上面的分析中我们可以看到，L1 正则化增加了所有权重 w 参数的绝对值之和逼迫更多 w 为零，也就是变稀疏（ L2 因为其导数也趋 0, 奔向零的速度不如 L1 给力了）。我们对稀疏规则趋之若鹜的一个关键原因在于它能<strong>实现特征的自动选择</strong>。一般来说，大部分特征 x_i 都是和最终的输出 y_i 没有关系或者不提供任何信息的。在最小化目标函数的时候考虑 x_i 这些额外的特征，虽然可以获得更小的训练误差，但在预测新的样本时，这些没用的特征权重反而会被考虑，从而干扰了对正确 y_i 的预测。L1 正则化的引入就是为了完成特征自动选择的光荣使命，它会学习地去掉这些无用的特征，也就是把这些特征对应的权重置为 0。</p>
 <p>L2 正则化中增加所有权重 w 参数的平方之和，逼迫所有 w 尽可能趋向零但不为零（L2 的导数趋于零）。因为在未加入 L2 正则化发生过拟合时，拟合函数需要顾忌每一个点，最终形成的拟合函数波动很大，在某些很小的区间里，函数值的变化很剧烈，也就是某些 w 值非常大。为此，L2 正则化的加入就惩罚了权重变大的趋势。</p>
 <p>我们以二维样本为例，图解阐述加入 L1 正则化和 L2 正则化之后目标函数求解时发生的变化。</p>
 <ul>
@@ -90,13 +92,13 @@
 <p><strong>简单总结下</strong>：</p>
 <p>给 loss function 加上正则化项，能使新得到的优化目标函数 <img src="https://www.zhihu.com/equation?tex=h+%3D+f%2B%7C%7Cw%7C%7C+" alt="[公式]"> ，需要在 f 和 ||w|| 中做一个权衡，如果还像原来只优化 f 的情况下，那可能得到一组解比较复杂，使得正则项 ||w|| 比较大，那么 h 就不是最优的，因此可以看出加正则项能让解更加简单，符合奥卡姆剃刀理论，同时也比较符合在偏差和方差（方差表示模型的复杂度）分析中，通过降低模型复杂度，得到更小的泛化误差，降低过拟合程度。</p>
 <p>L1 正则化就是在 loss function 后边所加正则项为 L1 范数，加上 L1 范数容易得到稀疏解（0 比较多）。L2 正则化就是 loss function 后边所加正则项为 L2 范数的平方，加上 L2 正则相比于 L1 正则来说，得到的解比较平滑（不是稀疏），但是同样能够保证解中接近于 0（但不是等于 0，所以相对平滑）的维度比较多，降低模型的复杂度。</p>
-<h1 id="模型区别"><a href="#模型区别" class="headerlink" title="模型区别"></a>模型区别</h1><h2 id="与线性回归"><a href="#与线性回归" class="headerlink" title="与线性回归"></a>与线性回归</h2><p>逻辑回归是在线性回归的基础上加了一个 Sigmoid 函数（非线形）映射，使得逻辑回归称为了一个优秀的分类算法。本质上来说，两者都属于广义线性模型，但他们两个要解决的问题不一样，逻辑回归解决的是分类问题，输出的是离散值，线性回归解决的是回归问题，输出的连续值。</p>
+<h1><span id="模型区别">模型区别</span></h1><h2><span id="与线性回归">与线性回归</span></h2><p>逻辑回归是在线性回归的基础上加了一个 Sigmoid 函数（非线形）映射，使得逻辑回归称为了一个优秀的分类算法。本质上来说，两者都属于广义线性模型，但他们两个要解决的问题不一样，逻辑回归解决的是分类问题，输出的是离散值，线性回归解决的是回归问题，输出的连续值。</p>
 <p>我们需要明确 Sigmoid 函数到底起了什么作用：</p>
 <ul>
 <li>线性回归是在实数域范围内进行预测，而分类范围则需要在 [0,1]，逻辑回归减少了预测范围；</li>
 <li>线性回归在实数域上敏感度一致，而逻辑回归在 0 附近敏感，在远离 0 点位置不敏感，这个的好处就是模型更加关注分类边界，可以增加模型的鲁棒性。</li>
 </ul>
-<h2 id="与最大熵模型"><a href="#与最大熵模型" class="headerlink" title="与最大熵模型"></a>与最大熵模型</h2><p>逻辑回归和最大熵模型本质上没有区别，最大熵在解决二分类问题时就是逻辑回归，在解决多分类问题时就是多项逻辑回归。</p>
+<h2><span id="与最大熵模型">与最大熵模型</span></h2><p>逻辑回归和最大熵模型本质上没有区别，最大熵在解决二分类问题时就是逻辑回归，在解决多分类问题时就是多项逻辑回归。</p>
 <p>首先进行符号定义：</p>
 <ol>
 <li><img src="https://www.zhihu.com/equation?tex=%5Cpi+%28x%29_u" alt="[公式]"> 表示，输入时 x，输出的 y=u 的概率；</li>
@@ -136,7 +138,7 @@
 <p>把 <img src="https://www.zhihu.com/equation?tex=e%5E%5Cbeta" alt="[公式]"> 代入 <img src="https://www.zhihu.com/equation?tex=%5Cpi+%28%29" alt="[公式]"> ，并且简化一下式子：</p>
 <p><img src="https://www.zhihu.com/equation?tex=%5Cpi%28x%29_u%3D%5Cfrac%7Be%5E%7Bw_u%5Ccdot+x%7D%7D%7B%5Csum_%7Bv%3D1%7D%5Ek+e%5E%7Bw_v+%5Ccdot+x%7D%7D+%5C%5C" alt="[公式]"></p>
 <p>这就是逻辑回归中提到的那个泛化的式子，这就证明了逻辑回归是最大熵模型的一个特殊例子。到此，逻辑回归与最大熵模型的关系就解释完毕了。</p>
-<h2 id="与-SVM"><a href="#与-SVM" class="headerlink" title="与 SVM"></a>与 SVM</h2><p>相同点：</p>
+<h2><span id="与-svm">与 SVM</span></h2><p>相同点：</p>
 <ul>
 <li>都是分类算法，本质上都是在找最佳分类超平面；</li>
 <li>都是监督学习算法；</li>
@@ -153,13 +155,13 @@
 <li>LR 不依赖样本之间的距离，SVM 是基于距离的；</li>
 <li>LR 相对来说模型更简单好理解，特别是大规模线性分类时并行计算比较方便。而 SVM 的理解和优化相对来说复杂一些，SVM 转化为对偶问题后，分类只需要计算与少数几个支持向量的距离，这个在进行复杂核函数计算时优势很明显，能够大大简化模型和计算。</li>
 </ul>
-<h2 id="与朴素贝叶斯"><a href="#与朴素贝叶斯" class="headerlink" title="与朴素贝叶斯"></a>与朴素贝叶斯</h2><p>朴素贝叶斯和逻辑回归都属于分类模型，当朴素贝叶斯的条件概率 <img src="https://www.zhihu.com/equation?tex=P%28X%7CY%3Dc_k%29" alt="[公式]"> 服从高斯分布时，它计算出来的 P(Y=1|X) 形式跟逻辑回归是一样的。</p>
+<h2><span id="与朴素贝叶斯">与朴素贝叶斯</span></h2><p>朴素贝叶斯和逻辑回归都属于分类模型，当朴素贝叶斯的条件概率 <img src="https://www.zhihu.com/equation?tex=P%28X%7CY%3Dc_k%29" alt="[公式]"> 服从高斯分布时，它计算出来的 P(Y=1|X) 形式跟逻辑回归是一样的。</p>
 <p>两个模型不同的地方在于：</p>
 <ul>
 <li>逻辑回归是判别式模型 p(y|x)，朴素贝叶斯是生成式模型 p(x,y)：判别式模型估计的是条件概率分布，给定观测变量 x 和目标变量 y 的条件模型，由数据直接学习决策函数 y=f(x) 或者条件概率分布 P(y|x) 作为预测的模型。判别方法关心的是对于给定的输入 x，应该预测什么样的输出 y；而生成式模型估计的是联合概率分布，基本思想是首先建立样本的联合概率概率密度模型 P(x,y)，然后再得到后验概率 P(y|x)，再利用它进行分类，生成式更关心的是对于给定输入 x 和输出 y 的生成关系；</li>
 <li>朴素贝叶斯的前提是条件独立，每个特征权重独立，所以如果数据不符合这个情况，朴素贝叶斯的分类表现就没逻辑会好了。</li>
 </ul>
-<h1 id="模型细节"><a href="#模型细节" class="headerlink" title="模型细节"></a>模型细节</h1><h2 id="为什么适合离散特征"><a href="#为什么适合离散特征" class="headerlink" title="为什么适合离散特征"></a>为什么适合离散特征</h2><p>我们在使用逻辑回归的时候很少会把数据直接丢给 LR 来训练，我们一般会对<strong>特征进行离散化处理</strong>，这样做的优势大致有以下几点：</p>
+<h1><span id="模型细节">模型细节</span></h1><h2><span id="为什么适合离散特征">为什么适合离散特征</span></h2><p>我们在使用逻辑回归的时候很少会把数据直接丢给 LR 来训练，我们一般会对<strong>特征进行离散化处理</strong>，这样做的优势大致有以下几点：</p>
 <ol>
 <li>离散后稀疏向量内积乘法运算速度更快，计算结果也方便存储，容易扩展；</li>
 <li>离散后的特征对异常值更具鲁棒性，如 age&gt;30 为 1 否则为 0，对于年龄为 200 的也不会对模型造成很大的干扰；</li>
@@ -168,11 +170,11 @@
 <li>特征离散后模型更稳定，如用户年龄区间，不会因为用户年龄长了一岁就变化；</li>
 </ol>
 <p>总的来说，特征离散化以后起到了加快计算，简化模型和增加泛化能力的作用。</p>
-<h2 id="为什么不用平方误差"><a href="#为什么不用平方误差" class="headerlink" title="为什么不用平方误差"></a>为什么不用平方误差</h2><p>假设目标函数是 MSE，即：</p>
+<h2><span id="为什么不用平方误差">为什么不用平方误差</span></h2><p>假设目标函数是 MSE，即：</p>
 <p><img src="https://www.zhihu.com/equation?tex=L%3D%5Cfrac%7B%28y-%5Chat%7By%7D%29%5E2%7D%7B2%7D+%5C%5C+%5Cfrac%7B%5Cpartial+L%7D%7B%5Cpartial+w%7D%3D%28%5Chat%7By%7D-y%29%5Csigma%27%28w%5Ccdot+x%29x+%5C%5C" alt="[公式]"></p>
 <p>这里 Sigmoid 的导数项为：</p>
 <p><img src="https://www.zhihu.com/equation?tex=%5Csigma%5E%7B%27%7D%28w+%5Ccdot+x%29%3Dw%5Ccdot+x%281-w+%5Ccdot+x%29++%5C%5C" alt="[公式]"></p>
 <p>根据 w 的初始化，导数值可能很小（想象一下 Sigmoid 函数在输入较大时的梯度）而导致收敛变慢，而训练途中也可能因为该值过小而提早终止训练（梯度消失）。</p>
 <p>另一方面，交叉熵的梯度如下，当模型输出概率偏离于真实概率时，梯度较大，加快训练速度，当拟合值接近于真实概率时训练速度变缓慢，没有 MSE 的问题。</p>
 <p><img src="https://www.zhihu.com/equation?tex=g%5E%7B%27%7D%3D%5Csum_%7Bi%3D1%7D%5E%7BN%7D+x_%7Bi%7D%28y_%7Bi%7D-p%28x_%7Bi%7D%29%29++%5C%5C" alt="[公式]"></p>
-</div></article></div></main><footer><div class="paginator"><a href="/optimal-tricks/" class="prev">PREV</a><a href="/git-tutorial/" class="next">NEXT</a></div><div class="copyright"><p>© 2016 - 2021 <a href="http://yoursite.com">Louieworth</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script></body></html>
+</div></article></div></main><footer><div class="paginator"><a href="/optimal-tricks/" class="prev">PREV</a><a href="/git-tutorial/" class="next">NEXT</a></div><div class="copyright"><p>© 2021 <a href="http://yoursite.com">Louieworth</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script></body></html>

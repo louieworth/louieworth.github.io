@@ -1,23 +1,25 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 算法面试宝典 · Louieworth's blog</title><meta name="description" content="算法面试宝典 - Louieworth"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="http://yoursite.com/atom.xml" title="Louieworth's blog"><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Louieworth's blog" type="application/atom+xml">
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 算法面试宝典 · Louieworth's blog</title><meta name="description" content="算法面试宝典 - Louieworth"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="http://yoursite.com/atom.xml" title="Louieworth's blog"><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Louieworth's blog" type="application/atom+xml">
 </head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/about/" target="_self" class="nav-list-link">ABOUT</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">算法面试宝典</h1><div class="tags"><a href="/tags/Interview/" class="tag-title">#Interview</a><a href="/tags/ML/" class="tag-title">#ML</a></div><div class="post-info">Jun 7, 2020</div><div class="post-content"><script src="/assets/js/APlayer.min.js"> </script><p>摘录于nowcoder <a target="_blank" rel="noopener" href="https://www.nowcoder.com/tutorial/95/8e6d5dae0758456089640d5f42cc77ab">算法工程师面试宝典</a><a id="more"></a></p>
 <p><img src="/%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/fullsizerender(1" alt="\fullsizerender(F:/md笔记/复试/算法面试宝典/fullsizerender(1).jpg).jpg)">.jpg)</p>
-<h1 id="数学基础"><a href="#数学基础" class="headerlink" title="数学基础"></a>数学基础</h1><h2 id="L1不可导的时候该怎么办"><a href="#L1不可导的时候该怎么办" class="headerlink" title="L1不可导的时候该怎么办"></a>L1不可导的时候该怎么办</h2><p>当损失函数不可导,梯度下降不再有效,可以使用<strong>坐标轴下降法</strong>,梯度下降是沿着当前点的负梯度方向进行参数更新,而坐标轴下降法是沿着坐标轴的方向,假设有m个特征个数,坐标轴下降法进参数更新的时候,先固定m-1个值,然后再求另外一个的局部最优解,从而避免损失函数不可导问题。</p>
+<h1><span id="数学基础">数学基础</span></h1><h2><span id="l1不可导的时候该怎么办">L1不可导的时候该怎么办</span></h2><p>当损失函数不可导,梯度下降不再有效,可以使用<strong>坐标轴下降法</strong>,梯度下降是沿着当前点的负梯度方向进行参数更新,而坐标轴下降法是沿着坐标轴的方向,假设有m个特征个数,坐标轴下降法进参数更新的时候,先固定m-1个值,然后再求另外一个的局部最优解,从而避免损失函数不可导问题。</p>
 <p>使用Proximal Algorithm对L1进行求解,此方法是去优化损失函数上界结果。</p>
-<h2 id="最大似然估计和最大后验概率的区别"><a href="#最大似然估计和最大后验概率的区别" class="headerlink" title="最大似然估计和最大后验概率的区别?"></a>最大似然估计和最大后验概率的区别?</h2><p>最大似然估计提供了一种给定观察数据来评估模型参数的方法,而最大似然估计中的采样满足所有采样都是<strong>独立同分布</strong>的假设。最大后验概率是<strong>根据经验数据获难以观察量的点估计</strong>,与最大似然估计最大的不同是最大后验概率<strong>融入了要估计量的先验分布</strong>在其中,所以最大后验概率可以看做<strong>规则化</strong>的最大似然估计。</p>
-<h2 id="频率学派和贝叶斯学派的区别"><a href="#频率学派和贝叶斯学派的区别" class="headerlink" title="频率学派和贝叶斯学派的区别"></a>频率学派和贝叶斯学派的区别</h2><p>频率派认为抽样是无限的,在无限的抽样中,对于决策的规则可以很精确。</p>
+<h2><span id="最大似然估计和最大后验概率的区别">最大似然估计和最大后验概率的区别?</span></h2><p>最大似然估计提供了一种给定观察数据来评估模型参数的方法,而最大似然估计中的采样满足所有采样都是<strong>独立同分布</strong>的假设。最大后验概率是<strong>根据经验数据获难以观察量的点估计</strong>,与最大似然估计最大的不同是最大后验概率<strong>融入了要估计量的先验分布</strong>在其中,所以最大后验概率可以看做<strong>规则化</strong>的最大似然估计。</p>
+<h2><span id="频率学派和贝叶斯学派的区别">频率学派和贝叶斯学派的区别</span></h2><p>频率派认为抽样是无限的,在无限的抽样中,对于决策的规则可以很精确。</p>
 <p>The frequency group thinks that sampling is infinite, so the decision rule can be precision.</p>
 <p>贝叶斯派认为世界无时无刻不在改变,未知的变量和事件都有一定的概率,即<strong>后验概率是先验概率的修正</strong>。</p>
 <p>频率派认为模型参数是固定的,一个模型在无数次抽样后,参数是不变的。而贝叶斯学派认为数据才是固定的而参数并不是。</p>
 <p>频率派认为模型不存在先验而贝叶斯派认为模型存在先验。</p>
-<h2 id="PCA"><a href="#PCA" class="headerlink" title="PCA"></a>PCA</h2><p>PCA是比较常见的线性降维方法,通过线性投影将高维数据映射到低维数据中,所期望的是在投影的维度上,新特征自身的<strong>方差尽量大</strong>,方差越大特征越有效,尽量使产生的新特征间的相关性越小。</p>
+<h2><span id="pca">PCA</span></h2><p>PCA是比较常见的线性降维方法,通过线性投影将高维数据映射到低维数据中,所期望的是在投影的维度上,新特征自身的<strong>方差尽量大</strong>,方差越大特征越有效,尽量使产生的新特征间的相关性越小。</p>
 <p>PCA算法的具体操作为对所有的样本进行中心化操作,计算样本的协方差矩阵,然后对协方差矩阵做特征值分解,取最大的n个特征值对应的特征向量构造投影矩阵。</p>
-<h2 id="拟牛顿法的原理"><a href="#拟牛顿法的原理" class="headerlink" title="拟牛顿法的原理"></a>拟牛顿法的原理</h2><p>牛顿法大致的思路是采用泰勒展开的二阶近似。若Hessian矩阵是正定的，函数的局部最小值可以通过使上面的二次型的一阶导数等于0来获取。</p>
+<h2><span id="拟牛顿法的原理">拟牛顿法的原理</span></h2><p>牛顿法大致的思路是采用泰勒展开的二阶近似。若Hessian矩阵是正定的，函数的局部最小值可以通过使上面的二次型的一阶导数等于0来获取。</p>
 <p>牛顿法的收敛速度快,迭代次数少,但是Hessian矩阵很稠密时,每次迭代的计算量很大,随着数据规模增大,Hessian矩阵也会变大,需要更多的存储空间以及计算量。</p>
 <p>拟牛顿法就是在牛顿法的基础上<strong>引入了Hessian矩阵的近似矩阵</strong>,避免了每次都计算Hessian矩阵的逆,在拟牛顿法中,用<strong>Hessian矩阵的逆矩阵</strong>来代替Hessian矩阵,虽然不能像牛顿法那样保证最优化的方向,但其<strong>逆矩阵始终是正定</strong>的,因此算法始终 朝最优化的方向搜索。</p>
 <p>正定矩阵(Positive matrix):</p>
 <p><img src="/%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/image-20200413104105248.png" alt="image-20200413104105248"></p>
 <p><img src="https://img-blog.csdnimg.cn/20181031190850939.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM0ODg2NDAz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h1 id="前面几个算法模型"><a href="#前面几个算法模型" class="headerlink" title="前面几个算法模型"></a>前面几个算法模型</h1><h2 id="朴素贝叶斯基本原理"><a href="#朴素贝叶斯基本原理" class="headerlink" title="朴素贝叶斯基本原理"></a>朴素贝叶斯基本原理</h2><p>朴素贝叶斯分类和预测算法的原理</p>
+<h1><span id="前面几个算法模型">前面几个算法模型</span></h1><h2><span id="朴素贝叶斯基本原理">朴素贝叶斯基本原理</span></h2><p>朴素贝叶斯分类和预测算法的原理</p>
 <p>决策树和朴素贝叶斯是最常用的两种分类算法，本篇文章介绍朴素贝叶斯算法。贝叶斯定理是以英国数学家贝叶斯命名，用来解决两个条件概率之间的关系问题。简单的说就是在已知P(A|B)时如何获得P(B|A)的概率。朴素贝叶斯（Naive Bayes）假设特征P(A)在特定结果P(B)下是独立的。</p>
 <p>1.概率基础：</p>
 <p>在开始介绍贝叶斯之前，先简单介绍下概率的基础知识。概率是某一结果出现的可能性。例如，抛一枚匀质硬币，正面向上的可能性多大？概率值是一个0-1之间的数字，用来衡量一个事件发生可能性的大小。概率值越接近1，事件发生的可能性越大，概率值越接近0，事件越不可能发生。我们日常生活中听到最多的是天气预报中的降水概率。概率的表示方法叫维恩图。下面我们通过维恩图来说明贝叶斯公式中常见的几个概率。</p>
@@ -63,7 +65,7 @@
 <p>调整因子P(A|B)/P(A)&lt;1：说明事件可能发生的概率与事件小于已经发生次数的概率。</p>
 <p>因此，贝叶斯推断可以理解为通过先验概率和调整因子来获得后验概率。其中调整因子是根据事件已经发生的概率推断事件可能发生的概率（通过硬币正面出现的次数来推断硬币均匀的可能性），并与已经发生的先验概率（硬币正面出现的概率）的比值。通过这个比值调整先验概率来获得后验概率。</p>
 <p>后验概率＝先验概率ｘ调整因子</p>
-<h2 id="朴素贝叶斯和贝叶斯网络的区别"><a href="#朴素贝叶斯和贝叶斯网络的区别" class="headerlink" title="朴素贝叶斯和贝叶斯网络的区别"></a>朴素贝叶斯和贝叶斯网络的区别</h2><div class="table-container">
+<h2><span id="朴素贝叶斯和贝叶斯网络的区别">朴素贝叶斯和贝叶斯网络的区别</span></h2><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -98,7 +100,7 @@
 </tbody>
 </table>
 </div>
-<h2 id="LR推导"><a href="#LR推导" class="headerlink" title="LR推导"></a>LR推导</h2><p>逻辑回归本质上是线性回归，只是在特征到结果的映射中加入了一层逻辑函数g(z)，即先把特征线性求和，然后使用函数g(z)作为假设函数来预测。g(z)可以将连续值映射到0 和1。g(z)为sigmoid function.</p>
+<h2><span id="lr推导">LR推导</span></h2><p>逻辑回归本质上是线性回归，只是在特征到结果的映射中加入了一层逻辑函数g(z)，即先把特征线性求和，然后使用函数g(z)作为假设函数来预测。g(z)可以将连续值映射到0 和1。g(z)为sigmoid function.</p>
 <p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628490936_9D5E76E02B87531758512D79F642D093" alt="img">则<br><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628603079_E4A3B22C3777267277A22FCB86F16A09" alt="img"></p>
 <p>sigmoid function 的导数如下：</p>
 <p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628624395_1E29A25BBD05C193537EF96F4F367DDB" alt="img"></p>
@@ -114,7 +116,7 @@
 <p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628754920_9124D1BE8521BDD45298192B8F57C46C" alt="img"></p>
 <p>如果只用一个训练样例（x，y），采用随机梯度上升规则，那么随机梯度上升更新规则为：</p>
 <p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628780880_BCAC67BA50235D5ECBC62002777A1675" alt="img"></p>
-<h2 id="逻辑回归的损失函数MLE？"><a href="#逻辑回归的损失函数MLE？" class="headerlink" title="逻辑回归的损失函数MLE？"></a>逻辑回归的损失函数MLE？</h2><ul>
+<h2><span id="逻辑回归的损失函数mle">逻辑回归的损失函数MLE？</span></h2><ul>
 <li><p>损失函数一般有四种，平方损失函数，对数损失函数，HingeLoss0-1损失函数，绝对值损失函数。将极大似然函数取对数以后等同于对数损失函数。在逻辑回归这个模型下，对数损失函数的训练求解参数的速度是比较快的。至于原因大家可以求出这个式子的梯度更新</p>
 <p><img src="/%E7%AE%97%E6%B3%95%E9%9D%A2%E8%AF%95%E5%AE%9D%E5%85%B8/image-20200311164740765.png" alt="image-20200311164740765"></p>
 <p>这个式子的更新速度只和</p>
@@ -124,18 +126,18 @@
 <li><p>为什么不选平方损失函数的呢？其一是因为如果你使用平方损失函数，你会发现梯度更新的速度和sigmod函数本身的梯度是很相关的。sigmod函数在它在定义域内的梯度都不大于0.25。这样训练会非常的慢。</p>
 </li>
 </ul>
-<h2 id="关于正则化参数的问题"><a href="#关于正则化参数的问题" class="headerlink" title="关于正则化参数的问题"></a>关于正则化参数的问题</h2><p>在逻辑回归中加入了惩罚项：α</p>
+<h2><span id="关于正则化参数的问题">关于正则化参数的问题</span></h2><p>在逻辑回归中加入了惩罚项：α</p>
 <p>我们使用的是梯度下降来减少cost function.当我们不断加大参数的大小的时候，为了使得损失函数变小，相应的预测函数theta也会在一定程度上减少，所以当惩罚项很大的时候，最后变成一条直线。会导致underfitting.</p>
 <script type="math/tex; mode=display">
 h(\theta_0,\theta_1)=\theta_0+\theta_1x</script><p>会使得theta1几乎等于0.但是当惩罚项又太小的话，不会改变他overfitting的状况。</p>
-<h2 id="L1和L2正则化的区别"><a href="#L1和L2正则化的区别" class="headerlink" title="L1和L2正则化的区别"></a>L1和L2正则化的区别</h2><p>L1是模型各个参数的绝对值之和,L2为各个参数平方和的开方值。L1更趋向于产生少量的特征,其它特征为0,最优的参数值很大概率出现在坐标轴上,从而导致产生稀疏的权重矩阵,而L2会选择更多的矩阵,但是这些矩阵趋向于0。</p>
+<h2><span id="l1和l2正则化的区别">L1和L2正则化的区别</span></h2><p>L1是模型各个参数的绝对值之和,L2为各个参数平方和的开方值。L1更趋向于产生少量的特征,其它特征为0,最优的参数值很大概率出现在坐标轴上,从而导致产生稀疏的权重矩阵,而L2会选择更多的矩阵,但是这些矩阵趋向于0。</p>
 <ul>
 <li>解空间角度</li>
 <li>贝叶斯先验概率角度（GOSS分布和拉普拉斯分布）</li>
 <li>纯数学推导角度</li>
 </ul>
-<h2 id="ID3-C4-5和CART三种决策树的区别"><a href="#ID3-C4-5和CART三种决策树的区别" class="headerlink" title="ID3,C4.5和CART三种决策树的区别"></a>ID3,C4.5和CART三种决策树的区别</h2><p>ID3决策树优先选择信息增益大的属性来对样本进行划分,但是这样的分裂节点方法有一个很大的缺点,当一个<strong>属性可取值数目较多时,可能在这个属性对应值下的样本只有一个或者很少个</strong>,此时它的信息增益将很高,ID3会认为这个属性很适合划分,但实际情况下叫多属性的取值会使模型的泛化能力较差,所以C4.5不采用信息增益作为划分依据,而是采用信息增益率作为划分依据。但是<strong>仍不能完全解决以上问题,而是有所改善</strong>,这个时候引入了CART树,它使用gini系数作为节点的分裂依据。</p>
-<h2 id="决策树的减枝"><a href="#决策树的减枝" class="headerlink" title="决策树的减枝"></a>决策树的减枝</h2><p>决策树的剪枝通常高两种方法，预剪枝（ Pre - Prun i ng ）和 后剪枝( Post - Pruning ）。那么这两种万法是如何进行的呢？ ‘8 们又各有什么优缺点？<br>分析与解答<br>预剪枝 即在生成决策树的过程中提前停止树的增长 。 而后剪枝 ，是在巴生成的过拟台决策树上进行剪枝 3 得到简化版的剪枝决策树 。</p>
+<h2><span id="id3c45和cart三种决策树的区别">ID3,C4.5和CART三种决策树的区别</span></h2><p>ID3决策树优先选择信息增益大的属性来对样本进行划分,但是这样的分裂节点方法有一个很大的缺点,当一个<strong>属性可取值数目较多时,可能在这个属性对应值下的样本只有一个或者很少个</strong>,此时它的信息增益将很高,ID3会认为这个属性很适合划分,但实际情况下叫多属性的取值会使模型的泛化能力较差,所以C4.5不采用信息增益作为划分依据,而是采用信息增益率作为划分依据。但是<strong>仍不能完全解决以上问题,而是有所改善</strong>,这个时候引入了CART树,它使用gini系数作为节点的分裂依据。</p>
+<h2><span id="决策树的减枝">决策树的减枝</span></h2><p>决策树的剪枝通常高两种方法，预剪枝（ Pre - Prun i ng ）和 后剪枝( Post - Pruning ）。那么这两种万法是如何进行的呢？ ‘8 们又各有什么优缺点？<br>分析与解答<br>预剪枝 即在生成决策树的过程中提前停止树的增长 。 而后剪枝 ，是在巴生成的过拟台决策树上进行剪枝 3 得到简化版的剪枝决策树 。</p>
 <p>•  预剪枝<br>预剪枝的核心思想是在树中结点进行扩展之前，<strong>先计算当前的划分是否能带来模型泛化能力Generalization capability的提升</strong>，如果不能，则不再继续生长子树 。此时可能存在不同类别的样本同时存于结点中，搜照多数投票的原则判断该结点所属类别。预剪枝对于何时停止决策树的生长有以下几种方法 。</p>
 <p>(  1 ）当树到达一定深度的时候，停止树的主长 。<br>( 2 ）当到达当前结点的样本数量小于某个闺值的时候，停止树的生长 。<br>( 3 ）计算每次分裂对测试集的准确度提升 3 当小于某个｜渴值的时候 3 不再继续扩展 。<br>预剪枝真奇思想直接、算法简单、效率高等特点，适合解决大规模问题 。 但如何准确地估计何时停止树的生长（即上述方法中的深度或闺值），针对不同问题会有很大差别，需要一定经验判断。且预剪枝存在一定局限性，高欠拟台的风险，虽然当前的划分会导致测试集准确率降低 3 但在之后的划分中，准确率可能会高显著上升 。</p>
 <p>后剪枝</p>
@@ -145,8 +147,8 @@ h(\theta_0,\theta_1)=\theta_0+\theta_1x</script><p>会使得theta1几乎等于0.
 <li>首先从生成算法产生的决策树T0底端开始不断剪枝，直到T0根节点，形成一个子树subtree 序列｛T0,T1,T2…..TN｝；</li>
 <li>通过交叉验证（cross-validation）对子树集进行测试，从选出最优子树。</li>
 </ol>
-<h1 id="SVM"><a href="#SVM" class="headerlink" title="SVM"></a>SVM</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">SVM核函数的使用和了解</span><br><span class="line"></span><br><span class="line">SVM的特点，解决线性不可分的优势</span><br><span class="line"></span><br><span class="line">SVM选择原因</span><br><span class="line"></span><br><span class="line">SVM模型参数调整</span><br><span class="line"></span><br><span class="line">SVM模型优化</span><br><span class="line"></span><br><span class="line">SVM的应用场景，应用方式</span><br></pre></td></tr></table></figure>
-<h2 id="SVM中核函数的选择"><a href="#SVM中核函数的选择" class="headerlink" title="SVM中核函数的选择?"></a>SVM中核函数的选择?</h2><p>当数据的<strong>特征提取的较好</strong>,所包含的信息量足够大,很多问题是线性可分的那么可以采用线性核。若<strong>特征数较少,样本数适中,对于时间不敏感,遇到的问题是线性不可分</strong>的时候可以使用高斯核来达到更好的效果。</p>
+<h1><span id="svm">SVM</span></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">SVM核函数的使用和了解</span><br><span class="line"></span><br><span class="line">SVM的特点，解决线性不可分的优势</span><br><span class="line"></span><br><span class="line">SVM选择原因</span><br><span class="line"></span><br><span class="line">SVM模型参数调整</span><br><span class="line"></span><br><span class="line">SVM模型优化</span><br><span class="line"></span><br><span class="line">SVM的应用场景，应用方式</span><br></pre></td></tr></table></figure>
+<h2><span id="svm中核函数的选择">SVM中核函数的选择?</span></h2><p>当数据的<strong>特征提取的较好</strong>,所包含的信息量足够大,很多问题是线性可分的那么可以采用线性核。若<strong>特征数较少,样本数适中,对于时间不敏感,遇到的问题是线性不可分</strong>的时候可以使用高斯核来达到更好的效果。</p>
 <p>SVM支持向量机，一般用于二分类模型，支持线性可分和非线性划分。SVM中用到的核函数有线性核’linear’、多项式核函数pkf以及高斯核函数rbf。</p>
 <ol>
 <li><p>当训练数据线性可分时，一 般用线性核函数，直接实现可分；</p>
@@ -162,7 +164,7 @@ h(\theta_0,\theta_1)=\theta_0+\theta_1x</script><p>会使得theta1几乎等于0.
 <p>2）RBF核：主要用于线性不可分的情形。参数多，分类结果非常依赖于参数。有很多人是通过训练数据的<strong>交叉验证</strong>来寻找合适的参数，不过这个过程比较耗时。</p>
 <p>至于到底该采用哪种核，要根据具体问题，有的数据是线性可分的，有的不可分，需要多尝试不同核不同参数。如果特征的提取的好，包含的信息量足够大，很多问题都是线性可分的。当然，如果有足够的时间去寻找RBF核参数，应该能达到更好的效果。</p>
 <p>没有一种黄金规则可以确定哪种核函数将推导出最准确的SVM，在实践中，核函数的选择一般并不导致准确率的很大差别。SVM总是发现全局解，而不是局部解。</p>
-<h2 id="SVM与LR的区别"><a href="#SVM与LR的区别" class="headerlink" title="SVM与LR的区别?"></a>SVM与LR的区别?</h2><ul>
+<h2><span id="svm与lr的区别">SVM与LR的区别?</span></h2><ul>
 <li>LR采用的损失函数为logisticalloss（通过伯努利二项分布，最大似然函数）,而SVM采用的是hingeloss(合页损失)。</li>
 <li>支持向量机只考虑局部的边界线附近的点，而逻辑回归考虑全局（远离的点对边界线的确定也起作用）。</li>
 <li>在解决非线性问题时，支持向量机采用核函数的机制，而LR通常不采用核函数的方法。</li>
@@ -184,8 +186,8 @@ h(\theta_0,\theta_1)=\theta_0+\theta_1x</script><p>会使得theta1几乎等于0.
 <li><p>方便输出结果调整。逻辑回归可以很方便的得到最后的分类结果，因为输出的是每个样本的概率分数，我们可以很容易的对这些概率分数进行cutoff，也就是划分阈值(大于某个阈值的是一类，小于某个阈值的是一类)。</p>
 </li>
 </ul>
-<h2 id="SVM使用对偶计算的目的是什么，如何推出来的，手写推导；"><a href="#SVM使用对偶计算的目的是什么，如何推出来的，手写推导；" class="headerlink" title="SVM使用对偶计算的目的是什么，如何推出来的，手写推导；"></a>SVM使用对偶计算的目的是什么，如何推出来的，手写推导；</h2><p>目的有两个：一是方便核函数的引入；二是原问题的求解复杂度与特征的维数相关，而转成对偶问题后只与问题的变量个数有关。由于SVM的变量个数为支持向量的个数，相较于特征位数较少，因此转对偶问题。通过拉格朗日算子发使带约束的优化目标转为不带约束的优化函数，使得W和b的偏导数等于零，带入原来的式子，再通过转成对偶问题。</p>
-<h2 id="SVM所有核函数的了解应用，SVM的损失函数"><a href="#SVM所有核函数的了解应用，SVM的损失函数" class="headerlink" title="SVM所有核函数的了解应用，SVM的损失函数"></a>SVM所有核函数的了解应用，SVM的损失函数</h2><p>SVM核函数：</p>
+<h2><span id="svm使用对偶计算的目的是什么如何推出来的手写推导">SVM使用对偶计算的目的是什么，如何推出来的，手写推导；</span></h2><p>目的有两个：一是方便核函数的引入；二是原问题的求解复杂度与特征的维数相关，而转成对偶问题后只与问题的变量个数有关。由于SVM的变量个数为支持向量的个数，相较于特征位数较少，因此转对偶问题。通过拉格朗日算子发使带约束的优化目标转为不带约束的优化函数，使得W和b的偏导数等于零，带入原来的式子，再通过转成对偶问题。</p>
+<h2><span id="svm所有核函数的了解应用svm的损失函数">SVM所有核函数的了解应用，SVM的损失函数</span></h2><p>SVM核函数：</p>
 <p>1 核函数本质</p>
 <p>核函数的本质可以概括为如下三点：</p>
 <p>1）实际应用中，常常遇到线性不可分的情况。针对这种情况，常用做法是把样例特征映射到高维空间中，转化为线性可分问题。</p>
@@ -198,7 +200,7 @@ h(\theta_0,\theta_1)=\theta_0+\theta_1x</script><p>会使得theta1几乎等于0.
 <p>SVM肯定是可以处理线性问题的，这个就是斯坦福课程里讲SVM时候，最开始讲解的部分，以线性问题入手进行讲解。</p>
 <p>线性核计算为k(x1,x2)=，其实就是在原始空间中的内积。</p>
 <p>2.2 线性SVM和逻辑回归</p>
-<h2 id="当SVM使用线性核时，和逻辑回归比较有哪些异同"><a href="#当SVM使用线性核时，和逻辑回归比较有哪些异同" class="headerlink" title="当SVM使用线性核时，和逻辑回归比较有哪些异同"></a>当SVM使用线性核时，和逻辑回归比较有哪些异同</h2><p>1）线性核SVM和逻辑回归本质上没有区别</p>
+<h2><span id="当svm使用线性核时和逻辑回归比较有哪些异同">当SVM使用线性核时，和逻辑回归比较有哪些异同</span></h2><p>1）线性核SVM和逻辑回归本质上没有区别</p>
 <p>2）n=特征数，m=训练样本数目</p>
 <p>如果n相对m比较大，使用逻辑回归或者线性SVM，例如n=10000，m=10-1000</p>
 <p>如果n比较小，m数值适中，使用高斯核的SVM，例如n=1-1000,m=10-10000</p>
@@ -254,18 +256,18 @@ h(\theta_0,\theta_1)=\theta_0+\theta_1x</script><p>会使得theta1几乎等于0.
 <p>SVM的损失函数就是合页损失函数加上正则化项：</p>
 <p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552628049041_E97F977CF363620D9944FCD1001BCA6B" alt="img"></p>
 <p>损失函数</p>
-<h1 id="集成算法"><a href="#集成算法" class="headerlink" title="集成算法"></a>集成算法</h1><h2 id="one-hot-编码优势"><a href="#one-hot-编码优势" class="headerlink" title="one-hot 编码优势"></a>one-hot 编码优势</h2><p>通过one-hot编码，可以对<strong>特征进行了扩充</strong>. </p>
+<h1><span id="集成算法">集成算法</span></h1><h2><span id="one-hot-编码优势">one-hot 编码优势</span></h2><p>通过one-hot编码，可以对<strong>特征进行了扩充</strong>. </p>
 <p>2，连续变量经过编码后，从一个权重变为多个权重，提升了模型的非线性能力。</p>
 <p>3，不需要多参数进行<strong>归一化处理</strong>。</p>
 <p>4，随着将大权重拆分成几个小权重管理特征，降低了异常值对模型的影响，增加了模型稳定性。</p>
 <p>5，生成了较大的稀疏矩阵。</p>
-<h2 id="one-hot-encoding-为什么不适用于树模型？"><a href="#one-hot-encoding-为什么不适用于树模型？" class="headerlink" title="one-hot encoding 为什么不适用于树模型？"></a>one-hot encoding 为什么不适用于树模型？</h2><p>将离散型特征使用one-hot编码，会让特征之间的<strong>距离计算更加合理</strong>。是基于欧式空间(Euclid space)的编码。</p>
+<h2><span id="one-hot-encoding-为什么不适用于树模型">one-hot encoding 为什么不适用于树模型？</span></h2><p>将离散型特征使用one-hot编码，会让特征之间的<strong>距离计算更加合理</strong>。是基于欧式空间(Euclid space)的编码。</p>
 <p>为什么特征向量要映射到欧式空间？</p>
 <blockquote>
 <p> 将离散特征通过one-hot编码映射到欧式空间，是因为，在回归，分类，聚类等机器学习算法中，特征之间距离的计算或相似度的计算是非常重要的，而我们常用的距离或相似度的计算都是在欧式空间的相似度计算，计算余弦相似性，基于的就是欧式空间。</p>
 </blockquote>
 <p>决策树是没有特征大小的概念的，只有特征处于他分布的哪一部分的概念<br>　　one-hot可以解决线性可分问题 但是比不上label econding </p>
-<h2 id="boosting和-bagging区别"><a href="#boosting和-bagging区别" class="headerlink" title="boosting和 bagging区别"></a>boosting和 bagging区别</h2><p>Bagging和Boosting的区别：</p>
+<h2><span id="boosting和-bagging区别">boosting和 bagging区别</span></h2><p>Bagging和Boosting的区别：</p>
 <p>1）样本选择上：Bagging：训练集是在原始集中有放回选取的，从原始集中选出的各轮训练集之间是独立的。Boosting：每一轮的训练集不变，只是训练集中每个样例在分类器中的权重发生变化。而权值是根据上一轮的分类结果进行调整。</p>
 <p>2）样例权重：Bagging：使用均匀取样，每个样例的权重相等。Boosting：根据错误率不断调整样例的权值，错误率越大则权重越大。</p>
 <p>3）预测函数：Bagging：所有预测函数的权重相等。Boosting：每个弱分类器都有相应的权重，对于分类误差小的分类器会有更大的权重。</p>
@@ -303,9 +305,9 @@ h(\theta_0,\theta_1)=\theta_0+\theta_1x</script><p>会使得theta1几乎等于0.
 </tbody>
 </table>
 </div>
-<h1 id="GBDT-XGBOOST-LGB"><a href="#GBDT-XGBOOST-LGB" class="headerlink" title="GBDT XGBOOST LGB"></a>GBDT XGBOOST LGB</h1><h2 id="bagging-reduce-variance-and-boosting-reduce-bias"><a href="#bagging-reduce-variance-and-boosting-reduce-bias" class="headerlink" title="bagging reduce variance and boosting reduce bias?"></a>bagging reduce variance and boosting reduce bias?</h2><p>boosting是把许多弱的分类器组合成一个强的分类器。弱的分类器bias高，而强的分类器bias低，所以说boosting起到了降低bias的作用。variance不是boosting的主要考虑因素。</p>
+<h1><span id="gbdt-xgboost-lgb">GBDT XGBOOST LGB</span></h1><h2><span id="bagging-reduce-variance-and-boosting-reduce-bias">bagging reduce variance and boosting reduce bias?</span></h2><p>boosting是把许多弱的分类器组合成一个强的分类器。弱的分类器bias高，而强的分类器bias低，所以说boosting起到了降低bias的作用。variance不是boosting的主要考虑因素。</p>
 <p>bagging是对许多强（甚至过强）的分类器求平均。在这里，每个单独的分类器的bias都是低的，平均之后bias依然低；而每个单独的分类器都强到可能产生overfitting的程度，也就是variance高，求<strong>平均的操作</strong>起到的作用就是降低这个variance。</p>
-<h2 id="●-XGBOOST和GDBT的区别"><a href="#●-XGBOOST和GDBT的区别" class="headerlink" title="● XGBOOST和GDBT的区别"></a>● XGBOOST和GDBT的区别</h2><ol>
+<h2><span id="xgboost和gdbt的区别">● XGBOOST和GDBT的区别</span></h2><ol>
 <li><p>GDBT在函数空间中利用<strong>梯度下降法</strong>进行优化而XGBoost在函数空间中使用了<strong>牛顿法</strong>进行优化。即GDBT在优化中使用了一阶导数信息,而XGB对损失函数进行了二阶泰勒展开,用到了一阶和二阶倒数信息。</p>
 </li>
 <li><p>XGB在损失函数中加入了<strong>正则项(</strong>树叶子节点个数,每个叶子节点上输出score的L2模平方和。</p>
@@ -367,14 +369,14 @@ h(\theta_0,\theta_1)=\theta_0+\theta_1x</script><p>会使得theta1几乎等于0.
 </tbody>
 </table>
 </div>
-<h2 id="●-GDBT的原理-以及常用的调参参数"><a href="#●-GDBT的原理-以及常用的调参参数" class="headerlink" title="● GDBT的原理,以及常用的调参参数"></a>● GDBT的原理,以及常用的调参参数</h2><p>先用一个初始值去学习一棵树,然后在叶子处得到预测值以及预测后的<strong>残差</strong>,之后的树则基于之前树的残差不断的拟合得到,从而训练出一系列的树作为模型。 </p>
+<h2><span id="gdbt的原理以及常用的调参参数">● GDBT的原理,以及常用的调参参数</span></h2><p>先用一个初始值去学习一棵树,然后在叶子处得到预测值以及预测后的<strong>残差</strong>,之后的树则基于之前树的残差不断的拟合得到,从而训练出一系列的树作为模型。 </p>
 <p>n_estimators基学习器的最大迭代次数,learning_rate学习率，max_lead_nodes最大叶子节点数,max_depth树的最大深度,min_samples_leaf叶子节点上最少样本数。</p>
-<h2 id="AdaBoost和GBDT的区别"><a href="#AdaBoost和GBDT的区别" class="headerlink" title="AdaBoost和GBDT的区别"></a>AdaBoost和GBDT的区别</h2><p>AdaBoost通过调整错分的数据点的权重来改进模型,而GBDT是从<strong>负梯度的方向</strong>去拟合改进模型。</p>
-<h2 id="boosting和bagging在不同情况下的选用"><a href="#boosting和bagging在不同情况下的选用" class="headerlink" title="boosting和bagging在不同情况下的选用"></a>boosting和bagging在不同情况下的选用</h2><p>Bagging与Boosting的区别：</p>
+<h2><span id="adaboost和gbdt的区别">AdaBoost和GBDT的区别</span></h2><p>AdaBoost通过调整错分的数据点的权重来改进模型,而GBDT是从<strong>负梯度的方向</strong>去拟合改进模型。</p>
+<h2><span id="boosting和bagging在不同情况下的选用">boosting和bagging在不同情况下的选用</span></h2><p>Bagging与Boosting的区别：</p>
 <p>1）取样方式（样本权重）：Bagging是均匀选取，样本的权重相等，Boosting根据错误率取样，错误率越大则权重越大。2）训练集的选择：Bagging随机选择训练集，训练集之间相互独立，Boosting的各轮训练集的选择与前面各轮的学习结果有关。3）预测函数：Bagging各个预测函数没有权重，可以并行生成，Boosting有权重，顺序生成。4）Bagging是减少variance，Boosting是减少bias。</p>
 <p>Bagging 是 Bootstrap Aggregating的简称，意思就是再取样 (Bootstrap) 然后在每个样本上训练出来的模型取平均，所以是降低模型的 variance. Bagging 比如 Random Forest 这种先天并行的算法都有这个效果。</p>
 <p>Boosting 则是迭代算法，每一次迭代都根据上一次迭代的预测结果对样本进行加权，所以随着迭代不不断进行行，误差会越来越小，所以模型的 bias 会不不断降低。这种算法无法并行。</p>
-<h2 id="gbdt推导和适用场景"><a href="#gbdt推导和适用场景" class="headerlink" title="gbdt推导和适用场景"></a>gbdt推导和适用场景</h2><p>1）明确损失函数是误差最小</p>
+<h2><span id="gbdt推导和适用场景">gbdt推导和适用场景</span></h2><p>1）明确损失函数是误差最小</p>
 <p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552653124869_EF9E9922885E2C62406891E4B3B65F31" alt="img"></p>
 <p>2）构建第一棵回归树</p>
 <p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552653108200_7B75C800713DA165E37727C5020EFA80" alt="img"></p>
@@ -385,7 +387,7 @@ h(\theta_0,\theta_1)=\theta_0+\theta_1x</script><p>会使得theta1几乎等于0.
 <p>4）F(x)等于所有树结果累加</p>
 <p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552653191923_4B98744FC993A4F5636CD930199EFCB4" alt="img"></p>
 <p>适用场景：GBDT几乎可用于所有回归问题（线性/非线性），GBDT的适用面非常广。亦可用于二分类问题（设定阈值，大于阈值为正例，反之为负例）。</p>
-<h2 id="GBDT与random-forest的区别"><a href="#GBDT与random-forest的区别" class="headerlink" title="GBDT与random forest的区别"></a>GBDT与random forest的区别</h2><p>GBDT和随机森林的相同点：</p>
+<h2><span id="gbdt与random-forest的区别">GBDT与random forest的区别</span></h2><p>GBDT和随机森林的相同点：</p>
 <p>1）都是由多棵树组成；2）最终的结果都是由多棵树一起决定</p>
 <p>GBDT和随机森林的不同点：</p>
 <p>1）组成随机森林的树可以是分类树，也可以是回归树；而GBDT只由回归树组成；</p>
@@ -394,7 +396,7 @@ h(\theta_0,\theta_1)=\theta_0+\theta_1x</script><p>会使得theta1几乎等于0.
 <p>4）随机森林对异常值不敏感，GBDT对异常值非常敏感；</p>
 <p>5）随机森林对训练集一视同仁，GBDT是基于权值的弱分类器的集成；</p>
 <p>6）随机森林是通过减少模型方差提高性能，GBDT是通过减少模型偏差提高性能。</p>
-<h2 id="xgboost原理，怎么防过拟合"><a href="#xgboost原理，怎么防过拟合" class="headerlink" title="xgboost原理，怎么防过拟合"></a>xgboost原理，怎么防过拟合</h2><p>XGBoost是一个树集成模型，它使用的是K（树的总数为K）个树的每棵树对样本的预测值的和作为该样本在XGBoost系统中的预测，定义函数如下：</p>
+<h2><span id="xgboost原理怎么防过拟合">xgboost原理，怎么防过拟合</span></h2><p>XGBoost是一个树集成模型，它使用的是K（树的总数为K）个树的每棵树对样本的预测值的和作为该样本在XGBoost系统中的预测，定义函数如下：</p>
 <p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552654356997_C14022E909704D601526BE46C12F5B32" alt="img"></p>
 <p>对于所给的数据集有n个样本，m个特征，定义为：</p>
 <p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552654336100_D9D86CDDDFD56E5AC66FA7122337BB34" alt="img"></p>
@@ -432,15 +434,15 @@ h(\theta_0,\theta_1)=\theta_0+\theta_1x</script><p>会使得theta1几乎等于0.
 <p>在xgboost调中，一般有两种方式用于控制过拟合：</p>
 <p>1）直接控制参数的复杂度：包括max_depth min_child_weight gamma；</p>
 <p>2）add randomness来使得对训练对噪声鲁棒。包括subsample colsample_bytree，或者也可以减小步长 eta，但是需要增加num_round，来平衡步长因子的减小。</p>
-<h2 id="xgboost特征并行化怎么做的"><a href="#xgboost特征并行化怎么做的" class="headerlink" title="xgboost特征并行化怎么做的"></a>xgboost特征并行化怎么做的</h2><p>决策树的学习最耗时的一个步骤就是对<strong>特征值进行排序</strong>,在进行节点分裂时需要<strong>计算每个特征的增益</strong>,最终选增益大的特征做分裂,<font color="red">各个特征的增益计算就可开启多线程进行</font>。而且可以采用<strong>并行化的近似直方图算法进行节点分裂</strong>。</p>
-<h2 id="xgboost和lightgbm的区别和适用场景"><a href="#xgboost和lightgbm的区别和适用场景" class="headerlink" title="xgboost和lightgbm的区别和适用场景"></a>xgboost和lightgbm的区别和适用场景</h2><p>（1）xgboost采用的是level-wise的分裂策略，而lightGBM采用了leaf-wise的策略，区别是xgboost对每一层所有节点做无差别分裂，可能有些节点的增益非常小，对结果影响不大，但是xgboost也进行了分裂，带来了务必要的开销。 leaft-wise的做法是在当前所有叶子节点中选择<strong>分裂收益最大</strong>的节点进行分裂，如此递归进行，很明显leaf-wise这种做法容易过拟合，因为容易陷入比较高的深度中，因此需要对最大深度做限制，从而避免过拟合。</p>
+<h2><span id="xgboost特征并行化怎么做的">xgboost特征并行化怎么做的</span></h2><p>决策树的学习最耗时的一个步骤就是对<strong>特征值进行排序</strong>,在进行节点分裂时需要<strong>计算每个特征的增益</strong>,最终选增益大的特征做分裂,<font color="red">各个特征的增益计算就可开启多线程进行</font>。而且可以采用<strong>并行化的近似直方图算法进行节点分裂</strong>。</p>
+<h2><span id="xgboost和lightgbm的区别和适用场景">xgboost和lightgbm的区别和适用场景</span></h2><p>（1）xgboost采用的是level-wise的分裂策略，而lightGBM采用了leaf-wise的策略，区别是xgboost对每一层所有节点做无差别分裂，可能有些节点的增益非常小，对结果影响不大，但是xgboost也进行了分裂，带来了务必要的开销。 leaft-wise的做法是在当前所有叶子节点中选择<strong>分裂收益最大</strong>的节点进行分裂，如此递归进行，很明显leaf-wise这种做法容易过拟合，因为容易陷入比较高的深度中，因此需要对最大深度做限制，从而避免过拟合。</p>
 <p>（2）lightgbm使用了基于<strong>histogram的决策树算法</strong>，这一点不同与xgboost中的 exact 算法，histogram算法在内存和计算代价上都有不小优势。</p>
 <p>1）内存上优势：很明显，直方图算法的内存消耗为<font color="red">(#data<em> #features </em> 1Bytes)</font>(因为对特征分桶后只需保存特征离散化之后的值)，而xgboost的exact算法内存消耗为：<font color="red">(2 <em> #data </em> #features* 4Bytes),</font>，因为xgboost既要保存原始feature的值，也要保存这个值的顺序索引，这些值需要32位的浮点数来保存。</p>
 <p>2）计算上的优势，预排序算法在选择好分裂特征计算分裂收益时需要遍历所有样本的特征值，时间为(#data),而直方图算法只需要遍历桶就行了，时间为(#bin)</p>
 <p>3）lightgbm支持直接输入categorical 的feature，在对离散特征分裂时，每个取值都当作一个桶，分裂时的增益算的是”是否属于某个category“的gain。类似于one-hot编码。</p>
 <p>4）xgboost在每一层都动态构建直方图，因为xgboost的直方图算法不是针对某个特定的feature，而是所有feature共享一个直方图(每个样本的权重是二阶导),所以每一层都要重新构建直方图，而lightgbm中对每个特征都有一个直方图，所以构建一次直方图就够了。</p>
 <p>其适用场景根据实际项目和两种算法的优点进行选择。</p>
-<h2 id="LGB算法流程"><a href="#LGB算法流程" class="headerlink" title="LGB算法流程"></a>LGB算法流程</h2><p>Gradient-based One-Side Sampling (GOSS) 基于梯度的one-side采样</p>
+<h2><span id="lgb算法流程">LGB算法流程</span></h2><p>Gradient-based One-Side Sampling (GOSS) 基于梯度的one-side采样</p>
 <blockquote>
 <p><strong>根据计算信息增益的定义，梯度大的实例对信息增益有更大的影响</strong></p>
 </blockquote>
@@ -450,15 +452,15 @@ h(\theta_0,\theta_1)=\theta_0+\theta_1x</script><p>会使得theta1几乎等于0.
 </blockquote>
 <p>我们将捆绑问题<strong>归约</strong>到图着色问题，通过贪心算法求得近似解。</p>
 <p>histogram-based算法通过直方图寻找<font color="red">最优切分点</font>，其建直方图消耗O(#data <em> #feature)，寻找最优切分点消耗O(#bin </em> # feature)，而#bin的数量远小于#data，<strong>所以建直方图为主要时间消耗</strong>。如果能够减少数据量或特征量，那么还能够够加速GBDT的训练。（寻找最优切分点已经进行了优化，那么我们现在应该对建直方图的时间进行优化）</p>
-<h1 id="其他重要算法"><a href="#其他重要算法" class="headerlink" title="其他重要算法"></a>其他重要算法</h1><h2 id="朴素贝叶斯（naive-Bayes）法的要求是？"><a href="#朴素贝叶斯（naive-Bayes）法的要求是？" class="headerlink" title="朴素贝叶斯（naive Bayes）法的要求是？"></a>朴素贝叶斯（naive Bayes）法的要求是？</h2><p>贝叶斯定理、特征条件独立假设</p>
+<h1><span id="其他重要算法">其他重要算法</span></h1><h2><span id="朴素贝叶斯naive-bayes法的要求是">朴素贝叶斯（naive Bayes）法的要求是？</span></h2><p>贝叶斯定理、特征条件独立假设</p>
 <p>解析：朴素贝叶斯属于生成式模型，学习输入和输出的联合概率分布。给定输入x，利用贝叶斯概率定理求出最大的后验概率作为输出y。</p>
-<h2 id="HMM隐马尔可夫模型的参数估计方法是？"><a href="#HMM隐马尔可夫模型的参数估计方法是？" class="headerlink" title="HMM隐马尔可夫模型的参数估计方法是？"></a>HMM隐马尔可夫模型的参数估计方法是？</h2><p>EM算法</p>
+<h2><span id="hmm隐马尔可夫模型的参数估计方法是">HMM隐马尔可夫模型的参数估计方法是？</span></h2><p>EM算法</p>
 <p>解析：期望最大化（Expectation-Maximum,EM）算法</p>
-<h2 id="Bootstrap方法是什么？"><a href="#Bootstrap方法是什么？" class="headerlink" title="Bootstrap方法是什么？"></a>Bootstrap方法是什么？</h2><p>从一个数据集中有放回的抽取N次，每次抽M个。</p>
+<h2><span id="bootstrap方法是什么">Bootstrap方法是什么？</span></h2><p>从一个数据集中有放回的抽取N次，每次抽M个。</p>
 <p>解析：Bagging算法基于bootstrap。面试时结合Bagging算法讲述会更好。</p>
-<h2 id="如何防止过拟合？"><a href="#如何防止过拟合？" class="headerlink" title="如何防止过拟合？"></a>如何防止过拟合？</h2><p>1.早停法；2.l1和l2正则化；3.神经网络的dropout；4.决策树剪枝；5.SVM的松弛变量；6.集成学习</p>
+<h2><span id="如何防止过拟合">如何防止过拟合？</span></h2><p>1.早停法；2.l1和l2正则化；3.神经网络的dropout；4.决策树剪枝；5.SVM的松弛变量；6.集成学习</p>
 <p>解析：能够达到模型权重减小，模型简单的效果</p>
-<h2 id="EM算法推导，jensen不等式确定的下界"><a href="#EM算法推导，jensen不等式确定的下界" class="headerlink" title="EM算法推导，jensen不等式确定的下界"></a>EM算法推导，jensen不等式确定的下界</h2><p>给定的训练样本是<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656677625_FF34E061732DAAD6F56E628A04C973E6" alt="img">，样例间独立，我们想找到每个样例隐含的类别z，能使得p(x,z)最大。p(x,z)的最大似然估计如下：</p>
+<h2><span id="em算法推导jensen不等式确定的下界">EM算法推导，jensen不等式确定的下界</span></h2><p>给定的训练样本是<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656677625_FF34E061732DAAD6F56E628A04C973E6" alt="img">，样例间独立，我们想找到每个样例隐含的类别z，能使得p(x,z)最大。p(x,z)的最大似然估计如下：</p>
 <p><img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656704748_9089EB58C9CA105E9B5104A9D94C7AA7" alt="img"></p>
 <p>第一步是对极大似然取对数，第二步是对每个样例的每个可能类别z求联合分布概率和。但是直接求<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656732709_6BFE2F1945BF6A79249C6D6DDDEE333B" alt="img">一般比较困难，因为有隐藏变量z存在，但是一般确定了z后，求解就容易了。</p>
 <p>EM是一种解决存在隐含变量优化问题的有效方法。竟然不能直接最大化<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656754223_12F0C02F17079F8B944E7694DC211CB3" alt="img">，我们可以不断地建立<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552656770652_D2CDC96BBFB62EEF0487ACD1DC5264D3" alt="img">的下界（E步），然后优化下界（M步）。这句话比较抽象，看下面的。</p>
@@ -503,7 +505,7 @@ h(\theta_0,\theta_1)=\theta_0+\theta_1x</script><p>会使得theta1几乎等于0.
 <p>Jensen不等式表述如下：</p>
 <p>如果f是凸函数，X是随机变量，那么：<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552655171001_A815CFF6D10A553AEDC2BB002E0FFB97" alt="img">，特别地，如果f是严格凸函数，当且</p>
 <p>仅当X是常量时，上式取等号。所以其下界是<img src="https://uploadfiles.nowcoder.com/images/20190315/311436_1552655011455_32E13B7D17BDE8B45B6D788808C74D17" alt="img">。</p>
-<h2 id="特征工程的问题"><a href="#特征工程的问题" class="headerlink" title="特征工程的问题"></a>特征工程的问题</h2><p>特征工程包括数据与特征处理、特征选择和降纬三部分。数据与特征处理包括：</p>
+<h2><span id="特征工程的问题">特征工程的问题</span></h2><p>特征工程包括数据与特征处理、特征选择和降纬三部分。数据与特征处理包括：</p>
 <p>1.数据选择、清洗、采样</p>
 <p>数据格式化；</p>
 <p>数据清洗，填充缺失值、去掉脏数据，将不可信的样本丢掉，缺省值极多的字段考虑不用；</p>
@@ -527,4 +529,4 @@ h(\theta_0,\theta_1)=\theta_0+\theta_1x</script><p>会使得theta1几乎等于0.
 <p>降维：</p>
 <p>方法：主成分分析法（PCA）和线性判别分析（LDA）</p>
 <p>意义：通过PCA或LDA方法，将较高纬度样本空间映射到较低维度的样本空间，从而达到降纬的目的，减少模型的训练时间，提高模型的计算性能。</p>
-</div></article></div></main><footer><div class="paginator"><a href="/professional-interview-tbsi/" class="prev">PREV</a><a href="/mathmatics-interview-tbsi/" class="next">NEXT</a></div><div class="copyright"><p>© 2016 - 2021 <a href="http://yoursite.com">Louieworth</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script></body></html>
+</div></article></div></main><footer><div class="paginator"><a href="/professional-interview-tbsi/" class="prev">PREV</a><a href="/mathmatics-interview-tbsi/" class="next">NEXT</a></div><div class="copyright"><p>© 2021 <a href="http://yoursite.com">Louieworth</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script></body></html>
