@@ -67,9 +67,9 @@
     <link href="http://yoursite.com/GAT-and-GCN/"/>
     <id>http://yoursite.com/GAT-and-GCN/</id>
     <published>2020-12-22T08:51:17.000Z</published>
-    <updated>2021-01-15T12:10:25.450Z</updated>
+    <updated>2021-01-15T12:31:43.801Z</updated>
     
-    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><!--toc--><h1><span id="离散卷积">离散卷积</span></h1><p>了解GCN之前必须对离散卷积（或者说CNN中的卷积）有一个明确的认识：</p><p><a href="https://www.zhihu.com/question/22298352">如何通俗易懂地解释卷积？</a>  这个链接的内容已经讲得很清楚了，离散卷积本质就是一种加权求和。</p><p>如图1所示，CNN中的卷积本质上就是利用一个共享参数的过滤器（kernel），通过计算中心像素点 以及相邻像素点的加权和来构成feature map实现空间特征的提取，当然加权系数就是卷积核的权重系数。</p><p>那么卷积核的系数如何确定的呢? 是<strong>随机化初值</strong>，然后根据误差函数通过反向传播梯度下降进行迭 代优化。这是一个关键点，卷积核的参数通过优化求出才能实现特征提取的作用，GCN的理论很大 一部分工作就是为了引入<strong>可以优化的卷积参数</strong>。</p><h1><span id="gcn的卷积是什么为什么需要研究gcn">GCN的卷积是什么，为什么需要研究GCN？</span></h1><p>当我们研究CNN的时候，其实处理的信息或者视频中的像素点 (pixel) 是二维矩阵，他们也称为(Euclidean Structure)但是我们真实世界的很多信息都是 Non Euclidean Structure的。如社交网络，信息网络中的一些结构。实际上，GCN的graph就是图论中用顶点和边连接起来的拓扑图。增加了吗？</p>]]></content>
+    <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1><span id="离散卷积">离散卷积</span></h1><p>了解GCN之前必须对离散卷积（或者说CNN中的卷积）有一个明确的认识：</p><p><a href="https://www.zhihu.com/question/22298352">如何通俗易懂地解释卷积？</a>  这个链接的内容已经讲得很清楚了，离散卷积本质就是一种加权求和。</p><p>如图1所示，CNN中的卷积本质上就是利用一个共享参数的过滤器（kernel），通过计算中心像素点 以及相邻像素点的加权和来构成feature map实现空间特征的提取，当然加权系数就是卷积核的权重系数。</p><p>那么卷积核的系数如何确定的呢? 是<strong>随机化初值</strong>，然后根据误差函数通过反向传播梯度下降进行迭 代优化。这是一个关键点，卷积核的参数通过优化求出才能实现特征提取的作用，GCN的理论很大 一部分工作就是为了引入<strong>可以优化的卷积参数</strong>。</p><h1><span id="gcn的卷积是什么为什么需要研究gcn">GCN的卷积是什么，为什么需要研究GCN？</span></h1><p>当我们研究CNN的时候，其实处理的信息或者视频中的像素点 (pixel) 是二维矩阵，他们也称为(Euclidean Structure)但是我们真实世界的很多信息都是 Non Euclidean Structure的。如社交网络，信息网络中的一些结构。实际上，GCN的graph就是图论中用顶点和边连接起来的拓扑图。增加了吗？</p>]]></content>
     
     <summary type="html">
     
