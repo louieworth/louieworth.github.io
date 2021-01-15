@@ -1,225 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <meta name="author" content="Louieworth">
-
-
-    <meta name="subtitle" content="Stay foolish, stay healthy.">
-
-
-    <meta name="description" content="Stay foolish, stay healthy">
-
-
-
-<title>decision_tree | Louieworth&#39;s blog</title>
-
-
-
-    <link rel="icon" href="/favicon.png">
-
-
-
-
-    <!-- stylesheets list from _config.yml -->
-    
-    <link rel="stylesheet" href="/css/style.css">
-    
-
-
-
-    <!-- scripts list from _config.yml -->
-    
-    <script src="/js/script.js"></script>
-    
-    <script src="/js/tocbot.min.js"></script>
-    
-
-
-
-    
-    
-        
-    
-
-
-<!-- hexo injector head_end start -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> decision_tree · Louieworth's blog</title><meta name="description" content="decision_tree - Louieworth"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="http://yoursite.com/atom.xml" title="Louieworth's blog"><!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Louieworth's blog" type="application/atom+xml">
-</head>
-<body>
-    <div class="wrapper">
-        <header>
-    <nav class="navbar">
-        <div class="container">
-            <div class="navbar-header header-logo"><a href="/">Louieworth&#39;s Blog</a></div>
-            <div class="menu navbar-right">
-                
-                    <a class="menu-item" href="/archives">Posts</a>
-                
-                    <a class="menu-item" href="/tags">Tags</a>
-                
-                    <a class="menu-item" href="/about">About</a>
-                
-                    <a class="menu-item" href="/atom.xml">RSS</a>
-                
-                <input id="switch_default" type="checkbox" class="switch_default">
-                <label for="switch_default" class="toggleBtn"></label>
-            </div>
-        </div>
-    </nav>
-
-    
-    <nav class="navbar-mobile" id="nav-mobile">
-        <div class="container">
-            <div class="navbar-header">
-                <div>
-                    <a href="/">Louieworth&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
-                </div>
-                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
-            </div>
-            <div class="menu" id="mobile-menu">
-                
-                    <a class="menu-item" href="/archives">Posts</a>
-                
-                    <a class="menu-item" href="/tags">Tags</a>
-                
-                    <a class="menu-item" href="/about">About</a>
-                
-                    <a class="menu-item" href="/atom.xml">RSS</a>
-                
-            </div>
-        </div>
-    </nav>
-
-</header>
-<script>
-    var mobileBtn = function f() {
-        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
-        var mobileMenu = document.getElementById("mobile-menu");
-        if(toggleMenu.classList.contains("active")){
-           toggleMenu.classList.remove("active")
-            mobileMenu.classList.remove("active")
-        }else{
-            toggleMenu.classList.add("active")
-            mobileMenu.classList.add("active")
-        }
-    }
-</script>
-        <div class="main">
-            <div class="container">
-    
-    
-        <div class="post-toc">
-    <div class="tocbot-list">
-    </div>
-    <div class="tocbot-list-menu">
-        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
-        <a onclick="go_top()">Back to top</a>
-        <a onclick="go_bottom()">Go to bottom</a>
-    </div>
-</div>
-
-<script>
-    document.ready(
-        function () {
-            tocbot.init({
-                tocSelector: '.tocbot-list',
-                contentSelector: '.post-content',
-                headingSelector: 'h1, h2, h3, h4, h5',
-                collapseDepth: 1,
-                orderedList: false,
-                scrollSmooth: true,
-            })
-        }
-    )
-
-    function expand_toc() {
-        var b = document.querySelector(".tocbot-toc-expand");
-        tocbot.init({
-            tocSelector: '.tocbot-list',
-            contentSelector: '.post-content',
-            headingSelector: 'h1, h2, h3, h4, h5',
-            collapseDepth: 6,
-            orderedList: false,
-            scrollSmooth: true,
-        });
-        b.setAttribute("onclick", "collapse_toc()");
-        b.innerHTML = "Collapse all"
-    }
-
-    function collapse_toc() {
-        var b = document.querySelector(".tocbot-toc-expand");
-        tocbot.init({
-            tocSelector: '.tocbot-list',
-            contentSelector: '.post-content',
-            headingSelector: 'h1, h2, h3, h4, h5',
-            collapseDepth: 1,
-            orderedList: false,
-            scrollSmooth: true,
-        });
-        b.setAttribute("onclick", "expand_toc()");
-        b.innerHTML = "Expand all"
-    }
-
-    function go_top() {
-        window.scrollTo(0, 0);
-    }
-
-    function go_bottom() {
-        window.scrollTo(0, document.body.scrollHeight);
-    }
-
-</script>
-    
-
-    
-    <article class="post-wrap">
-        <header class="post-header">
-            <h1 class="post-title">decision_tree</h1>
-            
-                <div class="post-meta">
-                    
-                        Author: <a itemprop="author" rel="author" href="/">Louieworth</a>
-                    
-
-                    
-                        <span class="post-time">
-                        Date: <a href="#">June 7, 2020&nbsp;&nbsp;6:39:46</a>
-                        </span>
-                    
-                    
-                </div>
-            
-        </header>
-
-        <div class="post-content">
-            <script src="/assets/js/APlayer.min.js"> </script><p>The basic knowledge of decision tree. <a id="more"></a></p>
-<h1><span id="jue-ce-shu-mo-xing-he-xue-xi-guo-cheng">决策树模型和学习过程</span><a href="#jue-ce-shu-mo-xing-he-xue-xi-guo-cheng" class="header-anchor">#</a></h1><h2><span id="jue-ce-shu-huan-biao-shi-gei-ding-te-zheng-tiao-jian-xia-lei-de-tiao-jian-gai-lu-fen-bu">决策树还表示给定特征条件下类的条件概率分布。</span><a href="#jue-ce-shu-huan-biao-shi-gei-ding-te-zheng-tiao-jian-xia-lei-de-tiao-jian-gai-lu-fen-bu" class="header-anchor">#</a></h2><p>当某个单元C的条件概率满足：</p>
+</head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/about/" target="_self" class="nav-list-link">ABOUT</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">decision_tree</h1><div class="tags"><a href="/tags/Interview/" class="tag-title">#Interview</a><a href="/tags/ML/" class="tag-title">#ML</a></div><div class="post-info">Jun 7, 2020</div><div class="post-content"><script src="/assets/js/APlayer.min.js"> </script><p>The basic knowledge of decision tree. <a id="more"></a></p>
+<h1 id="决策树模型和学习过程"><a href="#决策树模型和学习过程" class="headerlink" title="决策树模型和学习过程"></a>决策树模型和学习过程</h1><h2 id="决策树还表示给定特征条件下类的条件概率分布。"><a href="#决策树还表示给定特征条件下类的条件概率分布。" class="headerlink" title="决策树还表示给定特征条件下类的条件概率分布。"></a>决策树还表示给定特征条件下类的条件概率分布。</h2><p>当某个单元C的条件概率满足：</p>
 <script type="math/tex; mode=display">
 P(Y=+1|C)>0.5</script><p>那么我们认为这个单元就属于正类。</p>
-<h2><span id="jue-ce-shu-de-sun-shi-han-shu">决策树的损失函数？</span><a href="#jue-ce-shu-de-sun-shi-han-shu" class="header-anchor">#</a></h2><p>决策树的损失函数一般都是正则化的极大似然函数。</p>
+<h2 id="决策树的损失函数？"><a href="#决策树的损失函数？" class="headerlink" title="决策树的损失函数？"></a>决策树的损失函数？</h2><p>决策树的损失函数一般都是正则化的极大似然函数。</p>
 <p>现实生活中采用启发式的方法，近似求解这一最优化问题。这样得到的决策树是次最优的。（sub-optional）</p>
 <ul>
 <li>联想：数据结构的次优树的算法思想？</li>
 </ul>
-<h2><span id="jue-ce-shu-xun-lian-guo-cheng">决策树训练过程。</span><a href="#jue-ce-shu-xun-lian-guo-cheng" class="header-anchor">#</a></h2><ol>
+<h2 id="决策树训练过程。"><a href="#决策树训练过程。" class="headerlink" title="决策树训练过程。"></a>决策树训练过程。</h2><ol>
 <li>开始，构建根节点，将所有的训练数据都放在根节点。</li>
 <li>选择一个最优的特征，按照这一特征分割子集，使得各个子集有一个当前条件下最好的分类。</li>
 <li>如果这些子集已经能够被基本正确分类，那么构建叶节点，分配到叶节点去。</li>
 <li>如果还有子集不能被基本正确分类，那么对这些子集选择新的最优特征，继续分割。</li>
 </ol>
-<h2><span id="xun-lian-guo-cheng-de-wen-ti-yi-ji-jie-jue-ban-fa">训练过程的问题以及解决办法？</span><a href="#xun-lian-guo-cheng-de-wen-ti-yi-ji-jie-jue-ban-fa" class="header-anchor">#</a></h2><ol>
+<h2 id="训练过程的问题以及解决办法？"><a href="#训练过程的问题以及解决办法？" class="headerlink" title="训练过程的问题以及解决办法？"></a>训练过程的问题以及解决办法？</h2><ol>
 <li><p>可能会导致过拟合&gt;&gt;&gt;&gt;&gt;&gt;剪枝（去掉过于细分的叶节点）</p>
 <p>决策树的生成只考虑局部最优，而剪枝考虑全局最优。常用算法有ID3  C4.5 CART</p>
 </li>
 </ol>
-<h1><span id="te-zheng-xuan-ze">特征选择</span><a href="#te-zheng-xuan-ze" class="header-anchor">#</a></h1><p>特征选择在于选取对训练数据具有分类能力的特征。而信息增益(information gain)就能直接表现这一直观的准则。</p>
-<h1><span id="xin-xi-zeng-yi">信息增益</span><a href="#xin-xi-zeng-yi" class="header-anchor">#</a></h1><blockquote>
+<h1 id="特征选择"><a href="#特征选择" class="headerlink" title="特征选择"></a>特征选择</h1><p>特征选择在于选取对训练数据具有分类能力的特征。而信息增益(information gain)就能直接表现这一直观的准则。</p>
+<h1 id="信息增益"><a href="#信息增益" class="headerlink" title="信息增益"></a>信息增益</h1><blockquote>
 <p>熵(entropy)： 表示随机变量不不确定性的度量。</p>
 </blockquote>
 <p>X是一个取有限个值的离散随机变量，概率分布：</p>
@@ -233,77 +36,4 @@ H(p) = -\sum_{i=1}^np_ilogp_i</script><p>熵(entropy)越大，那么随机变量
 <p>0-1分布作为引子，当p=0或者1的时候没有不确定性，p=0.5时，H(p)=1,随机变量的不确定性越大。</p>
 <p>条件熵：表示</p>
 </blockquote>
-
-        </div>
-
-        
-            <section class="post-copyright">
-                
-                    <p class="copyright-item">
-                        <span>Author:</span>
-                        <span>Louieworth</span>
-                    </p>
-                
-                
-                    <p class="copyright-item">
-                        <span>Permalink:</span>
-                        <span><a href="http://yoursite.com/decision-tree/">http://yoursite.com/decision-tree/</a></span>
-                    </p>
-                
-                
-                    <p class="copyright-item">
-                        <span>License:</span>
-                        <span>Copyright (c) 2019 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
-                    </p>
-                
-                
-                     <p class="copyright-item">
-                         <span>Slogan:</span>
-                         <span>Do you believe in <strong>DESTINY</strong>?</span>
-                     </p>
-                
-
-            </section>
-        
-        <section class="post-tags">
-            <div>
-                <span>Tag(s):</span>
-                <span class="tag">
-                    
-                    
-                        <a href="/tags/Interview/"># Interview</a>
-                    
-                        <a href="/tags/ML/"># ML</a>
-                    
-                        
-                </span>
-            </div>
-            <div>
-                <a href="javascript:window.history.back();">back</a>
-                <span>· </span>
-                <a href="/">home</a>
-            </div>
-        </section>
-        <section class="post-nav">
-            
-                <a class="prev" rel="prev" href="/cv-interview-tbsi/">cv_interview_tbsi</a>
-            
-            
-            <a class="next" rel="next" href="/SVM/">SVM</a>
-            
-        </section>
-
-
-    </article>
-</div>
-
-        </div>
-        <footer id="footer" class="footer">
-    <div class="copyright">
-        <span>© Louieworth | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
-    </div>
-</footer>
-
-    </div>
-</body>
-</html>
+</div></article></div></main><footer><div class="paginator"><a href="/cv-interview-tbsi/" class="prev">PREV</a><a href="/SVM/" class="next">NEXT</a></div><div class="copyright"><p>© 2021 <a href="http://yoursite.com">Louieworth</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script></body></html>

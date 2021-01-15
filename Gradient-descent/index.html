@@ -1,210 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <meta name="author" content="Louieworth">
-
-
-    <meta name="subtitle" content="Stay foolish, stay healthy.">
-
-
-    <meta name="description" content="Stay foolish, stay healthy">
-
-
-
-<title>Gradient-descent | Louieworth&#39;s blog</title>
-
-
-
-    <link rel="icon" href="/favicon.png">
-
-
-
-
-    <!-- stylesheets list from _config.yml -->
-    
-    <link rel="stylesheet" href="/css/style.css">
-    
-
-
-
-    <!-- scripts list from _config.yml -->
-    
-    <script src="/js/script.js"></script>
-    
-    <script src="/js/tocbot.min.js"></script>
-    
-
-
-
-    
-    
-        
-    
-
-
-<!-- hexo injector head_end start -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Gradient-descent · Louieworth's blog</title><meta name="description" content="Gradient-descent - Louieworth"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="http://yoursite.com/atom.xml" title="Louieworth's blog"><!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Louieworth's blog" type="application/atom+xml">
-</head>
-<body>
-    <div class="wrapper">
-        <header>
-    <nav class="navbar">
-        <div class="container">
-            <div class="navbar-header header-logo"><a href="/">Louieworth&#39;s Blog</a></div>
-            <div class="menu navbar-right">
-                
-                    <a class="menu-item" href="/archives">Posts</a>
-                
-                    <a class="menu-item" href="/tags">Tags</a>
-                
-                    <a class="menu-item" href="/about">About</a>
-                
-                    <a class="menu-item" href="/atom.xml">RSS</a>
-                
-                <input id="switch_default" type="checkbox" class="switch_default">
-                <label for="switch_default" class="toggleBtn"></label>
-            </div>
-        </div>
-    </nav>
-
-    
-    <nav class="navbar-mobile" id="nav-mobile">
-        <div class="container">
-            <div class="navbar-header">
-                <div>
-                    <a href="/">Louieworth&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
-                </div>
-                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
-            </div>
-            <div class="menu" id="mobile-menu">
-                
-                    <a class="menu-item" href="/archives">Posts</a>
-                
-                    <a class="menu-item" href="/tags">Tags</a>
-                
-                    <a class="menu-item" href="/about">About</a>
-                
-                    <a class="menu-item" href="/atom.xml">RSS</a>
-                
-            </div>
-        </div>
-    </nav>
-
-</header>
-<script>
-    var mobileBtn = function f() {
-        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
-        var mobileMenu = document.getElementById("mobile-menu");
-        if(toggleMenu.classList.contains("active")){
-           toggleMenu.classList.remove("active")
-            mobileMenu.classList.remove("active")
-        }else{
-            toggleMenu.classList.add("active")
-            mobileMenu.classList.add("active")
-        }
-    }
-</script>
-        <div class="main">
-            <div class="container">
-    
-    
-        <div class="post-toc">
-    <div class="tocbot-list">
-    </div>
-    <div class="tocbot-list-menu">
-        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
-        <a onclick="go_top()">Back to top</a>
-        <a onclick="go_bottom()">Go to bottom</a>
-    </div>
-</div>
-
-<script>
-    document.ready(
-        function () {
-            tocbot.init({
-                tocSelector: '.tocbot-list',
-                contentSelector: '.post-content',
-                headingSelector: 'h1, h2, h3, h4, h5',
-                collapseDepth: 1,
-                orderedList: false,
-                scrollSmooth: true,
-            })
-        }
-    )
-
-    function expand_toc() {
-        var b = document.querySelector(".tocbot-toc-expand");
-        tocbot.init({
-            tocSelector: '.tocbot-list',
-            contentSelector: '.post-content',
-            headingSelector: 'h1, h2, h3, h4, h5',
-            collapseDepth: 6,
-            orderedList: false,
-            scrollSmooth: true,
-        });
-        b.setAttribute("onclick", "collapse_toc()");
-        b.innerHTML = "Collapse all"
-    }
-
-    function collapse_toc() {
-        var b = document.querySelector(".tocbot-toc-expand");
-        tocbot.init({
-            tocSelector: '.tocbot-list',
-            contentSelector: '.post-content',
-            headingSelector: 'h1, h2, h3, h4, h5',
-            collapseDepth: 1,
-            orderedList: false,
-            scrollSmooth: true,
-        });
-        b.setAttribute("onclick", "expand_toc()");
-        b.innerHTML = "Expand all"
-    }
-
-    function go_top() {
-        window.scrollTo(0, 0);
-    }
-
-    function go_bottom() {
-        window.scrollTo(0, document.body.scrollHeight);
-    }
-
-</script>
-    
-
-    
-    <article class="post-wrap">
-        <header class="post-header">
-            <h1 class="post-title">Gradient-descent</h1>
-            
-                <div class="post-meta">
-                    
-                        Author: <a itemprop="author" rel="author" href="/">Louieworth</a>
-                    
-
-                    
-                        <span class="post-time">
-                        Date: <a href="#">June 7, 2020&nbsp;&nbsp;16:55:19</a>
-                        </span>
-                    
-                    
-                </div>
-            
-        </header>
-
-        <div class="post-content">
-            <script src="/assets/js/APlayer.min.js"> </script><h1><span id="ti-du-xia-jiang-yi-ji-qi-ding-yi">梯度下降以及其定义</span><a href="#ti-du-xia-jiang-yi-ji-qi-ding-yi" class="header-anchor">#</a></h1><blockquote>
+</head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/about/" target="_self" class="nav-list-link">ABOUT</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">Gradient-descent</h1><div class="tags"><a href="/tags/Interview/" class="tag-title">#Interview</a><a href="/tags/ML/" class="tag-title">#ML</a></div><div class="post-info">Jun 7, 2020</div><div class="post-content"><script src="/assets/js/APlayer.min.js"> </script><h1 id="梯度下降以及其定义"><a href="#梯度下降以及其定义" class="headerlink" title="梯度下降以及其定义"></a>梯度下降以及其定义</h1><blockquote>
 <p><strong>方向导数</strong>directional derivative：在函数<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/定义域">定义域</a>的内点，对某一方向求导得到的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/导数/579188">导数</a>。一般为<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/二元函数/2582023">二元函数</a>和三元函数的方向导数，方向导数可分为沿直线方向和沿曲线方向的方向导数 <a id="more"></a></p>
 <p><strong>梯度</strong>gradient的本意是一个向量（矢量），表示某一函数在该点处的方向导数沿着该方向取得最大值，即函数在该点处沿着该方向（此梯度的方向）变化最快，变化率最大（为该梯度的模）</p>
 </blockquote>
 <p>梯度实际上就是多变量微分的一般化。<br>下面这个例子：<br><img src="https://img-blog.csdnimg.cn/20190121202415914.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxODAwMzY2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <p>首先给出数学公式：<br><img src="https://img-blog.csdnimg.cn/20190121203520490.png" alt="在这里插入图片描述"><br>此公式的意义是：J是关于Θ的一个函数，我们当前所处的位置为Θ0点，要从这个点走到J的最小值点，也就是山底。首先我们先确定前进的方向，也就是梯度的反向，然后走一段距离的步长，也就是α，走完这个段步长，就到达了Θ1这个点！<br><img src="https://img-blog.csdnimg.cn/20190121203434245.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxODAwMzY2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h2><span id="ti-du-xia-jiang-fa-de-san-chong-xing-shi-bgd-sgd-yi-ji-mbgd">梯度下降法的三种形式BGD、SGD以及MBGD</span><a href="#ti-du-xia-jiang-fa-de-san-chong-xing-shi-bgd-sgd-yi-ji-mbgd" class="header-anchor">#</a></h2><p>在应用机器学习算法时，我们通常采用梯度下降法来对采用的算法进行训练。其实，常用的梯度下降法还具体包含有三种不同的形式，<strong>它们也各自有着不同的优缺点。</strong></p>
+<h2 id="梯度下降法的三种形式BGD、SGD以及MBGD"><a href="#梯度下降法的三种形式BGD、SGD以及MBGD" class="headerlink" title="梯度下降法的三种形式BGD、SGD以及MBGD"></a>梯度下降法的三种形式BGD、SGD以及MBGD</h2><p>在应用机器学习算法时，我们通常采用梯度下降法来对采用的算法进行训练。其实，常用的梯度下降法还具体包含有三种不同的形式，<strong>它们也各自有着不同的优缺点。</strong></p>
 <p>下面我们以线性回归算法来对三种梯度下降法进行比较。</p>
 <p>一般线性回归函数的假设函数为：</p>
 <p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW4qQKjSZ2ichQuobo2BMz24TJaMzuxSOaKM7SFibyyMB4ETevgu0UmZ6y4WhiblXVjCqkDlTiaicxX9ibYw/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img"></p>
@@ -212,7 +15,7 @@
 <p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW4qQKjSZ2ichQuobo2BMz24Tkt3O1udN3DRmq9HibotvaskwhQ8POvQaP6aku6qBha2S4CiaCaGDzMZw/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img"></p>
 <p>下图为一个二维参数（θ0和θ1）组对应能量函数的可视化图：</p>
 <p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW4qQKjSZ2ichQuobo2BMz24TtOiaAJKIsOehyKcq9fPa3McZIhI4dRTLtfrRZa9D0eQRRmy5nt9E1Gg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img"></p>
-<h2><span id="pi-liang-ti-du-xia-jiang-fa-bgd">批量梯度下降法BGD</span><a href="#pi-liang-ti-du-xia-jiang-fa-bgd" class="header-anchor">#</a></h2><p>批量梯度下降法（Batch Gradient Descent，简称BGD）是梯度下降法最原始的形式，它的具体思路是在更新每一参数时都使用<strong>所有的样本来进行更新</strong>，其数学形式如下：</p>
+<h2 id="批量梯度下降法BGD"><a href="#批量梯度下降法BGD" class="headerlink" title="批量梯度下降法BGD"></a>批量梯度下降法BGD</h2><p>批量梯度下降法（Batch Gradient Descent，简称BGD）是梯度下降法最原始的形式，它的具体思路是在更新每一参数时都使用<strong>所有的样本来进行更新</strong>，其数学形式如下：</p>
 <p>(1) 对上述的能量函数求偏导：</p>
 <p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW4qQKjSZ2ichQuobo2BMz24TJF27KibYPicN3KfuZreFrxlvrPiaBEAjTXRgWUia9kia0mutvRP06t4pQJg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img"></p>
 <p>(2) 由于是最小化风险函数，所以按照每个参数θ的梯度负方向来更新每个θθ： θ的梯度负方向来更新每个θ：θ：</p>
@@ -224,7 +27,7 @@
 <p><strong>缺点：</strong>当样本数目很多时，训练过程会很慢。</p>
 <p>从迭代的次数上来看，BGD迭代的次数相对较少。其迭代的收敛曲线示意图可以表示如下：</p>
 <p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW4qQKjSZ2ichQuobo2BMz24TzIynKFye9TUnPibGwYTLMmgXia5T3a3X62zWm4drsnqv4lFibqYj3Vfaw/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img"></p>
-<h2><span id="sui-ji-ti-du-xia-jiang-fa-sgd">随机梯度下降法SGD</span><a href="#sui-ji-ti-du-xia-jiang-fa-sgd" class="header-anchor">#</a></h2><p>由于批量梯度下降法在更新每一个参数时，都需要所有的训练样本，所以训练过程会随着样本数量的加大而变得异常的缓慢。随机梯度下降法（Stochastic Gradient Descent，简称SGD）正是为了解决批量梯度下降法这一弊端而提出的。</p>
+<h2 id="随机梯度下降法SGD"><a href="#随机梯度下降法SGD" class="headerlink" title="随机梯度下降法SGD"></a>随机梯度下降法SGD</h2><p>由于批量梯度下降法在更新每一个参数时，都需要所有的训练样本，所以训练过程会随着样本数量的加大而变得异常的缓慢。随机梯度下降法（Stochastic Gradient Descent，简称SGD）正是为了解决批量梯度下降法这一弊端而提出的。</p>
 <p>将上面的能量函数写为如下形式：</p>
 <p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW4qQKjSZ2ichQuobo2BMz24T89OGCBic3U5mKKZB4o7UNbN3crpIvA30n8oib4HnEnsDFhpq6XwedzpA/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img"></p>
 <p>利用每个样本的损失函数对θ求偏导得到对应的梯度，来更新θ：</p>
@@ -238,84 +41,11 @@
 <p><strong>缺点：</strong>准确度下降，并不是全局最优；不易于并行实现。</p>
 <p>从迭代的次数上来看，SGD迭代的次数较多，在解空间的搜索过程看起来很盲目。其迭代的收敛曲线示意图可以表示如下：</p>
 <p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW4qQKjSZ2ichQuobo2BMz24Ths2eTelSjYUjVQr39UXmbyeicpuuyD1fuudbYqBE9C1UPc2uolOibGHg/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img"></p>
-<h2><span id="xiao-pi-liang-ti-du-xia-jiang-fa-mbgd">小批量梯度下降法MBGD</span><a href="#xiao-pi-liang-ti-du-xia-jiang-fa-mbgd" class="header-anchor">#</a></h2><p>有上述的两种梯度下降法可以看出，其各自均有优缺点，那么能不能在两种方法的性能之间取得一个折衷呢？</p>
+<h2 id="小批量梯度下降法MBGD"><a href="#小批量梯度下降法MBGD" class="headerlink" title="小批量梯度下降法MBGD"></a>小批量梯度下降法MBGD</h2><p>有上述的两种梯度下降法可以看出，其各自均有优缺点，那么能不能在两种方法的性能之间取得一个折衷呢？</p>
 <p>即，算法的训练过程比较快，而且也要保证最终参数训练的准确率，<strong>而这正是小批量梯度下降法（Mini-batch Gradient Descent，简称MBGD）的初衷。</strong></p>
 <p>MBGD在每次更新参数时使用b个样本（b一般为10），其具体的伪代码形式为：</p>
 <p><img src="http://mmbiz.qpic.cn/mmbiz_png/nJZZib3qIQW4qQKjSZ2ichQuobo2BMz24TmpMf3ND7xbmopM5gOmgc8U9X6ahicKQ1lCJlt3EufNMziblmpIbIfcqQ/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img"></p>
-<h2><span id="zong-jie">总结</span><a href="#zong-jie" class="header-anchor">#</a></h2><p><strong>Batch gradient descent:</strong> Use all examples in each iteration；</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><strong>Batch gradient descent:</strong> Use all examples in each iteration；</p>
 <p><strong>Stochastic gradient descent:</strong> Use 1 example in each iteration；</p>
 <p><strong>Mini-batch gradient descent:</strong> Use b examples in each iteration.</p>
-
-        </div>
-
-        
-            <section class="post-copyright">
-                
-                    <p class="copyright-item">
-                        <span>Author:</span>
-                        <span>Louieworth</span>
-                    </p>
-                
-                
-                    <p class="copyright-item">
-                        <span>Permalink:</span>
-                        <span><a href="http://yoursite.com/Gradient-descent/">http://yoursite.com/Gradient-descent/</a></span>
-                    </p>
-                
-                
-                    <p class="copyright-item">
-                        <span>License:</span>
-                        <span>Copyright (c) 2019 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
-                    </p>
-                
-                
-                     <p class="copyright-item">
-                         <span>Slogan:</span>
-                         <span>Do you believe in <strong>DESTINY</strong>?</span>
-                     </p>
-                
-
-            </section>
-        
-        <section class="post-tags">
-            <div>
-                <span>Tag(s):</span>
-                <span class="tag">
-                    
-                    
-                        <a href="/tags/Interview/"># Interview</a>
-                    
-                        <a href="/tags/ML/"># ML</a>
-                    
-                        
-                </span>
-            </div>
-            <div>
-                <a href="javascript:window.history.back();">back</a>
-                <span>· </span>
-                <a href="/">home</a>
-            </div>
-        </section>
-        <section class="post-nav">
-            
-                <a class="prev" rel="prev" href="/Maxmum-likelihood-function/">Maximum-likelihood-function</a>
-            
-            
-            <a class="next" rel="next" href="/Lagrange-duality/">Lagrange-duality</a>
-            
-        </section>
-
-
-    </article>
-</div>
-
-        </div>
-        <footer id="footer" class="footer">
-    <div class="copyright">
-        <span>© Louieworth | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
-    </div>
-</footer>
-
-    </div>
-</body>
-</html>
+</div></article></div></main><footer><div class="paginator"><a href="/Maxmum-likelihood-function/" class="prev">PREV</a><a href="/Lagrange-duality/" class="next">NEXT</a></div><div class="copyright"><p>© 2021 <a href="http://yoursite.com">Louieworth</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script></body></html>

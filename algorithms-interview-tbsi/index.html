@@ -1,204 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <meta name="author" content="Louieworth">
-
-
-    <meta name="subtitle" content="Stay foolish, stay healthy.">
-
-
-    <meta name="description" content="Stay foolish, stay healthy">
-
-
-
-<title>algorithms_interview_tbsi | Louieworth&#39;s blog</title>
-
-
-
-    <link rel="icon" href="/favicon.png">
-
-
-
-
-    <!-- stylesheets list from _config.yml -->
-    
-    <link rel="stylesheet" href="/css/style.css">
-    
-
-
-
-    <!-- scripts list from _config.yml -->
-    
-    <script src="/js/script.js"></script>
-    
-    <script src="/js/tocbot.min.js"></script>
-    
-
-
-
-    
-    
-        
-    
-
-
-<!-- hexo injector head_end start -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> algorithms_interview_tbsi · Louieworth's blog</title><meta name="description" content="algorithms_interview_tbsi - Louieworth"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="http://yoursite.com/atom.xml" title="Louieworth's blog"><!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Louieworth's blog" type="application/atom+xml">
-</head>
-<body>
-    <div class="wrapper">
-        <header>
-    <nav class="navbar">
-        <div class="container">
-            <div class="navbar-header header-logo"><a href="/">Louieworth&#39;s Blog</a></div>
-            <div class="menu navbar-right">
-                
-                    <a class="menu-item" href="/archives">Posts</a>
-                
-                    <a class="menu-item" href="/tags">Tags</a>
-                
-                    <a class="menu-item" href="/about">About</a>
-                
-                    <a class="menu-item" href="/atom.xml">RSS</a>
-                
-                <input id="switch_default" type="checkbox" class="switch_default">
-                <label for="switch_default" class="toggleBtn"></label>
-            </div>
-        </div>
-    </nav>
-
-    
-    <nav class="navbar-mobile" id="nav-mobile">
-        <div class="container">
-            <div class="navbar-header">
-                <div>
-                    <a href="/">Louieworth&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
-                </div>
-                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
-            </div>
-            <div class="menu" id="mobile-menu">
-                
-                    <a class="menu-item" href="/archives">Posts</a>
-                
-                    <a class="menu-item" href="/tags">Tags</a>
-                
-                    <a class="menu-item" href="/about">About</a>
-                
-                    <a class="menu-item" href="/atom.xml">RSS</a>
-                
-            </div>
-        </div>
-    </nav>
-
-</header>
-<script>
-    var mobileBtn = function f() {
-        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
-        var mobileMenu = document.getElementById("mobile-menu");
-        if(toggleMenu.classList.contains("active")){
-           toggleMenu.classList.remove("active")
-            mobileMenu.classList.remove("active")
-        }else{
-            toggleMenu.classList.add("active")
-            mobileMenu.classList.add("active")
-        }
-    }
-</script>
-        <div class="main">
-            <div class="container">
-    
-    
-        <div class="post-toc">
-    <div class="tocbot-list">
-    </div>
-    <div class="tocbot-list-menu">
-        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
-        <a onclick="go_top()">Back to top</a>
-        <a onclick="go_bottom()">Go to bottom</a>
-    </div>
-</div>
-
-<script>
-    document.ready(
-        function () {
-            tocbot.init({
-                tocSelector: '.tocbot-list',
-                contentSelector: '.post-content',
-                headingSelector: 'h1, h2, h3, h4, h5',
-                collapseDepth: 1,
-                orderedList: false,
-                scrollSmooth: true,
-            })
-        }
-    )
-
-    function expand_toc() {
-        var b = document.querySelector(".tocbot-toc-expand");
-        tocbot.init({
-            tocSelector: '.tocbot-list',
-            contentSelector: '.post-content',
-            headingSelector: 'h1, h2, h3, h4, h5',
-            collapseDepth: 6,
-            orderedList: false,
-            scrollSmooth: true,
-        });
-        b.setAttribute("onclick", "collapse_toc()");
-        b.innerHTML = "Collapse all"
-    }
-
-    function collapse_toc() {
-        var b = document.querySelector(".tocbot-toc-expand");
-        tocbot.init({
-            tocSelector: '.tocbot-list',
-            contentSelector: '.post-content',
-            headingSelector: 'h1, h2, h3, h4, h5',
-            collapseDepth: 1,
-            orderedList: false,
-            scrollSmooth: true,
-        });
-        b.setAttribute("onclick", "expand_toc()");
-        b.innerHTML = "Expand all"
-    }
-
-    function go_top() {
-        window.scrollTo(0, 0);
-    }
-
-    function go_bottom() {
-        window.scrollTo(0, document.body.scrollHeight);
-    }
-
-</script>
-    
-
-    
-    <article class="post-wrap">
-        <header class="post-header">
-            <h1 class="post-title">algorithms_interview_tbsi</h1>
-            
-                <div class="post-meta">
-                    
-                        Author: <a itemprop="author" rel="author" href="/">Louieworth</a>
-                    
-
-                    
-                        <span class="post-time">
-                        Date: <a href="#">June 7, 2020&nbsp;&nbsp;6:48:38</a>
-                        </span>
-                    
-                    
-                </div>
-            
-        </header>
-
-        <div class="post-content">
-            <script src="/assets/js/APlayer.min.js"> </script><h1><span id="linear-regression">Linear Regression</span><a href="#linear-regression" class="header-anchor">#</a></h1><ol>
+</head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/about/" target="_self" class="nav-list-link">ABOUT</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">algorithms_interview_tbsi</h1><div class="tags"><a href="/tags/ML/" class="tag-title">#ML</a><a href="/tags/Experience/" class="tag-title">#Experience</a></div><div class="post-info">Jun 7, 2020</div><div class="post-content"><script src="/assets/js/APlayer.min.js"> </script><h1 id="Linear-Regression"><a href="#Linear-Regression" class="headerlink" title="Linear Regression"></a>Linear Regression</h1><ol>
 <li><p>First, define the hypothesis function as </p>
 <script type="math/tex; mode=display">
 h_\theta=\theta_0 + \theta_1 x</script></li>
@@ -227,12 +30,12 @@ repeat\ untill\ convergence\\\theta_j:=\theta_j-\alpha J(\theta_0,\theta_1)\   (
 </ol>
 </li>
 </ol>
-<h1><span id="zheng-ze-hua">正则化</span><a href="#zheng-ze-hua" class="header-anchor">#</a></h1><blockquote>
+<h1 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h1><blockquote>
 <p>L1-norm和L2-norm的区别？</p>
 <p>为什么正则化可以防止过拟合？</p>
 <p>什么是曼哈顿距离，什么是欧式几何距离？</p>
 </blockquote>
-<h1><span id="logistic-regression">Logistic Regression</span><a href="#logistic-regression" class="header-anchor">#</a></h1><p> 如何凸显你是一个对逻辑回归已经非常了解的人呢。那就是用一句话概括它！逻辑回归假设数据服从<font color="red">伯努利分布,</font>通过<font color="red">极大化似然函数</font>的方法，运用梯度下降来求解参数，来达到将数据二分类的目的。</p>
+<h1 id="Logistic-Regression"><a href="#Logistic-Regression" class="headerlink" title="Logistic Regression"></a>Logistic Regression</h1><p> 如何凸显你是一个对逻辑回归已经非常了解的人呢。那就是用一句话概括它！逻辑回归假设数据服从<font color="red">伯努利分布,</font>通过<font color="red">极大化似然函数</font>的方法，运用梯度下降来求解参数，来达到将数据二分类的目的。</p>
 <blockquote>
 <font color="red">考点1  伯努利分布 与MLE的定义</font>
 
@@ -271,7 +74,7 @@ repeat\ untill\ convergence\\\theta_j:=\theta_j-\alpha J(\theta_0,\theta_1)\   (
 <ol>
 <li>为什么LR采用交叉熵而不是MSE？  <a target="_blank" rel="noopener" href="https://blog.csdn.net/dpengwang/article/details/96597606">answer</a></li>
 </ol>
-<h2><span id="you-que-dian">优缺点</span><a href="#you-que-dian" class="header-anchor">#</a></h2><p>优点</p>
+<h2 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h2><p>优点</p>
 <ol>
 <li><p>实现简单，广泛的应用于工业问题上；</p>
 </li>
@@ -295,12 +98,12 @@ repeat\ untill\ convergence\\\theta_j:=\theta_j-\alpha J(\theta_0,\theta_1)\   (
 <li><p>只能处理两分类问题（在此基础上衍生出来的softmax可以用于多分类），且必须线性可</p>
 </li>
 </ol>
-<h1><span id="knn">KNN</span><a href="#knn" class="header-anchor">#</a></h1><h2><span id="gai-shu">概述</span><a href="#gai-shu" class="header-anchor">#</a></h2><p>k-近邻（kNN, k-NearestNeighbor）算法是一种基本分类与回归方法，我们这里只讨论分类问题中的 k-近邻算法。</p>
+<h1 id="KNN"><a href="#KNN" class="headerlink" title="KNN"></a>KNN</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>k-近邻（kNN, k-NearestNeighbor）算法是一种基本分类与回归方法，我们这里只讨论分类问题中的 k-近邻算法。</p>
 <p><strong>一句话总结：近朱者赤近墨者黑！</strong></p>
 <p>k 近邻算法的输入为实例的特征向量，对应于特征空间的点；输出为实例的类别，可以取多类。k 近邻算法假设给定一个训练数据集，其中的实例类别已定。分类时，对新的实例，根据其 k 个最近邻的训练实例的类别，通过多数表决等方式进行预测。因此，k近邻算法不具有显式的学习过程。</p>
 <p>k 近邻算法实际上利用训练数据集对特征向量空间进行划分，并作为其分类的“模型”。</p>
 <p> k值的选择、距离度量以及分类决策规则是k近邻算法的三个基本要素。</p>
-<h2><span id="knn-yuan-li">KNN原理</span><a href="#knn-yuan-li" class="header-anchor">#</a></h2><blockquote>
+<h2 id="KNN原理"><a href="#KNN原理" class="headerlink" title="KNN原理"></a>KNN原理</h2><blockquote>
 <p>工作原理</p>
 </blockquote>
 <ol>
@@ -328,7 +131,7 @@ repeat\ untill\ convergence\\\theta_j:=\theta_j-\alpha J(\theta_0,\theta_1)\   (
 </blockquote>
 </li>
 </ol>
-<h2><span id="knn-de-shi-xian">KNN的实现</span><a href="#knn-de-shi-xian" class="header-anchor">#</a></h2><p><strong>更通俗说一遍算法的过程，来了一个新的输入实例，我们算出该实例与每一个训练点的距离（这里的复杂度为0(n)比较大，所以引出了下文的kd树等结构），然后找到前k个，这k个哪个类别数最多，我们就判断新的输入实例就是哪类！</strong></p>
+<h2 id="KNN的实现"><a href="#KNN的实现" class="headerlink" title="KNN的实现"></a>KNN的实现</h2><p><strong>更通俗说一遍算法的过程，来了一个新的输入实例，我们算出该实例与每一个训练点的距离（这里的复杂度为0(n)比较大，所以引出了下文的kd树等结构），然后找到前k个，这k个哪个类别数最多，我们就判断新的输入实例就是哪类！</strong></p>
 <blockquote>
 <font color="red">问题2 liner scanling knn disadvantages?</font>
 
@@ -341,15 +144,15 @@ repeat\ untill\ convergence\\\theta_j:=\theta_j-\alpha J(\theta_0,\theta_1)\   (
 </blockquote>
 <p>是一种二叉树，表示对K维空间的一个划分，kd树的每个节点对应于一个K维超矩形区域。</p>
 <p>k近邻方法的一些优缺点总结</p>
-<h2><span id="you-dian">优点</span><a href="#you-dian" class="header-anchor">#</a></h2><p>1.KNN分类方法是一种非参数的分类技术，简单直观，易于实现！只要让预测点分别和训练数据求距离，挑选前k个即可，非常简单直观。</p>
+<h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><p>1.KNN分类方法是一种非参数的分类技术，简单直观，易于实现！只要让预测点分别和训练数据求距离，挑选前k个即可，非常简单直观。</p>
 <p>2.KNN是一种在线技术，新数据可以直接加入数据集而<strong>不必进行重新训练</strong></p>
-<h2><span id="que-dian-ji-gai-jin">缺点及改进</span><a href="#que-dian-ji-gai-jin" class="header-anchor">#</a></h2><p>1.当样本不平衡时，<strong>比如一个类的样本容量很大，其他类的样本容量很小</strong>，输入一个样本的时候，K个邻近值大多数都是大样本容量的那个类，这时可能会导致分类错误。</p>
+<h2 id="缺点及改进"><a href="#缺点及改进" class="headerlink" title="缺点及改进"></a>缺点及改进</h2><p>1.当样本不平衡时，<strong>比如一个类的样本容量很大，其他类的样本容量很小</strong>，输入一个样本的时候，K个邻近值大多数都是大样本容量的那个类，这时可能会导致分类错误。</p>
 <p><strong>改进方法：对K邻近点进行加权，也就是距离近的权值大，距离远的点权值小。</strong></p>
 <p><strong>2.</strong>计算量较大，<strong>每个待分类的样本都要计算它到全部点的距离</strong>，根据距离排序才能求得K个临近点。</p>
 <p>改进方法：先对已知样本带你进行裁剪，事先去除分类作用不大的样本，采取kd树以及其它高级搜索方法BBF等算法减少搜索时间。</p>
-<h1><span id="naive-bayes">Naive Bayes</span><a href="#naive-bayes" class="header-anchor">#</a></h1><h2><span id="suan-fa-liu-cheng">算法流程</span><a href="#suan-fa-liu-cheng" class="header-anchor">#</a></h2><p>In <a target="_blank" rel="noopener" href="https://en.wanweibaike.com/wiki-Machine_learning">machine learning</a>, <strong>naïve Bayes classifiers</strong> based on applying <a target="_blank" rel="noopener" href="https://en.wanweibaike.com/wiki-Bayes&#39;_theorem">Bayes’ theorem</a> with strong (naïve) <a target="_blank" rel="noopener" href="https://en.wanweibaike.com/wiki-Statistical_independence">independence</a> assumptions between the features. </p>
+<h1 id="Naive-Bayes"><a href="#Naive-Bayes" class="headerlink" title="Naive Bayes"></a>Naive Bayes</h1><h2 id="算法流程"><a href="#算法流程" class="headerlink" title="算法流程"></a>算法流程</h2><p>In <a target="_blank" rel="noopener" href="https://en.wanweibaike.com/wiki-Machine_learning">machine learning</a>, <strong>naïve Bayes classifiers</strong> based on applying <a target="_blank" rel="noopener" href="https://en.wanweibaike.com/wiki-Bayes&#39;_theorem">Bayes’ theorem</a> with strong (naïve) <a target="_blank" rel="noopener" href="https://en.wanweibaike.com/wiki-Statistical_independence">independence</a> assumptions between the features. </p>
 <p>也是应用MLE进行估计的。</p>
-<h2><span id="gai-lu-lun-bu-chong-zhi-shi">概率论补充知识</span><a href="#gai-lu-lun-bu-chong-zhi-shi" class="header-anchor">#</a></h2><ol>
+<h2 id="概率论补充知识"><a href="#概率论补充知识" class="headerlink" title="概率论补充知识"></a>概率论补充知识</h2><ol>
 <li>贝叶斯定理 Bayes’ theorem</li>
 </ol>
 <ul>
@@ -359,11 +162,11 @@ repeat\ untill\ convergence\\\theta_j:=\theta_j-\alpha J(\theta_0,\theta_1)\   (
 </ul>
 <p><img src="/algorithms-interview-tbsi/image-20200319101927163.png" alt="image-20200319101927163"></p>
 <p><img src="/algorithms-interview-tbsi/image-20200319102452402.png" alt="image-20200319102452402"></p>
-<h2><span id="bei-xie-si-gu-ji">贝叶斯估计</span><a href="#bei-xie-si-gu-ji" class="header-anchor">#</a></h2><p>当我们用MLE的时候可能会出现<strong>需要估计的概率值为0的情况</strong>，这会影响到后验概率的计算结果，使得分类产生误差。解决这一办法就是贝叶斯估计。具体的是：</p>
+<h2 id="贝叶斯估计"><a href="#贝叶斯估计" class="headerlink" title="贝叶斯估计"></a>贝叶斯估计</h2><p>当我们用MLE的时候可能会出现<strong>需要估计的概率值为0的情况</strong>，这会影响到后验概率的计算结果，使得分类产生误差。解决这一办法就是贝叶斯估计。具体的是：</p>
 <p><img src="/algorithms-interview-tbsi/fullsizerender(3).jpg" alt="fullsizerender(3)" style="zoom: 33%;"></p>
 <p>其中，λ&gt;=0,等于在随机变量上各个取值的频数上赋予一个正数λ，当λ=1，这时候我们称为拉普拉斯平滑(Laplace smoothing)。</p>
-<h2><span id="you-shi-yu-que-dian">优势与缺点</span><a href="#you-shi-yu-que-dian" class="header-anchor">#</a></h2><p>实现简单，高效。缺点是是分类的性能不一定高。</p>
-<h1><span id="decision-tree">decision Tree</span><a href="#decision-tree" class="header-anchor">#</a></h1><blockquote>
+<h2 id="优势与缺点"><a href="#优势与缺点" class="headerlink" title="优势与缺点"></a>优势与缺点</h2><p>实现简单，高效。缺点是是分类的性能不一定高。</p>
+<h1 id="decision-Tree"><a href="#decision-Tree" class="headerlink" title="decision Tree"></a>decision Tree</h1><blockquote>
 <ol>
 <li>决策树如何防止过拟合？==✔==</li>
 <li>信息增益比相对信息增益有什么好处？</li>
@@ -393,7 +196,7 @@ repeat\ untill\ convergence\\\theta_j:=\theta_j-\alpha J(\theta_0,\theta_1)\   (
 </li>
 </ol>
 <hr>
-<h2><span id="tong-ji-xue-zhi-shi">统计学知识</span><a href="#tong-ji-xue-zhi-shi" class="header-anchor">#</a></h2><font color="red">1. entropy(熵)</font>: 表示了随机变量的不确定性程度。Entropy is a measure of the *unpredictability* of the Random variables.
+<h2 id="统计学知识"><a href="#统计学知识" class="headerlink" title="统计学知识"></a>统计学知识</h2><font color="red">1. entropy(熵)</font>: 表示了随机变量的不确定性程度。Entropy is a measure of the *unpredictability* of the Random variables.
 
 ![image-20200310111936547](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200310111936547.png)
 
@@ -434,7 +237,7 @@ we choose the gini index **minmize**
 
 > <font color="red">问题1 为什么有如上三个算法</font>
 
-<h2><span id="cart-jian-zhi-pruning">CART减枝（pruning）</span><a href="#cart-jian-zhi-pruning" class="header-anchor">#</a></h2><p>cart 剪枝是从“完全生成”的决策树的底端剪去一些子树，使得决策树变小。</p>
+<h2 id="CART减枝（pruning）"><a href="#CART减枝（pruning）" class="headerlink" title="CART减枝（pruning）"></a>CART减枝（pruning）</h2><p>cart 剪枝是从“完全生成”的决策树的底端剪去一些子树，使得决策树变小。</p>
 <ol>
 <li>首先从生成算法产生的决策树T0底端开始不断剪，直到根节点。形成子树序列。</li>
 <li><p>通过<strong>交叉验证</strong>法在独立的验证数据集上对子树进行测试，选择最优。</p>
@@ -447,7 +250,7 @@ we choose the gini index **minmize**
 <font color="red">问题2 什么是交叉验证？有哪些交叉验证的方法</font>
 
 </blockquote>
-<h3><span id="pruning-de-ju-ti-guo-cheng">pruning的具体过程</span><a href="#pruning-de-ju-ti-guo-cheng" class="header-anchor">#</a></h3><ol>
+<h3 id="pruning的具体过程"><a href="#pruning的具体过程" class="headerlink" title="pruning的具体过程"></a>pruning的具体过程</h3><ol>
 <li>计算子树的损失函数为：</li>
 </ol>
 <script type="math/tex; mode=display">
@@ -461,9 +264,9 @@ C_\alpha(T)=C(T)+\alpha T</script><p>​        其中： T为任意子树，C(T
 <li><p>在剪枝得到的子树序列中通过交叉验证选择最优的子树。<img src="/algorithms-interview-tbsi/fullsizerender(5" alt>.jpg)</p>
 </li>
 </ol>
-<h2><span id="you-dian-he-que-dian">优点和缺点</span><a href="#you-dian-he-que-dian" class="header-anchor">#</a></h2><p>优点: 决策树模型可读性好，具有描述性，有助于人工分析；效率高，决策树只需要一次性构建，反复使用，每一次预测的最大计算次数不超过决策树的深度。<br>缺点: 对中间值的缺失敏感；可能产生过度匹配的问题，即过拟合。</p>
-<h2><span id="san-chong-ji-suan-de-qu-bie">三种计算的区别</span><a href="#san-chong-ji-suan-de-qu-bie" class="header-anchor">#</a></h2><p>1、ID3相比C4.5的劣势，是信息增益容易偏向<strong>取值较多</strong>的特征，三个概率相等的取值就比两个概率相等的取值的信息增益要大。采用信息增益比可以校正这一问题；<strong>ID3不能处理连续数值</strong><br>2、C4.5相比CART分类树的劣势，即信息增益比相对gini系数的劣势，是熵的计算用到了大量的<strong>对数运算</strong>，计算机中对数运算相对于基本运算需要的时间成本更多，这在模型较为复杂时会<strong>严重拖慢计算速度</strong>。所以采用gini系数作为判断标准可以在保证准确率的同时加快计算速度。<br>其他的比如CART是二叉树所以效率更高，或者CART可以进行回归之类的和本题关系不大就不说了。</p>
-<h1><span id="svm">SVM</span><a href="#svm" class="header-anchor">#</a></h1><blockquote>
+<h2 id="优点和缺点"><a href="#优点和缺点" class="headerlink" title="优点和缺点"></a>优点和缺点</h2><p>优点: 决策树模型可读性好，具有描述性，有助于人工分析；效率高，决策树只需要一次性构建，反复使用，每一次预测的最大计算次数不超过决策树的深度。<br>缺点: 对中间值的缺失敏感；可能产生过度匹配的问题，即过拟合。</p>
+<h2 id="三种计算的区别"><a href="#三种计算的区别" class="headerlink" title="三种计算的区别"></a>三种计算的区别</h2><p>1、ID3相比C4.5的劣势，是信息增益容易偏向<strong>取值较多</strong>的特征，三个概率相等的取值就比两个概率相等的取值的信息增益要大。采用信息增益比可以校正这一问题；<strong>ID3不能处理连续数值</strong><br>2、C4.5相比CART分类树的劣势，即信息增益比相对gini系数的劣势，是熵的计算用到了大量的<strong>对数运算</strong>，计算机中对数运算相对于基本运算需要的时间成本更多，这在模型较为复杂时会<strong>严重拖慢计算速度</strong>。所以采用gini系数作为判断标准可以在保证准确率的同时加快计算速度。<br>其他的比如CART是二叉树所以效率更高，或者CART可以进行回归之类的和本题关系不大就不说了。</p>
+<h1 id="SVM"><a href="#SVM" class="headerlink" title="SVM"></a>SVM</h1><blockquote>
 <ol>
 <li><p>为什么要函数间隔最大化？</p>
 <p>（两个原因，顺便引入functional margin &amp;&amp; geometric margin）</p>
@@ -478,7 +281,7 @@ C_\alpha(T)=C(T)+\alpha T</script><p>​        其中： T为任意子树，C(T
 </li>
 </ol>
 </blockquote>
-<h2><span id="mian-shi-zhen-ti">面试真题</span><a href="#mian-shi-zhen-ti" class="header-anchor">#</a></h2><blockquote>
+<h2 id="面试真题"><a href="#面试真题" class="headerlink" title="面试真题"></a>面试真题</h2><blockquote>
 <p>1.核函数的选择就是svm中的难点，也是核心问题（举出不同的例子？）Hyperplane： 超平面</p>
 <p>2.函数间隔/几何间隔是什么，有什么意义？  为什么引入？</p>
 <p>3.精通svm，那你说一下svm中的难点是什么？以及你是怎么解决这个难点的？（熟悉的问法）</p>
@@ -499,10 +302,10 @@ C_\alpha(T)=C(T)+\alpha T</script><p>​        其中： T为任意子树，C(T
 <li>SMO</li>
 </ol>
 </blockquote>
-<h2><span id="functional-margin-he-geometric-margin">Functional margin和Geometric margin</span><a href="#functional-margin-he-geometric-margin" class="header-anchor">#</a></h2><p><img src="/algorithms-interview-tbsi/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200325183431891.png" alt="image-20200325183431891"></p>
+<h2 id="Functional-margin和Geometric-margin"><a href="#Functional-margin和Geometric-margin" class="headerlink" title="Functional margin和Geometric margin"></a>Functional margin和Geometric margin</h2><p><img src="/algorithms-interview-tbsi/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200325183431891.png" alt="image-20200325183431891"></p>
 <p><img src="/algorithms-interview-tbsi/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200325183447961.png" alt="image-20200325183447961"></p>
 <p>函数间隔可以表示<strong>分类预测的正确性及确信度</strong>credits of predictions，但选择分离超平面时，只有函数间隔还不够，因为只要成比例改变w和b，超平面并没有改变，但函数间隔却变了，因此需要对分离超平面的法向量加上某些约束，如规范化，||w||=1，使用间隔是确定的，这时函数间隔成为了几何间隔。</p>
-<h2><span id="comparsion-of-kernels">comparsion of kernels</span><a href="#comparsion-of-kernels" class="header-anchor">#</a></h2><ol>
+<h2 id="comparsion-of-kernels"><a href="#comparsion-of-kernels" class="headerlink" title="comparsion of kernels"></a>comparsion of kernels</h2><ol>
 <li><p>Linear kernel</p>
 <p><img src="/algorithms-interview-tbsi/image-20200424111509351.png" alt="image-20200424111509351"></p>
 </li>
@@ -524,7 +327,7 @@ C_\alpha(T)=C(T)+\alpha T</script><p>​        其中： T为任意子树，C(T
 <p><img src="/algorithms-interview-tbsi/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200424111647537.png" alt="image-20200424111647537"></p>
 <p>Gaussian Kernel的优点是边界更加复杂多样，能最准确地区分数据样本，数值计算K值波动较小，而<br>且只有一个参数，容易选择；</p>
 <p>缺点是由于特征转换到无限维度中，w没有求解出来，计算速度要低于<br>linear kernel，而且可能会发生过拟合。</p>
-<h2><span id="guan-yu-svm-de-sun-shi-han-shu-hinge-lost-he-ye-sun-shi">关于SVM的损失函数。Hinge lost 合页损失。</span><a href="#guan-yu-svm-de-sun-shi-han-shu-hinge-lost-he-ye-sun-shi" class="header-anchor">#</a></h2><ol>
+<h2 id="关于SVM的损失函数。Hinge-lost-合页损失。"><a href="#关于SVM的损失函数。Hinge-lost-合页损失。" class="headerlink" title="关于SVM的损失函数。Hinge lost 合页损失。"></a>关于SVM的损失函数。Hinge lost 合页损失。</h2><ol>
 <li><p>实现了软间隔分类（这个Loss函数都可以做到）</p>
 </li>
 <li><p>保持了支持向量机解的稀疏性</p>
@@ -535,7 +338,7 @@ C_\alpha(T)=C(T)+\alpha T</script><p>​        其中： T为任意子树，C(T
 <p><img src="https://pic4.zhimg.com/50/v2-0884e199d2198ec716f3b09536b10213_hd.jpg" alt="img"><img src="https://pic4.zhimg.com/80/v2-0884e199d2198ec716f3b09536b10213_720w.jpg" alt="img"></p>
 <p>如下图中，点 <img src="https://www.zhihu.com/equation?tex=x_4" alt="[公式]"> 被分类正确了，但是它的损失不是0。其实这个道理和SVM中的Margin是一样的，不仅要分类正确，还要使得Margin最大化，所以说hinge loss的另外一种解释。</p>
 <p><img src="https://pic4.zhimg.com/80/v2-a04fdb43f41bd9e4fd06306558ab61f2_720w.jpg" alt="img"></p>
-<h1><span id="ensemble-method">Ensemble Method</span><a href="#ensemble-method" class="header-anchor">#</a></h1><blockquote>
+<h1 id="Ensemble-Method"><a href="#Ensemble-Method" class="headerlink" title="Ensemble Method"></a>Ensemble Method</h1><blockquote>
 <font color="red">rf和gbdt的区别？</font>
 
 <font color="red">boosting和bagging的区别？</font>
@@ -558,7 +361,7 @@ C_\alpha(T)=C(T)+\alpha T</script><p>​        其中： T为任意子树，C(T
 <p>Boosting 则是迭代算法，每一次迭代都根据上一次迭代的预测结果对样本进行加权，所以随着迭代不不断进行行，误差会越来越小，所以模型的 bias 会不不断降低。这种算法无法并行。</p>
 </li>
 </ol>
-<h2><span id="xgboost-rf-lr-you-que-dian-chang-jing">xgboost，rf，lr优缺点场景</span><a href="#xgboost-rf-lr-you-que-dian-chang-jing" class="header-anchor">#</a></h2><p>Xgboost：</p>
+<h2 id="xgboost，rf，lr优缺点场景"><a href="#xgboost，rf，lr优缺点场景" class="headerlink" title="xgboost，rf，lr优缺点场景"></a>xgboost，rf，lr优缺点场景</h2><p>Xgboost：</p>
 <p>优缺点：</p>
 <p>1）在寻找最佳分割点时，考虑传统的枚举每个特征的所有可能分割点的贪心法效率太低，xgboost实现了一种近似的算法。大致的思想是根据百分位法列举几个可能成为分割点的候选者，然后从候选者中根据上面求分割点的公式计算找出最佳的分割点。</p>
 <p>2）xgboost考虑了训练数据为稀疏值的情况，可以为缺失值或者指定的值指定分支的默认方向，这能大大提升算法的效率，paper提到50倍。3）特征列排序后以块的形式存储在内存中，在迭代中可以重复使用；虽然boosting算法迭代必须串行，但是<strong>在处理每个特征列时可以做到并行</strong>。</p>
@@ -584,7 +387,7 @@ C_\alpha(T)=C(T)+\alpha T</script><p>​        其中： T为任意子树，C(T
 <p>缺点：当特征空间很大时，逻辑回归的性能不是很好；容易欠拟合，一般准确度不太高</p>
 <p>不能很好地处理大量多类特征或变量；只能处理两分类问题（在此基础上衍生出来的softmax可以用于多分类），且必须线性可分；对于非线性特征，需要进行转换。</p>
 <p>适用场景：LR同样是很多分类算法的基础组件，它的好处是输出值自然地落在0到1之间，并且有概率意义。因为它本质上是一个线性的分类器，所以处理不好特征之间相关的情况。虽然效果一般，却胜在模型清晰，背后的概率学经得住推敲。它拟合出来的参数就代表了每一个特征(feature)对结果的影响。也是一个理解数据的好工具。</p>
-<h2><span id="random-forest">random forest</span><a href="#random-forest" class="header-anchor">#</a></h2><ol>
+<h2 id="random-forest"><a href="#random-forest" class="headerlink" title="random forest"></a>random forest</h2><ol>
 <li>Random subsets are created from the original dataset (bootstrapping).</li>
 <li>At each node in the decision tree, only <font color="blue">a random set of features</font> are considered to decide the best split.</li>
 <li>foe every subset, a decision tree is fiited by its subset.</li>
@@ -592,7 +395,7 @@ C_\alpha(T)=C(T)+\alpha T</script><p>​        其中： T为任意子树，C(T
 </ol>
 <p><em>Note: The decision trees in random forest can be built on a subset of data and features. Particularly, the sklearn model of random forest uses all features for decision tree and a subset of features are randomly selected for splitting at each node.</em></p>
 <p>To sum up, Random forest <strong>randomly</strong> selects data points and features, and builds <strong>multiple trees (Forest) .</strong></p>
-<h2><span id="adaboost">Adaboost</span><a href="#adaboost" class="header-anchor">#</a></h2><p>Below are the steps for performing the AdaBoost algorithm:</p>
+<h2 id="Adaboost"><a href="#Adaboost" class="headerlink" title="Adaboost"></a>Adaboost</h2><p>Below are the steps for performing the AdaBoost algorithm:</p>
 <ol>
 <li>Initially, all observations in the dataset are given equal weights.</li>
 <li><strong>A model is built on a subset of data.</strong></li>
@@ -601,7 +404,7 @@ C_\alpha(T)=C(T)+\alpha T</script><p>​        其中： T为任意子树，C(T
 <li>While creating the next model, higher weights are given to the data points which were predicted incorrectly.</li>
 <li>This process is repeated until the error function does not change, or we reach the maximum limit of estimators. </li>
 </ol>
-<h2><span id="gbdt">GBDT</span><a href="#gbdt" class="header-anchor">#</a></h2><p>加法模型（additive model）</p>
+<h2 id="GBDT"><a href="#GBDT" class="headerlink" title="GBDT"></a>GBDT</h2><p>加法模型（additive model）</p>
 <script type="math/tex; mode=display">
 f(x)=\sum_{m=1}^M\beta b(x;\gamma_m)</script><p>其中<code>b(x;Υ)</code>为基函数，<code>r</code>为基函数的参数，<code>β</code>为基函数的系数。</p>
 <hr>
@@ -644,7 +447,7 @@ f(x)=\sum_{m=1}^M\beta b(x;\gamma_m)</script><p>其中<code>b(x;Υ)</code>为基
 <p>　　3）使用了一些健壮的损失函数，如huber，可以很好的处理异常值</p>
 <p>GBDT的缺点：</p>
 <p>　　1）由于基学习器之间的依赖关系，难以<strong>并行化Parallel处理</strong>，不过可以通过子采样的SGBT来实现部分并行。</p>
-<h2><span id="xgboost">XGboost</span><a href="#xgboost" class="header-anchor">#</a></h2><p>XgBoost是GBDT的一个工程实现。</p>
+<h2 id="XGboost"><a href="#XGboost" class="headerlink" title="XGboost"></a>XGboost</h2><p>XgBoost是GBDT的一个工程实现。</p>
 <ol>
 <li><p>GDBT在函数空间中利用梯度下降法进行<strong>优化</strong>而XGB在函数空间中使用了牛顿法进行优化。即GDBT在优化中使用了一阶导数信息,而XGB对损失函数进行了二阶泰勒展开,用到了一阶和二阶倒数信息。</p>
 </li>
@@ -657,7 +460,7 @@ f(x)=\sum_{m=1}^M\beta b(x;\gamma_m)</script><p>其中<code>b(x;Υ)</code>为基
 <li><p>XGB在处理每个特征列时可以做到并行。</p>
 </li>
 </ol>
-<h2><span id="lgb">LGB</span><a href="#lgb" class="header-anchor">#</a></h2><p>histogram-based算法通过直方图寻找<font color="red">最优切分点</font>，其建直方图消耗O(#data <em> #feature)，寻找最优切分点消耗O(#bin </em> # feature)，而#bin的数量远小于#data，<strong>所以建直方图为主要时间消耗</strong>。如果能够减少数据量或特征量，那么还能够够加速GBDT的训练。（寻找最优切分点已经进行了优化，那么我们现在应该对建直方图的时间进行优化）</p>
+<h2 id="LGB"><a href="#LGB" class="headerlink" title="LGB"></a>LGB</h2><p>histogram-based算法通过直方图寻找<font color="red">最优切分点</font>，其建直方图消耗O(#data <em> #feature)，寻找最优切分点消耗O(#bin </em> # feature)，而#bin的数量远小于#data，<strong>所以建直方图为主要时间消耗</strong>。如果能够减少数据量或特征量，那么还能够够加速GBDT的训练。（寻找最优切分点已经进行了优化，那么我们现在应该对建直方图的时间进行优化）</p>
 <p><strong>Light GBM beats all the other algorithms when the dataset is extremely large</strong></p>
 <p>Leaf-wise growth may cause over-fitting on <strong>smaller datasets</strong> but that can be avoided by using the ‘max_depth’ parameter for learning.</p>
 <p>（1）xgboost采用的是level-wise的分裂策略，而lightGBM采用了leaf-wise的策略，区别是xgboost对每一层所有节点做无差别分裂，可能有些节点的增益非常小，对结果影响不大，但是xgboost也进行了分裂，带来了务必要的开销。 leaft-wise的做法是在当前所有叶子节点中选择分裂收益最大的节点进行分裂，如此递归进行，很明显leaf-wise这种做法容易过拟合，因为容易陷入比较高的深度中，因此需要对最大深度做限制，从而避免过拟合。</p>
@@ -665,7 +468,7 @@ f(x)=\sum_{m=1}^M\beta b(x;\gamma_m)</script><p>其中<code>b(x;Υ)</code>为基
 <p>（3）直方图做差加速，一个子节点的直方图可以通过父节点的直方图减去兄弟节点的直方图得到，从而加速计算。</p>
 <p>（4）lightgbm支持直接输入categorical 的feature，在对离散特征分裂时，每个取值都当作一个桶，分裂时的增益算的是”是否属于某个category“的gain。类似于one-hot编码。</p>
 <p>（5）xgboost在每一层都动态构建直方图，因为xgboost的直方图算法不是针对某个特定的feature，而是所有feature共享一个直方图(每个样本的权重是二阶导),所以每一层都要重新构建直方图，而lightgbm中对每个特征都有一个直方图，所以构建一次直方图就够了。</p>
-<h3><span id="efb"><strong>EFB</strong></span><a href="#efb" class="header-anchor">#</a></h3><p>two questions:</p>
+<h3 id="EFB"><a href="#EFB" class="headerlink" title="EFB"></a><strong>EFB</strong></h3><p>two questions:</p>
 <blockquote>
 <ol>
 <li>determining which features should be bundled?</li>
@@ -689,7 +492,7 @@ f(x)=\sum_{m=1}^M\beta b(x;\gamma_m)</script><p>其中<code>b(x;Υ)</code>为基
 <li>EFB doesn’t have additional cost on maintaing nonzero data table for each features.</li>
 <li>since many prviously isolated features are bundled together, it can <strong>increase spatial locality and improve the cache hit rate significantly.</strong> </li>
 </ul>
-<h1><span id="ju-lei">聚类</span><a href="#ju-lei" class="header-anchor">#</a></h1><h2><span id="em">EM</span><a href="#em" class="header-anchor">#</a></h2><p>算法步骤：</p>
+<h1 id="聚类"><a href="#聚类" class="headerlink" title="聚类"></a>聚类</h1><h2 id="EM"><a href="#EM" class="headerlink" title="EM"></a>EM</h2><p>算法步骤：</p>
 <ol>
 <li>选定参数的初值θ，开始迭代；</li>
 <li>E步：利用贝叶斯公式估计E(Z)去替代隐藏变量(hidden variance) Z；</li>
@@ -706,79 +509,6 @@ f(x)=\sum_{m=1}^M\beta b(x;\gamma_m)</script><p>其中<code>b(x;Υ)</code>为基
 <li>Initially, we give a initial value to the theta, and then go for iteration;</li>
 <li>E: based on bayes function used the expectation to replace the hidden variance values;</li>
 <li>use MLE to estimate the theta.</li>
-<li>repeat until convergence</li>
+<li>repeat until convergence    </li>
 </ol>
-
-        </div>
-
-        
-            <section class="post-copyright">
-                
-                    <p class="copyright-item">
-                        <span>Author:</span>
-                        <span>Louieworth</span>
-                    </p>
-                
-                
-                    <p class="copyright-item">
-                        <span>Permalink:</span>
-                        <span><a href="http://yoursite.com/algorithms-interview-tbsi/">http://yoursite.com/algorithms-interview-tbsi/</a></span>
-                    </p>
-                
-                
-                    <p class="copyright-item">
-                        <span>License:</span>
-                        <span>Copyright (c) 2019 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
-                    </p>
-                
-                
-                     <p class="copyright-item">
-                         <span>Slogan:</span>
-                         <span>Do you believe in <strong>DESTINY</strong>?</span>
-                     </p>
-                
-
-            </section>
-        
-        <section class="post-tags">
-            <div>
-                <span>Tag(s):</span>
-                <span class="tag">
-                    
-                    
-                        <a href="/tags/ML/"># ML</a>
-                    
-                        <a href="/tags/Experience/"># Experience</a>
-                    
-                        
-                </span>
-            </div>
-            <div>
-                <a href="javascript:window.history.back();">back</a>
-                <span>· </span>
-                <a href="/">home</a>
-            </div>
-        </section>
-        <section class="post-nav">
-            
-                <a class="prev" rel="prev" href="/mathmatics-interview-tbsi/">mathmatics_interview_tbsi</a>
-            
-            
-            <a class="next" rel="next" href="/cv-interview-tbsi/">cv_interview_tbsi</a>
-            
-        </section>
-
-
-    </article>
-</div>
-
-        </div>
-        <footer id="footer" class="footer">
-    <div class="copyright">
-        <span>© Louieworth | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
-    </div>
-</footer>
-
-    </div>
-</body>
-</html>
+</div></article></div></main><footer><div class="paginator"><a href="/mathmatics-interview-tbsi/" class="prev">PREV</a><a href="/cv-interview-tbsi/" class="next">NEXT</a></div><div class="copyright"><p>© 2021 <a href="http://yoursite.com">Louieworth</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script></body></html>

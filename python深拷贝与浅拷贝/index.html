@@ -1,204 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <meta name="author" content="Louieworth">
-
-
-    <meta name="subtitle" content="Stay foolish, stay healthy.">
-
-
-    <meta name="description" content="Stay foolish, stay healthy">
-
-
-
-<title>python深拷贝与浅拷贝 | Louieworth&#39;s blog</title>
-
-
-
-    <link rel="icon" href="/favicon.png">
-
-
-
-
-    <!-- stylesheets list from _config.yml -->
-    
-    <link rel="stylesheet" href="/css/style.css">
-    
-
-
-
-    <!-- scripts list from _config.yml -->
-    
-    <script src="/js/script.js"></script>
-    
-    <script src="/js/tocbot.min.js"></script>
-    
-
-
-
-    
-    
-        
-    
-
-
-<!-- hexo injector head_end start -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> python深拷贝与浅拷贝 · Louieworth's blog</title><meta name="description" content="python深拷贝与浅拷贝 - Louieworth"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="http://yoursite.com/atom.xml" title="Louieworth's blog"><!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Louieworth's blog" type="application/atom+xml">
-</head>
-<body>
-    <div class="wrapper">
-        <header>
-    <nav class="navbar">
-        <div class="container">
-            <div class="navbar-header header-logo"><a href="/">Louieworth&#39;s Blog</a></div>
-            <div class="menu navbar-right">
-                
-                    <a class="menu-item" href="/archives">Posts</a>
-                
-                    <a class="menu-item" href="/tags">Tags</a>
-                
-                    <a class="menu-item" href="/about">About</a>
-                
-                    <a class="menu-item" href="/atom.xml">RSS</a>
-                
-                <input id="switch_default" type="checkbox" class="switch_default">
-                <label for="switch_default" class="toggleBtn"></label>
-            </div>
-        </div>
-    </nav>
-
-    
-    <nav class="navbar-mobile" id="nav-mobile">
-        <div class="container">
-            <div class="navbar-header">
-                <div>
-                    <a href="/">Louieworth&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
-                </div>
-                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
-            </div>
-            <div class="menu" id="mobile-menu">
-                
-                    <a class="menu-item" href="/archives">Posts</a>
-                
-                    <a class="menu-item" href="/tags">Tags</a>
-                
-                    <a class="menu-item" href="/about">About</a>
-                
-                    <a class="menu-item" href="/atom.xml">RSS</a>
-                
-            </div>
-        </div>
-    </nav>
-
-</header>
-<script>
-    var mobileBtn = function f() {
-        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
-        var mobileMenu = document.getElementById("mobile-menu");
-        if(toggleMenu.classList.contains("active")){
-           toggleMenu.classList.remove("active")
-            mobileMenu.classList.remove("active")
-        }else{
-            toggleMenu.classList.add("active")
-            mobileMenu.classList.add("active")
-        }
-    }
-</script>
-        <div class="main">
-            <div class="container">
-    
-    
-        <div class="post-toc">
-    <div class="tocbot-list">
-    </div>
-    <div class="tocbot-list-menu">
-        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
-        <a onclick="go_top()">Back to top</a>
-        <a onclick="go_bottom()">Go to bottom</a>
-    </div>
-</div>
-
-<script>
-    document.ready(
-        function () {
-            tocbot.init({
-                tocSelector: '.tocbot-list',
-                contentSelector: '.post-content',
-                headingSelector: 'h1, h2, h3, h4, h5',
-                collapseDepth: 1,
-                orderedList: false,
-                scrollSmooth: true,
-            })
-        }
-    )
-
-    function expand_toc() {
-        var b = document.querySelector(".tocbot-toc-expand");
-        tocbot.init({
-            tocSelector: '.tocbot-list',
-            contentSelector: '.post-content',
-            headingSelector: 'h1, h2, h3, h4, h5',
-            collapseDepth: 6,
-            orderedList: false,
-            scrollSmooth: true,
-        });
-        b.setAttribute("onclick", "collapse_toc()");
-        b.innerHTML = "Collapse all"
-    }
-
-    function collapse_toc() {
-        var b = document.querySelector(".tocbot-toc-expand");
-        tocbot.init({
-            tocSelector: '.tocbot-list',
-            contentSelector: '.post-content',
-            headingSelector: 'h1, h2, h3, h4, h5',
-            collapseDepth: 1,
-            orderedList: false,
-            scrollSmooth: true,
-        });
-        b.setAttribute("onclick", "expand_toc()");
-        b.innerHTML = "Expand all"
-    }
-
-    function go_top() {
-        window.scrollTo(0, 0);
-    }
-
-    function go_bottom() {
-        window.scrollTo(0, document.body.scrollHeight);
-    }
-
-</script>
-    
-
-    
-    <article class="post-wrap">
-        <header class="post-header">
-            <h1 class="post-title">python深拷贝与浅拷贝</h1>
-            
-                <div class="post-meta">
-                    
-                        Author: <a itemprop="author" rel="author" href="/">Louieworth</a>
-                    
-
-                    
-                        <span class="post-time">
-                        Date: <a href="#">December 7, 2020&nbsp;&nbsp;10:05:42</a>
-                        </span>
-                    
-                    
-                </div>
-            
-        </header>
-
-        <div class="post-content">
-            <script src="/assets/js/APlayer.min.js"> </script><h1><span id="summary">Summary</span><a href="#summary" class="header-anchor">#</a></h1><ol>
+</head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/about/" target="_self" class="nav-list-link">ABOUT</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">python深拷贝与浅拷贝</h1><div class="tags"><a href="/tags/Python/" class="tag-title">#Python</a></div><div class="post-info">Dec 7, 2020</div><div class="post-content"><script src="/assets/js/APlayer.min.js"> </script><h1 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h1><ol>
 <li>可变数据类型与不可变数据类型<ol>
 <li>不可变数据类型：当我们对<strong>字符串、数值型、布尔值</strong>的数据改变变量名，并不会影响到数据在内存中的位置。</li>
 <li>可变数据类型：虽然是相同的数据，但是变量名字不同，<strong>内存中仍然会开辟新的内存地址</strong>来进行存放相同的数据，</li>
@@ -213,7 +16,7 @@
 <a id="more"></a>
 </li>
 </ol>
-<h1><span id="python-dui-xiang">Python对象</span><a href="#python-dui-xiang" class="header-anchor">#</a></h1><p><strong>在python中，一切皆可对象。</strong>换句话说，我们在pyhton中构造的任何数据类型都可以是一个对象，不管是数字，字符串，字典等常见数据类型，或者说函数，甚至是我们导入的模块。</p>
+<h1 id="Python对象"><a href="#Python对象" class="headerlink" title="Python对象"></a>Python对象</h1><p><strong>在python中，一切皆可对象。</strong>换句话说，我们在pyhton中构造的任何数据类型都可以是一个对象，不管是数字，字符串，字典等常见数据类型，或者说函数，甚至是我们导入的模块。</p>
 <p>所有python的对象拥有三个属性：</p>
 <ul>
 <li>身份（数据地址，表示身份）</li>
@@ -225,7 +28,7 @@
 <blockquote>
 <p>python中，万物皆可对象</p>
 </blockquote>
-<h1><span id="shu-ju-lei-xing">数据类型</span><a href="#shu-ju-lei-xing" class="header-anchor">#</a></h1><p>数据类型分为两种可变数据类型与不可变数据类型。</p>
+<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><p>数据类型分为两种可变数据类型与不可变数据类型。</p>
 <ul>
 <li>不可变数据类型： <font color="red">Int， string，Bool, Tuple,数值，字符串，布尔值</font>, 所谓不可变数据类型是指对象的<font color="blue"><strong>身份</strong>（地址）和<strong>值</strong>都不可变</font>。新创建的对象被关联到原来的变量名，旧的对象被丢弃，垃圾回收器会在适合的时候回收这些对象。</li>
 <li>可变数据类型：<font color="red">List, Dict, Set</font>， 所谓可变数据类型是指对象的值可变，但是<font color="blue">身份（地址）是不可变的</font>。</li>
@@ -246,9 +49,9 @@
 </ul>
 <p>请看下图：</p>
 <p><img src="/python%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/6.png" style="zoom:50%;"></p>
-<h2><span id="zeng-jia-he-shan-chu">增加和删除</span><a href="#zeng-jia-he-shan-chu" class="header-anchor">#</a></h2><p>当我们给可变数据类型增加或者删除元素的时候，它的内存地址是不变的。</p>
+<h2 id="增加和删除"><a href="#增加和删除" class="headerlink" title="增加和删除"></a>增加和删除</h2><p>当我们给可变数据类型增加或者删除元素的时候，它的内存地址是不变的。</p>
 <p><img src="/python%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/7.png" alt="7" style="zoom:50%;"></p>
-<h1><span id="shen-kao-bei-yu-qian-kao-bei">深拷贝与浅拷贝</span><a href="#shen-kao-bei-yu-qian-kao-bei" class="header-anchor">#</a></h1><h2><span id="qian-kao-bei">浅拷贝</span><a href="#qian-kao-bei" class="header-anchor">#</a></h2><blockquote>
+<h1 id="深拷贝与浅拷贝"><a href="#深拷贝与浅拷贝" class="headerlink" title="深拷贝与浅拷贝"></a>深拷贝与浅拷贝</h1><h2 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h2><blockquote>
 <p> <strong>浅拷贝只是拷贝数据的第一层，不会拷贝子对象</strong>。</p>
 </blockquote>
 <ol>
@@ -271,7 +74,7 @@
 </ul>
 <p>通过一个图形来说明这个关系：</p>
 <p><img src="/python%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/11.webp" alt="11" style="zoom:50%;"></p>
-<h2><span id="shen-kao-bei">深拷贝</span><a href="#shen-kao-bei" class="header-anchor">#</a></h2><p>深拷贝不同于浅拷贝的是：<strong>深拷贝会拷贝所有的可变数据类型，包含嵌套的数据中的可变数据</strong>。</p>
+<h2 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h2><p>深拷贝不同于浅拷贝的是：<strong>深拷贝会拷贝所有的可变数据类型，包含嵌套的数据中的可变数据</strong>。</p>
 <p>深拷贝是变量对应的值复制到新的内存地址中，而不是复制数据对应的内存地址。</p>
 <ol>
 <li><p>不可变数据类型的深拷贝</p>
@@ -294,7 +97,7 @@
 <li>深拷贝对里面的不可变数据类型直接复制数据和地址，和可变类型的浅拷贝是相同的效果。</li>
 </ul>
 <p>换句话说，当不存在嵌套的时候，对于可变数据类型，深拷贝和浅拷贝本质上是一样，但是如果存在嵌套呢？</p>
-<h2><span id="cun-zai-qian-tao-de-shen-kao-bei-yu-qian-kao-bei">存在嵌套的深拷贝与浅拷贝</span><a href="#cun-zai-qian-tao-de-shen-kao-bei-yu-qian-kao-bei" class="header-anchor">#</a></h2><ol>
+<h2 id="存在嵌套的深拷贝与浅拷贝"><a href="#存在嵌套的深拷贝与浅拷贝" class="headerlink" title="存在嵌套的深拷贝与浅拷贝"></a>存在嵌套的深拷贝与浅拷贝</h2><ol>
 <li><p>浅拷贝</p>
 <p><img src="/python%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/19.webp" alt="19" style="zoom:50%;"></p>
 <p>现在去理解浅拷贝为：</p>
@@ -319,78 +122,7 @@
 <blockquote>
 <p>我们查看第三个元素即里面嵌套列表的内存，发现只有深拷贝是不同的，因为这个嵌套的列表是可变数据类型，深拷贝在拷贝了最外层之后还会继续拷贝子层级的可变类型。</p>
 </blockquote>
-<h1><span id="reference">Reference</span><a href="#reference" class="header-anchor">#</a></h1><ol>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ol>
 <li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/KrdXyYMtyElUGuPH5eNYvg">python深拷贝与浅拷贝详解</a></li>
 </ol>
-
-        </div>
-
-        
-            <section class="post-copyright">
-                
-                    <p class="copyright-item">
-                        <span>Author:</span>
-                        <span>Louieworth</span>
-                    </p>
-                
-                
-                    <p class="copyright-item">
-                        <span>Permalink:</span>
-                        <span><a href="http://yoursite.com/python%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/">http://yoursite.com/python%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/</a></span>
-                    </p>
-                
-                
-                    <p class="copyright-item">
-                        <span>License:</span>
-                        <span>Copyright (c) 2019 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
-                    </p>
-                
-                
-                     <p class="copyright-item">
-                         <span>Slogan:</span>
-                         <span>Do you believe in <strong>DESTINY</strong>?</span>
-                     </p>
-                
-
-            </section>
-        
-        <section class="post-tags">
-            <div>
-                <span>Tag(s):</span>
-                <span class="tag">
-                    
-                    
-                        <a href="/tags/Python/"># Python</a>
-                    
-                        
-                </span>
-            </div>
-            <div>
-                <a href="javascript:window.history.back();">back</a>
-                <span>· </span>
-                <a href="/">home</a>
-            </div>
-        </section>
-        <section class="post-nav">
-            
-                <a class="prev" rel="prev" href="/Batch-normalization/">Batch_normalization</a>
-            
-            
-            <a class="next" rel="next" href="/python-basic/">python-basic</a>
-            
-        </section>
-
-
-    </article>
-</div>
-
-        </div>
-        <footer id="footer" class="footer">
-    <div class="copyright">
-        <span>© Louieworth | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
-    </div>
-</footer>
-
-    </div>
-</body>
-</html>
+</div></article></div></main><footer><div class="paginator"><a href="/Batch-normalization/" class="prev">PREV</a><a href="/python-basic/" class="next">NEXT</a></div><div class="copyright"><p>© 2021 <a href="http://yoursite.com">Louieworth</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script></body></html>

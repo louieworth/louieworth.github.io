@@ -1,217 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <meta name="author" content="Louieworth">
-
-
-    <meta name="subtitle" content="Stay foolish, stay healthy.">
-
-
-    <meta name="description" content="Stay foolish, stay healthy">
-
-
-
-<title>WaveNet语音生成模型 | Louieworth&#39;s blog</title>
-
-
-
-    <link rel="icon" href="/favicon.png">
-
-
-
-
-    <!-- stylesheets list from _config.yml -->
-    
-    <link rel="stylesheet" href="/css/style.css">
-    
-
-
-
-    <!-- scripts list from _config.yml -->
-    
-    <script src="/js/script.js"></script>
-    
-    <script src="/js/tocbot.min.js"></script>
-    
-
-
-
-    
-    
-        
-    
-
-
-<!-- hexo injector head_end start -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> WaveNet语音生成模型 · Louieworth's blog</title><meta name="description" content="WaveNet语音生成模型 - Louieworth"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="http://yoursite.com/atom.xml" title="Louieworth's blog"><!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Louieworth's blog" type="application/atom+xml">
-</head>
-<body>
-    <div class="wrapper">
-        <header>
-    <nav class="navbar">
-        <div class="container">
-            <div class="navbar-header header-logo"><a href="/">Louieworth&#39;s Blog</a></div>
-            <div class="menu navbar-right">
-                
-                    <a class="menu-item" href="/archives">Posts</a>
-                
-                    <a class="menu-item" href="/tags">Tags</a>
-                
-                    <a class="menu-item" href="/about">About</a>
-                
-                    <a class="menu-item" href="/atom.xml">RSS</a>
-                
-                <input id="switch_default" type="checkbox" class="switch_default">
-                <label for="switch_default" class="toggleBtn"></label>
-            </div>
-        </div>
-    </nav>
-
-    
-    <nav class="navbar-mobile" id="nav-mobile">
-        <div class="container">
-            <div class="navbar-header">
-                <div>
-                    <a href="/">Louieworth&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
-                </div>
-                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
-            </div>
-            <div class="menu" id="mobile-menu">
-                
-                    <a class="menu-item" href="/archives">Posts</a>
-                
-                    <a class="menu-item" href="/tags">Tags</a>
-                
-                    <a class="menu-item" href="/about">About</a>
-                
-                    <a class="menu-item" href="/atom.xml">RSS</a>
-                
-            </div>
-        </div>
-    </nav>
-
-</header>
-<script>
-    var mobileBtn = function f() {
-        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
-        var mobileMenu = document.getElementById("mobile-menu");
-        if(toggleMenu.classList.contains("active")){
-           toggleMenu.classList.remove("active")
-            mobileMenu.classList.remove("active")
-        }else{
-            toggleMenu.classList.add("active")
-            mobileMenu.classList.add("active")
-        }
-    }
-</script>
-        <div class="main">
-            <div class="container">
-    
-    
-        <div class="post-toc">
-    <div class="tocbot-list">
-    </div>
-    <div class="tocbot-list-menu">
-        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
-        <a onclick="go_top()">Back to top</a>
-        <a onclick="go_bottom()">Go to bottom</a>
-    </div>
-</div>
-
-<script>
-    document.ready(
-        function () {
-            tocbot.init({
-                tocSelector: '.tocbot-list',
-                contentSelector: '.post-content',
-                headingSelector: 'h1, h2, h3, h4, h5',
-                collapseDepth: 1,
-                orderedList: false,
-                scrollSmooth: true,
-            })
-        }
-    )
-
-    function expand_toc() {
-        var b = document.querySelector(".tocbot-toc-expand");
-        tocbot.init({
-            tocSelector: '.tocbot-list',
-            contentSelector: '.post-content',
-            headingSelector: 'h1, h2, h3, h4, h5',
-            collapseDepth: 6,
-            orderedList: false,
-            scrollSmooth: true,
-        });
-        b.setAttribute("onclick", "collapse_toc()");
-        b.innerHTML = "Collapse all"
-    }
-
-    function collapse_toc() {
-        var b = document.querySelector(".tocbot-toc-expand");
-        tocbot.init({
-            tocSelector: '.tocbot-list',
-            contentSelector: '.post-content',
-            headingSelector: 'h1, h2, h3, h4, h5',
-            collapseDepth: 1,
-            orderedList: false,
-            scrollSmooth: true,
-        });
-        b.setAttribute("onclick", "expand_toc()");
-        b.innerHTML = "Expand all"
-    }
-
-    function go_top() {
-        window.scrollTo(0, 0);
-    }
-
-    function go_bottom() {
-        window.scrollTo(0, document.body.scrollHeight);
-    }
-
-</script>
-    
-
-    
-    <article class="post-wrap">
-        <header class="post-header">
-            <h1 class="post-title">WaveNet语音生成模型</h1>
-            
-                <div class="post-meta">
-                    
-                        Author: <a itemprop="author" rel="author" href="/">Louieworth</a>
-                    
-
-                    
-                        <span class="post-time">
-                        Date: <a href="#">December 18, 2020&nbsp;&nbsp;21:04:24</a>
-                        </span>
-                    
-                    
-                </div>
-            
-        </header>
-
-        <div class="post-content">
-            <script src="/assets/js/APlayer.min.js"> </script><!--toc-->
+</head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/about/" target="_self" class="nav-list-link">ABOUT</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">WaveNet语音生成模型</h1><div class="tags"><a href="/tags/DL/" class="tag-title">#DL</a></div><div class="post-info">Dec 18, 2020</div><div class="post-content"><script src="/assets/js/APlayer.min.js"> </script><!--toc-->
 <p>论文阅读： WaveNet: A Generative Model for raw Audio</p>
 <p><img src="/WaveNet%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/1.jpg" alt></p>
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/24568596">源码详解</a></p>
 <p><strong>评论：</strong>文章对模型的设计非常好，很有参考价值。模型中采用的扩大卷积的方法来极大的增加感受野，对序列数据建模很有用。</p>
 <a id="more"></a>
-<h1><span id="abstract">Abstract</span><a href="#abstract" class="header-anchor">#</a></h1><p>本文提出了一种对于生成原始语音模型的深度神经网络。这个模型是完全的概率自回归模型。有以下几个亮点：</p>
+<h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>本文提出了一种对于生成原始语音模型的深度神经网络。这个模型是完全的概率自回归模型。有以下几个亮点：</p>
 <ol>
 <li>通过这个模型，可以生成更加真实的语音。</li>
 <li>可以以相同的保真度捕捉多人的语音并且可以在多人之间切换。</li>
 <li>在音乐上的合成，也会生成高保真的语音片段。</li>
 <li>作为一个判别模型，在音素识别上有可观的前景。</li>
 </ol>
-<h1><span id="introduction">Introduction</span><a href="#introduction" class="header-anchor">#</a></h1><p>受到最近利用神经自回归生成模型模拟复杂的分布例如（图像和文字）的启发，这篇文章挖掘了原始语音生成的一些技术：使用神经网络架构，把<strong>像素或者单词的联合概率作为条件概率分布的乘积的建模方法</strong>。本文要试图解决的问题是：</p>
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>受到最近利用神经自回归生成模型模拟复杂的分布例如（图像和文字）的启发，这篇文章挖掘了原始语音生成的一些技术：使用神经网络架构，把<strong>像素或者单词的联合概率作为条件概率分布的乘积的建模方法</strong>。本文要试图解决的问题是：</p>
 <p>这些方法是否可以在宽带原始音频波形的生成中的应用。这些音频波形信号具有非常高的短时分辨率。</p>
 <p>基于 PixelCNN, 这篇文章的主要贡献是：</p>
 <ul>
@@ -224,7 +27,7 @@
 <li><p>同样的架构在小规模语音识别数据集的测试中获得了很好的结果，同时用于音乐等其他形态的音频生成中也有很好的前景。</p>
 </li>
 </ul>
-<h1><span id="wavenet">WaveNet</span><a href="#wavenet" class="header-anchor">#</a></h1><p>类似于PixelCNN，我们有联合概率密度分布 $x = {x_1,…,x_T}$, 其作为条件概率密度的乘积：</p>
+<h1 id="WaveNet"><a href="#WaveNet" class="headerlink" title="WaveNet"></a>WaveNet</h1><p>类似于PixelCNN，我们有联合概率密度分布 $x = {x_1,…,x_T}$, 其作为条件概率密度的乘积：</p>
 <script type="math/tex; mode=display">
 p(x)=\prod_{t=1}^Tp(x_t|x_1,...,x_{t-1})</script><p>其实我们可以观察到，每一个音频样本都取决于前面的样本，也就说这里是一个时间序列模型。类似于PixelCNN，有以下特点：</p>
 <ul>
@@ -232,7 +35,7 @@ p(x)=\prod_{t=1}^Tp(x_t|x_1,...,x_{t-1})</script><p>其实我们可以观察到�
 <li>模型使用softamx的层来输出，使用最大似然函数（MLE）进行优化。</li>
 <li>因为对数易于处理，我们通过MLE在验证集上进行超参数优化的时候可以很容易测定模型的overfitting/underfitting。</li>
 </ul>
-<h2><span id="kuo-da-yin-guo-juan-ji-dilated-causal-convolutions">扩大因果卷积(Dilated causal convolutions)</span><a href="#kuo-da-yin-guo-juan-ji-dilated-causal-convolutions" class="header-anchor">#</a></h2><p><img src="/WaveNet%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/2.jpg" alt></p>
+<h2 id="扩大因果卷积-Dilated-causal-convolutions"><a href="#扩大因果卷积-Dilated-causal-convolutions" class="headerlink" title="扩大因果卷积(Dilated causal convolutions)"></a>扩大因果卷积(Dilated causal convolutions)</h2><p><img src="/WaveNet%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/2.jpg" alt></p>
 <p>使用因果卷积(causal convolutions)来保证 $p\left(x_{t+1} \mid x_{1}, \ldots, x_{t}\right)$ 不包含$x_{t+1}, …., x_T$的信息。对于图像处理任务中，类似的是采用masked convolution。对于1-D数据，秩序将输出偏移几步就行。动态图参考： <a href="https://link.zhihu.com/?target=https%3A//deepmind.com/blog/wavenet-generative-model-raw-audio/">WaveNet: A Generative Model for Raw Audio | DeepMind</a></p>
 <p>Causal convolutions和RNN的区别：</p>
 <ol>
@@ -248,10 +51,10 @@ p(x)=\prod_{t=1}^Tp(x_t|x_1,...,x_{t-1})</script><p>其实我们可以观察到�
 <li>指数级增长(exponentially increasing)的扩大可以引起感受野指数级的增长。例如每一组1;2;4;:::;512这样的卷积模块都拥有1024大小的感受野， 可视为与1x1024卷积对等的更高效的（非线性）判别式卷积操作 。</li>
 <li>将多组这样的模块堆叠起来可以进一步增长模型的容量和感受野。</li>
 </ul>
-<h2><span id="softmax-de-fen-bu">SoftMax的分布</span><a href="#softmax-de-fen-bu" class="header-anchor">#</a></h2><p>因为原始音频是按照16-bit（one per timestep）的整数值序列储存的，每个timestep，softmax层需要输出65536个概率值。为了便于运算，我们应用了<img src="https://www.zhihu.com/equation?tex=%5Cmu+-" alt="[公式]">law companding transformation进行转换，将输出概率数目降低为256个。公式如下：</p>
+<h2 id="SoftMax的分布"><a href="#SoftMax的分布" class="headerlink" title="SoftMax的分布"></a>SoftMax的分布</h2><p>因为原始音频是按照16-bit（one per timestep）的整数值序列储存的，每个timestep，softmax层需要输出65536个概率值。为了便于运算，我们应用了<img src="https://www.zhihu.com/equation?tex=%5Cmu+-" alt="[公式]">law companding transformation进行转换，将输出概率数目降低为256个。公式如下：</p>
 <script type="math/tex; mode=display">
 f\left(x_{t}\right)=\operatorname{sign}\left(x_{t}\right) \frac{\ln \left(1+\mu\left|x_{t}\right|\right)}{\ln (1+\mu)}</script><p>其中$-1&lt;x_t&lt;1, \mu=255$</p>
-<h2><span id="men-kong-dan-yuan">门控单元</span><a href="#men-kong-dan-yuan" class="header-anchor">#</a></h2><p>本文也采用了类似于PixelCNN的门控单元：</p>
+<h2 id="门控单元"><a href="#门控单元" class="headerlink" title="门控单元"></a>门控单元</h2><p>本文也采用了类似于PixelCNN的门控单元：</p>
 <script type="math/tex; mode=display">
 \mathbf{z}=\tanh \left(W_{f, k} * \mathbf{x}\right) \odot \sigma\left(W_{g, k} * \mathbf{x}\right)</script><ul>
 <li>* ,一个卷积操作</li>
@@ -265,9 +68,9 @@ f\left(x_{t}\right)=\operatorname{sign}\left(x_{t}\right) \frac{\ln \left(1+\mu\
 <p>为什么不使用ReLU？</p>
 </blockquote>
 <p>In our initial experiments, we observed that this non-linearity worked significantly better than the rectified linear activation function (Nair &amp; Hinton, 2010) for modeling audio signals. 因为在音频信号分析中，sigmoid就是好一些。</p>
-<h2><span id="residual-and-skip-connections">Residual and skip connections</span><a href="#residual-and-skip-connections" class="header-anchor">#</a></h2><p><img src="/WaveNet%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/4.jpg" alt></p>
+<h2 id="Residual-and-skip-connections"><a href="#Residual-and-skip-connections" class="headerlink" title="Residual and skip connections"></a>Residual and skip connections</h2><p><img src="/WaveNet%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/4.jpg" alt></p>
 <p>文章中使用了residual 和skip connection技术来使模型更快收敛，并且使梯度能传到到更深层模型。</p>
-<h2><span id="conditional-wavenet">Conditional WaveNet</span><a href="#conditional-wavenet" class="header-anchor">#</a></h2><p>接受额外输出的h，我们可以如下建模：</p>
+<h2 id="Conditional-WaveNet"><a href="#Conditional-WaveNet" class="headerlink" title="Conditional WaveNet"></a>Conditional WaveNet</h2><p>接受额外输出的h，我们可以如下建模：</p>
 <script type="math/tex; mode=display">
 p(\mathbf{x} \mid \mathbf{h})=\prod_{t=1}^{T} p\left(x_{t} \mid x_{1}, \ldots, x_{t-1}, \mathbf{h}\right)</script><p>通过条件分布输入其他变量建模，我们可以使得WaveNet生成具有目标特点的音频。额外信息可以是：在多人语音我们输入一个人声音作为额外输入，在TTS(text-to-speech)的任务中，我们可以额外输入text的信息。文章中有两种建模的方法：全局方法(global conditioning) 以及局部方法 (local conditioning).</p>
 <ol>
@@ -284,7 +87,7 @@ p(\mathbf{x} \mid \mathbf{h})=\prod_{t=1}^{T} p\left(x_{t} \mid x_{1}, \ldots, x
 <p>如果采用了transposed convolutional network (learned upsampling),我们也可以直接使用$V_{f,k} * h$,但是没有1x1卷积好</p>
 </li>
 </ol>
-<h2><span id="context-stacking">Context Stacking</span><a href="#context-stacking" class="header-anchor">#</a></h2><p>我们提到的增加感受野(receptive filed)的方法：</p>
+<h2 id="Context-Stacking"><a href="#Context-Stacking" class="headerlink" title="Context Stacking"></a>Context Stacking</h2><p>我们提到的增加感受野(receptive filed)的方法：</p>
 <ul>
 <li>增加扩大卷积的数目</li>
 <li>使用更多层数</li>
@@ -293,99 +96,28 @@ p(\mathbf{x} \mid \mathbf{h})=\prod_{t=1}^{T} p\left(x_{t} \mid x_{1}, \ldots, x
 </ul>
 <p>另外一种可以增加感受的野的补充方法是：</p>
 <p>使用一个独立的更小的上下文堆栈来处理语音信号的长跨度信息，并局部调试一个更大的WaveNet只用来处理语音信号的更短的局部信息（在结尾处截断）。可以使用多个变长的具有不同数量隐藏单元的上下文堆栈，拥有越大感受野的堆栈其每层含有的隐藏单元越少。上下文堆栈还可以使用池化层来降低频率，这使得计算成本被控制在合理范围，也与用更长的跨度对时间相关性建模会使体量更小的直觉相吻合。</p>
-<h1><span id="experiences">Experiences</span><a href="#experiences" class="header-anchor">#</a></h1><p>主要进行了三个Tasks的实验：</p>
+<h1 id="Experiences"><a href="#Experiences" class="headerlink" title="Experiences"></a>Experiences</h1><p>主要进行了三个Tasks的实验：</p>
 <ul>
 <li>多说话人的语音合成（没有基于文本训练）</li>
 <li>文本合成语音</li>
 <li>语音音频建模</li>
 </ul>
 <p>关于实验部分：请见deepmind的<a target="_blank" rel="noopener" href="https://www.deepmind.com/blog/article/wavenet-generative-model-raw-audio">post</a></p>
-<h2><span id="multi-speaker-speech-generation">Multi-Speaker Speech Generation</span><a href="#multi-speaker-speech-generation" class="header-anchor">#</a></h2><p>使用的多人语音材料是来自于: CSTR voice cloning toolkit (VCTK)，基于说话人的条件进行了建模，数据集一共包括44个小时的109个位不同的说话人。</p>
+<h2 id="Multi-Speaker-Speech-Generation"><a href="#Multi-Speaker-Speech-Generation" class="headerlink" title="Multi-Speaker Speech Generation"></a>Multi-Speaker Speech Generation</h2><p>使用的多人语音材料是来自于: CSTR voice cloning toolkit (VCTK)，基于说话人的条件进行了建模，数据集一共包括44个小时的109个位不同的说话人。</p>
 <p>因为不是基本文本信息建模，所以这个也会产生一些现实中并不存在但是听起来还是不错的一些人类语言。这就像语言生成图片一样，乍一看还不错，细瞅瞅就不行了。部分由于感受野的大小，这些语音在长跨度上缺少连贯性，基本上每次只能记住2-3个场景信息。</p>
 <p>通过one-hot编码，单个的WaveNet可以建模任意一个说话者语音。我们发现，与在单人的数据集训练上相比，增加训练集说话人的数量可以在验证集上获得更好的效果。这表示：WaveNet的说话表达是多人共享的。同时WaveNet也会捕捉其他语音信息，例如声音质量，说话人的呼吸以及嘴部动作等。</p>
-<h2><span id="text-to-speech">Text-to-Speech</span><a href="#text-to-speech" class="header-anchor">#</a></h2><p>数据集来自于Google’s North American English and Mandarin Chinese TTS systems。</p>
+<h2 id="Text-to-Speech"><a href="#Text-to-Speech" class="headerlink" title="Text-to-Speech"></a>Text-to-Speech</h2><p>数据集来自于Google’s North American English and Mandarin Chinese TTS systems。</p>
 <p>在TTS 的任务中，WaveNet只考虑了(were locally conditioned on)语言学特征。同时也考虑了语言学特征和对数基频(logarithmic fundamental frequency, $logF_0$)作为额外的feature考虑到模型生成中去。这个模型的感受野是250毫秒，还构建了HMM单元选择拼接(Gonzalvo et al., 2016)语音合成器作为基于例句的基线，以及LSTM-RNN统计参数(Zen et al., 2016)语音合成器作为基于模型的基线。整个评价采用了主观评分模式。五分制度（5为最高分。）</p>
 <p><img src="/WaveNet%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/5.jpg" alt></p>
-<h2><span id="music">Music</span><a href="#music" class="header-anchor">#</a></h2><p>数据集来自于：</p>
+<h2 id="Music"><a href="#Music" class="headerlink" title="Music"></a>Music</h2><p>数据集来自于：</p>
 <ul>
 <li>the MagnaTagATune dataset (Law&amp;Von Ahn, 2009), which consists of about 200 hours of music audio. Each 29-second clip is annotated with tags from a set of 188, which describe the genre, instrumentation, tempo, volume and mood of the music.</li>
 <li>the YouTube piano dataset, which consists of about 60 hours of solo piano music obtained from YouTube videos. Because it is constrained to a single instrument, it is considerably easier to model.</li>
 </ul>
 <p>我们发现，对于让一段音乐获得音乐性，增加感受野的长度是非常重要的。即使感受野增加到几秒钟，这个模型也没表现出长的连续性。我们发现，即使是非条件建模，这个模型还是不错的，特别在合声部分。</p>
 <p>但是，我们希望进行条件建模，例如说题材和乐器等。类似于条件语音生成一般，我们插入了依赖于与每个训练片段相关联的标签的二进制向量表示的bias。当我们采样的时候，这就可以使我们能够去控制我们的输出样本，并且效果还不错。</p>
-<h2><span id="speech-recognition">Speech Recognition</span><a href="#speech-recognition" class="header-anchor">#</a></h2><p>WaveNet也可以用在语音识别里面。总结了下前人的工作，近期的研究转向到原始语音数据建模。例如：(Palaz et al., 2013; T¨uske et al., 2014; Hoshen et al., 2015; Sainath et al., 2015). LSTM-RNNs 是这些工作的核心部分，LSTM使得我们可以建立更大的感受野但是同时我们可以使用更小的代价函数。</p>
-<h1><span id="conclusion">Conclusion</span><a href="#conclusion" class="header-anchor">#</a></h1><p>本文提出了WaveNet，利用自回归且结合了扩大因果卷积增加感受野，这对于长时序问题建模的依赖非常重要。WaveNet可以通过两种方式建模，global (e.g. 语音识别)或者local way (e.g 语言特征的获取)。</p>
-<h1><span id="reference">Reference</span><a href="#reference" class="header-anchor">#</a></h1><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/24317897">谷歌WaveNet如何通过深度学习方法来生成声音？</a></p>
+<h2 id="Speech-Recognition"><a href="#Speech-Recognition" class="headerlink" title="Speech Recognition"></a>Speech Recognition</h2><p>WaveNet也可以用在语音识别里面。总结了下前人的工作，近期的研究转向到原始语音数据建模。例如：(Palaz et al., 2013; T¨uske et al., 2014; Hoshen et al., 2015; Sainath et al., 2015). LSTM-RNNs 是这些工作的核心部分，LSTM使得我们可以建立更大的感受野但是同时我们可以使用更小的代价函数。</p>
+<h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><p>本文提出了WaveNet，利用自回归且结合了扩大因果卷积增加感受野，这对于长时序问题建模的依赖非常重要。WaveNet可以通过两种方式建模，global (e.g. 语音识别)或者local way (e.g 语言特征的获取)。</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/24317897">谷歌WaveNet如何通过深度学习方法来生成声音？</a></p>
 <p><a target="_blank" rel="noopener" href="https://my.oschina.net/stephenyng/blog/1621584">WaveNet翻译</a></p>
-
-        </div>
-
-        
-            <section class="post-copyright">
-                
-                    <p class="copyright-item">
-                        <span>Author:</span>
-                        <span>Louieworth</span>
-                    </p>
-                
-                
-                    <p class="copyright-item">
-                        <span>Permalink:</span>
-                        <span><a href="http://yoursite.com/WaveNet%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/">http://yoursite.com/WaveNet%E8%AF%AD%E9%9F%B3%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B/</a></span>
-                    </p>
-                
-                
-                    <p class="copyright-item">
-                        <span>License:</span>
-                        <span>Copyright (c) 2019 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
-                    </p>
-                
-                
-                     <p class="copyright-item">
-                         <span>Slogan:</span>
-                         <span>Do you believe in <strong>DESTINY</strong>?</span>
-                     </p>
-                
-
-            </section>
-        
-        <section class="post-tags">
-            <div>
-                <span>Tag(s):</span>
-                <span class="tag">
-                    
-                    
-                        <a href="/tags/DL/"># DL</a>
-                    
-                        
-                </span>
-            </div>
-            <div>
-                <a href="javascript:window.history.back();">back</a>
-                <span>· </span>
-                <a href="/">home</a>
-            </div>
-        </section>
-        <section class="post-nav">
-            
-                <a class="prev" rel="prev" href="/PCA/">PCA</a>
-            
-            
-            <a class="next" rel="next" href="/AdaBelief-NeurIPS2020/">AdaBelief-NeurIPS2020</a>
-            
-        </section>
-
-
-    </article>
-</div>
-
-        </div>
-        <footer id="footer" class="footer">
-    <div class="copyright">
-        <span>© Louieworth | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
-    </div>
-</footer>
-
-    </div>
-</body>
-</html>
+</div></article></div></main><footer><div class="paginator"><a href="/PCA/" class="prev">PREV</a><a href="/AdaBelief-NeurIPS2020/" class="next">NEXT</a></div><div class="copyright"><p>© 2021 <a href="http://yoursite.com">Louieworth</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script></body></html>
