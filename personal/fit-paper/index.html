@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Li Jiang | Fit your paper into 12 pages</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Li Jiang</h1>
+		
+      
+      
+        <img src="../../avatar.png" alt="Profile Photo" class="profile-image" />
+      
+      
+
+        
+        <p>Ph.D. candidate in Operations Research</p>
+        
+        
+        <div class="compact-sidebar">
+		
+        
+        
+        <p>
+          <a href="mailto:li.jiang3@mail.mcgill.ca" target="_blank" rel="noopener noreferrer">
+            <img src="../../icons/mail-symbol.svg" class="octicons" alt="Google Scholar", style="margin-right: 10px;">
+        </a>
+
+          <a href="https://scholar.google.com/citations?user=eBZfztYAAAAJ&hl=zh-CN" target="_blank" rel="noopener noreferrer">
+              <img src="../../icons/Google_Scholar_symbol.svg" class="octicons" alt="Google Scholar", style="margin-right: 10px;">
+          </a>
+          
+          <a href="https://www.linkedin.com/in/li-jiang-2014621b0/" target="_blank">
+              <img src="../../icons/linkedin.png" class="octicons" alt="LinkedIn", style="margin-right: 10px;">
+
+          <a href="https://github.com/louieworth" target="_blank" rel="noopener noreferrer">
+                <img src="../../icons/github-symbol.svg" class="octicons" alt="Github", style="margin-right: 10px;">
+            </a>
+            
+          <a href="https://twitter.com/louieworth" target="_blank" rel="noopener noreferrer">
+              <img src="../../icons/twitter_symbol.svg" class="octicons" alt="Twitter", style="margin-right: 10px;">
+          </a>
+
+          
+        </p>
+		
+
+        
+        
+        
+
+        
+        
+        
+
+        
+
+        </div>
+		
+		<hr/>
+        <div class="compact-sidebar">
+    
+    
+    
+<p><a href="../../">Home</a></p>
+
+<p><a href="../../publications/">Publications</a></p>
+
+<p><a href="../../personal/"></a></p>
+
+<p><a href="../../teaching/"></a></p>
+
+<hr/>
+
+
+</div>
+ 
+      </header>
+
+<section>
+    <h1 id="fit-your-paper-into-12-pages">Fit your paper into 12 pages</h1>
+<p>I collected these techniques from my advisor Mohammad,
+my labmate Prateesh, and stackoverflow.</p>
+<div class="highlight"><pre tabindex="0" style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-latex" data-lang="latex"><span style="display:flex;"><span><span style="color:#93a1a1;font-style:italic">% The following option preserves the space between words and letters,
+</span></span></span><span style="display:flex;"><span><span style="color:#93a1a1;font-style:italic">% making it less likely to piss off your reviewers than the next option.
+</span></span></span><span style="display:flex;"><span><span style="color:#93a1a1;font-style:italic">%\usepackage[subtle, lists=tight, wordspacing=normal, tracking=normal]{savetrees}
+</span></span></span><span style="display:flex;"><span><span style="color:#93a1a1;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#93a1a1;font-style:italic">% The following option reduces the space between words and letters. Can save 0.5-1 column
+</span></span></span><span style="display:flex;"><span><span style="color:#93a1a1;font-style:italic">% from a 12-page paper, but makes the paper slightly less readable.
+</span></span></span><span style="display:flex;"><span><span style="color:#93a1a1;font-style:italic"></span><span style="color:#859900">\usepackage</span><span style="color:#268bd2">[subtle, lists=tight]</span><span style="color:#cb4b16">{</span>savetrees<span style="color:#cb4b16">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#93a1a1;font-style:italic">% Reduce the spacing around floats so that you do not need to manually set tons of \vspace.
+</span></span></span><span style="display:flex;"><span><span style="color:#93a1a1;font-style:italic"></span><span style="color:#859900">\addtolength</span><span style="color:#cb4b16">{</span><span style="color:#859900">\textfloatsep</span><span style="color:#cb4b16">}{</span>-0.2in<span style="color:#cb4b16">}</span> <span style="color:#93a1a1;font-style:italic">% spacing between floats and text
+</span></span></span><span style="display:flex;"><span><span style="color:#93a1a1;font-style:italic"></span><span style="color:#859900">\addtolength</span><span style="color:#cb4b16">{</span><span style="color:#859900">\floatsep</span><span style="color:#cb4b16">}{</span>-0.1in<span style="color:#cb4b16">}</span>     <span style="color:#93a1a1;font-style:italic">% spacing between two floats
+</span></span></span><span style="display:flex;"><span><span style="color:#93a1a1;font-style:italic"></span><span style="color:#859900">\captionsetup</span><span style="color:#268bd2">[table]</span><span style="color:#cb4b16">{</span>font=small,skip=4pt<span style="color:#cb4b16">}</span>   <span style="color:#93a1a1;font-style:italic">% spacing between caption and figure
+</span></span></span><span style="display:flex;"><span><span style="color:#93a1a1;font-style:italic"></span><span style="color:#859900">\captionsetup</span><span style="color:#268bd2">[figure]</span><span style="color:#cb4b16">{</span>font=small,skip=4pt<span style="color:#cb4b16">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#93a1a1;font-style:italic">% Make the section headings smaller.
+</span></span></span><span style="display:flex;"><span><span style="color:#93a1a1;font-style:italic"></span><span style="color:#859900">\usepackage</span><span style="color:#268bd2">[small, compact]</span><span style="color:#cb4b16">{</span>titlesec<span style="color:#cb4b16">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#859900">\usepackage</span><span style="color:#cb4b16">{</span>titling<span style="color:#cb4b16">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#859900">\titlespacing*</span><span style="color:#cb4b16">{</span><span style="color:#859900">\section</span><span style="color:#cb4b16">}{</span>0pt<span style="color:#cb4b16">}{</span>4pt<span style="color:#cb4b16">}{</span>3pt<span style="color:#cb4b16">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#859900">\titlespacing*</span><span style="color:#cb4b16">{</span><span style="color:#859900">\subsection</span><span style="color:#cb4b16">}{</span>0pt<span style="color:#cb4b16">}{</span>3pt<span style="color:#cb4b16">}{</span>3pt<span style="color:#cb4b16">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#859900">\titlespacing*</span><span style="color:#cb4b16">{</span><span style="color:#859900">\subsubsection</span><span style="color:#cb4b16">}{</span>0pt<span style="color:#cb4b16">}{</span>3pt<span style="color:#cb4b16">}{</span>3pt<span style="color:#cb4b16">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#93a1a1;font-style:italic">% Do not penalize widow and orphan lines
+</span></span></span><span style="display:flex;"><span><span style="color:#93a1a1;font-style:italic"></span><span style="color:#859900">\widowpenalty</span>=0 <span style="color:#93a1a1;font-style:italic">% Allow the end of a paragraph to overflow to the next page
+</span></span></span><span style="display:flex;"><span><span style="color:#93a1a1;font-style:italic"></span><span style="color:#859900">\clubpenalty</span>=0  <span style="color:#93a1a1;font-style:italic">% Allow the beginning of a paragraph to begin from the prev page
+</span></span></span></code></pre></div>
+</section>
+<footer>
+    <p><small><br/>Last updated on Nov 5, 2023</small></p>
+</footer>
+</div>
+<script src="../../js/scale.fix.js"></script>
+<script data-goatcounter="https://lijiang.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Li Jiang | X11 Forwarding from macOS</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Li Jiang</h1>
+		
+      
+      
+        <img src="../../avatar.png" alt="Profile Photo" class="profile-image" />
+      
+      
+
+        
+        <p>Ph.D. candidate in Operations Research</p>
+        
+        
+        <div class="compact-sidebar">
+		
+        
+        
+        <p>
+          <a href="mailto:li.jiang3@mail.mcgill.ca" target="_blank" rel="noopener noreferrer">
+            <img src="../../icons/mail-symbol.svg" class="octicons" alt="Google Scholar", style="margin-right: 10px;">
+        </a>
+
+          <a href="https://scholar.google.com/citations?user=eBZfztYAAAAJ&hl=zh-CN" target="_blank" rel="noopener noreferrer">
+              <img src="../../icons/Google_Scholar_symbol.svg" class="octicons" alt="Google Scholar", style="margin-right: 10px;">
+          </a>
+          
+          <a href="https://www.linkedin.com/in/li-jiang-2014621b0/" target="_blank">
+              <img src="../../icons/linkedin.png" class="octicons" alt="LinkedIn", style="margin-right: 10px;">
+
+          <a href="https://github.com/louieworth" target="_blank" rel="noopener noreferrer">
+                <img src="../../icons/github-symbol.svg" class="octicons" alt="Github", style="margin-right: 10px;">
+            </a>
+            
+          <a href="https://twitter.com/louieworth" target="_blank" rel="noopener noreferrer">
+              <img src="../../icons/twitter_symbol.svg" class="octicons" alt="Twitter", style="margin-right: 10px;">
+          </a>
+
+          
+        </p>
+		
+
+        
+        
+        
+
+        
+        
+        
+
+        
+
+        </div>
+		
+		<hr/>
+        <div class="compact-sidebar">
+    
+    
+    
+<p><a href="../../">Home</a></p>
+
+<p><a href="../../publications/">Publications</a></p>
+
+<p><a href="../../personal/"></a></p>
+
+<p><a href="../../teaching/"></a></p>
+
+<hr/>
+
+
+</div>
+ 
+      </header>
+
+<section>
+    <h1 id="x11-forwarding-from-macos">X11 Forwarding from macOS</h1>
+<h2 id="what">What</h2>
+<p>I want to install XQuartz on my Mac so that it has an X server, and then
+forward it to remote hosts that I SSH onto.</p>
+<h2 id="why">Why</h2>
+<p>So that I can run GUI applications on remote hosts without local X server
+(or window manager). GUI apps on remote hosts will connect to the forwarded
+X server on my Mac, and display whatever window directly on my Mac.</p>
+<h2 id="how-is-it-better-than-vnc">How is it better than VNC?</h2>
+<p>It is.</p>
+<h2 id="step-by-step-instructions">Step-by-step instructions</h2>
+<h3 id="on-your-mac">On your Mac</h3>
+<p>First install XQuartz. For example, you may use homebrew by running
+<code>brew install xquartz</code>.</p>
+<p>Run <code>launchctl load -w /Library/LaunchAgents/org.xquartz.startx.plist</code> and then
+reboot. (Instructed by this <a href="https://www.reddit.com/r/osx/comments/y6e59/xquartz_and_apparently_incorrectly_set_display/">Reddit post</a>.
+Note that this step is necessary only if you want to start X-forwarded SSH session
+from Terminal.app, vs. from XTerm in XQuartz. Anyway, this step is highly recommended.)
+Now, if you fire up Terminal.app, variable <code>$DISPLAY</code> should be set. Actually,
+it points to the X server in XQuartz.</p>
+<p>In your <code>~/.ssh/config</code>, add the following attributes to whatever hosts for which you want
+to enable X11 forwarding. It is not recommended to enable X11 forwarding for untrusted
+remote hosts, just like you should not forward your SSH agent to untrusted remote
+hosts.</p>
+<pre tabindex="0"><code>ForwardX11 yes
+ForwardX11Trusted yes
+ServerAliveInterval 60
+ForwardX11Timeout 596h
+</code></pre><h3 id="on-remote-hosts">On remote hosts</h3>
+<p>First, make sure <code>xauth</code> is installed. Then make sure the following items are
+enabled in <code>sshd</code> configuration (usually at <code>/etc/ssh/sshd_config</code>):</p>
+<pre tabindex="0"><code>AllowTcpForwarding yes
+X11Forwarding yes
+X11DisplayOffset 10
+X11UseLocalhost yes
+</code></pre><p>Then, restart <code>sshd</code>. Now if you SSH onto a remote host for which you have enabled
+X11 forwarding, variable <code>$DISPLAY</code> should be set. Install <code>xterm</code> and run it to
+make sure forwarding works. You can now run whatever GUI app you like, such as
+<code>virt-manager</code>, <code>omnet++</code>, etc.</p>
+
+</section>
+<footer>
+    <p><small><br/>Last updated on Nov 5, 2023</small></p>
+</footer>
+</div>
+<script src="../../js/scale.fix.js"></script>
+<script data-goatcounter="https://lijiang.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
+
