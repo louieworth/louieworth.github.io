@@ -2,56 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Li Jiang</title>
-    <link>https://louieworth.github.io/personal/</link>
+    <link>http://localhost:1313/personal/</link>
     <description>Recent content on Li Jiang</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://louieworth.github.io/personal/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="http://localhost:1313/personal/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Fit your paper into 12 pages</title>
-      <link>https://louieworth.github.io/personal/fit-paper/</link>
+      <link>http://localhost:1313/personal/fit-paper/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://louieworth.github.io/personal/fit-paper/</guid>
-      <description>Fit your paper into 12 pages I collected these techniques from my advisor Mohammad, my labmate Prateesh, and stackoverflow.
-% The following option preserves the space between words and letters, % making it less likely to piss off your reviewers than the next option. %\usepackage[subtle, lists=tight, wordspacing=normal, tracking=normal]{savetrees} % The following option reduces the space between words and letters. Can save 0.5-1 column % from a 12-page paper, but makes the paper slightly less readable.</description>
+      <guid>http://localhost:1313/personal/fit-paper/</guid>
+      <description>&lt;h1 id=&#34;fit-your-paper-into-12-pages&#34;&gt;Fit your paper into 12 pages&lt;/h1&gt;&#xA;&lt;p&gt;I collected these techniques from my advisor Mohammad,&#xA;my labmate Prateesh, and stackoverflow.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-latex&#34; data-lang=&#34;latex&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#93a1a1;font-style:italic&#34;&gt;% The following option preserves the space between words and letters,&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#93a1a1;font-style:italic&#34;&gt;% making it less likely to piss off your reviewers than the next option.&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#93a1a1;font-style:italic&#34;&gt;%\usepackage[subtle, lists=tight, wordspacing=normal, tracking=normal]{savetrees}&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#93a1a1;font-style:italic&#34;&gt;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#93a1a1;font-style:italic&#34;&gt;% The following option reduces the space between words and letters. Can save 0.5-1 column&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#93a1a1;font-style:italic&#34;&gt;% from a 12-page paper, but makes the paper slightly less readable.&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#93a1a1;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#859900&#34;&gt;\usepackage&lt;/span&gt;&lt;span style=&#34;color:#268bd2&#34;&gt;[subtle, lists=tight]&lt;/span&gt;&lt;span style=&#34;color:#cb4b16&#34;&gt;{&lt;/span&gt;savetrees&lt;span style=&#34;color:#cb4b16&#34;&gt;}&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#93a1a1;font-style:italic&#34;&gt;% Reduce the spacing around floats so that you do not need to manually set tons of \vspace.&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#93a1a1;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#859900&#34;&gt;\addtolength&lt;/span&gt;&lt;span style=&#34;color:#cb4b16&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#859900&#34;&gt;\textfloatsep&lt;/span&gt;&lt;span style=&#34;color:#cb4b16&#34;&gt;}{&lt;/span&gt;-0.2in&lt;span style=&#34;color:#cb4b16&#34;&gt;}&lt;/span&gt; &lt;span style=&#34;color:#93a1a1;font-style:italic&#34;&gt;% spacing between floats and text&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#93a1a1;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#859900&#34;&gt;\addtolength&lt;/span&gt;&lt;span style=&#34;color:#cb4b16&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#859900&#34;&gt;\floatsep&lt;/span&gt;&lt;span style=&#34;color:#cb4b16&#34;&gt;}{&lt;/span&gt;-0.1in&lt;span style=&#34;color:#cb4b16&#34;&gt;}&lt;/span&gt;     &lt;span style=&#34;color:#93a1a1;font-style:italic&#34;&gt;% spacing between two floats&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#93a1a1;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#859900&#34;&gt;\captionsetup&lt;/span&gt;&lt;span style=&#34;color:#268bd2&#34;&gt;[table]&lt;/span&gt;&lt;span style=&#34;color:#cb4b16&#34;&gt;{&lt;/span&gt;font=small,skip=4pt&lt;span style=&#34;color:#cb4b16&#34;&gt;}&lt;/span&gt;   &lt;span style=&#34;color:#93a1a1;font-style:italic&#34;&gt;% spacing between caption and figure&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#93a1a1;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#859900&#34;&gt;\captionsetup&lt;/span&gt;&lt;span style=&#34;color:#268bd2&#34;&gt;[figure]&lt;/span&gt;&lt;span style=&#34;color:#cb4b16&#34;&gt;{&lt;/span&gt;font=small,skip=4pt&lt;span style=&#34;color:#cb4b16&#34;&gt;}&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#93a1a1;font-style:italic&#34;&gt;% Make the section headings smaller.&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#93a1a1;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#859900&#34;&gt;\usepackage&lt;/span&gt;&lt;span style=&#34;color:#268bd2&#34;&gt;[small, compact]&lt;/span&gt;&lt;span style=&#34;color:#cb4b16&#34;&gt;{&lt;/span&gt;titlesec&lt;span style=&#34;color:#cb4b16&#34;&gt;}&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#859900&#34;&gt;\usepackage&lt;/span&gt;&lt;span style=&#34;color:#cb4b16&#34;&gt;{&lt;/span&gt;titling&lt;span style=&#34;color:#cb4b16&#34;&gt;}&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#859900&#34;&gt;\titlespacing*&lt;/span&gt;&lt;span style=&#34;color:#cb4b16&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#859900&#34;&gt;\section&lt;/span&gt;&lt;span style=&#34;color:#cb4b16&#34;&gt;}{&lt;/span&gt;0pt&lt;span style=&#34;color:#cb4b16&#34;&gt;}{&lt;/span&gt;4pt&lt;span style=&#34;color:#cb4b16&#34;&gt;}{&lt;/span&gt;3pt&lt;span style=&#34;color:#cb4b16&#34;&gt;}&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#859900&#34;&gt;\titlespacing*&lt;/span&gt;&lt;span style=&#34;color:#cb4b16&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#859900&#34;&gt;\subsection&lt;/span&gt;&lt;span style=&#34;color:#cb4b16&#34;&gt;}{&lt;/span&gt;0pt&lt;span style=&#34;color:#cb4b16&#34;&gt;}{&lt;/span&gt;3pt&lt;span style=&#34;color:#cb4b16&#34;&gt;}{&lt;/span&gt;3pt&lt;span style=&#34;color:#cb4b16&#34;&gt;}&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#859900&#34;&gt;\titlespacing*&lt;/span&gt;&lt;span style=&#34;color:#cb4b16&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#859900&#34;&gt;\subsubsection&lt;/span&gt;&lt;span style=&#34;color:#cb4b16&#34;&gt;}{&lt;/span&gt;0pt&lt;span style=&#34;color:#cb4b16&#34;&gt;}{&lt;/span&gt;3pt&lt;span style=&#34;color:#cb4b16&#34;&gt;}{&lt;/span&gt;3pt&lt;span style=&#34;color:#cb4b16&#34;&gt;}&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#93a1a1;font-style:italic&#34;&gt;% Do not penalize widow and orphan lines&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#93a1a1;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#859900&#34;&gt;\widowpenalty&lt;/span&gt;=0 &lt;span style=&#34;color:#93a1a1;font-style:italic&#34;&gt;% Allow the end of a paragraph to overflow to the next page&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#93a1a1;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#859900&#34;&gt;\clubpenalty&lt;/span&gt;=0  &lt;span style=&#34;color:#93a1a1;font-style:italic&#34;&gt;% Allow the beginning of a paragraph to begin from the prev page&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
-    
     <item>
       <title>Hometown</title>
-      <link>https://louieworth.github.io/personal/hometown/</link>
+      <link>http://localhost:1313/personal/hometown/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://louieworth.github.io/personal/hometown/</guid>
-      <description>Hometown I was born and raised in Hangzhou (杭州), Zhejiang, China.</description>
+      <guid>http://localhost:1313/personal/hometown/</guid>
+      <description>&lt;h2 id=&#34;hometown&#34;&gt;Hometown&lt;/h2&gt;&#xA;&lt;p&gt;I was born and raised in Hangzhou (杭州), Zhejiang, China.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;./lake.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;./snow.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;./lotus.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;./tea.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;./sunset.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;./city.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;./bridge.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Incomplete list of native Mac app developers</title>
-      <link>https://louieworth.github.io/personal/mac-native/</link>
+      <link>http://localhost:1313/personal/mac-native/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://louieworth.github.io/personal/mac-native/</guid>
-      <description>Incomplete list of native Mac app developers Desktop apps based on web technology (e.g., Electron, React Native) are ugly and inefficient. Here is a list of developers that produce truly-native Mac applications.
-Hog Bay Software iA CotEditor Project Sketch Panic Shiny Frog Mimestream </description>
+      <guid>http://localhost:1313/personal/mac-native/</guid>
+      <description>&lt;h1 id=&#34;incomplete-list-of-native-mac-app-developers&#34;&gt;Incomplete list of native Mac app developers&lt;/h1&gt;&#xA;&lt;p&gt;Desktop apps based on web technology (e.g., Electron, React Native) are ugly and inefficient.&#xA;Here is a list of developers that produce truly-native Mac applications.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.hogbaysoftware.com&#34;&gt;Hog Bay Software&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://ia.net&#34;&gt;iA&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://coteditor.com&#34;&gt;CotEditor Project&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.sketch.com&#34;&gt;Sketch&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://panic.com&#34;&gt;Panic&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://bear.app&#34;&gt;Shiny Frog&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://mimestream.com&#34;&gt;Mimestream&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title>Languages</title>
-      <link>https://louieworth.github.io/personal/programming-languages/</link>
+      <link>http://localhost:1313/personal/programming-languages/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://louieworth.github.io/personal/programming-languages/</guid>
-      <description>Languages Want to try Swift Chisel Haskell TLA+ / Spin </description>
+      <guid>http://localhost:1313/personal/programming-languages/</guid>
+      <description>&lt;h2 id=&#34;languages&#34;&gt;Languages&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img src=&#34;./plane.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;want-to-try&#34;&gt;Want to try&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Swift&lt;/li&gt;&#xA;&lt;li&gt;Chisel&lt;/li&gt;&#xA;&lt;li&gt;Haskell&lt;/li&gt;&#xA;&lt;li&gt;TLA+ / Spin&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
-    
     <item>
       <title>X11 Forwarding from macOS</title>
-      <link>https://louieworth.github.io/personal/x11/</link>
+      <link>http://localhost:1313/personal/x11/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://louieworth.github.io/personal/x11/</guid>
-      <description>X11 Forwarding from macOS What I want to install XQuartz on my Mac so that it has an X server, and then forward it to remote hosts that I SSH onto.
-Why So that I can run GUI applications on remote hosts without local X server (or window manager). GUI apps on remote hosts will connect to the forwarded X server on my Mac, and display whatever window directly on my Mac.</description>
+      <guid>http://localhost:1313/personal/x11/</guid>
+      <description>&lt;h1 id=&#34;x11-forwarding-from-macos&#34;&gt;X11 Forwarding from macOS&lt;/h1&gt;&#xA;&lt;h2 id=&#34;what&#34;&gt;What&lt;/h2&gt;&#xA;&lt;p&gt;I want to install XQuartz on my Mac so that it has an X server, and then&#xA;forward it to remote hosts that I SSH onto.&lt;/p&gt;&#xA;&lt;h2 id=&#34;why&#34;&gt;Why&lt;/h2&gt;&#xA;&lt;p&gt;So that I can run GUI applications on remote hosts without local X server&#xA;(or window manager). GUI apps on remote hosts will connect to the forwarded&#xA;X server on my Mac, and display whatever window directly on my Mac.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>
