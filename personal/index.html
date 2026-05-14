@@ -4,83 +4,93 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Li Jiang | </title>
+    <title>Li Jiang — </title>
     <link rel="stylesheet" href="../css/style.css">
-    
+    <style>
+      body {
+        background: #fff;
+        padding: 0;
+        margin: 0;
+        font: 15px/1.55 "Charter", "Georgia", "Times New Roman", serif;
+        color: #2b2b2b;
+      }
+      .site-wrap { max-width: 820px; margin: 28px auto; padding: 0 24px; }
+
+      .title-bar {
+        background: #2b2b2b;
+        color: #fff;
+        padding: 10px 18px;
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 22px;
+      }
+      .title-bar a { color: #fff; text-decoration: none; }
+
+      .home-row {
+        display: flex;
+        gap: 28px;
+        align-items: flex-start;
+      }
+      .home-left { flex: 1; min-width: 0; }
+      .home-photo {
+        flex: 0 0 auto;
+        width: 280px;
+        height: 360px;
+        object-fit: cover;
+        border: 1px solid #ddd;
+        display: block;
+      }
+
+      .site-content h2 {
+        font-size: 18px;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin: 22px 0 8px 0;
+      }
+      .site-content h3 { font-size: 16px; margin: 18px 0 6px; }
+      .site-content p { margin: 0 0 10px 0; }
+      .site-content ul { padding-left: 22px; margin: 6px 0 12px; }
+      .site-content li { margin: 2px 0; }
+      .site-content a { color: #267CB9; text-decoration: none; }
+      .site-content a:hover { text-decoration: underline; }
+
+      .home-nav { margin-top: 14px; padding-left: 22px; }
+      .home-nav li { list-style: disc; margin: 2px 0; }
+      .home-nav a { color: #267CB9; }
+
+      .back-link {
+        display: inline-block;
+        margin-bottom: 16px;
+        font-size: 13px;
+        color: #267CB9;
+        text-decoration: none;
+      }
+      .back-link:hover { text-decoration: underline; }
+      .back-link::before { content: "← "; }
+
+      .site-footer {
+        margin-top: 48px;
+        padding-top: 10px;
+        border-top: 1px solid #eee;
+        color: #999;
+        font-size: 12px;
+      }
+
+      @media (max-width: 720px) {
+        .home-row { flex-direction: column-reverse; gap: 16px; }
+        .home-photo { width: 200px; height: 260px; }
+      }
+    </style>
   </head>
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>Li Jiang</h1>
-		
+    <div class="site-wrap">
+      <div class="title-bar">
+        <a href="../">Li Jiang's Homepage</a>
+      </div>
+
       
-      
-        <img src="../avatar.png" alt="Profile Photo" class="profile-image" />
-      
-      
-
-        
-        <p></p>
-        
-        
-        <div class="compact-sidebar">
-		
-        
-        
-        <p>
-          <a href="mailto:li.jiang3@mail.mcgill.ca" target="_blank" rel="noopener noreferrer">
-            <img src="../icons/mail-symbol.svg" class="octicons" alt="email", style="margin-right: 10px;">
-        </a>
-
-          <a href="https://scholar.google.com/citations?user=eBZfztYAAAAJ&hl" target="_blank" rel="noopener noreferrer">
-              <img src="../icons/Google_Scholar_symbol.svg" class="octicons" alt="Google Scholar", style="margin-right: 10px;">
-          </a>
-          
-          <a href="https://www.linkedin.com/in/li-jiang-2014621b0/" target="_blank">
-              <img src="../icons/linkedin.png" class="octicons" alt="LinkedIn", style="margin-right: 10px;">
-
-          <a href="https://github.com/louieworth" target="_blank" rel="noopener noreferrer">
-                <img src="../icons/github-symbol.svg" class="octicons" alt="Github", style="margin-right: 10px;">
-            </a>
-            
-          <a href="https://twitter.com/louieworth" target="_blank" rel="noopener noreferrer">
-              <img src="../icons/twitter_symbol.svg" class="octicons" alt="Twitter", style="margin-right: 10px;">
-          </a>
-
-          
-        </p>
-		
-
-        
-        
-        
-
-        
-        
-        
-
-        
-
-        </div>
-		
-		<hr/>
-        <div class="compact-sidebar">
-    
-    
-    
-<p><a href="../">Home</a></p>
-
-<p><a href="../publications/">Publications</a></p>
-
-<p><a href="../personal/"></a></p>
-
-<p><a href="../lijiang_cv.pdf" target="_blank">CV</a></p>
-</div>
- 
-      </header>
-
-<section>
-    <!-- +++
+        <div class="site-content">
+          <!-- +++
 title = "Personal"
 weight = 0
 +++ -->
@@ -147,15 +157,12 @@ loadPosts()
     </li>
     
 </ul>
-</section>
-<footer>
-    <p><small><br/>Last updated on May 11, 2026</small></p>
-</footer>
-</div>
-<script src="../js/scale.fix.js"></script>
-<script data-goatcounter="https://lijiang.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
-</body>
+        </div>
+      
+
+      <div class="site-footer">Last updated May 13, 2026</div>
+    </div>
+    <script data-goatcounter="https://lijiang.goatcounter.com/count"
+            async src="//gc.zgo.at/count.js"></script>
+  </body>
 </html>
-
-
