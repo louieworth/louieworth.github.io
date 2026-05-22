@@ -473,6 +473,7 @@ footer {
   font: 17px/26px Georgia, "Times New Roman", Times, serif;
   font-weight: 400;
   margin: 0;
+  min-height: 100vh;
   padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -480,10 +481,18 @@ footer {
 
 .blog-site-wrap {
   background: var(--page-bg, #fffdfc);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   width: 100%;
   max-width: 48rem;
   margin: 0 auto;
   padding: 0 1.25rem;
+}
+
+.blog-main {
+  flex: 1 0 auto;
+  padding-bottom: 5rem;
 }
 
 .blog-header {
@@ -550,12 +559,13 @@ footer {
 .blog-footer {
   border-top: 2px solid #e5e7eb;
   color: #282828;
-  display: flex;
+  flex-shrink: 0;
   font-size: 0.75rem;
-  justify-content: space-between;
   line-height: 1rem;
-  margin-top: 4rem;
-  padding-top: 1rem;
+  margin: 0 auto;
+  padding: 1rem 0 2rem;
+  text-align: center;
+  width: 100%;
 }
 
 .blog-body .title,
@@ -715,15 +725,32 @@ footer {
 }
 
 .post-layout {
+  align-items: start;
+  column-gap: 40px;
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  margin-left: -280px;
   position: relative;
+  width: calc(100% + 280px);
+}
+
+#post-content {
+  counter-reset: sidenote-counter;
+  grid-column: 2;
+  min-width: 0;
+  overflow: visible;
 }
 
 .toc-sidebar {
   color: #6e6d80;
   font-size: 0.95rem;
-  left: -280px;
-  position: absolute;
-  top: 0;
+  grid-column: 1;
+  max-height: calc(100vh - 2.5rem);
+  overflow-y: auto;
+  padding-right: 0.35rem;
+  position: sticky;
+  scrollbar-width: thin;
+  top: 1.25rem;
   width: 240px;
 }
 
@@ -895,6 +922,94 @@ footer {
   text-transform: uppercase;
 }
 
+.margin-toggle {
+  display: none;
+}
+
+.sidenote-number {
+  counter-increment: sidenote-counter;
+  cursor: default;
+  pointer-events: none;
+}
+
+.sidenote-number::after,
+.sidenote::before {
+  color: #6e6d80;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  position: relative;
+  vertical-align: baseline;
+}
+
+.sidenote-number::after {
+  content: counter(sidenote-counter);
+  font-size: 0.75rem;
+  left: -0.03rem;
+  top: -0.5rem;
+}
+
+.sidenote::before {
+  content: counter(sidenote-counter);
+  font-size: 0.75rem;
+  left: -0.08rem;
+  padding-right: 0.18rem;
+  top: -0.35rem;
+}
+
+.sidenote-number[data-note]::after,
+.sidenote[data-note]::before {
+  content: attr(data-note);
+}
+
+.sidenote {
+  clear: right;
+  color: rgba(40, 40, 40, 0.7);
+  float: right;
+  font-family: "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.38;
+  margin: 0.25rem -258px 1rem 38px;
+  position: relative;
+  vertical-align: baseline;
+  width: 220px;
+}
+
+.sidenote p {
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+}
+
+.sidenote a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgba(40, 40, 40, 0.25);
+}
+
+.sidenote a:hover {
+  color: #e11d47;
+  text-decoration-color: rgba(225, 29, 71, 0.4);
+}
+
+.post-paginator {
+  border-top: 1px solid rgba(40, 40, 40, 0.08);
+  margin: 1rem auto 0;
+  padding-top: 1rem;
+  text-align: center;
+}
+
+.post-paginator a {
+  color: #6e6d80;
+  font-family: "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.78rem;
+  text-decoration: none;
+}
+
+.post-paginator a:hover {
+  color: #e11d47;
+  text-decoration: underline;
+}
+
 .blog-index-title {
   margin-bottom: 1.5rem !important;
 }
@@ -940,11 +1055,37 @@ footer {
 
 @media (max-width: 1024px) {
   .post-layout {
+    display: block;
+    margin-left: 0;
     position: static;
+    width: auto;
   }
 
   .toc-sidebar {
     display: none;
+  }
+}
+
+@media (max-width: 1280px) {
+  .sidenote-number {
+    cursor: pointer;
+    pointer-events: auto;
+  }
+
+  .sidenote {
+    background: #fffdfc;
+    border-left: 0.18rem solid rgba(225, 29, 71, 0.55);
+    box-shadow: none;
+    clear: both;
+    display: none;
+    float: none;
+    margin: 0.55rem 0 1rem;
+    padding: 0.55rem 0 0.55rem 0.75rem;
+    width: auto;
+  }
+
+  .margin-toggle:checked + .sidenote {
+    display: block;
   }
 }
 
