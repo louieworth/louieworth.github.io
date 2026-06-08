@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 430" role="img" aria-labelledby="title desc">
+  <title id="title">Myopic supervision fragments recovery</title>
+  <desc id="desc">A diagram comparing an ideal corrected trajectory with standard OPD supervision. Standard OPD can repeat local correction hints from misleading prefixes, but the corrected continuation is missing.</desc>
+  <rect width="1040" height="430" fill="#fffdfc"/>
+
+  <defs>
+    <marker id="arrow-gray" markerWidth="12" markerHeight="12" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#6e6d80"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="12" markerHeight="12" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#2f7d5f"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="12" markerHeight="12" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#e11d47"/>
+    </marker>
+    <filter id="soft-shadow" x="-8%" y="-16%" width="116%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#282828" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <g font-family="Georgia, 'Times New Roman', serif">
+    <text x="74" y="62" font-size="29" fill="#282828">Myopic supervision fragments recovery</text>
+    <text x="74" y="92" font-size="16" fill="#6e6d80">A local correction hint can be learned, while the following corrected prefixes never enter the sampled rollout.</text>
+  </g>
+
+  <g font-family="'Noto Sans', 'Helvetica Neue', Arial, sans-serif">
+    <rect x="112" y="128" width="816" height="104" rx="10" fill="#f3f5f6" stroke="#d4dadf" stroke-width="2" filter="url(#soft-shadow)"/>
+    <text x="148" y="160" font-size="14" font-weight="700" fill="#2f4d5f">ideal corrected trajectory</text>
+
+    <g transform="translate(188 184)">
+      <rect x="0" y="0" width="22" height="22" rx="3" fill="#c00000"/>
+      <rect x="30" y="0" width="22" height="22" rx="3" fill="#c00000"/>
+      <rect x="60" y="0" width="22" height="22" rx="3" fill="#c00000"/>
+      <rect x="90" y="0" width="22" height="22" rx="3" fill="#c00000"/>
+      <rect x="120" y="0" width="22" height="22" rx="3" fill="#c00000"/>
+      <line x1="152" y1="11" x2="202" y2="11" stroke="#6e6d80" stroke-width="2.2" marker-end="url(#arrow-gray)"/>
+      <rect x="214" y="-8" width="76" height="38" rx="8" fill="#edf8f3" stroke="#b7dccd" stroke-width="2"/>
+      <text x="252" y="16" text-anchor="middle" font-size="13" fill="#285b46">"Wait"</text>
+      <line x1="300" y1="11" x2="350" y2="11" stroke="#2f7d5f" stroke-width="2.8" marker-end="url(#arrow-green)"/>
+      <rect x="362" y="0" width="22" height="22" rx="3" fill="#138a1f"/>
+      <rect x="392" y="0" width="22" height="22" rx="3" fill="#138a1f"/>
+      <rect x="422" y="0" width="22" height="22" rx="3" fill="#138a1f"/>
+      <rect x="452" y="0" width="22" height="22" rx="3" fill="#138a1f"/>
+      <rect x="482" y="0" width="22" height="22" rx="3" fill="#138a1f"/>
+      <path d="M518 11 H604" fill="none" stroke="#2f7d5f" stroke-width="2.8" marker-end="url(#arrow-green)"/>
+    </g>
+
+    <text x="230" y="220" text-anchor="middle" font-size="12" fill="#9f1239">misleading prefix</text>
+    <text x="660" y="220" text-anchor="middle" font-size="12" fill="#285b46">corrected prefixes are generated</text>
+
+    <rect x="112" y="268" width="816" height="104" rx="10" fill="#f3f5f6" stroke="#d4dadf" stroke-width="2" filter="url(#soft-shadow)"/>
+    <text x="148" y="300" font-size="14" font-weight="700" fill="#2f4d5f">standard OPD supervision</text>
+
+    <g transform="translate(188 324)">
+      <rect x="0" y="0" width="22" height="22" rx="3" fill="#c00000"/>
+      <rect x="30" y="0" width="22" height="22" rx="3" fill="#c00000"/>
+      <rect x="60" y="0" width="22" height="22" rx="3" fill="#c00000"/>
+      <rect x="90" y="0" width="22" height="22" rx="3" fill="#c00000"/>
+      <rect x="120" y="0" width="22" height="22" rx="3" fill="#c00000"/>
+      <rect x="150" y="0" width="22" height="22" rx="3" fill="#c00000"/>
+      <rect x="180" y="0" width="22" height="22" rx="3" fill="#c00000"/>
+      <rect x="210" y="0" width="22" height="22" rx="3" fill="#c00000"/>
+      <rect x="240" y="0" width="22" height="22" rx="3" fill="#c00000"/>
+      <rect x="270" y="0" width="22" height="22" rx="3" fill="#c00000"/>
+      <rect x="300" y="0" width="22" height="22" rx="3" fill="#c00000"/>
+      <rect x="330" y="0" width="22" height="22" rx="3" fill="#c00000"/>
+      <rect x="360" y="0" width="22" height="22" rx="3" fill="#c00000"/>
+      <path d="M392 11 H522" fill="none" stroke="#e11d47" stroke-width="2.8" marker-end="url(#arrow-red)"/>
+    </g>
+
+    <g stroke="#9ed8b8" stroke-width="2.2" stroke-dasharray="6 5" marker-end="url(#arrow-green)">
+      <path d="M386 325 C384 312 378 304 368 300"/>
+      <path d="M446 325 C444 312 438 304 428 300"/>
+      <path d="M506 325 C504 312 498 304 488 300"/>
+    </g>
+
+    <g font-size="12" fill="#285b46">
+      <rect x="338" y="284" width="60" height="28" rx="7" fill="#edf8f3" stroke="#b7dccd"/>
+      <text x="368" y="303" text-anchor="middle">"Wait"</text>
+      <rect x="398" y="284" width="60" height="28" rx="7" fill="#edf8f3" stroke="#b7dccd"/>
+      <text x="428" y="303" text-anchor="middle">"Oops"</text>
+      <rect x="458" y="284" width="60" height="28" rx="7" fill="#edf8f3" stroke="#b7dccd"/>
+      <text x="488" y="303" text-anchor="middle">"Aha"</text>
+    </g>
+
+    <path d="M590 322 C664 300 772 300 856 322" fill="none" stroke="#6e6d80" stroke-width="2" stroke-dasharray="5 6"/>
+    <text x="724" y="298" text-anchor="middle" font-size="13" font-weight="700" fill="#6e6d80">no corrected continuation is sampled</text>
+    <text x="724" y="352" text-anchor="middle" font-size="13" fill="#9f1239">following losses stay on the failed rollout</text>
+
+    <g font-size="13">
+      <path d="M144 402 H272" fill="none" stroke="#2f7d5f" stroke-width="3" marker-end="url(#arrow-green)"/>
+      <text x="290" y="406" fill="#2f7d5f">local correction hints</text>
+      <path d="M620 402 H748" fill="none" stroke="#e11d47" stroke-width="3" marker-end="url(#arrow-red)"/>
+      <text x="766" y="406" fill="#e11d47">loss remains on misleading prefixes</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,346 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 596" role="img" aria-labelledby="title desc">
+  <title id="title">Self-Refined Distillation rollout refinement</title>
+  <desc id="desc">An animated diagram showing student, teacher, and input distributions. The student first samples a raw rollout y_o from x, then the teacher refines it into y_r while preserving distribution support.</desc>
+  <rect width="1040" height="596" fill="#fffdfc"/>
+
+  <defs>
+    <linearGradient id="student-ground" x1="80" y1="250" x2="520" y2="250" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f04a2d" stop-opacity="0.32"/>
+      <stop offset="58%" stop-color="#ffb285" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#f9d7c8" stop-opacity="0.12"/>
+    </linearGradient>
+    <linearGradient id="teacher-ground" x1="520" y1="250" x2="990" y2="250" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#d7e4fb" stop-opacity="0.12"/>
+      <stop offset="48%" stop-color="#9ec7ff" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#4978de" stop-opacity="0.28"/>
+    </linearGradient>
+    <linearGradient id="student-mound" x1="286" y1="54" x2="286" y2="304" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f04a2d" stop-opacity="0.98"/>
+      <stop offset="50%" stop-color="#ff7045" stop-opacity="0.82"/>
+      <stop offset="100%" stop-color="#ffad8a" stop-opacity="0.3"/>
+    </linearGradient>
+    <linearGradient id="teacher-mound" x1="768" y1="76" x2="768" y2="318" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#4f7ddd" stop-opacity="0.98"/>
+      <stop offset="52%" stop-color="#7fb0f5" stop-opacity="0.78"/>
+      <stop offset="100%" stop-color="#d8e8ff" stop-opacity="0.3"/>
+    </linearGradient>
+    <linearGradient id="input-surface" x1="180" y1="456" x2="742" y2="546" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#a761d6" stop-opacity="0.72"/>
+      <stop offset="52%" stop-color="#b2d7ff" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#82cdec" stop-opacity="0.62"/>
+    </linearGradient>
+    <linearGradient id="support-stroke" x1="292" y1="112" x2="420" y2="226" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#23a347"/>
+      <stop offset="100%" stop-color="#2f7d1f"/>
+    </linearGradient>
+    <linearGradient id="refine-stroke" x1="652" y1="224" x2="402" y2="222" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#2f7d1f"/>
+      <stop offset="100%" stop-color="#39a348"/>
+    </linearGradient>
+    <filter id="soft-shadow" x="-10%" y="-18%" width="120%" height="140%">
+      <feDropShadow dx="0" dy="7" stdDeviation="9" flood-color="#282828" flood-opacity="0.1"/>
+    </filter>
+    <style>
+      .base-layer,
+      .input-layer,
+      .policy-label,
+      .node-x {
+        animation: alg-base-in 15s ease-in-out infinite;
+        transform-box: fill-box;
+        transform-origin: center;
+      }
+
+      .surface-grid {
+        animation: alg-grid-breathe 15s ease-in-out infinite;
+      }
+
+      .yo-layer {
+        animation: alg-yo-in 15s ease-in-out infinite;
+        transform-box: fill-box;
+        transform-origin: center;
+      }
+
+      .raw-to-yo {
+        animation: alg-draw-raw 15s linear infinite;
+      }
+
+      .later-line {
+        animation: alg-draw-later 15s linear infinite;
+      }
+
+      .yr-layer {
+        animation: alg-yr-in 15s ease-in-out infinite;
+        transform-box: fill-box;
+        transform-origin: center;
+      }
+
+      .support-line {
+        animation: alg-draw-green 15s linear infinite;
+      }
+
+      .refine-line {
+        animation: alg-draw-green-late 15s linear infinite;
+      }
+
+      .green-label {
+        animation: alg-green-label 15s ease-in-out infinite;
+      }
+
+      .arrowhead {
+        opacity: 0;
+      }
+
+      .raw-arrowhead {
+        animation: alg-arrow-raw 15s ease-in-out infinite;
+      }
+
+      .later-arrowhead {
+        animation: alg-arrow-later 15s ease-in-out infinite;
+      }
+
+      .support-arrowhead {
+        animation: alg-arrow-support 15s ease-in-out infinite;
+      }
+
+      .refine-arrowhead {
+        animation: alg-arrow-refine 15s ease-in-out infinite;
+      }
+
+      .node {
+        filter: url(#soft-shadow);
+      }
+
+      @keyframes alg-base-in {
+        0%, 100% { opacity: 1; transform: translateY(0) scale(1); }
+      }
+
+      @keyframes alg-grid-breathe {
+        0%, 18% { opacity: .45; }
+        28% { opacity: .7; }
+        54% { opacity: .5; }
+        78%, 100% { opacity: .72; }
+      }
+
+      @keyframes alg-yo-in {
+        0%, 22% { opacity: 0; transform: scale(.65); }
+        30%, 100% { opacity: 1; transform: scale(1); }
+      }
+
+      @keyframes alg-draw-raw {
+        0%, 20% {
+          opacity: 0;
+          stroke-dasharray: 1;
+          stroke-dashoffset: 1;
+        }
+        21% {
+          opacity: 1;
+          stroke-dasharray: 1;
+          stroke-dashoffset: 1;
+        }
+        42%, 100% {
+          opacity: 1;
+          stroke-dasharray: 1;
+          stroke-dashoffset: 0;
+        }
+      }
+
+      @keyframes alg-draw-later {
+        0%, 38% {
+          opacity: 0;
+          stroke-dasharray: 1;
+          stroke-dashoffset: 1;
+        }
+        39% {
+          opacity: 1;
+          stroke-dasharray: 1;
+          stroke-dashoffset: 1;
+        }
+        60%, 100% {
+          opacity: 1;
+          stroke-dasharray: 1;
+          stroke-dashoffset: 0;
+        }
+      }
+
+      @keyframes alg-yr-in {
+        0%, 82% { opacity: 0; transform: scale(.65); }
+        89%, 100% { opacity: 1; transform: scale(1); }
+      }
+
+      @keyframes alg-draw-green {
+        0%, 64% {
+          opacity: 0;
+          stroke-dasharray: 1;
+          stroke-dashoffset: 1;
+        }
+        65% {
+          opacity: 1;
+          stroke-dasharray: 1;
+          stroke-dashoffset: 1;
+        }
+        78%, 100% {
+          opacity: 1;
+          stroke-dasharray: 1;
+          stroke-dashoffset: 0;
+        }
+      }
+
+      @keyframes alg-draw-green-late {
+        0%, 68% {
+          opacity: 0;
+          stroke-dasharray: 1;
+          stroke-dashoffset: 1;
+        }
+        69% {
+          opacity: 1;
+          stroke-dasharray: 1;
+          stroke-dashoffset: 1;
+        }
+        82%, 100% {
+          opacity: 1;
+          stroke-dasharray: 1;
+          stroke-dashoffset: 0;
+        }
+      }
+
+      @keyframes alg-green-label {
+        0%, 88% { opacity: 0; transform: translateY(7px); }
+        94% { opacity: 1; transform: translateY(0); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+
+      @keyframes alg-arrow-raw {
+        0%, 42% { opacity: 0; }
+        44%, 100% { opacity: 1; }
+      }
+
+      @keyframes alg-arrow-later {
+        0%, 60% { opacity: 0; }
+        62%, 100% { opacity: 1; }
+      }
+
+      @keyframes alg-arrow-support {
+        0%, 78% { opacity: 0; }
+        80%, 100% { opacity: 1; }
+      }
+
+      @keyframes alg-arrow-refine {
+        0%, 82% { opacity: 0; }
+        84%, 100% { opacity: 1; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .base-layer,
+        .input-layer,
+        .policy-label,
+        .node-x,
+        .surface-grid,
+        .yo-layer,
+        .raw-to-yo,
+        .later-line,
+        .yr-layer,
+        .support-line,
+        .refine-line,
+        .green-label,
+        .arrowhead {
+          animation: none !important;
+          opacity: 1 !important;
+          stroke-dashoffset: 0 !important;
+        }
+      }
+    </style>
+  </defs>
+
+  <g font-family="'Noto Sans', 'Helvetica Neue', Arial, sans-serif">
+    <g class="base-layer">
+      <ellipse cx="286" cy="283" rx="318" ry="120" fill="url(#student-ground)" stroke="#f2917d" stroke-opacity=".45" stroke-width="1.2"/>
+      <ellipse cx="772" cy="284" rx="318" ry="120" fill="url(#teacher-ground)" stroke="#8fb3ed" stroke-opacity=".5" stroke-width="1.2"/>
+      <path d="M176 286 C198 176 233 58 286 57 C341 58 379 176 400 286 C342 316 233 316 176 286 Z" fill="url(#student-mound)" stroke="#ec5335" stroke-opacity=".45" stroke-width="1.4" filter="url(#soft-shadow)"/>
+      <path d="M662 298 C685 184 719 78 769 77 C822 77 860 188 882 298 C824 326 718 326 662 298 Z" fill="url(#teacher-mound)" stroke="#5e8adc" stroke-opacity=".5" stroke-width="1.4" filter="url(#soft-shadow)"/>
+
+      <g class="surface-grid" fill="none" stroke-linecap="round">
+        <g stroke="#e85436" stroke-opacity=".34" stroke-width="1">
+          <ellipse cx="286" cy="284" rx="225" ry="78"/>
+          <ellipse cx="286" cy="258" rx="172" ry="60"/>
+          <ellipse cx="286" cy="224" rx="126" ry="45"/>
+          <ellipse cx="286" cy="184" rx="84" ry="32"/>
+          <ellipse cx="286" cy="139" rx="45" ry="20"/>
+          <path d="M189 290 C216 252 238 151 286 57"/>
+          <path d="M235 302 C252 247 264 142 286 57"/>
+          <path d="M286 310 C286 248 286 140 286 57"/>
+          <path d="M337 302 C322 246 307 142 286 57"/>
+          <path d="M382 290 C356 250 335 151 286 57"/>
+          <path d="M116 286 C210 266 364 266 456 286" stroke-opacity=".22"/>
+          <path d="M145 317 C236 294 338 294 430 317" stroke-opacity=".2"/>
+        </g>
+        <g stroke="#5788db" stroke-opacity=".34" stroke-width="1">
+          <ellipse cx="772" cy="286" rx="226" ry="78"/>
+          <ellipse cx="772" cy="260" rx="174" ry="60"/>
+          <ellipse cx="772" cy="226" rx="128" ry="45"/>
+          <ellipse cx="772" cy="187" rx="86" ry="32"/>
+          <ellipse cx="772" cy="143" rx="46" ry="20"/>
+          <path d="M675 299 C700 255 725 170 769 77"/>
+          <path d="M722 312 C738 255 750 165 769 77"/>
+          <path d="M772 318 C772 255 772 164 769 77"/>
+          <path d="M824 312 C808 255 790 165 769 77"/>
+          <path d="M869 299 C842 255 818 170 769 77"/>
+          <path d="M600 286 C694 266 848 266 940 286" stroke-opacity=".22"/>
+          <path d="M630 318 C720 294 824 294 915 318" stroke-opacity=".2"/>
+        </g>
+      </g>
+    </g>
+
+    <g class="input-layer">
+      <path d="M178 492 C266 442 361 412 472 420 C560 426 624 392 742 427 L824 462 C734 494 685 548 565 558 C452 568 368 526 260 525 Z" fill="url(#input-surface)" stroke="#91bfd8" stroke-opacity=".52" stroke-width="1.2"/>
+      <g fill="none" stroke="#8bb8cf" stroke-opacity=".2" stroke-width="1">
+        <path d="M220 488 C342 460 478 452 700 462"/>
+        <path d="M258 516 C388 488 518 482 766 482"/>
+        <path d="M300 454 C378 472 438 506 538 552"/>
+        <path d="M418 426 C474 468 552 505 662 531"/>
+        <path d="M548 418 C606 454 682 472 774 477"/>
+        <path d="M188 492 C296 498 398 504 565 558"/>
+      </g>
+    </g>
+
+    <g class="policy-label" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="44" font-weight="700">
+      <ellipse cx="100" cy="286" rx="56" ry="30" fill="#fffdfc" fill-opacity=".78"/>
+      <text x="76" y="299" fill="#f04a2d">&#960;<tspan baseline-shift="sub" font-size="30">S</tspan></text>
+      <ellipse cx="920" cy="308" rx="58" ry="30" fill="#fffdfc" fill-opacity=".78"/>
+      <text x="896" y="321" fill="#4f79d7">&#960;<tspan baseline-shift="sub" font-size="30">T</tspan></text>
+    </g>
+
+    <g class="node-x">
+      <circle class="node" cx="513" cy="458" r="9" fill="#bfe0ef" stroke="#0b2d3c" stroke-width="3"/>
+      <text x="524" y="482" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="40" font-weight="700" fill="#0a0a0a">x</text>
+    </g>
+
+    <path class="raw-to-yo" pathLength="1" d="M513 458 C398 392 314 290 270 102" fill="none" stroke="#0b2d3c" stroke-width="3" stroke-linecap="round" stroke-dasharray="8 10"/>
+    <path class="arrowhead raw-arrowhead" d="M0 0 L-19 -7 L-14 0 L-19 7 Z" fill="#0b2d3c" transform="translate(273 115) rotate(-103)"/>
+
+    <g class="yo-layer">
+      <circle class="node" cx="270" cy="102" r="11" fill="#f04a2d" stroke="#0b2d3c" stroke-width="3"/>
+      <text x="218" y="82" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="42" font-weight="700" fill="#0a0a0a">y<tspan baseline-shift="sub" font-size="26">o</tspan></text>
+    </g>
+
+    <path class="later-line" pathLength="1" d="M303 101 C444 74 548 74 650 116" fill="none" stroke="#0b2d3c" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="8 11"/>
+    <path class="arrowhead later-arrowhead" d="M0 0 L-19 -7 L-14 0 L-19 7 Z" fill="#0b2d3c" transform="translate(650 116) rotate(22)"/>
+    <path class="later-line" pathLength="1" d="M513 458 C612 416 655 358 683 253" fill="none" stroke="#0b2d3c" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="8 11"/>
+    <path class="arrowhead later-arrowhead" d="M0 0 L-19 -7 L-14 0 L-19 7 Z" fill="#0b2d3c" transform="translate(683 253) rotate(-75)"/>
+
+    <path class="support-line" pathLength="1" d="M286 124 C300 166 323 198 377 213" fill="none" stroke="url(#support-stroke)" stroke-width="7" stroke-linecap="round"/>
+    <path class="arrowhead support-arrowhead" d="M0 0 L-21 -8 L-16 0 L-21 8 Z" fill="#2f8c32" transform="translate(377 213) rotate(16)"/>
+    <path class="refine-line" pathLength="1" d="M650 226 C570 277 472 236 409 220" fill="none" stroke="url(#refine-stroke)" stroke-width="7" stroke-linecap="round"/>
+    <path class="arrowhead refine-arrowhead" d="M0 0 L-21 -8 L-16 0 L-21 8 Z" fill="#2f8c32" transform="translate(409 220) rotate(-166)"/>
+
+    <g class="yr-layer">
+      <circle class="node" cx="392" cy="216" r="11" fill="#f6a48a" stroke="#0b2d3c" stroke-width="3"/>
+      <text x="402" y="261" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="42" font-weight="700" fill="#0a0a0a">y<tspan baseline-shift="sub" font-size="26">r</tspan></text>
+    </g>
+
+    <g class="green-label" font-size="22" font-weight="700" fill="#0a0a0a">
+      <text x="326" y="150">distribution</text>
+      <text x="348" y="180">support</text>
+      <text x="486" y="224">refinement</text>
+    </g>
+  </g>
+</svg>

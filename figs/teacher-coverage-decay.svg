@@ -1,0 +1,243 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 440" role="img" aria-labelledby="title desc">
+  <title id="title">Teacher coverage decay over long OPD rollouts</title>
+  <desc id="desc">A staged diagram showing the teacher's usual distribution, a student policy rollout that drifts away, the path the teacher would naturally visit, and final arrows marking close versus outside teacher coverage.</desc>
+  <rect width="1040" height="440" fill="#fffdfc"/>
+
+  <defs>
+    <marker id="arrow-green" markerWidth="12" markerHeight="12" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#2f7d5f"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="12" markerHeight="12" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#e11d47"/>
+    </marker>
+    <linearGradient id="student-rollout-gradient" x1="214" y1="228" x2="850" y2="350" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#2f7d5f"/>
+      <stop offset="38%" stop-color="#2f7d5f"/>
+      <stop offset="68%" stop-color="#b45f06"/>
+      <stop offset="100%" stop-color="#e11d47"/>
+    </linearGradient>
+    <filter id="soft-shadow" x="-8%" y="-14%" width="116%" height="135%">
+      <feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#282828" flood-opacity="0.08"/>
+    </filter>
+    <style>
+      .fig3-distribution {
+        animation: fig3-fade-in 12s ease-in-out infinite;
+      }
+
+      .fig3-distribution-label {
+        animation: fig3-label-distribution 12s ease-in-out infinite;
+      }
+
+      .fig3-student-label {
+        animation: fig3-label-student 12s ease-in-out infinite;
+      }
+
+      .fig3-teacher-label {
+        animation: fig3-label-teacher 12s ease-in-out infinite;
+      }
+
+      .fig3-legend {
+        animation: fig3-label-legend 12s ease-in-out infinite;
+      }
+
+      .fig3-teacher-path,
+      .fig3-student-rollout {
+        fill: none;
+        stroke-linecap: round;
+      }
+
+      .fig3-student-rollout {
+        animation: fig3-draw-student 12s ease-in-out infinite;
+      }
+
+      .fig3-teacher-path {
+        animation: fig3-draw-teacher 12s ease-in-out infinite;
+      }
+
+      .fig3-node {
+        transform-box: fill-box;
+        transform-origin: center;
+      }
+
+      .fig3-student-node-1 { animation: fig3-node-s1 12s ease-in-out infinite; }
+      .fig3-student-node-2 { animation: fig3-node-s2 12s ease-in-out infinite; }
+      .fig3-student-node-3 { animation: fig3-node-s3 12s ease-in-out infinite; }
+      .fig3-student-node-4 { animation: fig3-node-s4 12s ease-in-out infinite; }
+      .fig3-student-node-5 { animation: fig3-node-s5 12s ease-in-out infinite; }
+      .fig3-teacher-node-1 { animation: fig3-node-t1 12s ease-in-out infinite; }
+      .fig3-teacher-node-2 { animation: fig3-node-t2 12s ease-in-out infinite; }
+      .fig3-teacher-node-3 { animation: fig3-node-t3 12s ease-in-out infinite; }
+      .fig3-teacher-node-4 { animation: fig3-node-t4 12s ease-in-out infinite; }
+
+      @keyframes fig3-fade-in {
+        0%, 5% { opacity: 1; transform: scale(.98); }
+        10%, 100% { opacity: 1; transform: scale(1); }
+      }
+
+      @keyframes fig3-label-distribution {
+        0%, 7% { opacity: 1; transform: translateY(0); }
+        12%, 100% { opacity: 1; transform: translateY(0); }
+      }
+
+      @keyframes fig3-label-student {
+        0%, 24% { opacity: 0; transform: translateY(8px); }
+        30%, 100% { opacity: 1; transform: translateY(0); }
+      }
+
+      @keyframes fig3-label-teacher {
+        0%, 55% { opacity: 0; transform: translateY(8px); }
+        61%, 100% { opacity: 1; transform: translateY(0); }
+      }
+
+      @keyframes fig3-label-legend {
+        0%, 77% { opacity: 0; transform: translateY(8px); }
+        83%, 100% { opacity: 1; transform: translateY(0); }
+      }
+
+      @keyframes fig3-draw-student {
+        0%, 22% {
+          opacity: 0;
+          stroke-dasharray: 1;
+          stroke-dashoffset: 1;
+        }
+        29% {
+          opacity: 1;
+          stroke-dasharray: 1;
+          stroke-dashoffset: .78;
+        }
+        39% {
+          opacity: 1;
+          stroke-dasharray: 1;
+          stroke-dashoffset: .54;
+        }
+        50% {
+          opacity: 1;
+          stroke-dasharray: 1;
+          stroke-dashoffset: .27;
+        }
+        60%, 100% {
+          opacity: 1;
+          stroke-dasharray: 1;
+          stroke-dashoffset: 0;
+        }
+      }
+
+      @keyframes fig3-draw-teacher {
+        0%, 54% {
+          opacity: 0;
+          stroke-dasharray: 1;
+          stroke-dashoffset: 1;
+        }
+        62% {
+          opacity: 1;
+          stroke-dasharray: 1;
+          stroke-dashoffset: .65;
+        }
+        72%, 100% {
+          opacity: 1;
+          stroke-dasharray: 1;
+          stroke-dashoffset: 0;
+        }
+      }
+
+      @keyframes fig3-node-s1 {
+        0%, 24% { opacity: 0; transform: scale(.6); }
+        29%, 100% { opacity: 1; transform: scale(1); }
+      }
+
+      @keyframes fig3-node-s2 {
+        0%, 32% { opacity: 0; transform: scale(.6); }
+        37%, 100% { opacity: 1; transform: scale(1); }
+      }
+
+      @keyframes fig3-node-s3 {
+        0%, 40% { opacity: 0; transform: scale(.6); }
+        45%, 100% { opacity: 1; transform: scale(1); }
+      }
+
+      @keyframes fig3-node-s4 {
+        0%, 48% { opacity: 0; transform: scale(.6); }
+        53%, 100% { opacity: 1; transform: scale(1); }
+      }
+
+      @keyframes fig3-node-s5 {
+        0%, 56% { opacity: 0; transform: scale(.6); }
+        61%, 100% { opacity: 1; transform: scale(1); }
+      }
+
+      @keyframes fig3-node-t1 {
+        0%, 56% { opacity: 0; transform: scale(.6); }
+        61%, 100% { opacity: 1; transform: scale(1); }
+      }
+
+      @keyframes fig3-node-t2 {
+        0%, 61% { opacity: 0; transform: scale(.6); }
+        66%, 100% { opacity: 1; transform: scale(1); }
+      }
+
+      @keyframes fig3-node-t3 {
+        0%, 66% { opacity: 0; transform: scale(.6); }
+        71%, 100% { opacity: 1; transform: scale(1); }
+      }
+
+      @keyframes fig3-node-t4 {
+        0%, 71% { opacity: 0; transform: scale(.6); }
+        76%, 100% { opacity: 1; transform: scale(1); }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .fig3-distribution,
+        .fig3-distribution-label,
+        .fig3-student-label,
+        .fig3-teacher-label,
+        .fig3-legend,
+        .fig3-teacher-path,
+        .fig3-student-rollout,
+        .fig3-node {
+          animation: none !important;
+          opacity: 1 !important;
+          stroke-dashoffset: 0 !important;
+          transform: none !important;
+        }
+      }
+    </style>
+  </defs>
+
+  <g font-family="Georgia, 'Times New Roman', serif">
+    <text x="74" y="64" font-size="30" fill="#282828">Teacher coverage decays with horizon</text>
+    <text x="74" y="94" font-size="16" fill="#6e6d80">Long student rollouts can move teacher queries outside the teacher's usual distribution.</text>
+  </g>
+
+  <g font-family="'Noto Sans', 'Helvetica Neue', Arial, sans-serif">
+    <g class="fig3-distribution">
+      <ellipse cx="520" cy="216" rx="388" ry="102" fill="#eef7fb" stroke="#c7dfe9" stroke-width="2" filter="url(#soft-shadow)"/>
+    </g>
+    <text class="fig3-distribution-label" x="154" y="150" font-size="14" font-weight="700" fill="#254c60">teacher's usual distribution</text>
+
+    <path class="fig3-student-rollout" d="M214 226 C330 198 430 208 512 238 C596 269 656 308 730 336 C782 356 822 364 850 370" stroke="url(#student-rollout-gradient)" stroke-width="4" pathLength="1"/>
+    <g>
+      <circle class="fig3-node fig3-student-node-1" cx="214" cy="226" r="8" fill="#2f7d5f"/>
+      <circle class="fig3-node fig3-student-node-2" cx="370" cy="206" r="8" fill="#2f7d5f"/>
+      <circle class="fig3-node fig3-student-node-3" cx="512" cy="238" r="8" fill="#2f7d5f"/>
+      <circle class="fig3-node fig3-student-node-4" cx="692" cy="322" r="8" fill="#b45f06"/>
+      <circle class="fig3-node fig3-student-node-5" cx="850" cy="370" r="8" fill="#e11d47"/>
+    </g>
+    <text class="fig3-student-label" x="196" y="350" font-size="14" font-weight="700" fill="#285b46">student policy rollout</text>
+
+    <path class="fig3-teacher-path" d="M214 226 C330 198 438 202 548 224 C660 246 764 246 864 224" stroke="#267CB9" stroke-width="4" pathLength="1"/>
+    <g>
+      <circle class="fig3-node fig3-teacher-node-1" cx="214" cy="226" r="7" fill="#267CB9"/>
+      <circle class="fig3-node fig3-teacher-node-2" cx="374" cy="204" r="7" fill="#267CB9"/>
+      <circle class="fig3-node fig3-teacher-node-3" cx="548" cy="224" r="7" fill="#267CB9"/>
+      <circle class="fig3-node fig3-teacher-node-4" cx="864" cy="224" r="7" fill="#267CB9"/>
+    </g>
+    <text class="fig3-teacher-label" x="662" y="196" font-size="14" font-weight="700" fill="#254c60">teacher would naturally visit</text>
+
+    <g class="fig3-legend" font-size="13">
+      <path d="M178 404 H342" fill="none" stroke="#2f7d5f" stroke-width="3" marker-end="url(#arrow-green)"/>
+      <text x="360" y="408" fill="#2f7d5f">close to teacher coverage</text>
+      <path d="M608 404 H772" fill="none" stroke="#e11d47" stroke-width="3" marker-end="url(#arrow-red)"/>
+      <text x="790" y="408" fill="#e11d47">outside teacher coverage</text>
+    </g>
+  </g>
+</svg>

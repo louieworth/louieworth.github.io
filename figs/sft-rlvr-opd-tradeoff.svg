@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 620" role="img" aria-labelledby="title desc">
+  <title id="title">SFT, RLVR, and OPD by rollout source and supervision density</title>
+  <desc id="desc">A two-axis diagram comparing supervised fine-tuning, reinforcement learning with verifiable rewards, and on-policy distillation. SFT is dense but off-policy, RLVR is on-policy but sparse, and OPD combines on-policy student rollouts with dense teacher feedback.</desc>
+  <rect width="1040" height="620" fill="#fffdfc"/>
+
+  <defs>
+    <marker id="arrow-blue" markerWidth="12" markerHeight="12" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#2f6f8f"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="12" markerHeight="12" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#2f7d5f"/>
+    </marker>
+    <marker id="axis-arrow" markerWidth="12" markerHeight="12" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#6e6d80"/>
+    </marker>
+    <filter id="soft-shadow" x="-8%" y="-12%" width="116%" height="130%">
+      <feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#282828" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <g font-family="Georgia, 'Times New Roman', serif">
+    <text x="74" y="66" font-size="30" fill="#282828">Where OPD sits</text>
+    <text x="74" y="96" font-size="16" fill="#6e6d80">SFT, RLVR, and OPD make different trade-offs between rollout source and feedback density.</text>
+  </g>
+
+  <g font-family="'Noto Sans', 'Helvetica Neue', Arial, sans-serif">
+    <line x1="196" y1="510" x2="888" y2="510" stroke="#6e6d80" stroke-width="2.4" marker-end="url(#axis-arrow)"/>
+    <line x1="196" y1="510" x2="196" y2="154" stroke="#6e6d80" stroke-width="2.4" marker-end="url(#axis-arrow)"/>
+
+    <text x="542" y="566" text-anchor="middle" font-size="16" font-weight="700" fill="#282828">trajectory source</text>
+    <text x="369" y="538" text-anchor="middle" font-size="13" fill="#6e6d80">student rollout</text>
+    <text x="715" y="538" text-anchor="middle" font-size="13" fill="#6e6d80">teacher / dataset</text>
+
+    <text x="112" y="330" text-anchor="middle" font-size="16" font-weight="700" fill="#282828" transform="rotate(-90 112 330)">supervision density</text>
+    <text x="156" y="421" text-anchor="middle" font-size="13" fill="#6e6d80" transform="rotate(-90 156 421)">sparse outcome</text>
+    <text x="156" y="243" text-anchor="middle" font-size="13" fill="#6e6d80" transform="rotate(-90 156 243)">dense token signal</text>
+
+    <line x1="196" y1="332" x2="888" y2="332" stroke="#ece8e2" stroke-width="1.5" stroke-dasharray="7 7"/>
+    <line x1="542" y1="154" x2="542" y2="510" stroke="#ece8e2" stroke-width="1.5" stroke-dasharray="7 7"/>
+  </g>
+
+  <g filter="url(#soft-shadow)" font-family="'Noto Sans', 'Helvetica Neue', Arial, sans-serif">
+    <rect x="248" y="180" width="252" height="122" rx="8" fill="#edf8f3" stroke="#c8e1d7"/>
+    <text x="274" y="216" font-size="24" font-weight="700" fill="#285b46">OPD</text>
+    <text x="274" y="246" font-size="14" fill="#3c6a56">student rollouts</text>
+    <text x="274" y="270" font-size="14" fill="#3c6a56">teacher feedback per prefix</text>
+
+    <rect x="248" y="374" width="252" height="122" rx="8" fill="#f4f1ea" stroke="#ddd4c7"/>
+    <text x="274" y="410" font-size="24" font-weight="700" fill="#5f4a2d">RLVR</text>
+    <text x="274" y="440" font-size="14" fill="#6f604d">student rollouts</text>
+    <text x="274" y="464" font-size="14" fill="#6f604d">one verifier reward</text>
+
+    <rect x="582" y="180" width="252" height="122" rx="8" fill="#eef7fb" stroke="#c7dfe9"/>
+    <text x="608" y="216" font-size="24" font-weight="700" fill="#254c60">SFT</text>
+    <text x="608" y="246" font-size="14" fill="#3f6878">expert prefixes</text>
+    <text x="608" y="270" font-size="14" fill="#3f6878">dense next-token labels</text>
+  </g>
+
+  <g font-family="'Noto Sans', 'Helvetica Neue', Arial, sans-serif" fill="none">
+    <path d="M582 224 C550 218 532 218 501 224" stroke="#2f6f8f" stroke-width="3" marker-end="url(#arrow-blue)"/>
+    <text x="541" y="198" text-anchor="middle" font-size="13" fill="#2f6f8f">keep dense supervision</text>
+
+    <path d="M374 373 C372 344 372 330 374 304" stroke="#2f7d5f" stroke-width="3" marker-end="url(#arrow-green)"/>
+    <text x="354" y="342" text-anchor="end" font-size="13" fill="#2f7d5f">keep on-policy rollouts</text>
+  </g>
+
+</svg>
