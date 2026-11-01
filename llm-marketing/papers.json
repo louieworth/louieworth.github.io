@@ -1067,14 +1067,14 @@
        "dataset_anchor": null,
        "canonical": null,
        "authors": "Leng, Yan, Yunxin Sang, and Ashish Agarwal",
-       "title": "Reducing Disparity Between LLMs and Humans: Optimal LLM Sample Calibration",
-       "venue": "Marketing Science, forthcoming; SSRN 4802019",
+       "title": "Frontiers: Reducing Disparity Between LLMs and Humans: Optimal LLM Sample Calibration",
+       "venue": "Marketing Science",
        "note": "",
-       "year": 2024,
-       "month": 4,
-       "published": false,
+       "year": 2026,
+       "month": 10,
+       "published": true,
        "label": "utd24",
-       "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4802019",
+       "url": "https://doi.org/10.1287/mksc.2024.0983",
        "data_url": null,
        "data_desc": "",
        "dataset": false,
@@ -2352,5 +2352,5 @@
  ],
  "intro": "A curated list of papers on large language models (LLMs) for marketing, organized around consumer simulation, content generation and personalization, and model and algorithm augmentation. The collection prioritizes marketing research, with selected computer-science and social-science methods, validation studies, and reviews.",
  "updated": "2026-11-01",
- "revision": "ef87248"
+ "revision": "63b507e"
 }
