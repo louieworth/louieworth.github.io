@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LLMs for marketing research</title>
+<title>LLMs for Marketing Research</title>
 <meta name="description" content="A curated reading list of research on large language models for marketing: consumer simulation, content generation and personalization, and model and algorithm augmentation, with short summaries of the papers.">
-<meta property="og:title" content="LLMs for marketing research">
+<meta property="og:title" content="LLMs for Marketing Research">
 <meta property="og:description" content="A curated reading list of research on large language models for marketing, with short summaries of the papers.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='8' cy='24' r='4' fill='%233f63b8'/%3E%3Ccircle cx='16' cy='24' r='4' fill='%233f63b8'/%3E%3Ccircle cx='16' cy='14' r='4' fill='%23b25b2a'/%3E%3Ccircle cx='24' cy='24' r='4' fill='%233f63b8'/%3E%3Ccircle cx='24' cy='14' r='4' fill='%23b25b2a'/%3E%3Ccircle cx='24' cy='4' r='4' fill='%237a4db0'/%3E%3C/svg%3E">
@@ -101,7 +101,13 @@
     background: linear-gradient(90deg, var(--grad-from), var(--grad-to));
     -webkit-background-clip: text; background-clip: text; color: transparent;
   }
-  .hero .lede { margin-top: var(--s-300); color: var(--muted); white-space: nowrap; }
+  .byline { margin-top: var(--s-200); }
+  .byline a { color: var(--ink); font-weight: 500; text-decoration-color: color-mix(in srgb, currentColor 30%, transparent); }
+  .byline a:hover { text-decoration-color: currentColor; }
+  .topics { list-style: none; margin: var(--s-300) 0 0; padding: 0; display: grid; gap: var(--s-75); max-width: 760px; color: var(--muted); }
+  .topics li { display: grid; grid-template-columns: 8px minmax(0, 1fr); gap: var(--s-100); align-items: baseline; }
+  .topics li::before { content: ""; width: 8px; height: 8px; border-radius: 9999px; background: var(--c); transform: translateY(-1px); }
+  .topics b { color: var(--ink); font-weight: 500; }
   .actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-100) var(--s-300); margin-top: var(--s-400); }
   .btn {
     display: inline-flex; align-items: center; gap: var(--s-75); padding: var(--s-75) var(--s-100); border-radius: 8px;
@@ -127,6 +133,7 @@
     .hero > :nth-child(2) { animation-delay: 60ms; }
     .hero > :nth-child(3) { animation-delay: 120ms; }
     .hero > :nth-child(4) { animation-delay: 180ms; }
+    .hero > :nth-child(5) { animation-delay: 240ms; }
   }
   @keyframes rise { from { opacity: 0; transform: translateY(var(--s-400)); } }
   @keyframes fade { from { opacity: 0; } }
@@ -266,7 +273,6 @@
 
   @media (max-width: 1099px) {
     .hero h1 { font-size: 48px; line-height: 48px; }
-    .hero .lede { white-space: normal; }
     .cols { gap: var(--s-200); }
     .dots { --per: 8; --dot: 12px; }
   }
@@ -274,7 +280,6 @@
     .wrap { padding: 0 var(--s-200); }
     header.hero { padding-top: var(--s-700); }
     .hero h1 { font-size: 36px; line-height: 40px; white-space: normal; }
-    .hero .lede { font-size: 16px; line-height: 24px; }
     .field { margin-top: var(--s-500); }
     .cols { gap: var(--s-100); }
     .dots { --per: 5; --dot: 8px; --gap: 2px; }
@@ -295,8 +300,13 @@
 <a class="skip button-sm" href="#catalogue">Skip to papers</a>
 <div class="wrap">
   <header class="hero">
-    <h1 class="heading-1">LLMs for marketing research</h1>
-    <p class="lede body-7" id="lede">Papers on LLMs that simulate consumers, generate marketing content, and improve marketing models.</p>
+    <h1 class="heading-1">LLMs for Marketing Research</h1>
+    <p class="byline body-3 muted">Curated by <a href="https://louieworth.github.io/">Li Jiang</a> (McGill University) and <a href="https://www.stern.nyu.edu/faculty/bio/xiao-liu" rel="noopener">Xiao Liu</a> (NYU Stern)</p>
+    <ul class="topics body-3" id="topics" aria-label="Research directions">
+      <li style="--c:var(--sim)"><span><b>Consumer simulation.</b> Language models as synthetic respondents, panels and digital twins, and the evidence on when their answers match real consumers and when they fail.</span></li>
+      <li style="--c:var(--gen)"><span><b>Content generation and personalization.</b> Language models that write and tailor ads, emails and product content, with field tests of how that content performs.</span></li>
+      <li style="--c:var(--alg)"><span><b>Model and algorithm augmentation.</b> Model outputs used as priors, features or extra training data, so marketing models, experiments and recommenders learn faster and more accurately.</span></li>
+    </ul>
     <div class="actions">
       <a class="btn button-md" href="#catalogue" id="browse">Browse the papers</a>
       <div class="proof button-sm" id="proof" role="group" aria-label="Venue"></div>
@@ -527,8 +537,6 @@
 
   function renderHeader() {
     const rows = listed(), n = total();
-    document.getElementById("lede").textContent =
-      `${n} papers on LLMs that simulate consumers, generate marketing content, and improve marketing models.`;
     const proof = document.getElementById("proof");
     Object.keys(VENUES).forEach(k => {
       const c = rows.filter(([e]) => e.label === k).length;
