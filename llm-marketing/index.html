@@ -301,7 +301,7 @@
 <div class="wrap">
   <header class="hero">
     <h1 class="heading-1">LLMs for Marketing Research</h1>
-    <p class="byline body-3 muted">Curated by <a href="https://louieworth.github.io/">Li Jiang</a> (McGill University) and <a href="https://www.stern.nyu.edu/faculty/bio/xiao-liu" rel="noopener">Xiao Liu</a> (NYU Stern)</p>
+    <p class="byline body-3 muted">Curated by <a href="https://louieworth.github.io/">Li Jiang</a> (McGill University) and <a href="https://www.stern.nyu.edu/faculty/bio/xiao-liu" rel="noopener">Xiao Liu</a> (New York University)</p>
     <ul class="topics body-3" id="topics" aria-label="Research directions">
       <li style="--c:var(--sim)"><span><b>Consumer simulation.</b> Language models as synthetic respondents, panels and digital twins, and the evidence on when their answers match real consumers and when they fail.</span></li>
       <li style="--c:var(--gen)"><span><b>Content generation and personalization.</b> Language models that write and tailor ads, emails and product content, with field tests of how that content performs.</span></li>
@@ -629,9 +629,7 @@
       d.classList.toggle("dim", (state.cat && cid !== state.cat) || !matches(e));
     });
     const filtered = state.q || state.cat || state.venue || state.published || state.datasets;
-    document.getElementById("field-cap").textContent = filtered
-      ? `${shown} of ${total()} papers match.`
-      : matchMedia("(hover: hover)").matches ? "One dot per paper. Hover a dot for its title." : "One dot per paper. Tap a dot to jump to it.";
+    document.getElementById("field-cap").textContent = filtered ? `${shown} of ${total()} papers match.` : "";
     document.getElementById("status").replaceChildren(filtered ? `Showing ${shown} of ${total()} papers. ` : `${total()} papers.`,
       filtered ? el("button", { class: "link-btn", type: "button", onclick: clear }, "Clear filters") : "");
     const expand = document.getElementById("expand");
