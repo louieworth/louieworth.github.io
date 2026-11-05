@@ -90,7 +90,7 @@
   {
    "id": "1",
    "name": "Consumer Simulation",
-   "count": 71,
+   "count": 74,
    "subsections": [
     {
      "id": "1.1",
@@ -293,6 +293,24 @@
        "data_desc": "",
        "dataset": false,
        "tldr": "Tests whether large language models can produce synthetic consumer data for projective techniques, which aim to uncover consumers' associations, emotions, wants, and needs. Compares LLM responses across several projective tasks, models, prompting strategies, and temperature settings with human responses from a study of city tourism destinations, using linguistic measures, diversity metrics, and topic models. Broad topics and associations overlap substantially, but style, linguistic structure, and the way diversity arises differ notably. Closes with recommendations on model and prompt choices and on the limits of the approach."
+      },
+      {
+       "anchor": "paper-synthetic-consumer-panels-without-microdata-iterative-proportional-fitting-from-open-aggregate-statistics",
+       "dataset_anchor": null,
+       "canonical": null,
+       "authors": "Dubach, Philipp D",
+       "title": "Synthetic Consumer Panels Without Microdata: Iterative Proportional Fitting from Open Aggregate Statistics",
+       "venue": "SSRN 7122180",
+       "note": "",
+       "year": 2026,
+       "month": 7,
+       "published": false,
+       "label": null,
+       "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7122180",
+       "data_url": null,
+       "data_desc": "",
+       "dataset": false,
+       "tldr": null
       },
       {
        "anchor": "paper-customer-digital-twins-in-the-field-cross-sell-micro-personalization-at-scale",
@@ -1001,6 +1019,24 @@
        "data_desc": "",
        "dataset": false,
        "tldr": "Tests whether generative AI agents acting as synthetic consumers can pretest visual marketing such as logos, packaging and ads. Replicates six visual marketing experiments, varying the model (GPT-4o-mini vs. GPT-5.4-mini) and input format (plain text vs. JSON). Every configuration passes manipulation checks, but none reproduces more than two of the six human effects, and one reverses the human pattern. Evidence given in context moves responses toward human effects, yet even successful setups capture under half of human variation, and a \"Calibrate, Intervene, Deploy\" protocol guides when human panels remain necessary."
+      },
+      {
+       "anchor": "paper-decision-models-as-scalable-economic-surrogates-that-capture-human-variation",
+       "dataset_anchor": null,
+       "canonical": null,
+       "authors": "Saxena, Maxime, Fabio Caccioli, and R. Maria del Rio-Chanona",
+       "title": "Decision Models as Scalable Economic Surrogates that Capture Human Variation",
+       "venue": "arXiv:2611.05553",
+       "note": "",
+       "year": 2026,
+       "month": 11,
+       "published": false,
+       "label": null,
+       "url": "https://arxiv.org/abs/2611.05553",
+       "data_url": null,
+       "data_desc": "",
+       "dataset": false,
+       "tldr": null
       }
      ]
     },
@@ -1201,6 +1237,24 @@
        "published": false,
        "label": null,
        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7500939",
+       "data_url": null,
+       "data_desc": "",
+       "dataset": false,
+       "tldr": null
+      },
+      {
+       "anchor": "paper-designing-behavioral-profiles-for-language-model-simulation-of-out-of-distribution-human-behavior",
+       "dataset_anchor": null,
+       "canonical": null,
+       "authors": "Na, Robin, Kehang Zhu, Logan Cross, and Michiel A. Bakker",
+       "title": "Designing Behavioral Profiles for Language Model Simulation of Out-of-Distribution Human Behavior",
+       "venue": "arXiv:2611.00661",
+       "note": "",
+       "year": 2026,
+       "month": 10,
+       "published": false,
+       "label": null,
+       "url": "https://arxiv.org/abs/2611.00661",
        "data_url": null,
        "data_desc": "",
        "dataset": false,
@@ -2351,6 +2405,6 @@
   }
  ],
  "intro": "A curated list of papers on large language models (LLMs) for marketing, organized around consumer simulation, content generation and personalization, and model and algorithm augmentation. The collection prioritizes marketing research, with selected computer-science and social-science methods, validation studies, and reviews.",
- "updated": "2026-11-01",
- "revision": "03c1c07"
+ "updated": "2026-11-05",
+ "revision": "5ff8e28"
 }
