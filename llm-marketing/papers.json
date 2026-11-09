@@ -1490,7 +1490,7 @@
   {
    "id": "2",
    "name": "Content Generation and Personalization",
-   "count": 29,
+   "count": 30,
    "subsections": [
     {
      "id": "2.1",
@@ -1825,6 +1825,24 @@
        "data_desc": "",
        "dataset": false,
        "tldr": "Proposes FSPO, a meta-learning method that infers a user's reward function from a few labeled preferences to personalize LLM responses. It trains on over 1 million synthetic preferences generated with public LLMs, built for diversity and coherent structure so that learning transfers to real users. Across up to 1,500 synthetic users in movie reviews, education and open question answering, FSPO reaches an 87% Alpaca Eval win rate, and it wins 70% of the time with real users in a controlled human study."
+      },
+      {
+       "anchor": "paper-align-generative-artificial-intelligence-with-human-preferences-online-review-management",
+       "dataset_anchor": null,
+       "canonical": null,
+       "authors": "Wang, Yanan, and Yong Ge",
+       "title": "Align Generative Artificial Intelligence with Human Preferences: A Novel Large Language Model Fine-Tuning Method for Online Review Management",
+       "venue": "Information Systems Research",
+       "note": "",
+       "year": 2026,
+       "month": 4,
+       "published": true,
+       "label": "utd24",
+       "url": "https://doi.org/10.1287/isre.2024.1518",
+       "data_url": null,
+       "data_desc": "",
+       "dataset": false,
+       "tldr": "Develops a fine-tuning method that aligns an LLM's replies to online customer reviews with human preferences. It traces hallucinated replies to missing context and adds context augmentation to cut factual errors, then builds preference data automatically from existing review and reply records, guided by theory. Training follows a curriculum and uses a new support constraint that makes offline preference optimization less conservative, with stronger theoretical guarantees. On hotel reviews, the method writes better replies than leading alternatives under both automated metrics and human judges."
       },
       {
        "anchor": "paper-design-your-ad-personalized-advertising-image-and-text-generation-with-unified-autoregressive-models",
@@ -2405,6 +2423,6 @@
   }
  ],
  "intro": "A curated list of papers on large language models (LLMs) for marketing, organized around consumer simulation, content generation and personalization, and model and algorithm augmentation. The collection prioritizes marketing research, with selected computer-science and social-science methods, validation studies, and reviews.",
- "updated": "2026-11-05",
- "revision": "5ff8e28"
+ "updated": "2026-11-08",
+ "revision": "1aa7844"
 }
