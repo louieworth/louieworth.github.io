@@ -328,7 +328,7 @@
        "data_url": null,
        "data_desc": "",
        "dataset": false,
-       "tldr": null
+       "tldr": "Tests LLM-based customer digital twins, built from first-party behavioral and transactional data, for personalizing cross-sell offers at a global financial institution. Two field experiments with about 330,000 customers compare offers from the twins pipeline with the bank's business-as-usual approach, judged on actual conversions. The pipeline raises conversion by 6% and projected three-year gross margin by 11% for credit card offers, and by 25% and 30% for payroll portability offers. The authors present it as the first digital twin deployment at scale validated with randomized trials and real business outcomes."
       }
      ]
     },
@@ -1240,7 +1240,7 @@
        "data_url": null,
        "data_desc": "",
        "dataset": false,
-       "tldr": null
+       "tldr": "Uses LLM responses to supplement human data in choice-based preference estimation, correcting the LLM answers with a small sample in which humans and the LLM answer the same questions. Because that correction is learned from few observations but applied to a much larger LLM sample, the paper develops a Wasserstein-robust two-stage estimator that guards against calibration error, with a tractable convex formulation and finite-sample guarantees. In a COVID-19 vaccine conjoint study, it recovers parameters and fits choice probabilities better than human-only estimation while needing less human data for comparable accuracy. A sports-car choice study extends the result to multinomial choice."
       },
       {
        "anchor": "paper-designing-behavioral-profiles-for-language-model-simulation-of-out-of-distribution-human-behavior",
@@ -1914,7 +1914,7 @@
        "data_url": null,
        "data_desc": "",
        "dataset": false,
-       "tldr": null
+       "tldr": "Fine-tunes a language model on A/B test results so that it rewrites lower-performing marketing content into higher-performing content. Within-experiment comparisons supply the direction of improvement, and the resulting improver can refine content drafted by any baseline, such as a human expert. In a field experiment covering 36 new email campaigns and 283 million impressions, subject lines improved by the aligned model earn 33% higher click-through rates than those from unassisted experts. A general-purpose model with 30 times as many parameters does not improve outcomes, suggesting that alignment to experimental data adds value beyond scale."
       },
       {
        "anchor": "paper-balancing-engagement-and-polarization-multi-objective-alignment-of-news-content-using-llms",
@@ -1939,7 +1939,7 @@
        "dataset_anchor": null,
        "canonical": null,
        "authors": "Yin, Mingzhang, Ruijiang Gao, and Ziwei Cong",
-       "title": "Generative Personalization with Textual and Non-textual Data",
+       "title": "Personalizing Language Models for Generative Targeting",
        "venue": "SSRN 5329729",
        "note": "",
        "year": 2025,
@@ -2424,5 +2424,5 @@
  ],
  "intro": "A curated list of papers on large language models (LLMs) for marketing, organized around consumer simulation, content generation and personalization, and model and algorithm augmentation. The collection prioritizes marketing research, with selected computer-science and social-science methods, validation studies, and reviews.",
  "updated": "2026-11-11",
- "revision": "5fd591e"
+ "revision": "23ea177"
 }
