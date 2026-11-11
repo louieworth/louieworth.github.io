@@ -310,7 +310,7 @@
        "data_url": null,
        "data_desc": "",
        "dataset": false,
-       "tldr": null
+       "tldr": "Builds a nationally representative synthetic consumer panel for LLM survey respondents from free aggregate census tables, using iterative proportional fitting instead of individual-level microdata. For Switzerland, 10,000 personas built from two Federal Statistical Office tables reproduce population marginals such as the foreign-national share. With semantic similarity rating as the elicitation step, synthetic ratings of 35 landscape concepts track real Swiss raters at a correlation of 0.68, and purchase intent rises with income as expected. Demographic conditioning moves income-driven purchase intent but not aesthetic judgments, and the whole pipeline costs a few dollars to run."
       },
       {
        "anchor": "paper-customer-digital-twins-in-the-field-cross-sell-micro-personalization-at-scale",
@@ -985,24 +985,6 @@
        "tldr": "Asks when synthetic data can be trusted in marketing research. Distinguishes ungrounded LLM responses, segment personas and individual digital twins, and argues that reported twin accuracy varies mostly with the measure used. For questions missing from a fielded study, proposes a diagnostic needing no ground truth: the R² of a random forest predicting twin outputs from the twins' input data. Across 108 attitude questions (N = 3,063), screening at R² above 0.7 raises twin and human correlation by 15% and cuts poorly answered questions from 25.9% to 4.3%."
       },
       {
-       "anchor": "paper-measuring-the-digital-twin-separating-individuation-from-population-regularity-in-llm-survey-twins",
-       "dataset_anchor": null,
-       "canonical": null,
-       "authors": "Miller, Moses",
-       "title": "Measuring the Digital Twin: Separating Individuation from Population Regularity in LLM Survey Twins",
-       "venue": "Working paper, Reichman University",
-       "note": "no public copy yet; link goes to its citation in Netzer and Sambandam, arXiv 2609.13995",
-       "year": 2026,
-       "month": null,
-       "published": false,
-       "label": null,
-       "url": "https://arxiv.org/pdf/2609.13995#page=31",
-       "data_url": null,
-       "data_desc": "",
-       "dataset": false,
-       "tldr": null
-      },
-      {
        "anchor": "paper-seeing-is-not-perceiving-when-synthetic-consumers-can-and-cannot-pretest-visual-marketing",
        "dataset_anchor": null,
        "canonical": null,
@@ -1033,6 +1015,24 @@
        "published": false,
        "label": null,
        "url": "https://arxiv.org/abs/2611.05553",
+       "data_url": null,
+       "data_desc": "",
+       "dataset": false,
+       "tldr": "Compares decision models, AI models that return a probability distribution over a fixed set of options, with LLMs as stand-ins for humans in economic research. The study tests 10 decision models and 8 LLMs on a household spending survey, classic economic games and a labor-market field experiment. The best decision models reproduce the spread of human responses more closely than LLMs in all three settings, and match LLMs on the most common answer in the survey but not in the games. They are also about ten times faster and can be over a hundred times cheaper."
+      },
+      {
+       "anchor": "paper-measuring-the-digital-twin-separating-individuation-from-population-regularity-in-llm-survey-twins",
+       "dataset_anchor": null,
+       "canonical": null,
+       "authors": "Miller, Moses",
+       "title": "Measuring the Digital Twin: Separating Individuation from Population Regularity in LLM Survey Twins",
+       "venue": "Working paper, Reichman University",
+       "note": "no public copy yet; link goes to its citation in Netzer and Sambandam, arXiv 2609.13995",
+       "year": 2026,
+       "month": null,
+       "published": false,
+       "label": null,
+       "url": "https://arxiv.org/pdf/2609.13995#page=31",
        "data_url": null,
        "data_desc": "",
        "dataset": false,
@@ -1258,7 +1258,7 @@
        "data_url": null,
        "data_desc": "",
        "dataset": false,
-       "tldr": null
+       "tldr": "Asks which descriptions of people keep LLM simulations of human behavior accurate when the experimental design changes. The framework draws candidate behavioral features from the literature, has one LLM infer each participant's feature values from earlier experiments and another simulate behavior from those profiles, and keeps features by forward selection. On new participants and new designs across public-goods games, multi-party bargaining and 11-20 money-request games, the best one-feature profiles predict human outcome distributions better than no profile or generic personas. Adding features brings no clear gain, and profiles built on one game family can hurt predictions in another."
       }
      ]
     },
@@ -1605,6 +1605,24 @@
        "tldr": "Reviews how generative AI can tailor persuasive messages to individuals' preferences, needs and motivations. Explains how it helps solve the problem of identifying what to customize and surveys existing evidence on its effectiveness. Proposes a framework that classifies studies by their data sources, the complexity of their personalization methods and how they deliver personalized content. Closes with promising research directions and ethical considerations."
       },
       {
+       "anchor": "paper-competition-and-diversity-in-generative-ai",
+       "dataset_anchor": null,
+       "canonical": null,
+       "authors": "Raghavan, Manish",
+       "title": "Competition and Diversity in Generative AI",
+       "venue": "Management Science",
+       "note": "",
+       "year": 2026,
+       "month": 10,
+       "published": true,
+       "label": "utd24",
+       "url": "https://doi.org/10.1287/mnsc.2025.02761",
+       "data_url": null,
+       "data_desc": "",
+       "dataset": false,
+       "tldr": "Asks whether generative AI must homogenize content when producers compete for customers or attention. A formal game theory model shows that competitive markets select for diverse AI models, which mitigates monoculture, and that a model performing well on a benchmark in isolation may provide little value in a competitive market. Experiments with generative text and image models support the theory. The results suggest that homogenization is unlikely to persist under strong competition and that models should be evaluated across the full breadth of their output distributions."
+      },
+      {
        "anchor": "paper-ai-in-disguise-quasi-experimental-analysis-of-a-large-scale-deployment-of-ai-generated-ads",
        "dataset_anchor": null,
        "canonical": null,
@@ -1747,24 +1765,6 @@
        "data_desc": "",
        "dataset": false,
        "tldr": "Measures how Google's AI Overviews affect clicks to outside websites, using a field experiment with a Chrome extension that randomly shows users regular Google Search or a version with the summaries removed. When an AI Overview appears, organic outbound clicks fall by 39.8% and searches with no click rise by 34.5%, while sponsored clicks and search frequency do not change. Users report no gain in search quality or ease of finding information. A smaller test of AI Mode suggests even larger traffic losses for publishers."
-      },
-      {
-       "anchor": "paper-competition-and-diversity-in-generative-ai",
-       "dataset_anchor": null,
-       "canonical": null,
-       "authors": "Raghavan, Manish",
-       "title": "Competition and Diversity in Generative AI",
-       "venue": "Management Science",
-       "note": "",
-       "year": 2026,
-       "month": 10,
-       "published": true,
-       "label": "utd24",
-       "url": "https://doi.org/10.1287/mnsc.2025.02761",
-       "data_url": null,
-       "data_desc": "",
-       "dataset": false,
-       "tldr": "Asks whether generative AI must homogenize content when producers compete for customers or attention. A formal game theory model shows that competitive markets select for diverse AI models, which mitigates monoculture, and that a model performing well on a benchmark in isolation may provide little value in a competitive market. Experiments with generative text and image models support the theory. The results suggest that homogenization is unlikely to persist under strong competition and that models should be evaluated across the full breadth of their output distributions."
       }
      ]
     },
@@ -1881,6 +1881,24 @@
        "tldr": "Proposes a causal prediction framework for evaluating new AI-generated marketing content before launch. Pretrained LLMs represent past content and learn how its features relate causally to outcomes, and a rejection sampling step keeps only proposed content that historical data can reliably support. In an email marketing application with 3.3 million observations across 34 campaigns, the framework improves prediction on new data and deployment performance over standard approaches. A threshold on similarity to past campaigns separates cases where prediction is reliable from cases that call for experiments."
       },
       {
+       "anchor": "paper-leveraging-generative-artificial-intelligence-to-create-visual-content-in-digital-advertising",
+       "dataset_anchor": null,
+       "canonical": null,
+       "authors": "Daviet, Remi, and Yohei Nishimura",
+       "title": "Leveraging Generative Artificial Intelligence to Create Visual Content in Digital Advertising",
+       "venue": "Marketing Science 45(5): 893–912",
+       "note": "",
+       "year": 2026,
+       "month": 9,
+       "published": true,
+       "label": "utd24",
+       "url": "https://doi.org/10.1287/mksc.2024.1130",
+       "data_url": null,
+       "data_desc": "",
+       "dataset": false,
+       "tldr": "Addresses two obstacles to using image generation in digital ads: finding strong visuals among countless possible creatives and keeping them aligned with the brand. Proposes a framework that pairs a generative AI model with two Bayesian neural networks and uses low cost Bayesian active learning to target performance and brand fit together. In a live campaign for an outdoor activities company, the generated visuals achieve a higher mean clickthrough rate with lower variance than a professional designer's creatives and a competing AI model optimized only for aesthetics."
+      },
+      {
        "anchor": "paper-causal-alignment-augmenting-language-models-with-a-b-tests",
        "dataset_anchor": null,
        "canonical": null,
@@ -1969,24 +1987,6 @@
        "data_desc": "",
        "dataset": false,
        "tldr": "Addresses ad creative optimization, where evaluation rather than generation is the bottleneck. Uses a predictive model trained on historical A/B tests as a critic that ranks and refines a generative model's variants, then tests the resulting slate in an adaptive online experiment. In a 50 arm field experiment, the best generated creative beats the best human creative by 45.1% in engagement, with lifts of 46.7% and 36.2% in two further experiments. The predictor is too noisy to pick the winner offline but steers generation toward strong candidates."
-      },
-      {
-       "anchor": "paper-leveraging-generative-artificial-intelligence-to-create-visual-content-in-digital-advertising",
-       "dataset_anchor": null,
-       "canonical": null,
-       "authors": "Daviet, Remi, and Yohei Nishimura",
-       "title": "Leveraging Generative Artificial Intelligence to Create Visual Content in Digital Advertising",
-       "venue": "Marketing Science 45(5): 893–912",
-       "note": "",
-       "year": 2026,
-       "month": 9,
-       "published": true,
-       "label": "utd24",
-       "url": "https://doi.org/10.1287/mksc.2024.1130",
-       "data_url": null,
-       "data_desc": "",
-       "dataset": false,
-       "tldr": "Addresses two obstacles to using image generation in digital ads: finding strong visuals among countless possible creatives and keeping them aligned with the brand. Proposes a framework that pairs a generative AI model with two Bayesian neural networks and uses low cost Bayesian active learning to target performance and brand fit together. In a live campaign for an outdoor activities company, the generated visuals achieve a higher mean clickthrough rate with lower variance than a professional designer's creatives and a competing AI model optimized only for aesthetics."
       }
      ]
     },
@@ -2423,6 +2423,6 @@
   }
  ],
  "intro": "A curated list of papers on large language models (LLMs) for marketing, organized around consumer simulation, content generation and personalization, and model and algorithm augmentation. The collection prioritizes marketing research, with selected computer-science and social-science methods, validation studies, and reviews.",
- "updated": "2026-11-08",
- "revision": "1aa7844"
+ "updated": "2026-11-11",
+ "revision": "5fd591e"
 }
