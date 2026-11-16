@@ -90,7 +90,7 @@
   {
    "id": "1",
    "name": "Consumer Simulation",
-   "count": 74,
+   "count": 77,
    "subsections": [
     {
      "id": "1.1",
@@ -329,6 +329,24 @@
        "data_desc": "",
        "dataset": false,
        "tldr": "Tests LLM-based customer digital twins, built from first-party behavioral and transactional data, for personalizing cross-sell offers at a global financial institution. Two field experiments with about 330,000 customers compare offers from the twins pipeline with the bank's business-as-usual approach, judged on actual conversions. The pipeline raises conversion by 6% and projected three-year gross margin by 11% for credit card offers, and by 25% and 30% for payroll portability offers. The authors present it as the first digital twin deployment at scale validated with randomized trials and real business outcomes."
+      },
+      {
+       "anchor": "paper-green-tastes-beliefs-and-portfolios-evidence-from-synthetic-investors",
+       "dataset_anchor": null,
+       "canonical": null,
+       "authors": "He, Xindi, and Lubos Pastor",
+       "title": "Green Tastes, Beliefs, and Portfolios: Evidence from Synthetic Investors",
+       "venue": "SSRN 7673158",
+       "note": "",
+       "year": 2026,
+       "month": 11,
+       "published": false,
+       "label": null,
+       "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7673158",
+       "data_url": null,
+       "data_desc": "",
+       "dataset": false,
+       "tldr": null
       }
      ]
     },
@@ -805,6 +823,24 @@
        "tldr": "Reviews research across disciplines that uses LLMs, explicitly or implicitly, as stand-ins for humans. Notes that LLMs do not explain the mechanisms behind human behavior but may still substitute for people in applied and scientific work. Sorts existing uses into four roles: believable agents, task agents, experimental subjects and silicon samples. Comparing these roles shows that similarity to humans is not a single property, since each role supports a different scientific claim and needs its own validity criteria."
       },
       {
+       "anchor": "paper-whose-startup-does-the-ai-back-an-algorithm-audit-of-reputation-and-demographic-signals-in-llm-assisted-crowdfunding",
+       "dataset_anchor": null,
+       "canonical": null,
+       "authors": "Baig, Mirza Samad Ahmed, and Syeda Anshrah Gillani",
+       "title": "Whose startup does the AI back? An algorithm audit of reputation and demographic signals in LLM-assisted crowdfunding",
+       "venue": "Journal of Business Venturing Insights 26: e00682",
+       "note": "",
+       "year": 2026,
+       "month": 10,
+       "published": true,
+       "label": null,
+       "url": "https://doi.org/10.1016/j.jbvi.2026.e00682",
+       "data_url": null,
+       "data_desc": "",
+       "dataset": false,
+       "tldr": null
+      },
+      {
        "anchor": "paper-the-challenge-of-using-llms-to-simulate-human-behavior-a-causal-inference-perspective",
        "dataset_anchor": null,
        "canonical": null,
@@ -1019,6 +1055,24 @@
        "data_desc": "",
        "dataset": false,
        "tldr": "Compares decision models, AI models that return a probability distribution over a fixed set of options, with LLMs as stand-ins for humans in economic research. The study tests 10 decision models and 8 LLMs on a household spending survey, classic economic games and a labor-market field experiment. The best decision models reproduce the spread of human responses more closely than LLMs in all three settings, and match LLMs on the most common answer in the survey but not in the games. They are also about ten times faster and can be over a hundred times cheaper."
+      },
+      {
+       "anchor": "paper-structuring-survey-histories-for-llm-digital-twins-a-controlled-study-of-background-decision-procedure-and-evaluation-profiles",
+       "dataset_anchor": null,
+       "canonical": null,
+       "authors": "Ye, Iris, Tianze Deng, and Ozan Candogan",
+       "title": "Structuring Survey Histories for LLM Digital Twins: A Controlled Study of Background, Decision Procedure, and Evaluation Profiles",
+       "venue": "arXiv:2611.08730",
+       "note": "",
+       "year": 2026,
+       "month": 11,
+       "published": false,
+       "label": null,
+       "url": "https://arxiv.org/abs/2611.08730",
+       "data_url": null,
+       "data_desc": "",
+       "dataset": false,
+       "tldr": null
       },
       {
        "anchor": "paper-measuring-the-digital-twin-separating-individuation-from-population-regularity-in-llm-survey-twins",
@@ -1623,6 +1677,24 @@
        "tldr": "Asks whether generative AI must homogenize content when producers compete for customers or attention. A formal game theory model shows that competitive markets select for diverse AI models, which mitigates monoculture, and that a model performing well on a benchmark in isolation may provide little value in a competitive market. Experiments with generative text and image models support the theory. The results suggest that homogenization is unlikely to persist under strong competition and that models should be evaluated across the full breadth of their output distributions."
       },
       {
+       "anchor": "paper-generative-ai-and-sales-productivity-field-experiments-in-online-retail",
+       "dataset_anchor": null,
+       "canonical": null,
+       "authors": "Fang, Lu, et al",
+       "title": "Generative Artificial Intelligence and Sales Productivity: Field Experiments in Online Retail",
+       "venue": "Management Science",
+       "note": "",
+       "year": 2026,
+       "month": 11,
+       "published": true,
+       "label": "utd24",
+       "url": "https://doi.org/10.1287/mnsc.2026.00623",
+       "data_url": null,
+       "data_desc": "",
+       "dataset": false,
+       "tldr": null
+      },
+      {
        "anchor": "paper-ai-in-disguise-quasi-experimental-analysis-of-a-large-scale-deployment-of-ai-generated-ads",
        "dataset_anchor": null,
        "canonical": null,
@@ -1657,24 +1729,6 @@
        "data_desc": "",
        "dataset": false,
        "tldr": null
-      },
-      {
-       "anchor": "paper-generative-ai-and-sales-productivity-field-experiments-in-online-retail",
-       "dataset_anchor": null,
-       "canonical": null,
-       "authors": "Fang, Lu, et al",
-       "title": "Generative AI and Sales Productivity: Field Experiments in Online Retail",
-       "venue": "arXiv:2510.12049",
-       "note": "",
-       "year": 2025,
-       "month": 10,
-       "published": false,
-       "label": null,
-       "url": "https://arxiv.org/abs/2510.12049",
-       "data_url": null,
-       "data_desc": "",
-       "dataset": false,
-       "tldr": "Measures the short term effect of generative AI on sales with large randomized field experiments on a leading cross border online retail platform. Across seven workflows added in 2023 and 2024, including customer service, product matching, advertising and seller services, GenAI raises sales by between zero and 16.3%. Gains come mainly from higher conversion rather than larger carts, return rates and ratings hold steady, and benefits are larger for less experienced consumers. The four applications with positive effects imply about $5 of annual value per consumer."
       },
       {
        "anchor": "paper-the-impact-of-visual-generative-ai-on-advertising-effectiveness",
@@ -2074,7 +2128,7 @@
   {
    "id": "3",
    "name": "Model and Algorithm Augmentation",
-   "count": 18,
+   "count": 19,
    "subsections": [
     {
      "id": "3.1",
@@ -2337,6 +2391,24 @@
        "data_desc": "",
        "dataset": false,
        "tldr": "Uses LLMs not as synthetic respondents but as a source of prior part-worth utilities for designing choice-based conjoint experiments before data collection. A study of premium job search platform subscriptions with 984 US job seekers compares a randomized design with designs optimized on aggregate, individualized and deliberately misspecified LLM priors. LLM priors alone predict holdout choices better than chance and, when used to screen out dominated choice tasks, substantially improve prediction, while adding them to Bayesian estimation gives mixed gains."
+      },
+      {
+       "anchor": "paper-eventgpt-next-event-pretraining-on-banking-customer-histories",
+       "dataset_anchor": null,
+       "canonical": null,
+       "authors": "Burakov, Denis",
+       "title": "EventGPT: Next-Event Pretraining on Banking Customer Histories",
+       "venue": "arXiv:2611.03302",
+       "note": "",
+       "year": 2026,
+       "month": 11,
+       "published": false,
+       "label": null,
+       "url": "https://arxiv.org/abs/2611.03302",
+       "data_url": null,
+       "data_desc": "",
+       "dataset": false,
+       "tldr": null
       }
      ]
     },
@@ -2423,6 +2495,6 @@
   }
  ],
  "intro": "A curated list of papers on large language models (LLMs) for marketing, organized around consumer simulation, content generation and personalization, and model and algorithm augmentation. The collection prioritizes marketing research, with selected computer-science and social-science methods, validation studies, and reviews.",
- "updated": "2026-11-11",
- "revision": "23ea177"
+ "updated": "2026-11-16",
+ "revision": "2c2b896"
 }
